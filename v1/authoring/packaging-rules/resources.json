@@ -1,0 +1,326 @@
+[
+    {
+        "Name": "storage",
+        "ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Storage/storageAccounts/storage",
+        "ResourceName": "storage",
+        "ResourceType": "Microsoft.Storage/storageAccounts",
+        "Kind": "Storage",
+        "ResourceGroupName": "test-rg",
+        "Location": "eastus2",
+        "SubscriptionId": "00000000-0000-0000-0000-000000000000",
+        "Tags": {
+            "role": "deployment",
+            "environment": "production"
+        },
+        "Properties": {
+            "networkAcls": {
+                "bypass": "AzureServices",
+                "virtualNetworkRules": [],
+                "ipRules": [],
+                "defaultAction": "Allow"
+            },
+            "supportsHttpsTrafficOnly": false,
+            "encryption": {
+                "services": {
+                    "file": {
+                        "enabled": true
+                    },
+                    "blob": {
+                        "enabled": true
+                    }
+                },
+                "keySource": "Microsoft.Storage"
+            },
+            "primaryEndpoints": {
+                "blob": "https://storage.blob.core.windows.net/",
+                "queue": "https://storage.queue.core.windows.net/",
+                "table": "https://storage.table.core.windows.net/",
+                "file": "https://storage.file.core.windows.net/"
+            },
+            "primaryLocation": "eastus2",
+            "statusOfPrimary": "available"
+        },
+        "Sku": {
+            "name": "Standard_LRS",
+            "tier": "Standard"
+        }
+    },
+    {
+        "Name": "app-service-plan",
+        "ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Web/serverfarms/app-service-plan",
+        "ResourceName": "app-service-plan",
+        "ResourceType": "Microsoft.Web/serverfarms",
+        "Kind": "app",
+        "ResourceGroupName": "test-rg",
+        "Location": "East US 2",
+        "SubscriptionId": "00000000-0000-0000-0000-000000000000",
+        "Tags": {
+            "environment": "production",
+            "costCentre": "12345",
+            "businessUnit": "IT Operations"
+        },
+        "Properties": {
+            "name": "app-service-plan",
+            "workerSize": "Default",
+            "workerSizeId": 0,
+            "workerTierName": null,
+            "numberOfWorkers": 1,
+            "currentWorkerSize": "Default",
+            "currentWorkerSizeId": 0,
+            "currentNumberOfWorkers": 1,
+            "adminSiteName": null,
+            "hostingEnvironment": null,
+            "hostingEnvironmentProfile": null,
+            "maximumNumberOfWorkers": 10,
+            "planName": "VirtualDedicatedPlan",
+            "adminRuntimeSiteName": null,
+            "computeMode": "Dedicated",
+            "siteMode": null,
+            "geoRegion": "East US 2",
+            "perSiteScaling": false,
+            "maximumElasticWorkerCount": 0,
+            "numberOfSites": 2,
+            "hostingEnvironmentId": null,
+            "isSpot": false,
+            "spotExpirationTime": null,
+            "freeOfferExpirationTime": null,
+            "tags": {
+                "environment": "production"
+            },
+            "kind": "app",
+            "resourceGroup": "test-rg",
+            "reserved": false,
+            "isXenon": false,
+            "hyperV": false,
+            "targetWorkerCount": 0,
+            "targetWorkerSizeId": 0,
+            "webSiteId": null
+        },
+        "Sku": {
+            "name": "S1",
+            "tier": "Standard",
+            "size": "S1",
+            "family": "S",
+            "capacity": 1
+        }
+    },
+    {
+        "Name": "web-app",
+        "ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Web/sites/web-app",
+        "ResourceName": "web-app",
+        "ResourceType": "Microsoft.Web/sites",
+        "Kind": "app",
+        "ResourceGroupName": "test-rg",
+        "Location": "East US 2",
+        "SubscriptionId": "00000000-0000-0000-0000-000000000000",
+        "Tags": {
+            "businessUnit": "IT Operations"
+        },
+        "Properties": {
+            "name": "web-app",
+            "state": "Running",
+            "hostNames": [
+                "web-app.azurewebsites.net"
+            ],
+            "repositorySiteName": "web-app",
+            "owner": null,
+            "usageState": "Normal",
+            "enabled": true,
+            "adminEnabled": true,
+            "enabledHostNames": [
+                "web-app.azurewebsites.net",
+                "web-app.scm.azurewebsites.net"
+            ],
+            "siteProperties": {
+                "metadata": null,
+                "properties": [
+                    {
+                        "name": "LinuxFxVersion",
+                        "value": ""
+                    },
+                    {
+                        "name": "WindowsFxVersion",
+                        "value": null
+                    }
+                ],
+                "appSettings": null
+            },
+            "availabilityState": "Normal",
+            "sslCertificates": null,
+            "csrs": [],
+            "cers": null,
+            "siteMode": null,
+            "hostNameSslStates": [
+                {
+                    "name": "web-app.azurewebsites.net",
+                    "sslState": "Disabled",
+                    "ipBasedSslResult": null,
+                    "virtualIP": null,
+                    "thumbprint": null,
+                    "toUpdate": null,
+                    "toUpdateIpBasedSsl": null,
+                    "ipBasedSslState": "NotConfigured",
+                    "hostType": "Standard"
+                },
+                {
+                    "name": "web-app.scm.azurewebsites.net",
+                    "sslState": "Disabled",
+                    "ipBasedSslResult": null,
+                    "virtualIP": null,
+                    "thumbprint": null,
+                    "toUpdate": null,
+                    "toUpdateIpBasedSsl": null,
+                    "ipBasedSslState": "NotConfigured",
+                    "hostType": "Repository"
+                }
+            ],
+            "computeMode": null,
+            "serverFarm": null,
+            "serverFarmId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Web/serverfarms/app-service-plan",
+            "reserved": false,
+            "isXenon": false,
+            "hyperV": false,
+            "storageRecoveryDefaultState": "Running",
+            "contentAvailabilityState": "Normal",
+            "runtimeAvailabilityState": "Normal",
+            "siteConfig": null,
+            "trafficManagerHostNames": null,
+            "sku": "Standard",
+            "scmSiteAlsoStopped": false,
+            "targetSwapSlot": null,
+            "hostingEnvironment": null,
+            "hostingEnvironmentProfile": null,
+            "clientAffinityEnabled": false,
+            "clientCertEnabled": false,
+            "hostNamesDisabled": false,
+            "domainVerificationIdentifiers": null,
+            "kind": "app",
+            "containerSize": 0,
+            "dailyMemoryTimeQuota": 0,
+            "suspendedTill": null,
+            "siteDisabledReason": 0,
+            "functionExecutionUnitsCache": null,
+            "maxNumberOfWorkers": null,
+            "cloningInfo": null,
+            "hostingEnvironmentId": null,
+            "tags": null,
+            "resourceGroup": "test-rg",
+            "defaultHostName": "web-app.azurewebsites.net",
+            "slotSwapStatus": {
+                "sourceSlotName": "staging",
+                "destinationSlotName": "Production"
+            },
+            "httpsOnly": false
+        }
+    },
+    {
+        "Name": "web-app/staging",
+        "ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Web/sites/web-app/slots/staging",
+        "ResourceName": "web-app/staging",
+        "ResourceType": "Microsoft.Web/sites/slots",
+        "Kind": "app",
+        "ResourceGroupName": "test-rg",
+        "Location": "East US 2",
+        "SubscriptionId": "00000000-0000-0000-0000-000000000000",
+        "Tags": {
+            "businessUnit": "IT Operations"
+        },
+        "Properties": {
+            "name": "web-app(staging)",
+            "state": "Running",
+            "hostNames": [
+                "web-app-staging.azurewebsites.net"
+            ],
+            "repositorySiteName": "web-app",
+            "owner": null,
+            "usageState": "Normal",
+            "enabled": true,
+            "adminEnabled": true,
+            "enabledHostNames": [
+                "web-app-staging.azurewebsites.net",
+                "web-app-staging.scm.azurewebsites.net"
+            ],
+            "siteProperties": {
+                "metadata": null,
+                "properties": [
+                    {
+                        "name": "LinuxFxVersion",
+                        "value": ""
+                    },
+                    {
+                        "name": "WindowsFxVersion",
+                        "value": null
+                    }
+                ],
+                "appSettings": null
+            },
+            "availabilityState": "Normal",
+            "sslCertificates": null,
+            "csrs": [],
+            "cers": null,
+            "siteMode": null,
+            "hostNameSslStates": [
+                {
+                    "name": "web-app-staging.azurewebsites.net",
+                    "sslState": "Disabled",
+                    "ipBasedSslResult": null,
+                    "virtualIP": null,
+                    "thumbprint": null,
+                    "toUpdate": null,
+                    "toUpdateIpBasedSsl": null,
+                    "ipBasedSslState": "NotConfigured",
+                    "hostType": "Standard"
+                },
+                {
+                    "name": "web-app-staging.scm.azurewebsites.net",
+                    "sslState": "Disabled",
+                    "ipBasedSslResult": null,
+                    "virtualIP": null,
+                    "thumbprint": null,
+                    "toUpdate": null,
+                    "toUpdateIpBasedSsl": null,
+                    "ipBasedSslState": "NotConfigured",
+                    "hostType": "Repository"
+                }
+            ],
+            "computeMode": null,
+            "serverFarm": null,
+            "serverFarmId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Web/serverfarms/app-service-plan",
+            "reserved": false,
+            "isXenon": false,
+            "hyperV": false,
+            "storageRecoveryDefaultState": "Running",
+            "contentAvailabilityState": "Normal",
+            "runtimeAvailabilityState": "Normal",
+            "siteConfig": null,
+            "deploymentId": "web-app",
+            "trafficManagerHostNames": null,
+            "sku": "Standard",
+            "scmSiteAlsoStopped": false,
+            "targetSwapSlot": null,
+            "hostingEnvironment": null,
+            "hostingEnvironmentProfile": null,
+            "clientAffinityEnabled": false,
+            "clientCertEnabled": false,
+            "hostNamesDisabled": false,
+            "domainVerificationIdentifiers": null,
+            "kind": "app",
+            "containerSize": 0,
+            "dailyMemoryTimeQuota": 0,
+            "suspendedTill": null,
+            "siteDisabledReason": 0,
+            "functionExecutionUnitsCache": null,
+            "maxNumberOfWorkers": null,
+            "cloningInfo": null,
+            "hostingEnvironmentId": null,
+            "tags": null,
+            "resourceGroup": "test-rg",
+            "defaultHostName": "web-app-staging.azurewebsites.net",
+            "slotSwapStatus": {
+                "sourceSlotName": "staging",
+                "destinationSlotName": "Production"
+            },
+            "httpsOnly": true
+        }
+    }
+]

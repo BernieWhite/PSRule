@@ -1,0 +1,24 @@
+#
+# Azure DevOps pipeline
+#
+
+steps:
+
+# Install dependencies
+- powershell: ./pipeline-deps.ps1
+  displayName: 'Install dependencies'
+
+# Validate templates
+- powershell: ./validate-files.ps1
+  displayName: 'Validate files'
+
+# Publish pipeline results
+- task: PublishTestResults@2
+  displayName: 'Publish PSRule results'
+  inputs:
+    testRunTitle: 'PSRule'
+    testRunner: NUnit
+    testResultsFiles: 'reports/rule-report.xml'
+    mergeTestResults: true
+    publishRunAttachments: true
+  condition: succeededOrFailed()
