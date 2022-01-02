@@ -578,23 +578,23 @@ While it is possible to have additional sections, they will be ignored by the he
 
 # {{ Name of rule }}
 
-## SYNOPSIS
+
 
 {{ A brief summary of the rule }}
 
-## DESCRIPTION
+## Description
 
 {{ A detailed description of the rule }}
 
-## RECOMMENDATION
+## Recommendation
 
 {{ A detailed explanation of the steps required to pass the rule }}
 
-## NOTES
+## Notes
 
 {{ Additional information or configuration options }}
 
-## LINKS
+## Links
 
 {{ Links to external references }}
 </code></pre></div>
@@ -630,19 +630,17 @@ Wrapping the display name across multiple lines is not supported.</p>
 <div class="highlight"><pre><span></span><code># Use recommended name label
 </code></pre></div>
 <h3 id="synopsis-section">Synopsis section<a class="headerlink" href="#synopsis-section" title="Permanent link">#</a></h3>
-<p>The synopsis section is indicated by the heading <code>## SYNOPSIS</code>.
+<p>The synopsis section is indicated by the heading <code>`.
 Any text following the heading is interpreted by PSRule and included in output.
-The synopsis is displayed when using <code>Get-PSRule</code> and <code>Get-PSRuleHelp</code> cmdlets.</p>
+The synopsis is displayed when using</code>Get-PSRule<code>and</code>Get-PSRuleHelp` cmdlets.</p>
 <p>The <em>synopsis</em> is intended to be a brief description of the rule, over a single line.
 A good synopsis should convey the purpose of the rule.
 A more verbose description can be included in the <em>description</em> section.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code>## SYNOPSIS
-
-Deployments and services must use the app.kubernetes.io/name label.
+<div class="highlight"><pre><span></span><code>Deployments and services must use the app.kubernetes.io/name label.
 </code></pre></div>
 <h3 id="description-section">Description section<a class="headerlink" href="#description-section" title="Permanent link">#</a></h3>
-<p>The description section is indicated by the heading <code>## DESCRIPTION</code>.
+<p>The description section is indicated by the heading <code>## Description</code>.
 Any text following the heading is interpreted by PSRule and included in output.
 The description is displayed when using the <code>Get-PSRuleHelp</code> cmdlet.</p>
 <p>The <em>description</em> is intended to be a verbose description of the rule.
@@ -650,7 +648,7 @@ If your rule documentation needs to include background information include it he
 <p>PSRule supports semantic line breaks, and will automatically run together lines into a single paragraph.
 Use a blank line to separate paragraphs.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code>## DESCRIPTION
+<div class="highlight"><pre><span></span><code>## Description
 
 Kubernetes defines a common set of labels that are recommended for tool interoperability.
 These labels should be used to consistently apply standard metadata.
@@ -658,7 +656,7 @@ These labels should be used to consistently apply standard metadata.
 The `app.kubernetes.io/name` label should be used to specify the name of the application.
 </code></pre></div>
 <h3 id="recommendation-section">Recommendation section<a class="headerlink" href="#recommendation-section" title="Permanent link">#</a></h3>
-<p>The recommendation section is indicated by the heading <code>## RECOMMENDATION</code>.
+<p>The recommendation section is indicated by the heading <code>## Recommendation</code>.
 Any text following the heading is interpreted by PSRule and included in output.
 The recommendation is displayed when using the <code>Invoke-PSRule</code> and <code>Get-PSRuleHelp</code> cmdlets.</p>
 <p>The <em>recommendation</em> is intended to identify corrective actions that can be taken to address any failures.
@@ -667,12 +665,12 @@ Use the <em>links</em> section to include references to external sources.</p>
 <p>PSRule supports semantic line breaks, and will automatically run together lines into a single paragraph.
 Use a blank line to separate paragraphs.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code>## RECOMMENDATION
+<div class="highlight"><pre><span></span><code>## Recommendation
 
 Consider setting the recommended label `app.kubernetes.io/name` on deployment and service resources.
 </code></pre></div>
 <h3 id="notes-section">Notes section<a class="headerlink" href="#notes-section" title="Permanent link">#</a></h3>
-<p>The notes section is indicated by the heading <code>## NOTES</code>.
+<p>The notes section is indicated by the heading <code>## Notes</code>.
 Any text following the heading is interpreted by PSRule and included in pipeline output.
 Notes are excluded when formatting output as YAML and JSON.</p>
 <p>To view any included notes use the <code>Get-PSRuleHelp</code> cmdlet with the <code>-Full</code> switch.</p>
@@ -680,7 +678,7 @@ Notes are excluded when formatting output as YAML and JSON.</p>
 <p>PSRule supports semantic line breaks, and will automatically run together lines into a single paragraph.
 Use a blank line to separate paragraphs.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code>## NOTES
+<div class="highlight"><pre><span></span><code>## Notes
 
 The Kubernetes recommended labels include:
 
@@ -692,7 +690,7 @@ The Kubernetes recommended labels include:
 - `app.kubernetes.io/managed-by`
 </code></pre></div>
 <h3 id="links-section">Links section<a class="headerlink" href="#links-section" title="Permanent link">#</a></h3>
-<p>The links section is indicated by the heading <code>## LINKS</code>.
+<p>The links section is indicated by the heading <code>## Links</code>.
 Any markdown links following the heading are interpreted by PSRule and included in pipeline output.
 Links are excluded when formatting output as YAML and JSON.</p>
 <p>To view any included links use the <code>Get-PSRuleHelp</code> cmdlet with the <code>-Full</code> switch.</p>
@@ -702,7 +700,7 @@ Include each link on a separate line.
 To improve display in web rendered markdown, use a list of links by prefixing the line with <code>-</code>.</p>
 <p>Additional text such as <code>See additional information:</code> is useful for web rendered views, but ignored by PSRule.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code>## LINKS
+<div class="highlight"><pre><span></span><code>## Links
 
 - [Recommended Labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/)
 </code></pre></div>

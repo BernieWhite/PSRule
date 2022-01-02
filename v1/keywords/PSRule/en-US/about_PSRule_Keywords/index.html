@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#psrule_keywords" class="md-skip">
+        <a href="#keywords" class="md-skip">
           Skip to content
         </a>
       
@@ -328,25 +328,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#about_psrule_keywords" class="md-nav__link">
-    about_PSRule_Keywords
+  <a href="#description" class="md-nav__link">
+    Description
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#short-description" class="md-nav__link">
-    SHORT DESCRIPTION
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#long-description" class="md-nav__link">
-    LONG DESCRIPTION
-  </a>
-  
-    <nav class="md-nav" aria-label="LONG DESCRIPTION">
+    <nav class="md-nav" aria-label="Description">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -419,28 +405,14 @@
       
         <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
-    EXAMPLES
+    Examples
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    NOTE
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    SEE ALSO
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#keywords" class="md-nav__link">
-    KEYWORDS
+  <a href="#links" class="md-nav__link">
+    Links
   </a>
   
 </li>
@@ -462,11 +434,9 @@
 </a>
 
 
-<h1 id="psrule_keywords">PSRule_Keywords<a class="headerlink" href="#psrule_keywords" title="Permanent link">#</a></h1>
-<h2 id="about_psrule_keywords">about_PSRule_Keywords<a class="headerlink" href="#about_psrule_keywords" title="Permanent link">#</a></h2>
-<h2 id="short-description">SHORT DESCRIPTION<a class="headerlink" href="#short-description" title="Permanent link">#</a></h2>
+<h1 id="keywords">Keywords<a class="headerlink" href="#keywords" title="Permanent link">#</a></h1>
 <p>Describes the language keywords that can be used within PSRule rule definitions.</p>
-<h2 id="long-description">LONG DESCRIPTION<a class="headerlink" href="#long-description" title="Permanent link">#</a></h2>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
 <p>PSRule lets you define rules using PowerShell blocks.
 To define a rule use the <code>Rule</code> keyword.</p>
 <ul>
@@ -772,7 +742,7 @@ Each object will use the same recommendation.</p>
 </code></pre></div>
 <p>Output:</p>
 <p>None.</p>
-<h2 id="examples">EXAMPLES<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c"># Synopsis: App Service Plan has multiple instances</span>
 <span class="n">Rule</span> <span class="s1">&#39;appServicePlan.MinInstanceCount&#39;</span> <span class="n">-If</span> <span class="p">{</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">ResourceType</span> <span class="o">-eq</span> <span class="s1">&#39;Microsoft.Web/serverfarms&#39;</span> <span class="p">}</span> <span class="p">{</span>
     <span class="n">Recommend</span> <span class="s1">&#39;Use at least two (2) instances&#39;</span>
@@ -780,23 +750,9 @@ Each object will use the same recommendation.</p>
     <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Sku</span><span class="p">.</span><span class="n">capacity</span> <span class="o">-ge</span> <span class="n">2</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="note">NOTE<a class="headerlink" href="#note" title="Permanent link">#</a></h2>
-<p>An online version of this document is available at https://github.com/Microsoft/PSRule/blob/main/docs/keywords/PSRule/en-US/about_PSRule_Keywords.md.</p>
-<h2 id="see-also">SEE ALSO<a class="headerlink" href="#see-also" title="Permanent link">#</a></h2>
+<h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">#</a></h2>
 <ul>
-<li><a href="https://github.com/Microsoft/PSRule/blob/main/docs/commands/PSRule/en-US/Invoke-PSRule.md">Invoke-PSRule</a></li>
-</ul>
-<h2 id="keywords">KEYWORDS<a class="headerlink" href="#keywords" title="Permanent link">#</a></h2>
-<ul>
-<li>Rule</li>
-<li>Exists</li>
-<li>Match</li>
-<li>AnyOf</li>
-<li>AllOf</li>
-<li>Within</li>
-<li>TypeOf</li>
-<li>Reason</li>
-<li>Recommend</li>
+<li>[Invoke-PSRule]</li>
 </ul>
 
   <hr>
