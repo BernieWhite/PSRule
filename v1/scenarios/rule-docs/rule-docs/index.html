@@ -192,13 +192,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Getting started
       </a>
     </li>
@@ -210,11 +212,22 @@
   
 
 
-  <li class="md-tabs__item">
-    <a href="../../../commands/PSRule/en-US/PSRule/" class="md-tabs__link">
-      Reference
-    </a>
-  </li>
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../commands/PSRule/en-US/Assert-PSRule/" class="md-tabs__link">
+        Reference
+      </a>
+    </li>
+  
+
+  
 
       
     </ul>
@@ -281,12 +294,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -340,12 +355,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -382,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../azure-resources/azure-resources.md" class="md-nav__link">
+      <a href="../../azure-resources/azure-resources/" class="md-nav__link">
         Validate Azure resource configuration
       </a>
     </li>
@@ -396,7 +413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../azure-tags/azure-tags.md" class="md-nav__link">
+      <a href="../../azure-tags/azure-tags/" class="md-nav__link">
         Validate Azure resources tags
       </a>
     </li>
@@ -410,7 +427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../kubernetes-resources/kubernetes-resources.md" class="md-nav__link">
+      <a href="../../kubernetes-resources/kubernetes-resources/" class="md-nav__link">
         Validate Kubernetes resources
       </a>
     </li>
@@ -424,7 +441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../validation-pipeline/validation-pipeline.md" class="md-nav__link">
+      <a href="../../validation-pipeline/validation-pipeline/" class="md-nav__link">
         Using within continuous integration
       </a>
     </li>
@@ -438,7 +455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rule-module/rule-module.md" class="md-nav__link">
+      <a href="../../rule-module/rule-module/" class="md-nav__link">
         Packaging rules in a module
       </a>
     </li>
@@ -450,11 +467,175 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../rule-docs/rule-docs.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Writing rule help
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Writing rule help
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-inline-help" class="md-nav__link">
+    Using inline help
+  </a>
+  
+    <nav class="md-nav" aria-label="Using inline help">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comment-metadata" class="md-nav__link">
+    Comment metadata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommend-keyword" class="md-nav__link">
+    Recommend keyword
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reason-keyword" class="md-nav__link">
+    Reason keyword
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-markdown-documentation" class="md-nav__link">
+    Writing markdown documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing markdown documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-name" class="md-nav__link">
+    Display name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synopsis-section" class="md-nav__link">
+    Synopsis section
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description-section" class="md-nav__link">
+    Description section
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendation-section" class="md-nav__link">
+    Recommendation section
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes-section" class="md-nav__link">
+    Notes section
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#links-section" class="md-nav__link">
+    Links section
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localizing-documentation-files" class="md-nav__link">
+    Localizing documentation files
+  </a>
+  
+    <nav class="md-nav" aria-label="Localizing documentation files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-cultures" class="md-nav__link">
+    Using cultures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#culture-directory-search-path" class="md-nav__link">
+    Culture directory search path
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-information" class="md-nav__link">
+    More information
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -480,10 +661,404 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Commands
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Commands" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Commands
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/PSRule/" class="md-nav__link">
-        Reference
+      <a href="../../../commands/PSRule/en-US/Assert-PSRule/" class="md-nav__link">
+        Assert-PSRule
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../commands/PSRule/en-US/Export-PSRuleBaseline/" class="md-nav__link">
+        Export-PSRuleBaseline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../commands/PSRule/en-US/Get-PSRule/" class="md-nav__link">
+        Get-PSRule
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../commands/PSRule/en-US/Get-PSRuleBaseline/" class="md-nav__link">
+        Get-PSRuleBaseline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../commands/PSRule/en-US/Get-PSRuleHelp/" class="md-nav__link">
+        Get-PSRuleHelp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../commands/PSRule/en-US/Get-PSRuleTarget/" class="md-nav__link">
+        Get-PSRuleTarget
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../commands/PSRule/en-US/Invoke-PSRule/" class="md-nav__link">
+        Invoke-PSRule
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../commands/PSRule/en-US/New-PSRuleOption/" class="md-nav__link">
+        New-PSRuleOption
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../commands/PSRule/en-US/Set-PSRuleOption/" class="md-nav__link">
+        Set-PSRuleOption
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../commands/PSRule/en-US/Test-PSRuleTarget/" class="md-nav__link">
+        Test-PSRuleTarget
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/PSRule/en-US/about_PSRule_Assert/" class="md-nav__link">
+        Assert
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/PSRule/en-US/about_PSRule_Baseline/" class="md-nav__link">
+        Baseline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/PSRule/en-US/about_PSRule_Badges/" class="md-nav__link">
+        Badges
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/PSRule/en-US/about_PSRule_Conventions/" class="md-nav__link">
+        Conventions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/PSRule/en-US/about_PSRule_Docs/" class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/PSRule/en-US/about_PSRule_Expressions/" class="md-nav__link">
+        Expressions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../keywords/PSRule/en-US/about_PSRule_Keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/PSRule/en-US/about_PSRule_Options/" class="md-nav__link">
+        Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/PSRule/en-US/about_PSRule_Rules/" class="md-nav__link">
+        Rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/PSRule/en-US/about_PSRule_Selectors/" class="md-nav__link">
+        Selectors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/PSRule/en-US/about_PSRule_Variables/" class="md-nav__link">
+        Variables
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -978,6 +1553,41 @@ Rules can be redistributed individually (loose) or included in a module.</p>
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../rule-module/rule-module/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Packaging rules in a module" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Packaging rules in a module
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../commands/PSRule/en-US/Assert-PSRule/" class="md-footer__link md-footer__link--next" aria-label="Next: Assert-PSRule" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Assert-PSRule
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
