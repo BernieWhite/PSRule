@@ -1,0 +1,3358 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules.">
+      
+      
+        <meta name="author" content="Microsoft">
+      
+      
+        <link rel="canonical" href="https://microsoft.github.io/PSRule/0.1/concepts/PSRule/en-US/about_PSRule_Assert/">
+      
+      <link rel="icon" href="../../../../assets/ms_icon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+    
+    
+      
+        <title>Assertion helpers - PSRule</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.f7951f6f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:""}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+
+  <!-- Determine title -->
+  
+  
+    
+  
+
+  <!-- The image needs to have an absolute URL -->
+  
+
+  <!-- Open graph meta tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PSRule - Assertion helpers" />
+  <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
+  <meta property="og:url" content="https://microsoft.github.io/PSRule/0.1/concepts/PSRule/en-US/about_PSRule_Assert/" />
+  <meta property="og:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="640" />
+  <meta property="og:image:alt" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
+
+  <!-- Twitter meta tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@github" />
+  <meta name="twitter:title" content="PSRule - Assertion helpers" />
+  <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
+  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#assertion-helpers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+            <div class="md-banner__inner md-grid md-typeset">
+              
+  You're not viewing the latest version.
+  <a href="../../../../.."> 
+
+    <strong>Click here to go to latest.</strong>
+  </a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+          
+        </aside>
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="PSRule" class="md-header__button md-logo" aria-label="PSRule" data-md-component="logo">
+      
+  <img src="../../../../assets/ms_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PSRule
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Assertion helpers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/microsoft/PSRule/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../about/" class="md-tabs__link">
+        Getting started
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Reference
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../addon-modules/" class="md-tabs__link">
+        Addons
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="PSRule" class="md-nav__button md-logo" aria-label="PSRule" data-md-component="logo">
+      
+  <img src="../../../../assets/ms_icon.png" alt="logo">
+
+    </a>
+    PSRule
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/microsoft/PSRule/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Getting started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Overview" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../features/" class="md-nav__link">
+        Features
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../install-instructions/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Authoring rules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Authoring rules" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Authoring rules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../authoring/writing-rules/" class="md-nav__link">
+        Writing rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../authoring/storing-rules/" class="md-nav__link">
+        Storing and naming rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../authoring/packaging-rules/" class="md-nav__link">
+        Packaging rules in a module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../authoring/writing-rule-help/" class="md-nav__link">
+        Writing rule help
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../creating-your-pipeline/" class="md-nav__link">
+        Creating your pipeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../validating-locally/" class="md-nav__link">
+        Validating locally
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../scenarios/azure-resources/azure-resources/" class="md-nav__link">
+        Validate Azure resource configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../scenarios/azure-tags/azure-tags/" class="md-nav__link">
+        Azure resource tagging example
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../scenarios/kubernetes-resources/kubernetes-resources/" class="md-nav__link">
+        Kubernetes resource validation example
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          Concepts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Concepts" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../scenarios/validation-pipeline/validation-pipeline/" class="md-nav__link">
+        Using within continuous integration
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license-contributing/" class="md-nav__link">
+        License and contributing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_9">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Releases" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9_1" type="checkbox" id="__nav_2_9_1" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_9_1">
+          Change log
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Change log" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_9_1">
+          <span class="md-nav__icon md-icon"></span>
+          Change log
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../CHANGELOG-v1/" class="md-nav__link">
+        v1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../CHANGELOG-v0/" class="md-nav__link">
+        v0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../upgrade-notes/" class="md-nav__link">
+        Upgrade guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Assertion helpers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Assertion helpers
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-assertion-methods" class="md-nav__link">
+    Using assertion methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-names" class="md-nav__link">
+    Field names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contains" class="md-nav__link">
+    Contains
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    Count
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endswith" class="md-nav__link">
+    EndsWith
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fileheader" class="md-nav__link">
+    FileHeader
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filepath" class="md-nav__link">
+    FilePath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#greater" class="md-nav__link">
+    Greater
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#greaterorequal" class="md-nav__link">
+    GreaterOrEqual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasdefaultvalue" class="md-nav__link">
+    HasDefaultValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasfield" class="md-nav__link">
+    HasField
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasfields" class="md-nav__link">
+    HasFields
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasfieldvalue" class="md-nav__link">
+    HasFieldValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasjsonschema" class="md-nav__link">
+    HasJsonSchema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonschema" class="md-nav__link">
+    JsonSchema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in" class="md-nav__link">
+    In
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isarray" class="md-nav__link">
+    IsArray
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isboolean" class="md-nav__link">
+    IsBoolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isdatetime" class="md-nav__link">
+    IsDateTime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isinteger" class="md-nav__link">
+    IsInteger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#islower" class="md-nav__link">
+    IsLower
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isnumeric" class="md-nav__link">
+    IsNumeric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isstring" class="md-nav__link">
+    IsString
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isupper" class="md-nav__link">
+    IsUpper
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#less" class="md-nav__link">
+    Less
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lessorequal" class="md-nav__link">
+    LessOrEqual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match" class="md-nav__link">
+    Match
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nothasfield" class="md-nav__link">
+    NotHasField
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notin" class="md-nav__link">
+    NotIn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notmatch" class="md-nav__link">
+    NotMatch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notnull" class="md-nav__link">
+    NotNull
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notwithinpath" class="md-nav__link">
+    NotWithinPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null" class="md-nav__link">
+    Null
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nullorempty" class="md-nav__link">
+    NullOrEmpty
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typeof" class="md-nav__link">
+    TypeOf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setof" class="md-nav__link">
+    SetOf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#startswith" class="md-nav__link">
+    StartsWith
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subset" class="md-nav__link">
+    Subset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    Version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#withinpath" class="md-nav__link">
+    WithinPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    Advanced usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downstream-issues" class="md-nav__link">
+    Downstream issues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authoring-assertion-methods" class="md-nav__link">
+    Authoring assertion methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregating-assertion-methods" class="md-nav__link">
+    Aggregating assertion methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Baseline/" class="md-nav__link">
+        Baselines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Badges/" class="md-nav__link">
+        Badges
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Conventions/" class="md-nav__link">
+        Conventions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Docs/" class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Expressions/" class="md-nav__link">
+        Expressions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../keywords/PSRule/en-US/about_PSRule_Keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Options/" class="md-nav__link">
+        Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Rules/" class="md-nav__link">
+        Rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Selectors/" class="md-nav__link">
+        Selectors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Variables/" class="md-nav__link">
+        Variables
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Addons
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Addons" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Addons
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../addon-modules/" class="md-nav__link">
+        Additional modules
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-assertion-methods" class="md-nav__link">
+    Using assertion methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-names" class="md-nav__link">
+    Field names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contains" class="md-nav__link">
+    Contains
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    Count
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endswith" class="md-nav__link">
+    EndsWith
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fileheader" class="md-nav__link">
+    FileHeader
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filepath" class="md-nav__link">
+    FilePath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#greater" class="md-nav__link">
+    Greater
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#greaterorequal" class="md-nav__link">
+    GreaterOrEqual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasdefaultvalue" class="md-nav__link">
+    HasDefaultValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasfield" class="md-nav__link">
+    HasField
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasfields" class="md-nav__link">
+    HasFields
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasfieldvalue" class="md-nav__link">
+    HasFieldValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasjsonschema" class="md-nav__link">
+    HasJsonSchema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonschema" class="md-nav__link">
+    JsonSchema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in" class="md-nav__link">
+    In
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isarray" class="md-nav__link">
+    IsArray
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isboolean" class="md-nav__link">
+    IsBoolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isdatetime" class="md-nav__link">
+    IsDateTime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isinteger" class="md-nav__link">
+    IsInteger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#islower" class="md-nav__link">
+    IsLower
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isnumeric" class="md-nav__link">
+    IsNumeric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isstring" class="md-nav__link">
+    IsString
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isupper" class="md-nav__link">
+    IsUpper
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#less" class="md-nav__link">
+    Less
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lessorequal" class="md-nav__link">
+    LessOrEqual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match" class="md-nav__link">
+    Match
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nothasfield" class="md-nav__link">
+    NotHasField
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notin" class="md-nav__link">
+    NotIn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notmatch" class="md-nav__link">
+    NotMatch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notnull" class="md-nav__link">
+    NotNull
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notwithinpath" class="md-nav__link">
+    NotWithinPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null" class="md-nav__link">
+    Null
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nullorempty" class="md-nav__link">
+    NullOrEmpty
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typeof" class="md-nav__link">
+    TypeOf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setof" class="md-nav__link">
+    SetOf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#startswith" class="md-nav__link">
+    StartsWith
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subset" class="md-nav__link">
+    Subset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    Version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#withinpath" class="md-nav__link">
+    WithinPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    Advanced usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downstream-issues" class="md-nav__link">
+    Downstream issues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authoring-assertion-methods" class="md-nav__link">
+    Authoring assertion methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregating-assertion-methods" class="md-nav__link">
+    Aggregating assertion methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/microsoft/PSRule/blob/main/docs/concepts/PSRule/en-US/about_PSRule_Assert.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="assertion-helpers">Assertion helpers<a class="headerlink" href="#assertion-helpers" title="Permanent link">#</a></h1>
+<p>Describes the assertion helper that can be used within PSRule rule definitions.</p>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
+<p>PSRule includes an assertion helper exposed as a built-in variable <code>$Assert</code>.
+The <code>$Assert</code> object provides a consistent set of methods to evaluate objects.</p>
+<p>Each <code>$Assert</code> method returns an <code>AssertResult</code> object that contains the result of the assertion.</p>
+<p>The following built-in assertion methods are provided:</p>
+<ul>
+<li><a href="#contains">Contains</a> - The field value must contain at least one of the strings.</li>
+<li><a href="#count">Count</a> - The field value must contain the specified number of items.</li>
+<li><a href="#endswith">EndsWith</a> - The field value must match at least one suffix.</li>
+<li><a href="#fileheader">FileHeader</a> - The file must contain a comment header.</li>
+<li><a href="#filepath">FilePath</a> - The file path must exist.</li>
+<li><a href="#greater">Greater</a> - The field value must be greater.</li>
+<li><a href="#greaterorequal">GreaterOrEqual</a> - The field value must be greater or equal to.</li>
+<li><a href="#hasdefaultvalue">HasDefaultValue</a> - The object should not have the field or the field value is set to the default value.</li>
+<li><a href="#hasfield">HasField</a> - The object must have any of the specified fields.</li>
+<li><a href="#hasfields">HasFields</a> - The object must have all of the specified fields.</li>
+<li><a href="#hasfieldvalue">HasFieldValue</a> - The object must have the specified field and that field is not empty.</li>
+<li><a href="#hasjsonschema">HasJsonSchema</a> - The object must reference a JSON schema with the <code>$schema</code> field.</li>
+<li><a href="#in">In</a> - The field value must be included in the set.</li>
+<li><a href="#isarray">IsArray</a> - The field value must be an array.</li>
+<li><a href="#isboolean">IsBoolean</a> - The field value must be a boolean.</li>
+<li><a href="#isdatetime">IsDateTime</a> - The field value must be a DateTime.</li>
+<li><a href="#isinteger">IsInteger</a> - The field value must be an integer.</li>
+<li><a href="#islower">IsLower</a> - The field value must include only lowercase characters.</li>
+<li><a href="#isnumeric">IsNumeric</a> - The field value must be a numeric type.</li>
+<li><a href="#isstring">IsString</a> - The field value must be a string.</li>
+<li><a href="#isupper">IsUpper</a> - The field value must include only uppercase characters.</li>
+<li><a href="#jsonschema">JsonSchema</a> - The object must validate successfully against a JSON schema.</li>
+<li><a href="#less">Less</a> - The field value must be less.</li>
+<li><a href="#lessorequal">LessOrEqual</a> - The field value must be less or equal to.</li>
+<li><a href="#match">Match</a> - The field value matches a regular expression pattern.</li>
+<li><a href="#nothasfield">NotHasField</a> - The object must not have any of the specified fields.</li>
+<li><a href="#notin">NotIn</a> - The field value must not be included in the set.</li>
+<li><a href="#notmatch">NotMatch</a> - The field value does not match a regular expression pattern.</li>
+<li><a href="#notnull">NotNull</a> - The field value must not be null.</li>
+<li><a href="#notwithinpath">NotWithinPath</a> - The field must not be within the specified path.</li>
+<li><a href="#null">Null</a> - The field value must not exist or be null.</li>
+<li><a href="#nullorempty">NullOrEmpty</a> - The object must not have the specified field or it must be empty.</li>
+<li><a href="#typeof">TypeOf</a> - The field value must be of the specified type.</li>
+<li><a href="#setof">SetOf</a> - The field value must match a set of specified values.</li>
+<li><a href="#startswith">StartsWith</a> - The field value must match at least one prefix.</li>
+<li><a href="#subset">Subset</a> - The field value must include a set of specified values.</li>
+<li><a href="#version">Version</a> - The field value must be a semantic version string.</li>
+<li><a href="#withinpath">WithinPath</a> - The field value must be within the specified path.</li>
+</ul>
+<p>The <code>$Assert</code> variable can only be used within a rule definition block or script pre-conditions.</p>
+<h3 id="using-assertion-methods">Using assertion methods<a class="headerlink" href="#using-assertion-methods" title="Permanent link">#</a></h3>
+<p>An assertion method can be used like other methods in PowerShell. i.e. <code>$Assert.methodName(parameters)</code>.</p>
+<p>Assertion methods use the following standard pattern:</p>
+<ul>
+<li>The first parameter is <em>always</em> the input object of type <code>PSObject</code>, additional parameters can be included based on the functionality required by the method.<ul>
+<li>In many cases the input object will be <code>$TargetObject</code>, however assertion methods must not assume that <code>$TargetObject</code> will be used.</li>
+<li>Assertion methods must accept a <code>$Null</code> input object.</li>
+</ul>
+</li>
+<li>Assertion methods return the <code>AssertResult</code> object that is interpreted by the rule pipeline.</li>
+</ul>
+<p>Some assertion methods may overlap or provide similar functionality to built-in keywords.
+Where you have the choice, use built-in keywords.
+Use assertion methods for advanced cases or increased flexibility.</p>
+<p>In the following example, <code>Assert.HasFieldValue</code> asserts that <code>$TargetObject</code> should have a field named <code>Type</code> with a non-empty value.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Assert.HasTypeField&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>To find perform multiple assertions use.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Assert.HasRequiredFields&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="field-names">Field names<a class="headerlink" href="#field-names" title="Permanent link">#</a></h3>
+<p>Many of the built-in assertion methods accept a field name.
+The field name is an expression that traverses object properties, keys or indexes of the <em>input object</em>.</p>
+<p>The field name can contain:</p>
+<ul>
+<li>Property names for PSObjects or .NET objects.</li>
+<li>Keys for hash table or dictionaries.</li>
+<li>Indexes for arrays or collections.</li>
+</ul>
+<p>For example:</p>
+<ul>
+<li><code>.</code> refers to <em>input object</em> itself.</li>
+<li><code>Name</code> or <code>.Name</code> refers to the name property/ key of the <em>input object</em>.</li>
+<li><code>Properties.enabled</code> refers to the enabled property under the Properties property.</li>
+<li><code>Tags.env</code> refers to the env key under a hash table property of the <em>input object</em>.</li>
+<li><code>Properties.securityRules[0].name</code> references to the name property of the first security rule.</li>
+</ul>
+<h3 id="contains">Contains<a class="headerlink" href="#contains" title="Permanent link">#</a></h3>
+<p>The <code>Contains</code> assertion method checks the field value contains the specified string.
+Optionally a case-sensitive compare can be used, however case is ignored by default.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+<li><code>text</code> - A string or an array of strings to compare the field value with.
+Only one string must match.
+When an empty array of strings is specified or text is an empty string, <code>Contains</code> always passes.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field value.
+Case is ignored by default.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The parameter 'text' is null.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is not a string.</em></li>
+<li><em>The field '{0}' does not contain '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Contains&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;prod&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;prod&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="count">Count<a class="headerlink" href="#count" title="Permanent link">#</a></h3>
+<p>The <code>Count</code> assertion method checks the field value contains the specified number of items.
+The field value must be an array or collection.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check. This is a case insensitive compare.</li>
+<li><code>count</code> - The number of items that the field value must contain.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field '{0}' is not enumerable.</em></li>
+<li><em>The field '{0}' has '{1}' items instead of '{2}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Count&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Count</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;items&#39;</span><span class="p">,</span> <span class="n">2</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="endswith">EndsWith<a class="headerlink" href="#endswith" title="Permanent link">#</a></h3>
+<p>The <code>EndsWith</code> assertion method checks the field value ends with the specified suffix.
+Optionally a case-sensitive compare can be used, however case is ignored by default.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+<li><code>suffix</code> - A suffix or an array of suffixes to compare the field value with.
+Only one suffix must match.
+When an empty array of suffixes is specified or suffix is an empty string, <code>EndsWith</code> always passes.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field value.
+Case is ignored by default.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The parameter 'suffix' is null.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is not a string.</em></li>
+<li><em>The field '{0}' does not end with '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;EndsWith&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">EndsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;eus&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">EndsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="s1">&#39;web&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="fileheader">FileHeader<a class="headerlink" href="#fileheader" title="Permanent link">#</a></h3>
+<p>The <code>FileHeader</code> assertion method checks a file for a comment header.
+When comparing the file header, the format of line comments are automatically detected by file extension.
+Single line comments are supported. Multi-line comments are not supported.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field containing a valid file path.</li>
+<li><code>header</code> - One or more lines of a header to compare with file contents.</li>
+<li><code>prefix</code> (optional) - An optional comment prefix for each line.
+By default a comment prefix will automatically detected based on file extension.
+When set, detection by file extension is skipped.</li>
+</ul>
+<p>Prefix detection for line comments is supported with the following file extensions:</p>
+<ul>
+<li><code>.bicep</code>, <code>.cs</code>, <code>.csx</code> <code>.ts</code>, <code>.js</code>, <code>.jsx</code>,
+<code>.fs</code>, <code>.go</code>, <code>.groovy</code>, <code>.php</code>, <code>.cpp</code>, <code>.h</code>,
+<code>.java</code>, <code>.json</code>, <code>.jsonc</code>, <code>.scala</code>, <code>Jenkinsfile</code> - Use a prefix of (<code>//</code>).</li>
+<li><code>.ps1</code>, <code>.psd1</code>, <code>.psm1</code>, <code>.yaml</code>, <code>.yml</code>,
+<code>.r</code>, <code>.py</code>, <code>.sh</code>, <code>.tf</code>, <code>.tfvars</code>, <code>.gitignore</code>,
+<code>.pl</code>, <code>.rb</code>, <code>Dockerfile</code> - Use a prefix of (<code>#</code>).</li>
+<li><code>.sql</code>, <code>.lau</code> - Use a prefix of (<code>--</code>).</li>
+<li><code>.bat</code>, <code>.cmd</code> - Use a prefix of (<code>::</code>).</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is not a string.</em></li>
+<li><em>The file '{0}' does not exist.</em></li>
+<li><em>The header was not set.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;FileHeader&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FileHeader</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span>
+        <span class="s1">&#39;Copyright (c) Microsoft Corporation.&#39;</span>
+        <span class="s1">&#39;Licensed under the MIT License.&#39;</span>
+    <span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="filepath">FilePath<a class="headerlink" href="#filepath" title="Permanent link">#</a></h3>
+<p>The <code>FilePath</code> assertion method checks the file exists.
+Checks use file system case-sensitivity rules.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field containing a file path.</li>
+<li><code>suffix</code> (optional) - Additional file path suffixes to append.
+When specified each suffix is combined with the file path.
+Only one full file path must be a valid file for the assertion method to pass.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is not a string.</em></li>
+<li><em>The file '{0}' does not exist.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;FilePath&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;CHANGELOG.md&#39;</span><span class="p">));</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;LICENSE&#39;</span><span class="p">,</span> <span class="s1">&#39;LICENSE.txt&#39;</span><span class="p">));</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;CODE_OF_CONDUCT.md&#39;</span><span class="p">));</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;CONTRIBUTING.md&#39;</span><span class="p">));</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;SECURITY.md&#39;</span><span class="p">));</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;README.md&#39;</span><span class="p">));</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;.github/CODEOWNERS&#39;</span><span class="p">));</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;.github/PULL_REQUEST_TEMPLATE.md&#39;</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="greater">Greater<a class="headerlink" href="#greater" title="Permanent link">#</a></h3>
+<p>The <code>Greater</code> assertion method checks the field value is greater than the specified value.
+The field value can either be an integer, float, array, or string.
+When the field value is:</p>
+<ul>
+<li>An integer or float, a numerical comparison is used.</li>
+<li>An array, the number of elements is compared.</li>
+<li>A string, the length of the string is compared.</li>
+<li>A DateTime, the number of days from the current time is compared.</li>
+</ul>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check. This is a case insensitive compare.</li>
+<li><code>value</code> - A integer to compare the field value against.</li>
+<li><code>convert</code> (optional) - Convert numerical strings and use a numerical comparison instead of using string length.
+By default the string length is compared.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The value '{0}' was not &gt; '{1}'.</em></li>
+<li><em>The field value '{0}' can not be compared with '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Greater&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Greater</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">3</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="greaterorequal">GreaterOrEqual<a class="headerlink" href="#greaterorequal" title="Permanent link">#</a></h3>
+<p>The <code>GreaterOrEqual</code> assertion method checks the field value is greater or equal to the specified value.
+The field value can either be an integer, float, array, or string.
+When the field value is:</p>
+<ul>
+<li>An integer or float, a numerical comparison is used.</li>
+<li>An array, the number of elements is compared.</li>
+<li>A string, the length of the string is compared.</li>
+<li>A DateTime, the number of days from the current time is compared.</li>
+</ul>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check. This is a case insensitive compare.</li>
+<li><code>value</code> - A integer to compare the field value against.</li>
+<li><code>convert</code> (optional) - Convert numerical strings and use a numerical comparison instead of using string length.
+By default the string length is compared.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The value '{0}' was not &gt;= '{1}'.</em></li>
+<li><em>The field value '{0}' can not be compared with '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;GreaterOrEqual&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">GreaterOrEqual</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">3</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="hasdefaultvalue">HasDefaultValue<a class="headerlink" href="#hasdefaultvalue" title="Permanent link">#</a></h3>
+<p>The <code>HasDefaultValue</code> assertion method check that the field does not exist or the field value is set to the default value.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+<li><code>defaultValue</code> - The expected value if the field exists.</li>
+</ul>
+<p>This assertion will pass if:</p>
+<ul>
+<li>The field does not exist.</li>
+<li>The field value is set to <code>defaultValue</code>.</li>
+</ul>
+<p>This assertion will fail if:</p>
+<ul>
+<li>The field value is set to a value different from <code>defaultValue</code>.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' is set to '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;HasDefaultValue&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasDefaultValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Properties.osProfile.linuxConfiguration.provisionVMAgent&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="hasfield">HasField<a class="headerlink" href="#hasfield" title="Permanent link">#</a></h3>
+<p>The <code>HasField</code> assertion method checks the object has any of the specified fields.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of one or more fields to check.
+By default, a case insensitive compare is used.
+If more than one field is specified, only one must exist.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field name.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;HasField&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="s1">&#39;tag.Env&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="hasfields">HasFields<a class="headerlink" href="#hasfields" title="Permanent link">#</a></h3>
+<p>The <code>HasFields</code> assertion method checks the object has all of the specified fields.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified fields.</li>
+<li><code>field</code> - The name of one or more fields to check.
+By default, a case insensitive compare is used.
+If more than one field is specified, all fields must exist.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field name.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;HasFields&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFields</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFields</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFields</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="s1">&#39;tag.Env&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="hasfieldvalue">HasFieldValue<a class="headerlink" href="#hasfieldvalue" title="Permanent link">#</a></h3>
+<p>The <code>HasFieldValue</code> assertion method checks the field value of the object is not empty.</p>
+<p>A field value is empty if any of the following are true:</p>
+<ul>
+<li>The field does not exist.</li>
+<li>The field value is <code>$Null</code>.</li>
+<li>The field value is an empty array or collection.</li>
+<li>The field value is an empty string <code>''</code>.</li>
+</ul>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check. This is a case insensitive compare.</li>
+<li><code>expectedValue</code> (optional) - Check that the field value is set to a specific value.
+To check <code>$Null</code> use <code>NullOrEmpty</code> instead.
+If <code>expectedValue</code> is <code>$Null</code> the field value will not be compared.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The value of '{0}' is null or empty.</em></li>
+<li><em>The field '{0}' is set to '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;HasFieldValue&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="s1">&#39;production&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="hasjsonschema">HasJsonSchema<a class="headerlink" href="#hasjsonschema" title="Permanent link">#</a></h3>
+<p>The <code>HasJsonSchema</code> assertion method determines if the input object has a <code>$schema</code> property defined.
+If the <code>$schema</code> property is defined, it must not be empty and match one of the supplied schemas.
+If a trailing <code>#</code> is specified it is ignored from the <code>$schema</code> property and <code>uri</code> parameter below.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being compared.</li>
+<li><code>uri</code> - Optional.
+When specified, the object being compared must have a <code>$schema</code> property set to one of the specified schemas.</li>
+<li><code>ignoreScheme</code> - Optional.
+By default, <code>ignoreScheme</code> is <code>$False</code>.
+When <code>$True</code>, the schema will match if <code>http</code> or <code>https</code> is specified.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The field '$schema' does not exist.</em></li>
+<li><em>The field value '$schema' is not a string.</em></li>
+<li><em>The value of '$schema' is null or empty.</em></li>
+<li><em>None of the specified schemas match '{0}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;HasFieldValue&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasJsonSchema</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasJsonSchema</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s2">&quot;http://json-schema.org/draft-07/schema`#&quot;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasJsonSchema</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s2">&quot;https://json-schema.org/draft-07/schema&quot;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="jsonschema">JsonSchema<a class="headerlink" href="#jsonschema" title="Permanent link">#</a></h3>
+<p>The <code>JsonSchema</code> assertion method compares the input object against a defined JSON schema.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being compared against the JSON schema.</li>
+<li><code>uri</code> - A URL or file path to a JSON schema file formatted as UTF-8.
+Either a file path or URL can be used to specify the location of the schema file.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'uri' is null or empty.</em></li>
+<li><em>The JSON schema '{0}' could not be found.</em></li>
+<li><em>Failed schema validation on {0}. {1}</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;JsonSchema&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">JsonSchema</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tests/PSRule.Tests/FromFile.Json.schema.json&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="in">In<a class="headerlink" href="#in" title="Permanent link">#</a></h3>
+<p>The <code>In</code> assertion method checks the field value is included in a set of values.
+The field value can either be an integer, float, array, or string.
+When the field value is an array, only one item must be included in the set.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+  This is a case insensitive compare.</li>
+<li><code>values</code> - An array of values that the field value is compared against.
+  When an empty array is specified, <code>In</code> will always fail.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field value.
+  Case is ignored by default.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The parameter 'values' is null.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' was not included in the set.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;In&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="k">In</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Sku.tier&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;PremiumV2&#39;</span><span class="p">,</span> <span class="s1">&#39;Premium&#39;</span><span class="p">,</span> <span class="s1">&#39;Standard&#39;</span><span class="p">))</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="k">In</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Sku.tier&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;PremiumV2&#39;</span><span class="p">,</span> <span class="s1">&#39;Premium&#39;</span><span class="p">,</span> <span class="s1">&#39;Standard&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="isarray">IsArray<a class="headerlink" href="#isarray" title="Permanent link">#</a></h3>
+<p>The <code>IsArray</code> assertion method checks the field value is an array type.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is null.</em></li>
+<li><em>The field value '{1}' of type {0} is not [array].</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsArray&#39;</span> <span class="p">{</span>
+    <span class="c"># Require Value1 to be an array</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsArray</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="isboolean">IsBoolean<a class="headerlink" href="#isboolean" title="Permanent link">#</a></h3>
+<p>The <code>IsBoolean</code> assertion method checks the field value is a boolean type.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+<li><code>convert</code> (optional) - Try to convert strings.
+By default strings are not converted.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is null.</em></li>
+<li><em>The field value '{1}' of type {0} is not [bool].</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsBoolean&#39;</span> <span class="p">{</span>
+    <span class="c"># Require Value1 to be a boolean</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsBoolean</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
+
+    <span class="c"># Require Value1 to be a boolean or a boolean string</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsBoolean</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="isdatetime">IsDateTime<a class="headerlink" href="#isdatetime" title="Permanent link">#</a></h3>
+<p>The <code>IsBoolean</code> assertion method checks the field value is a DateTime type.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+<li><code>convert</code> (optional) - Try to convert strings.
+By default strings are not converted.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is null.</em></li>
+<li><em>The field value '{1}' of type {0} is not [DateTime].</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsBoolean&#39;</span> <span class="p">{</span>
+    <span class="c"># Require Value1 to be a DateTime</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsDateTime</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
+
+    <span class="c"># Require Value1 to be a DateTime or a DateTime string</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsDateTime</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="isinteger">IsInteger<a class="headerlink" href="#isinteger" title="Permanent link">#</a></h3>
+<p>The <code>IsInteger</code> assertion method checks the field value is a integer type.
+The following types are considered integer types <code>int</code>, <code>long</code>, <code>byte</code>.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+<li><code>convert</code> (optional) - Try to convert strings.
+By default strings are not converted.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is null.</em></li>
+<li><em>The field value '{1}' of type {0} is not an integer.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsInteger&#39;</span> <span class="p">{</span>
+    <span class="c"># Require Value1 to be an integer</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsInteger</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
+
+    <span class="c"># Require Value1 to be an integer or a integer string</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsInteger</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="islower">IsLower<a class="headerlink" href="#islower" title="Permanent link">#</a></h3>
+<p>The <code>IsLower</code> assertion method checks the field value uses only lowercase characters.
+Non-letter characters are ignored by default and will pass.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check. This is a case insensitive compare.</li>
+<li><code>requireLetters</code> (optional) - Require each character to be lowercase letters only.
+Non-letter characters are ignored by default.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is not a string.</em></li>
+<li><em>The value '{0}' does not contain only lowercase characters.</em></li>
+<li><em>The value '{0}' does not contain only letters.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsLower&#39;</span> <span class="p">{</span>
+    <span class="c"># Require Name to be lowercase</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsLower</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+
+    <span class="c"># Require Name to only contain lowercase letters</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsLower</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="isnumeric">IsNumeric<a class="headerlink" href="#isnumeric" title="Permanent link">#</a></h3>
+<p>The <code>IsNumeric</code> assertion method checks the field value is a numeric type.
+The following types are considered numeric types <code>int</code>, <code>long</code>, <code>float</code>, <code>byte</code>, <code>double</code>.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+<li><code>convert</code> (optional) - Try to convert numerical strings.
+By default strings are not converted.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is null.</em></li>
+<li><em>The field value '{1}' of type {0} is not numeric.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsNumeric&#39;</span> <span class="p">{</span>
+    <span class="c"># Require Value1 to be numeric</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsNumeric</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
+
+    <span class="c"># Require Value1 to be numeric or a numerical string</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsNumeric</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="isstring">IsString<a class="headerlink" href="#isstring" title="Permanent link">#</a></h3>
+<p>The <code>IsString</code> assertion method checks the field value is a string type.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is null.</em></li>
+<li><em>The field value '{1}' of type {0} is not [string].</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsString&#39;</span> <span class="p">{</span>
+    <span class="c"># Require Value1 to be a string</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsString</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="isupper">IsUpper<a class="headerlink" href="#isupper" title="Permanent link">#</a></h3>
+<p>The <code>IsUpper</code> assertion method checks the field value uses only uppercase characters.
+Non-letter characters are ignored by default and will pass.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check. This is a case insensitive compare.</li>
+<li><code>requireLetters</code> (optional) - Require each character to be uppercase letters only.
+Non-letter characters are ignored by default.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is not a string.</em></li>
+<li><em>The value '{0}' does not contain only uppercase characters.</em></li>
+<li><em>The value '{0}' does not contain only letters.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsUpper&#39;</span> <span class="p">{</span>
+    <span class="c"># Require Name to be uppercase</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsUpper</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+
+    <span class="c"># Require Name to only contain uppercase letters</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsUpper</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="less">Less<a class="headerlink" href="#less" title="Permanent link">#</a></h3>
+<p>The <code>Less</code> assertion method checks the field value is less than the specified value.
+The field value can either be an integer, float, array, or string.
+When the field value is:</p>
+<ul>
+<li>An integer or float, a numerical comparison is used.</li>
+<li>An array, the number of elements is compared.</li>
+<li>A string, the length of the string is compared.</li>
+<li>A DateTime, the number of days from the current time is compared.</li>
+</ul>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check. This is a case insensitive compare.</li>
+<li><code>value</code> - A integer to compare the field value against.</li>
+<li><code>convert</code> (optional) - Convert numerical strings and use a numerical comparison instead of using string length.
+By default the string length is compared.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The value '{0}' was not &lt; '{1}'.</em></li>
+<li><em>The field value '{0}' can not be compared with '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Less&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Less</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">3</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="lessorequal">LessOrEqual<a class="headerlink" href="#lessorequal" title="Permanent link">#</a></h3>
+<p>The <code>LessOrEqual</code> assertion method checks the field value is less or equal to the specified value.
+The field value can either be an integer, float, array, or string.
+When the field value is:</p>
+<ul>
+<li>An integer or float, a numerical comparison is used.</li>
+<li>An array, the number of elements is compared.</li>
+<li>A string, the length of the string is compared.</li>
+<li>A DateTime, the number of days from the current time is compared.</li>
+</ul>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check. This is a case insensitive compare.</li>
+<li><code>value</code> - A integer to compare the field value against.</li>
+<li><code>convert</code> (optional) - Convert numerical strings and use a numerical comparison instead of using string length.
+By default the string length is compared.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The value '{0}' was not &lt;= '{1}'.</em></li>
+<li><em>The field value '{0}' can not be compared with '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;LessOrEqual&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">LessOrEqual</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">3</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="match">Match<a class="headerlink" href="#match" title="Permanent link">#</a></h3>
+<p>The <code>Match</code> assertion method checks the field value matches a regular expression pattern.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check. This is a case insensitive compare.</li>
+<li><code>pattern</code> - A regular expression pattern to match.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field value.
+Case is ignored by default.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is not a string.</em></li>
+<li><em>The field value '{0}' does not match the pattern '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Match&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Match</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;^[a-z]*$&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Match</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;^[a-z]*$&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="nothasfield">NotHasField<a class="headerlink" href="#nothasfield" title="Permanent link">#</a></h3>
+<p>The <code>NotHasField</code> assertion method checks the object does not have any of the specified fields.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of one or more fields to check.
+By default, a case insensitive compare is used.
+If more than one field is specified, all must not exist.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field name.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' exists.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotHasField&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotHasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotHasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotHasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="s1">&#39;tag.Env&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="notin">NotIn<a class="headerlink" href="#notin" title="Permanent link">#</a></h3>
+<p>The <code>NotIn</code> assertion method checks the field value is not in a set of values.
+The field value can either be an integer, array, float, or string.
+When the field value is an array, none of the items must be included in the set.
+If the field does not exist at all, it is not in the set and passes.
+To check the field exists combine this assertion method with <code>HasFieldValue</code>.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check. This is a case insensitive compare.</li>
+<li><code>values</code> - An array values that the field value is compared against.
+When an empty array is specified, <code>NotIn</code> will always pass.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field value.
+Case is ignored by default.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The parameter 'values' is null.</em></li>
+<li><em>The field value '{0}' was in the set.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;In&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotIn</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Sku.tier&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;Free&#39;</span><span class="p">,</span> <span class="s1">&#39;Shared&#39;</span><span class="p">,</span> <span class="s1">&#39;Basic&#39;</span><span class="p">))</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotIn</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Sku.tier&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;Free&#39;</span><span class="p">,</span> <span class="s1">&#39;Shared&#39;</span><span class="p">,</span> <span class="s1">&#39;Basic&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="notmatch">NotMatch<a class="headerlink" href="#notmatch" title="Permanent link">#</a></h3>
+<p>The <code>NotMatch</code> assertion method checks the field value does not match a regular expression pattern.
+If the field does not exist at all, it does not match and passes.
+To check the field exists combine this assertion method with <code>HasFieldValue</code>.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check. This is a case insensitive compare.</li>
+<li><code>pattern</code> - A regular expression pattern to match.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field value.
+Case is ignored by default.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field value '{0}' is not a string.</em></li>
+<li><em>The field value '{0}' matches the pattern '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotMatch&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotMatch</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;^[a-z]*$&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotMatch</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;^[a-z]*$&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="notnull">NotNull<a class="headerlink" href="#notnull" title="Permanent link">#</a></h3>
+<p>The <code>NotNull</code> assertion method checks the field value of the object is not null.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is null.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotNull&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotNull</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotNull</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="notwithinpath">NotWithinPath<a class="headerlink" href="#notwithinpath" title="Permanent link">#</a></h3>
+<p>The <code>NotWithinPath</code> assertion method checks the file is not within a specified path.
+Checks use file system case-sensitivity rules by default.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field containing a file path.
+When the field is <code>InputFileInfo</code> or <code>FileInfo</code>, PSRule will automatically resolve the file path.</li>
+<li><code>path</code> - An array of one or more directory paths to check.
+Only one path must match.</li>
+<li><code>caseSensitive</code> (optional) - Determines if case-sensitive path matching is used.
+This can be set to <code>$True</code> or <code>$False</code>.
+When not set or <code>$Null</code>, the case-sensitivity rules of the working path file system will be used.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The parameter 'path' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The file '{0}' is within the path '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotWithinPath&#39;</span> <span class="p">{</span>
+    <span class="c"># The file must not be within either policy/ or security/ sub-directories.</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotWithinPath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;policy/&#39;</span><span class="p">,</span> <span class="s1">&#39;security/&#39;</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="null">Null<a class="headerlink" href="#null" title="Permanent link">#</a></h3>
+<p>The <code>Null</code> assertion method checks the field value of the object is null.</p>
+<p>A field value is null if any of the following are true:</p>
+<ul>
+<li>The field does not exist.</li>
+<li>The field value is <code>$Null</code>.</li>
+</ul>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field value '{0}' is not null.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Null&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Null</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;NotField&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Null</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.NullField&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="nullorempty">NullOrEmpty<a class="headerlink" href="#nullorempty" title="Permanent link">#</a></h3>
+<p>The <code>NullOrEmpty</code> assertion method checks the field value of the object is null or empty.</p>
+<p>A field value is null or empty if any of the following are true:</p>
+<ul>
+<li>The field does not exist.</li>
+<li>The field value is <code>$Null</code>.</li>
+<li>The field value is an empty array or collection.</li>
+<li>The field value is an empty string <code>''</code>.</li>
+</ul>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' is not empty.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NullOrEmpty&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NullOrEmpty</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NullOrEmpty</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="typeof">TypeOf<a class="headerlink" href="#typeof" title="Permanent link">#</a></h3>
+<p>The <code>TypeOf</code> assertion method checks the field value is a specified type.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+<li><code>type</code> - One or more specified types to check.
+The field value only has to match a single type of more than one type is specified.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The parameter 'type' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is null.</em></li>
+<li><em>The field value '{2}' of type {1} is not {0}.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;TypeOf&#39;</span> <span class="p">{</span>
+    <span class="c"># Require Value1 to be [int]</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">TypeOf</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="no">[int]</span><span class="p">)</span>
+
+    <span class="c"># Require Value1 to be [int] or [long]</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">TypeOf</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="no">[int], [long]</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="setof">SetOf<a class="headerlink" href="#setof" title="Permanent link">#</a></h3>
+<p>The <code>SetOf</code> assertion method checks the field value only includes all of the specified values.
+The field value must be an array or collection.
+Specified values can be included in the field value in any order.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+  This is a case insensitive compare.</li>
+<li><code>values</code> - An array of values that the field value is compared against.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field value.
+  Case is ignored by default.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The parameter 'values' is null.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field '{0}' is not enumerable.</em></li>
+<li><em>The field '{0}' did not contain '{1}'.</em></li>
+<li><em>The field '{0}' has '{1}' items instead of '{2}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Subset&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">SetOf</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;zones&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="startswith">StartsWith<a class="headerlink" href="#startswith" title="Permanent link">#</a></h3>
+<p>The <code>StartsWith</code> assertion method checks the field value starts with the specified prefix.
+Optionally a case-sensitive compare can be used, however case is ignored by default.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+<li><code>prefix</code> - A prefix or an array of prefixes to compare the field value with.
+Only one prefix must match.
+When an empty array of prefixes is specified or prefix is an empty string, <code>StartsWith</code> always passes.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field value.
+Case is ignored by default.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The parameter 'prefix' is null.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is not a string.</em></li>
+<li><em>The field '{0}' does not start with '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;StartsWith&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;rg-&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;st&#39;</span><span class="p">,</span> <span class="s1">&#39;diag&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="subset">Subset<a class="headerlink" href="#subset" title="Permanent link">#</a></h3>
+<p>The <code>Subset</code> assertion method checks the field value includes all of the specified values.
+The field value may also contain additional values that are not specified in the <code>values</code> parameter.
+The field value must be an array or collection.
+Specified values can be included in the field value in any order.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+  This is a case insensitive compare.</li>
+<li><code>values</code> - An array of values that the field value is compared against.
+  When an empty array is specified, <code>Subset</code> will always pass.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field value.
+  Case is ignored by default.</li>
+<li><code>unique</code> (optional) - A boolean value that indicates if the items must be unique.
+  When <code>true</code> the field value must not contain duplicate items.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The parameter 'values' is null.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field '{0}' is not enumerable.</em></li>
+<li><em>The field '{0}' did not contain '{1}'.</em></li>
+<li><em>The field '{0}' included multiple instances of '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Subset&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Subset</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;logs&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;cluster-autoscaler&#39;</span><span class="p">,</span> <span class="s1">&#39;kube-apiserver&#39;</span><span class="p">,</span> <span class="s1">&#39;kube-scheduler&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="version">Version<a class="headerlink" href="#version" title="Permanent link">#</a></h3>
+<p>The <code>Version</code> assertion method checks the field value is a valid semantic version.
+A constraint can optionally be provided to require the semantic version to be within a range.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+<li><code>constraint</code> (optional) - A version constraint, see below for details of version constrain format.</li>
+<li><code>includePrerelease</code> (optional) - Determines if prerelease versions are included.
+Unless specified this defaults to <code>$False</code>.</li>
+</ul>
+<p>The following are supported constraints:</p>
+<ul>
+<li><code>version</code> - Must match version exactly. This also accepts the following prefixes; <code>=</code>, <code>v</code>, <code>V</code>.<ul>
+<li>e.g. <code>1.2.3</code>, <code>=1.2.3</code></li>
+</ul>
+</li>
+<li><code>&gt;version</code> - Must be greater than version.<ul>
+<li>e.g. <code>&gt;1.2.3</code></li>
+</ul>
+</li>
+<li><code>&gt;=version</code> - Must be greater than or equal to version.<ul>
+<li>e.g. <code>&gt;=1.2.3</code></li>
+</ul>
+</li>
+<li><code>&lt;version</code> - Must be less than version.<ul>
+<li>e.g. <code>&lt;1.2.3</code></li>
+</ul>
+</li>
+<li><code>&lt;=version</code> - Must be less than or equal to version.<ul>
+<li>e.g. <code>&lt;=1.2.3</code></li>
+</ul>
+</li>
+<li><code>^version</code> - Compatible with version.<ul>
+<li>e.g. <code>^1.2.3</code> - <code>&gt;=1.2.3</code>, <code>&lt;2.0.0</code></li>
+</ul>
+</li>
+<li><code>~version</code> - Approximately equivalent to version<ul>
+<li>e.g. <code>~1.2.3</code> - <code>&gt;=1.2.3</code>, <code>&lt;1.3.0</code></li>
+</ul>
+</li>
+</ul>
+<p>An empty, null or <code>*</code> constraint matches all valid semantic versions.</p>
+<p>Multiple constraints can be joined together:</p>
+<ul>
+<li>Use a <em>space</em> to separate multiple constraints, each must be true (<em>logical AND</em>).</li>
+<li>Separates constraint sets with the double pipe <code>||</code>.
+Only one constraint set must be true (<em>logical OR</em>).</li>
+</ul>
+<p>By example:</p>
+<ul>
+<li><code>1.2.3 || &gt;=3.4.5 &lt;5.0.0</code> results in:<ul>
+<li>Pass: <code>1.2.3</code>, <code>3.4.5</code>, <code>3.5.0</code>, <code>4.9.9</code>.</li>
+<li>Fail: <code>3.0.0</code>, <code>5.0.0</code>.</li>
+</ul>
+</li>
+</ul>
+<p>Handling for prerelease versions:</p>
+<ul>
+<li>Constraints and versions containing prerelease identifiers are supported.
+i.e. <code>&gt;=1.2.3-build.1</code> or <code>1.2.3-build.1</code>.</li>
+<li>A version containing a prerelease identifer follows semantic versioning rules.
+i.e. <code>1.2.3-alpha</code> &lt; <code>1.2.3-alpha.1</code> &lt; <code>1.2.3-alpha.beta</code> &lt; <code>1.2.3-beta</code> &lt; <code>1.2.3-beta.2</code> &lt; <code>1.2.3-beta.11</code> &lt; <code>1.2.3-rc.1</code> &lt; <code>1.2.3</code>.</li>
+<li>A constraint without a prerelease identifer will only match a stable version by default.
+Set <code>includePrerelease</code> to <code>$True</code> to include prerelease versions.</li>
+<li>Constraints with a prerelease identifer will only match:<ul>
+<li>Matching prerelease versions of the same major.minor.patch version by default.
+Set <code>includePrerelease</code> to <code>$True</code> to include prerelease versions of all matching versions.
+Alternatively use the <code>@pre</code> or <code>@prerelease</code> flag in a constraint.</li>
+<li>Matching stable versions.</li>
+</ul>
+</li>
+</ul>
+<p>By example:</p>
+<ul>
+<li><code>&gt;=1.2.3</code> results in:<ul>
+<li>Pass: <code>1.2.3</code>, <code>9.9.9</code>.</li>
+<li>Fail: <code>1.2.3-build.1</code>, <code>9.9.9-build.1</code>.</li>
+</ul>
+</li>
+<li><code>&gt;=1.2.3-0</code> results in:<ul>
+<li>Pass: <code>1.2.3</code>, <code>1.2.3-build.1</code>, <code>9.9.9</code>.</li>
+<li>Fail: <code>9.9.9-build.1</code>.</li>
+</ul>
+</li>
+<li><code>&lt;1.2.3</code> results in:<ul>
+<li>Pass: <code>1.2.2</code>, <code>1.0.0</code>.</li>
+<li>Fail: <code>1.0.0-build.1</code>, <code>1.2.3-build.1</code>.</li>
+</ul>
+</li>
+<li><code>&lt;1.2.3-0</code> results in:<ul>
+<li>Pass: <code>1.2.2</code>, <code>1.0.0</code>.</li>
+<li>Fail: <code>1.0.0-build.1</code>, <code>1.2.3-build.1</code>.</li>
+</ul>
+</li>
+<li><code>@pre &gt;=1.2.3</code> results in:<ul>
+<li>Pass: <code>1.2.3</code>, <code>9.9.9</code>, <code>9.9.9-build.1</code></li>
+<li>Fail: <code>1.2.3-build.1</code>.</li>
+</ul>
+</li>
+<li><code>@pre &gt;=1.2.3-0</code> results in:<ul>
+<li>Pass: <code>1.2.3</code>, <code>1.2.3-build.1</code>, <code>9.9.9</code>, <code>9.9.9-build.1</code>.</li>
+</ul>
+</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is not a version string.</em></li>
+<li><em>The version '{0}' does not match the constraint '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;ValidVersion&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Version</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">Rule</span> <span class="s1">&#39;MinimumVersion&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Version</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=1.2.3&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">Rule</span> <span class="s1">&#39;MinimumVersionWithPrerelease&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Version</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=1.2.3-0&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">Rule</span> <span class="s1">&#39;MinimumVersionWithFlag&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Version</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;@pre &gt;=1.2.3-0&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="withinpath">WithinPath<a class="headerlink" href="#withinpath" title="Permanent link">#</a></h3>
+<p>The <code>WithinPath</code> assertion method checks if the file path is within a required path.
+Checks use file system case-sensitivity rules by default.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field containing a file path.
+When the field is <code>InputFileInfo</code> or <code>FileInfo</code>, PSRule will automatically resolve the file path.</li>
+<li><code>path</code> - An array of one or more directory paths to check.
+Only one path must match.</li>
+<li><code>caseSensitive</code> (optional) - Determines if case-sensitive path matching is used.
+This can be set to <code>$True</code> or <code>$False</code>.
+When not set or <code>$Null</code>, the case-sensitivity rules of the working path file system will be used.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The parameter 'path' is null or empty.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The file '{0}' is not within the path '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;WithinPath&#39;</span> <span class="p">{</span>
+    <span class="c"># Require the file to be within either policy/ or security/ sub-directories.</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">WithinPath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;policy/&#39;</span><span class="p">,</span> <span class="s1">&#39;security/&#39;</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="advanced-usage">Advanced usage<a class="headerlink" href="#advanced-usage" title="Permanent link">#</a></h3>
+<p>The <code>AssertResult</code> object returned from assertion methods:</p>
+<ul>
+<li>Handles pass/ fail conditions and collection of reason information.</li>
+<li>Allows rules to implement their own handling or forward it up the stack to affect the rule outcome.</li>
+</ul>
+<p>The following properties are available:</p>
+<ul>
+<li><code>Result</code> - Either <code>$True</code> (Pass) or <code>$False</code> (Fail).</li>
+</ul>
+<p>The following methods are available:</p>
+<ul>
+<li><code>AddReason(&lt;string&gt; text)</code> - Can be used to append additional reasons to the result.
+  A reason can only be set if the assertion failed.
+  Reason text should be localized before calling this method.
+  Localization can be done using the <code>$LocalizedData</code> automatic variable.</li>
+<li><code>WithReason(&lt;string&gt; text, &lt;bool&gt; replace)</code> - Can be used to append or replace reasons on the result.
+  In addition, <code>WithReason</code> can be chained.</li>
+<li><code>Reason(&lt;string&gt; text, params &lt;object[]&gt; args)</code> - Replaces the reason on the results with a formatted string.
+  This method can be chained.
+  For usage see examples below.</li>
+<li><code>ReasonIf(&lt;bool&gt; condition, &lt;string&gt; text, params &lt;object[]&gt; args)</code> - Replaces the reason if the condition is true.
+  This method can be chained, similar to <code>Reason</code>.</li>
+<li><code>GetReason()</code> - Gets any reasons currently associated with the failed result.</li>
+<li><code>Complete()</code> - Returns <code>$True</code> (Pass) or <code>$False</code> (Fail) to the rule record.
+  If the assertion failed, any reasons are automatically added to the rule record.
+  To read the result without adding reason to the rule record use the <code>Result</code> property.</li>
+<li><code>Ignore()</code> - Ignores the result. Nothing future is returned and any reasons are cleared.
+  Use this method when implementing custom handling.</li>
+</ul>
+<p>Use of <code>Complete</code> is optional, uncompleted results are automatically completed after the rule has executed.
+Uncompleted results may return reasons out of sequence.</p>
+<p>Using these advanced methods is not supported in rule script pre-conditions.</p>
+<p>In this example, <code>Complete</code> is used to find the first field with an empty value.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Assert.HasFieldValue&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">).</span><span class="n">Complete</span><span class="p">()</span> <span class="o">-and</span>
+        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">).</span><span class="n">Complete</span><span class="p">()</span> <span class="o">-and</span>
+        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">).</span><span class="n">Complete</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>In this example, the built-in reason is replaced with a custom reason, and immediately returned.
+The reason text is automatically formatted with any parameters provided.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Assert.HasCustomValue&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span>
+        <span class="n">HasDefaultValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">).</span>
+        <span class="n">Reason</span><span class="p">(</span><span class="s1">&#39;The field {0} is using a non-default value: {1}&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="c"># With localized string</span>
+    <span class="nv">$Assert</span><span class="p">.</span>
+        <span class="n">HasDefaultValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">).</span>
+        <span class="n">Reason</span><span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">NonDefaultValue</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="downstream-issues">Downstream issues<a class="headerlink" href="#downstream-issues" title="Permanent link">#</a></h3>
+<p>Before PSRule performs analysis external tools or rules modules may have already performed analysis.
+Issues identified by downstream tools can be consumed by PSRule using the <code>_PSRule.issue</code> property.
+If a <code>_PSRule</code> property exists with <code>issue</code> sub-property PSRule will consume <code>issue</code> as an array of issues.</p>
+<p>Each issue has the following properties:</p>
+<ul>
+<li><code>type</code> - The issue type.
+  Issues are filtered by type.</li>
+<li><code>name</code> - The name of a specific issue.</li>
+<li><code>message</code> - The reason message for the issue.</li>
+</ul>
+<p>To get issues for an object use the <code>Get</code> or <code>Any</code> methods.</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Get an array of all issues for the current object.</span>
+<span class="nv">$PSRule</span><span class="p">.</span><span class="n">Issue</span><span class="p">.</span><span class="n">Get</span><span class="p">();</span>
+
+<span class="c"># Get an array of issues of a specific type.</span>
+<span class="nv">$PSRule</span><span class="p">.</span><span class="n">Issue</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s1">&#39;CustomIssue&#39;</span><span class="p">);</span>
+
+<span class="c"># Return true of any issues exist.</span>
+<span class="nv">$PSRule</span><span class="p">.</span><span class="n">Issue</span><span class="p">.</span><span class="n">Any</span><span class="p">();</span>
+
+<span class="c"># Return true of any issues of a specific type exist.</span>
+<span class="nv">$PSRule</span><span class="p">.</span><span class="n">Issue</span><span class="p">.</span><span class="n">Any</span><span class="p">(</span><span class="s1">&#39;CustomIssue&#39;</span><span class="p">);</span>
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Fail if the object has any &#39;PSRule.Rules.Azure.Parameter.Insecure&#39; issues.</span>
+<span class="n">Rule</span> <span class="s1">&#39;IssueReportTest&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="nv">$PSRule</span><span class="p">.</span><span class="n">Issue</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s1">&#39;PSRule.Rules.Azure.Parameter.Insecure&#39;</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="authoring-assertion-methods">Authoring assertion methods<a class="headerlink" href="#authoring-assertion-methods" title="Permanent link">#</a></h3>
+<p>The following built-in helper methods are provided for working with <code>$Assert</code> when authoring new assertion methods:</p>
+<ul>
+<li><code>Create(&lt;bool&gt; condition, &lt;string&gt; reason, params &lt;object[]&gt; args)</code> - Returns a result either pass or fail assertion result.
+  Additional arguments can be provided to format the custom reason string.</li>
+<li><code>Create(&lt;TargetIssueInfo[]&gt;)</code> - Returns a result based on reported downstream issues.</li>
+<li><code>Pass()</code> - Returns a pass assertion result.</li>
+<li><code>Fail()</code> - Results a fail assertion result.</li>
+<li><code>Fail(&lt;string&gt; reason, params &lt;object[]&gt; args)</code> - Results a fail assertion result with a custom reason.
+  Additional arguments can be provided to format the custom reason string.</li>
+</ul>
+<h3 id="aggregating-assertion-methods">Aggregating assertion methods<a class="headerlink" href="#aggregating-assertion-methods" title="Permanent link">#</a></h3>
+<p>The following built-in helper methods are provided for aggregating assertion results:</p>
+<ul>
+<li><code>AnyOf(&lt;AssertResult[]&gt; results)</code> - Results from assertion methods are aggregated into a single result.
+  If any result is a pass, the result is a pass.
+  If all results are fails, the result is a fail and any reasons are added to the result.
+  If no results are provided, the result is a fail.</li>
+<li><code>AllOf(&lt;AssertResult[]&gt; results)</code> - Results from assertion methods are aggregated into a single result.
+  If all results are passes, the result is a pass.
+  If any result is a fail, the result is a fail and any reasons are added to the result.
+  If no results are provided, the result is a fail.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Assert.HasFieldValue&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">AllOf</span><span class="p">(</span>
+        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">),</span>
+        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">),</span>
+        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="https://github.com/Microsoft/PSRule/blob/main/docs/concepts/PSRule/en-US/about_PSRule_Variables.md">about_PSRule_Variables</a></li>
+</ul>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      2021-11-22
+    
+  </small>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../../../support/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Support" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Support
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../about_PSRule_Baseline/" class="md-footer__link md-footer__link--next" aria-label="Next: Baselines" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Baselines
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/microsoft/PSRule/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.0bbba5b5.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.649a939e.min.js"></script>
+      
+    
+  </body>
+</html>
