@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://microsoft.github.io/PSRule/v1/license-contributing/</loc>
+         <lastmod>2022-01-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://microsoft.github.io/PSRule/v1/support/</loc>
          <lastmod>2022-01-02</lastmod>
          <changefreq>daily</changefreq>
