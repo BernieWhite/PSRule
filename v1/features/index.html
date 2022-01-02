@@ -9,7 +9,7 @@
         <meta name="description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules.">
       
       
-        <meta name="author" content="BernieWhite">
+        <meta name="author" content="Microsoft">
       
       
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v1/features/">
@@ -52,35 +52,6 @@
 
     
     
-
-  <!-- Determine title -->
-  
-  
-    
-  
-
-  <!-- The image needs to have an absolute URL -->
-  
-
-  <!-- Open graph meta tags -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="PSRule - Features" />
-  <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta property="og:url" content="https://microsoft.github.io/PSRule/v1/features/" />
-  <meta property="og:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="1280" />
-  <meta property="og:image:height" content="640" />
-  <meta property="og:image:alt" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-
-  <!-- Twitter meta tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@github" />
-  <meta name="twitter:title" content="PSRule - Features" />
-  <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
-
-
   </head>
   
   
@@ -99,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#features" class="md-skip">
+        <a href="#psrule-features" class="md-skip">
           Skip to content
         </a>
       
@@ -110,16 +81,6 @@
     
       <div data-md-component="outdated" hidden>
         <aside class="md-banner md-banner--warning">
-          
-            <div class="md-banner__inner md-grid md-typeset">
-              
-  You're not viewing the latest version.
-  <a href="../..">
-    <strong>Click here to go to latest.</strong>
-  </a>
-
-            </div>
-            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
           
         </aside>
       </div>
@@ -244,7 +205,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../about/" class="md-tabs__link md-tabs__link--active">
+      <a href="../about.md" class="md-tabs__link md-tabs__link--active">
         Getting started
       </a>
     </li>
@@ -278,7 +239,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../addon-modules/" class="md-tabs__link">
+      <a href="../addon-modules.md" class="md-tabs__link">
         Addons
       </a>
     </li>
@@ -437,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../about.md" class="md-nav__link">
         About
       </a>
     </li>
@@ -485,15 +446,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#devops" class="md-nav__link">
-    DevOps
+  <a href="#extensible" class="md-nav__link">
+    Extensible
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#extensible" class="md-nav__link">
-    Extensible
+  <a href="#cross-platform" class="md-nav__link">
+    Cross-platform
   </a>
   
 </li>
@@ -502,6 +463,68 @@
   <a href="#reusable" class="md-nav__link">
     Reusable
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    Recommendations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequently-asked-questions-faq" class="md-nav__link">
+    Frequently Asked Questions (FAQ)
+  </a>
+  
+    <nav class="md-nav" aria-label="Frequently Asked Questions (FAQ)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-is-psrule-different-to-pester" class="md-nav__link">
+    How is PSRule different to Pester?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-pre-built-modules-are-available-for-psrule" class="md-nav__link">
+    What pre-built modules are available for PSRule?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-configure-psrule" class="md-nav__link">
+    How do I configure PSRule?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-ignore-a-rule" class="md-nav__link">
+    How do I ignore a rule?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-layer-on-custom-rules-on-top-of-an-existing-module" class="md-nav__link">
+    How do I layer on custom rules on top of an existing module?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-should-i-use-psrule-keywords-and-assertions" class="md-nav__link">
+    Why should I use PSRule keywords and assertions?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -520,7 +543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../faq/" class="md-nav__link">
+      <a href="../faq.md" class="md-nav__link">
         FAQ
       </a>
     </li>
@@ -591,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../authoring/writing-rules/" class="md-nav__link">
+      <a href="../authoring/writing-rules.md" class="md-nav__link">
         Writing rules
       </a>
     </li>
@@ -605,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../authoring/storing-rules/" class="md-nav__link">
+      <a href="../authoring/storing-rules.md" class="md-nav__link">
         Storing and naming rules
       </a>
     </li>
@@ -619,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../authoring/packaging-rules/" class="md-nav__link">
+      <a href="../authoring/packaging-rules.md" class="md-nav__link">
         Packaging rules in a module
       </a>
     </li>
@@ -633,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../authoring/writing-rule-help/" class="md-nav__link">
+      <a href="../authoring/writing-rule-help.md" class="md-nav__link">
         Writing rule help
       </a>
     </li>
@@ -654,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../creating-your-pipeline/" class="md-nav__link">
+      <a href="../creating-your-pipeline.md" class="md-nav__link">
         Creating your pipeline
       </a>
     </li>
@@ -668,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../validating-locally/" class="md-nav__link">
+      <a href="../validating-locally.md" class="md-nav__link">
         Validating locally
       </a>
     </li>
@@ -816,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../license-contributing/" class="md-nav__link">
+      <a href="../license-contributing.md" class="md-nav__link">
         License and contributing
       </a>
     </li>
@@ -950,7 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../support/" class="md-nav__link">
+      <a href="../support.md" class="md-nav__link">
         Support
       </a>
     </li>
@@ -1214,7 +1237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../addon-modules/" class="md-nav__link">
+      <a href="../addon-modules.md" class="md-nav__link">
         Additional modules
       </a>
     </li>
@@ -1255,15 +1278,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#devops" class="md-nav__link">
-    DevOps
+  <a href="#extensible" class="md-nav__link">
+    Extensible
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#extensible" class="md-nav__link">
-    Extensible
+  <a href="#cross-platform" class="md-nav__link">
+    Cross-platform
   </a>
   
 </li>
@@ -1272,6 +1295,68 @@
   <a href="#reusable" class="md-nav__link">
     Reusable
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    Recommendations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequently-asked-questions-faq" class="md-nav__link">
+    Frequently Asked Questions (FAQ)
+  </a>
+  
+    <nav class="md-nav" aria-label="Frequently Asked Questions (FAQ)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-is-psrule-different-to-pester" class="md-nav__link">
+    How is PSRule different to Pester?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-pre-built-modules-are-available-for-psrule" class="md-nav__link">
+    What pre-built modules are available for PSRule?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-configure-psrule" class="md-nav__link">
+    How do I configure PSRule?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-ignore-a-rule" class="md-nav__link">
+    How do I ignore a rule?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-layer-on-custom-rules-on-top-of-an-existing-module" class="md-nav__link">
+    How do I layer on custom rules on top of an existing module?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-should-i-use-psrule-keywords-and-assertions" class="md-nav__link">
+    Why should I use PSRule keywords and assertions?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1292,68 +1377,200 @@
 </a>
 
 
-<h1 id="features">Features<a class="headerlink" href="#features" title="Permanent link">#</a></h1>
-<h2 id="devops">DevOps<a class="headerlink" href="#devops" title="Permanent link">#</a></h2>
-<p>PSRule allows you to quickly plug-in Infrastructure as Code (<abbr title="Infrastructure as Code">IaC</abbr>) controls into your DevOps pipeline.</p>
+<h1 id="psrule-features">PSRule features<a class="headerlink" href="#psrule-features" title="Permanent link">#</a></h1>
+<p>The following sections describe key features of PSRule.</p>
 <ul>
-<li><strong>Shift-left</strong> &mdash; Identify configuration issues and provide fast feedback in <abbr title="Pull Requests">PRs</abbr>.</li>
-<li><strong>Quality gates</strong> &mdash; Implement quality gates between environments such as dev, test, and prod.</li>
-<li><strong>Monitor continuously</strong> &mdash; Perform ongoing checks for configuration optimization opportunities.</li>
-</ul>
-<p>Run on MacOS, Linux, and Windows or anywere PowerShell is supported.
-Native support for popular continuous integration (<abbr title="Continuous Integration">CI</abbr>) systems includes:</p>
-<ul>
-<li><strong>GitHub Actions</strong> - Trigger tests for GitHub repositories using workflows.</li>
-<li><strong>Azure Pipelines</strong> - Use tasks to run tests in Azure DevOps YAML or Classic pipelines and releases.</li>
+<li><a href="#extensible">Extensible</a></li>
+<li><a href="#cross-platform">Cross-platform</a></li>
+<li><a href="#reusable">Reusable</a></li>
+<li><a href="#recommendations">Recommendations</a></li>
 </ul>
 <h2 id="extensible">Extensible<a class="headerlink" href="#extensible" title="Permanent link">#</a></h2>
-<p>Import pre-built rules or define your own using YAML, JSON, or PowerShell format.
-Regardless of the format you choose, any combination of YAML, JSON, or PowerShell rules can be used together.</p>
+<p>Authors define rules using PowerShell, a flexible scripting language.
+If you or your team already can write a basic PowerShell script, you can already define a rule.
+What's more, you can tap into a large world-wide community of PowerShell users with scripts and cmdlets to help you build out rules quickly.</p>
+<p>In addition to PowerShell, PSRule adds domain specific language (DSL) keywords, cmdlets, and variables.
+These features can optionally be used to reduce the code you have to write for common scenarios.
+For example: checking that a property exists, or providing a reason why the validation failed.</p>
+<h2 id="cross-platform">Cross-platform<a class="headerlink" href="#cross-platform" title="Permanent link">#</a></h2>
+<p>PSRule uses modern PowerShell libraries at its core, allowing it to go anywhere PowerShell can go.
+The companion extension for Visual Studio Code provides snippets for authoring rules and documentation.
+PSRule runs on MacOS, Linux, and Windows.</p>
+<p>PowerShell makes it easy to integrate PSRule into popular continuous integration (CI) systems.
+Additionally, PSRule has extensions for:</p>
 <ul>
-<li><strong>YAML</strong> &mdash; Use a popular, easy to read, and learn <abbr title="Infrastructure as Code">IaC</abbr> format.
-  With YAML, you can quickly build out common rules with minimal effort and no scripting experience.</li>
-<li><strong>JSON</strong> &mdash; Is ubiquitous used by many tools.
-  While this format is typically harder to read then YAML it is easy to automate.
-  You may prefer to use this format if you are generating rules with automation.</li>
-<li><strong>PowerShell</strong> &mdash; Is a flexiable scripting language.
-  If you or your team already can write a basic PowerShell script, you can already define a rule.
-  PowerShell allows you to tap into a large world-wide community of PowerShell users.
-  Use existing cmdlets to help you build out rules quickly.</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=bewhite.ps-rule">Azure Pipeline (Azure DevOps)</a></li>
+<li><a href="https://github.com/marketplace/actions/psrule">GitHub Actions (GitHub)</a></li>
 </ul>
-<p>Rules can be authored using any text editor, but we provide a native extension for Visual Studio Code.
-Use the extension to quickly author rules or run tests locally before you commit your <abbr title="Infrastructure as Code">IaC</abbr>.</p>
+<p>To install, use the <code>Install-Module</code> cmdlet within PowerShell.
+For installation options see <a href="../install-instructions/">install instructions</a>.</p>
 <h2 id="reusable">Reusable<a class="headerlink" href="#reusable" title="Permanent link">#</a></h2>
-<p>Typically unit tests in traditional testing frameworks are written for a specific case.
-This makes it hard invest in tests that are not easily reusable between projects.
-Several features of PSRule make it eaiser to reuse and share rules across teams or organizations.</p>
-<p>The following built-in features improve portability:</p>
+<p>Define rules once then reuse and share rules across teams or organizations.
+The following built-in features improve portability:</p>
 <ul>
-<li><a href="../authoring/packaging-rules/">Modular</a> &mdash; Rules can be packages up into a standard PowerShell module then distributed.<ul>
-<li><strong>Private</strong> &mdash; Modules can be published privately on a network share or NuGet feed.</li>
-<li><strong>Public</strong> &mdash; Distribute rules globally using the PowerShell Gallery.</li>
+<li><a href="../concepts/PSRule/en-US/about_PSRule_Options/">Configuration</a> - PSRule and rules can be configured.</li>
+<li><a href="../concepts/PSRule/en-US/about_PSRule_Baseline/">Baselines</a> - An artifact containing rules and configuration for a scenario.</li>
+<li><a href="../concepts/PSRule/en-US/about_PSRule_Options/#suppression">Suppression</a> - Handle exceptions to a rule.</li>
+<li><a href="../concepts/PSRule/en-US/about_PSRule_Docs/">Documentation</a> - Provide detailed guidance to resolve issues.</li>
 </ul>
-</li>
-<li><a href="../concepts/PSRule/en-US/about_PSRule_Options/">Configuration</a> &mdash; PSRule and rules can be configured.</li>
-<li><a href="../concepts/PSRule/en-US/about_PSRule_Baseline/">Baselines</a> &mdash; An artifact containing rules and configuration for a scenario.</li>
-<li><a href="../concepts/PSRule/en-US/about_PSRule_Options/#suppression">Suppression</a> &mdash; Allows you to handle and keep exceptions auditable in git history.<ul>
-<li><strong>Approval</strong> &mdash; Use <a href="https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">code owners</a> and <a href="https://docs.microsoft.com/azure/devops/repos/git/branch-policies?view=azure-devops&amp;tabs=browser#automatically-include-code-reviewers">branch policy</a> concepts to control changes.</li>
-</ul>
-</li>
-<li>
-<p><a href="../authoring/writing-rule-help/">Documentation</a> &mdash; Provide guidance on how to resolve detected issues.</p>
+<p>Rules can be packaged up into a module then distributed.</p>
+<p>PSRule uses PowerShell modules as the standard way to distribute rules.
+Modules containing rules can be published on the PowerShell Gallery or network share using the same process as regular PowerShell modules.</p>
+<p>For a walk through see <a href="../scenarios/rule-module/rule-module/">Packaging rules in a module</a>.</p>
+<h2 id="recommendations">Recommendations<a class="headerlink" href="#recommendations" title="Permanent link">#</a></h2>
+<p>PSRule allows rule authors to define recommendations in markdown.
+This allows not only the cause of the issue to be identified but detailed instructions to be included to remediate issues.</p>
+<p>For more information see <a href="../concepts/PSRule/en-US/about_PSRule_Docs/">about_PSRule_Docs</a>.</p>
+<h2 id="frequently-asked-questions-faq">Frequently Asked Questions (FAQ)<a class="headerlink" href="#frequently-asked-questions-faq" title="Permanent link">#</a></h2>
+<h3 id="how-is-psrule-different-to-pester">How is PSRule different to Pester?<a class="headerlink" href="#how-is-psrule-different-to-pester" title="Permanent link">#</a></h3>
+<p>PSRule is a framework for validating infrastructure as code (IaC) and objects using PowerShell.
+Some features include:</p>
 <ul>
-<li><strong>Quick</strong> - Use a one liner to quickly add a hint or reference on rules you build.</li>
-<li><strong>Detailed</strong> - Support for markdown allows you to provide detailed detailed guidance to resolve issues.</li>
+<li><strong>Objects</strong> - PowerShell objects can be validated on the pipeline or imported.<ul>
+<li>Objects can be <a href="../concepts/PSRule/en-US/about_PSRule_Options/#inputformat">imported</a> directly from <code>JSON</code>, <code>YAML</code>, or <code>.psd1</code>.</li>
+<li>Each object is automatically bound to a <em>target type</em> for use with pre-conditions.</li>
+<li>Rule results are orientated to validating an object.</li>
+<li>Built-in <a href="../concepts/PSRule/en-US/about_PSRule_Assert/">assertions</a>, automatically traverse object properties.</li>
+</ul>
+</li>
+<li><strong>Pre-conditions</strong> - Rules understand which objects they apply to.
+Objects are bound to a type as they are processed using object properties.
+Dissimilar objects can be processed quickly.<ul>
+<li>Objects that match no rules are flagged with a warning by default.</li>
+</ul>
+</li>
+<li><strong>Packaging</strong> - Rules can be reused between projects and optionally packaged into a module.<ul>
+<li>Portable rules, configuration, baselines, and documentation allow greater reuse and distribution.</li>
+<li><a href="../concepts/PSRule/en-US/about_PSRule_Docs/">Documentation</a> with detailed guidance or next steps can be included.</li>
+<li>Standalone or rules from modules can be combined together with <code>-Module</code> and <code>-Path</code>.</li>
+</ul>
+</li>
+<li><strong>Configuration</strong> - <a href="../concepts/PSRule/en-US/about_PSRule_Options/#configuration">Configuration</a> of rules is handled by PSRule.<ul>
+<li>Rules can be configured at runtime, from YAML configuration, or environment variables.</li>
+<li><a href="../concepts/PSRule/en-US/about_PSRule_Baseline/">Baselines</a> can be used to pair rules and configuration for a specific scenario.</li>
+</ul>
+</li>
+<li><strong>Exceptions</strong> - Exceptions to a rule can be ignored for a single object using <a href="../concepts/PSRule/en-US/about_PSRule_Options/#suppression">suppression</a>.<ul>
+<li>Exclusion can be used additionally to ignore a rule entirely.</li>
 </ul>
 </li>
 </ul>
+<p>These features make PSRule ideal for validating:</p>
+<ul>
+<li>Infrastructure as code, including:<ul>
+<li>Kubernetes manifests.</li>
+<li>Azure Resource Manager templates.</li>
+<li>Configuration files.</li>
+<li>Pipeline files.</li>
+</ul>
+</li>
+<li>Deployments or configurations against a baseline.</li>
+</ul>
+<p>If you want to test PowerShell code, consider using Pester, we do!</p>
+<h3 id="what-pre-built-modules-are-available-for-psrule">What pre-built modules are available for PSRule?<a class="headerlink" href="#what-pre-built-modules-are-available-for-psrule" title="Permanent link">#</a></h3>
+<p>PSRule rules modules can be found on the <a href="https://www.powershellgallery.com/packages?q=Tags%3A%22PSRule-rules%22">PowerShell Gallery</a> using the tag <code>PSRule-rules</code>.</p>
+<h3 id="how-do-i-configure-psrule">How do I configure PSRule?<a class="headerlink" href="#how-do-i-configure-psrule" title="Permanent link">#</a></h3>
+<p>PSRule and rules can be configured by:</p>
+<ul>
+<li><strong>Parameter</strong> - PSRule can be configured at runtime by passing the <code>-Option</code> parameter to cmdlets.</li>
+<li><strong>Options file</strong> - Options stored in YAML are load configuration from file.
+The default <code>ps-rule.yaml</code> option file is read automatically from the current working path by default.
+When checking into source control, store this file in the root directory of the repository.</li>
+<li><strong>Environment variables</strong> - Configuration can be specified using environment variables.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># With cmdlet</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-OutputAs</span> <span class="n">Summary</span> <span class="n">-OutputCulture</span> <span class="s1">&#39;en-AU&#39;</span> <span class="n">-NotProcessedWarning</span> <span class="nv">$False</span> <span class="n">-Configuration</span> <span class="p">@{</span>
+  <span class="n">CUSTOM_VALUE</span> <span class="p">=</span> <span class="s1">&#39;example&#39;</span>
+<span class="p">}</span>
+<span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Option</span> <span class="nv">$option</span>
+
+<span class="c"># With hashtable</span>
+<span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Option</span> <span class="p">@{</span>
+  <span class="s1">&#39;Output.As&#39;</span> <span class="p">=</span> <span class="s1">&#39;Summary&#39;</span>
+  <span class="s1">&#39;Output.Culture&#39;</span> <span class="p">=</span> <span class="s1">&#39;en-AU&#39;</span>
+  <span class="s1">&#39;Execution.NotProcessedWarning&#39;</span> <span class="p">=</span> <span class="nv">$False</span>
+  <span class="s1">&#39;Configuration.CUSTOM_VALUE&#39;</span> <span class="p">=</span> <span class="s1">&#39;Example&#39;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># With YAML</span>
+<span class="nt">output</span><span class="p">:</span>
+  <span class="nt">as</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Summary</span>
+  <span class="nt">culture</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;en-AU&#39;</span> <span class="p p-Indicator">]</span>
+
+<span class="nt">execution</span><span class="p">:</span>
+  <span class="nt">notProcessedWarning</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="nt">configuration</span><span class="p">:</span>
+  <span class="nt">CUSTOM_VALUE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Example</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># With environment variable in bash</span>
+<span class="nb">export</span> <span class="nv">PSRULE_EXECUTION_NOTPROCESSEDWARNING</span><span class="o">=</span><span class="nb">false</span>
+<span class="nb">export</span> <span class="nv">PSRULE_OUTPUT_AS</span><span class="o">=</span>Summary
+<span class="nb">export</span> <span class="nv">PSRULE_OUTPUT_CULTURE</span><span class="o">=</span>en-AU
+<span class="nb">export</span> <span class="nv">PSRULE_CONFIGURATION_CUSTOM_VALUE</span><span class="o">=</span>Example
+</code></pre></div>
+<p>For a list of configuration options and usage see <a href="../concepts/PSRule/en-US/about_PSRule_Options/">about_PSRule_Options</a>.</p>
+<h3 id="how-do-i-ignore-a-rule">How do I ignore a rule?<a class="headerlink" href="#how-do-i-ignore-a-rule" title="Permanent link">#</a></h3>
+<p>To prevent a rule executing you can either:</p>
+<ul>
+<li>Exclude the rule - The rule is not executed for any object.</li>
+<li>Suppress the rule - The rule is not executed for a specific object by name.</li>
+</ul>
+<p>To exclude a rule use the <code>Rule.Exclude</code> option.
+To do this in YAML, add the following to the <code>ps-rule.yaml</code> options file.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the rule/exclude property</span>
+<span class="nt">rule</span><span class="p">:</span>
+  <span class="nt">exclude</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="s">&#39;My.FirstRule&#39;</span>  <span class="c1"># The name of the first rule to exclude.</span>
+  <span class="p p-Indicator">-</span> <span class="s">&#39;My.SecondRule&#39;</span> <span class="c1"># The name of the second rule to exclude.</span>
+</code></pre></div>
+<p>To suppress a rule use the <code>Suppression</code> option.
+To do this in YAML, add the following to the <code>ps-rule.yaml</code> options file.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the suppression property</span>
+<span class="nt">suppression</span><span class="p">:</span>
+  <span class="nt">My.FirstRule</span><span class="p">:</span>    <span class="c1"># The name of the rule being suppressed</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TestObject1</span>    <span class="c1"># The name of the first object to suppress</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TestObject3</span>    <span class="c1"># The name of the second object to suppress</span>
+  <span class="nt">My.SecondRule</span><span class="p">:</span>   <span class="c1"># An additional rule to suppress</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TestObject2</span>
+</code></pre></div>
+<p>The name of the object is reported by PSRule in output results.</p>
+<p>See <a href="../concepts/PSRule/en-US/about_PSRule_Options/">about_PSRule_Options</a> for additional usage for both of these options.</p>
+<h3 id="how-do-i-layer-on-custom-rules-on-top-of-an-existing-module">How do I layer on custom rules on top of an existing module?<a class="headerlink" href="#how-do-i-layer-on-custom-rules-on-top-of-an-existing-module" title="Permanent link">#</a></h3>
+<p>PSRule allows rules from modules and standalone <em>(loose)</em> rules to be run together.</p>
+<p>To run rules from a standalone path use:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Note: .ps-rule/ is a standard path to include standalone rules.</span>
+
+<span class="c"># With input from the pipeline</span>
+<span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;.ps-rule/&#39;</span>
+
+<span class="c"># With input from file</span>
+<span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;.ps-rule/&#39;</span> <span class="n">-InputPath</span> <span class="s1">&#39;src/&#39;</span>
+</code></pre></div>
+<p>To run rules from an installed module use:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># With input from the pipeline</span>
+<span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Module</span> <span class="s1">&#39;PSRule.Rules.Azure&#39;</span>
+
+<span class="c"># With input from file</span>
+<span class="nb">Assert-PSRule</span> <span class="n">-Module</span> <span class="s1">&#39;PSRule.Rules.Azure&#39;</span> <span class="n">-InputPath</span> <span class="s1">&#39;src/&#39;</span>
+</code></pre></div>
+<p>Combining both:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Assert-PSRule</span> <span class="n">-Module</span> <span class="s1">&#39;PSRule.Rules.Azure&#39;</span><span class="p">,</span> <span class="s1">&#39;PSRule.Rules.CAF&#39;</span> <span class="n">-Path</span> <span class="s1">&#39;.ps-rule/&#39;</span> <span class="n">-InputPath</span> <span class="s1">&#39;src/&#39;</span>
+</code></pre></div>
+<h3 id="why-should-i-use-psrule-keywords-and-assertions">Why should I use PSRule keywords and assertions?<a class="headerlink" href="#why-should-i-use-psrule-keywords-and-assertions" title="Permanent link">#</a></h3>
+<p>Except for the <code>Rule</code> keyword, using the built-in language features are optional.</p>
+<p>The built-in keywords and assertions accelerate rule creation.
+They do this by providing a condition and a set of reasons in a single command.</p>
+<p>Reasons are also optional; however, they provide additional context as to why the rule failed.
+Alternatively, you can provide your own reasons to complement standard PowerShell with the <code>Reason</code> keyword.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-01-02
+      2021-05-11
     
   </small>
 </div>
@@ -1370,7 +1587,7 @@ Several features of PSRule make it eaiser to reuse and share rules across teams 
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../about/" class="md-footer__link md-footer__link--prev" aria-label="Previous: About" rel="prev">
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1379,20 +1596,20 @@ Several features of PSRule make it eaiser to reuse and share rules across teams 
               <span class="md-footer__direction">
                 Previous
               </span>
-              About
+              Home
             </div>
           </div>
         </a>
       
       
         
-        <a href="../faq/" class="md-footer__link md-footer__link--next" aria-label="Next: FAQ" rel="next">
+        <a href="../install-instructions/" class="md-footer__link md-footer__link--next" aria-label="Next: Installation" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              FAQ
+              Installation
             </div>
           </div>
           <div class="md-footer__button md-icon">

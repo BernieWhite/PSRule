@@ -1,0 +1,48 @@
+{
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ]
+      },
+      {
+        "files": [
+          "index.md",
+          "toc.yml"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**",
+          "scenarios/**/*.ps1",
+          "scenarios/**/*.json",
+          "scenarios/**/*.yaml",
+          "scenarios/**/*.psd1"
+        ]
+      }
+    ],
+    "dest": "../out/site",
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
+    "template": [
+      "default"
+    ],
+    "globalMetadata": {
+      "_gitContribute": {
+        "repo": "https://github.com/Microsoft/PSRule",
+        "branch": "main"
+      },
+      "_gitUrlPattern": "github"
+    },
+    "postProcessors": [],
+    "markdownEngineName": "markdig",
+    "noLangKeyword": false,
+    "keepFileLink": false,
+    "cleanupCacheHistory": false,
+    "disableGitFeatures": false
+  }
+}

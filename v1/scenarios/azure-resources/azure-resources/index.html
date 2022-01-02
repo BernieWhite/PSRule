@@ -52,35 +52,6 @@
 
     
     
-
-  <!-- Determine title -->
-  
-  
-    
-  
-
-  <!-- The image needs to have an absolute URL -->
-  
-
-  <!-- Open graph meta tags -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="PSRule - Validate Azure resource configuration" />
-  <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta property="og:url" content="https://microsoft.github.io/PSRule/v1/scenarios/azure-resources/azure-resources/" />
-  <meta property="og:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="1280" />
-  <meta property="og:image:height" content="640" />
-  <meta property="og:image:alt" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-
-  <!-- Twitter meta tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@github" />
-  <meta name="twitter:title" content="PSRule - Validate Azure resource configuration" />
-  <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
-
-
   </head>
   
   
@@ -110,16 +81,6 @@
     
       <div data-md-component="outdated" hidden>
         <aside class="md-banner md-banner--warning">
-          
-            <div class="md-banner__inner md-grid md-typeset">
-              
-  You're not viewing the latest version.
-  <a href="../../../..">
-    <strong>Click here to go to latest.</strong>
-  </a>
-
-            </div>
-            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
           
         </aside>
       </div>
@@ -244,7 +205,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../about/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../about.md" class="md-tabs__link md-tabs__link--active">
         Getting started
       </a>
     </li>
@@ -278,7 +239,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../addon-modules/" class="md-tabs__link">
+      <a href="../../../addon-modules.md" class="md-tabs__link">
         Addons
       </a>
     </li>
@@ -435,7 +396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+      <a href="../../../about.md" class="md-nav__link">
         About
       </a>
     </li>
@@ -463,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../faq/" class="md-nav__link">
+      <a href="../../../faq.md" class="md-nav__link">
         FAQ
       </a>
     </li>
@@ -534,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authoring/writing-rules/" class="md-nav__link">
+      <a href="../../../authoring/writing-rules.md" class="md-nav__link">
         Writing rules
       </a>
     </li>
@@ -548,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authoring/storing-rules/" class="md-nav__link">
+      <a href="../../../authoring/storing-rules.md" class="md-nav__link">
         Storing and naming rules
       </a>
     </li>
@@ -562,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authoring/packaging-rules/" class="md-nav__link">
+      <a href="../../../authoring/packaging-rules.md" class="md-nav__link">
         Packaging rules in a module
       </a>
     </li>
@@ -576,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authoring/writing-rule-help/" class="md-nav__link">
+      <a href="../../../authoring/writing-rule-help.md" class="md-nav__link">
         Writing rule help
       </a>
     </li>
@@ -597,7 +558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../creating-your-pipeline/" class="md-nav__link">
+      <a href="../../../creating-your-pipeline.md" class="md-nav__link">
         Creating your pipeline
       </a>
     </li>
@@ -611,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../validating-locally/" class="md-nav__link">
+      <a href="../../../validating-locally.md" class="md-nav__link">
         Validating locally
       </a>
     </li>
@@ -850,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../license-contributing/" class="md-nav__link">
+      <a href="../../../license-contributing.md" class="md-nav__link">
         License and contributing
       </a>
     </li>
@@ -984,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../support/" class="md-nav__link">
+      <a href="../../../support.md" class="md-nav__link">
         Support
       </a>
     </li>
@@ -1248,7 +1209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../addon-modules/" class="md-nav__link">
+      <a href="../../../addon-modules.md" class="md-nav__link">
         Additional modules
       </a>
     </li>
@@ -1363,16 +1324,16 @@
 <h1 id="validate-azure-resource-configuration">Validate Azure resource configuration<a class="headerlink" href="#validate-azure-resource-configuration" title="Permanent link">#</a></h1>
 <p>PSRule makes it easy to validate Infrastructure as Code (IaC) such as Azure resources.
 For example, Azure resources can be validated to match and internal standard or baseline.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A pre-built module to validate Azure resources already exists.
+<blockquote>
+<p>[!NOTE]
+A pre-built module to validate Azure resources already exists.
 This scenario demonstrates the process and features of PSRule for illustration purposes.</p>
 <p>Consider using or contributing these pre-built rule modules instead:</p>
 <ul>
 <li><a href="https://github.com/Microsoft/PSRule.Rules.Azure">PSRule.Rules.Azure</a></li>
 <li><a href="https://github.com/Microsoft/PSRule.Rules.CAF">PSRule.Rules.CAF</a></li>
 </ul>
-</div>
+</blockquote>
 <p>This scenario covers the following:</p>
 <ul>
 <li>Defining a basic rule.</li>
@@ -1548,7 +1509,7 @@ This function will be used by preconditions to check the type of Azure resource.
   <small>
     
       Last update:
-      2022-01-02
+      2021-05-11
     
   </small>
 </div>
@@ -1565,7 +1526,7 @@ This function will be used by preconditions to check the type of Azure resource.
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../../validating-locally/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Validating locally" rel="prev">
+        <a href="../../../install-instructions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installation" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1574,7 +1535,7 @@ This function will be used by preconditions to check the type of Azure resource.
               <span class="md-footer__direction">
                 Previous
               </span>
-              Validating locally
+              Installation
             </div>
           </div>
         </a>

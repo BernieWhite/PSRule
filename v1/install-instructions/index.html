@@ -9,7 +9,7 @@
         <meta name="description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules.">
       
       
-        <meta name="author" content="BernieWhite">
+        <meta name="author" content="Microsoft">
       
       
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v1/install-instructions/">
@@ -52,35 +52,6 @@
 
     
     
-
-  <!-- Determine title -->
-  
-  
-    
-  
-
-  <!-- The image needs to have an absolute URL -->
-  
-
-  <!-- Open graph meta tags -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="PSRule - Installation" />
-  <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta property="og:url" content="https://microsoft.github.io/PSRule/v1/install-instructions/" />
-  <meta property="og:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="1280" />
-  <meta property="og:image:height" content="640" />
-  <meta property="og:image:alt" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-
-  <!-- Twitter meta tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@github" />
-  <meta name="twitter:title" content="PSRule - Installation" />
-  <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
-
-
   </head>
   
   
@@ -99,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation" class="md-skip">
+        <a href="#install-instructions" class="md-skip">
           Skip to content
         </a>
       
@@ -110,16 +81,6 @@
     
       <div data-md-component="outdated" hidden>
         <aside class="md-banner md-banner--warning">
-          
-            <div class="md-banner__inner md-grid md-typeset">
-              
-  You're not viewing the latest version.
-  <a href="../..">
-    <strong>Click here to go to latest.</strong>
-  </a>
-
-            </div>
-            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
           
         </aside>
       </div>
@@ -244,7 +205,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../about/" class="md-tabs__link md-tabs__link--active">
+      <a href="../about.md" class="md-tabs__link md-tabs__link--active">
         Getting started
       </a>
     </li>
@@ -278,7 +239,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../addon-modules/" class="md-tabs__link">
+      <a href="../addon-modules.md" class="md-tabs__link">
         Addons
       </a>
     </li>
@@ -435,7 +396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../about.md" class="md-nav__link">
         About
       </a>
     </li>
@@ -463,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../faq/" class="md-nav__link">
+      <a href="../faq.md" class="md-nav__link">
         FAQ
       </a>
     </li>
@@ -518,77 +479,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#with-github-actions" class="md-nav__link">
-    With GitHub Actions
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#with-azure-pipelines" class="md-nav__link">
-    With Azure Pipelines
+  <a href="#getting-the-module" class="md-nav__link">
+    Getting the module
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-locally" class="md-nav__link">
-    Installing locally
-  </a>
-  
-    <nav class="md-nav" aria-label="Installing locally">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installing-powershell" class="md-nav__link">
-    Installing PowerShell
+  <a href="#getting-the-extension-for-visual-studio-code" class="md-nav__link">
+    Getting the extension for Visual Studio Code
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#getting-the-modules" class="md-nav__link">
-    Getting the modules
+      
+        <li class="md-nav__item">
+  <a href="#getting-the-extension-for-azure-pipelines" class="md-nav__link">
+    Getting the extension for Azure Pipelines
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#pre-release-versions" class="md-nav__link">
-    Pre-release versions
+      
+        <li class="md-nav__item">
+  <a href="#getting-the-github-action" class="md-nav__link">
+    Getting the GitHub action
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#building-from-source" class="md-nav__link">
     Building from source
   </a>
-  
-    <nav class="md-nav" aria-label="Building from source">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#development-dependencies" class="md-nav__link">
-    Development dependencies
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#limited-access-networks" class="md-nav__link">
-    Limited access networks
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -643,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../authoring/writing-rules/" class="md-nav__link">
+      <a href="../authoring/writing-rules.md" class="md-nav__link">
         Writing rules
       </a>
     </li>
@@ -657,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../authoring/storing-rules/" class="md-nav__link">
+      <a href="../authoring/storing-rules.md" class="md-nav__link">
         Storing and naming rules
       </a>
     </li>
@@ -671,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../authoring/packaging-rules/" class="md-nav__link">
+      <a href="../authoring/packaging-rules.md" class="md-nav__link">
         Packaging rules in a module
       </a>
     </li>
@@ -685,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../authoring/writing-rule-help/" class="md-nav__link">
+      <a href="../authoring/writing-rule-help.md" class="md-nav__link">
         Writing rule help
       </a>
     </li>
@@ -706,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../creating-your-pipeline/" class="md-nav__link">
+      <a href="../creating-your-pipeline.md" class="md-nav__link">
         Creating your pipeline
       </a>
     </li>
@@ -720,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../validating-locally/" class="md-nav__link">
+      <a href="../validating-locally.md" class="md-nav__link">
         Validating locally
       </a>
     </li>
@@ -868,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../license-contributing/" class="md-nav__link">
+      <a href="../license-contributing.md" class="md-nav__link">
         License and contributing
       </a>
     </li>
@@ -1002,7 +930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../support/" class="md-nav__link">
+      <a href="../support.md" class="md-nav__link">
         Support
       </a>
     </li>
@@ -1266,7 +1194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../addon-modules/" class="md-nav__link">
+      <a href="../addon-modules.md" class="md-nav__link">
         Additional modules
       </a>
     </li>
@@ -1307,77 +1235,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#with-github-actions" class="md-nav__link">
-    With GitHub Actions
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#with-azure-pipelines" class="md-nav__link">
-    With Azure Pipelines
+  <a href="#getting-the-module" class="md-nav__link">
+    Getting the module
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-locally" class="md-nav__link">
-    Installing locally
-  </a>
-  
-    <nav class="md-nav" aria-label="Installing locally">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installing-powershell" class="md-nav__link">
-    Installing PowerShell
+  <a href="#getting-the-extension-for-visual-studio-code" class="md-nav__link">
+    Getting the extension for Visual Studio Code
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#getting-the-modules" class="md-nav__link">
-    Getting the modules
+      
+        <li class="md-nav__item">
+  <a href="#getting-the-extension-for-azure-pipelines" class="md-nav__link">
+    Getting the extension for Azure Pipelines
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#pre-release-versions" class="md-nav__link">
-    Pre-release versions
+      
+        <li class="md-nav__item">
+  <a href="#getting-the-github-action" class="md-nav__link">
+    Getting the GitHub action
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#building-from-source" class="md-nav__link">
     Building from source
   </a>
-  
-    <nav class="md-nav" aria-label="Building from source">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#development-dependencies" class="md-nav__link">
-    Development dependencies
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#limited-access-networks" class="md-nav__link">
-    Limited access networks
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1398,88 +1293,56 @@
 </a>
 
 
-<h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h1>
-<p>PSRule supports running within continuous integration (<abbr title="continuous integration">CI</abbr>) systems or locally.
-It is shipped as a PowerShell module which makes it easy to install and distribute updates.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>PSRule provides native integration to popular <abbr title="continuous integration">CI</abbr> systems such as GitHub Actions and Azure Pipelines.
-If you are using a different <abbr title="continuous integration">CI</abbr> system you can use the local install to run on MacOS,
-Linux, and Windows worker nodes.</p>
-</div>
-<h2 id="with-github-actions">With GitHub Actions<a class="headerlink" href="#with-github-actions" title="Permanent link">#</a></h2>
-<p><a href="https://github.com/marketplace/actions/psrule"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M1 3a2 2 0 0 1 2-2h6.5a2 2 0 0 1 2 2v6.5a2 2 0 0 1-2 2H7v4.063C7 16.355 7.644 17 8.438 17H12.5v-2.5a2 2 0 0 1 2-2H21a2 2 0 0 1 2 2V21a2 2 0 0 1-2 2h-6.5a2 2 0 0 1-2-2v-2.5H8.437A2.938 2.938 0 0 1 5.5 15.562V11.5H3a2 2 0 0 1-2-2V3zm2-.5a.5.5 0 0 0-.5.5v6.5a.5.5 0 0 0 .5.5h6.5a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H3zM14.5 14a.5.5 0 0 0-.5.5V21a.5.5 0 0 0 .5.5H21a.5.5 0 0 0 .5-.5v-6.5a.5.5 0 0 0-.5-.5h-6.5z"/></svg></span> GitHub Action</a></p>
-<p>Install and use PSRule with GitHub Actions by referencing the <code>Microsoft/ps-rule</code> action.</p>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Analyze Azure template files</span>
+<h1 id="install-instructions">Install instructions<a class="headerlink" href="#install-instructions" title="Permanent link">#</a></h1>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<ul>
+<li>Windows PowerShell 5.1 with .NET Framework 4.7.2+ or</li>
+<li>PowerShell 7.2 or greater on Windows, MacOS, and Linux</li>
+</ul>
+<p>For a list of platforms that PowerShell 7.2 is supported on <a href="https://github.com/PowerShell/PowerShell#get-powershell">see</a>.</p>
+<h2 id="getting-the-module">Getting the module<a class="headerlink" href="#getting-the-module" title="Permanent link">#</a></h2>
+<p>Install from <a href="https://www.powershellgallery.com/packages/PSRule">PowerShell Gallery</a> for all users (requires permissions):</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Install PSRule module</span>
+<span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PSRule&#39;</span> <span class="n">-Repository</span> <span class="n">PSGallery</span><span class="p">;</span>
+</code></pre></div>
+<p>Install from <a href="https://www.powershellgallery.com/packages/PSRule">PowerShell Gallery</a> for current user only:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Install PSRule module</span>
+<span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PSRule&#39;</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span><span class="p">;</span>
+</code></pre></div>
+<p>Save for offline use from PowerShell Gallery:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Save PSRule module, in the .\modules directory</span>
+<span class="nb">Save-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PSRule&#39;</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Path</span> <span class="s1">&#39;.\modules&#39;</span><span class="p">;</span>
+</code></pre></div>
+<blockquote>
+<p>For pre-release versions the <code>-AllowPrerelease</code> switch must be added when calling <code>Install-Module</code> or <code>Save-Module</code>.</p>
+<p>To install pre-release module versions, upgrading to the latest version of <em>PowerShellGet</em> may be required.
+To do this use:</p>
+<p><code>Install-Module -Name PowerShellGet -Repository PSGallery -Scope CurrentUser -Force</code></p>
+</blockquote>
+<h2 id="getting-the-extension-for-visual-studio-code">Getting the extension for Visual Studio Code<a class="headerlink" href="#getting-the-extension-for-visual-studio-code" title="Permanent link">#</a></h2>
+<p>Install the <a href="https://marketplace.visualstudio.com/items?itemName=bewhite.psrule-vscode-preview">latest release</a> from the Visual Studio Marketplace.
+Within Visual Studio Code (VSCode) search for <code>PSRule</code> in the extensions pane.</p>
+<p>Install by the command line:</p>
+<div class="highlight"><pre><span></span><code>code --install-extension bewhite.psrule-vscode-preview
+</code></pre></div>
+<blockquote>
+<p>NOTE: If you are using the Insiders build, the command will be <code>code-insiders</code>.</p>
+</blockquote>
+<p>For detailed instructions, follow the steps in the <a href="https://code.visualstudio.com/docs/editor/extension-gallery">Visual Studio Code documentation</a>.</p>
+<h2 id="getting-the-extension-for-azure-pipelines">Getting the extension for Azure Pipelines<a class="headerlink" href="#getting-the-extension-for-azure-pipelines" title="Permanent link">#</a></h2>
+<p>Install the <a href="https://marketplace.visualstudio.com/items?itemName=bewhite.ps-rule">latest release</a> from the Visual Studio Marketplace.
+For detailed instructions see <a href="https://docs.microsoft.com/en-us/azure/devops/marketplace/install-extension?view=azure-devops&amp;tabs=browser">Install extensions</a>.</p>
+<p>If you don't have permissions to install extensions within your Azure DevOps organization, you can request it to be installed by an admin instead.</p>
+<h2 id="getting-the-github-action">Getting the GitHub action<a class="headerlink" href="#getting-the-github-action" title="Permanent link">#</a></h2>
+<p>Add the <a href="https://github.com/marketplace/actions/psrule">latest version</a> from the GitHub Marketplace to a workflow.</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Run PSRule analysis</span>
   <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Microsoft/ps-rule@v1.10.0</span>
 </code></pre></div>
-<p>This will automatically install compatible versions of all dependencies.</p>
-<h2 id="with-azure-pipelines">With Azure Pipelines<a class="headerlink" href="#with-azure-pipelines" title="Permanent link">#</a></h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=bewhite.ps-rule"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M1 3a2 2 0 0 1 2-2h6.5a2 2 0 0 1 2 2v6.5a2 2 0 0 1-2 2H7v4.063C7 16.355 7.644 17 8.438 17H12.5v-2.5a2 2 0 0 1 2-2H21a2 2 0 0 1 2 2V21a2 2 0 0 1-2 2h-6.5a2 2 0 0 1-2-2v-2.5H8.437A2.938 2.938 0 0 1 5.5 15.562V11.5H3a2 2 0 0 1-2-2V3zm2-.5a.5.5 0 0 0-.5.5v6.5a.5.5 0 0 0 .5.5h6.5a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H3zM14.5 14a.5.5 0 0 0-.5.5V21a.5.5 0 0 0 .5.5H21a.5.5 0 0 0 .5-.5v-6.5a.5.5 0 0 0-.5-.5h-6.5z"/></svg></span> Extension</a></p>
-<p>Install and use PSRule with Azure Pipeline by using extension tasks.
-Install the extension from the marketplace, then use the <code>ps-rule-assert</code> task in pipeline steps.</p>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">task</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ps-rule-assert@0</span>
-  <span class="nt">displayName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Analyze Azure template files</span>
-  <span class="nt">inputs</span><span class="p">:</span>
-    <span class="nt">inputType</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">repository</span>
-</code></pre></div>
-<p>This will automatically install compatible versions of all dependencies.</p>
-<h2 id="installing-locally">Installing locally<a class="headerlink" href="#installing-locally" title="Permanent link">#</a></h2>
-<p>PSRule can be installed locally from the PowerShell Gallery using PowerShell.
-You can also use this option to install on <abbr title="continuous integration">CI</abbr> workers that are not natively supported.</p>
-<p>The following platforms are supported:</p>
-<ul>
-<li>Windows PowerShell 5.1 with .NET Framework 4.7.2 or greater.</li>
-<li>PowerShell 7.1 or greater on MacOS, Linux, and Windows.</li>
-</ul>
-<h3 id="installing-powershell">Installing PowerShell<a class="headerlink" href="#installing-powershell" title="Permanent link">#</a></h3>
-<p>PowerShell 7.x can be installed on MacOS, Linux, and Windows but is not installed by default.
-For a list of platforms that PowerShell 7.1 is supported on and install instructions see <a href="https://github.com/PowerShell/PowerShell#get-powershell">Get PowerShell</a>.</p>
-<h3 id="getting-the-modules">Getting the modules<a class="headerlink" href="#getting-the-modules" title="Permanent link">#</a></h3>
-<p><a href="https://www.powershellgallery.com/packages/PSRule"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.97 11.03a.75.75 0 1 1 1.06-1.06L11 14.94V2.75a.75.75 0 0 1 1.5 0v12.19l4.97-4.97a.75.75 0 1 1 1.06 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0l-6.25-6.25zm-.22 9.47a.75.75 0 0 0 0 1.5h14.5a.75.75 0 0 0 0-1.5H4.75z"/></svg></span> Module</a></p>
-<p>PSRule can be installed or updated from the PowerShell Gallery.
-Use the following command line examples from a PowerShell terminal to install or update PSRule.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">For the current user</label><label for="__tabbed_1_2">For all users</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>To install PSRule for the current user use:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PSRule&#39;</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-</code></pre></div>
-<p>To update PSRule for the current user use:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Update-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PSRule&#39;</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<p>To install PSRule for all users (requires admin/ root permissions) use:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PSRule&#39;</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Scope</span> <span class="n">AllUsers</span>
-</code></pre></div>
-<p>To update PSRule for all users (requires admin/ root permissions) use:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Update-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PSRule&#39;</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Scope</span> <span class="n">AllUsers</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<h3 id="pre-release-versions">Pre-release versions<a class="headerlink" href="#pre-release-versions" title="Permanent link">#</a></h3>
-<p>To use a pre-release version of PSRule add the <code>-AllowPrerelease</code> switch when calling <code>Install-Module</code>,
-<code>Update-Module</code>, or <code>Save-Module</code> cmdlets.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>To install pre-release module versions, the latest version of <em>PowerShellGet</em> may be required.</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Install the latest PowerShellGet version</span>
-<span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PowerShellGet</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span>
-</code></pre></div>
-</div>
-<h3 id="building-from-source">Building from source<a class="headerlink" href="#building-from-source" title="Permanent link">#</a></h3>
-<p><a href="https://github.com/microsoft/PSRule.git"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H4.75a.75.75 0 0 1 0-1.5H19a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4H5a.5.5 0 0 0-.5.5v6.25a.75.75 0 0 1-1.5 0V3zm12-.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5z"/><path d="M4.53 12.24a.75.75 0 0 1-.039 1.06l-2.639 2.45 2.64 2.45a.75.75 0 1 1-1.022 1.1l-3.23-3a.75.75 0 0 1 0-1.1l3.23-3a.75.75 0 0 1 1.06.04zm3.979 1.06a.75.75 0 1 1 1.02-1.1l3.231 3a.75.75 0 0 1 0 1.1l-3.23 3a.75.75 0 1 1-1.021-1.1l2.639-2.45-2.64-2.45z"/></svg></span> Source</a></p>
-<p>PSRule is provided as open source on GitHub.
-To build PSRule from source code:</p>
-<ol>
-<li>Clone the GitHub <a href="https://github.com/microsoft/PSRule.git">repository</a>.</li>
-<li>Run <code>./build.ps1</code> from a PowerShell terminal in the cloned path.</li>
-</ol>
-<p>This build script will compile the module and documentation then output the result into <code>out/modules/PSRule</code>.</p>
-<h4 id="development-dependencies">Development dependencies<a class="headerlink" href="#development-dependencies" title="Permanent link">#</a></h4>
-<p>The following PowerShell modules will be automatically install if the required versions are not present:</p>
+<p>For detailed instructions and change log see the <a href="https://github.com/marketplace/actions/psrule">action details</a>.</p>
+<h2 id="building-from-source">Building from source<a class="headerlink" href="#building-from-source" title="Permanent link">#</a></h2>
+<p>To build this module from source run <code>./build.ps1</code>.
+This build script will compile the module and documentation then output the result into <code>out/modules/PSRule</code>.</p>
+<p>The following PowerShell modules will be automatically downloaded if the required versions are not present:</p>
 <ul>
 <li>PlatyPS</li>
 <li>Pester</li>
@@ -1488,41 +1351,24 @@ To build PSRule from source code:</p>
 <li>PackageManagement</li>
 <li>InvokeBuild</li>
 </ul>
-<p>These additional modules are only required for building PSRule.</p>
+<p>These additional modules are only required for building PSRule and are not required for running PSRule.</p>
+<p>If you are on a network that does not permit Internet access to the PowerShell Gallery,
+download these modules on an alternative device that has access.
+The following script can be used to download the required modules to an alternative device.
+After downloading the modules copy the module directories to devices with restricted Internet access.</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Save modules, in the .\modules directory</span>
+<span class="nb">Save-Module</span> <span class="n">-Name</span> <span class="n">PlatyPS</span><span class="p">,</span> <span class="n">Pester</span><span class="p">,</span> <span class="n">PSScriptAnalyzer</span><span class="p">,</span> <span class="n">PowerShellGet</span><span class="p">,</span> <span class="n">PackageManagement</span><span class="p">,</span> <span class="n">InvokeBuild</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Path</span> <span class="s1">&#39;.\modules&#39;</span><span class="p">;</span>
+</code></pre></div>
 <p>Additionally .NET Core SDK v3.1 is required.
 .NET Core will not be automatically downloaded and installed.
 To download and install the latest SDK see <a href="https://dotnet.microsoft.com/download/dotnet-core/3.1">Download .NET Core 3.1</a>.</p>
-<h3 id="limited-access-networks">Limited access networks<a class="headerlink" href="#limited-access-networks" title="Permanent link">#</a></h3>
-<p>If you are on a network that does not permit Internet access to the PowerShell Gallery,
-download the required PowerShell modules on an alternative device that has access.
-PowerShell provides the <code>Save-Module</code> cmdlet that can be run from a PowerShell terminal to do this.</p>
-<p>The following command lines can be used to download the required modules using a PowerShell terminal.
-After downloading the modules, copy the module directories to devices with restricted Internet access.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Runtime modules</label><label for="__tabbed_2_2">Development modules</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>To save PSRule for offline use:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Save-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PSRule&#39;</span> <span class="n">-Path</span> <span class="s1">&#39;.\modules&#39;</span>
-</code></pre></div>
-<p>This will save PSRule into the <code>modules</code> sub-directory.</p>
-</div>
-<div class="tabbed-block">
-<p>To save PSRule development module dependencies for offline use:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$modules</span> <span class="p">=</span> <span class="p">@(</span><span class="s1">&#39;PlatyPS&#39;</span><span class="p">,</span> <span class="s1">&#39;Pester&#39;</span><span class="p">,</span> <span class="s1">&#39;PSScriptAnalyzer&#39;</span><span class="p">,</span> <span class="s1">&#39;PowerShellGet&#39;</span><span class="p">,</span>
-<span class="s1">&#39;PackageManagement&#39;</span><span class="p">,</span> <span class="s1">&#39;InvokeBuild&#39;</span><span class="p">)</span>
-<span class="nb">Save-Module</span> <span class="n">-Name</span> <span class="nv">$modules</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Path</span> <span class="s1">&#39;.\modules&#39;</span><span class="p">;</span>
-</code></pre></div>
-<p>This will save required developments dependencies into the <code>modules</code> sub-directory.</p>
-</div>
-</div>
-</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-01-02
+      2021-12-18
     
   </small>
 </div>
@@ -1539,7 +1385,7 @@ After downloading the modules, copy the module directories to devices with restr
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../faq/" class="md-footer__link md-footer__link--prev" aria-label="Previous: FAQ" rel="prev">
+        <a href="../features/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Features" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1548,20 +1394,20 @@ After downloading the modules, copy the module directories to devices with restr
               <span class="md-footer__direction">
                 Previous
               </span>
-              FAQ
+              Features
             </div>
           </div>
         </a>
       
       
         
-        <a href="../authoring/writing-rules/" class="md-footer__link md-footer__link--next" aria-label="Next: Writing rules" rel="next">
+        <a href="../scenarios/azure-resources/azure-resources/" class="md-footer__link md-footer__link--next" aria-label="Next: Validate Azure resource configuration" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Writing rules
+              Validate Azure resource configuration
             </div>
           </div>
           <div class="md-footer__button md-icon">
