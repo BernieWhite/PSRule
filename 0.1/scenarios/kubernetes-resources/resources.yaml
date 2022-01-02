@@ -1,0 +1,94 @@
+#
+# Kubernetes resource manaifest
+#
+
+---
+# A sample backend deployment
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: app1-cache
+  labels:
+    app.kubernetes.io/name: app1-cache
+    app.kubernetes.io/version: 1.0.0
+    app.kubernetes.io/component: database
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: app1-cache
+    spec:
+      containers:
+      - name: app1-cache
+        image: redis
+        ports:
+        - containerPort: 6379
+          name: redis
+
+---
+# Publish backend to cluster
+apiVersion: v1
+kind: Service
+metadata:
+  name: app1-cache-service
+  lables:
+spec:
+  ports:
+  - port: 6379
+  selector:
+    app: app1-cache
+
+---
+# A sample web frontend deployment
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: app1-ui
+  labels:
+    app.kubernetes.io/name: app1-ui
+    app.kubernetes.io/component: web
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: app1-ui
+    spec:
+      containers:
+      - name: app1-ui
+        image: psrule/notaniamge:v1
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 250m
+            memory: 50Mi
+          limits:
+            cpu: 500m
+            memory: 100Mi
+        env:
+        - name: REDIS
+          value: "app1-cache"
+
+---
+# Publish frontend to users
+apiVersion: v1
+kind: Service
+metadata:
+  name: app1-ui-service
+  labels:
+    app.kubernetes.io/name: app1-ui
+    app.kubernetes.io/version: 1.1.0
+    app.kubernetes.io/component: web
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: app1-ui

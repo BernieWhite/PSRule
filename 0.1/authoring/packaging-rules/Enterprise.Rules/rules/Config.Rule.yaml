@@ -1,0 +1,21 @@
+
+---
+# Synopsis: Example module configuration for Enterprise.Rules module
+apiVersion: github.com/microsoft/PSRule/v1
+kind: ModuleConfig
+metadata:
+  name: Enterprise.Rules
+spec:
+  binding:
+    targetName:
+    - ResourceName
+    - FullName
+    - name
+    targetType:
+    - ResourceType
+    - type
+    - Extension
+    field:
+      resourceId: [ 'ResourceId' ]
+      subscriptionId: [ 'SubscriptionId' ]
+      resourceGroupName: [ 'ResourceGroupName' ]

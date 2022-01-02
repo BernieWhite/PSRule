@@ -1,0 +1,6 @@
+
+binding:
+  targetName:
+    - metadata.name
+  targetType:
+    - kind
