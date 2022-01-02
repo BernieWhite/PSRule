@@ -1,7 +1,0 @@
-{
-    "type": "app1",
-    "version": 1,
-    "configure": {
-        "supportsHttpsTrafficOnly": false
-    }
-}
