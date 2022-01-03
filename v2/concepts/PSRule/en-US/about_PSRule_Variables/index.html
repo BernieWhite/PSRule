@@ -1526,6 +1526,7 @@ Use custom data to store data that must be calculated during rule execution.</p>
   Services should implement the <code>IDisposable</code> interface to perform additional cleanup.
   This method can only be called within the <code>-Initialize</code> block of a convention.</li>
 <li><code>GetService(string id)</code> - Retrieves a service previously added by a convention.</li>
+<li><code>GetPath(object sourceObject, string path)</code> - Evalute an object path expression and returns the resulting objects.</li>
 </ul>
 <p>The file format is detected based on the same file formats as the option <code>Input.Format</code>.
 i.e. Yaml, Json, Markdown, and PowerShell Data.</p>
@@ -1593,7 +1594,7 @@ i.e. Yaml, Json, Markdown, and PowerShell Data.</p>
   <small>
     
       Last update:
-      2021-10-22
+      2022-01-03
     
   </small>
 </div>

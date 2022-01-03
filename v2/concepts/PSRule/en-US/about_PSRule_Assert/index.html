@@ -1969,21 +1969,37 @@ Use assertion methods for advanced cases or increased flexibility.</p>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="field-names">Field names<a class="headerlink" href="#field-names" title="Permanent link">#</a></h3>
-<p>Many of the built-in assertion methods accept a field name.
-The field name is an expression that traverses object properties, keys or indexes of the <em>input object</em>.</p>
-<p>The field name can contain:</p>
+<p>Many of the built-in assertion methods accept an object path or field name.
+An object path is an expression that traverses object properties, keys or indexes of the <em>input object</em>.
+The syntax for an object path is inspired by JSONPath which is current an IETF Internet-Draft.</p>
+<p>The object path expression can contain:</p>
 <ul>
 <li>Property names for PSObjects or .NET objects.</li>
 <li>Keys for hash table or dictionaries.</li>
 <li>Indexes for arrays or collections.</li>
+<li>Queries that filter items from array or collection properties.</li>
 </ul>
 <p>For example:</p>
 <ul>
-<li><code>.</code> refers to <em>input object</em> itself.</li>
-<li><code>Name</code> or <code>.Name</code> refers to the name property/ key of the <em>input object</em>.</li>
-<li><code>Properties.enabled</code> refers to the enabled property under the Properties property.</li>
-<li><code>Tags.env</code> refers to the env key under a hash table property of the <em>input object</em>.</li>
-<li><code>Properties.securityRules[0].name</code> references to the name property of the first security rule.</li>
+<li><code>.</code>, or <code>$</code> refers to <em>input object</em> itself.</li>
+<li><code>Name</code>, <code>.Name</code>, or <code>$.Name</code> refers to the <em>name</em> member of the <em>input object</em>.</li>
+<li><code>Properties.enabled</code> refers to the <em>enabled</em> member under the Properties member.
+  Alternatively this can also be written as <code>Properties['enabled']</code>.</li>
+<li><code>Tags.env</code> refers to the env member under a hash table property of the <em>input object</em>.</li>
+<li><code>Tags+env</code> refers to the env member using a case-sensitive match.</li>
+<li><code>Properties.securityRules[0].name</code> references to the name member of the first security rule.</li>
+<li><code>Properties.securityRules[-1].name</code> references to the name member of the last security rule.</li>
+<li><code>Properties.securityRules[?@direction == 'Inbound'].name</code> returns the name of any inbound rules.
+  This will return an array of security rule names.</li>
+</ul>
+<p>Notable differences between object paths and JSONPath are:</p>
+<ul>
+<li>Member names (properties and keys) are case-insensitive by default.
+  To perform a case-sensitive match of a member name use a plus selector <code>+</code> in front of the member name.
+  Some assertions such as <code>HasField</code> provide an option to match case when matching member names.
+  When this is used, the plus selector perform an case-insensitive match.</li>
+<li>Quoted member names with single or double quotes are supported with dot selector.
+  i.e. <code>Properties.'spaced name'</code> is valid.</li>
 </ul>
 <h3 id="contains">Contains<a class="headerlink" href="#contains" title="Permanent link">#</a></h3>
 <p>The <code>Contains</code> assertion method checks the field value contains the specified string.
@@ -3255,7 +3271,7 @@ If a <code>_PSRule</code> property exists with <code>issue</code> sub-property P
   <small>
     
       Last update:
-      2021-11-22
+      2022-01-03
     
   </small>
 </div>

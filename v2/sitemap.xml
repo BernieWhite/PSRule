@@ -266,6 +266,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://microsoft.github.io/PSRule/v2/scenarios/benchmark/results-v1.10.0/</loc>
+         <lastmod>2022-01-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://microsoft.github.io/PSRule/v2/scenarios/benchmark/results-v1.11.0/</loc>
+         <lastmod>2022-01-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://microsoft.github.io/PSRule/v2/scenarios/benchmark/results-v2.0.0-pre/</loc>
+         <lastmod>2022-01-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/kubernetes-resources/kubernetes-resources/</loc>
          <lastmod>2022-01-03</lastmod>
          <changefreq>daily</changefreq>
