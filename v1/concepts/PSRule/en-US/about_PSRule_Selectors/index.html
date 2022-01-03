@@ -1328,14 +1328,14 @@ A selector can be defined side-by-side with other resources such as baselines or
 <p>Selectors can also be defined within <code>.json</code> files.
 We recommend using <code>.jsonc</code> to view <a href="https://code.visualstudio.com/docs/languages/json#_json-with-comments">JSON with Comments</a> in Visual Studio Code.</p>
 <p>Use the following template to define a selector:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="c1"># Synopsis: {{ Synopsis }}</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;{{</span><span class="nv"> </span><span class="s">Name</span><span class="nv"> </span><span class="s">}}&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span> <span class="p p-Indicator">{</span> <span class="p p-Indicator">}</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: {{ Synopsis }}</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;{{</span><span class="nv"> </span><span class="s">Name</span><span class="nv"> </span><span class="s">}}&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>[
   {
@@ -1354,44 +1354,44 @@ We recommend using <code>.jsonc</code> to view <a href="https://code.visualstudi
 <p>Within the <code>if</code> object, one or more conditions or logical operators can be used.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
 <h3 id="example-selectorsruleyaml">Example Selectors.Rule.yaml<a class="headerlink" href="#example-selectorsruleyaml" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Example Selectors.Rule.yaml</span>
-<span class="nn">---</span>
-<span class="c1"># Synopsis: Require the CustomValue field.</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">RequireCustomValue</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;CustomValue&#39;</span>
-    <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example Selectors.Rule.yaml</span><span class="w"></span>
+<span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Require the CustomValue field.</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RequireCustomValue</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;CustomValue&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="c1"># Synopsis: Require a Name or AlternativeName.</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">RequireName</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">anyOf</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;AlternateName&#39;</span>
-      <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-      <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Require a Name or AlternativeName.</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RequireName</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;AlternateName&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="c1"># Synopsis: Require a specific CustomValue</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">RequireSpecificCustomValue</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;CustomValue&#39;</span>
-    <span class="nt">in</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;Value1&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;Value2&#39;</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Require a specific CustomValue</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RequireSpecificCustomValue</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;CustomValue&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">in</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Value1&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Value2&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="example-selectorsrulejsonc">Example Selectors.Rule.jsonc<a class="headerlink" href="#example-selectorsrulejsonc" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>// Example Selectors.Rule.jsonc
@@ -1461,7 +1461,7 @@ We recommend using <code>.jsonc</code> to view <a href="https://code.visualstudi
   <small>
     
       Last update:
-      2021-12-21
+      2022-01-02
     
   </small>
 </div>

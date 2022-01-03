@@ -1295,17 +1295,17 @@ Each rule must be named uniquely.</li>
 <p>Several PSRule keywords such as <code>Exists</code> and <code>AllOf</code> can supplement PowerShell to quickly build out rules that are easy to read.</p>
 </blockquote>
 <p>In <code>resources.json</code> one of our example storage accounts has a property <code>Properties.supportsHttpsTrafficOnly</code> as shown below, which will be how our rule will pass <code>$True</code> or fail <code>$False</code> Azure resources that we throw at it.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;storage&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;ResourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;storage&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;ResourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Microsoft.Storage/storageAccounts&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;Kind&quot;</span><span class="p">:</span> <span class="s2">&quot;Storage&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;ResourceGroupName&quot;</span><span class="p">:</span> <span class="s2">&quot;test-rg&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;Location&quot;</span><span class="p">:</span> <span class="s2">&quot;eastus2&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;Properties&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;supportsHttpsTrafficOnly&quot;</span><span class="p">:</span> <span class="kc">false</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;storage&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ResourceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;storage&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ResourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft.Storage/storageAccounts&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Storage&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ResourceGroupName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test-rg&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eastus2&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;supportsHttpsTrafficOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>In the example below:</p>
 <ul>
@@ -1428,7 +1428,7 @@ This function will be used by preconditions to check the type of Azure resource.
   <small>
     
       Last update:
-      2021-05-11
+      2022-01-02
     
   </small>
 </div>

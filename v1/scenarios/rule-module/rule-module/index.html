@@ -1370,28 +1370,28 @@ A module configuration <code>.Rule.yaml</code> file must be distributed within t
 The name of the <code>ModuleConfig</code> must match the name of the module.
 Additional <code>ModuleConfig</code> resources or with an alternative name are ignored.
 PSRule does not support module configurations distributed outside of a module.</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="c1"># Synopsis: Example module configuration for Enterprise.Rules module.</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ModuleConfig</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Enterprise.Rules</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">binding</span><span class="p">:</span>
-    <span class="nt">targetName</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceName</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">FullName</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span>
-    <span class="nt">targetType</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceType</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">type</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Extension</span>
-    <span class="nt">field</span><span class="p">:</span>
-      <span class="nt">resourceId</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;ResourceId&#39;</span> <span class="p p-Indicator">]</span>
-      <span class="nt">subscriptionId</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;SubscriptionId&#39;</span> <span class="p p-Indicator">]</span>
-      <span class="nt">resourceGroupName</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;ResourceGroupName&#39;</span> <span class="p p-Indicator">]</span>
-  <span class="nt">rule</span><span class="p">:</span>
-    <span class="nt">baseline</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Enterprise.Default</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Example module configuration for Enterprise.Rules module.</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ModuleConfig</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enterprise.Rules</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">binding</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">targetName</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceName</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FullName</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span><span class="w"></span>
+<span class="w">    </span><span class="nt">targetType</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceType</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Extension</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">resourceId</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&#39;ResourceId&#39;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">subscriptionId</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&#39;SubscriptionId&#39;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">resourceGroupName</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&#39;ResourceGroupName&#39;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">baseline</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enterprise.Default</span><span class="w"></span>
 </code></pre></div>
 <p>The following options are allowed within a <code>ModuleConfig</code>:</p>
 <ul>
@@ -1413,28 +1413,28 @@ When a default baseline is set, PSRule will use the named baseline automatically
 This feature removes the need for users to specify it manually.</p>
 <p>To set a default baseline, set the <code>Rule.Baseline</code> property of the <code>ModuleConfig</code> resource.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="c1"># Synopsis: Example module configuration for Enterprise.Rules module.</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ModuleConfig</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Enterprise.Rules</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">binding</span><span class="p">:</span>
-    <span class="nt">targetName</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceName</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">FullName</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span>
-    <span class="nt">targetType</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceType</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">type</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Extension</span>
-    <span class="nt">field</span><span class="p">:</span>
-      <span class="nt">resourceId</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;ResourceId&#39;</span> <span class="p p-Indicator">]</span>
-      <span class="nt">subscriptionId</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;SubscriptionId&#39;</span> <span class="p p-Indicator">]</span>
-      <span class="nt">resourceGroupName</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;ResourceGroupName&#39;</span> <span class="p p-Indicator">]</span>
-  <span class="nt">rule</span><span class="p">:</span>
-    <span class="nt">baseline</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Enterprise.Default</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Example module configuration for Enterprise.Rules module.</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ModuleConfig</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enterprise.Rules</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">binding</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">targetName</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceName</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FullName</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span><span class="w"></span>
+<span class="w">    </span><span class="nt">targetType</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceType</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Extension</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">resourceId</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&#39;ResourceId&#39;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">subscriptionId</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&#39;SubscriptionId&#39;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">resourceGroupName</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&#39;ResourceGroupName&#39;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">baseline</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enterprise.Default</span><span class="w"></span>
 </code></pre></div>
 <p>This examples set the default baseline to <code>Enterprise.Default</code>.
 The default baseline must be included in file ending with <code>.Rule.yaml</code> within the module directory structure.</p>
@@ -1487,7 +1487,7 @@ For example on Linux <code>en-us</code> would not match.</p>
   <small>
     
       Last update:
-      2021-11-08
+      2022-01-02
     
   </small>
 </div>

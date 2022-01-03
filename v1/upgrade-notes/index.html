@@ -1232,21 +1232,21 @@ From <em>v1.4.0</em> PSRule now defaults to <code>Detect</code>.</p>
 </ol>
 <p>To force usage of the <code>Client</code> output style set the <code>Output.Style</code> option.
 For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/style property</span>
-<span class="nt">output</span><span class="p">:</span>
-  <span class="nt">style</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Client</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/style property</span><span class="w"></span>
+<span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Client</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_OUTPUT_STYLE</span><span class="o">=</span>Client
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_OUTPUT_STYLE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Client</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_OUTPUT_STYLE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Client</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_STYLE</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Client</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_STYLE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Client</span><span class="w"></span>
 </code></pre></div>
 <h2 id="upgrading-to-v100">Upgrading to v1.0.0<a class="headerlink" href="#upgrading-to-v100" title="Permanent link">#</a></h2>
 <p>Follow these notes to upgrade from PSRule version <em>v0.22.0</em> to <em>v1.0.0</em>.</p>
@@ -1280,7 +1280,7 @@ Rules referencing the deprecated properties of <code>$Rule</code> must be update
   <small>
     
       Last update:
-      2021-05-29
+      2022-01-02
     
   </small>
 </div>

@@ -1222,20 +1222,20 @@ The badge API can be used to create badges within a convention.</p>
 By using the <code>$PSRule.Badges.Create</code> method you can create a standard or custom badge.</p>
 <p>The create method provides the following overloads:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Create a badge for the worst case of an analyzed object.</span>
-<span class="n">IBadge</span> <span class="nf">Create</span><span class="p">(</span><span class="n">InvokeResult</span> <span class="n">result</span><span class="p">);</span>
+<span class="n">IBadge</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="n">InvokeResult</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="w"></span>
 
 <span class="c1">// Create a badge for the worst case of all analyzed objects.</span>
-<span class="n">IBadge</span> <span class="nf">Create</span><span class="p">(</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">InvokeResult</span><span class="p">&gt;</span> <span class="n">result</span><span class="p">);</span>
+<span class="n">IBadge</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">InvokeResult</span><span class="p">&gt;</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="w"></span>
 
 <span class="c1">// Create a custom badge.</span>
-<span class="n">IBadge</span> <span class="nf">Create</span><span class="p">(</span><span class="kt">string</span> <span class="n">title</span><span class="p">,</span> <span class="n">BadgeType</span> <span class="n">type</span><span class="p">,</span> <span class="kt">string</span> <span class="n">label</span><span class="p">);</span>
+<span class="n">IBadge</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">BadgeType</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">label</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <p>A badge once created can be read as a string or written to disk with the following methods:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Get the badge as SVG text content.</span>
-<span class="kt">string</span> <span class="nf">ToSvg</span><span class="p">();</span>
+<span class="kt">string</span><span class="w"> </span><span class="nf">ToSvg</span><span class="p">();</span><span class="w"></span>
 
 <span class="c1">// Write the SVG badge content directly to disk.</span>
-<span class="k">void</span> <span class="nf">ToFile</span><span class="p">(</span><span class="kt">string</span> <span class="n">path</span><span class="p">);</span>
+<span class="k">void</span><span class="w"> </span><span class="nf">ToFile</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">path</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <h3 id="defining-conventions">Defining conventions<a class="headerlink" href="#defining-conventions" title="Permanent link">#</a></h3>
 <p>To define a convention, add a <code>Export-PSRuleConvention</code> block within a <code>.Rule.ps1</code> file.
@@ -1271,7 +1271,7 @@ For example:</p>
   <small>
     
       Last update:
-      2021-08-26
+      2022-01-02
     
   </small>
 </div>
