@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Options/">
       
       <link rel="icon" href="../../../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.f7951f6f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -67,7 +67,7 @@
   <meta property="og:title" content="PSRule - Options" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta property="og:url" content="https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Options/" />
-  <meta property="og:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
@@ -78,7 +78,7 @@
   <meta name="twitter:site" content="@github" />
   <meta name="twitter:title" content="PSRule - Options" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
 
   </head>
@@ -1986,8 +1986,8 @@ Continue reading for a full list of options and how each can be used.</p>
 <p>Alternatively, options can be stored in a YAML formatted file and loaded from disk.
 Storing options as YAML allows different configurations to be loaded in a repeatable way instead of having to create an options object each time.</p>
 <p>Options are stored as YAML properties using a lower camel case naming convention, for example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">output</span><span class="p">:</span>
-  <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Yaml</span>
+<div class="highlight"><pre><span></span><code><span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Yaml</span><span class="w"></span>
 </code></pre></div>
 <p>The <code>Set-PSRuleOption</code> cmdlet can be used to set options stored in YAML or the YAML file can be manually edited.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Set-PSRuleOption</span> <span class="n">-OutputFormat</span> <span class="n">Yaml</span><span class="p">;</span>
@@ -2058,12 +2058,12 @@ Custom fields are available to rules and included in output.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the BindingField parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-BindingField</span> <span class="p">@{</span> <span class="n">id</span> <span class="p">=</span> <span class="s1">&#39;ResourceId&#39;</span><span class="p">,</span> <span class="s1">&#39;AlternativeId&#39;</span> <span class="p">};</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the binding/field property</span>
-<span class="nt">binding</span><span class="p">:</span>
-  <span class="nt">field</span><span class="p">:</span>
-    <span class="nt">id</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceId</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">AlternativeId</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the binding/field property</span><span class="w"></span>
+<span class="nt">binding</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">field</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceId</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AlternativeId</span><span class="w"></span>
 </code></pre></div>
 <h3 id="bindingignorecase">Binding.IgnoreCase<a class="headerlink" href="#bindingignorecase" title="Permanent link">#</a></h3>
 <p>When evaluating an object, PSRule extracts a few key properties from the object to help filter rules and display output results.
@@ -2088,21 +2088,21 @@ See <a href="#bindingtargetname"><code>Binding.TargetName</code></a> and <a href
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the BindingIgnoreCase parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-BindingIgnoreCase</span> <span class="nv">$False</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the binding/ignoreCase property</span>
-<span class="nt">binding</span><span class="p">:</span>
-  <span class="nt">ignoreCase</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the binding/ignoreCase property</span><span class="w"></span>
+<span class="nt">binding</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ignoreCase</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_BINDING_IGNORECASE</span><span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_BINDING_IGNORECASE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_BINDING_IGNORECASE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_BINDING_IGNORECASE</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_BINDING_IGNORECASE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <h3 id="bindingnameseparator">Binding.NameSeparator<a class="headerlink" href="#bindingnameseparator" title="Permanent link">#</a></h3>
 <p>When an object is passed from the pipeline, PSRule assigns the object a <em>TargetName</em>.
@@ -2123,21 +2123,21 @@ This option configures the separator that PSRule uses between the two components
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the BindingNameSeparator parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-BindingNameSeparator</span> <span class="s1">&#39;::&#39;</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the binding/nameSeparator property</span>
-<span class="nt">binding</span><span class="p">:</span>
-  <span class="nt">nameSeparator</span><span class="p">:</span> <span class="s">&#39;::&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the binding/nameSeparator property</span><span class="w"></span>
+<span class="nt">binding</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">nameSeparator</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;::&#39;</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_BINDING_NAMESEPARATOR</span><span class="o">=</span><span class="s1">&#39;::&#39;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_BINDING_NAMESEPARATOR</span><span class="p">:</span> <span class="s">&#39;::&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_BINDING_NAMESEPARATOR</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;::&#39;</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_BINDING_NAMESEPARATOR</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="s">&#39;::&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_BINDING_NAMESEPARATOR</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;::&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="bindingprefertargetinfo">Binding.PreferTargetInfo<a class="headerlink" href="#bindingprefertargetinfo" title="Permanent link">#</a></h3>
 <p>Some built-in objects within PSRule perform automatic binding of TargetName and TargetType.
@@ -2156,21 +2156,21 @@ To prefer automatic binding when specified set this option to <code>$True</code>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the BindingPreferTargetInfo parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-BindingPreferTargetInfo</span> <span class="nv">$True</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the binding/preferTargetInfo property</span>
-<span class="nt">binding</span><span class="p">:</span>
-  <span class="nt">preferTargetInfo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the binding/preferTargetInfo property</span><span class="w"></span>
+<span class="nt">binding</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">preferTargetInfo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_BINDING_PREFERTARGETINFO</span><span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_BINDING_PREFERTARGETINFO</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_BINDING_PREFERTARGETINFO</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_BINDING_PREFERTARGETINFO</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_BINDING_PREFERTARGETINFO</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <h3 id="bindingtargetname">Binding.TargetName<a class="headerlink" href="#bindingtargetname" title="Permanent link">#</a></h3>
 <p>When an object is passed from the pipeline, PSRule assigns the object a <em>TargetName</em>.
@@ -2211,23 +2211,23 @@ Many objects could be passed down the pipeline at the same time, so using a <em>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the TargetName parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-TargetName</span> <span class="s1">&#39;ResourceName&#39;</span><span class="p">,</span> <span class="s1">&#39;AlternateName&#39;</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the binding/targetName property</span>
-<span class="nt">binding</span><span class="p">:</span>
-  <span class="nt">targetName</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceName</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">AlternateName</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the binding/targetName property</span><span class="w"></span>
+<span class="nt">binding</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">targetName</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceName</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AlternateName</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_BINDING_TARGETNAME</span><span class="o">=</span><span class="s1">&#39;ResourceName;AlternateName&#39;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_BINDING_TARGETNAME</span><span class="p">:</span> <span class="s">&#39;ResourceName;AlternateName&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_BINDING_TARGETNAME</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ResourceName;AlternateName&#39;</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_BINDING_TARGETNAME</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="s">&#39;ResourceName;AlternateName&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_BINDING_TARGETNAME</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ResourceName;AlternateName&#39;</span><span class="w"></span>
 </code></pre></div>
 <p>To specify a custom binding function use:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># Create a custom function that returns a TargetName string</span>
@@ -2278,23 +2278,23 @@ PSRule uses the following logic to determine what <em>TargetType</em> should be 
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the TargetType parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-TargetType</span> <span class="s1">&#39;ResourceType&#39;</span><span class="p">,</span> <span class="s1">&#39;kind&#39;</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the binding/targetType property</span>
-<span class="nt">binding</span><span class="p">:</span>
-  <span class="nt">targetType</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceType</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">kind</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the binding/targetType property</span><span class="w"></span>
+<span class="nt">binding</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">targetType</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceType</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kind</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_BINDING_TARGETTYPE</span><span class="o">=</span><span class="s1">&#39;ResourceType;kind&#39;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_BINDING_TARGETTYPE</span><span class="p">:</span> <span class="s">&#39;ResourceType;kind&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_BINDING_TARGETTYPE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ResourceType;kind&#39;</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_BINDING_TARGETTYPE</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="s">&#39;ResourceType;kind&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_BINDING_TARGETTYPE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ResourceType;kind&#39;</span><span class="w"></span>
 </code></pre></div>
 <p>To specify a custom binding function use:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># Create a custom function that returns a TargetType string</span>
@@ -2332,21 +2332,21 @@ Set <code>Binding.NameSeparator</code> to change.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the BindingUseQualifiedName parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-BindingUseQualifiedName</span> <span class="nv">$True</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the binding/useQualifiedName property</span>
-<span class="nt">binding</span><span class="p">:</span>
-  <span class="nt">useQualifiedName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the binding/useQualifiedName property</span><span class="w"></span>
+<span class="nt">binding</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">useQualifiedName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_BINDING_USEQUALIFIEDNAME</span><span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_BINDING_USEQUALIFIEDNAME</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_BINDING_USEQUALIFIEDNAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_BINDING_USEQUALIFIEDNAME</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_BINDING_USEQUALIFIEDNAME</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h3>
 <p>Configures a set of baseline configuration values that can be used in rule definitions.
@@ -2355,23 +2355,23 @@ Configuration values can be overridden at different scopes.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Configuration option with a hashtable</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Configuration</span> <span class="p">@{</span> <span class="n">LOCAL_APPSERVICEMININSTANCECOUNT</span> <span class="p">=</span> <span class="n">2</span> <span class="p">};</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the configuration property</span>
-<span class="nt">configuration</span><span class="p">:</span>
-  <span class="nt">LOCAL_APPSERVICEMININSTANCECOUNT</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the configuration property</span><span class="w"></span>
+<span class="nt">configuration</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">LOCAL_APPSERVICEMININSTANCECOUNT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </code></pre></div>
 <p>Configuration values can be specified using environment variables.
 To specify a configuration value, prefix the configuration value with <code>PSRULE_CONFIGURATION_</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_CONFIGURATION_LOCAL_APPSERVICEMININSTANCECOUNT</span><span class="o">=</span><span class="m">2</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_CONFIGURATION_LOCAL_APPSERVICEMININSTANCECOUNT</span><span class="p">:</span> <span class="s">&#39;2&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_CONFIGURATION_LOCAL_APPSERVICEMININSTANCECOUNT</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;2&#39;</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_CONFIGURATION_LOCAL_APPSERVICEMININSTANCECOUNT</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="s">&#39;2&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_CONFIGURATION_LOCAL_APPSERVICEMININSTANCECOUNT</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;2&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="conventioninclude">Convention.Include<a class="headerlink" href="#conventioninclude" title="Permanent link">#</a></h3>
 <p>Specifies conventions to execute when the pipeline run.
@@ -2386,23 +2386,23 @@ Conventions are included by name and must be defined within files included in <c
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Convention parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-Convention</span> <span class="s1">&#39;Convention1&#39;</span><span class="p">,</span> <span class="s1">&#39;Convention2&#39;</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the convention/include property</span>
-<span class="nt">convention</span><span class="p">:</span>
-  <span class="nt">include</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="s">&#39;Convention1&#39;</span>
-  <span class="p p-Indicator">-</span> <span class="s">&#39;Convention2&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the convention/include property</span><span class="w"></span>
+<span class="nt">convention</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">include</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Convention1&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Convention2&#39;</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_CONVENTION_INCLUDE</span><span class="o">=</span><span class="s1">&#39;Convention1;Convention2&#39;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_CONVENTION_INCLUDE</span><span class="p">:</span> <span class="s">&#39;Convention1;Convention2&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_CONVENTION_INCLUDE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Convention1;Convention2&#39;</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_CONVENTION_INCLUDE</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="s">&#39;Convention1;Convention2&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_CONVENTION_INCLUDE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Convention1;Convention2&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="executionlanguagemode">Execution.LanguageMode<a class="headerlink" href="#executionlanguagemode" title="Permanent link">#</a></h3>
 <p>Unless PowerShell has been constrained, full language features of PowerShell are available to use within rule definitions.
@@ -2417,21 +2417,21 @@ In locked down environments, a reduced set of language features may be desired.<
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.LanguageMode hashtable key</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.LanguageMode&#39;</span> <span class="p">=</span> <span class="s1">&#39;ConstrainedLanguage&#39;</span> <span class="p">};</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/languageMode property</span>
-<span class="nt">execution</span><span class="p">:</span>
-  <span class="nt">languageMode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ConstrainedLanguage</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/languageMode property</span><span class="w"></span>
+<span class="nt">execution</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">languageMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConstrainedLanguage</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_EXECUTION_LANGUAGEMODE</span><span class="o">=</span>ConstrainedLanguage
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_EXECUTION_LANGUAGEMODE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ConstrainedLanguage</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_LANGUAGEMODE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConstrainedLanguage</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_LANGUAGEMODE</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ConstrainedLanguage</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_LANGUAGEMODE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConstrainedLanguage</span><span class="w"></span>
 </code></pre></div>
 <h3 id="executioninconclusivewarning">Execution.InconclusiveWarning<a class="headerlink" href="#executioninconclusivewarning" title="Permanent link">#</a></h3>
 <p>When defining rules, it is possible not return a valid <code>$True</code> or <code>$False</code> result within the definition script block.</p>
@@ -2453,21 +2453,21 @@ In locked down environments, a reduced set of language features may be desired.<
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InconclusiveWarning parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-InconclusiveWarning</span> <span class="nv">$False</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/inconclusiveWarning property</span>
-<span class="nt">execution</span><span class="p">:</span>
-  <span class="nt">inconclusiveWarning</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/inconclusiveWarning property</span><span class="w"></span>
+<span class="nt">execution</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">inconclusiveWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_EXECUTION_INCONCLUSIVEWARNING</span><span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_EXECUTION_INCONCLUSIVEWARNING</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_INCONCLUSIVEWARNING</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_INCONCLUSIVEWARNING</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_INCONCLUSIVEWARNING</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <h3 id="executionnotprocessedwarning">Execution.NotProcessedWarning<a class="headerlink" href="#executionnotprocessedwarning" title="Permanent link">#</a></h3>
 <p>When evaluating rules, it is possible to incorrectly select a path with rules that use pre-conditions that do not accept the pipeline object.
@@ -2487,21 +2487,21 @@ In this case the object has not been processed by any rule.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the NotProcessedWarning parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-NotProcessedWarning</span> <span class="nv">$False</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/notProcessedWarning property</span>
-<span class="nt">execution</span><span class="p">:</span>
-  <span class="nt">notProcessedWarning</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/notProcessedWarning property</span><span class="w"></span>
+<span class="nt">execution</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">notProcessedWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_EXECUTION_NOTPROCESSEDWARNING</span><span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_EXECUTION_NOTPROCESSEDWARNING</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_NOTPROCESSEDWARNING</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_NOTPROCESSEDWARNING</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_NOTPROCESSEDWARNING</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <h3 id="includemodule">Include.Module<a class="headerlink" href="#includemodule" title="Permanent link">#</a></h3>
 <p>Automatically include rules and resources from the specified module.
@@ -2523,22 +2523,22 @@ The module must already be installed on the system.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the IncludeModule parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-IncludeModule</span> <span class="s1">&#39;TestModule1&#39;</span><span class="p">,</span> <span class="s1">&#39;TestModule2&#39;</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the include/module property</span>
-<span class="nt">include</span><span class="p">:</span>
-  <span class="nt">module</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TestModule1</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the include/module property</span><span class="w"></span>
+<span class="nt">include</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">module</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestModule1</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_INCLUDE_MODULE</span><span class="o">=</span>TestModule1<span class="p">;</span>TestModule2
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_INCLUDE_MODULE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">TestModule1;TestModule2</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_INCLUDE_MODULE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestModule1;TestModule2</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_INCLUDE_MODULE</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">TestModule1;TestModule2</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_INCLUDE_MODULE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestModule1;TestModule2</span><span class="w"></span>
 </code></pre></div>
 <h3 id="includepath">Include.Path<a class="headerlink" href="#includepath" title="Permanent link">#</a></h3>
 <p>Automatically include rules and resources from the specified path.
@@ -2560,22 +2560,22 @@ By default, <code>.ps-rule/</code> is included.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the IncludePath parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-IncludePath</span> <span class="s1">&#39;.ps-rule/&#39;</span><span class="p">,</span> <span class="s1">&#39;custom-rules/&#39;</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the include/path property</span>
-<span class="nt">include</span><span class="p">:</span>
-  <span class="nt">path</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">custom-rules/</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the include/path property</span><span class="w"></span>
+<span class="nt">include</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom-rules/</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_INCLUDE_PATH</span><span class="o">=</span>.ps-rule/<span class="p">;</span>custom-rules/
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_INCLUDE_PATH</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.ps-rule/;custom-rules/</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_INCLUDE_PATH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.ps-rule/;custom-rules/</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_INCLUDE_PATH</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.ps-rule/;custom-rules/</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_INCLUDE_PATH</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.ps-rule/;custom-rules/</span><span class="w"></span>
 </code></pre></div>
 <h3 id="inputformat">Input.Format<a class="headerlink" href="#inputformat" title="Permanent link">#</a></h3>
 <p>Configures the input format for when a string is passed in as a target object.
@@ -2625,21 +2625,21 @@ When files have no extension the whole file name is used.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Format parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-Format</span> <span class="n">Yaml</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the input/format property</span>
-<span class="nt">input</span><span class="p">:</span>
-  <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Yaml</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the input/format property</span><span class="w"></span>
+<span class="nt">input</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Yaml</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_INPUT_FORMAT</span><span class="o">=</span>Yaml
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_INPUT_FORMAT</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Yaml</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_INPUT_FORMAT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Yaml</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_INPUT_FORMAT</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Yaml</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_INPUT_FORMAT</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Yaml</span><span class="w"></span>
 </code></pre></div>
 <h3 id="inputignoregitpath">Input.IgnoreGitPath<a class="headerlink" href="#inputignoregitpath" title="Permanent link">#</a></h3>
 <p>When reading files from an input path, files within the <code>.git</code> sub-directory are ignored by default.
@@ -2655,21 +2655,21 @@ To read files stored within the <code>.git</code> path, set this option to <code
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InputIgnoreGitPath parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-InputIgnoreGitPath</span> <span class="nv">$False</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the input/ignoreGitPath property</span>
-<span class="nt">input</span><span class="p">:</span>
-  <span class="nt">ignoreGitPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the input/ignoreGitPath property</span><span class="w"></span>
+<span class="nt">input</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ignoreGitPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_INPUT_IGNOREGITPATH</span><span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_INPUT_IGNOREGITPATH</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_INPUT_IGNOREGITPATH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_INPUT_IGNOREGITPATH</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_INPUT_IGNOREGITPATH</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <h3 id="inputignorerepositorycommon">Input.IgnoreRepositoryCommon<a class="headerlink" href="#inputignorerepositorycommon" title="Permanent link">#</a></h3>
 <p>When reading files from an input path, files are discovered recursively.
@@ -2703,21 +2703,21 @@ This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InputIgnoreRepositoryCommon parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-InputIgnoreRepositoryCommon</span> <span class="nv">$False</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the input/ignoreRepositoryCommon property</span>
-<span class="nt">input</span><span class="p">:</span>
-  <span class="nt">ignoreRepositoryCommon</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the input/ignoreRepositoryCommon property</span><span class="w"></span>
+<span class="nt">input</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ignoreRepositoryCommon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_INPUT_IGNOREREPOSITORYCOMMON</span><span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_INPUT_IGNOREREPOSITORYCOMMON</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_INPUT_IGNOREREPOSITORYCOMMON</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_INPUT_IGNOREREPOSITORYCOMMON</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_INPUT_IGNOREREPOSITORYCOMMON</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <h3 id="inputobjectpath">Input.ObjectPath<a class="headerlink" href="#inputobjectpath" title="Permanent link">#</a></h3>
 <p>The object path to a property to use instead of the pipeline object.</p>
@@ -2736,21 +2736,21 @@ If the property specified by <code>ObjectPath</code> is a collection/ array, the
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ObjectPath parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-ObjectPath</span> <span class="s1">&#39;items&#39;</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the input/objectPath property</span>
-<span class="nt">input</span><span class="p">:</span>
-  <span class="nt">objectPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">items</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the input/objectPath property</span><span class="w"></span>
+<span class="nt">input</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">objectPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">items</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_INPUT_OBJECTPATH</span><span class="o">=</span>items
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_INPUT_OBJECTPATH</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">items</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_INPUT_OBJECTPATH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">items</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_INPUT_OBJECTPATH</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">items</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_INPUT_OBJECTPATH</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">items</span><span class="w"></span>
 </code></pre></div>
 <h3 id="inputpathignore">Input.PathIgnore<a class="headerlink" href="#inputpathignore" title="Permanent link">#</a></h3>
 <p>Ignores input files that match the path spec when using <code>-InputPath</code>.
@@ -2766,22 +2766,22 @@ By default, all files are processed.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InputPathIgnore parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-InputPathIgnore</span> <span class="s1">&#39;*.Designer.cs&#39;</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the input/pathIgnore property</span>
-<span class="nt">input</span><span class="p">:</span>
-  <span class="nt">pathIgnore</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="s">&#39;*.Designer.cs&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the input/pathIgnore property</span><span class="w"></span>
+<span class="nt">input</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">pathIgnore</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;*.Designer.cs&#39;</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_INPUT_PATHIGNORE</span><span class="o">=</span>*.Designer.cs
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_INPUT_PATHIGNORE</span><span class="p">:</span> <span class="s">&#39;*.Designer.cs&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_INPUT_PATHIGNORE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;*.Designer.cs&#39;</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_INPUT_PATHIGNORE</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="s">&#39;*.Designer.cs&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_INPUT_PATHIGNORE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;*.Designer.cs&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="inputtargettype">Input.TargetType<a class="headerlink" href="#inputtargettype" title="Permanent link">#</a></h3>
 <p>Filters input objects by TargetType.</p>
@@ -2801,22 +2801,22 @@ If multiple values are specified, only one TargetType must match. This option is
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InputTargetType parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-InputTargetType</span> <span class="s1">&#39;virtualMachine&#39;</span><span class="p">,</span> <span class="s1">&#39;virtualNetwork&#39;</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the input/targetType property</span>
-<span class="nt">input</span><span class="p">:</span>
-  <span class="nt">targetType</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">virtualMachine</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the input/targetType property</span><span class="w"></span>
+<span class="nt">input</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">targetType</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">virtualMachine</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_INPUT_TARGETTYPE</span><span class="o">=</span>virtualMachine<span class="p">;</span>virtualNetwork
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_INPUT_TARGETTYPE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">virtualMachine;virtualNetwork</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_INPUT_TARGETTYPE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">virtualMachine;virtualNetwork</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_INPUT_TARGETTYPE</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">virtualMachine;virtualNetwork</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_INPUT_TARGETTYPE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">virtualMachine;virtualNetwork</span><span class="w"></span>
 </code></pre></div>
 <h3 id="logginglimitdebug">Logging.LimitDebug<a class="headerlink" href="#logginglimitdebug" title="Permanent link">#</a></h3>
 <p>Limits debug messages to a list of named debug scopes.</p>
@@ -2838,11 +2838,11 @@ When using debug output for debugging a specific rule, it may be helpful to limi
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the LoggingLimitDebug parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-LoggingLimitDebug</span> <span class="n">Rule1</span><span class="p">,</span> <span class="n">Rule2</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the logging/limitDebug property</span>
-<span class="nt">logging</span><span class="p">:</span>
-  <span class="nt">limitDebug</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rule1</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rule2</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the logging/limitDebug property</span><span class="w"></span>
+<span class="nt">logging</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">limitDebug</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule1</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule2</span><span class="w"></span>
 </code></pre></div>
 <h3 id="logginglimitverbose">Logging.LimitVerbose<a class="headerlink" href="#logginglimitverbose" title="Permanent link">#</a></h3>
 <p>Limits verbose messages to a list of named verbose scopes.</p>
@@ -2864,11 +2864,11 @@ When using verbose output for troubleshooting a specific rule, it may be helpful
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the LoggingLimitVerbose parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-LoggingLimitVerbose</span> <span class="n">Rule1</span><span class="p">,</span> <span class="n">Rule2</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the logging/limitVerbose property</span>
-<span class="nt">logging</span><span class="p">:</span>
-  <span class="nt">limitVerbose</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rule1</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rule2</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the logging/limitVerbose property</span><span class="w"></span>
+<span class="nt">logging</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">limitVerbose</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule1</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule2</span><span class="w"></span>
 </code></pre></div>
 <h3 id="loggingrulefail">Logging.RuleFail<a class="headerlink" href="#loggingrulefail" title="Permanent link">#</a></h3>
 <p>When an object fails a rule condition the results are written to output as a structured object marked with the outcome of <em>Fail</em>.
@@ -2893,9 +2893,9 @@ By default, outcomes are not logged to an informational stream (i.e. None).</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the LoggingRuleFail parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-LoggingRuleFail</span> <span class="n">Error</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the logging/ruleFail property</span>
-<span class="nt">logging</span><span class="p">:</span>
-  <span class="nt">ruleFail</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Error</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the logging/ruleFail property</span><span class="w"></span>
+<span class="nt">logging</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ruleFail</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span><span class="w"></span>
 </code></pre></div>
 <h3 id="loggingrulepass">Logging.RulePass<a class="headerlink" href="#loggingrulepass" title="Permanent link">#</a></h3>
 <p>When an object passes a rule condition the results are written to output as a structured object marked with the outcome of <em>Pass</em>.
@@ -2920,9 +2920,9 @@ By default, outcomes are not logged to an informational stream (i.e. None).</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the LoggingRulePass parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-LoggingRulePass</span> <span class="n">Information</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the logging/rulePass property</span>
-<span class="nt">logging</span><span class="p">:</span>
-  <span class="nt">rulePass</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Information</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the logging/rulePass property</span><span class="w"></span>
+<span class="nt">logging</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">rulePass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Information</span><span class="w"></span>
 </code></pre></div>
 <h3 id="outputas">Output.As<a class="headerlink" href="#outputas" title="Permanent link">#</a></h3>
 <p>Configures the type of results to produce.</p>
@@ -2944,21 +2944,21 @@ If specified, the <code>-As</code> parameter take precedence, over this option.<
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputAs parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-OutputAs</span> <span class="n">Summary</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/as property</span>
-<span class="nt">output</span><span class="p">:</span>
-  <span class="nt">as</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Summary</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/as property</span><span class="w"></span>
+<span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">as</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Summary</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_OUTPUT_AS</span><span class="o">=</span>Summary
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_OUTPUT_AS</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Summary</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_OUTPUT_AS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Summary</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_AS</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Summary</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_AS</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Summary</span><span class="w"></span>
 </code></pre></div>
 <h3 id="outputbanner">Output.Banner<a class="headerlink" href="#outputbanner" title="Permanent link">#</a></h3>
 <p>The information displayed for PSRule banner.
@@ -2988,21 +2988,21 @@ For example <code>6</code> would show <code>Source</code>, and <code>SupportLink
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputBanner parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-OutputBanner</span> <span class="n">Minimal</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/banner property</span>
-<span class="nt">output</span><span class="p">:</span>
-  <span class="nt">banner</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Minimal</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/banner property</span><span class="w"></span>
+<span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">banner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Minimal</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_OUTPUT_BANNER</span><span class="o">=</span>Minimal
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_OUTPUT_BANNER</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Minimal</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_OUTPUT_BANNER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Minimal</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_BANNER</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Minimal</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_BANNER</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Minimal</span><span class="w"></span>
 </code></pre></div>
 <h3 id="outputculture">Output.Culture<a class="headerlink" href="#outputculture" title="Permanent link">#</a></h3>
 <p>Specified the name of one or more cultures to use for generating output.
@@ -3021,21 +3021,21 @@ If specified, the <code>-Culture</code> parameter take precedence, over this opt
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputCulture parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-OutputCulture</span> <span class="s1">&#39;en-AU&#39;</span><span class="p">,</span> <span class="s1">&#39;en-US&#39;</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/culture property</span>
-<span class="nt">output</span><span class="p">:</span>
-  <span class="nt">culture</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;en-AU&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;en-US&#39;</span> <span class="p p-Indicator">]</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/culture property</span><span class="w"></span>
+<span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">culture</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&#39;en-AU&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;en-US&#39;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_OUTPUT_CULTURE</span><span class="o">=</span>en-AU<span class="p">;</span>en-US
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_OUTPUT_CULTURE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">en-AU;en-US</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_OUTPUT_CULTURE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en-AU;en-US</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_CULTURE</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">en-AU;en-US</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_CULTURE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en-AU;en-US</span><span class="w"></span>
 </code></pre></div>
 <h3 id="outputencoding">Output.Encoding<a class="headerlink" href="#outputencoding" title="Permanent link">#</a></h3>
 <p>Configures the encoding used when output is written to file.
@@ -3059,21 +3059,21 @@ This option has no affect when <code>Output.Path</code> is not set.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputEncoding parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-OutputEncoding</span> <span class="n">UTF8</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/encoding property</span>
-<span class="nt">output</span><span class="p">:</span>
-  <span class="nt">encoding</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">UTF8</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/encoding property</span><span class="w"></span>
+<span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UTF8</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_OUTPUT_ENCODING</span><span class="o">=</span>UTF8
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_OUTPUT_ENCODING</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">UTF8</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_OUTPUT_ENCODING</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UTF8</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_ENCODING</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">UTF8</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_ENCODING</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UTF8</span><span class="w"></span>
 </code></pre></div>
 <h3 id="outputfooter">Output.Footer<a class="headerlink" href="#outputfooter" title="Permanent link">#</a></h3>
 <p>The information displayed for PSRule footer.
@@ -3101,21 +3101,21 @@ For example <code>3</code> would show <code>RunInfo</code>, and <code>RuleCount<
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputFooter parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-OutputFooter</span> <span class="n">RuleCount</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/footer property</span>
-<span class="nt">output</span><span class="p">:</span>
-  <span class="nt">footer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">RuleCount</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/footer property</span><span class="w"></span>
+<span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">footer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RuleCount</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_OUTPUT_FOOTER</span><span class="o">=</span>RuleCount
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_OUTPUT_FOOTER</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">RuleCount</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_OUTPUT_FOOTER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RuleCount</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_FOOTER</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">RuleCount</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_FOOTER</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RuleCount</span><span class="w"></span>
 </code></pre></div>
 <h3 id="outputformat">Output.Format<a class="headerlink" href="#outputformat" title="Permanent link">#</a></h3>
 <p>Configures the format that results will be presented in.
@@ -3151,21 +3151,21 @@ The <code>Export-PSRuleBaseline</code> cmdlet only accepts <code>Yaml</code>.</p
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputFormat parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-OutputFormat</span> <span class="n">Yaml</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/format property</span>
-<span class="nt">output</span><span class="p">:</span>
-  <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Yaml</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/format property</span><span class="w"></span>
+<span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Yaml</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_OUTPUT_FORMAT</span><span class="o">=</span>Yaml
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_OUTPUT_FORMAT</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Yaml</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_OUTPUT_FORMAT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Yaml</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_FORMAT</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Yaml</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_FORMAT</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Yaml</span><span class="w"></span>
 </code></pre></div>
 <h3 id="outputoutcome">Output.Outcome<a class="headerlink" href="#outputoutcome" title="Permanent link">#</a></h3>
 <p>Filters output to include results with the specified outcome.
@@ -3189,21 +3189,21 @@ This is the default option.</li>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputOutcome parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-OutputOutcome</span> <span class="n">Fail</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/outcome property</span>
-<span class="nt">output</span><span class="p">:</span>
-  <span class="nt">outcome</span><span class="p">:</span> <span class="s">&#39;Fail&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/outcome property</span><span class="w"></span>
+<span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">outcome</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Fail&#39;</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_OUTPUT_OUTCOME</span><span class="o">=</span>Fail
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_OUTPUT_OUTCOME</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Fail</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_OUTPUT_OUTCOME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Fail</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_OUTCOME</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Fail</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_OUTCOME</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Fail</span><span class="w"></span>
 </code></pre></div>
 <h3 id="outputpath">Output.Path<a class="headerlink" href="#outputpath" title="Permanent link">#</a></h3>
 <p>Specifies the output file path to write results.
@@ -3221,21 +3221,21 @@ If specified, the <code>-OutputPath</code> parameter take precedence, over this 
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputPath parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-OutputPath</span> <span class="s1">&#39;out/results.yaml&#39;</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/path property</span>
-<span class="nt">output</span><span class="p">:</span>
-  <span class="nt">path</span><span class="p">:</span> <span class="s">&#39;out/results.yaml&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/path property</span><span class="w"></span>
+<span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;out/results.yaml&#39;</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_OUTPUT_PATH</span><span class="o">=</span>out/results.yaml
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_OUTPUT_PATH</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">out/results.yaml</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_OUTPUT_PATH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">out/results.yaml</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_PATH</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">out/results.yaml</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_PATH</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">out/results.yaml</span><span class="w"></span>
 </code></pre></div>
 <h3 id="outputstyle">Output.Style<a class="headerlink" href="#outputstyle" title="Permanent link">#</a></h3>
 <p>Configures the style that results will be presented in.</p>
@@ -3270,21 +3270,21 @@ This is the default.</li>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputStyle parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-OutputFormat</span> <span class="n">AzurePipelines</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/style property</span>
-<span class="nt">output</span><span class="p">:</span>
-  <span class="nt">style</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AzurePipelines</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/style property</span><span class="w"></span>
+<span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AzurePipelines</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_OUTPUT_STYLE</span><span class="o">=</span>AzurePipelines
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_OUTPUT_STYLE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AzurePipelines</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_OUTPUT_STYLE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AzurePipelines</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_STYLE</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AzurePipelines</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_STYLE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AzurePipelines</span><span class="w"></span>
 </code></pre></div>
 <h3 id="outputjsonindent">Output.JsonIndent<a class="headerlink" href="#outputjsonindent" title="Permanent link">#</a></h3>
 <p>Configures the indentation level for JSON output.</p>
@@ -3301,9 +3301,9 @@ This option also applies to output generated from <code>-OutputPath</code> for <
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputStyle parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-OutputJsonIndent</span> <span class="n">2</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/jsonIndent property</span>
-<span class="nt">output</span><span class="p">:</span>
-  <span class="nt">jsonIndent</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/jsonIndent property</span><span class="w"></span>
+<span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">jsonIndent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_OUTPUT_JSONINDENT</span><span class="o">=</span><span class="m">2</span>
@@ -3311,14 +3311,14 @@ This option also applies to output generated from <code>-OutputPath</code> for <
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using environment variable</span>
 <span class="nv">$env:PSRULE_OUTPUT_JSONINDENT</span> <span class="p">=</span> <span class="n">2</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_OUTPUT_JSONINDENT</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_OUTPUT_JSONINDENT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_JSONINDENT</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_JSONINDENT</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </code></pre></div>
 <h3 id="requires">Requires<a class="headerlink" href="#requires" title="Permanent link">#</a></h3>
 <p>Specifies module version constraints for running PSRule.
@@ -3333,11 +3333,11 @@ Use the <code>Include.Module</code> option to automatically include a rule modul
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Requires.module hashtable key</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Requires.PSRule&#39;</span> <span class="p">=</span> <span class="s1">&#39;&gt;=1.0.0&#39;</span> <span class="p">};</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the requires property</span>
-<span class="nt">requires</span><span class="p">:</span>
-  <span class="nt">PSRule</span><span class="p">:</span> <span class="s">&#39;&gt;=1.0.0&#39;</span>                 <span class="c1"># Require v1.0.0 or greater.</span>
-  <span class="nt">PSRule.Rules.Azure</span><span class="p">:</span> <span class="s">&#39;&gt;=1.0.0&#39;</span>     <span class="c1"># Require v1.0.0 or greater.</span>
-  <span class="nt">PSRule.Rules.CAF</span><span class="p">:</span> <span class="s">&#39;@pre</span><span class="nv"> </span><span class="s">&gt;=0.1.0&#39;</span>  <span class="c1"># Require stable or pre-releases v0.1.0 or greater.</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the requires property</span><span class="w"></span>
+<span class="nt">requires</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRule</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&gt;=1.0.0&#39;</span><span class="w">                 </span><span class="c1"># Require v1.0.0 or greater.</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRule.Rules.Azure</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&gt;=1.0.0&#39;</span><span class="w">     </span><span class="c1"># Require v1.0.0 or greater.</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRule.Rules.CAF</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;@pre</span><span class="nv"> </span><span class="s">&gt;=0.1.0&#39;</span><span class="w">  </span><span class="c1"># Require stable or pre-releases v0.1.0 or greater.</span><span class="w"></span>
 </code></pre></div>
 <p>This option can be configured using environment variables.
 To specify a module version constraint, prefix the module name with <code>PSRULE_REQUIRES_</code>.
@@ -3347,34 +3347,34 @@ When the module name includes a dot (<code>.</code>) use an underscore (<code>_<
 <span class="nb">export</span> <span class="nv">PSRULE_REQUIRES_PSRULE_RULES_AZURE</span><span class="o">=</span><span class="s1">&#39;&gt;=1.0.0&#39;</span>
 <span class="nb">export</span> <span class="nv">PSRULE_REQUIRES_PSRULE_RULES_CAF</span><span class="o">=</span><span class="s1">&#39;@pre &gt;=0.1.0&#39;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_REQUIRES_PSRULE</span><span class="p">:</span> <span class="s">&#39;&gt;=1.0.0&#39;</span>
-  <span class="nt">PSRULE_REQUIRES_PSRULE_RULES_AZURE</span><span class="p">:</span> <span class="s">&#39;&gt;=1.0.0&#39;</span>
-  <span class="nt">PSRULE_REQUIRES_PSRULE_RULES_CAF</span><span class="p">:</span> <span class="s">&#39;@pre</span><span class="nv"> </span><span class="s">&gt;=0.1.0&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_REQUIRES_PSRULE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&gt;=1.0.0&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_REQUIRES_PSRULE_RULES_AZURE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&gt;=1.0.0&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_REQUIRES_PSRULE_RULES_CAF</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;@pre</span><span class="nv"> </span><span class="s">&gt;=0.1.0&#39;</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_REQUIRES_PSRULE</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="s">&#39;&gt;=1.0.0&#39;</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_REQUIRES_PSRULE_RULES_AZURE</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="s">&#39;&gt;=1.0.0&#39;</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_REQUIRES_PSRULE_RULES_CAF</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="s">&#39;@pre</span><span class="nv"> </span><span class="s">&gt;=0.1.0&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_REQUIRES_PSRULE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&gt;=1.0.0&#39;</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_REQUIRES_PSRULE_RULES_AZURE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&gt;=1.0.0&#39;</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_REQUIRES_PSRULE_RULES_CAF</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;@pre</span><span class="nv"> </span><span class="s">&gt;=0.1.0&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="rulebaseline">Rule.Baseline<a class="headerlink" href="#rulebaseline" title="Permanent link">#</a></h3>
 <p>The name of a default baseline to use for the module.
 Currently this option can only be set within a module configuration resource.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="c1"># Synopsis: Example module configuration for Enterprise.Rules module.</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ModuleConfig</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Enterprise.Rules</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">rule</span><span class="p">:</span>
-    <span class="nt">baseline</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Enterprise.Baseline1</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Example module configuration for Enterprise.Rules module.</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ModuleConfig</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enterprise.Rules</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">baseline</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enterprise.Baseline1</span><span class="w"></span>
 </code></pre></div>
 <h3 id="ruleinclude">Rule.Include<a class="headerlink" href="#ruleinclude" title="Permanent link">#</a></h3>
 <p>The name of specific rules to evaluate.
@@ -3384,23 +3384,23 @@ If this option is not specified all rules in search paths will be evaluated.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Rule.Include hashtable key</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Rule.Include&#39;</span> <span class="p">=</span> <span class="s1">&#39;Rule1&#39;</span><span class="p">,</span><span class="s1">&#39;Rule2&#39;</span> <span class="p">};</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the rule/include property</span>
-<span class="nt">rule</span><span class="p">:</span>
-  <span class="nt">include</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rule1</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rule2</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the rule/include property</span><span class="w"></span>
+<span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">include</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule1</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule2</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_RULE_INCLUDE</span><span class="o">=</span><span class="s1">&#39;Rule1;Rule2&#39;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_RULE_INCLUDE</span><span class="p">:</span> <span class="s">&#39;Rule1;Rule2&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_RULE_INCLUDE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Rule1;Rule2&#39;</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_RULE_INCLUDE</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="s">&#39;Rule1;Rule2&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_RULE_INCLUDE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Rule1;Rule2&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="ruleincludelocal">Rule.IncludeLocal<a class="headerlink" href="#ruleincludelocal" title="Permanent link">#</a></h3>
 <p>Automatically include all local rules in the search path unless they have been explicitly excluded.
@@ -3417,21 +3417,21 @@ By default, local rules will be filtered with <code>Rule.Include</code> and <cod
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the RuleIncludeLocal parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-RuleIncludeLocal</span> <span class="nv">$True</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the rule/includeLocal property</span>
-<span class="nt">rule</span><span class="p">:</span>
-  <span class="nt">includeLocal</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the rule/includeLocal property</span><span class="w"></span>
+<span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">includeLocal</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_RULE_INCLUDELOCAL</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_RULE_INCLUDELOCAL</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_RULE_INCLUDELOCAL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_RULE_INCLUDELOCAL</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_RULE_INCLUDELOCAL</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <h3 id="ruleexclude">Rule.Exclude<a class="headerlink" href="#ruleexclude" title="Permanent link">#</a></h3>
 <p>The name of specific rules to exclude from being evaluated.
@@ -3440,23 +3440,23 @@ This will exclude rules specified by <code>Rule.Include</code> or discovered fro
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Rule.Exclude hashtable key</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Rule.Exclude&#39;</span> <span class="p">=</span> <span class="s1">&#39;Rule3&#39;</span><span class="p">,</span><span class="s1">&#39;Rule4&#39;</span> <span class="p">};</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the rule/exclude property</span>
-<span class="nt">rule</span><span class="p">:</span>
-  <span class="nt">exclude</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rule3</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rule4</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the rule/exclude property</span><span class="w"></span>
+<span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">exclude</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule3</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule4</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span> <span class="nv">PSRULE_RULE_EXCLUDE</span><span class="o">=</span><span class="s1">&#39;Rule3;Rule4&#39;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
-<span class="nt">env</span><span class="p">:</span>
-  <span class="nt">PSRULE_RULE_EXCLUDE</span><span class="p">:</span> <span class="s">&#39;Rule3;Rule4&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_RULE_EXCLUDE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Rule3;Rule4&#39;</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
-<span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PSRULE_RULE_EXCLUDE</span>
-  <span class="nt">value</span><span class="p">:</span> <span class="s">&#39;Rule3;Rule4&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_RULE_EXCLUDE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Rule3;Rule4&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="ruletag">Rule.Tag<a class="headerlink" href="#ruletag" title="Permanent link">#</a></h3>
 <p>A set of required key value pairs (tags) that rules must have applied to them to be included.</p>
@@ -3467,17 +3467,17 @@ When multiple values are used, only one must match.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Rule.Tag hashtable key</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Rule.Tag&#39;</span> <span class="p">=</span> <span class="p">@{</span> <span class="n">severity</span> <span class="p">=</span> <span class="s1">&#39;Critical&#39;</span><span class="p">,</span><span class="s1">&#39;Warning&#39;</span> <span class="p">}</span> <span class="p">};</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the rule/tag property</span>
-<span class="nt">rule</span><span class="p">:</span>
-  <span class="nt">tag</span><span class="p">:</span>
-    <span class="nt">severity</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Critical</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the rule/tag property</span><span class="w"></span>
+<span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Critical</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the rule/tag property, with multiple values</span>
-<span class="nt">rule</span><span class="p">:</span>
-  <span class="nt">tag</span><span class="p">:</span>
-    <span class="nt">severity</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Critical</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Warning</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the rule/tag property, with multiple values</span><span class="w"></span>
+<span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">severity</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Critical</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warning</span><span class="w"></span>
 </code></pre></div>
 <p>In the example above, rules must have a tag of <code>severity</code> set to either <code>Critical</code> or <code>Warning</code> to be included.</p>
 <h3 id="suppression">Suppression<a class="headerlink" href="#suppression" title="Permanent link">#</a></h3>
@@ -3489,12 +3489,12 @@ Objects that are suppressed are not processed by the rule at all but will contin
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the SuppressTargetName option with a hashtable</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-SuppressTargetName</span> <span class="p">@{</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="p">=</span> <span class="s1">&#39;TestObject1&#39;</span><span class="p">,</span> <span class="s1">&#39;TestObject3&#39;</span> <span class="p">};</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the suppression property</span>
-<span class="nt">suppression</span><span class="p">:</span>
-  <span class="nt">storageAccounts.UseHttps</span><span class="p">:</span>
-    <span class="nt">targetName</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TestObject1</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TestObject3</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the suppression property</span><span class="w"></span>
+<span class="nt">suppression</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">storageAccounts.UseHttps</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">targetName</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestObject1</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestObject3</span><span class="w"></span>
 </code></pre></div>
 <p>In both of the above examples, <code>TestObject1</code> and <code>TestObject3</code> have been suppressed from being processed by a rule named <code>storageAccounts.UseHttps</code>.</p>
 <p>When <strong>to</strong> use rule suppression:</p>
@@ -3525,178 +3525,178 @@ Objects that are suppressed are not processed by the rule at all but will contin
 </code></pre></div>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
 <h3 id="example-ps-ruleyaml">Example ps-rule.yaml<a class="headerlink" href="#example-ps-ruleyaml" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1">#</span>
-<span class="c1"># PSRule example configuration</span>
-<span class="c1">#</span>
+<div class="highlight"><pre><span></span><code><span class="c1">#</span><span class="w"></span>
+<span class="c1"># PSRule example configuration</span><span class="w"></span>
+<span class="c1">#</span><span class="w"></span>
 
-<span class="c1"># Configure required module versions</span>
-<span class="nt">requires</span><span class="p">:</span>
-  <span class="nt">PSRule.Rules.Azure</span><span class="p">:</span> <span class="s">&#39;&gt;=1.1.0&#39;</span>
+<span class="c1"># Configure required module versions</span><span class="w"></span>
+<span class="nt">requires</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRule.Rules.Azure</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&gt;=1.1.0&#39;</span><span class="w"></span>
 
-<span class="c1"># Configure convention options</span>
-<span class="nt">convention</span><span class="p">:</span>
-  <span class="nt">include</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="s">&#39;Convention1&#39;</span>
+<span class="c1"># Configure convention options</span><span class="w"></span>
+<span class="nt">convention</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">include</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Convention1&#39;</span><span class="w"></span>
 
-<span class="c1"># Configure execution options</span>
-<span class="nt">execution</span><span class="p">:</span>
-  <span class="nt">languageMode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ConstrainedLanguage</span>
-  <span class="nt">inconclusiveWarning</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-  <span class="nt">notProcessedWarning</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="c1"># Configure execution options</span><span class="w"></span>
+<span class="nt">execution</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">languageMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConstrainedLanguage</span><span class="w"></span>
+<span class="w">  </span><span class="nt">inconclusiveWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">  </span><span class="nt">notProcessedWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 
-<span class="c1"># Configure include options</span>
-<span class="nt">include</span><span class="p">:</span>
-  <span class="nt">module</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="s">&#39;PSRule.Rules.Azure&#39;</span>
-  <span class="nt">path</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="p p-Indicator">]</span>
+<span class="c1"># Configure include options</span><span class="w"></span>
+<span class="nt">include</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">module</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;PSRule.Rules.Azure&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 
-<span class="c1"># Configures input options</span>
-<span class="nt">input</span><span class="p">:</span>
-  <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Yaml</span>
-  <span class="nt">ignoreGitPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-  <span class="nt">objectPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">items</span>
-  <span class="nt">pathIgnore</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="s">&#39;*.Designer.cs&#39;</span>
-  <span class="nt">targetType</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Microsoft.Compute/virtualMachines</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Microsoft.Network/virtualNetworks</span>
+<span class="c1"># Configures input options</span><span class="w"></span>
+<span class="nt">input</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Yaml</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ignoreGitPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">  </span><span class="nt">objectPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">items</span><span class="w"></span>
+<span class="w">  </span><span class="nt">pathIgnore</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;*.Designer.cs&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">targetType</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Microsoft.Compute/virtualMachines</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Microsoft.Network/virtualNetworks</span><span class="w"></span>
 
-<span class="c1"># Configures outcome logging options</span>
-<span class="nt">logging</span><span class="p">:</span>
-  <span class="nt">limitDebug</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rule1</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rule2</span>
-  <span class="nt">limitVerbose</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rule1</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rule2</span>
-  <span class="nt">ruleFail</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Error</span>
-  <span class="nt">rulePass</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Information</span>
+<span class="c1"># Configures outcome logging options</span><span class="w"></span>
+<span class="nt">logging</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">limitDebug</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule1</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule2</span><span class="w"></span>
+<span class="w">  </span><span class="nt">limitVerbose</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule1</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule2</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ruleFail</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span><span class="w"></span>
+<span class="w">  </span><span class="nt">rulePass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Information</span><span class="w"></span>
 
-<span class="nt">output</span><span class="p">:</span>
-  <span class="nt">as</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Summary</span>
-  <span class="nt">banner</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Minimal</span>
-  <span class="nt">culture</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">en-US</span>
-  <span class="nt">encoding</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">UTF8</span>
-  <span class="nt">footer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">RuleCount</span>
-  <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Json</span>
-  <span class="nt">outcome</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Fail</span>
-  <span class="nt">style</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">GitHubActions</span>
+<span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">as</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Summary</span><span class="w"></span>
+<span class="w">  </span><span class="nt">banner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Minimal</span><span class="w"></span>
+<span class="w">  </span><span class="nt">culture</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en-US</span><span class="w"></span>
+<span class="w">  </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UTF8</span><span class="w"></span>
+<span class="w">  </span><span class="nt">footer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RuleCount</span><span class="w"></span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Json</span><span class="w"></span>
+<span class="w">  </span><span class="nt">outcome</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Fail</span><span class="w"></span>
+<span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitHubActions</span><span class="w"></span>
 
-<span class="c1"># Configure rule suppression</span>
-<span class="nt">suppression</span><span class="p">:</span>
-  <span class="nt">storageAccounts.UseHttps</span><span class="p">:</span>
-    <span class="nt">targetName</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TestObject1</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TestObject3</span>
+<span class="c1"># Configure rule suppression</span><span class="w"></span>
+<span class="nt">suppression</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">storageAccounts.UseHttps</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">targetName</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestObject1</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestObject3</span><span class="w"></span>
 
-<span class="c1"># Configure baseline options</span>
-<span class="nt">binding</span><span class="p">:</span>
-  <span class="nt">field</span><span class="p">:</span>
-    <span class="nt">id</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceId</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">AlternativeId</span>
-  <span class="nt">ignoreCase</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-  <span class="nt">nameSeparator</span><span class="p">:</span> <span class="s">&#39;::&#39;</span>
-  <span class="nt">preferTargetInfo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-  <span class="nt">targetName</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceName</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">AlternateName</span>
-  <span class="nt">targetType</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceType</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">kind</span>
-  <span class="nt">useQualifiedName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="c1"># Configure baseline options</span><span class="w"></span>
+<span class="nt">binding</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">field</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceId</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AlternativeId</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ignoreCase</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">  </span><span class="nt">nameSeparator</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;::&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">preferTargetInfo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">targetName</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceName</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AlternateName</span><span class="w"></span>
+<span class="w">  </span><span class="nt">targetType</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceType</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kind</span><span class="w"></span>
+<span class="w">  </span><span class="nt">useQualifiedName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="nt">configuration</span><span class="p">:</span>
-  <span class="nt">appServiceMinInstanceCount</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="nt">configuration</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">appServiceMinInstanceCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 
-<span class="nt">rule</span><span class="p">:</span>
-  <span class="nt">include</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">rule1</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">rule2</span>
-  <span class="nt">includeLocal</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-  <span class="nt">exclude</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">rule3</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">rule4</span>
-  <span class="nt">tag</span><span class="p">:</span>
-    <span class="nt">severity</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Critical</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Warning</span>
+<span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">include</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rule1</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rule2</span><span class="w"></span>
+<span class="w">  </span><span class="nt">includeLocal</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">exclude</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rule3</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rule4</span><span class="w"></span>
+<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">severity</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Critical</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warning</span><span class="w"></span>
 </code></pre></div>
 <h3 id="default-ps-ruleyaml">Default ps-rule.yaml<a class="headerlink" href="#default-ps-ruleyaml" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1">#</span>
-<span class="c1"># PSRule defaults</span>
-<span class="c1">#</span>
+<div class="highlight"><pre><span></span><code><span class="c1">#</span><span class="w"></span>
+<span class="c1"># PSRule defaults</span><span class="w"></span>
+<span class="c1">#</span><span class="w"></span>
 
-<span class="c1"># Note: Only properties that differ from the default values need to be specified.</span>
+<span class="c1"># Note: Only properties that differ from the default values need to be specified.</span><span class="w"></span>
 
-<span class="c1"># Configure required module versions</span>
-<span class="nt">requires</span><span class="p">:</span> <span class="p p-Indicator">{</span> <span class="p p-Indicator">}</span>
+<span class="c1"># Configure required module versions</span><span class="w"></span>
+<span class="nt">requires</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
 
-<span class="c1"># Configure convention options</span>
-<span class="nt">convention</span><span class="p">:</span>
-  <span class="nt">include</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="p p-Indicator">]</span>
+<span class="c1"># Configure convention options</span><span class="w"></span>
+<span class="nt">convention</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 
-<span class="c1"># Configure execution options</span>
-<span class="nt">execution</span><span class="p">:</span>
-  <span class="nt">languageMode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">FullLanguage</span>
-  <span class="nt">inconclusiveWarning</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-  <span class="nt">notProcessedWarning</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="c1"># Configure execution options</span><span class="w"></span>
+<span class="nt">execution</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">languageMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FullLanguage</span><span class="w"></span>
+<span class="w">  </span><span class="nt">inconclusiveWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">notProcessedWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="c1"># Configure include options</span>
-<span class="nt">include</span><span class="p">:</span>
-  <span class="nt">module</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="p p-Indicator">]</span>
-  <span class="nt">path</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="s">&#39;.ps-rule/&#39;</span>
+<span class="c1"># Configure include options</span><span class="w"></span>
+<span class="nt">include</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">module</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;.ps-rule/&#39;</span><span class="w"></span>
 
-<span class="c1"># Configures input options</span>
-<span class="nt">input</span><span class="p">:</span>
-  <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Detect</span>
-  <span class="nt">ignoreGitPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-  <span class="nt">objectPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
-  <span class="nt">pathIgnore</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="p p-Indicator">]</span>
-  <span class="nt">targetType</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="p p-Indicator">]</span>
+<span class="c1"># Configures input options</span><span class="w"></span>
+<span class="nt">input</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ignoreGitPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">objectPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"></span>
+<span class="w">  </span><span class="nt">pathIgnore</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">targetType</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 
-<span class="c1"># Configures outcome logging options</span>
-<span class="nt">logging</span><span class="p">:</span>
-  <span class="nt">limitDebug</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="p p-Indicator">]</span>
-  <span class="nt">limitVerbose</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="p p-Indicator">]</span>
-  <span class="nt">ruleFail</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
-  <span class="nt">rulePass</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="c1"># Configures outcome logging options</span><span class="w"></span>
+<span class="nt">logging</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">limitDebug</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">limitVerbose</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ruleFail</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span><span class="w"></span>
+<span class="w">  </span><span class="nt">rulePass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span><span class="w"></span>
 
-<span class="nt">output</span><span class="p">:</span>
-  <span class="nt">as</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Detail</span>
-  <span class="nt">banner</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default</span>
-  <span class="nt">culture</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="p p-Indicator">]</span>
-  <span class="nt">encoding</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default</span>
-  <span class="nt">footer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default</span>
-  <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
-  <span class="nt">outcome</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Processed</span>
-  <span class="nt">style</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Detect</span>
+<span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">as</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detail</span><span class="w"></span>
+<span class="w">  </span><span class="nt">banner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Default</span><span class="w"></span>
+<span class="w">  </span><span class="nt">culture</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Default</span><span class="w"></span>
+<span class="w">  </span><span class="nt">footer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Default</span><span class="w"></span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span><span class="w"></span>
+<span class="w">  </span><span class="nt">outcome</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Processed</span><span class="w"></span>
+<span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect</span><span class="w"></span>
 
-<span class="c1"># Configure rule suppression</span>
-<span class="nt">suppression</span><span class="p">:</span> <span class="p p-Indicator">{</span> <span class="p p-Indicator">}</span>
+<span class="c1"># Configure rule suppression</span><span class="w"></span>
+<span class="nt">suppression</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
 
-<span class="c1"># Configure baseline options</span>
-<span class="nt">binding</span><span class="p">:</span>
-  <span class="nt">field</span><span class="p">:</span> <span class="p p-Indicator">{</span> <span class="p p-Indicator">}</span>
-  <span class="nt">ignoreCase</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-  <span class="nt">nameSeparator</span><span class="p">:</span> <span class="s">&#39;/&#39;</span>
-  <span class="nt">preferTargetInfo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-  <span class="nt">targetName</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TargetName</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Name</span>
-  <span class="nt">targetType</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">PSObject.TypeNames[0]</span>
-  <span class="nt">useQualifiedName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="c1"># Configure baseline options</span><span class="w"></span>
+<span class="nt">binding</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ignoreCase</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">nameSeparator</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">preferTargetInfo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">  </span><span class="nt">targetName</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TargetName</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Name</span><span class="w"></span>
+<span class="w">  </span><span class="nt">targetType</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSObject.TypeNames[0]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">useQualifiedName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 
-<span class="nt">configuration</span><span class="p">:</span> <span class="p p-Indicator">{</span> <span class="p p-Indicator">}</span>
+<span class="nt">configuration</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
 
-<span class="nt">rule</span><span class="p">:</span>
-  <span class="nt">include</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="p p-Indicator">]</span>
-  <span class="nt">includeLocal</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-  <span class="nt">exclude</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="p p-Indicator">]</span>
-  <span class="nt">tag</span><span class="p">:</span> <span class="p p-Indicator">{</span> <span class="p p-Indicator">}</span>
+<span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">includeLocal</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">  </span><span class="nt">exclude</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">#</a></h2>
 <ul>
@@ -3792,10 +3792,10 @@ Objects that are suppressed are not processed by the rule at all but will contin
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.0bbba5b5.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.649a939e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>

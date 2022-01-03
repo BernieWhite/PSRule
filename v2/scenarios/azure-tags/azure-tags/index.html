@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/scenarios/azure-tags/azure-tags/">
       
       <link rel="icon" href="../../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.f7951f6f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -67,7 +67,7 @@
   <meta property="og:title" content="PSRule - Azure resource tagging example" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta property="og:url" content="https://microsoft.github.io/PSRule/v2/scenarios/azure-tags/azure-tags/" />
-  <meta property="og:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
@@ -78,7 +78,7 @@
   <meta name="twitter:site" content="@github" />
   <meta name="twitter:title" content="PSRule - Azure resource tagging example" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
 
   </head>
@@ -1401,15 +1401,15 @@
 <h3 id="check-that-tag-exists">Check that tag exists<a class="headerlink" href="#check-that-tag-exists" title="Permanent link">#</a></h3>
 <p>Conditions can be any valid PowerShell expression that results in a <code>$True</code> or <code>$False</code>, just like an <code>If</code> statement, but without specifically requiring the <code>If</code> keyword to be used.</p>
 <p>In <code>resources.json</code> one of our example storage accounts has the <code>Tags</code> property as shown below, this is how Azure Resource Manager stores tags for a resource. We will use this property as the basis of our rules to determine if the resource is tagged and what the tag value is.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;storage&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;ResourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;storage&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;ResourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Microsoft.Storage/storageAccounts&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;Tags&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;deployment&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;environment&quot;</span><span class="p">:</span> <span class="s2">&quot;production&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;storage&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ResourceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;storage&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ResourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft.Storage/storageAccounts&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deployment&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;environment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;production&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>PSRule also defines several additional keywords to supplement PowerShell. These additional keywords help to create readable rules that can be built out quickly.</p>
 <p>In the example below:</p>
@@ -1515,12 +1515,12 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>An extract from <em>ps-rule.yaml</em>:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Configure business units that are allowed</span>
-<span class="nt">configuration</span><span class="p">:</span>
-  <span class="nt">allowedBusinessUnits</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="s">&#39;IT</span><span class="nv"> </span><span class="s">Operations&#39;</span>
-  <span class="p p-Indicator">-</span> <span class="s">&#39;Finance&#39;</span>
-  <span class="p p-Indicator">-</span> <span class="s">&#39;HR&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Configure business units that are allowed</span><span class="w"></span>
+<span class="nt">configuration</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">allowedBusinessUnits</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;IT</span><span class="nv"> </span><span class="s">Operations&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Finance&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;HR&#39;</span><span class="w"></span>
 </code></pre></div>
 <h2 id="execute-rules">Execute rules<a class="headerlink" href="#execute-rules" title="Permanent link">#</a></h2>
 <p>With a rule defined, the next step is to execute it. To execute rules, pipe the target object to <code>Invoke-PSRule</code>.</p>
@@ -1662,10 +1662,10 @@ costCentreTag                       Fail       Resource must have costCentre tag
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.0bbba5b5.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.649a939e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>

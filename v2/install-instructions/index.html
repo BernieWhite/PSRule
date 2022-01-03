@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/install-instructions/">
       
       <link rel="icon" href="../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.f7951f6f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
@@ -67,7 +67,7 @@
   <meta property="og:title" content="PSRule - Installation" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta property="og:url" content="https://microsoft.github.io/PSRule/v2/install-instructions/" />
-  <meta property="og:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
@@ -78,7 +78,7 @@
   <meta name="twitter:site" content="@github" />
   <meta name="twitter:title" content="PSRule - Installation" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
 
   </head>
@@ -1400,18 +1400,18 @@ Linux, and Windows worker nodes.</p>
 <h2 id="with-github-actions">With GitHub Actions<a class="headerlink" href="#with-github-actions" title="Permanent link">#</a></h2>
 <p><a href="https://github.com/marketplace/actions/psrule"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M1 3a2 2 0 0 1 2-2h6.5a2 2 0 0 1 2 2v6.5a2 2 0 0 1-2 2H7v4.063C7 16.355 7.644 17 8.438 17H12.5v-2.5a2 2 0 0 1 2-2H21a2 2 0 0 1 2 2V21a2 2 0 0 1-2 2h-6.5a2 2 0 0 1-2-2v-2.5H8.437A2.938 2.938 0 0 1 5.5 15.562V11.5H3a2 2 0 0 1-2-2V3zm2-.5a.5.5 0 0 0-.5.5v6.5a.5.5 0 0 0 .5.5h6.5a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H3zM14.5 14a.5.5 0 0 0-.5.5V21a.5.5 0 0 0 .5.5H21a.5.5 0 0 0 .5-.5v-6.5a.5.5 0 0 0-.5-.5h-6.5z"/></svg></span> GitHub Action</a></p>
 <p>Install and use PSRule with GitHub Actions by referencing the <code>Microsoft/ps-rule</code> action.</p>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Analyze Azure template files</span>
-  <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Microsoft/ps-rule@v1.10.0</span>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze Azure template files</span><span class="w"></span>
+<span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Microsoft/ps-rule@v1.10.0</span><span class="w"></span>
 </code></pre></div>
 <p>This will automatically install compatible versions of all dependencies.</p>
 <h2 id="with-azure-pipelines">With Azure Pipelines<a class="headerlink" href="#with-azure-pipelines" title="Permanent link">#</a></h2>
 <p><a href="https://marketplace.visualstudio.com/items?itemName=bewhite.ps-rule"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M1 3a2 2 0 0 1 2-2h6.5a2 2 0 0 1 2 2v6.5a2 2 0 0 1-2 2H7v4.063C7 16.355 7.644 17 8.438 17H12.5v-2.5a2 2 0 0 1 2-2H21a2 2 0 0 1 2 2V21a2 2 0 0 1-2 2h-6.5a2 2 0 0 1-2-2v-2.5H8.437A2.938 2.938 0 0 1 5.5 15.562V11.5H3a2 2 0 0 1-2-2V3zm2-.5a.5.5 0 0 0-.5.5v6.5a.5.5 0 0 0 .5.5h6.5a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H3zM14.5 14a.5.5 0 0 0-.5.5V21a.5.5 0 0 0 .5.5H21a.5.5 0 0 0 .5-.5v-6.5a.5.5 0 0 0-.5-.5h-6.5z"/></svg></span> Extension</a></p>
 <p>Install and use PSRule with Azure Pipeline by using extension tasks.
 Install the extension from the marketplace, then use the <code>ps-rule-assert</code> task in pipeline steps.</p>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">task</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ps-rule-assert@0</span>
-  <span class="nt">displayName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Analyze Azure template files</span>
-  <span class="nt">inputs</span><span class="p">:</span>
-    <span class="nt">inputType</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">repository</span>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ps-rule-assert@0</span><span class="w"></span>
+<span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze Azure template files</span><span class="w"></span>
+<span class="w">  </span><span class="nt">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">inputType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repository</span><span class="w"></span>
 </code></pre></div>
 <p>This will automatically install compatible versions of all dependencies.</p>
 <h2 id="installing-locally">Installing locally<a class="headerlink" href="#installing-locally" title="Permanent link">#</a></h2>
@@ -1512,7 +1512,7 @@ After downloading the modules, copy the module directories to devices with restr
   <small>
     
       Last update:
-      2022-01-02
+      2022-01-03
     
   </small>
 </div>
@@ -1594,10 +1594,10 @@ After downloading the modules, copy the module directories to devices with restr
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.0bbba5b5.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.649a939e.min.js"></script>
+      <script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>

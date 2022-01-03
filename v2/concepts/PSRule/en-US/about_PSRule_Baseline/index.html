@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Baseline/">
       
       <link rel="icon" href="../../../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.f7951f6f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -67,7 +67,7 @@
   <meta property="og:title" content="PSRule - Baselines" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta property="og:url" content="https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Baseline/" />
-  <meta property="og:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
@@ -78,7 +78,7 @@
   <meta name="twitter:site" content="@github" />
   <meta name="twitter:title" content="PSRule - Baselines" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
 
   </head>
@@ -1399,157 +1399,157 @@ A baseline includes a set of rule and configuration options that are used for ev
 <p>JSON baseline specs are saved within a file with a <code>.Rule.json</code> or <code>.Rule.jsonc</code> extension, for example <code>Baseline.Rule.json</code>.
 Use <code>.jsonc</code> to view <a href="https://code.visualstudio.com/docs/languages/json#_json-with-comments">JSON with Comments</a> in Visual Studio Code.</p>
 <p>To define a YAML baseline spec use the following structure:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="c1"># Synopsis: &lt;synopsis&gt;</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Baseline</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;name&gt;</span>
-  <span class="nt">annotations</span><span class="p">:</span> <span class="p p-Indicator">{</span> <span class="p p-Indicator">}</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="c1"># One or more baseline options</span>
-  <span class="nt">binding</span><span class="p">:</span> <span class="p p-Indicator">{</span> <span class="p p-Indicator">}</span>
-  <span class="nt">rule</span><span class="p">:</span> <span class="p p-Indicator">{</span> <span class="p p-Indicator">}</span>
-  <span class="nt">configuration</span><span class="p">:</span> <span class="p p-Indicator">{</span> <span class="p p-Indicator">}</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: &lt;synopsis&gt;</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Baseline</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;name&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># One or more baseline options</span><span class="w"></span>
+<span class="w">  </span><span class="nt">binding</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
+<span class="w">  </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
+<span class="w">  </span><span class="nt">configuration</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="c1"># Synopsis: This is an example baseline</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Baseline</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Baseline1</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">binding</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span>
-      <span class="nt">id</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceId</span>
-    <span class="nt">targetName</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Name</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceName</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceGroupName</span>
-    <span class="nt">targetType</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceType</span>
-  <span class="nt">rule</span><span class="p">:</span>
-    <span class="nt">include</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rule1</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rule2</span>
-  <span class="nt">configuration</span><span class="p">:</span>
-    <span class="nt">allowedLocations</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;Australia</span><span class="nv"> </span><span class="s">East&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;Australia</span><span class="nv"> </span><span class="s">South</span><span class="nv"> </span><span class="s">East&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: This is an example baseline</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Baseline</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Baseline1</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">binding</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceId</span><span class="w"></span>
+<span class="w">    </span><span class="nt">targetName</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Name</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceName</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceGroupName</span><span class="w"></span>
+<span class="w">    </span><span class="nt">targetType</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceType</span><span class="w"></span>
+<span class="w">  </span><span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">include</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule1</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule2</span><span class="w"></span>
+<span class="w">  </span><span class="nt">configuration</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">allowedLocations</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Australia</span><span class="nv"> </span><span class="s">East&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Australia</span><span class="nv"> </span><span class="s">South</span><span class="nv"> </span><span class="s">East&#39;</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="c1"># Synopsis: This is an example baseline</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Baseline</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Baseline2</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">binding</span><span class="p">:</span>
-    <span class="nt">targetName</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Name</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceName</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceGroupName</span>
-    <span class="nt">targetType</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ResourceType</span>
-  <span class="nt">rule</span><span class="p">:</span>
-    <span class="nt">include</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rule1</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rule3</span>
-  <span class="nt">configuration</span><span class="p">:</span>
-    <span class="nt">allowedLocations</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;Australia</span><span class="nv"> </span><span class="s">East&#39;</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: This is an example baseline</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Baseline</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Baseline2</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">binding</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">targetName</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Name</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceName</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceGroupName</span><span class="w"></span>
+<span class="w">    </span><span class="nt">targetType</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceType</span><span class="w"></span>
+<span class="w">  </span><span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">include</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule1</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule3</span><span class="w"></span>
+<span class="w">  </span><span class="nt">configuration</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">allowedLocations</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Australia</span><span class="nv"> </span><span class="s">East&#39;</span><span class="w"></span>
 </code></pre></div>
 <p>To define a JSON baseline spec use the following structure:</p>
-<div class="highlight"><pre><span></span><code><span class="p">[</span>
-  <span class="p">{</span>
-    <span class="err">//</span> <span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span> <span class="err">&lt;sy</span><span class="kc">n</span><span class="err">opsis&gt;</span>
-    <span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;Baseline&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;name&gt;&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;annotations&quot;</span><span class="p">:</span> <span class="p">{}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;spec&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;binding&quot;</span><span class="p">:</span> <span class="p">{},</span>
-      <span class="nt">&quot;rule&quot;</span><span class="p">:</span> <span class="p">{},</span>
-      <span class="nt">&quot;configuration&quot;</span><span class="p">:</span> <span class="p">{}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">//</span><span class="w"> </span><span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;sy</span><span class="kc">n</span><span class="err">opsis&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Baseline&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;name&gt;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;annotations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;spec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;configuration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="p">[</span>
-  <span class="p">{</span>
-    <span class="err">//</span> <span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span> <span class="err">This</span> <span class="err">is</span> <span class="err">a</span><span class="kc">n</span> <span class="err">example</span> <span class="err">baseli</span><span class="kc">ne</span>
-    <span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;Baseline&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Baseline1&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;spec&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;binding&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="p">{</span>
-          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;ResourceId&quot;</span>
-          <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;targetName&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;Name&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;ResourceName&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;ResourceGroupName&quot;</span>
-        <span class="p">],</span>
-        <span class="nt">&quot;targetType&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;ResourceType&quot;</span>
-        <span class="p">]</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;rule&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;include&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;Rule1&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;Rule2&quot;</span>
-        <span class="p">]</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;configuration&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;allowedLocations&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;Australia East&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;Australia South East&quot;</span>
-        <span class="p">]</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="err">//</span> <span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span> <span class="err">This</span> <span class="err">is</span> <span class="err">a</span><span class="kc">n</span> <span class="err">example</span> <span class="err">baseli</span><span class="kc">ne</span>
-    <span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;Baseline&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Baseline2&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;spec&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;binding&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;targetName&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;Name&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;ResourceName&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;ResourceGroupName&quot;</span>
-        <span class="p">],</span>
-        <span class="nt">&quot;targetType&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;ResourceType&quot;</span>
-        <span class="p">]</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;rule&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;include&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;Rule1&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;Rule3&quot;</span>
-        <span class="p">]</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;configuration&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;allowedLocations&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;Australia East&quot;</span>
-        <span class="p">]</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">//</span><span class="w"> </span><span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="kc">n</span><span class="w"> </span><span class="err">example</span><span class="w"> </span><span class="err">baseli</span><span class="kc">ne</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Baseline&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Baseline1&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;spec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;ResourceId&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="p">]</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;targetName&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;Name&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;ResourceName&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;ResourceGroupName&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;targetType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;ResourceType&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;include&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;Rule1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;Rule2&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;configuration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;allowedLocations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;Australia East&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;Australia South East&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">//</span><span class="w"> </span><span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="kc">n</span><span class="w"> </span><span class="err">example</span><span class="w"> </span><span class="err">baseli</span><span class="kc">ne</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Baseline&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Baseline2&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;spec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;targetName&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;Name&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;ResourceName&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;ResourceGroupName&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;targetType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;ResourceType&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;include&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;Rule1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;Rule3&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;configuration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;allowedLocations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;Australia East&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
 </code></pre></div>
 <h3 id="baseline-scopes">Baseline scopes<a class="headerlink" href="#baseline-scopes" title="Permanent link">#</a></h3>
 <p>When baseline options are set, PSRule uses the following order to determine precedence.</p>
@@ -1569,129 +1569,129 @@ Annotations can be used to provide additional information that is available in <
 PSRule will generate a warning when an obsolete baseline is used.</li>
 </ul>
 <p>YAML example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="c1"># Synopsis: This is an example baseline that is obsolete</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Baseline</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ObsoleteBaseline</span>
-  <span class="nt">annotations</span><span class="p">:</span>
-    <span class="nt">obsolete</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">spec</span><span class="p">:</span> <span class="p p-Indicator">{</span> <span class="p p-Indicator">}</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: This is an example baseline that is obsolete</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Baseline</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ObsoleteBaseline</span><span class="w"></span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">obsolete</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
 </code></pre></div>
 <p>JSON example:</p>
-<div class="highlight"><pre><span></span><code><span class="p">[</span>
-  <span class="p">{</span>
-    <span class="err">//</span> <span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span> <span class="err">This</span> <span class="err">is</span> <span class="err">a</span><span class="kc">n</span> <span class="err">example</span> <span class="err">baseli</span><span class="kc">ne</span> <span class="kc">t</span><span class="err">ha</span><span class="kc">t</span> <span class="err">is</span> <span class="err">obsole</span><span class="kc">te</span>
-    <span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;Baseline&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ObsoleteBaseline&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;annotations&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;obsolete&quot;</span><span class="p">:</span> <span class="kc">true</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;spec&quot;</span><span class="p">:</span> <span class="p">{}</span>
-  <span class="p">}</span>
-<span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">//</span><span class="w"> </span><span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="kc">n</span><span class="w"> </span><span class="err">example</span><span class="w"> </span><span class="err">baseli</span><span class="kc">ne</span><span class="w"> </span><span class="kc">t</span><span class="err">ha</span><span class="kc">t</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">obsole</span><span class="kc">te</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Baseline&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ObsoleteBaseline&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;annotations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;obsolete&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;spec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
 </code></pre></div>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
 <h3 id="example-baselineruleyaml">Example Baseline.Rule.yaml<a class="headerlink" href="#example-baselineruleyaml" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Example Baseline.Rule.yaml</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example Baseline.Rule.yaml</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="c1"># Synopsis: This is an example baseline</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Baseline</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">TestBaseline1</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">binding</span><span class="p">:</span>
-    <span class="nt">targetName</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">AlternateName</span>
-    <span class="nt">targetType</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">kind</span>
-  <span class="nt">rule</span><span class="p">:</span>
-    <span class="nt">include</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;WithBaseline&#39;</span>
-  <span class="nt">configuration</span><span class="p">:</span>
-    <span class="nt">key1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">value1</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: This is an example baseline</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Baseline</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestBaseline1</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">binding</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">targetName</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AlternateName</span><span class="w"></span>
+<span class="w">    </span><span class="nt">targetType</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kind</span><span class="w"></span>
+<span class="w">  </span><span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">include</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;WithBaseline&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">configuration</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">key1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value1</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="c1"># Synopsis: This is an example baseline</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Baseline</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">TestBaseline2</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">binding</span><span class="p">:</span>
-    <span class="nt">targetName</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">AlternateName</span>
-    <span class="nt">targetType</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">kind</span>
-  <span class="nt">rule</span><span class="p">:</span>
-    <span class="nt">include</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;WithBaseline&#39;</span>
-  <span class="nt">configuration</span><span class="p">:</span>
-    <span class="nt">key1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">value1</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: This is an example baseline</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Baseline</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestBaseline2</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">binding</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">targetName</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AlternateName</span><span class="w"></span>
+<span class="w">    </span><span class="nt">targetType</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kind</span><span class="w"></span>
+<span class="w">  </span><span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">include</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;WithBaseline&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">configuration</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">key1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value1</span><span class="w"></span>
 </code></pre></div>
 <h3 id="example-baselinerulejson">Example Baseline.Rule.json<a class="headerlink" href="#example-baselinerulejson" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="err">//</span> <span class="err">Example</span> <span class="err">Baseli</span><span class="kc">ne</span><span class="err">.Rule.jso</span><span class="kc">n</span>
+<div class="highlight"><pre><span></span><code><span class="err">//</span><span class="w"> </span><span class="err">Example</span><span class="w"> </span><span class="err">Baseli</span><span class="kc">ne</span><span class="err">.Rule.jso</span><span class="kc">n</span><span class="w"></span>
 
-<span class="p">[</span>
-  <span class="p">{</span>
-    <span class="err">//</span> <span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span> <span class="err">This</span> <span class="err">is</span> <span class="err">a</span><span class="kc">n</span> <span class="err">example</span> <span class="err">baseli</span><span class="kc">ne</span>
-    <span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;Baseline&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;TestBaseline1&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;spec&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;binding&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;targetName&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;AlternateName&quot;</span>
-        <span class="p">],</span>
-        <span class="nt">&quot;targetType&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;kind&quot;</span>
-        <span class="p">]</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;rule&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;include&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;WithBaseline&quot;</span>
-        <span class="p">]</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;configuration&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;key1&quot;</span><span class="p">:</span> <span class="s2">&quot;value1&quot;</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="err">//</span> <span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span> <span class="err">This</span> <span class="err">is</span> <span class="err">a</span><span class="kc">n</span> <span class="err">example</span> <span class="err">baseli</span><span class="kc">ne</span>
-    <span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;Baseline&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;TestBaseline2&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;spec&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;binding&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;targetName&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;AlternateName&quot;</span>
-        <span class="p">],</span>
-        <span class="nt">&quot;targetType&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;kind&quot;</span>
-        <span class="p">]</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;rule&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;include&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="s2">&quot;WithBaseline&quot;</span>
-        <span class="p">]</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;configuration&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;key1&quot;</span><span class="p">:</span> <span class="s2">&quot;value1&quot;</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">]</span>
+<span class="p">[</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">//</span><span class="w"> </span><span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="kc">n</span><span class="w"> </span><span class="err">example</span><span class="w"> </span><span class="err">baseli</span><span class="kc">ne</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Baseline&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TestBaseline1&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;spec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;targetName&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;AlternateName&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;targetType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;kind&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;include&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;WithBaseline&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;configuration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;key1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value1&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">//</span><span class="w"> </span><span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="kc">n</span><span class="w"> </span><span class="err">example</span><span class="w"> </span><span class="err">baseli</span><span class="kc">ne</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Baseline&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TestBaseline2&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;spec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;targetName&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;AlternateName&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;targetType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;kind&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;include&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;WithBaseline&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;configuration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;key1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value1&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
   <hr>
@@ -1781,10 +1781,10 @@ PSRule will generate a warning when an obsolete baseline is used.</li>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.0bbba5b5.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.649a939e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>

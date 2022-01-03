@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Conventions/">
       
       <link rel="icon" href="../../../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.f7951f6f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -67,7 +67,7 @@
   <meta property="og:title" content="PSRule - Conventions" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta property="og:url" content="https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Conventions/" />
-  <meta property="og:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
@@ -78,7 +78,7 @@
   <meta name="twitter:site" content="@github" />
   <meta name="twitter:title" content="PSRule - Conventions" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
 
   </head>
@@ -1440,11 +1440,11 @@ For example:</p>
 <h3 id="including-with-options">Including with options<a class="headerlink" href="#including-with-options" title="Permanent link">#</a></h3>
 <p>Conventions can be included by name within options in addition to using the <code>-Convention</code> parameter.
 To specify a convention within YAML options use the following:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Example ps-docs.yaml</span>
-<span class="nt">convention</span><span class="p">:</span>
-  <span class="nt">include</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="s">&#39;ExampleConvention1&#39;</span>
-  <span class="p p-Indicator">-</span> <span class="s">&#39;ExampleConvention2&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example ps-docs.yaml</span><span class="w"></span>
+<span class="nt">convention</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">include</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;ExampleConvention1&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;ExampleConvention2&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="using-within-modules">Using within modules<a class="headerlink" href="#using-within-modules" title="Permanent link">#</a></h3>
 <p>Conventions can be shipped within a module using the same packaging and distribution process as rules.
@@ -1453,17 +1453,17 @@ By default, PSRule does not include conventions shipped within a module.
 To use a convention included in a module use the <code>-Convention</code> parameter or options configuration.</p>
 <p>A module can automatically include a convention by specifying the convention by name in module configuration.
 For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Example Config.Rule.yaml</span>
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ModuleConfig</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ExampleModule</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">convention</span><span class="p">:</span>
-    <span class="nt">include</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;ExampleConvention1&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;ExampleConvention2&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example Config.Rule.yaml</span><span class="w"></span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ModuleConfig</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExampleModule</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">convention</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">include</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;ExampleConvention1&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;ExampleConvention2&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="execution-order">Execution order<a class="headerlink" href="#execution-order" title="Permanent link">#</a></h3>
 <p>Conventions are executed in the order they are specified.
@@ -1569,10 +1569,10 @@ i.e. In the following example <code>ExampleConvention1</code> is execute before 
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.0bbba5b5.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.649a939e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>

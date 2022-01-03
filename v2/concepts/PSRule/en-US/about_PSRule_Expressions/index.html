@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Expressions/">
       
       <link rel="icon" href="../../../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.f7951f6f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -67,7 +67,7 @@
   <meta property="og:title" content="PSRule - Expressions" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta property="og:url" content="https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Expressions/" />
-  <meta property="og:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
@@ -78,7 +78,7 @@
   <meta name="twitter:site" content="@github" />
   <meta name="twitter:title" content="PSRule - Expressions" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
 
   </head>
@@ -1747,234 +1747,234 @@ Expressions are comprised of nested conditions, operators, and comparison proper
 When any nested expression does not match, <code>allOf</code> does not match.
 This is similar to a logical <em>and</em> operation.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">allOf</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;expression[]&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">allOf</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;expression[]&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleAllOf&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">allOf</span><span class="p">:</span>
-    <span class="c1"># Both Name and Description must exist.</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-      <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Description&#39;</span>
-      <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleAllOf&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">allOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Both Name and Description must exist.</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Description&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleAllOf&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">allOf</span><span class="p">:</span>
-    <span class="c1"># Both Name and Description must exist.</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-      <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Description&#39;</span>
-      <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleAllOf&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">allOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Both Name and Description must exist.</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Description&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <h3 id="anyof">AnyOf<a class="headerlink" href="#anyof" title="Permanent link">#</a></h3>
 <p>The <code>anyOf</code> operator is used to require one or more nested expressions to match.
 When any nested expression matches, <code>allOf</code> matches.
 This is similar to a logical <em>or</em> operation.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">anyOf</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;expression[]&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">anyOf</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;expression[]&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleAnyOf&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">anyOf</span><span class="p">:</span>
-    <span class="c1"># Name and/ or AlternativeName must exist.</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-      <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;AlternativeName&#39;</span>
-      <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleAnyOf&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Name and/ or AlternativeName must exist.</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;AlternativeName&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleAnyOf&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">anyOf</span><span class="p">:</span>
-    <span class="c1"># Name and/ or AlternativeName must exist.</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-      <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;AlternativeName&#39;</span>
-      <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleAnyOf&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Name and/ or AlternativeName must exist.</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;AlternativeName&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <h3 id="contains">Contains<a class="headerlink" href="#contains" title="Permanent link">#</a></h3>
 <p>The <code>contains</code> condition can be used to determine if the operand contains a specified sub-string.
 One or more strings to compare can be specified.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">contains</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | array&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">contains</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | array&gt;</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li>If the operand is a field, and the field does not exist, <em>contains</em> always returns <code>false</code>.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleContains&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">anyOf</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;url&#39;</span>
-      <span class="nt">contains</span><span class="p">:</span> <span class="s">&#39;/azure/&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;url&#39;</span>
-      <span class="nt">contains</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&#39;github.io&#39;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&#39;github.com&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleContains&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">contains</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/azure/&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">contains</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;github.io&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;github.com&#39;</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleContains&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">anyOf</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;url&#39;</span>
-      <span class="nt">contains</span><span class="p">:</span> <span class="s">&#39;/azure/&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;url&#39;</span>
-      <span class="nt">contains</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&#39;github.io&#39;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&#39;github.com&#39;</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleContains&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">contains</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/azure/&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">contains</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;github.io&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;github.com&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="count">Count<a class="headerlink" href="#count" title="Permanent link">#</a></h3>
 <p>The <code>count</code> condition is used to determine if the operand contains a specified number of items.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleCount&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;items&#39;</span>
-    <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleCount&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;items&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleCount&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;items&#39;</span>
-    <span class="nt">count</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleCount&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;items&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </code></pre></div>
 <h3 id="equals">Equals<a class="headerlink" href="#equals" title="Permanent link">#</a></h3>
 <p>The <code>equals</code> condition can be used to compare if the operand is equal to a supplied value.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">equals</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | int | bool&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | int | bool&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleEquals&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">equals</span><span class="p">:</span> <span class="s">&#39;TargetObject1&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleEquals&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;TargetObject1&#39;</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleEquals&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">equals</span><span class="p">:</span> <span class="s">&#39;TargetObject1&#39;</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleEquals&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;TargetObject1&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="endswith">EndsWith<a class="headerlink" href="#endswith" title="Permanent link">#</a></h3>
 <p>The <code>endsWith</code> condition can be used to determine if the operand ends with a specified string.
 One or more strings to compare can be specified.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">endsWith</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | array&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">endsWith</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | array&gt;</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li>If the operand is a field, and the field does not exist, <em>endsWith</em> always returns <code>false</code>.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleEndsWith&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">anyOf</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;hostname&#39;</span>
-      <span class="nt">endsWith</span><span class="p">:</span> <span class="s">&#39;.com&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;hostname&#39;</span>
-      <span class="nt">endsWith</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&#39;.com.au&#39;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&#39;.com&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleEndsWith&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;hostname&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">endsWith</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.com&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;hostname&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">endsWith</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;.com.au&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;.com&#39;</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleEndsWith&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">anyOf</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;hostname&#39;</span>
-      <span class="nt">endsWith</span><span class="p">:</span> <span class="s">&#39;.com&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;hostname&#39;</span>
-      <span class="nt">endsWith</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&#39;.com.au&#39;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&#39;.com&#39;</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleEndsWith&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;hostname&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">endsWith</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.com&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;hostname&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">endsWith</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;.com.au&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;.com&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="exists">Exists<a class="headerlink" href="#exists" title="Permanent link">#</a></h3>
 <p>The <code>exists</code> condition determines if the specified field exists.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li>When <code>exists: true</code>, exists will return <code>true</code> if the field exists.</li>
 <li>When <code>exists: false</code>, exists will return <code>true</code> if the field does not exist.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleExists&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleExists&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleExists&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleExists&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <h3 id="field">Field<a class="headerlink" href="#field" title="Permanent link">#</a></h3>
 <p>The comparison property <code>field</code> is used with a condition to determine field of the object to evaluate.
@@ -1986,28 +1986,28 @@ A field can be:</p>
 <li>A nested path through an object.</li>
 </ul>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">field</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleField&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Properties.securityRules[0].name&#39;</span>
-    <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleField&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Properties.securityRules[0].name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleField&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Properties.securityRules[0].name&#39;</span>
-    <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleField&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Properties.securityRules[0].name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <h3 id="greater">Greater<a class="headerlink" href="#greater" title="Permanent link">#</a></h3>
 <p>The <code>greater</code> condition determines if the operand is greater than a supplied value.
@@ -2020,28 +2020,28 @@ When the field value is:</p>
 <li>A DateTime, the number of days from the current time is compared.</li>
 </ul>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">greater</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">greater</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleGreater&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">greater</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleGreater&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">greater</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleGreater&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">greater</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleGreater&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">greater</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
 </code></pre></div>
 <h3 id="greaterorequals">GreaterOrEquals<a class="headerlink" href="#greaterorequals" title="Permanent link">#</a></h3>
 <p>The <code>greaterOrEquals</code> condition determines if the operand is greater or equal to the supplied value.
@@ -2054,28 +2054,28 @@ When the field value is:</p>
 <li>A DateTime, the number of days from the current time is compared.</li>
 </ul>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">greaterOrEquals</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">greaterOrEquals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleGreaterOrEquals&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">greaterOrEquals</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleGreaterOrEquals&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">greaterOrEquals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleGreaterOrEquals&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">greaterOrEquals</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleGreaterOrEquals&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">greaterOrEquals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
 </code></pre></div>
 <h3 id="hasdefault">HasDefault<a class="headerlink" href="#hasdefault" title="Permanent link">#</a></h3>
 <p>The <code>hasDefault</code> condition determines if the field exists that it is set to the specified value.
@@ -2086,29 +2086,29 @@ If the field does not exist, the condition will return <code>true</code>.</p>
   By default, case-insensitive comparison is performed.</li>
 </ul>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">hasDefault</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | int | bool&gt;</span>
-<span class="nt">caseSensitive</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">hasDefault</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | int | bool&gt;</span><span class="w"></span>
+<span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleHasDefault&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;enabled&#39;</span>
-    <span class="nt">hasDefault</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleHasDefault&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;enabled&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hasDefault</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleHasDefault&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;enabled&#39;</span>
-    <span class="nt">hasDefault</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleHasDefault&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;enabled&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hasDefault</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <h3 id="hasschema">HasSchema<a class="headerlink" href="#hasschema" title="Permanent link">#</a></h3>
 <p>The <code>hasSchema</code> condition determines if the operand has a <code>$schema</code> property defined.
@@ -2123,112 +2123,112 @@ If a trailing <code>#</code> is specified it is ignored.</p>
   When <code>true</code>, the schema will match if either <code>http://</code> or <code>https://</code> is specified.</li>
 </ul>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">hasSchema</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;array&gt;</span>
-<span class="nt">caseSensitive</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
-<span class="nt">ignoreScheme</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">hasSchema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;array&gt;</span><span class="w"></span>
+<span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
+<span class="nt">ignoreScheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li>When <code>hasSchema: []</code>, hasSchema will return <code>true</code> if any non-empty <code>$schema</code> property is defined.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleHasSchema&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;.&#39;</span>
-    <span class="nt">hasSchema</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleHasSchema&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hasSchema</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleHasSchema&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;.&#39;</span>
-    <span class="nt">hasSchema</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#</span>
-    <span class="nt">ignoreScheme</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleHasSchema&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hasSchema</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ignoreScheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleHasAnySchema&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;.&#39;</span>
-    <span class="nt">hasSchema</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleHasAnySchema&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hasSchema</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
 </code></pre></div>
 <h3 id="hasvalue">HasValue<a class="headerlink" href="#hasvalue" title="Permanent link">#</a></h3>
 <p>The <code>hasValue</code> condition determines if the field exists and has a non-empty value.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">hasValue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">hasValue</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li>When <code>hasValue: true</code>, hasValue will return <code>true</code> if the field is not empty.</li>
 <li>When <code>hasValue: false</code>, hasValue will return <code>true</code> if the field is empty.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleHasValue&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">hasValue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleHasValue&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hasValue</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleHasValue&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">hasValue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleHasValue&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hasValue</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <h3 id="in">In<a class="headerlink" href="#in" title="Permanent link">#</a></h3>
 <p>The <code>in</code> condition can be used to compare if a field contains one of the specified values.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">in</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;array&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">in</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;array&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleIn&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">in</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;Value1&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;Value2&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleIn&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">in</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Value1&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Value2&#39;</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleIn&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">in</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;Value1&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;Value2&#39;</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleIn&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">in</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Value1&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Value2&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="islower">IsLower<a class="headerlink" href="#islower" title="Permanent link">#</a></h3>
 <p>The <code>isLower</code> condition determines if the operand is a lowercase string.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">isLower</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">isLower</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li>When <code>isLower: true</code>, <em>isLower</em> will return <code>true</code> if the operand is a lowercase string.
@@ -2237,30 +2237,30 @@ If a trailing <code>#</code> is specified it is ignored.</p>
 <li>If the operand is a field, and the field does not exist <em>isLower</em> always returns <code>false</code>.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleIsLower&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">isLower</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleIsLower&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">isLower</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleIsLower&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">isLower</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleIsLower&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">isLower</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <h3 id="isstring">IsString<a class="headerlink" href="#isstring" title="Permanent link">#</a></h3>
 <p>The <code>isString</code> condition determines if the operand is a string or other type.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">isString</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">isString</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li>When <code>isString: true</code>, <em>isString</em> will return <code>true</code> if the operand is a string.</li>
@@ -2268,30 +2268,30 @@ If a trailing <code>#</code> is specified it is ignored.</p>
 <li>If the operand is a field, and the field does not exist <em>isString</em> always returns <code>false</code>.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleIsString&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">isString</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleIsString&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">isString</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleIsString&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">isString</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleIsString&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">isString</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <h3 id="isupper">IsUpper<a class="headerlink" href="#isupper" title="Permanent link">#</a></h3>
 <p>The <code>isUpper</code> condition determines if the operand is an uppercase string.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">isUpper</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">isUpper</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li>When <code>isUpper: true</code>, <em>isUpper</em> will return <code>true</code> if the operand is an uppercase string.
@@ -2300,25 +2300,25 @@ If a trailing <code>#</code> is specified it is ignored.</p>
 <li>If the operand is a field, and the field does not exist <em>isUpper</em> always returns <code>false</code>.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleIsUpper&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">isUpper</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleIsUpper&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">isUpper</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleIsUpper&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">isUpper</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleIsUpper&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">isUpper</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <h3 id="less">Less<a class="headerlink" href="#less" title="Permanent link">#</a></h3>
 <p>The <code>less</code> condition determines if the operand is less than a supplied value.
@@ -2331,28 +2331,28 @@ When the field value is:</p>
 <li>A DateTime, the number of days from the current time is compared.</li>
 </ul>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">less</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">less</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleLess&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">less</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleLess&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">less</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleLess&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">less</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleLess&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">less</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
 </code></pre></div>
 <h3 id="lessorequals">LessOrEquals<a class="headerlink" href="#lessorequals" title="Permanent link">#</a></h3>
 <p>The <code>lessOrEquals</code> condition determines if the operand is less or equal to the supplied value.
@@ -2365,198 +2365,198 @@ When the field value is:</p>
 <li>A DateTime, the number of days from the current time is compared.</li>
 </ul>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">lessOrEquals</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">lessOrEquals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleLessOrEquals&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">lessOrEquals</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleLessOrEquals&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">lessOrEquals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleLessOrEquals&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">lessOrEquals</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleLessOrEquals&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">lessOrEquals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
 </code></pre></div>
 <h3 id="match">Match<a class="headerlink" href="#match" title="Permanent link">#</a></h3>
 <p>The <code>match</code> condition can be used to compare if a field matches a supplied regular expression.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">match</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">match</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleMatch&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">match</span><span class="p">:</span> <span class="s">&#39;$(abc|efg)$&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleMatch&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">match</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$(abc|efg)$&#39;</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleMatch&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">match</span><span class="p">:</span> <span class="s">&#39;$(abc|efg)$&#39;</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleMatch&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">match</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$(abc|efg)$&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="name">Name<a class="headerlink" href="#name" title="Permanent link">#</a></h3>
 <p>The comparison property <code>name</code> is used with a condition to evaluate the target name of the object.
 The <code>name</code> property must be set to <code>.</code>.
 Any other value will cause the condition to evaluate to <code>false</code>.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="s">&#39;.&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.&#39;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleName&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;.&#39;</span>
-    <span class="nt">equals</span><span class="p">:</span> <span class="s">&#39;TargetObject1&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleName&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;TargetObject1&#39;</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleName&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;.&#39;</span>
-    <span class="nt">in</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;TargetObject1&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;TargetObject2&#39;</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleName&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">in</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;TargetObject1&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;TargetObject2&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="not">Not<a class="headerlink" href="#not" title="Permanent link">#</a></h3>
 <p>The <code>any</code> operator is used to invert the result of the nested expression.
 When a nested expression matches, <code>not</code> does not match.
 When a nested expression does not match, <code>not</code> matches.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">not</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;expression&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">not</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;expression&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleNot&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">not</span><span class="p">:</span>
-      <span class="c1"># The AlternativeName field must not exist.</span>
-      <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;AlternativeName&#39;</span>
-      <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleNot&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">not</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># The AlternativeName field must not exist.</span><span class="w"></span>
+<span class="w">      </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;AlternativeName&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleNot&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">not</span><span class="p">:</span>
-      <span class="c1"># The AlternativeName field must not exist.</span>
-      <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;AlternativeName&#39;</span>
-      <span class="nt">exists</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleNot&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">not</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># The AlternativeName field must not exist.</span><span class="w"></span>
+<span class="w">      </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;AlternativeName&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <h3 id="notequals">NotEquals<a class="headerlink" href="#notequals" title="Permanent link">#</a></h3>
 <p>The <code>notEquals</code> condition can be used to compare if a field is equal to a supplied value.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">notEquals</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | int | bool&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">notEquals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | int | bool&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleNotEquals&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">notEquals</span><span class="p">:</span> <span class="s">&#39;TargetObject1&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleNotEquals&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">notEquals</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;TargetObject1&#39;</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleNotEquals&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">notEquals</span><span class="p">:</span> <span class="s">&#39;TargetObject1&#39;</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleNotEquals&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">notEquals</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;TargetObject1&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="notin">NotIn<a class="headerlink" href="#notin" title="Permanent link">#</a></h3>
 <p>The <code>notIn</code> condition can be used to compare if a field does not contains one of the specified values.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">notIn</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;array&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">notIn</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;array&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleNotIn&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">notIn</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;Value1&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;Value2&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleNotIn&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">notIn</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Value1&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Value2&#39;</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleNotIn&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">notIn</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;Value1&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;Value2&#39;</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleNotIn&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">notIn</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Value1&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Value2&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="notmatch">NotMatch<a class="headerlink" href="#notmatch" title="Permanent link">#</a></h3>
 <p>The <code>notMatch</code> condition can be used to compare if a field does not matches a supplied regular expression.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">notMatch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">notMatch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleNotMatch&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">notMatch</span><span class="p">:</span> <span class="s">&#39;$(abc|efg)$&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleNotMatch&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">notMatch</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$(abc|efg)$&#39;</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleNotMatch&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;Name&#39;</span>
-    <span class="nt">notMatch</span><span class="p">:</span> <span class="s">&#39;$(abc|efg)$&#39;</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleNotMatch&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">notMatch</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$(abc|efg)$&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="setof">SetOf<a class="headerlink" href="#setof" title="Permanent link">#</a></h3>
 <p>The <code>setOf</code> condition can be used to determine if the operand is a set of specified values.
@@ -2566,77 +2566,77 @@ Additionally the following properties are accepted:</p>
   By default, case-insensitive comparison is performed.</li>
 </ul>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">setOf</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;array&gt;</span>
-<span class="nt">caseSensitive</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">setOf</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;array&gt;</span><span class="w"></span>
+<span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleSetOf&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;zones&#39;</span>
-    <span class="nt">setOf</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
-    <span class="nt">caseSensitive</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleSetOf&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;zones&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">setOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
+<span class="w">    </span><span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleSetOf&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;zones&#39;</span>
-    <span class="nt">setOf</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
-    <span class="nt">caseSensitive</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleSetOf&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;zones&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">setOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
+<span class="w">    </span><span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <h3 id="startswith">StartsWith<a class="headerlink" href="#startswith" title="Permanent link">#</a></h3>
 <p>The <code>startsWith</code> condition can be used to determine if the operand starts with a specified string.
 One or more strings to compare can be specified.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">startsWith</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string | array&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">startsWith</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | array&gt;</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li>If the operand is a field, and the field does not exist, <em>startsWith</em> always returns <code>false</code>.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleStartsWith&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">anyOf</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;url&#39;</span>
-      <span class="nt">startsWith</span><span class="p">:</span> <span class="s">&#39;http&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;url&#39;</span>
-      <span class="nt">startsWith</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&#39;http://&#39;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&#39;https://&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleStartsWith&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">startsWith</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;http&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">startsWith</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;http://&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;https://&#39;</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleStartsWith&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">anyOf</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;url&#39;</span>
-      <span class="nt">startsWith</span><span class="p">:</span> <span class="s">&#39;http&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;url&#39;</span>
-      <span class="nt">startsWith</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&#39;http://&#39;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&#39;https://&#39;</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleStartsWith&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">startsWith</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;http&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">startsWith</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;http://&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;https://&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="subset">Subset<a class="headerlink" href="#subset" title="Permanent link">#</a></h3>
 <p>The <code>subset</code> condition can be used to determine if the operand is a set of specified values.
@@ -2648,110 +2648,110 @@ The following properties are accepted:</p>
   By default, duplicates are allowed.</li>
 </ul>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">subset</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;array&gt;</span>
-<span class="nt">caseSensitive</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
-<span class="nt">unique</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">subset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;array&gt;</span><span class="w"></span>
+<span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
+<span class="nt">unique</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleSubset&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;logs&#39;</span>
-    <span class="nt">subset</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;cluster-autoscaler&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;kube-apiserver&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;kube-scheduler&#39;</span>
-    <span class="nt">caseSensitive</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="nt">unique</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleSubset&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;logs&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">subset</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;cluster-autoscaler&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;kube-apiserver&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;kube-scheduler&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">unique</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleSubset&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;logs&#39;</span>
-    <span class="nt">subset</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;cluster-autoscaler&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;kube-apiserver&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;kube-scheduler&#39;</span>
-    <span class="nt">caseSensitive</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="nt">unique</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleSubset&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;logs&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">subset</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;cluster-autoscaler&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;kube-apiserver&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;kube-scheduler&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">unique</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <h3 id="type">Type<a class="headerlink" href="#type" title="Permanent link">#</a></h3>
 <p>The comparison property <code>type</code> is used with a condition to evaluate the target type of the object.
 The <code>type</code> property must be set to <code>.</code>.
 Any other value will cause the condition to evaluate to <code>false</code>.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="s">&#39;.&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.&#39;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleType&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">type</span><span class="p">:</span> <span class="s">&#39;.&#39;</span>
-    <span class="nt">equals</span><span class="p">:</span> <span class="s">&#39;CustomType&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleType&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;CustomType&#39;</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleType&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">type</span><span class="p">:</span> <span class="s">&#39;.&#39;</span>
-    <span class="nt">in</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;Microsoft.Storage/storageAccounts&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&#39;Microsoft.Storage/storageAccounts/blobServices&#39;</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleType&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">in</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Microsoft.Storage/storageAccounts&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Microsoft.Storage/storageAccounts/blobServices&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="version">Version<a class="headerlink" href="#version" title="Permanent link">#</a></h3>
 <p>The <code>version</code> condition determines if the operand is a valid semantic version.
 A constraint can optionally be provided to require the semantic version to be within a range.
 Supported version constraints for expression are the same as the <code>$Assert.Version</code> assertion helper.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
-<span class="nt">includePrerelease</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span><span class="w"></span>
+<span class="nt">includePrerelease</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleVersion&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;engine.version&#39;</span>
-    <span class="nt">version</span><span class="p">:</span> <span class="s">&#39;^1.2.3&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleVersion&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;engine.version&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;^1.2.3&#39;</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleAnyVersion&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;engine.version&#39;</span>
-    <span class="nt">version</span><span class="p">:</span> <span class="s">&#39;&#39;</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleAnyVersion&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;engine.version&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"></span>
 
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selector</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;ExampleVersionIncludingPrerelease&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">if</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;engine.version&#39;</span>
-    <span class="nt">version</span><span class="p">:</span> <span class="s">&#39;&gt;=1.5.0&#39;</span>
-    <span class="nt">includePrerelease</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleVersionIncludingPrerelease&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;engine.version&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&gt;=1.5.0&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">includePrerelease</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">#</a></h2>
 <ul>
@@ -2845,10 +2845,10 @@ Supported version constraints for expression are the same as the <code>$Assert.V
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.0bbba5b5.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.649a939e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>

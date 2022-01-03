@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/scenarios/validation-pipeline/validation-pipeline/">
       
       <link rel="icon" href="../../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.f7951f6f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -67,7 +67,7 @@
   <meta property="og:title" content="PSRule - Using within continuous integration" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta property="og:url" content="https://microsoft.github.io/PSRule/v2/scenarios/validation-pipeline/validation-pipeline/" />
-  <meta property="og:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
@@ -78,7 +78,7 @@
   <meta name="twitter:site" content="@github" />
   <meta name="twitter:title" content="PSRule - Using within continuous integration" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
 
   </head>
@@ -1593,16 +1593,16 @@ Using a common format allows integration with any system that supports the NUnit
 <h3 id="publishing-nunit-report-with-azure-devops">Publishing NUnit report with Azure DevOps<a class="headerlink" href="#publishing-nunit-report-with-azure-devops" title="Permanent link">#</a></h3>
 <p>With Azure DevOps, an NUnit report can be published using <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-test-results">Publish Test Results task</a>.</p>
 <p>An example YAML snippet is included below:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># PSRule results</span>
-<span class="p p-Indicator">-</span> <span class="nt">task</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PublishTestResults@2</span>
-  <span class="nt">displayName</span><span class="p">:</span> <span class="s">&#39;Publish</span><span class="nv"> </span><span class="s">PSRule</span><span class="nv"> </span><span class="s">results&#39;</span>
-  <span class="nt">inputs</span><span class="p">:</span>
-    <span class="nt">testRunTitle</span><span class="p">:</span> <span class="s">&#39;PSRule&#39;</span>
-    <span class="nt">testRunner</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">NUnit</span>
-    <span class="nt">testResultsFiles</span><span class="p">:</span> <span class="s">&#39;reports/rule-report.xml&#39;</span>
-    <span class="nt">mergeTestResults</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="nt">publishRunAttachments</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-  <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">succeededOrFailed()</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># PSRule results</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PublishTestResults@2</span><span class="w"></span>
+<span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Publish</span><span class="nv"> </span><span class="s">PSRule</span><span class="nv"> </span><span class="s">results&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">testRunTitle</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;PSRule&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">testRunner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NUnit</span><span class="w"></span>
+<span class="w">    </span><span class="nt">testResultsFiles</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;reports/rule-report.xml&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">mergeTestResults</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">publishRunAttachments</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">succeededOrFailed()</span><span class="w"></span>
 </code></pre></div>
 <h2 id="complete-example">Complete example<a class="headerlink" href="#complete-example" title="Permanent link">#</a></h2>
 <p>Putting each of these steps together.</p>
@@ -1633,26 +1633,26 @@ Using a common format allows integration with any system that supports the NUnit
 <span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="nv">$assertParams</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="azure-devops-pipeline">Azure DevOps Pipeline<a class="headerlink" href="#azure-devops-pipeline" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nt">steps</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
 
-<span class="c1"># Install dependencies</span>
-<span class="p p-Indicator">-</span> <span class="nt">powershell</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./pipeline-deps.ps1</span>
-  <span class="nt">displayName</span><span class="p">:</span> <span class="s">&#39;Install</span><span class="nv"> </span><span class="s">dependencies&#39;</span>
+<span class="c1"># Install dependencies</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">powershell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./pipeline-deps.ps1</span><span class="w"></span>
+<span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Install</span><span class="nv"> </span><span class="s">dependencies&#39;</span><span class="w"></span>
 
-<span class="c1"># Validate templates</span>
-<span class="p p-Indicator">-</span> <span class="nt">powershell</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./validate-files.ps1</span>
-  <span class="nt">displayName</span><span class="p">:</span> <span class="s">&#39;Validate</span><span class="nv"> </span><span class="s">files&#39;</span>
+<span class="c1"># Validate templates</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">powershell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./validate-files.ps1</span><span class="w"></span>
+<span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Validate</span><span class="nv"> </span><span class="s">files&#39;</span><span class="w"></span>
 
-<span class="c1"># Publish pipeline results</span>
-<span class="p p-Indicator">-</span> <span class="nt">task</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PublishTestResults@2</span>
-  <span class="nt">displayName</span><span class="p">:</span> <span class="s">&#39;Publish</span><span class="nv"> </span><span class="s">PSRule</span><span class="nv"> </span><span class="s">results&#39;</span>
-  <span class="nt">inputs</span><span class="p">:</span>
-    <span class="nt">testRunTitle</span><span class="p">:</span> <span class="s">&#39;PSRule&#39;</span>
-    <span class="nt">testRunner</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">NUnit</span>
-    <span class="nt">testResultsFiles</span><span class="p">:</span> <span class="s">&#39;reports/rule-report.xml&#39;</span>
-    <span class="nt">mergeTestResults</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="nt">publishRunAttachments</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-  <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">succeededOrFailed()</span>
+<span class="c1"># Publish pipeline results</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PublishTestResults@2</span><span class="w"></span>
+<span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Publish</span><span class="nv"> </span><span class="s">PSRule</span><span class="nv"> </span><span class="s">results&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">testRunTitle</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;PSRule&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">testRunner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NUnit</span><span class="w"></span>
+<span class="w">    </span><span class="nt">testResultsFiles</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;reports/rule-report.xml&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">mergeTestResults</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">publishRunAttachments</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">succeededOrFailed()</span><span class="w"></span>
 </code></pre></div>
 <h2 id="additional-options">Additional options<a class="headerlink" href="#additional-options" title="Permanent link">#</a></h2>
 <h3 id="using-invoke-build">Using Invoke-Build<a class="headerlink" href="#using-invoke-build" title="Permanent link">#</a></h3>
@@ -1801,10 +1801,10 @@ By using <code>-If</code> or <code>-Type</code> pre-conditions, rules can dynami
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.0bbba5b5.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.649a939e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>

@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/creating-your-pipeline/">
       
       <link rel="icon" href="../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.f7951f6f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
@@ -67,7 +67,7 @@
   <meta property="og:title" content="PSRule - Creating your pipeline" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta property="og:url" content="https://microsoft.github.io/PSRule/v2/creating-your-pipeline/" />
-  <meta property="og:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
@@ -78,7 +78,7 @@
   <meta name="twitter:site" content="@github" />
   <meta name="twitter:title" content="PSRule - Creating your pipeline" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
 
   </head>
@@ -1286,34 +1286,34 @@ By using validation within a continuous integration (CI) pipeline, any issues pr
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Create a new GitHub Actions workflow by creating <code>.github/workflows/analyze-arm.yaml</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Analyze templates</span>
-<span class="nt">on</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pull_request</span>
-<span class="nt">jobs</span><span class="p">:</span>
-  <span class="nt">analyze_arm</span><span class="p">:</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Analyze templates</span>
-    <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
-    <span class="nt">steps</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Checkout</span>
-      <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze templates</span><span class="w"></span>
+<span class="nt">on</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pull_request</span><span class="w"></span>
+<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">analyze_arm</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze templates</span><span class="w"></span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span><span class="w"></span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout</span><span class="w"></span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span><span class="w"></span>
 
-    <span class="c1"># Analyze Azure resources using PSRule for Azure</span>
-    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Analyze Azure template files</span>
-      <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Microsoft/ps-rule@main</span>
-      <span class="nt">with</span><span class="p">:</span>
-        <span class="nt">modules</span><span class="p">:</span> <span class="s">&#39;PSRule.Rules.Azure&#39;</span>
+<span class="w">    </span><span class="c1"># Analyze Azure resources using PSRule for Azure</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze Azure template files</span><span class="w"></span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Microsoft/ps-rule@main</span><span class="w"></span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">modules</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;PSRule.Rules.Azure&#39;</span><span class="w"></span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <p>Create a new Azure DevOps YAML pipeline by creating <code>.azure-pipelines/analyze-arm.yaml</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">steps</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
 
-<span class="c1"># Analyze Azure resources using PSRule for Azure</span>
-<span class="p p-Indicator">-</span> <span class="nt">task</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ps-rule-assert@0</span>
-  <span class="nt">displayName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Analyze Azure template files</span>
-  <span class="nt">inputs</span><span class="p">:</span>
-    <span class="nt">inputType</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">repository</span>
-    <span class="nt">modules</span><span class="p">:</span> <span class="s">&#39;PSRule.Rules.Azure&#39;</span>
+<span class="c1"># Analyze Azure resources using PSRule for Azure</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ps-rule-assert@0</span><span class="w"></span>
+<span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze Azure template files</span><span class="w"></span>
+<span class="w">  </span><span class="nt">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">inputType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repository</span><span class="w"></span>
+<span class="w">    </span><span class="nt">modules</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;PSRule.Rules.Azure&#39;</span><span class="w"></span>
 </code></pre></div>
 </div>
 </div>
@@ -1329,22 +1329,22 @@ By using validation within a continuous integration (CI) pipeline, any issues pr
 </ul>
 <p>To exclude a rule, set <code>Rule.Exclude</code> option within the <code>ps-rule.yaml</code> file.</p>
 <p><a href="../concepts/PSRule/en-US/about_PSRule_Options/#ruleexclude"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M0 3.75A.75.75 0 0 1 .75 3h7.497c1.566 0 2.945.8 3.751 2.014A4.496 4.496 0 0 1 15.75 3h7.5a.75.75 0 0 1 .75.75v15.063a.75.75 0 0 1-.755.75l-7.682-.052a3 3 0 0 0-2.142.878l-.89.891a.75.75 0 0 1-1.061 0l-.902-.901a3 3 0 0 0-2.121-.879H.75a.75.75 0 0 1-.75-.75v-15zm11.247 3.747a3 3 0 0 0-3-2.997H1.5V18h6.947a4.5 4.5 0 0 1 2.803.98l-.003-11.483zm1.503 11.485V7.5a3 3 0 0 1 3-3h6.75v13.558l-6.927-.047a4.5 4.5 0 0 0-2.823.971z"/></svg></span> Docs</a></p>
-<div class="highlight"><pre><span></span><code><span class="nt">rule</span><span class="p">:</span>
-  <span class="nt">exclude</span><span class="p">:</span>
-  <span class="c1"># Ignore the following rules for all resources</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Azure.VM.UseHybridUseBenefit</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Azure.VM.Standalone</span>
+<div class="highlight"><pre><span></span><code><span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">exclude</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Ignore the following rules for all resources</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Azure.VM.UseHybridUseBenefit</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Azure.VM.Standalone</span><span class="w"></span>
 </code></pre></div>
 <p>To suppress a rule, set <code>Suppression</code> option within the <code>ps-rule.yaml</code> file.</p>
 <p><a href="../concepts/PSRule/en-US/about_PSRule_Options/#suppression"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M0 3.75A.75.75 0 0 1 .75 3h7.497c1.566 0 2.945.8 3.751 2.014A4.496 4.496 0 0 1 15.75 3h7.5a.75.75 0 0 1 .75.75v15.063a.75.75 0 0 1-.755.75l-7.682-.052a3 3 0 0 0-2.142.878l-.89.891a.75.75 0 0 1-1.061 0l-.902-.901a3 3 0 0 0-2.121-.879H.75a.75.75 0 0 1-.75-.75v-15zm11.247 3.747a3 3 0 0 0-3-2.997H1.5V18h6.947a4.5 4.5 0 0 1 2.803.98l-.003-11.483zm1.503 11.485V7.5a3 3 0 0 1 3-3h6.75v13.558l-6.927-.047a4.5 4.5 0 0 0-2.823.971z"/></svg></span> Docs</a></p>
-<div class="highlight"><pre><span></span><code><span class="nt">suppression</span><span class="p">:</span>
-  <span class="nt">Azure.AKS.AuthorizedIPs</span><span class="p">:</span>
-  <span class="c1"># Exclude the following externally managed AKS clusters</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">aks-cluster-prod-eus-001</span>
-  <span class="nt">Azure.Storage.SoftDelete</span><span class="p">:</span>
-  <span class="c1"># Exclude the following non-production storage accounts</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">storagedeveus6jo36t</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">storagedeveus1df278</span>
+<div class="highlight"><pre><span></span><code><span class="nt">suppression</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">Azure.AKS.AuthorizedIPs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Exclude the following externally managed AKS clusters</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aks-cluster-prod-eus-001</span><span class="w"></span>
+<span class="w">  </span><span class="nt">Azure.Storage.SoftDelete</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Exclude the following non-production storage accounts</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storagedeveus6jo36t</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storagedeveus1df278</span><span class="w"></span>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1358,7 +1358,7 @@ Also consider including a date if the exclusions or suppressions are temporary.<
   <small>
     
       Last update:
-      2022-01-02
+      2022-01-03
     
   </small>
 </div>
@@ -1440,10 +1440,10 @@ Also consider including a date if the exclusions or suppressions are temporary.<
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.0bbba5b5.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.649a939e.min.js"></script>
+      <script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>

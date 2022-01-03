@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/authoring/writing-rules/">
       
       <link rel="icon" href="../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.f7951f6f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -67,7 +67,7 @@
   <meta property="og:title" content="PSRule - Writing rules" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta property="og:url" content="https://microsoft.github.io/PSRule/v2/authoring/writing-rules/" />
-  <meta property="og:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
@@ -78,7 +78,7 @@
   <meta name="twitter:site" content="@github" />
   <meta name="twitter:title" content="PSRule - Writing rules" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
 
   </head>
@@ -1316,13 +1316,13 @@ When set to <code>false</code>, the application permits insecure communication w
 <div class="admonition example">
 <p class="admonition-title">Contents of <code>settings.json</code></p>
 <p>Create a <code>settings.json</code> file in the root of your repository with the following contents.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;app1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;configure&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;supportsHttpsTrafficOnly&quot;</span><span class="p">:</span> <span class="kc">false</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;app1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;configure&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;supportsHttpsTrafficOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </div>
 <h2 id="define-a-rule">Define a rule<a class="headerlink" href="#define-a-rule" title="Permanent link">#</a></h2>
@@ -1340,16 +1340,16 @@ When set to <code>false</code>, the application permits insecure communication w
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Create a <code>.ps-rule/Local.Rule.yaml</code> file in your repository with the following contents.</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="c1"># Synopsis: An example rule to require TLS.</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;Local.YAML.RequireTLS&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;configure.supportsHttpsTrafficOnly&#39;</span>
-    <span class="nt">equals</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: An example rule to require TLS.</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Local.YAML.RequireTLS&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;configure.supportsHttpsTrafficOnly&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <ol>
 <li>Use a short <code>Synopsis:</code> to describe your rule in a line comment above your rule.
@@ -1361,22 +1361,22 @@ When set to <code>false</code>, the application permits insecure communication w
 </div>
 <div class="tabbed-block">
 <p>Create a <code>.ps-rule/Local.Rule.jsonc</code> file in your repository with the following contents.</p>
-<div class="highlight"><pre><span></span><code><span class="p">[</span>
-    <span class="p">{</span>
-        <span class="err">//</span> <span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span> <span class="err">A</span><span class="kc">n</span> <span class="err">example</span> <span class="err">rule</span> <span class="kc">t</span><span class="err">o</span> <span class="err">require</span> <span class="err">TLS.</span>
-        <span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;Rule&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Local.JSON.RequireTLS&quot;</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;spec&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;condition&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;configure.supportsHttpsTrafficOnly&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;equals&quot;</span><span class="p">:</span> <span class="kc">true</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="err">//</span><span class="w"> </span><span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span><span class="w"> </span><span class="err">A</span><span class="kc">n</span><span class="w"> </span><span class="err">example</span><span class="w"> </span><span class="err">rule</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">require</span><span class="w"> </span><span class="err">TLS.</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rule&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Local.JSON.RequireTLS&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;spec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;configure.supportsHttpsTrafficOnly&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
 </code></pre></div>
 <ol>
 <li>Use a short <code>Synopsis:</code> to describe your rule in a line comment above your rule.
@@ -1416,19 +1416,19 @@ Additional conditions can be combined to check multiple test cases.</p>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Update <code>.ps-rule/Local.Rule.yaml</code> in your repository with the following contents.</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="c1"># Synopsis: An example rule to require TLS.</span>
-<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Rule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">&#39;Local.YAML.RequireTLS&#39;</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">condition</span><span class="p">:</span>
-<span class="hll">    <span class="nt">allOf</span><span class="p">:</span>
-</span>    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;configure.supportsHttpsTrafficOnly&#39;</span>
-      <span class="nt">equals</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="hll">    <span class="p p-Indicator">-</span> <span class="nt">field</span><span class="p">:</span> <span class="s">&#39;configure.minTLSVersion&#39;</span>
-</span><span class="hll">      <span class="nt">equals</span><span class="p">:</span> <span class="s">&#39;1.2&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: An example rule to require TLS.</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Local.YAML.RequireTLS&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="nt">allOf</span><span class="p">:</span><span class="w"></span>
+</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;configure.supportsHttpsTrafficOnly&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;configure.minTLSVersion&#39;</span><span class="w"></span>
+</span><span class="hll"><span class="w">      </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1.2&#39;</span><span class="w"></span>
 </span></code></pre></div>
 <ol>
 <li>Using the <code>allOf</code> expression requires that all conditions be true for the rule to pass.
@@ -1438,30 +1438,30 @@ Additional conditions can be combined to check multiple test cases.</p>
 </div>
 <div class="tabbed-block">
 <p>Update <code>.ps-rule/Local.Rule.jsonc</code> in your repository with the following contents.</p>
-<div class="highlight"><pre><span></span><code><span class="p">[</span>
-    <span class="p">{</span>
-        <span class="err">//</span> <span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span> <span class="err">A</span><span class="kc">n</span> <span class="err">example</span> <span class="err">rule</span> <span class="kc">t</span><span class="err">o</span> <span class="err">require</span> <span class="err">TLS.</span>
-        <span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;Rule&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Local.JSON.RequireTLS&quot;</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;spec&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;condition&quot;</span><span class="p">:</span> <span class="p">{</span>
-<span class="hll">                <span class="nt">&quot;allOf&quot;</span><span class="p">:</span> <span class="p">[</span>
-</span>                    <span class="p">{</span>
-                        <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;configure.supportsHttpsTrafficOnly&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;equals&quot;</span><span class="p">:</span> <span class="kc">true</span>
-                    <span class="p">},</span>
-<span class="hll">                    <span class="p">{</span>
-</span><span class="hll">                        <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;configure.minTLSVersion&quot;</span><span class="p">,</span>
-</span><span class="hll">                        <span class="nt">&quot;equals&quot;</span><span class="p">:</span> <span class="s2">&quot;1.2&quot;</span>
-</span><span class="hll">                    <span class="p">}</span>
-</span>                <span class="p">]</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="err">//</span><span class="w"> </span><span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span><span class="w"> </span><span class="err">A</span><span class="kc">n</span><span class="w"> </span><span class="err">example</span><span class="w"> </span><span class="err">rule</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">require</span><span class="w"> </span><span class="err">TLS.</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rule&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Local.JSON.RequireTLS&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;spec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">                </span><span class="nt">&quot;allOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+</span><span class="w">                    </span><span class="p">{</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;configure.supportsHttpsTrafficOnly&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">                    </span><span class="p">},</span><span class="w"></span>
+<span class="hll"><span class="w">                    </span><span class="p">{</span><span class="w"></span>
+</span><span class="hll"><span class="w">                        </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;configure.minTLSVersion&quot;</span><span class="p">,</span><span class="w"></span>
+</span><span class="hll"><span class="w">                        </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.2&quot;</span><span class="w"></span>
+</span><span class="hll"><span class="w">                    </span><span class="p">}</span><span class="w"></span>
+</span><span class="w">                </span><span class="p">]</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
 </code></pre></div>
 <ol>
 <li>Using the <code>allOf</code> expression requires that all conditions be true for the rule to pass.
@@ -1493,7 +1493,7 @@ Additional conditions can be combined to check multiple test cases.</p>
   <small>
     
       Last update:
-      2022-01-02
+      2022-01-03
     
   </small>
 </div>
@@ -1575,10 +1575,10 @@ Additional conditions can be combined to check multiple test cases.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.649a939e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>

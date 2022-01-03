@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/faq/">
       
       <link rel="icon" href="../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.f7951f6f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
@@ -67,7 +67,7 @@
   <meta property="og:title" content="PSRule - FAQ" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta property="og:url" content="https://microsoft.github.io/PSRule/v2/faq/" />
-  <meta property="og:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
@@ -78,7 +78,7 @@
   <meta name="twitter:site" content="@github" />
   <meta name="twitter:title" content="PSRule - FAQ" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/317488850/548f4800-8afc-11eb-98b1-9fb4c897d1d4" />
+  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
 
   </head>
@@ -1397,16 +1397,16 @@ When checking into source control, store this file in the root directory of the 
   <span class="s1">&#39;Configuration.CUSTOM_VALUE&#39;</span> <span class="p">=</span> <span class="s1">&#39;Example&#39;</span>
 <span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># With YAML</span>
-<span class="nt">output</span><span class="p">:</span>
-  <span class="nt">as</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Summary</span>
-  <span class="nt">culture</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;en-AU&#39;</span> <span class="p p-Indicator">]</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># With YAML</span><span class="w"></span>
+<span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">as</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Summary</span><span class="w"></span>
+<span class="w">  </span><span class="nt">culture</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&#39;en-AU&#39;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 
-<span class="nt">execution</span><span class="p">:</span>
-  <span class="nt">notProcessedWarning</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">execution</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">notProcessedWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 
-<span class="nt">configuration</span><span class="p">:</span>
-  <span class="nt">CUSTOM_VALUE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Example</span>
+<span class="nt">configuration</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">CUSTOM_VALUE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Example</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># With environment variable in bash</span>
 <span class="nb">export</span> <span class="nv">PSRULE_EXECUTION_NOTPROCESSEDWARNING</span><span class="o">=</span><span class="nb">false</span>
@@ -1423,21 +1423,21 @@ When checking into source control, store this file in the root directory of the 
 </ul>
 <p>To exclude a rule use the <code>Rule.Exclude</code> option.
 To do this in YAML, add the following to the <code>ps-rule.yaml</code> options file.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the rule/exclude property</span>
-<span class="nt">rule</span><span class="p">:</span>
-  <span class="nt">exclude</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="s">&#39;My.FirstRule&#39;</span>  <span class="c1"># The name of the first rule to exclude.</span>
-  <span class="p p-Indicator">-</span> <span class="s">&#39;My.SecondRule&#39;</span> <span class="c1"># The name of the second rule to exclude.</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the rule/exclude property</span><span class="w"></span>
+<span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">exclude</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;My.FirstRule&#39;</span><span class="w">  </span><span class="c1"># The name of the first rule to exclude.</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;My.SecondRule&#39;</span><span class="w"> </span><span class="c1"># The name of the second rule to exclude.</span><span class="w"></span>
 </code></pre></div>
 <p>To suppress a rule use the <code>Suppression</code> option.
 To do this in YAML, add the following to the <code>ps-rule.yaml</code> options file.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the suppression property</span>
-<span class="nt">suppression</span><span class="p">:</span>
-  <span class="nt">My.FirstRule</span><span class="p">:</span>    <span class="c1"># The name of the rule being suppressed</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TestObject1</span>    <span class="c1"># The name of the first object to suppress</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TestObject3</span>    <span class="c1"># The name of the second object to suppress</span>
-  <span class="nt">My.SecondRule</span><span class="p">:</span>   <span class="c1"># An additional rule to suppress</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TestObject2</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the suppression property</span><span class="w"></span>
+<span class="nt">suppression</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">My.FirstRule</span><span class="p">:</span><span class="w">    </span><span class="c1"># The name of the rule being suppressed</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestObject1</span><span class="w">    </span><span class="c1"># The name of the first object to suppress</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestObject3</span><span class="w">    </span><span class="c1"># The name of the second object to suppress</span><span class="w"></span>
+<span class="w">  </span><span class="nt">My.SecondRule</span><span class="p">:</span><span class="w">   </span><span class="c1"># An additional rule to suppress</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestObject2</span><span class="w"></span>
 </code></pre></div>
 <p>The name of the object is reported by PSRule in output results.</p>
 <p>See <a href="../concepts/PSRule/en-US/about_PSRule_Options/">about_PSRule_Options</a> for additional usage for both of these options.</p>
@@ -1474,7 +1474,7 @@ Alternatively, you can provide your own reasons to complement standard PowerShel
   <small>
     
       Last update:
-      2022-01-02
+      2022-01-03
     
   </small>
 </div>
@@ -1556,10 +1556,10 @@ Alternatively, you can provide your own reasons to complement standard PowerShel
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.0bbba5b5.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.649a939e.min.js"></script>
+      <script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>
