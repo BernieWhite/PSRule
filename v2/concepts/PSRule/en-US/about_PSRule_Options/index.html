@@ -1179,6 +1179,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#executionsuppressedrulewarning" class="md-nav__link">
+    Execution.SuppressedRuleWarning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#includemodule" class="md-nav__link">
     Include.Module
   </a>
@@ -1648,6 +1655,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#executionsuppressedrulewarning" class="md-nav__link">
+    Execution.SuppressedRuleWarning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#includemodule" class="md-nav__link">
     Include.Module
   </a>
@@ -1917,6 +1931,7 @@ This topic describes what options are available, when to and how to use them.</p
 <li><a href="#executionlanguagemode">Execution.LanguageMode</a></li>
 <li><a href="#executioninconclusivewarning">Execution.InconclusiveWarning</a></li>
 <li><a href="#executionnotprocessedwarning">Execution.NotProcessedWarning</a></li>
+<li><a href="#executionsuppressedrulewarning">Execution.SuppressedRuleWarning</a></li>
 <li><a href="#includemodule">Include.Module</a></li>
 <li><a href="#includepath">Include.Path</a></li>
 <li><a href="#inputformat">Input.Format</a></li>
@@ -2501,6 +2516,40 @@ In this case the object has not been processed by any rule.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
 <span class="nt">variables</span><span class="p">:</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_NOTPROCESSEDWARNING</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+<h3 id="executionsuppressedrulewarning">Execution.SuppressedRuleWarning<a class="headerlink" href="#executionsuppressedrulewarning" title="Permanent link">#</a></h3>
+<p>When evaluating rules, it is possible to output suppressed rules as warnings.</p>
+<p>Suppressed rules will:</p>
+<ul>
+<li>Output a warning by default.</li>
+<li>Show which rules were suppressed when <code>Output.As</code> is set to <code>Detail</code>.</li>
+<li>Show how many rules were suppressed when <code>Output.As</code> is set to <code>Summary</code>.</li>
+</ul>
+<p>The suppressed rule can be disabled by using:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the SuppressedRuleWarning parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-SuppressedRuleWarning</span> <span class="nv">$False</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.SuppressedRuleWarning hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.SuppressedRuleWarning&#39;</span> <span class="p">=</span> <span class="nv">$False</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the SuppressedRuleWarning parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-SuppressedRuleWarning</span> <span class="nv">$False</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/suppressedRuleWarning property</span><span class="w"></span>
+<span class="nt">execution</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">suppressedRuleWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span> <span class="nv">PSRULE_EXECUTION_SUPPRESSEDRULEWARNING</span><span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_SUPPRESSEDRULEWARNING</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_SUPPRESSEDRULEWARNING</span><span class="w"></span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <h3 id="includemodule">Include.Module<a class="headerlink" href="#includemodule" title="Permanent link">#</a></h3>
@@ -3710,7 +3759,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
   <small>
     
       Last update:
-      2021-11-08
+      2022-01-05
     
   </small>
 </div>

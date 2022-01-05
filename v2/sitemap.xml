@@ -2,297 +2,297 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/CHANGELOG-v0/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/CHANGELOG-v1/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/about/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/addon-modules/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/creating-your-pipeline/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/faq/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/features/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/install-instructions/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/license-contributing/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/support/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/upgrade-notes/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/validating-locally/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/authoring/packaging-rules/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/authoring/storing-rules/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/authoring/writing-rule-help/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/authoring/writing-rules/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/authoring/packaging-rules/Enterprise.Rules/en/Org.Az.Resource.Tagging/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/authoring/packaging-rules/Enterprise.Rules/en/Org.Az.Storage.UseHttps/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/authoring/writing-rule-help/en-US/metadata.Name/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/Assert-PSRule/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/Export-PSRuleBaseline/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/Get-PSRule/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/Get-PSRuleBaseline/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/Get-PSRuleHelp/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/Get-PSRuleTarget/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/Invoke-PSRule/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/New-PSRuleOption/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/PSRule/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/Set-PSRuleOption/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/Test-PSRuleTarget/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Assert/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Badges/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Baseline/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Conventions/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Docs/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Expressions/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Options/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Rules/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Selectors/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Variables/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/keywords/PSRule/en-US/about_PSRule_Keywords/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/azure-resources/azure-resources/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/azure-tags/azure-tags/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/benchmark/results-v0.17.0/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/benchmark/results-v0.19.0/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/benchmark/results-v0.20.0/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/benchmark/results-v0.21.0/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/benchmark/results-v0.22.0/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/benchmark/results-v0.3.0/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/benchmark/results-v1.0.1/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/benchmark/results-v1.1.0/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/benchmark/results-v1.10.0/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/benchmark/results-v1.11.0/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/benchmark/results-v2.0.0-pre/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/kubernetes-resources/kubernetes-resources/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/scenarios/validation-pipeline/validation-pipeline/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/specs/design-spec/</loc>
-         <lastmod>2022-01-03</lastmod>
+         <lastmod>2022-01-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
