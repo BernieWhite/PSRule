@@ -19,3 +19,5 @@ spec:
       resourceId: [ 'ResourceId' ]
       subscriptionId: [ 'SubscriptionId' ]
       resourceGroupName: [ 'ResourceGroupName' ]
+  rule:
+    baseline: 'Enterprise.Default'

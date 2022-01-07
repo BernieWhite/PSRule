@@ -19,7 +19,7 @@
     
     
       
-        <title>Upgrade guide - PSRule</title>
+        <title>Upgrade notes - PSRule</title>
       
     
     
@@ -64,7 +64,7 @@
 
   <!-- Open graph meta tags -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="PSRule - Upgrade guide" />
+  <meta property="og:title" content="PSRule - Upgrade notes" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta property="og:url" content="https://microsoft.github.io/PSRule/v2/upgrade-notes/" />
   <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
@@ -76,7 +76,7 @@
   <!-- Twitter meta tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@github" />
-  <meta name="twitter:title" content="PSRule - Upgrade guide" />
+  <meta name="twitter:title" content="PSRule - Upgrade notes" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
@@ -137,7 +137,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Upgrade guide
+              Upgrade notes
             
           </span>
         </div>
@@ -874,12 +874,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Upgrade guide
+          Upgrade notes
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Upgrade guide
+        Upgrade notes
       </a>
       
         
@@ -896,6 +896,33 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-to-v200" class="md-nav__link">
+    Upgrading to v2.0.0
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrading to v2.0.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-default-module-baseline" class="md-nav__link">
+    Setting default module baseline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-resource-api-version" class="md-nav__link">
+    Setting resource API version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#upgrading-to-v140" class="md-nav__link">
@@ -1264,6 +1291,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#upgrading-to-v200" class="md-nav__link">
+    Upgrading to v2.0.0
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrading to v2.0.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-default-module-baseline" class="md-nav__link">
+    Setting default module baseline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-resource-api-version" class="md-nav__link">
+    Setting resource API version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#upgrading-to-v140" class="md-nav__link">
     Upgrading to v1.4.0
   </a>
@@ -1322,8 +1376,74 @@
 
 <h1 id="upgrade-notes">Upgrade notes<a class="headerlink" href="#upgrade-notes" title="Permanent link">#</a></h1>
 <p>This document contains notes to help upgrade from previous versions of PSRule.</p>
+<h2 id="upgrading-to-v200">Upgrading to v2.0.0<a class="headerlink" href="#upgrading-to-v200" title="Permanent link">#</a></h2>
+<p>Follow these notes to upgrade to PSRule <em>v2.0.0</em> from previous versions.</p>
+<h3 id="setting-default-module-baseline">Setting default module baseline<a class="headerlink" href="#setting-default-module-baseline" title="Permanent link">#</a></h3>
+<p>When packaging rules in a module, you can set the default baseline.
+The default baseline from the module will be automatically used unless overridden.</p>
+<p>Prior to <em>v1.9.0</em> the default baseline was set by configuring the module manifest <code>.psd1</code> file.
+From <em>v1.9.0</em> the default baseline can be configured by within a module configuration.
+Using module configuration is the recommended method.
+Setting the default baseline from module manifest and has been removed from <em>v2.0.0</em>.</p>
+<p>A module configuration can be defined in YAML.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Example module configuration for Enterprise.Rules module.</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ModuleConfig</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enterprise.Rules</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="hll"><span class="w">  </span><span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="nt">baseline</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enterprise.Default</span><span class="w"></span>
+</span></code></pre></div>
+</div>
+<h3 id="setting-resource-api-version">Setting resource API version<a class="headerlink" href="#setting-resource-api-version" title="Permanent link">#</a></h3>
+<p>When creating YAML and JSON resources you define a resource by specifying the <code>apiVersion</code> and <code>kind</code>.
+An <code>apiVersion</code> was added as a requirement from <em>v1.2.0</em>.
+For compatibility resources without an <code>apiVersion</code> were supported however deprecated for removal in <em>v2.0.0</em>.
+This has now been removed from <em>v2.0.0</em>.</p>
+<p>When defining resource specify an <code>apiVersion</code>.
+Currently this must be set to <code>github.com/microsoft/PSRule/v1</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">YAML</label><label for="__tabbed_1_2">JSON</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: An example rule to require TLS.</span><span class="w"></span>
+<span class="hll"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+</span><span class="hll"><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+</span><span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Local.YAML.RequireTLS&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;configure.supportsHttpsTrafficOnly&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="err">//</span><span class="w"> </span><span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span><span class="w"> </span><span class="err">A</span><span class="kc">n</span><span class="w"> </span><span class="err">example</span><span class="w"> </span><span class="err">rule</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">require</span><span class="w"> </span><span class="err">TLS.</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rule&quot;</span><span class="p">,</span><span class="w"></span>
+</span><span class="w">        </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Local.JSON.RequireTLS&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;spec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;configure.supportsHttpsTrafficOnly&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h2 id="upgrading-to-v140">Upgrading to v1.4.0<a class="headerlink" href="#upgrading-to-v140" title="Permanent link">#</a></h2>
-<p>Follow these notes to upgrade from PSRule version <em>v1.3.0</em> to <em>v1.4.0</em>.</p>
+<p>Follow these notes to upgrade to PSRule <em>v1.4.0</em> from previous versions.</p>
 <h3 id="change-in-default-output-styles">Change in default output styles<a class="headerlink" href="#change-in-default-output-styles" title="Permanent link">#</a></h3>
 <p>Previously in PSRule <em>v1.3.0</em> and prior the default style when using <code>Assert-PSRule</code> was <code>Client</code>.
 From <em>v1.4.0</em> PSRule now defaults to <code>Detect</code>.</p>
@@ -1359,7 +1479,7 @@ For example:</p>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Client</span><span class="w"></span>
 </code></pre></div>
 <h2 id="upgrading-to-v100">Upgrading to v1.0.0<a class="headerlink" href="#upgrading-to-v100" title="Permanent link">#</a></h2>
-<p>Follow these notes to upgrade from PSRule version <em>v0.22.0</em> to <em>v1.0.0</em>.</p>
+<p>Follow these notes to upgrade to PSRule <em>v1.0.0</em> from previous versions.</p>
 <h3 id="replaced-rule-target-properties">Replaced $Rule target properties<a class="headerlink" href="#replaced-rule-target-properties" title="Permanent link">#</a></h3>
 <p>Previously in PSRule <em>v0.22.0</em> and prior the <code>$Rule</code> automatic variable had the following properties:</p>
 <ul>
@@ -1390,7 +1510,7 @@ Rules referencing the deprecated properties of <code>$Rule</code> must be update
   <small>
     
       Last update:
-      2021-05-29
+      2022-01-06
     
   </small>
 </div>

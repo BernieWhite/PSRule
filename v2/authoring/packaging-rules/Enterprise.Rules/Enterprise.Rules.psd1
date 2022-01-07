@@ -108,9 +108,6 @@ PrivateData = @{
         # ReleaseNotes = ''
 
     } # End of PSData hashtable
-    PSRule = @{
-        Baseline = 'Enterprise.Default'
-    }
 } # End of PrivateData hashtable
 
 # HelpInfo URI of this module
