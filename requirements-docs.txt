@@ -2,7 +2,7 @@ mkdocs==1.2.3
 mkdocs-material==8.1.4
 pymdown-extensions==9.1
 mike==1.1.2
-mkdocs-simple-hooks==0.1.4
+mkdocs-simple-hooks==0.1.5
 mkdocs-git-revision-date-plugin==0.3.1
 mdx-truly-sane-lists==1.2
 mkdocs-redirects==1.0.3
