@@ -773,6 +773,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_9">
@@ -862,6 +864,20 @@
     <li class="md-nav__item">
       <a href="../../../../upgrade-notes/" class="md-nav__link">
         Upgrade notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deprecations/" class="md-nav__link">
+        Deprecations
       </a>
     </li>
   
@@ -1153,6 +1169,13 @@
           <li class="md-nav__item">
   <a href="#conventioninclude" class="md-nav__link">
     Convention.Include
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executionaliasreferencewarning" class="md-nav__link">
+    Execution.AliasReferenceWarning
   </a>
   
 </li>
@@ -1634,6 +1657,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#executionaliasreferencewarning" class="md-nav__link">
+    Execution.AliasReferenceWarning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#executionlanguagemode" class="md-nav__link">
     Execution.LanguageMode
   </a>
@@ -1928,6 +1958,7 @@ This topic describes what options are available, when to and how to use them.</p
 <p>The following workspace options are available for use:</p>
 <ul>
 <li><a href="#conventioninclude">Convention.Include</a></li>
+<li><a href="#executionaliasreferencewarning">Execution.AliasReferenceWarning</a></li>
 <li><a href="#executionlanguagemode">Execution.LanguageMode</a></li>
 <li><a href="#executioninconclusivewarning">Execution.InconclusiveWarning</a></li>
 <li><a href="#executionnotprocessedwarning">Execution.NotProcessedWarning</a></li>
@@ -2418,6 +2449,40 @@ Conventions are included by name and must be defined within files included in <c
 <span class="nt">variables</span><span class="p">:</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_CONVENTION_INCLUDE</span><span class="w"></span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Convention1;Convention2&#39;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="executionaliasreferencewarning">Execution.AliasReferenceWarning<a class="headerlink" href="#executionaliasreferencewarning" title="Permanent link">#</a></h3>
+<p>Rules may define one or more aliases.
+These aliases are alternative names to identify the rule.
+An alias may be used to reference the rule anywhere a rule name is used.
+The primary purpose of an alias is to provide a non-breaking method to change the rule name.
+Alises can be removed at a later revision once the rule is no longer referenced by the alias.</p>
+<p>A warning is logged by default to help identify when an alias is used.
+We recommend taking action to update your usage of the alis to use the rule name or ref instead.</p>
+<p>Alternatively, the alias reference warning can be disabled by using:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the AliasReferenceWarning parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-AliasReferenceWarning</span> <span class="nv">$False</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.AliasReferenceWarning hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.AliasReferenceWarning&#39;</span> <span class="p">=</span> <span class="nv">$False</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the AliasReferenceWarning parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-AliasReferenceWarning</span> <span class="nv">$False</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/aliasReferenceWarning property</span><span class="w"></span>
+<span class="nt">execution</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">aliasReferenceWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span> <span class="nv">PSRULE_EXECUTION_ALIASREFERENCEWARNING</span><span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_ALIASREFERENCEWARNING</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_ALIASREFERENCEWARNING</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <h3 id="executionlanguagemode">Execution.LanguageMode<a class="headerlink" href="#executionlanguagemode" title="Permanent link">#</a></h3>
 <p>Unless PowerShell has been constrained, full language features of PowerShell are available to use within rule definitions.
@@ -3589,9 +3654,11 @@ Objects that are suppressed are not processed by the rule at all but will contin
 
 <span class="c1"># Configure execution options</span><span class="w"></span>
 <span class="nt">execution</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">aliasReferenceWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">  </span><span class="nt">languageMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConstrainedLanguage</span><span class="w"></span>
 <span class="w">  </span><span class="nt">inconclusiveWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">  </span><span class="nt">notProcessedWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">  </span><span class="nt">suppressedRuleWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 
 <span class="c1"># Configure include options</span><span class="w"></span>
 <span class="nt">include</span><span class="p">:</span><span class="w"></span>
@@ -3688,9 +3755,11 @@ Objects that are suppressed are not processed by the rule at all but will contin
 
 <span class="c1"># Configure execution options</span><span class="w"></span>
 <span class="nt">execution</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">aliasReferenceWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="w">  </span><span class="nt">languageMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FullLanguage</span><span class="w"></span>
 <span class="w">  </span><span class="nt">inconclusiveWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="w">  </span><span class="nt">notProcessedWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">suppressedRuleWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
 <span class="c1"># Configure include options</span><span class="w"></span>
 <span class="nt">include</span><span class="p">:</span><span class="w"></span>
@@ -3759,7 +3828,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
   <small>
     
       Last update:
-      2022-01-05
+      2022-01-14
     
   </small>
 </div>

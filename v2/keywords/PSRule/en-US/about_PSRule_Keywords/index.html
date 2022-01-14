@@ -773,6 +773,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_9">
@@ -862,6 +864,20 @@
     <li class="md-nav__item">
       <a href="../../../../upgrade-notes/" class="md-nav__link">
         Upgrade notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deprecations/" class="md-nav__link">
+        Deprecations
       </a>
     </li>
   
@@ -1451,13 +1467,15 @@ Input objects can be passed on the PowerShell pipeline or supplied from file.</p
 Within the <code>{ }</code> one or more conditions can be used.</p>
 <p>Conditions determine if the input object either <em>Pass</em> or <em>Fail</em> the rule.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code>Rule [-Name] &lt;string&gt; [-Tag &lt;hashtable&gt;] [-When &lt;string[]&gt;] [-Type &lt;string[]&gt;] [-If &lt;scriptBlock&gt;] [-DependsOn &lt;string[]&gt;] [-Configure &lt;hashtable&gt;] [-ErrorAction &lt;ActionPreference&gt;] [-Body] {
+<div class="highlight"><pre><span></span><code>Rule [-Name] &lt;string&gt; [-Ref &lt;string&gt;] [-Alias &lt;string[]&gt;] [-Tag &lt;hashtable&gt;] [-When &lt;string[]&gt;] [-Type &lt;string[]&gt;] [-If &lt;scriptBlock&gt;] [-DependsOn &lt;string[]&gt;] [-Configure &lt;hashtable&gt;] [-ErrorAction &lt;ActionPreference&gt;] [-Body] {
     ...
 }
 </code></pre></div>
 <ul>
 <li><code>Name</code> - The name of the rule definition. Each rule name must be unique.
 When packaging rules within a module, rule names must only be unique within the module.</li>
+<li><code>Ref</code> - An optional stable and opaque identifier that can be used to reference the rule.</li>
+<li><code>Alias</code> - A list of alternative names that can be used to reference the rule.</li>
 <li><code>Tag</code> - A hashtable of key/ value metadata that can be used to filter and identify rules and rule results.</li>
 <li><code>When</code> - A selector precondition that must evaluate true before the rule is executed.</li>
 <li><code>Type</code> - A type precondition that must match the <em>TargetType</em> of the pipeline object before the rule is executed.</li>
@@ -1744,7 +1762,7 @@ Each object will use the same recommendation.</p>
   <small>
     
       Last update:
-      2021-08-08
+      2022-01-14
     
   </small>
 </div>

@@ -777,6 +777,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_9">
@@ -1308,6 +1310,20 @@
     <li class="md-nav__item">
       <a href="../upgrade-notes/" class="md-nav__link">
         Upgrade notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deprecations/" class="md-nav__link">
+        Deprecations
       </a>
     </li>
   
@@ -2062,6 +2078,27 @@
 <li>Setting the default module baseline requires a module configuration from PSRule v2. <a href="https://github.com/microsoft/PSRule/issues/809">#809</a></li>
 </ul>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
+<p>What's changed since pre-release v2.0.0-B2201054:</p>
+<ul>
+<li>General improvements:<ul>
+<li>Added support for rule aliases. <a href="https://github.com/microsoft/PSRule/issues/792">#792</a><ul>
+<li>Aliases allow rules to be references by an alternative name.</li>
+<li>When renaming rules, add a rule alias to avoid breaking references to the old rule name.</li>
+<li>To specify an alias use the <code>-Alias</code> parameter or <code>alias</code> metadata property in YAML or JSON.</li>
+</ul>
+</li>
+<li>Added support for stable identifiers with rule refs. <a href="https://github.com/microsoft/PSRule/issues/881">#881</a><ul>
+<li>A rule ref may be optionally be used to reference a rule.</li>
+<li>Rule refs should be:
+  stable, not changing between releases;
+  opaque, as opposed to being a human-readable string.
+  Stable and opaque refs ease web lookup and to help to avoid language difficulties.</li>
+<li>To specify a rule ref use the <code>-Ref</code> parameter or <code>ref</code> metadata property in YAML or JSON.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="v200-b2201054-pre-release">v2.0.0-B2201054 (pre-release)<a class="headerlink" href="#v200-b2201054-pre-release" title="Permanent link">#</a></h2>
 <p>What's changed since v1.11.0:</p>
 <ul>
@@ -3159,7 +3196,7 @@
   <small>
     
       Last update:
-      2022-01-06
+      2022-01-14
     
   </small>
 </div>
