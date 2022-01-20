@@ -8,3 +8,6 @@ configuration:
   - 'IT Operations'
   - 'Finance'
   - 'HR'
+
+execution:
+  invariantCultureWarning: false

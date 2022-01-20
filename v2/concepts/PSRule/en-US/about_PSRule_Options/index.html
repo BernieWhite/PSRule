@@ -1211,6 +1211,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#executioninvariantculturewarning" class="md-nav__link">
+    Execution.InvariantCultureWarning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#includemodule" class="md-nav__link">
     Include.Module
   </a>
@@ -1708,6 +1715,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#executioninvariantculturewarning" class="md-nav__link">
+    Execution.InvariantCultureWarning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#includemodule" class="md-nav__link">
     Include.Module
   </a>
@@ -1979,6 +1993,7 @@ This topic describes what options are available, when to and how to use them.</p
 <li><a href="#executioninconclusivewarning">Execution.InconclusiveWarning</a></li>
 <li><a href="#executionnotprocessedwarning">Execution.NotProcessedWarning</a></li>
 <li><a href="#executionsuppressedrulewarning">Execution.SuppressedRuleWarning</a></li>
+<li><a href="#executioninvariantculturewarning">Execution.InvariantCultureWarning</a></li>
 <li><a href="#includemodule">Include.Module</a></li>
 <li><a href="#includepath">Include.Path</a></li>
 <li><a href="#inputformat">Input.Format</a></li>
@@ -2631,6 +2646,35 @@ In this case the object has not been processed by any rule.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
 <span class="nt">variables</span><span class="p">:</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_SUPPRESSEDRULEWARNING</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+<h3 id="executioninvariantculturewarning">Execution.InvariantCultureWarning<a class="headerlink" href="#executioninvariantculturewarning" title="Permanent link">#</a></h3>
+<p>When evaluating rules inside a CI host, if invariant culture is used, a warning is shown by default.
+You can suppress this warning if you set the culture with <code>-Culture</code> or the <code>Output.Culture</code> option.</p>
+<p>This warning can also be suppressed by using:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InvariantCultureWarning parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-InvariantCultureWarning</span> <span class="nv">$False</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.InvariantCultureWarning hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.InvariantCultureWarning&#39;</span> <span class="p">=</span> <span class="nv">$False</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InvariantCultureWarning parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-InvariantCultureWarning</span> <span class="nv">$False</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/invariantCultureWarning property</span><span class="w"></span>
+<span class="nt">execution</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">invariantCultureWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span> <span class="nv">PSRULE_EXECUTION_INVARIANTCULTUREWARNING</span><span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_INVARIANTCULTUREWARNING</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_INVARIANTCULTUREWARNING</span><span class="w"></span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 <h3 id="includemodule">Include.Module<a class="headerlink" href="#includemodule" title="Permanent link">#</a></h3>
@@ -3844,7 +3888,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
   <small>
     
       Last update:
-      2022-01-14
+      2022-01-19
     
   </small>
 </div>

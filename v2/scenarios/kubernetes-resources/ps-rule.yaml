@@ -4,3 +4,6 @@ binding:
     - metadata.name
   targetType:
     - kind
+
+execution:
+  invariantCultureWarning: false
