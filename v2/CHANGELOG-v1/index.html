@@ -813,6 +813,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_9_1">
@@ -826,6 +828,20 @@
           Change log
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CHANGELOG-v2/" class="md-nav__link">
+        v2 (preview)
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -865,34 +881,6 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#unreleased" class="md-nav__link">
-    Unreleased
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#v200-b2201093-pre-release" class="md-nav__link">
-    v2.0.0-B2201093 (pre-release)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#v200-b2201075-pre-release" class="md-nav__link">
-    v2.0.0-B2201075 (pre-release)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#v200-b2201054-pre-release" class="md-nav__link">
-    v2.0.0-B2201054 (pre-release)
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#v1110" class="md-nav__link">
@@ -1678,34 +1666,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#unreleased" class="md-nav__link">
-    Unreleased
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#v200-b2201093-pre-release" class="md-nav__link">
-    v2.0.0-B2201093 (pre-release)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#v200-b2201075-pre-release" class="md-nav__link">
-    v2.0.0-B2201075 (pre-release)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#v200-b2201054-pre-release" class="md-nav__link">
-    v2.0.0-B2201054 (pre-release)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#v1110" class="md-nav__link">
     v1.11.0
   </a>
@@ -2121,88 +2081,12 @@
 <li>YAML resources will require an <code>apiVersion</code> from PSRule v2. <a href="https://github.com/microsoft/PSRule/issues/648">#648</a></li>
 <li>Setting the default module baseline requires a module configuration from PSRule v2. <a href="https://github.com/microsoft/PSRule/issues/809">#809</a></li>
 </ul>
-<h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
-<p>What's changed since pre-release v2.0.0-B2201093:</p>
-<ul>
-<li>New features:<ul>
-<li>Add option to disable invariant culture warning. <a href="https://github.com/microsoft/PSRule/issues/899">#899</a><ul>
-<li>Added <code>Execution.InvariantCultureWarning</code> option.</li>
-<li>See <a href="../concepts/PSRule/en-US/about_PSRule_Options/">about_PSRule_Options</a> for details.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="v200-b2201093-pre-release">v2.0.0-B2201093 (pre-release)<a class="headerlink" href="#v200-b2201093-pre-release" title="Permanent link">#</a></h2>
-<p>What's changed since pre-release v2.0.0-B2201075:</p>
-<ul>
-<li>New features:<ul>
-<li>Add support for suppression groups. <a href="https://github.com/microsoft/PSRule/issues/793">#793</a><ul>
-<li>New <code>SuppressionGroup</code> resource has been included.</li>
-<li>See <a href="../concepts/PSRule/en-US/about_PSRule_SuppressionGroups/">about_PSRule_SuppressionGroups</a> for details.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="v200-b2201075-pre-release">v2.0.0-B2201075 (pre-release)<a class="headerlink" href="#v200-b2201075-pre-release" title="Permanent link">#</a></h2>
-<p>What's changed since pre-release v2.0.0-B2201054:</p>
-<ul>
-<li>General improvements:<ul>
-<li>Added support for rule aliases. <a href="https://github.com/microsoft/PSRule/issues/792">#792</a><ul>
-<li>Aliases allow rules to be references by an alternative name.</li>
-<li>When renaming rules, add a rule alias to avoid breaking references to the old rule name.</li>
-<li>To specify an alias use the <code>-Alias</code> parameter or <code>alias</code> metadata property in YAML or JSON.</li>
-</ul>
-</li>
-<li>Added support for stable identifiers with rule refs. <a href="https://github.com/microsoft/PSRule/issues/881">#881</a><ul>
-<li>A rule ref may be optionally be used to reference a rule.</li>
-<li>Rule refs should be:
-  stable, not changing between releases;
-  opaque, as opposed to being a human-readable string.
-  Stable and opaque refs ease web lookup and to help to avoid language difficulties.</li>
-<li>To specify a rule ref use the <code>-Ref</code> parameter or <code>ref</code> metadata property in YAML or JSON.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Bug fixes:<ul>
-<li>Fixes object path handling with dash. <a href="https://github.com/microsoft/PSRule/issues/902">#902</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="v200-b2201054-pre-release">v2.0.0-B2201054 (pre-release)<a class="headerlink" href="#v200-b2201054-pre-release" title="Permanent link">#</a></h2>
-<p>What's changed since v1.11.0:</p>
-<ul>
-<li>General improvements:<ul>
-<li>Added support for object path expressions. <a href="https://github.com/microsoft/PSRule/issues/808">#808</a> <a href="https://github.com/microsoft/PSRule/issues/693">#693</a><ul>
-<li>Inspired by JSONPath, object path expressions can be used to access nested objects.</li>
-<li>Array members can be filtered and enumerated using object path expressions.</li>
-<li>Object path expressions can be used in YAML, JSON, and PowerShell rules and selectors.</li>
-<li>See <a href="../concepts/PSRule/en-US/about_PSRule_Assert/">about_PSRule_Assert</a> for details.</li>
-</ul>
-</li>
-<li>Improve tracking of suppressed objects. <a href="https://github.com/microsoft/PSRule/issues/794">#794</a><ul>
-<li>Added <code>Execution.SuppressedRuleWarning</code> option to output warning for suppressed rules.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Engineering:<ul>
-<li><strong>Breaking change:</strong> Removal of deprecated default baseline from module manifest. <a href="https://github.com/microsoft/PSRule/issues/755">#755</a><ul>
-<li>Set the default module baseline using module configuration.</li>
-<li>See <a href="https://microsoft.github.io/PSRule/latest/upgrade-notes/">upgrade notes</a> for details.</li>
-</ul>
-</li>
-<li><strong>Breaking change:</strong> Require <code>apiVersion</code> on YAML and JSON to be specified. <a href="https://github.com/microsoft/PSRule/issues/648">#648</a><ul>
-<li>Resources should use <code>github.com/microsoft/PSRule/v1</code> as the <code>apiVersion</code>.</li>
-<li>Resources that do not specify an <code>apiVersion</code> will be ignored.</li>
-<li>See <a href="https://microsoft.github.io/PSRule/latest/upgrade-notes/">upgrade notes</a> for details.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The next release of PSRule is currently in preview.
+For more information see <a href="https://microsoft.github.io/PSRule/latest/CHANGELOG-v2/">v2</a> release notes.
+Please check out our <a href="https://microsoft.github.io/PSRule/latest/upgrade-notes/">upgrade notes</a> to get prepared for the next release.</p>
+</div>
 <h2 id="v1110">v1.11.0<a class="headerlink" href="#v1110" title="Permanent link">#</a></h2>
 <p>What's changed since v1.10.0:</p>
 <ul>
@@ -3268,7 +3152,7 @@
   <small>
     
       Last update:
-      2022-01-19
+      2022-01-21
     
   </small>
 </div>
@@ -3285,7 +3169,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../license-contributing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: License and contributing" rel="prev">
+        <a href="../CHANGELOG-v2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: v2 (preview)" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -3294,7 +3178,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              License and contributing
+              v2 (preview)
             </div>
           </div>
         </a>
