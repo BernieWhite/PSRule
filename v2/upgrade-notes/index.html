@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/upgrade-notes/">
       
       <link rel="icon" href="../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.8">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.cd566b2a.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6e60f8b8.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
@@ -937,6 +937,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-in-source-file-discovery-for-get-psrulehelp" class="md-nav__link">
+    Change in source file discovery for Get-PSRuleHelp
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1360,6 +1367,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-in-source-file-discovery-for-get-psrulehelp" class="md-nav__link">
+    Change in source file discovery for Get-PSRuleHelp
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1491,6 +1505,28 @@ Currently this must be set to <code>github.com/microsoft/PSRule/v1</code>.</p>
 </div>
 </div>
 </div>
+<h3 id="change-in-source-file-discovery-for-get-psrulehelp">Change in source file discovery for Get-PSRuleHelp<a class="headerlink" href="#change-in-source-file-discovery-for-get-psrulehelp" title="Permanent link">#</a></h3>
+<p>Previously in PSRule <em>v1.11.0</em> and prior versions, rules would show up twice when running <code>Get-PSRuleHelp</code> in the context of a module and in the same working directory of the module.
+This behavior has no been removed from <em>v2.0.0</em>.</p>
+<p>Module files are now preferred over loose files, and rules are only shown once in the output.
+Any duplicate rule names from loose files are outputted as a warning instead.</p>
+<p>The old behavior:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Name</span>                                <span class="n">ModuleName</span>               <span class="n">Synopsis</span>
+<span class="p">----</span>                                <span class="p">----------</span>               <span class="p">--------</span>
+<span class="n">M1</span><span class="p">.</span><span class="n">Rule1</span>                                                     <span class="n">This</span> <span class="n">is</span> <span class="n">the</span> <span class="k">default</span>
+<span class="n">M1</span><span class="p">.</span><span class="n">Rule2</span>                                                     <span class="n">This</span> <span class="n">is</span> <span class="n">the</span> <span class="k">default</span>
+<span class="n">M1</span><span class="p">.</span><span class="n">Rule1</span>                            <span class="n">TestModule</span>               <span class="n">Synopsis</span> <span class="n">en-AU</span><span class="p">.</span>
+<span class="n">M1</span><span class="p">.</span><span class="n">Rule2</span>                            <span class="n">TestModule</span>               <span class="n">This</span> <span class="n">is</span> <span class="n">the</span> <span class="k">default</span>
+</code></pre></div>
+<p>The new behavior:</p>
+<div class="highlight"><pre><span></span><code><span class="n">WARNING</span><span class="p">:</span> <span class="n">A</span> <span class="n">rule</span> <span class="n">with</span> <span class="n">the</span> <span class="n">same</span> <span class="n">name</span> <span class="s1">&#39;M1.Rule1&#39;</span> <span class="n">already</span> <span class="n">exists</span><span class="p">.</span>
+<span class="n">WARNING</span><span class="p">:</span> <span class="n">A</span> <span class="n">rule</span> <span class="n">with</span> <span class="n">the</span> <span class="n">same</span> <span class="n">name</span> <span class="s1">&#39;M1.Rule2&#39;</span> <span class="n">already</span> <span class="n">exists</span><span class="p">.</span>
+
+<span class="n">Name</span>                                <span class="n">ModuleName</span>               <span class="n">Synopsis</span>
+<span class="p">----</span>                                <span class="p">----------</span>               <span class="p">--------</span>
+<span class="n">M1</span><span class="p">.</span><span class="n">Rule1</span>                            <span class="n">TestModule</span>               <span class="n">Synopsis</span> <span class="n">en-AU</span><span class="p">.</span>
+<span class="n">M1</span><span class="p">.</span><span class="n">Rule2</span>                            <span class="n">TestModule</span>               <span class="n">This</span> <span class="n">is</span> <span class="n">the</span> <span class="k">default</span>
+</code></pre></div>
 <h2 id="upgrading-to-v140">Upgrading to v1.4.0<a class="headerlink" href="#upgrading-to-v140" title="Permanent link">#</a></h2>
 <p>Follow these notes to upgrade to PSRule <em>v1.4.0</em> from previous versions.</p>
 <h3 id="change-in-default-output-styles">Change in default output styles<a class="headerlink" href="#change-in-default-output-styles" title="Permanent link">#</a></h3>
@@ -1559,7 +1595,7 @@ Rules referencing the deprecated properties of <code>$Rule</code> must be update
   <small>
     
       Last update:
-      2022-01-07
+      2022-01-22
     
   </small>
 </div>
@@ -1644,7 +1680,7 @@ Rules referencing the deprecated properties of <code>$Rule</code> must be update
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.01de222e.min.js"></script>
+      <script src="../assets/javascripts/bundle.960e086b.min.js"></script>
       
     
   </body>

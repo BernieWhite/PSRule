@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/CHANGELOG-v2/">
       
       <link rel="icon" href="../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.8">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.cd566b2a.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6e60f8b8.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
@@ -876,6 +876,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#v200-b2201117-pre-release" class="md-nav__link">
+    v2.0.0-B2201117 (pre-release)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v200-b2201093-pre-release" class="md-nav__link">
     v2.0.0-B2201093 (pre-release)
   </a>
@@ -1309,6 +1316,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#v200-b2201117-pre-release" class="md-nav__link">
+    v2.0.0-B2201117 (pre-release)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v200-b2201093-pre-release" class="md-nav__link">
     v2.0.0-B2201093 (pre-release)
   </a>
@@ -1354,9 +1368,28 @@
 <li>Setting the default module baseline requires a module configuration from PSRule v2. <a href="https://github.com/microsoft/PSRule/issues/809">#809</a></li>
 </ul>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
+<p>What's changed since pre-release v2.0.0-B2201117:</p>
+<ul>
+<li>Engineering:<ul>
+<li><strong>Breaking change:</strong> Prefer module sources over loose files. <a href="https://github.com/microsoft/PSRule/issues/610">#610</a><ul>
+<li>Module sources are discovered before loose files.</li>
+<li>Warning is shown for duplicate rule names, and exception is thrown for duplicate rule Ids.</li>
+<li>See <a href="https://microsoft.github.io/PSRule/latest/upgrade-notes/">upgrade notes</a> for details.</li>
+</ul>
+</li>
+<li>Added more tests for JSON resources. <a href="https://github.com/microsoft/PSRule/issues/929">#929</a></li>
+</ul>
+</li>
+<li>Bug fixes:<ul>
+<li>Empty suppression group rules property applies to no rules. <a href="https://github.com/microsoft/PSRule/issues/931">#931</a></li>
+<li>Object reference for suppression group will rule not defined. <a href="https://github.com/microsoft/PSRule/issues/932">#932</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="v200-b2201117-pre-release">v2.0.0-B2201117 (pre-release)<a class="headerlink" href="#v200-b2201117-pre-release" title="Permanent link">#</a></h2>
 <p>What's changed since pre-release v2.0.0-B2201093:</p>
 <ul>
-<li>New features:<ul>
+<li>General improvements:<ul>
 <li>Add option to disable invariant culture warning. <a href="https://github.com/microsoft/PSRule/issues/899">#899</a><ul>
 <li>Added <code>Execution.InvariantCultureWarning</code> option.</li>
 <li>See <a href="../concepts/PSRule/en-US/about_PSRule_Options/">about_PSRule_Options</a> for details.</li>
@@ -1441,7 +1474,7 @@
   <small>
     
       Last update:
-      2022-01-21
+      2022-01-25
     
   </small>
 </div>
@@ -1526,7 +1559,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js", "version": {"provider": "mike", "default": "stable"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.01de222e.min.js"></script>
+      <script src="../assets/javascripts/bundle.960e086b.min.js"></script>
       
     
   </body>
