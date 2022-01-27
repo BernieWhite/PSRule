@@ -944,6 +944,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#require-source-discovery-from-current-working-directory-to-be-explicitly-included" class="md-nav__link">
+    Require source discovery from current working directory to be explicitly included
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1374,6 +1381,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#require-source-discovery-from-current-working-directory-to-be-explicitly-included" class="md-nav__link">
+    Require source discovery from current working directory to be explicitly included
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1527,6 +1541,40 @@ Any duplicate rule names from loose files are outputted as a warning instead.</p
 <span class="n">M1</span><span class="p">.</span><span class="n">Rule1</span>                            <span class="n">TestModule</span>               <span class="n">Synopsis</span> <span class="n">en-AU</span><span class="p">.</span>
 <span class="n">M1</span><span class="p">.</span><span class="n">Rule2</span>                            <span class="n">TestModule</span>               <span class="n">This</span> <span class="n">is</span> <span class="n">the</span> <span class="k">default</span>
 </code></pre></div>
+<h3 id="require-source-discovery-from-current-working-directory-to-be-explicitly-included">Require source discovery from current working directory to be explicitly included<a class="headerlink" href="#require-source-discovery-from-current-working-directory-to-be-explicitly-included" title="Permanent link">#</a></h3>
+<p>Previously in PSRule <em>v1.11.0</em> and prior versions, rule sources from the current working directory without the <code>-Path</code> and <code>-Module</code> parameters were automatically included.
+This behavior has no been removed from <em>v2.0.0</em>.</p>
+<p>Rules sources in the current working directory are only included if <code>-Path .</code> or <code>-Path $PWD</code> is specified.</p>
+<p>The old behavior:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Set-Location</span> <span class="n">docs</span><span class="p">\</span><span class="n">scenarios</span><span class="p">\</span><span class="n">azure-resources</span>
+<span class="nb">Get-PSRule</span>
+
+<span class="n">RuleName</span>                            <span class="n">ModuleName</span>                 <span class="n">Synopsis</span>
+<span class="p">--------</span>                            <span class="p">----------</span>                 <span class="p">--------</span>
+<span class="n">appServicePlan</span><span class="p">.</span><span class="n">MinInstanceCount</span>                                <span class="n">App</span> <span class="n">Service</span> <span class="n">Plan</span> <span class="n">has</span> <span class="n">multiple</span> <span class="n">instances</span>
+<span class="n">appServicePlan</span><span class="p">.</span><span class="n">MinPlan</span>                                         <span class="n">Use</span> <span class="n">at</span> <span class="n">least</span> <span class="n">a</span> <span class="n">Standard</span> <span class="n">App</span> <span class="n">Service</span> <span class="n">Plan</span>
+<span class="n">appServiceApp</span><span class="p">.</span><span class="n">ARRAffinity</span>                                      <span class="n">Disable</span> <span class="n">client</span> <span class="n">affinity</span> <span class="k">for</span> <span class="n">stateless</span> <span class="n">services</span>
+<span class="n">appServiceApp</span><span class="p">.</span><span class="n">UseHTTPS</span>                                         <span class="n">Use</span> <span class="n">HTTPS</span> <span class="n">only</span>
+<span class="n">storageAccounts</span><span class="p">.</span><span class="n">UseHttps</span>                                       <span class="n">Configure</span> <span class="n">storage</span> <span class="n">accounts</span> <span class="n">to</span> <span class="n">only</span> <span class="n">accept</span> <span class="n">encrypted</span> <span class="n">traffic</span> <span class="n">i</span><span class="p">.</span><span class="n">e</span><span class="p">.</span> <span class="n">HTTPS</span><span class="p">/</span><span class="n">SMB</span>
+<span class="n">storageAccounts</span><span class="p">.</span><span class="n">UseEncryption</span>                                  <span class="n">Use</span> <span class="n">at-rest</span> <span class="n">storage</span> <span class="n">encryption</span>
+</code></pre></div>
+<p>The new behavior:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Set-Location</span> <span class="n">docs</span><span class="p">\</span><span class="n">scenarios</span><span class="p">\</span><span class="n">azure-resources</span>
+<span class="nb">Get-PSRule</span>
+
+<span class="c"># No output, need to specify -Path explicitly</span>
+
+<span class="nb">Get-PSRule</span> <span class="n">-Path</span> <span class="nv">$PWD</span>
+
+<span class="n">RuleName</span>                            <span class="n">ModuleName</span>                 <span class="n">Synopsis</span>
+<span class="p">--------</span>                            <span class="p">----------</span>                 <span class="p">--------</span>
+<span class="n">appServicePlan</span><span class="p">.</span><span class="n">MinInstanceCount</span>                                <span class="n">App</span> <span class="n">Service</span> <span class="n">Plan</span> <span class="n">has</span> <span class="n">multiple</span> <span class="n">instances</span>
+<span class="n">appServicePlan</span><span class="p">.</span><span class="n">MinPlan</span>                                         <span class="n">Use</span> <span class="n">at</span> <span class="n">least</span> <span class="n">a</span> <span class="n">Standard</span> <span class="n">App</span> <span class="n">Service</span> <span class="n">Plan</span>
+<span class="n">appServiceApp</span><span class="p">.</span><span class="n">ARRAffinity</span>                                      <span class="n">Disable</span> <span class="n">client</span> <span class="n">affinity</span> <span class="k">for</span> <span class="n">stateless</span> <span class="n">services</span>
+<span class="n">appServiceApp</span><span class="p">.</span><span class="n">UseHTTPS</span>                                         <span class="n">Use</span> <span class="n">HTTPS</span> <span class="n">only</span>
+<span class="n">storageAccounts</span><span class="p">.</span><span class="n">UseHttps</span>                                       <span class="n">Configure</span> <span class="n">storage</span> <span class="n">accounts</span> <span class="n">to</span> <span class="n">only</span> <span class="n">accept</span> <span class="n">encrypted</span> <span class="n">traffic</span> <span class="n">i</span><span class="p">.</span><span class="n">e</span><span class="p">.</span> <span class="n">HTTPS</span><span class="p">/</span><span class="n">SMB</span>
+<span class="n">storageAccounts</span><span class="p">.</span><span class="n">UseEncryption</span>      
+</code></pre></div>
 <h2 id="upgrading-to-v140">Upgrading to v1.4.0<a class="headerlink" href="#upgrading-to-v140" title="Permanent link">#</a></h2>
 <p>Follow these notes to upgrade to PSRule <em>v1.4.0</em> from previous versions.</p>
 <h3 id="change-in-default-output-styles">Change in default output styles<a class="headerlink" href="#change-in-default-output-styles" title="Permanent link">#</a></h3>
@@ -1595,7 +1643,7 @@ Rules referencing the deprecated properties of <code>$Rule</code> must be update
   <small>
     
       Last update:
-      2022-01-22
+      2022-01-27
     
   </small>
 </div>

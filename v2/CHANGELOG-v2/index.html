@@ -1382,6 +1382,21 @@
 <li>Setting the default module baseline requires a module configuration from PSRule v2. <a href="https://github.com/microsoft/PSRule/issues/809">#809</a></li>
 </ul>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
+<p>What's changed since pre-release v2.0.0-B2201135:</p>
+<ul>
+<li>Engineering:<ul>
+<li><strong>Breaking change:</strong> Require rule sources from current working directory to be explicitly included. <a href="https://github.com/microsoft/PSRule/issues/760">#760</a><ul>
+<li>From v2 onwards, <code>$PWD</code> is not included by default unless <code>-Path .</code> or <code>-Path $PWD</code> is explicitly specified.</li>
+<li>See <a href="https://microsoft.github.io/PSRule/latest/upgrade-notes/">upgrade notes</a> for details.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bug fixes:<ul>
+<li>Fixed rule source loading twice from <code>$PWD</code> and <code>.ps-rule/</code>. <a href="https://github.com/microsoft/PSRule/issues/939">#939</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="v200-b2201135-pre-release">v2.0.0-B2201135 (pre-release)<a class="headerlink" href="#v200-b2201135-pre-release" title="Permanent link">#</a></h2>
 <p>What's changed since pre-release v2.0.0-B2201117:</p>
 <ul>
@@ -1489,7 +1504,7 @@
   <small>
     
       Last update:
-      2022-01-25
+      2022-01-27
     
   </small>
 </div>
