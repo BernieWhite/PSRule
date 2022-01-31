@@ -3326,8 +3326,10 @@ RuleName, Pass, Fail, Outcome, Synopsis, Recommendation</li>
 </ul>
 </li>
 <li>Wide -  Output is presented using the wide table format, which includes reason and wraps columns.</li>
+<li>Sarif - Output is serialized as SARIF.</li>
 </ul>
-<p>The Wide format is ignored by <code>Assert-PSRule</code>. <code>Get-PSRule</code> only accepts <code>None</code>, <code>Wide</code>, <code>Yaml</code> and <code>Json</code>.
+<p>The Wide format is ignored by <code>Assert-PSRule</code>.
+<code>Get-PSRule</code> only accepts <code>None</code>, <code>Wide</code>, <code>Yaml</code> and <code>Json</code>.
 Usage of other formats are treated as <code>None</code>.</p>
 <p>The <code>Get-PSRuleBaseline</code> cmdlet only accepts <code>None</code> or <code>Yaml</code>.
 The <code>Export-PSRuleBaseline</code> cmdlet only accepts <code>Yaml</code>.</p>
@@ -3904,7 +3906,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
   <small>
     
       Last update:
-      2022-01-19
+      2022-01-31
     
   </small>
 </div>

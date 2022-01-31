@@ -1213,6 +1213,41 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#isarray" class="md-nav__link">
+    IsArray
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isboolean" class="md-nav__link">
+    IsBoolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isdatetime" class="md-nav__link">
+    IsDateTime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isinteger" class="md-nav__link">
+    IsInteger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isnumeric" class="md-nav__link">
+    IsNumeric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#isupper" class="md-nav__link">
     IsUpper
   </a>
@@ -1620,6 +1655,41 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#isarray" class="md-nav__link">
+    IsArray
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isboolean" class="md-nav__link">
+    IsBoolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isdatetime" class="md-nav__link">
+    IsDateTime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isinteger" class="md-nav__link">
+    IsInteger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isnumeric" class="md-nav__link">
+    IsNumeric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#isupper" class="md-nav__link">
     IsUpper
   </a>
@@ -1766,6 +1836,11 @@ Expressions are comprised of nested conditions, operators, and comparison proper
 <li><a href="#in">In</a></li>
 <li><a href="#islower">IsLower</a></li>
 <li><a href="#isstring">IsString</a></li>
+<li><a href="#isarray">IsArray</a></li>
+<li><a href="#isboolean">IsBoolean</a></li>
+<li><a href="#isdatetime">IsDateTime</a></li>
+<li><a href="#isinteger">IsInteger</a></li>
+<li><a href="#isnumeric">IsNumeric</a></li>
 <li><a href="#isupper">IsUpper</a></li>
 <li><a href="#less">Less</a></li>
 <li><a href="#lessorequals">LessOrEquals</a></li>
@@ -2336,6 +2411,186 @@ If a trailing <code>#</code> is specified it is ignored.</p>
 <span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">isString</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
+<h3 id="isarray">IsArray<a class="headerlink" href="#isarray" title="Permanent link">#</a></h3>
+<p>The <code>isArray</code> condition determines if the operand is an array or other type.</p>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">isArray</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>When <code>isArray: true</code>, <em>isArray</em> will return <code>true</code> if the operand is an array.</li>
+<li>When <code>isArray: false</code>, <em>isArray</em> will return <code>true</code> if the operand is not an array or null.</li>
+<li>If the operand is a field, and the field does not exist, <em>isArray</em> always returns <code>false</code>.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Using isArray</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IsArrayExample</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Value&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">isArray</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+<h3 id="isboolean">IsBoolean<a class="headerlink" href="#isboolean" title="Permanent link">#</a></h3>
+<p>The <code>isBoolean</code> condition determines if the operand is a boolean or other type.</p>
+<ul>
+<li><code>convert</code> - Optionally, types can be converted to boolean type.
+  E.g. <code>'true'</code> can be converted to <code>true</code>.
+  By default <code>convert</code> is <code>false</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">isBoolean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
+<span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>When <code>isBoolean: true</code>, <em>isBoolean</em> will return <code>true</code> if the operand is a boolean.</li>
+<li>When <code>isBoolean: false</code>, <em>isBoolean</em> will return <code>false</code> if the operand is not a boolean or null.</li>
+<li>When <code>convert: true</code>, types will be converted to boolean before condition is evaluated.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Using isBoolean</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IsBooleanExample</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Value&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">isBoolean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+
+<span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Using isBoolean with conversion</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IsBooleanExampleWithConversion</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Value&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">isBoolean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+<h3 id="isdatetime">IsDateTime<a class="headerlink" href="#isdatetime" title="Permanent link">#</a></h3>
+<p>The <code>isDateTime</code> condition determines if the operand is a datetime or other type.</p>
+<ul>
+<li><code>convert</code> - Optionally, types can be converted to datetime type.
+  E.g. <code>'2021-04-03T15:00:00.00+10:00'</code> can be converted to a datetime.
+  By default <code>convert</code> is <code>false</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">isDateTime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
+<span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>When <code>isDateTime: true</code>, <em>isDateTime</em> will return <code>true</code> if the operand is a datetime.</li>
+<li>When <code>isDateTime: false</code>, <em>isDateTime</em> will return <code>false</code> if the operand is not a datetime or null.</li>
+<li>When <code>convert: true</code>, types will be converted to datetime before condition is evaluated.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Using isDateTime</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IsDateTimeExample</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Value&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">isDateTime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+
+<span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Using isDateTime with conversion</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IsDateTimeExampleWithConversion</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Value&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">isDateTime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+<h3 id="isinteger">IsInteger<a class="headerlink" href="#isinteger" title="Permanent link">#</a></h3>
+<p>The <code>isInteger</code> condition determines if the operand is a an integer or other type.
+The following types are considered integer types <code>int</code>, <code>long</code>, <code>byte</code>.</p>
+<ul>
+<li><code>convert</code> - Optionally, types can be converted to integer type.
+  E.g. <code>'123'</code> can be converted to <code>123</code>.
+  By default <code>convert</code> is <code>false</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">isInteger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
+<span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>When <code>isInteger: true</code>, <em>isInteger</em> will return <code>true</code> if the operand is an integer.</li>
+<li>When <code>isInteger: false</code>, <em>isInteger</em> will return <code>false</code> if the operand is not an integer or null.</li>
+<li>When <code>convert: true</code>, types will be converted to integer before condition is evaluated.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Using isInteger</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IsIntegerExample</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Value&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">isInteger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+
+<span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Using isInteger with conversion</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IsIntegerExampleWithConversion</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Value&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">isInteger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+<h3 id="isnumeric">IsNumeric<a class="headerlink" href="#isnumeric" title="Permanent link">#</a></h3>
+<p>The <code>isNumeric</code> condition determines if the operand is a a numeric or other type.
+The following types are considered numeric types <code>int</code>, <code>long</code>, <code>float</code>, <code>byte</code>, <code>double</code>.</p>
+<ul>
+<li><code>convert</code> - Optionally, types can be converted to numeric type.
+  E.g. <code>'123'</code> can be converted to <code>123</code>.
+  By default <code>convert</code> is <code>false</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">isNumeric</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
+<span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;bool&gt;</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>When <code>isNumeric: true</code>, <em>isNumeric</em> will return <code>true</code> if the operand is a numeric.</li>
+<li>When <code>isNumeric: false</code>, <em>isNumeric</em> will return <code>false</code> if the operand is not a numeric or null.</li>
+<li>When <code>convert: true</code>, types will be converted to numeric before condition is evaluated.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Using isNumeric</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IsNumericExample</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Value&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">isNumeric</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+
+<span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Using isNumeric with conversion</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IsNumercExampleWithConversion</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Value&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">isNumeric</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
 <h3 id="isupper">IsUpper<a class="headerlink" href="#isupper" title="Permanent link">#</a></h3>
 <p>The <code>isUpper</code> condition determines if the operand is an uppercase string.</p>
 <p>Syntax:</p>
@@ -2811,7 +3066,7 @@ Supported version constraints for expression are the same as the <code>$Assert.V
   <small>
     
       Last update:
-      2021-12-21
+      2022-01-30
     
   </small>
 </div>

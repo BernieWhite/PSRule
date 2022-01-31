@@ -581,9 +581,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#testing-the-rule" class="md-nav__link">
-    Testing the rule
+  <a href="#testing" class="md-nav__link">
+    Testing
   </a>
+  
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-manually" class="md-nav__link">
+    Testing manually
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    Advanced usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#severity-level" class="md-nav__link">
+    Severity level
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1321,9 +1354,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#testing-the-rule" class="md-nav__link">
-    Testing the rule
+  <a href="#testing" class="md-nav__link">
+    Testing
   </a>
+  
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-manually" class="md-nav__link">
+    Testing manually
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    Advanced usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#severity-level" class="md-nav__link">
+    Severity level
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1532,16 +1598,90 @@ Additional conditions can be combined to check multiple test cases.</p>
 </div>
 </div>
 </div>
-<h2 id="testing-the-rule">Testing the rule<a class="headerlink" href="#testing-the-rule" title="Permanent link">#</a></h2>
+<h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">#</a></h2>
+<h3 id="testing-manually">Testing manually<a class="headerlink" href="#testing-manually" title="Permanent link">#</a></h3>
+<p>To test the rule manually, run the following command.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Assert-PSRule</span> <span class="o">-f</span> <span class="p">./</span><span class="n">settings</span><span class="p">.</span><span class="n">json</span>
 </code></pre></div>
+<h2 id="advanced-usage">Advanced usage<a class="headerlink" href="#advanced-usage" title="Permanent link">#</a></h2>
+<h3 id="severity-level">Severity level<a class="headerlink" href="#severity-level" title="Permanent link">#</a></h3>
+<p>When defining a rule, you can specify a severity level.
+The severity level is used if the rule fails.
+By default, the severity level for a rule is <code>Error</code>.</p>
+<ul>
+<li><code>Error</code> - A serious problem that must be addressed before going forward.</li>
+<li><code>Warning</code> - A problem that should be addressed.</li>
+<li><code>Information</code> - A minor problem or an opportunity to improve the code.</li>
+</ul>
+<p>In a continuous integration (CI) pipeline, severity level is particularly important.
+If any rule fails with a severity level of <code>Error</code> the pipeline will fail.
+This helps prevent serious problems from being introduced into the code base or deployed.</p>
+<p>The following example shows how to set the severity level to <code>Warning</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">YAML</label><label for="__tabbed_3_2">JSON</label><label for="__tabbed_3_3">PowerShell</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: An example rule to require TLS.</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Local.YAML.RequireTLS&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="hll"><span class="w">  </span><span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warning</span><span class="w"></span>
+</span><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">allOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;configure.supportsHttpsTrafficOnly&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;configure.minTLSVersion&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1.2&#39;</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="err">//</span><span class="w"> </span><span class="err">Sy</span><span class="kc">n</span><span class="err">opsis</span><span class="p">:</span><span class="w"> </span><span class="err">A</span><span class="kc">n</span><span class="w"> </span><span class="err">example</span><span class="w"> </span><span class="err">rule</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">require</span><span class="w"> </span><span class="err">TLS.</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rule&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Local.JSON.RequireTLS&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;spec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">            </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Warning&quot;</span><span class="p">,</span><span class="w"></span>
+</span><span class="w">            </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;allOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                    </span><span class="p">{</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;configure.supportsHttpsTrafficOnly&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">                    </span><span class="p">},</span><span class="w"></span>
+<span class="w">                    </span><span class="p">{</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;configure.minTLSVersion&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.2&quot;</span><span class="w"></span>
+<span class="w">                    </span><span class="p">}</span><span class="w"></span>
+<span class="w">                </span><span class="p">]</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Update <code>.ps-rule/Local.Rule.ps1</code> in your repository with the following contents.</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: An example rule to require TLS.</span>
+<span class="hll"><span class="n">Rule</span> <span class="s1">&#39;Local.PS.RequireTLS&#39;</span> <span class="n">-Level</span> <span class="n">Warning</span> <span class="p">{</span>
+</span>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;configure.supportsHttpsTrafficOnly&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;configure.minTLSVersion&#39;</span><span class="p">,</span> <span class="s1">&#39;1.2&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-01-03
+      2022-01-29
     
   </small>
 </div>

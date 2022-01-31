@@ -1396,6 +1396,36 @@
 <li>Setting the default module baseline requires a module configuration from PSRule v2. <a href="https://github.com/microsoft/PSRule/issues/809">#809</a></li>
 </ul>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
+<p>What's changed since pre-release v2.0.0-B2201146:</p>
+<ul>
+<li>New features:<ul>
+<li>Added support for rule severity level. <a href="https://github.com/microsoft/PSRule/issues/880">#880</a><ul>
+<li>Rules can be configured to be <code>Error</code>, <code>Warning</code>, or <code>Information</code>.</li>
+<li>Failing rules with the <code>Error</code> severity level will cause the pipeline to fail.</li>
+<li>Rules with the <code>Warning</code> severity level will be reported as warnings.</li>
+<li>Rules with the <code>Information</code> severity level will be reported as informational messages.</li>
+<li>By default, the severity level for a rule is <code>Error</code>.</li>
+</ul>
+</li>
+<li>Added expression support for type based assertions. <a href="https://github.com/microsoft/PSRule/issues/908">#908</a><ul>
+<li>Included the following expressions:<ul>
+<li><code>IsArray</code></li>
+<li><code>IsBoolean</code></li>
+<li><code>IsDateTime</code></li>
+<li><code>IsInteger</code></li>
+<li><code>IsNumeric</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Added support for formatting results as SARIF. <a href="https://github.com/microsoft/PSRule/issues/878">#878</a><ul>
+<li>Set <code>Output.Format</code> to <code>Sarif</code> to output results in the SARIF format.</li>
+<li>See <a href="../concepts/PSRule/en-US/about_PSRule_Options/">about_PSRule_Options</a> for details.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="v200-b2201146-pre-release">v2.0.0-B2201146 (pre-release)<a class="headerlink" href="#v200-b2201146-pre-release" title="Permanent link">#</a></h2>
 <p>What's changed since pre-release v2.0.0-B2201135:</p>
 <ul>
@@ -1519,7 +1549,7 @@
   <small>
     
       Last update:
-      2022-01-28
+      2022-01-31
     
   </small>
 </div>

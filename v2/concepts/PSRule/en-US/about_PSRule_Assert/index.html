@@ -2498,7 +2498,7 @@ By default strings are not converted.</li>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="isdatetime">IsDateTime<a class="headerlink" href="#isdatetime" title="Permanent link">#</a></h3>
-<p>The <code>IsBoolean</code> assertion method checks the field value is a DateTime type.</p>
+<p>The <code>IsDateTime</code> assertion method checks the field value is a DateTime type.</p>
 <p>The following parameters are accepted:</p>
 <ul>
 <li><code>inputObject</code> - The object being checked for the specified field.</li>
@@ -2516,7 +2516,7 @@ By default strings are not converted.</li>
 <li><em>The field value '{1}' of type {0} is not [DateTime].</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsBoolean&#39;</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsDateTime&#39;</span> <span class="p">{</span>
     <span class="c"># Require Value1 to be a DateTime</span>
     <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsDateTime</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
 
@@ -3322,7 +3322,7 @@ If a <code>_PSRule</code> property exists with <code>issue</code> sub-property P
   <small>
     
       Last update:
-      2022-01-14
+      2022-01-30
     
   </small>
 </div>
