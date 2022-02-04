@@ -1424,6 +1424,18 @@
 <li>Setting the default module baseline requires a module configuration from PSRule v2. <a href="https://github.com/microsoft/PSRule/issues/809">#809</a></li>
 </ul>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
+<p>What's changed since pre-release v2.0.0-B2202006:</p>
+<ul>
+<li>Bug fixes:<ul>
+<li>Fixed GitHub code scanning alerts treats pass as problems. <a href="https://github.com/microsoft/PSRule/issues/955">#955</a><ul>
+<li>By default, SARIF output will only include fail or error outcomes.</li>
+<li>Added <code>Output.SarifProblemsOnly</code> option to include pass outcomes.</li>
+</ul>
+</li>
+<li>Fixed SARIF output includes rule property for default tool component. <a href="https://github.com/microsoft/PSRule/issues/956">#956</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="v200-b2202006-pre-release">v2.0.0-B2202006 (pre-release)<a class="headerlink" href="#v200-b2202006-pre-release" title="Permanent link">#</a></h2>
 <p>What's changed since pre-release v2.0.0-B2201161:</p>
 <ul>
@@ -1591,7 +1603,7 @@
   <small>
     
       Last update:
-      2022-02-03
+      2022-02-05
     
   </small>
 </div>

@@ -1374,6 +1374,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#outputsarifproblemsonly" class="md-nav__link">
+    Output.SarifProblemsOnly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#outputstyle" class="md-nav__link">
     Output.Style
   </a>
@@ -1878,6 +1885,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#outputsarifproblemsonly" class="md-nav__link">
+    Output.SarifProblemsOnly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#outputstyle" class="md-nav__link">
     Output.Style
   </a>
@@ -2028,10 +2042,11 @@ This topic describes what options are available, when to and how to use them.</p
 <li><a href="#outputencoding">Output.Encoding</a></li>
 <li><a href="#outputfooter">Output.Footer</a></li>
 <li><a href="#outputformat">Output.Format</a></li>
+<li><a href="#outputjsonindent">Output.JsonIndent</a></li>
 <li><a href="#outputoutcome">Output.Outcome</a></li>
 <li><a href="#outputpath">Output.Path</a></li>
+<li><a href="#outputsarifproblemsonly">Output.SarifProblemsOnly</a></li>
 <li><a href="#outputstyle">Output.Style</a></li>
-<li><a href="#outputjsonindent">Output.JsonIndent</a></li>
 <li><a href="#requires">Requires</a></li>
 <li><a href="#suppression">Suppression</a></li>
 </ul>
@@ -3403,6 +3418,14 @@ Directories along the file path will automatically be created if they do not exi
 <p>This option only applies to <code>Invoke-PSRule</code>.
 <code>Invoke-PSRule</code> also includes a parameter <code>-OutputPath</code> to set this option at runtime.
 If specified, the <code>-OutputPath</code> parameter take precedence, over this option.</p>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+</code></pre></div>
+<p>Default:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"></span>
+</code></pre></div>
 <p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputPath parameter</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-OutputPath</span> <span class="s1">&#39;out/results.yaml&#39;</span><span class="p">;</span>
@@ -3429,6 +3452,45 @@ If specified, the <code>-OutputPath</code> parameter take precedence, over this 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_PATH</span><span class="w"></span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">out/results.yaml</span><span class="w"></span>
 </code></pre></div>
+<h3 id="outputsarifproblemsonly">Output.SarifProblemsOnly<a class="headerlink" href="#outputsarifproblemsonly" title="Permanent link">#</a></h3>
+<p>Determines if SARIF output only includes rules with fail or error outcomes.
+By default, only rules with fail or error outcomes are included for compatibility with external tools.
+To include rules with pass outcomes, set this option to <code>false</code>.
+This option only applies when the output format is <code>Sarif</code>.</p>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">sarifProblemsOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">boolean</span><span class="w"></span>
+</code></pre></div>
+<p>Default:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">sarifProblemsOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+<p>This option can be specified using:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputSarifProblemsOnly parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-OutputSarifProblemsOnly</span> <span class="nv">$False</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Output.SarifProblemsOnly hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Output.SarifProblemsOnly&#39;</span> <span class="p">=</span> <span class="nv">$False</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputSarifProblemsOnly parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-OutputSarifProblemsOnly</span> <span class="nv">$False</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/sarifProblemsOnly property</span><span class="w"></span>
+<span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">sarifProblemsOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span> <span class="nv">PSRULE_OUTPUT_SARIFPROBLEMSONLY</span><span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_OUTPUT_SARIFPROBLEMSONLY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_SARIFPROBLEMSONLY</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
 <h3 id="outputstyle">Output.Style<a class="headerlink" href="#outputstyle" title="Permanent link">#</a></h3>
 <p>Configures the style that results will be presented in.</p>
 <p>This option only applies to output generated from <code>Assert-PSRule</code>.
@@ -3452,6 +3514,14 @@ This is the default.</li>
 <li>If the <code>TERM_PROGRAM</code> environment variable is set to <code>vscode</code>, <code>VisualStudioCode</code> will be used.</li>
 <li>Use <code>Client</code>.</li>
 </ol>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+</code></pre></div>
+<p>Default:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect</span><span class="w"></span>
+</code></pre></div>
 <p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputStyle parameter</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-OutputStyle</span> <span class="n">AzurePipelines</span><span class="p">;</span>
@@ -3775,6 +3845,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
 <span class="w">  </span><span class="nt">footer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RuleCount</span><span class="w"></span>
 <span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Json</span><span class="w"></span>
 <span class="w">  </span><span class="nt">outcome</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Fail</span><span class="w"></span>
+<span class="w">  </span><span class="nt">sarifProblemsOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitHubActions</span><span class="w"></span>
 
 <span class="c1"># Configure rule suppression</span><span class="w"></span>
@@ -3868,6 +3939,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
 <span class="w">  </span><span class="nt">footer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Default</span><span class="w"></span>
 <span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span><span class="w"></span>
 <span class="w">  </span><span class="nt">outcome</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Processed</span><span class="w"></span>
+<span class="w">  </span><span class="nt">sarifProblemsOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect</span><span class="w"></span>
 
 <span class="c1"># Configure rule suppression</span><span class="w"></span>
@@ -3906,7 +3978,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
   <small>
     
       Last update:
-      2022-01-31
+      2022-02-05
     
   </small>
 </div>
