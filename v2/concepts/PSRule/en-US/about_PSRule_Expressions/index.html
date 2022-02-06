@@ -1311,8 +1311,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#notwithinpath" class="md-nav__link">
+    NotWithinPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setof" class="md-nav__link">
     SetOf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    Source
   </a>
   
 </li>
@@ -1341,6 +1355,13 @@
           <li class="md-nav__item">
   <a href="#version" class="md-nav__link">
     Version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#withinpath" class="md-nav__link">
+    WithinPath
   </a>
   
 </li>
@@ -1753,8 +1774,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#notwithinpath" class="md-nav__link">
+    NotWithinPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setof" class="md-nav__link">
     SetOf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    Source
   </a>
   
 </li>
@@ -1783,6 +1818,13 @@
           <li class="md-nav__item">
   <a href="#version" class="md-nav__link">
     Version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#withinpath" class="md-nav__link">
+    WithinPath
   </a>
   
 </li>
@@ -1848,9 +1890,11 @@ Expressions are comprised of nested conditions, operators, and comparison proper
 <li><a href="#notequals">NotEquals</a></li>
 <li><a href="#notin">NotIn</a></li>
 <li><a href="#notmatch">NotMatch</a></li>
+<li><a href="#notwithinpath">NotWithinPath</a></li>
 <li><a href="#setof">SetOf</a></li>
 <li><a href="#startswith">StartsWith</a></li>
 <li><a href="#subset">Subset</a></li>
+<li><a href="#withinpath">WithinPath</a></li>
 <li><a href="#version">Version</a></li>
 </ul>
 <p>The following operators are available:</p>
@@ -1863,6 +1907,7 @@ Expressions are comprised of nested conditions, operators, and comparison proper
 <ul>
 <li><a href="#field">Field</a></li>
 <li><a href="#name">Name</a></li>
+<li><a href="#source">Source</a></li>
 <li><a href="#type">Type</a></li>
 </ul>
 <h3 id="allof">AllOf<a class="headerlink" href="#allof" title="Permanent link">#</a></h3>
@@ -2861,6 +2906,41 @@ When a nested expression does not match, <code>not</code> matches.</p>
 <span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">notMatch</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$(abc|efg)$&#39;</span><span class="w"></span>
 </code></pre></div>
+<h3 id="notwithinpath">NotWithinPath<a class="headerlink" href="#notwithinpath" title="Permanent link">#</a></h3>
+<p>The <code>notWithinPath</code> condition determines if a file path is not within a required path.</p>
+<p>If the path is not within the required path, the condition will return <code>true</code>.
+If the path is within the required path, the condition will return <code>false</code>.</p>
+<p>The following properties are accepted:</p>
+<ul>
+<li><code>caseSensitive</code> - Optionally, a case-sensitive comparison can be performed for string values.
+  By default, case-insensitive comparison is performed.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Test notWithinPath with source</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YamlSourceNotWithinPath</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Template&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">notWithinPath</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;deployments/path/&quot;</span><span class="w"></span>
+
+<span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Test notWithinPath with source and case sensitive</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YamlSourceNotWithinPathCaseSensitive</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Template&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">notWithinPath</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Deployments/Path/&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
 <h3 id="setof">SetOf<a class="headerlink" href="#setof" title="Permanent link">#</a></h3>
 <p>The <code>setOf</code> condition can be used to determine if the operand is a set of specified values.
 Additionally the following properties are accepted:</p>
@@ -2900,6 +2980,24 @@ Additionally the following properties are accepted:</p>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
 <span class="w">    </span><span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+<h3 id="source">Source<a class="headerlink" href="#source" title="Permanent link">#</a></h3>
+<p>The comparison property <code>source</code> is used with a condition to expose the source path for the resource.
+The <code>source</code> property can be set to any value.
+The default is <code>file</code> when objects loaded from a file don't identify a source.</p>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;file&#39;</span><span class="w"></span>
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IgnoreTestFiles</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;file&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">withinPath</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;tests/PSRule.Tests/&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="startswith">StartsWith<a class="headerlink" href="#startswith" title="Permanent link">#</a></h3>
 <p>The <code>startsWith</code> condition can be used to determine if the operand starts with a specified string.
@@ -3056,6 +3154,41 @@ Supported version constraints for expression are the same as the <code>$Assert.V
 <span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&gt;=1.5.0&#39;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">includePrerelease</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
+<h3 id="withinpath">WithinPath<a class="headerlink" href="#withinpath" title="Permanent link">#</a></h3>
+<p>The <code>withinPath</code> condition determines if a file path is within a required path.</p>
+<p>If the path is within the required path, the condition will return <code>true</code>.
+If the path is not within the required path, the condition will return <code>false</code>.</p>
+<p>The following properties are accepted:</p>
+<ul>
+<li><code>caseSensitive</code> - Optionally, a case-sensitive comparison can be performed for string values.
+  By default, case-insensitive comparison is performed.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Test withinPath with source</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YamlSourceWithinPath</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Template&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">withinPath</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;deployments/path/&quot;</span><span class="w"></span>
+
+<span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Test withinPath with source and case sensitive</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YamlSourceWithinPathCaseSensitive</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Template&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">withinPath</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Deployments/Path/&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="https://microsoft.github.io/PSRule/commands/PSRule/en-US/Invoke-PSRule.html">Invoke-PSRule</a></li>
@@ -3066,7 +3199,7 @@ Supported version constraints for expression are the same as the <code>$Assert.V
   <small>
     
       Last update:
-      2022-01-30
+      2022-02-07
     
   </small>
 </div>
