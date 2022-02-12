@@ -12,14 +12,14 @@
         <meta name="author" content="BernieWhite">
       
       
-        <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/validating-locally/">
+        <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/analysis-output/">
       
       <link rel="icon" href="../assets/ms_icon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
     
     
       
-        <title>Validating locally - PSRule</title>
+        <title>Analysis output - PSRule</title>
       
     
     
@@ -64,9 +64,9 @@
 
   <!-- Open graph meta tags -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="PSRule - Validating locally" />
+  <meta property="og:title" content="PSRule - Analysis output" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta property="og:url" content="https://microsoft.github.io/PSRule/v2/validating-locally/" />
+  <meta property="og:url" content="https://microsoft.github.io/PSRule/v2/analysis-output/" />
   <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
@@ -76,7 +76,7 @@
   <!-- Twitter meta tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@github" />
-  <meta name="twitter:title" content="PSRule - Validating locally" />
+  <meta name="twitter:title" content="PSRule - Analysis output" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
@@ -99,7 +99,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#validating-locally" class="md-skip">
+        <a href="#analysis-output" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Validating locally
+              Analysis output
             
           </span>
         </div>
@@ -633,6 +633,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../validating-locally/" class="md-nav__link">
+        Validating locally
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -645,12 +659,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Validating locally
+          Analysis output
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Validating locally
+        Analysis output
       </a>
       
         
@@ -669,9 +683,70 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#with-visual-studio-code" class="md-nav__link">
-    With Visual Studio Code
+  <a href="#setting-the-output-format" class="md-nav__link">
+    Setting the output format
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatting-as-yaml" class="md-nav__link">
+    Formatting as YAML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatting-as-json" class="md-nav__link">
+    Formatting as JSON
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatting as JSON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-json-indentation" class="md-nav__link">
+    Configuring JSON indentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatting-as-csv" class="md-nav__link">
+    Formatting as CSV
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatting-as-sarif" class="md-nav__link">
+    Formatting as SARIF
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatting as SARIF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-code-scanning-alerts" class="md-nav__link">
+    GitHub code scanning alerts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-devops-scans-tab" class="md-nav__link">
+    Azure DevOps scans tab
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -679,20 +754,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../analysis-output/" class="md-nav__link">
-        Analysis output
-      </a>
     </li>
   
 
@@ -1332,9 +1393,70 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#with-visual-studio-code" class="md-nav__link">
-    With Visual Studio Code
+  <a href="#setting-the-output-format" class="md-nav__link">
+    Setting the output format
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatting-as-yaml" class="md-nav__link">
+    Formatting as YAML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatting-as-json" class="md-nav__link">
+    Formatting as JSON
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatting as JSON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-json-indentation" class="md-nav__link">
+    Configuring JSON indentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatting-as-csv" class="md-nav__link">
+    Formatting as CSV
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatting-as-sarif" class="md-nav__link">
+    Formatting as SARIF
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatting as SARIF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-code-scanning-alerts" class="md-nav__link">
+    GitHub code scanning alerts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-devops-scans-tab" class="md-nav__link">
+    Azure DevOps scans tab
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1350,74 +1472,295 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/microsoft/PSRule/blob/main/docs/validating-locally.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/microsoft/PSRule/blob/main/docs/analysis-output.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="validating-locally">Validating locally<a class="headerlink" href="#validating-locally" title="Permanent link">#</a></h1>
-<p>While preparing infrastructure code artifacts, Azure resources can be validated locally.
-PSRule can be installed locally on MacOS, Linux, and Windows for local validation.</p>
+<h1 id="analysis-output">Analysis output<a class="headerlink" href="#analysis-output" title="Permanent link">#</a></h1>
+<p>PSRule supports generating and saving output in a number of different formats.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p>This topic covers the supported formats and options for presenting output from a PSRule run.</p>
+</div>
+<h2 id="setting-the-output-format">Setting the output format<a class="headerlink" href="#setting-the-output-format" title="Permanent link">#</a></h2>
+<p>The output format can be configuring by setting the <code>Output.Format</code> option to one the following:</p>
+<ul>
+<li><code>Yaml</code> - Output is serialized as YAML.</li>
+<li><code>Json</code> - Output is serialized as JSON.</li>
+<li><code>Markdown</code> - Output is serialized as Markdown.</li>
+<li><code>NUnit3</code> - Output is serialized as NUnit3 (XML).</li>
+<li><code>Csv</code> - Output is serialized as a comma-separated values (CSV).</li>
+<li><code>Sarif</code> - Output is serialized as <abbr title="Static Analysis Results Interchange Format">SARIF</abbr>.</li>
+</ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you haven't already, follow the instructions on <a href="../install-instructions/#installinglocally">installing locally</a> before continuing.</p>
+<p>To write output to a file, also set the <code>Output.Path</code> option to the file path to save.</p>
 </div>
-<h2 id="with-visual-studio-code">With Visual Studio Code<a class="headerlink" href="#with-visual-studio-code" title="Permanent link">#</a></h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=bewhite.psrule-vscode"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.97 11.03a.75.75 0 1 1 1.06-1.06L11 14.94V2.75a.75.75 0 0 1 1.5 0v12.19l4.97-4.97a.75.75 0 1 1 1.06 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0l-6.25-6.25zm-.22 9.47a.75.75 0 0 0 0 1.5h14.5a.75.75 0 0 0 0-1.5H4.75z"/></svg></span> Extension</a></p>
-<p>An extension for Visual Studio Code is available for an integrated experience using PSRule for Azure.
-The Visual Studio Code extension includes a built-in <code>PSRule: Run analysis</code> task.</p>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/microsoft/PSRule-vscode/main/docs/images/tasks-provider.png" alt="Built-in tasks shown in task list" />
-</p>
-
-<p>To learn about tasks in Visual Studio Code see <a href="https://code.visualstudio.com/docs/editor/tasks">Integrate with External Tools via Tasks</a>.</p>
-<p>To use PSRule for Azure with the built-in <code>PSRule: Run analysis</code> task, insert the following into <code>.vscode/tasks.json</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSRule&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;problemMatcher&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;$PSRule&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSRule: Run analysis&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;modules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;PSRule.Rules.Azure&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;presentation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;clear&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;panel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dedicated&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">GitHub Actions</label><label for="__tabbed_1_2">Azure Pipelines</label><label for="__tabbed_1_3">PowerShell</label><label for="__tabbed_1_4">Options file</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># Analyze and save results</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze repository</span><span class="w"></span>
+<span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Microsoft/ps-rule@v1.12.0</span><span class="w"></span>
+<span class="w">  </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="nt">outputFormat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sarif</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="nt">outputPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reports/ps-rule-results.sarif</span><span class="w"></span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># Analyze and save results</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ps-rule-assert@1</span><span class="w"></span>
+<span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze repository</span><span class="w"></span>
+<span class="w">  </span><span class="nt">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">inputType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repository</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="nt">outputFormat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sarif</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="nt">outputPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reports/ps-rule-results.sarif</span><span class="w"></span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Invoke-PSRule</span><pre><span></span><code><span class="nb">Invoke-PSRule</span> <span class="n">-OutputFormat</span> <span class="n">Sarif</span> <span class="n">-OutputPath</span> <span class="n">reports</span><span class="p">/</span><span class="n">ps-rule-results</span><span class="p">.</span><span class="n">sarif</span>
 </code></pre></div>
+<div class="highlight"><span class="filename">Assert-PSRule</span><pre><span></span><code><span class="nb">Assert-PSRule</span> <span class="n">-OutputFormat</span> <span class="n">Sarif</span> <span class="n">-OutputPath</span> <span class="n">reports</span><span class="p">/</span><span class="n">ps-rule-results</span><span class="p">.</span><span class="n">sarif</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="hll"><span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Sarif&#39;</span><span class="w"></span>
+</span><span class="hll"><span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reports/ps-rule-results.sarif</span><span class="w"></span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="formatting-as-yaml">Formatting as YAML<a class="headerlink" href="#formatting-as-yaml" title="Permanent link">#</a></h2>
+<p>When using the YAML output format, results a serialized as YAML.
+Two spaces are used to indent properties of objects.</p>
+<details class="example">
+<summary>Example output</summary>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+<span class="w">  </span><span class="nt">info</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Local.PS.RequireTLS</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Local.PS.RequireTLS</span><span class="w"></span>
+<span class="w">    </span><span class="nt">synopsis</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">An example rule to require TLS.</span><span class="w"></span>
+<span class="w">  </span><span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span><span class="w"></span>
+<span class="w">  </span><span class="nt">outcome</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Fail</span><span class="w"></span>
+<span class="w">  </span><span class="nt">outcomeReason</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Processed</span><span class="w"></span>
+<span class="w">  </span><span class="nt">reason</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The field &#39;configure.supportsHttpsTrafficOnly&#39; is set to &#39;False&#39;.</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The field &#39;configure.minTLSVersion&#39; does not exist.</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ruleName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Local.PS.RequireTLS</span><span class="w"></span>
+<span class="w">  </span><span class="nt">runId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16b0534165ffb5279beeb1672a251fc1ff3124b6</span><span class="w"></span>
+<span class="w">  </span><span class="nt">source</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C:\Dev\Workspace\PSRule\docs\authoring\writing-rules\settings.json</span><span class="w"></span>
+<span class="w">    </span><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<span class="w">    </span><span class="nt">position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">11</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">File</span><span class="w"></span>
+<span class="w">  </span><span class="nt">targetName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1fe7c0f476b11301402d5017d87424c36ff085a8</span><span class="w"></span>
+<span class="w">  </span><span class="nt">targetType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app1</span><span class="w"></span>
+<span class="w">  </span><span class="nt">time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+</code></pre></div>
+</details>
+<h2 id="formatting-as-json">Formatting as JSON<a class="headerlink" href="#formatting-as-json" title="Permanent link">#</a></h2>
+<p>When using the JSON output format, results are serialized as JSON.
+By default, no indentation is used.</p>
+<details class="example">
+<summary>Example output</summary>
+<div class="highlight"><pre><span></span><code><span class="p">[{</span><span class="nt">&quot;data&quot;</span><span class="p">:{},</span><span class="nt">&quot;info&quot;</span><span class="p">:{</span><span class="nt">&quot;displayName&quot;</span><span class="p">:</span><span class="s2">&quot;Local.PS.RequireTLS&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Local.PS.RequireTLS&quot;</span><span class="p">,</span><span class="nt">&quot;synopsis&quot;</span><span class="p">:</span><span class="s2">&quot;An example rule to require TLS.&quot;</span><span class="p">},</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;outcome&quot;</span><span class="p">:</span><span class="s2">&quot;Fail&quot;</span><span class="p">,</span><span class="nt">&quot;outcomeReason&quot;</span><span class="p">:</span><span class="s2">&quot;Processed&quot;</span><span class="p">,</span><span class="nt">&quot;reason&quot;</span><span class="p">:[</span><span class="s2">&quot;The field &#39;configure.supportsHttpsTrafficOnly&#39; is set to &#39;False&#39;.&quot;</span><span class="p">,</span><span class="s2">&quot;The field &#39;configure.minTLSVersion&#39; does not exist.&quot;</span><span class="p">],</span><span class="nt">&quot;ruleName&quot;</span><span class="p">:</span><span class="s2">&quot;Local.PS.RequireTLS&quot;</span><span class="p">,</span><span class="nt">&quot;runId&quot;</span><span class="p">:</span><span class="s2">&quot;df662aad3ae7adee6f35b9733c7aaa53dc4d6b96&quot;</span><span class="p">,</span><span class="nt">&quot;source&quot;</span><span class="p">:[{</span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;C:\\Dev\\Workspace\\PSRule\\docs\\authoring\\writing-rules\\settings.json&quot;</span><span class="p">,</span><span class="nt">&quot;line&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;position&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;File&quot;</span><span class="p">}],</span><span class="nt">&quot;targetName&quot;</span><span class="p">:</span><span class="s2">&quot;1fe7c0f476b11301402d5017d87424c36ff085a8&quot;</span><span class="p">,</span><span class="nt">&quot;targetType&quot;</span><span class="p">:</span><span class="s2">&quot;app1&quot;</span><span class="p">,</span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}]</span><span class="w"></span>
+</code></pre></div>
+</details>
+<h3 id="configuring-json-indentation">Configuring JSON indentation<a class="headerlink" href="#configuring-json-indentation" title="Permanent link">#</a></h3>
+<p>The number of spaces used to indent properties and elements is configurable between <code>0</code> to <code>4</code> spaces.
+By default, no indentation is used.</p>
+<details class="example">
+<summary>Example output with 2 spaces</summary>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">[</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">{</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;data&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{},</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;info&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"></span>
+<span class="w">      </span><span class="s">&quot;displayName&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Local.PS.RequireTLS&quot;</span><span class="p p-Indicator">,</span><span class="w"></span>
+<span class="w">      </span><span class="s">&quot;name&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Local.PS.RequireTLS&quot;</span><span class="p p-Indicator">,</span><span class="w"></span>
+<span class="w">      </span><span class="s">&quot;synopsis&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;An</span><span class="nv"> </span><span class="s">example</span><span class="nv"> </span><span class="s">rule</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">require</span><span class="nv"> </span><span class="s">TLS.&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">},</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;level&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;outcome&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Fail&quot;</span><span class="p p-Indicator">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;outcomeReason&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Processed&quot;</span><span class="p p-Indicator">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;reason&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"></span>
+<span class="w">      </span><span class="s">&quot;The</span><span class="nv"> </span><span class="s">field</span><span class="nv"> </span><span class="s">&#39;configure.supportsHttpsTrafficOnly&#39;</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">&#39;False&#39;.&quot;</span><span class="p p-Indicator">,</span><span class="w"></span>
+<span class="w">      </span><span class="s">&quot;The</span><span class="nv"> </span><span class="s">field</span><span class="nv"> </span><span class="s">&#39;configure.minTLSVersion&#39;</span><span class="nv"> </span><span class="s">does</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">exist.&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">],</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;ruleName&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Local.PS.RequireTLS&quot;</span><span class="p p-Indicator">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;runId&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;3afadfed32e57f5283ad71c1aa496da822ff0c84&quot;</span><span class="p p-Indicator">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;source&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">{</span><span class="w"></span>
+<span class="w">        </span><span class="s">&quot;file&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;C:\\Dev\\Workspace\\PSRule\\docs\\authoring\\writing-rules\\settings.json&quot;</span><span class="p p-Indicator">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">&quot;line&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">&quot;position&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">11</span><span class="p p-Indicator">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">&quot;type&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;File&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">}</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">],</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;targetName&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;1fe7c0f476b11301402d5017d87424c36ff085a8&quot;</span><span class="p p-Indicator">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;targetType&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;app1&quot;</span><span class="p p-Indicator">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;time&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">}</span><span class="w"></span>
+<span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+</details>
+<h2 id="formatting-as-csv">Formatting as CSV<a class="headerlink" href="#formatting-as-csv" title="Permanent link">#</a></h2>
+<p>The output from analysis can be formatted as comma-separated values (CSV).
+Formatting as CSV may be useful when manipulating output results by hand.
+Output of CSV format varies depending on if detailed or summary output is used.</p>
+<p>For detailed output, the following columns are added to CSV output for each processed object:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RuleName</code></td>
+<td>The name of the rule.</td>
+</tr>
+<tr>
+<td><code>TargetName</code></td>
+<td>The name of the object that was analyzed.</td>
+</tr>
+<tr>
+<td><code>TargetType</code></td>
+<td>The type of the object that was analyzed.</td>
+</tr>
+<tr>
+<td><code>Outcome</code></td>
+<td>The outcome of the analysis, such as <code>Pass</code> or <code>Fail</code>.</td>
+</tr>
+<tr>
+<td><code>OutcomeReason</code></td>
+<td>An additional reason for the outcome such as <code>Inconclusive</code>.</td>
+</tr>
+<tr>
+<td><code>Synopsis</code></td>
+<td>A short description of the rule.</td>
+</tr>
+<tr>
+<td><code>Recommendation</code></td>
+<td>The recommendation of the rule.</td>
+</tr>
+</tbody>
+</table>
+<p>For summary output, the following columns are used:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RuleName</code></td>
+<td>The name of the rule.</td>
+</tr>
+<tr>
+<td><code>Pass</code></td>
+<td>The number of objects that passed.</td>
+</tr>
+<tr>
+<td><code>Fail</code></td>
+<td>The number of objects that failed.</td>
+</tr>
+<tr>
+<td><code>Outcome</code></td>
+<td>The worst case outcome of the analysis, such as <code>Pass</code> or <code>Fail</code>.</td>
+</tr>
+<tr>
+<td><code>Synopsis</code></td>
+<td>A short description of the rule.</td>
+</tr>
+<tr>
+<td><code>Recommendation</code></td>
+<td>The recommendation of the rule.</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>Example output</summary>
+<div class="highlight"><pre><span></span><code>RuleName,TargetName,TargetType,Outcome,OutcomeReason,Synopsis,Recommendation
+&quot;Local.PS.RequireTLS&quot;,&quot;1fe7c0f476b11301402d5017d87424c36ff085a8&quot;,&quot;app1&quot;,&quot;Fail&quot;,&quot;Processed&quot;,&quot;An example rule to require TLS.&quot;,
+&quot;Local.YAML.RequireTLS&quot;,&quot;1fe7c0f476b11301402d5017d87424c36ff085a8&quot;,&quot;app1&quot;,&quot;Fail&quot;,&quot;Processed&quot;,&quot;An example rule to require TLS.&quot;,
+&quot;Local.JSON.RequireTLS&quot;,&quot;1fe7c0f476b11301402d5017d87424c36ff085a8&quot;,&quot;app1&quot;,&quot;Fail&quot;,&quot;Processed&quot;,&quot;An example rule to require TLS.&quot;,
+</code></pre></div>
+</details>
+<h2 id="formatting-as-sarif">Formatting as <abbr title="Static Analysis Results Interchange Format">SARIF</abbr><a class="headerlink" href="#formatting-as-sarif" title="Permanent link">#</a></h2>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75zm0 4.5h7.282a.25.25 0 0 1 .163.06l3.188 2.75a.25.25 0 0 1 0 .38l-3.188 2.75a.25.25 0 0 1-.163.06H3.75a.25.25 0 0 1-.25-.25v-5.5a.25.25 0 0 1 .25-.25h8z"/></svg></span> v2.0.0</p>
+<p>Static Analysis Results Interchange Format (<abbr title="Static Analysis Results Interchange Format">SARIF</abbr>) is a standard output format for static analysis tools.
+It enables various unrelated tools to consume analysis results from PSRule.
+You can use <abbr title="Static Analysis Results Interchange Format">SARIF</abbr> to perform Static Analysis Security Testing (SAST) in DevOps environments at-scale.</p>
+<h3 id="github-code-scanning-alerts">GitHub code scanning alerts<a class="headerlink" href="#github-code-scanning-alerts" title="Permanent link">#</a></h3>
+<p><abbr title="Static Analysis Results Interchange Format">SARIF</abbr> results from PSRule can be uploaded to GitHub to create code scanning alerts against a repository.
+You can see these results in your repository visible under <em>Security</em> &gt; <em>Code scanning alerts</em>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Code scanning is available for all public repositories,
+and for private repositories owned by organizations where GitHub Advanced Security is enabled.
+For more information, see <a href="https://docs.github.com/get-started/learning-about-github/about-github-advanced-security">About GitHub Advanced Security</a>.</p>
+</div>
+<p>To configure GitHub Actions, perform the following steps:</p>
+<ul>
+<li>Create a GitHub Actions workflow.</li>
+<li>Add a step using the <code>microsoft/ps-rule</code> action.<ul>
+<li>Configure the <code>outputFormat</code> and <code>outputPath</code> parameters.</li>
+</ul>
+</li>
+<li>Add a step using the <code>github/codeql-action/upload-sarif</code> action.<ul>
+<li>Configure the <code>sarif_file</code> parameter to the same file path specified in <code>outputPath</code>.</li>
+</ul>
+</li>
+</ul>
 <div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>A complete <code>.vscode/tasks.json</code> might look like the following:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSRule&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;problemMatcher&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">                </span><span class="s2">&quot;$PSRule&quot;</span><span class="w"></span>
-<span class="w">            </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSRule: Run analysis&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;modules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">                </span><span class="s2">&quot;PSRule.Rules.Azure&quot;</span><span class="w"></span>
-<span class="w">            </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;presentation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;clear&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;panel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dedicated&quot;</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">]</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<p class="admonition-title">Example <code>.github/workflows/analyze.yaml</code></p>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze</span><span class="w"></span>
+<span class="nt">on</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">main</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">schedule</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;24</span><span class="nv"> </span><span class="s">22</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">0&#39;</span><span class="w"> </span><span class="c1"># At 10:24 PM, on Sunday each week</span><span class="w"></span>
+<span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w"></span>
+
+<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">oss</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze with PSRule</span><span class="w"></span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span><span class="w"></span>
+<span class="w">    </span><span class="nt">permissions</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span><span class="w"></span>
+<span class="w">      </span><span class="nt">security-events</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span><span class="w"></span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout</span><span class="w"></span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2.4.0</span><span class="w"></span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run PSRule analysis</span><span class="w"></span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Microsoft/ps-rule@1.12.0</span><span class="w"></span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">outputFormat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sarif</span><span class="w"></span>
+<span class="w">        </span><span class="nt">outputPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reports/ps-rule-results.sarif</span><span class="w"></span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upload results to security tab</span><span class="w"></span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github/codeql-action/upload-sarif@v1</span><span class="w"></span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">sarif_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reports/ps-rule-results.sarif</span><span class="w"></span>
 </code></pre></div>
 </div>
+<h3 id="azure-devops-scans-tab">Azure DevOps scans tab<a class="headerlink" href="#azure-devops-scans-tab" title="Permanent link">#</a></h3>
+<p><abbr title="Static Analysis Results Interchange Format">SARIF</abbr> results from PSRule can be uploaded and viewed within Azure DevOps.
+To add the scans tab to build results the <a href="https://marketplace.visualstudio.com/items?itemName=sariftools.scans"><abbr title="Static Analysis Results Interchange Format">SARIF</abbr> SAST Scans Tab</a> extension needs to be installed.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-01-03
+      2022-02-11
     
   </small>
 </div>
@@ -1434,7 +1777,7 @@ The Visual Studio Code extension includes a built-in <code>PSRule: Run analysis<
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../creating-your-pipeline/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Creating your pipeline" rel="prev">
+        <a href="../validating-locally/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Validating locally" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1443,20 +1786,20 @@ The Visual Studio Code extension includes a built-in <code>PSRule: Run analysis<
               <span class="md-footer__direction">
                 Previous
               </span>
-              Creating your pipeline
+              Validating locally
             </div>
           </div>
         </a>
       
       
         
-        <a href="../analysis-output/" class="md-footer__link md-footer__link--next" aria-label="Next: Analysis output" rel="next">
+        <a href="../scenarios/azure-resources/azure-resources/" class="md-footer__link md-footer__link--next" aria-label="Next: Validate Azure resource configuration" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Analysis output
+              Validate Azure resource configuration
             </div>
           </div>
           <div class="md-footer__button md-icon">
