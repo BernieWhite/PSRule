@@ -1668,6 +1668,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#repositoryurl" class="md-nav__link">
+    Repository.Url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#requires" class="md-nav__link">
     Requires
   </a>
@@ -2179,6 +2186,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#repositoryurl" class="md-nav__link">
+    Repository.Url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#requires" class="md-nav__link">
     Requires
   </a>
@@ -2321,6 +2335,7 @@ This topic describes what options are available, when to and how to use them.</p
 <li><a href="#outputpath">Output.Path</a></li>
 <li><a href="#outputsarifproblemsonly">Output.SarifProblemsOnly</a></li>
 <li><a href="#outputstyle">Output.Style</a></li>
+<li><a href="#repositoryurl">Repository.Url</a></li>
 <li><a href="#requires">Requires</a></li>
 <li><a href="#suppression">Suppression</a></li>
 </ul>
@@ -3447,10 +3462,11 @@ This option is only applicable when using <code>Assert-PSRule</code> cmdlet.</p>
 <li><code>Title</code> (1) - Shows the PSRule title ASCII text.</li>
 <li><code>Source</code> (2) - Shows rules module versions used in this run.</li>
 <li><code>SupportLinks</code> (4) - Shows supporting links for PSRule and rules modules.</li>
+<li><code>RepositoryInfo</code> (8) - Show information about the repository where PSRule is being run from.</li>
 </ul>
 <p>Additionally the following rollup options exist:</p>
 <ul>
-<li><code>Default</code> - Shows <code>Title</code>, <code>Source</code>, and <code>SupportLinks</code>.
+<li><code>Default</code> - Shows <code>Title</code>, <code>Source</code>, <code>SupportLinks</code>, <code>RepositoryInfo</code>.
 This is the default option.</li>
 <li><code>Minimal</code> - Shows <code>Source</code>.</li>
 </ul>
@@ -3828,7 +3844,7 @@ This is the default.</li>
 The default number of spaces is 0.</p>
 <p>This option applies to output generated from <code>-OutputFormat Json</code> for <code>Get-PSRule</code> and <code>Invoke-PSRule</code>.
 This option also applies to output generated from <code>-OutputPath</code> for <code>Assert-PSRule</code>.</p>
-<p>The range of indentation accepts a minimum of 0(machine first) spaces and a maximum of 4 spaces.</p>
+<p>The range of indentation accepts a minimum of 0 (machine first) spaces and a maximum of 4 spaces.</p>
 <p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputJsonIndent parameter</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-OutputJsonIndent</span> <span class="n">2</span><span class="p">;</span>
@@ -3857,6 +3873,33 @@ This option also applies to output generated from <code>-OutputPath</code> for <
 <span class="nt">variables</span><span class="p">:</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_JSONINDENT</span><span class="w"></span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+</code></pre></div>
+<h3 id="repositoryurl">Repository.Url<a class="headerlink" href="#repositoryurl" title="Permanent link">#</a></h3>
+<p>This option can be configured to set the repository URL reported in output.
+By default, the repository URL is detected from environment variables set by the build system.</p>
+<ul>
+<li>In GitHub Actions, the repository URL is detected from the <code>GITHUB_REPOSITORY</code> environment variable.</li>
+<li>In Azure Pipelines, the repository URL is detected from the <code>BUILD_REPOSITORY_URI</code> environment variable.</li>
+</ul>
+<p>This option can be specified using:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the RepositoryUrl parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-RepositoryUrl</span> <span class="s1">&#39;https://github.com/microsoft/PSRule&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Repository.Url hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Repository.Url&#39;</span> <span class="p">=</span> <span class="s1">&#39;https://github.com/microsoft/PSRule&#39;</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the RepositoryUrl parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-RepositoryUrl</span> <span class="s1">&#39;https://github.com/microsoft/PSRule&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the repository/url property</span><span class="w"></span>
+<span class="nt">repository</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://github.com/microsoft/PSRule&#39;</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span> <span class="nv">PSRULE_REPOSITORY_URL</span><span class="o">=</span><span class="s1">&#39;https://github.com/microsoft/PSRule&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using environment variable</span>
+<span class="nv">$env:PSRULE_REPOSITORY_URL</span> <span class="p">=</span> <span class="s1">&#39;https://github.com/microsoft/PSRule&#39;</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="requires">Requires<a class="headerlink" href="#requires" title="Permanent link">#</a></h3>
 <p>Specifies module version constraints for running PSRule.
@@ -4254,7 +4297,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
   <small>
     
       Last update:
-      2022-02-19
+      2022-02-27
     
   </small>
 </div>

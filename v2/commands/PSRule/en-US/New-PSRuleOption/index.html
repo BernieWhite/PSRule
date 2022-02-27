@@ -1591,6 +1591,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-outputjsonindent" class="md-nav__link">
+    -OutputJsonIndent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-outputoutcome" class="md-nav__link">
     -OutputOutcome
   </a>
@@ -1605,6 +1612,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-outputsarifproblemsonly" class="md-nav__link">
+    -OutputSarifProblemsOnly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-outputstyle" class="md-nav__link">
     -OutputStyle
   </a>
@@ -1612,8 +1626,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-outputjsonindent" class="md-nav__link">
-    -OutputJsonIndent
+  <a href="#-repositoryurl" class="md-nav__link">
+    -RepositoryUrl
   </a>
   
 </li>
@@ -1621,6 +1635,20 @@
           <li class="md-nav__item">
   <a href="#-ruleincludelocal" class="md-nav__link">
     -RuleIncludeLocal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-aliasreferencewarning" class="md-nav__link">
+    -AliasReferenceWarning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-invariantculturewarning" class="md-nav__link">
+    -InvariantCultureWarning
   </a>
   
 </li>
@@ -2330,6 +2358,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-outputjsonindent" class="md-nav__link">
+    -OutputJsonIndent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-outputoutcome" class="md-nav__link">
     -OutputOutcome
   </a>
@@ -2344,6 +2379,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-outputsarifproblemsonly" class="md-nav__link">
+    -OutputSarifProblemsOnly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-outputstyle" class="md-nav__link">
     -OutputStyle
   </a>
@@ -2351,8 +2393,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-outputjsonindent" class="md-nav__link">
-    -OutputJsonIndent
+  <a href="#-repositoryurl" class="md-nav__link">
+    -RepositoryUrl
   </a>
   
 </li>
@@ -2360,6 +2402,20 @@
           <li class="md-nav__item">
   <a href="#-ruleincludelocal" class="md-nav__link">
     -RuleIncludeLocal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-aliasreferencewarning" class="md-nav__link">
+    -AliasReferenceWarning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-invariantculturewarning" class="md-nav__link">
+    -InvariantCultureWarning
   </a>
   
 </li>
@@ -2458,14 +2514,15 @@
  [-BindingNameSeparator &lt;String&gt;] [-BindingPreferTargetInfo &lt;Boolean&gt;] [-TargetName &lt;String[]&gt;]
  [-TargetType &lt;String[]&gt;] [-BindingUseQualifiedName &lt;Boolean&gt;] [-Convention &lt;String[]&gt;]
  [-InconclusiveWarning &lt;Boolean&gt;] [-NotProcessedWarning &lt;Boolean&gt;] [-SuppressedRuleWarning &lt;Boolean&gt;]
- [-IncludeModule &lt;String[]&gt;] [-IncludePath &lt;String[]&gt;] [-Format &lt;InputFormat&gt;] [-InputIgnoreGitPath &lt;Boolean&gt;]
+ [-AliasReferenceWarning &lt;Boolean&gt;] [-InvariantCultureWarning &lt;Boolean&gt;] [-IncludeModule &lt;String[]&gt;]
+ [-IncludePath &lt;String[]&gt;] [-Format &lt;InputFormat&gt;] [-InputIgnoreGitPath &lt;Boolean&gt;]
  [-InputIgnoreRepositoryCommon &lt;Boolean&gt;] [-ObjectPath &lt;String&gt;] [-InputTargetType &lt;String[]&gt;]
  [-InputPathIgnore &lt;String[]&gt;] [-LoggingLimitDebug &lt;String[]&gt;] [-LoggingLimitVerbose &lt;String[]&gt;]
  [-LoggingRuleFail &lt;OutcomeLogStream&gt;] [-LoggingRulePass &lt;OutcomeLogStream&gt;] [-OutputAs &lt;ResultFormat&gt;]
  [-OutputBanner &lt;BannerFormat&gt;] [-OutputCulture &lt;String[]&gt;] [-OutputEncoding &lt;OutputEncoding&gt;]
  [-OutputFooter &lt;FooterFormat&gt;] [-OutputFormat &lt;OutputFormat&gt;] [-OutputOutcome &lt;RuleOutcome&gt;]
- [-OutputPath &lt;String&gt;] [-OutputStyle &lt;OutputStyle&gt;] [-OutputJsonIndent &lt;Int&gt;]
- [-RuleIncludeLocal &lt;Boolean&gt;] [&lt;CommonParameters&gt;]
+ [-OutputPath &lt;String&gt;] [-OutputSarifProblemsOnly &lt;Boolean&gt;] [-OutputStyle &lt;OutputStyle&gt;]
+ [-OutputJsonIndent &lt;Int32&gt;] [-RepositoryUrl &lt;String&gt;] [-RuleIncludeLocal &lt;Boolean&gt;] [&lt;CommonParameters&gt;]
 </code></pre></div>
 <h3 id="fromoption">FromOption<a class="headerlink" href="#fromoption" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>New-PSRuleOption [-Option] &lt;PSRuleOption&gt; [-Configuration &lt;ConfigurationOption&gt;]
@@ -2473,30 +2530,32 @@
  [-BindTargetType &lt;BindTargetName[]&gt;] [-BindingIgnoreCase &lt;Boolean&gt;] [-BindingField &lt;Hashtable&gt;]
  [-BindingNameSeparator &lt;String&gt;] [-BindingPreferTargetInfo &lt;Boolean&gt;] [-TargetName &lt;String[]&gt;]
  [-TargetType &lt;String[]&gt;] [-BindingUseQualifiedName &lt;Boolean&gt;] [-Convention &lt;String[]&gt;]
- [-InconclusiveWarning &lt;Boolean&gt;] [-NotProcessedWarning &lt;Boolean&gt;] [-SuppressedRuleWarning &lt;Boolean&gt;] [-IncludeModule &lt;String[]&gt;]
+ [-InconclusiveWarning &lt;Boolean&gt;] [-NotProcessedWarning &lt;Boolean&gt;] [-SuppressedRuleWarning &lt;Boolean&gt;]
+ [-AliasReferenceWarning &lt;Boolean&gt;] [-InvariantCultureWarning &lt;Boolean&gt;] [-IncludeModule &lt;String[]&gt;]
  [-IncludePath &lt;String[]&gt;] [-Format &lt;InputFormat&gt;] [-InputIgnoreGitPath &lt;Boolean&gt;]
  [-InputIgnoreRepositoryCommon &lt;Boolean&gt;] [-ObjectPath &lt;String&gt;] [-InputTargetType &lt;String[]&gt;]
  [-InputPathIgnore &lt;String[]&gt;] [-LoggingLimitDebug &lt;String[]&gt;] [-LoggingLimitVerbose &lt;String[]&gt;]
  [-LoggingRuleFail &lt;OutcomeLogStream&gt;] [-LoggingRulePass &lt;OutcomeLogStream&gt;] [-OutputAs &lt;ResultFormat&gt;]
  [-OutputBanner &lt;BannerFormat&gt;] [-OutputCulture &lt;String[]&gt;] [-OutputEncoding &lt;OutputEncoding&gt;]
  [-OutputFooter &lt;FooterFormat&gt;] [-OutputFormat &lt;OutputFormat&gt;] [-OutputOutcome &lt;RuleOutcome&gt;]
- [-OutputPath &lt;String&gt;] [-OutputStyle &lt;OutputStyle&gt;] [-OutputJsonIndent &lt;Int&gt;]
- [-RuleIncludeLocal &lt;Boolean&gt;] [&lt;CommonParameters&gt;]
+ [-OutputPath &lt;String&gt;] [-OutputSarifProblemsOnly &lt;Boolean&gt;] [-OutputStyle &lt;OutputStyle&gt;]
+ [-OutputJsonIndent &lt;Int32&gt;] [-RepositoryUrl &lt;String&gt;] [-RuleIncludeLocal &lt;Boolean&gt;] [&lt;CommonParameters&gt;]
 </code></pre></div>
 <h3 id="fromdefault">FromDefault<a class="headerlink" href="#fromdefault" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>New-PSRuleOption [-Default] [-Configuration &lt;ConfigurationOption&gt;] [-SuppressTargetName &lt;SuppressionOption&gt;]
  [-BindTargetName &lt;BindTargetName[]&gt;] [-BindTargetType &lt;BindTargetName[]&gt;] [-BindingIgnoreCase &lt;Boolean&gt;]
  [-BindingField &lt;Hashtable&gt;] [-BindingNameSeparator &lt;String&gt;] [-BindingPreferTargetInfo &lt;Boolean&gt;]
  [-TargetName &lt;String[]&gt;] [-TargetType &lt;String[]&gt;] [-BindingUseQualifiedName &lt;Boolean&gt;]
- [-Convention &lt;String[]&gt;] [-InconclusiveWarning &lt;Boolean&gt;] [-NotProcessedWarning &lt;Boolean&gt;] [-SuppressedRuleWarning &lt;Boolean&gt;]
+ [-Convention &lt;String[]&gt;] [-InconclusiveWarning &lt;Boolean&gt;] [-NotProcessedWarning &lt;Boolean&gt;]
+ [-SuppressedRuleWarning &lt;Boolean&gt;] [-AliasReferenceWarning &lt;Boolean&gt;] [-InvariantCultureWarning &lt;Boolean&gt;]
  [-IncludeModule &lt;String[]&gt;] [-IncludePath &lt;String[]&gt;] [-Format &lt;InputFormat&gt;] [-InputIgnoreGitPath &lt;Boolean&gt;]
  [-InputIgnoreRepositoryCommon &lt;Boolean&gt;] [-ObjectPath &lt;String&gt;] [-InputTargetType &lt;String[]&gt;]
  [-InputPathIgnore &lt;String[]&gt;] [-LoggingLimitDebug &lt;String[]&gt;] [-LoggingLimitVerbose &lt;String[]&gt;]
  [-LoggingRuleFail &lt;OutcomeLogStream&gt;] [-LoggingRulePass &lt;OutcomeLogStream&gt;] [-OutputAs &lt;ResultFormat&gt;]
  [-OutputBanner &lt;BannerFormat&gt;] [-OutputCulture &lt;String[]&gt;] [-OutputEncoding &lt;OutputEncoding&gt;]
  [-OutputFooter &lt;FooterFormat&gt;] [-OutputFormat &lt;OutputFormat&gt;] [-OutputOutcome &lt;RuleOutcome&gt;]
- [-OutputPath &lt;String&gt;] [-OutputStyle &lt;OutputStyle&gt;] [-OutputJsonIndent &lt;Int&gt;]
- [-RuleIncludeLocal &lt;Boolean&gt;] [&lt;CommonParameters&gt;]
+ [-OutputPath &lt;String&gt;] [-OutputSarifProblemsOnly &lt;Boolean&gt;] [-OutputStyle &lt;OutputStyle&gt;]
+ [-OutputJsonIndent &lt;Int32&gt;] [-RepositoryUrl &lt;String&gt;] [-RuleIncludeLocal &lt;Boolean&gt;] [&lt;CommonParameters&gt;]
 </code></pre></div>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
 <p>The <strong>New-PSRuleOption</strong> cmdlet creates an options object that can be passed to PSRule cmdlets to configure execution.</p>
@@ -3025,6 +3084,21 @@ See about_PSRule_Options for more information.</p>
 <span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 </code></pre></div>
+<h3 id="-outputjsonindent">-OutputJsonIndent<a class="headerlink" href="#-outputjsonindent" title="Permanent link">#</a></h3>
+<p>Sets the option <code>Output.JsonIndent</code>.
+The <code>Output.JsonIndent</code> option configures indentation for JSON output.</p>
+<p>This option only applies to <code>Get-PSRule</code>, <code>Invoke-PSRule</code> and <code>Assert-PSRule</code> cmdlets.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Int32</span><span class="w"></span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span><span class="w"></span>
+<span class="nt">Aliases</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JsonIndent</span><span class="w"></span>
+<span class="nt">Accepted values</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0, 1, 2, 3, 4</span><span class="w"></span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span><span class="w"></span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
 <h3 id="-outputoutcome">-OutputOutcome<a class="headerlink" href="#-outputoutcome" title="Permanent link">#</a></h3>
 <p>Sets the <code>Output.Outcome</code> option.
 This option can be set to include or exclude output results.
@@ -3052,6 +3126,19 @@ The <code>Output.Path</code> option configures an output file path to write resu
 <span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 </code></pre></div>
+<h3 id="-outputsarifproblemsonly">-OutputSarifProblemsOnly<a class="headerlink" href="#-outputsarifproblemsonly" title="Permanent link">#</a></h3>
+<p>Sets the option <code>Option.SarifProblemsOnly</code>.
+The <code>Output.SarifProblemsOnly</code> option determines if SARIF output only includes fail and error outcomes.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Boolean</span><span class="w"></span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span><span class="w"></span>
+<span class="nt">Aliases</span><span class="p">:</span><span class="w"></span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span><span class="w"></span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
 <h3 id="-outputstyle">-OutputStyle<a class="headerlink" href="#-outputstyle" title="Permanent link">#</a></h3>
 <p>Sets the option <code>Option.Style</code>.
 The <code>Output.Style</code> option configures the style that results will be presented in.</p>
@@ -3067,18 +3154,16 @@ The <code>Output.Style</code> option configures the style that results will be p
 <span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 </code></pre></div>
-<h3 id="-outputjsonindent">-OutputJsonIndent<a class="headerlink" href="#-outputjsonindent" title="Permanent link">#</a></h3>
-<p>Sets the option <code>Output.JsonIndent</code>.
-The <code>Output.JsonIndent</code> option configures indentation for JSON output.</p>
-<p>This option only applies to <code>Get-PSRule</code>, <code>Invoke-PSRule</code> and <code>Assert-PSRule</code> cmdlets.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Int</span><span class="w"></span>
+<h3 id="-repositoryurl">-RepositoryUrl<a class="headerlink" href="#-repositoryurl" title="Permanent link">#</a></h3>
+<p>Sets the option <code>Repository.Url</code>.
+The <code>Repository.Url</code> option sets the repository URL reported in output.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span><span class="w"></span>
 <span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span><span class="w"></span>
-<span class="nt">Aliases</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JsonIndent</span><span class="w"></span>
-<span class="nt">Accepted values</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0, 1, 2, 3, 4</span><span class="w"></span>
+<span class="nt">Aliases</span><span class="p">:</span><span class="w"></span>
 
 <span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 <span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span><span class="w"></span>
-<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span><span class="w"></span>
 <span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 </code></pre></div>
@@ -3093,6 +3178,32 @@ See about_PSRule_Options for more information.</p>
 <span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 <span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span><span class="w"></span>
 <span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+<h3 id="-aliasreferencewarning">-AliasReferenceWarning<a class="headerlink" href="#-aliasreferencewarning" title="Permanent link">#</a></h3>
+<p>Sets the option <code>Execution.AliasReferenceWarning</code>.
+The <code>Execution.AliasReferenceWarning</code> option determines if a warning is logged when alises are referenced.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Boolean</span><span class="w"></span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span><span class="w"></span>
+<span class="nt">Aliases</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExecutionAliasReferenceWarning</span><span class="w"></span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span><span class="w"></span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span><span class="w"></span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+<h3 id="-invariantculturewarning">-InvariantCultureWarning<a class="headerlink" href="#-invariantculturewarning" title="Permanent link">#</a></h3>
+<p>Sets the option <code>Execution.InvariantCultureWarning</code>.
+The <code>Execution.InvariantCultureWarning</code> option set if a warning is logged when invarient culture is detected.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Boolean</span><span class="w"></span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span><span class="w"></span>
+<span class="nt">Aliases</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExecutionInvariantCultureWarning</span><span class="w"></span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span><span class="w"></span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span><span class="w"></span>
 <span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 </code></pre></div>
@@ -3112,7 +3223,7 @@ See about_PSRule_Options for more information.</p>
   <small>
     
       Last update:
-      2022-02-19
+      2022-02-27
     
   </small>
 </div>

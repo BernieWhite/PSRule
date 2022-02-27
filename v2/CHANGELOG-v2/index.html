@@ -1758,6 +1758,23 @@
 <p>You can discuss v2 pre-releases on the <a href="https://github.com/microsoft/PSRule/discussions/966">GitHub discussions page</a>.</p>
 </div>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
+<p>What's changed since pre-release v2.0.0-B2202065:</p>
+<ul>
+<li>General improvements:<ul>
+<li>Capture and output repository info in Assert-PSRule runs. <a href="https://github.com/microsoft/PSRule/issues/978">#978</a><ul>
+<li>Added <code>Repository.Url</code> option set repository URL reported in output.</li>
+<li>Repository URL is detected automatically for GitHub Actions and Azure Pipelines.</li>
+<li>Added <code>RepositoryInfo</code> to <code>Output.Banner</code> option.</li>
+<li>Repository info is shown by default.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bug fixes:<ul>
+<li>Fixed SARIF should report base branch. <a href="https://github.com/microsoft/PSRule/issues/964">#964</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="v200-b2202065-pre-release">v2.0.0-B2202065 (pre-release)<a class="headerlink" href="#v200-b2202065-pre-release" title="Permanent link">#</a></h2>
 <p>What's changed since pre-release v2.0.0-B2202056:</p>
 <ul>
@@ -1970,7 +1987,7 @@
   <small>
     
       Last update:
-      2022-02-20
+      2022-02-27
     
   </small>
 </div>
