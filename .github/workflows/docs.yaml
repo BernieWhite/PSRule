@@ -30,7 +30,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
       - name: Setup Python
-        uses: actions/setup-python@v2.3.2
+        uses: actions/setup-python@v3
         with:
           python-version: '3.9'
           architecture: 'x64'
