@@ -1,0 +1,17 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+
+---
+# Synopsis: Image files are not permitted.
+apiVersion: github.com/microsoft/PSRule/v1
+kind: Rule
+metadata:
+  name: Yaml.FileType
+spec:
+  type:
+  - System.IO.FileInfo
+  condition:
+    field: Extension
+    notIn:
+    - .jpg
+    - .png

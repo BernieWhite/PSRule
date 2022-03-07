@@ -28,7 +28,7 @@ def replace_maml(markdown: str, page: mkdocs.structure.nav.Page, config: mkdocs.
     markdown = markdown.replace("## about_PSRule_Selectors", "")
     markdown = markdown.replace("## about_PSRule_SuppressionGroups", "")
     markdown = markdown.replace("## about_PSRule_Variables", "")
-    markdown = markdown.replace("# PSRule_Assert", "# Assertion helpers")
+    markdown = markdown.replace("# PSRule_Assert", "# Assertion methods")
     markdown = markdown.replace("# PSRule_Baseline", "# Baselines")
     markdown = markdown.replace("# PSRule_Badges", "# Badges")
     markdown = markdown.replace("# PSRule_Conventions", "# Conventions")
