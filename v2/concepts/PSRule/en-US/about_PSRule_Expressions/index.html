@@ -2548,16 +2548,22 @@ A field can be:</p>
 </code></pre></div>
 <h3 id="greater">Greater<a class="headerlink" href="#greater" title="Permanent link">#</a></h3>
 <p>The <code>greater</code> condition determines if the operand is greater than a supplied value.
-The field value can either be an integer, float, array, or string.
-When the field value is:</p>
+The field value can either be an integer, float, array, or string.</p>
+<ul>
+<li><code>convert</code> - Optionally, perform type conversion on operand type.
+  By default <code>convert</code> is <code>false</code>.</li>
+</ul>
+<p>When the field value is:</p>
 <ul>
 <li>An integer or float, a numerical comparison is used.</li>
 <li>An array, the number of elements is compared.</li>
-<li>A string, the length of the string is compared.</li>
+<li>A string, the length of the string is compared.
+  If <code>convert</code> is <code>true</code>, the string is converted a number instead.</li>
 <li>A DateTime, the number of days from the current time is compared.</li>
 </ul>
 <p>Syntax:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">greater</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span><span class="w"></span>
+<span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
@@ -2582,16 +2588,22 @@ When the field value is:</p>
 </code></pre></div>
 <h3 id="greaterorequals">GreaterOrEquals<a class="headerlink" href="#greaterorequals" title="Permanent link">#</a></h3>
 <p>The <code>greaterOrEquals</code> condition determines if the operand is greater or equal to the supplied value.
-The field value can either be an integer, float, array, or string.
-When the field value is:</p>
+The field value can either be an integer, float, array, or string.</p>
+<ul>
+<li><code>convert</code> - Optionally, perform type conversion on operand type.
+  By default <code>convert</code> is <code>false</code>.</li>
+</ul>
+<p>When the field value is:</p>
 <ul>
 <li>An integer or float, a numerical comparison is used.</li>
 <li>An array, the number of elements is compared.</li>
-<li>A string, the length of the string is compared.</li>
+<li>A string, the length of the string is compared.
+  If <code>convert</code> is <code>true</code>, the string is converted a number instead.</li>
 <li>A DateTime, the number of days from the current time is compared.</li>
 </ul>
 <p>Syntax:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">greaterOrEquals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span><span class="w"></span>
+<span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
@@ -3039,16 +3051,22 @@ The following types are considered numeric types <code>int</code>, <code>long</c
 </code></pre></div>
 <h3 id="less">Less<a class="headerlink" href="#less" title="Permanent link">#</a></h3>
 <p>The <code>less</code> condition determines if the operand is less than a supplied value.
-The field value can either be an integer, float, array, or string.
-When the field value is:</p>
+The field value can either be an integer, float, array, or string.</p>
+<ul>
+<li><code>convert</code> - Optionally, perform type conversion on operand type.
+  By default <code>convert</code> is <code>false</code>.</li>
+</ul>
+<p>When the field value is:</p>
 <ul>
 <li>An integer or float, a numerical comparison is used.</li>
 <li>An array, the number of elements is compared.</li>
-<li>A string, the length of the string is compared.</li>
+<li>A string, the length of the string is compared.
+  If <code>convert</code> is <code>true</code>, the string is converted a number instead.</li>
 <li>A DateTime, the number of days from the current time is compared.</li>
 </ul>
 <p>Syntax:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">less</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span><span class="w"></span>
+<span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
@@ -3073,16 +3091,22 @@ When the field value is:</p>
 </code></pre></div>
 <h3 id="lessorequals">LessOrEquals<a class="headerlink" href="#lessorequals" title="Permanent link">#</a></h3>
 <p>The <code>lessOrEquals</code> condition determines if the operand is less or equal to the supplied value.
-The field value can either be an integer, float, array, or string.
-When the field value is:</p>
+The field value can either be an integer, float, array, or string.</p>
+<ul>
+<li><code>convert</code> - Optionally, perform type conversion on operand type.
+  By default <code>convert</code> is <code>false</code>.</li>
+</ul>
+<p>When the field value is:</p>
 <ul>
 <li>An integer or float, a numerical comparison is used.</li>
 <li>An array, the number of elements is compared.</li>
-<li>A string, the length of the string is compared.</li>
+<li>A string, the length of the string is compared.
+  If <code>convert</code> is <code>true</code>, the string is converted a number instead.</li>
 <li>A DateTime, the number of days from the current time is compared.</li>
 </ul>
 <p>Syntax:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">lessOrEquals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;int&gt;</span><span class="w"></span>
+<span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
 </code></pre></div>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
@@ -3585,7 +3609,7 @@ If the path is not within the required path, the condition will return <code>fal
   <small>
     
       Last update:
-      2022-03-07
+      2022-03-12
     
   </small>
 </div>
