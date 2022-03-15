@@ -1864,6 +1864,7 @@
 <ul>
 <li>YAML resources will require an <code>apiVersion</code> from PSRule v2. <a href="https://github.com/microsoft/PSRule/issues/648">#648</a></li>
 <li>Setting the default module baseline requires a module configuration from PSRule v2. <a href="https://github.com/microsoft/PSRule/issues/809">#809</a></li>
+<li>Resource names have naming restrictions introduced from PSRule v2. <a href="https://github.com/microsoft/PSRule/issues/1012">#1012</a></li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -1877,6 +1878,15 @@
 <li>Type conversion is now supported for <code>less</code>, <code>lessOrEquals</code>, <code>greater</code>, and <code>greaterOrEquals</code>.</li>
 </ul>
 </li>
+<li><strong>Breaking change:</strong> Added validation of resource names. <a href="https://github.com/microsoft/PSRule/issues/1012">#1012</a><ul>
+<li>Invalid rules names will now produce a specific error.</li>
+<li>See <a href="https://microsoft.github.io/PSRule/latest/upgrade-notes/">upgrade notes</a> for more information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bug fixes:<ul>
+<li>Fixed unclear error message on invalid rule names. <a href="https://github.com/microsoft/PSRule/issues/1012">#1012</a></li>
 </ul>
 </li>
 </ul>
@@ -2141,7 +2151,7 @@
   <small>
     
       Last update:
-      2022-03-12
+      2022-03-16
     
   </small>
 </div>

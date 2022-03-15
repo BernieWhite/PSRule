@@ -1070,6 +1070,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#resources-naming-restrictions" class="md-nav__link">
+    Resources naming restrictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setting-default-module-baseline" class="md-nav__link">
     Setting default module baseline
   </a>
@@ -1704,6 +1711,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#resources-naming-restrictions" class="md-nav__link">
+    Resources naming restrictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setting-default-module-baseline" class="md-nav__link">
     Setting default module baseline
   </a>
@@ -1799,6 +1813,39 @@
 <h2 id="upgrading-to-v200">Upgrading to v2.0.0<a class="headerlink" href="#upgrading-to-v200" title="Permanent link">#</a></h2>
 <p>PSRule v2.0.0 is a planned future release.
 It's not yet available, but you can take these steps to proactively prepare for the release.</p>
+<h3 id="resources-naming-restrictions">Resources naming restrictions<a class="headerlink" href="#resources-naming-restrictions" title="Permanent link">#</a></h3>
+<p>When naming resources such as rules or selectors, the following restrictions apply:</p>
+<ul>
+<li><strong>Use between 3 and 128 characters</strong> &mdash; This is the minimum and maximum length of a resource name.</li>
+<li><strong>Only use allowed characters</strong> &mdash;
+  To preserve consistency between file systems, some characters are not permitted.
+  Dots, hyphens, and underscores are not permitted at the start and end of the name.
+  Additionally some characters are restricted for future use.
+  The following characters are not permitted:<ul>
+<li><code>&lt;</code> (less than)</li>
+<li><code>&gt;</code> (greater than)</li>
+<li><code>:</code> (colon)</li>
+<li><code>/</code> (forward slash)</li>
+<li><code>\</code> (backslash)</li>
+<li><code>|</code> (vertical bar or pipe)</li>
+<li><code>?</code> (question mark)</li>
+<li><code>*</code> (asterisk)</li>
+<li><code>"</code> (double quote)</li>
+<li><code>'</code> (single quote)</li>
+<li><code>`</code> (backtick)</li>
+<li><code>+</code> (plus)</li>
+<li><code>@</code> (at sign)</li>
+<li>Integer value zero, sometimes referred to as the ASCII NUL character.</li>
+<li>Characters whose integer representations are in the range from 1 through 31.</li>
+</ul>
+</li>
+</ul>
+<p>Prior to <em>v2.0.0</em>, there was no specific naming restriction for resources.
+However functionally PSRule and downstream components could not support all resource names.
+To avoid confusion, we have decided to restrict resource names to a specific set of characters.</p>
+<p>From <em>v2.0.0</em>, resource names that do not meet the naming restrictions will generate an error.</p>
+<div class="highlight"><span class="filename">Regular expression for valid resource names</span><pre><span></span><code>^[^&lt;&gt;:/\\|?*&quot;&#39;`+@._\-\x00-\x1F][^&lt;&gt;:/\\|?*&quot;&#39;`+@\x00-\x1F]{1,126}[^&lt;&gt;:/\\|?*&quot;&#39;`+@._\-\x00-\x1F]$
+</code></pre></div>
 <h3 id="setting-default-module-baseline">Setting default module baseline<a class="headerlink" href="#setting-default-module-baseline" title="Permanent link">#</a></h3>
 <p>When packaging rules in a module, you can set the default baseline.
 The default baseline from the module will be automatically used unless overridden.</p>
@@ -1823,7 +1870,7 @@ Setting the default baseline from module manifest and has been removed from <em>
 <h3 id="setting-resource-api-version">Setting resource API version<a class="headerlink" href="#setting-resource-api-version" title="Permanent link">#</a></h3>
 <p>When creating YAML and JSON resources you define a resource by specifying the <code>apiVersion</code> and <code>kind</code>.
 An <code>apiVersion</code> was added as a requirement from <em>v1.2.0</em>.
-For compatibility resources without an <code>apiVersion</code> were supported however deprecated for removal in <em>v2.0.0</em>.
+For compatibility, resources without an <code>apiVersion</code> were supported however deprecated for removal.
 This has now been removed from <em>v2.0.0</em>.</p>
 <p>When defining resource specify an <code>apiVersion</code>.
 Currently this must be set to <code>github.com/microsoft/PSRule/v1</code>.</p>
@@ -1865,7 +1912,7 @@ Currently this must be set to <code>github.com/microsoft/PSRule/v1</code>.</p>
 </div>
 <h3 id="change-in-source-file-discovery-for-get-psrulehelp">Change in source file discovery for Get-PSRuleHelp<a class="headerlink" href="#change-in-source-file-discovery-for-get-psrulehelp" title="Permanent link">#</a></h3>
 <p>Previously in PSRule <em>v1.11.0</em> and prior versions, rules would show up twice when running <code>Get-PSRuleHelp</code> in the context of a module and in the same working directory of the module.
-This behavior has no been removed from <em>v2.0.0</em>.</p>
+This behavior has now been removed from <em>v2.0.0</em>.</p>
 <p>Module files are now preferred over loose files, and rules are only shown once in the output.
 Any duplicate rule names from loose files are outputted as a warning instead.</p>
 <p>The old behavior:</p>
@@ -1887,7 +1934,7 @@ Any duplicate rule names from loose files are outputted as a warning instead.</p
 </code></pre></div>
 <h3 id="require-source-discovery-from-current-working-directory-to-be-explicitly-included">Require source discovery from current working directory to be explicitly included<a class="headerlink" href="#require-source-discovery-from-current-working-directory-to-be-explicitly-included" title="Permanent link">#</a></h3>
 <p>Previously in PSRule <em>v1.11.0</em> and prior versions, rule sources from the current working directory without the <code>-Path</code> and <code>-Module</code> parameters were automatically included.
-This behavior has no been removed from <em>v2.0.0</em>.</p>
+This behavior has now been removed from <em>v2.0.0</em>.</p>
 <p>Rules sources in the current working directory are only included if <code>-Path .</code> or <code>-Path $PWD</code> is specified.</p>
 <p>The old behavior:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Set-Location</span> <span class="n">docs</span><span class="p">\</span><span class="n">scenarios</span><span class="p">\</span><span class="n">azure-resources</span>
@@ -1987,7 +2034,7 @@ Rules referencing the deprecated properties of <code>$Rule</code> must be update
   <small>
     
       Last update:
-      2022-01-27
+      2022-03-16
     
   </small>
 </div>

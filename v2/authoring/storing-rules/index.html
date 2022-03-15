@@ -1705,16 +1705,47 @@ For example, <a href="https://aka.ms/ps-rule-azure">PSRule for Azure</a> uses th
 <li><code>Azure.SQL.MinTLS</code></li>
 </ul>
 </div>
-<p>When naming custom rules we recommend that you:</p>
+<p>In addition, names for rules and other resources must meet the following requirements:</p>
+<ul>
+<li><strong>Use between 3 and 128 characters</strong> &mdash; This is the minimum and maximum length of a resource name.</li>
+<li><strong>Only use allowed characters</strong> &mdash;
+  To preserve consistency between file systems, some characters are not permitted.
+  Dots, hyphens, and underscores are not permitted at the start and end of the name.
+  Additionally some characters are restricted for future use.
+  The following characters are not permitted:<ul>
+<li><code>&lt;</code> (less than)</li>
+<li><code>&gt;</code> (greater than)</li>
+<li><code>:</code> (colon)</li>
+<li><code>/</code> (forward slash)</li>
+<li><code>\</code> (backslash)</li>
+<li><code>|</code> (vertical bar or pipe)</li>
+<li><code>?</code> (question mark)</li>
+<li><code>*</code> (asterisk)</li>
+<li><code>"</code> (double quote)</li>
+<li><code>'</code> (single quote)</li>
+<li><code>`</code> (backtick)</li>
+<li><code>+</code> (plus)</li>
+<li><code>@</code> (at sign)</li>
+<li>Integer value zero, sometimes referred to as the ASCII NUL character.</li>
+<li>Characters whose integer representations are in the range from 1 through 31.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><span class="filename">Regular expression for valid resource names</span><pre><span></span><code>^[^&lt;&gt;:/\\|?*&quot;&#39;`+@._\-\x00-\x1F][^&lt;&gt;:/\\|?*&quot;&#39;`+@\x00-\x1F]{1,126}[^&lt;&gt;:/\\|?*&quot;&#39;`+@._\-\x00-\x1F]$
+</code></pre></div>
+<p>When naming rules we recommend that you:</p>
 <ul>
 <li><strong>Use a standard prefix</strong> &mdash; You can use the <code>Local.</code> or <code>Org.</code> prefix for standalone rules.<ul>
 <li>Alternatively choose a short prefix that identifies your organization.</li>
 </ul>
 </li>
 <li><strong>Use dotted notation</strong> &mdash; Use dots to separate rule name.</li>
+<li><strong>Use a maximum length of 35 characters</strong> &mdash;
+  The default view of <code>Invoke-PSRule</code> truncates longer names.
+  PSRule supports longer rule names however if <code>Invoke-PSRule</code> is called directly consider using <code>Format-List</code>.</li>
 <li>
-<p><strong>Use a maximum length of 35 characters</strong> &mdash; The default view of <code>Invoke-PSRule</code> truncates longer names.
-  PSRule supports longer rule names however if <code>Invoke-PSRule</code> is called directly consider using <code>Format-List</code>.</p>
+<p><strong>Avoid using special characters and punctuation</strong> &mdash;
+  Although these characters can be used in many cases, they may not be easy to use with all PSRule features.</p>
 </li>
 </ul>
 
@@ -1723,7 +1754,7 @@ For example, <a href="https://aka.ms/ps-rule-azure">PSRule for Azure</a> uses th
   <small>
     
       Last update:
-      2022-01-03
+      2022-03-16
     
   </small>
 </div>
