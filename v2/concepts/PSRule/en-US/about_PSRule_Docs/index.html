@@ -1444,8 +1444,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#creating-documentation" class="md-nav__link">
-    Creating documentation
+  <a href="#creating-documentation-for-rules" class="md-nav__link">
+    Creating documentation for rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-documentation-for-suppression-groups" class="md-nav__link">
+    Creating documentation for suppression groups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storing-markdown-files" class="md-nav__link">
+    Storing markdown files
   </a>
   
 </li>
@@ -1676,8 +1690,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#creating-documentation" class="md-nav__link">
-    Creating documentation
+  <a href="#creating-documentation-for-rules" class="md-nav__link">
+    Creating documentation for rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-documentation-for-suppression-groups" class="md-nav__link">
+    Creating documentation for suppression groups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storing-markdown-files" class="md-nav__link">
+    Storing markdown files
   </a>
   
 </li>
@@ -1715,8 +1743,10 @@
 <h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">#</a></h1>
 <p>Describes usage of documentation within PSRule.</p>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
-<p>PSRule includes a built-in documentation system that provide culture specific help and metadata for rules.
-Rule documentation is composed of markdown files that can be optionally shipped with a module.</p>
+<p>PSRule includes a built-in documentation system that provide culture specific help and metadata for resources.
+Documentation is composed of markdown files that can be optionally shipped with a module.</p>
+<p>When markdown documentation is defined, this content will be used instead of inline synopsis comments.
+Markdown documentation is supported for rules and suppression groups.</p>
 <h3 id="getting-documentation">Getting documentation<a class="headerlink" href="#getting-documentation" title="Permanent link">#</a></h3>
 <p>To get documentation for a rule use the <code>Get-PSRuleHelp</code> cmdlet.</p>
 <p>For example:</p>
@@ -1738,7 +1768,7 @@ When included, the <code>-Online</code> parameter can be used to open the online
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Get-PSRuleHelp</span> <span class="p">&lt;</span><span class="n">rule-name</span><span class="p">&gt;</span> <span class="n">-Online</span>
 </code></pre></div>
-<h3 id="creating-documentation">Creating documentation<a class="headerlink" href="#creating-documentation" title="Permanent link">#</a></h3>
+<h3 id="creating-documentation-for-rules">Creating documentation for rules<a class="headerlink" href="#creating-documentation-for-rules" title="Permanent link">#</a></h3>
 <p>Rule documentation is composed of markdown files, one per rule.
 When creating rules for more then one culture, a separate markdown file is created per rule per culture.</p>
 <p>The markdown files for each rule is automatically discovered based on naming convention.</p>
@@ -1752,13 +1782,6 @@ The file name should match the same case exactly, with a lower case extension.</
     <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">supportsHttpsTrafficOnly</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>This directory PSRule will look for these markdown files depends on how the rules are packaged:</p>
-<ul>
-<li>If the rules are loose (not part of a module), PSRule will search for documentation in the <code>.\&lt;culture&gt;\</code> subdirectory relative to where the rule script <em>.ps1</em> file is located.</li>
-<li>When the rules are shipped as part of a module, PSRule will search for documentation in the <code>.\&lt;culture&gt;\</code> subdirectory relative to where the module manifest <em>.psd1</em> file is located.</li>
-</ul>
-<p>The <code>&lt;culture&gt;</code> subdirectory will be the current culture that PowerShell is executed under (the same as <code>(Get-Culture).Name</code>).
-Alternatively, the culture can set by using the <code>-Culture</code> parameter of PSRule cmdlets.</p>
 <p>The markdown of each file uses following structure.</p>
 <div class="highlight"><pre><span></span><code>---
 {{ Annotations }}
@@ -1789,6 +1812,32 @@ Alternatively, the culture can set by using the <code>-Culture</code> parameter 
 <p>Optionally, one or more annotations formatted as YAML key value pairs can be included.
 i.e. <code>severity: Critical</code></p>
 <p>Additional sections such as <code>EXAMPLES</code> can be included although are not exposed with <code>Get-PSRuleHelp</code>.</p>
+<h3 id="creating-documentation-for-suppression-groups">Creating documentation for suppression groups<a class="headerlink" href="#creating-documentation-for-suppression-groups" title="Permanent link">#</a></h3>
+<p>Suppression groups support documentation similar to rules that allows a synopsis to be defined.
+Other sections can be added to the markdown content, but are ignored.
+Set the synopsis in markdown to allow a culture specific message to be displayed.</p>
+<p>The markdown of each file uses following structure.</p>
+<div class="highlight"><pre><span></span><code>---
+{{ Annotations }}
+---
+
+# {{ Name of suppression group }}
+
+
+
+{{ A brief summary of the suppression group }}
+</code></pre></div>
+<h3 id="storing-markdown-files">Storing markdown files<a class="headerlink" href="#storing-markdown-files" title="Permanent link">#</a></h3>
+<p>The location PSRule uses to find markdown documentation depends on how the rules/ resources are packaged.
+In each case, documentation will be in a culture <code>/&lt;culture&gt;/</code>specific subdirectory.
+Resources can be either shipped as part of a module, or standalone.</p>
+<ul>
+<li>When resources are standalone, the culture subdirectory is relative to the <code>*.Rule.*</code> file.</li>
+<li>When packaged in a module, the culture subdirectory is relative to the module manifest <code>.psd1</code> file.</li>
+</ul>
+<p>The <code>&lt;culture&gt;</code> subdirectory will be the current culture that PowerShell is executed under.
+To determine the current culture use <code>(Get-Culture).Name</code>.
+Alternatively, the culture can set by using the <code>-Culture</code> parameter of PSRule cmdlets.</p>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/Get-PSRuleHelp/">Get-PSRuleHelp</a></li>
@@ -1799,7 +1848,7 @@ i.e. <code>severity: Critical</code></p>
   <small>
     
       Last update:
-      2022-02-19
+      2022-04-26
     
   </small>
 </div>

@@ -1510,12 +1510,25 @@
     Description
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#defining-suppression-groups" class="md-nav__link">
     Defining suppression groups
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1665,12 +1678,25 @@
     Description
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#defining-suppression-groups" class="md-nav__link">
     Defining suppression groups
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1730,11 +1756,13 @@
 <p>Describes PSRule Suppression Groups including how to use and author them.</p>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
 <p>PSRule executes rules to validate an object from input.
-When an evaluating an object from input, PSRule can use suppression groups to suppress rules based on a <a href="../about_PSRule_Selectors/">Selector</a>.</p>
-<h2 id="defining-suppression-groups">Defining suppression groups<a class="headerlink" href="#defining-suppression-groups" title="Permanent link">#</a></h2>
-<p>Suppression groups can be defined with either YAML or JSON format, and can be included with a module or a standalone <code>.Rule.yaml</code> or <code>.Rule.jsonc</code> file.
-In either case, define a suppression group within a file ending with the <code>.Rule.yaml</code> or <code>.Rule.jsonc</code> extension.
-A suppression group can be defined side-by-side with other resources such as rules, baselines or module configurations.</p>
+When an evaluating each object, PSRule can use suppression groups to suppress rules based on a condition.
+Suppression groups use a <a href="../about_PSRule_Selectors/">Selector</a> to determine if the rule is suppressed.</p>
+<h3 id="defining-suppression-groups">Defining suppression groups<a class="headerlink" href="#defining-suppression-groups" title="Permanent link">#</a></h3>
+<p>Suppression groups can be defined using either YAML or JSON format.
+A suppression group can be in a standalone file or included in a module.
+Define suppression groups in <code>.Rule.yaml</code> or <code>.Rule.jsonc</code> files.
+Each suppression group may be defined individually or side-by-side with resources such as rules or baselines.</p>
 <p>Suppression groups can also be defined within <code>.json</code> files.
 We recommend using <code>.jsonc</code> to view <a href="https://code.visualstudio.com/docs/languages/json#_json-with-comments">JSON with Comments</a> in Visual Studio Code.</p>
 <p>Use the following template to define a suppression group:</p>
@@ -1763,16 +1791,30 @@ We recommend using <code>.jsonc</code> to view <a href="https://code.visualstudi
   }
 ]
 </code></pre></div>
-<p>Within the <code>rule</code> array, one or more rule names can be used.
+<p>Set the <code>synopsis</code> to describe the justification for the suppression.
+Within the <code>rule</code> array, one or more rule names can be used.
 If no rules are specified, suppression will occur for all rules.
 Within the <code>if</code> object, one or more conditions or logical operators can be used.
 When the <code>if</code> condition is <code>true</code> the object will be suppressed for the current rule.</p>
+<h3 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">#</a></h3>
+<p>Suppression groups can be configured with a synopsis.
+When set, the synopsis will be included in output for any suppression warnings that are shown.
+The synopsis helps provide justification for the suppression, in a short single line message.
+To set the synopsis, include a comment above the suppression group <code>apiVersion</code> property.</p>
+<p>Alternatively, a localized synopsis can be provided in a separate markdown file.
+See <a href="../about_PSRule_Docs/">about_PSRule_Docs</a> for details.</p>
+<p>Some examples of a suppression group synopsis include:</p>
+<ul>
+<li><em>Ignore test objects by name.</em></li>
+<li><em>Ignore test objects by type.</em></li>
+<li><em>Ignore objects with non-production tag.</em></li>
+</ul>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
 <h3 id="example-suppressiongroupsruleyaml">Example SuppressionGroups.Rule.yaml<a class="headerlink" href="#example-suppressiongroupsruleyaml" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Example SuppressionGroups.Rule.yaml</span><span class="w"></span>
 
 <span class="nn">---</span><span class="w"></span>
-<span class="c1"># Synopsis: Suppress with target name</span><span class="w"></span>
+<span class="c1"># Synopsis: Ignore test objects by name.</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SuppressionGroup</span><span class="w"></span>
 <span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
@@ -1788,7 +1830,7 @@ When the <code>if</code> condition is <code>true</code> the object will be suppr
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;TestObject2&#39;</span><span class="w"></span>
 
 <span class="nn">---</span><span class="w"></span>
-<span class="c1"># Synopsis: Suppress with target type</span><span class="w"></span>
+<span class="c1"># Synopsis: Ignore test objects by type.</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SuppressionGroup</span><span class="w"></span>
 <span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
@@ -1805,7 +1847,7 @@ When the <code>if</code> condition is <code>true</code> the object will be suppr
 <div class="highlight"><pre><span></span><code>// Example SuppressionGroups.Rule.jsonc
 [
   {
-    // Synopsis: Suppress with target name
+    // Synopsis: Ignore test objects by name.
     &quot;apiVersion&quot;: &quot;github.com/microsoft/PSRule/v1&quot;,
     &quot;kind&quot;: &quot;SuppressionGroup&quot;,
     &quot;metadata&quot;: {
@@ -1826,7 +1868,7 @@ When the <code>if</code> condition is <code>true</code> the object will be suppr
     }
   },
   {
-    // Synopsis: Suppress with target type
+    // Synopsis: Ignore test objects by type.
     &quot;apiVersion&quot;: &quot;github.com/microsoft/PSRule/v1&quot;,
     &quot;kind&quot;: &quot;SuppressionGroup&quot;,
     &quot;metadata&quot;: {
@@ -1855,7 +1897,7 @@ When the <code>if</code> condition is <code>true</code> the object will be suppr
   <small>
     
       Last update:
-      2022-02-19
+      2022-04-26
     
   </small>
 </div>

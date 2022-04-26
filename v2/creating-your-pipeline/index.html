@@ -1718,18 +1718,24 @@ By using validation within a continuous integration (CI) pipeline, any issues pr
 <h3 id="ignoring-rules">Ignoring rules<a class="headerlink" href="#ignoring-rules" title="Permanent link">#</a></h3>
 <p>To prevent a rule executing you can either:</p>
 <ul>
-<li><strong>Exclude</strong> &mdash; The rule is not executed for any resource.</li>
-<li><strong>Suppress</strong> &mdash; The rule is not executed for a specific resource by name.</li>
+<li><strong>Exclude rules by name</strong> &mdash; The rule is not executed for any object.</li>
+<li><strong>Suppress rules by name</strong> &mdash; The rule is not executed for a specific object by name.</li>
+<li><strong>Suppress rules by condition</strong> &mdash; The rule is not executed for matching objects.</li>
 </ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Exclude by name</label><label for="__tabbed_2_2">Suppression by name</label><label for="__tabbed_2_3">Suppression by condition</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>To exclude a rule, set <code>Rule.Exclude</code> option within the <code>ps-rule.yaml</code> file.</p>
 <p><a href="../concepts/PSRule/en-US/about_PSRule_Options/#ruleexclude"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M0 3.75A.75.75 0 0 1 .75 3h7.497c1.566 0 2.945.8 3.751 2.014A4.496 4.496 0 0 1 15.75 3h7.5a.75.75 0 0 1 .75.75v15.063a.75.75 0 0 1-.755.75l-7.682-.052a3 3 0 0 0-2.142.878l-.89.891a.75.75 0 0 1-1.061 0l-.902-.901a3 3 0 0 0-2.121-.879H.75a.75.75 0 0 1-.75-.75v-15zm11.247 3.747a3 3 0 0 0-3-2.997H1.5V18h6.947a4.5 4.5 0 0 1 2.803.98l-.003-11.483zm1.503 11.485V7.5a3 3 0 0 1 3-3h6.75v13.558l-6.927-.047a4.5 4.5 0 0 0-2.823.971z"/></svg></span> Docs</a></p>
 <div class="highlight"><pre><span></span><code><span class="nt">rule</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">exclude</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Ignore the following rules for all resources</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Ignore the following rules for all objects</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Azure.VM.UseHybridUseBenefit</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Azure.VM.Standalone</span><span class="w"></span>
 </code></pre></div>
-<p>To suppress a rule, set <code>Suppression</code> option within the <code>ps-rule.yaml</code> file.</p>
+</div>
+<div class="tabbed-block">
+<p>To suppress an individual rule, set <code>Suppression</code> option within the <code>ps-rule.yaml</code> file.</p>
 <p><a href="../concepts/PSRule/en-US/about_PSRule_Options/#suppression"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M0 3.75A.75.75 0 0 1 .75 3h7.497c1.566 0 2.945.8 3.751 2.014A4.496 4.496 0 0 1 15.75 3h7.5a.75.75 0 0 1 .75.75v15.063a.75.75 0 0 1-.755.75l-7.682-.052a3 3 0 0 0-2.142.878l-.89.891a.75.75 0 0 1-1.061 0l-.902-.901a3 3 0 0 0-2.121-.879H.75a.75.75 0 0 1-.75-.75v-15zm11.247 3.747a3 3 0 0 0-3-2.997H1.5V18h6.947a4.5 4.5 0 0 1 2.803.98l-.003-11.483zm1.503 11.485V7.5a3 3 0 0 1 3-3h6.75v13.558l-6.927-.047a4.5 4.5 0 0 0-2.823.971z"/></svg></span> Docs</a></p>
 <div class="highlight"><pre><span></span><code><span class="nt">suppression</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">Azure.AKS.AuthorizedIPs</span><span class="p">:</span><span class="w"></span>
@@ -1740,6 +1746,29 @@ By using validation within a continuous integration (CI) pipeline, any issues pr
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storagedeveus6jo36t</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storagedeveus1df278</span><span class="w"></span>
 </code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>To suppress an rules by condition, create a suppression group.</p>
+<p><a href="../concepts/PSRule/en-US/about_PSRule_SuppressionGroups/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M0 3.75A.75.75 0 0 1 .75 3h7.497c1.566 0 2.945.8 3.751 2.014A4.496 4.496 0 0 1 15.75 3h7.5a.75.75 0 0 1 .75.75v15.063a.75.75 0 0 1-.755.75l-7.682-.052a3 3 0 0 0-2.142.878l-.89.891a.75.75 0 0 1-1.061 0l-.902-.901a3 3 0 0 0-2.121-.879H.75a.75.75 0 0 1-.75-.75v-15zm11.247 3.747a3 3 0 0 0-3-2.997H1.5V18h6.947a4.5 4.5 0 0 1 2.803.98l-.003-11.483zm1.503 11.485V7.5a3 3 0 0 1 3-3h6.75v13.558l-6.927-.047a4.5 4.5 0 0 0-2.823.971z"/></svg></span> Docs</a></p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: Ignore test objects by name.</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SuppressionGroup</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SuppressWithTargetName</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">rule</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;FromFile1&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;FromFile2&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">in</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;TestObject1&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;TestObject2&#39;</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Use comments within <code>ps-rule.yaml</code> to describe the reason why rules are excluded or suppressed.
@@ -1752,7 +1781,7 @@ Also consider including a date if the exclusions or suppressions are temporary.<
   <small>
     
       Last update:
-      2022-03-25
+      2022-04-26
     
   </small>
 </div>
