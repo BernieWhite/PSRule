@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/deprecations/">
       
       <link rel="icon" href="../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
@@ -1090,6 +1090,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#language-block-interface" class="md-nav__link">
+    Language block interface
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1676,6 +1683,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#language-block-interface" class="md-nav__link">
+    Language block interface
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1735,14 +1749,33 @@ Previously rules returned by <code>Get-PSRule</code> returned a rule object whic
 <li><code>RuleId</code></li>
 <li><code>RuleName</code></li>
 <li><code>Description</code></li>
+<li><code>ModuleName</code></li>
+<li><code>SourcePath</code></li>
 </ul>
 <p>These have been replaced with the following properties:</p>
 <ul>
 <li><code>Id</code> instead of <code>RuleId</code>.</li>
 <li><code>Name</code> instead of <code>RuleName</code>.</li>
 <li><code>Synopsis</code> instead of <code>Description</code>.</li>
+<li><code>Source.Module</code> instead of <code>ModuleName</code>.</li>
+<li><code>Source.Path</code> instead of <code>SourcePath</code>.</li>
 </ul>
-<p>The changes apply from <em>v2</em>, however the old properties are still available for backwards compatibility.
+<p>The changes apply from <em>v2.1.0</em>, however the old properties are still available for backwards compatibility.
+From <em>v3</em> these properties will be removed.
+These changes do not affect normal usage of PSRule.
+Supporting scripts that directly use the old names may not work correctly until you update these names.</p>
+<h3 id="language-block-interface">Language block interface<a class="headerlink" href="#language-block-interface" title="Permanent link">#</a></h3>
+<p>Several properties of Baselines and Selectors have been renamed to improve consistency.</p>
+<ul>
+<li><code>ModuleName</code></li>
+<li><code>SourcePath</code></li>
+</ul>
+<p>These have been replaced with the following properties:</p>
+<ul>
+<li><code>Source.Module</code> instead of <code>ModuleName</code>.</li>
+<li><code>Source.Path</code> instead of <code>SourcePath</code>.</li>
+</ul>
+<p>The changes apply from <em>v2.1.0</em>, however the old properties are still available for backwards compatibility.
 From <em>v3</em> these properties will be removed.
 These changes do not affect normal usage of PSRule.
 Supporting scripts that directly use the old names may not work correctly until you update these names.</p>
@@ -1765,7 +1798,7 @@ From <em>v2</em> resources without an <code>apiVersion</code> will be ignored.</
   <small>
     
       Last update:
-      2022-03-14
+      2022-04-19
     
   </small>
 </div>
@@ -1850,7 +1883,7 @@ From <em>v2</em> resources without an <code>apiVersion</code> will be ignored.</
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
       
     
   </body>
