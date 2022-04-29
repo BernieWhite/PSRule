@@ -1612,6 +1612,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#like" class="md-nav__link">
+    Like
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#match" class="md-nav__link">
     Match
   </a>
@@ -1633,6 +1640,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#notcontains" class="md-nav__link">
+    NotContains
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notendswith" class="md-nav__link">
+    NotEndsWith
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#notequals" class="md-nav__link">
     NotEquals
   </a>
@@ -1647,8 +1668,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#notlike" class="md-nav__link">
+    NotLike
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#notmatch" class="md-nav__link">
     NotMatch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notstartswith" class="md-nav__link">
+    NotStartsWith
   </a>
   
 </li>
@@ -2075,6 +2110,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#like" class="md-nav__link">
+    Like
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#match" class="md-nav__link">
     Match
   </a>
@@ -2096,6 +2138,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#notcontains" class="md-nav__link">
+    NotContains
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notendswith" class="md-nav__link">
+    NotEndsWith
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#notequals" class="md-nav__link">
     NotEquals
   </a>
@@ -2110,8 +2166,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#notlike" class="md-nav__link">
+    NotLike
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#notmatch" class="md-nav__link">
     NotMatch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notstartswith" class="md-nav__link">
+    NotStartsWith
   </a>
   
 </li>
@@ -2230,10 +2300,15 @@ Expressions are comprised of nested conditions, operators, and comparison proper
 <li><a href="#isupper">IsUpper</a></li>
 <li><a href="#less">Less</a></li>
 <li><a href="#lessorequals">LessOrEquals</a></li>
+<li><a href="#like">Like</a></li>
 <li><a href="#match">Match</a></li>
+<li><a href="#notcontains">NotContains</a></li>
+<li><a href="#notendswith">NotEndsWith</a></li>
 <li><a href="#notequals">NotEquals</a></li>
 <li><a href="#notin">NotIn</a></li>
+<li><a href="#notlike">NotLike</a></li>
 <li><a href="#notmatch">NotMatch</a></li>
+<li><a href="#notstartswith">NotStartsWith</a></li>
 <li><a href="#notwithinpath">NotWithinPath</a></li>
 <li><a href="#setof">SetOf</a></li>
 <li><a href="#startswith">StartsWith</a></li>
@@ -3129,6 +3204,54 @@ The field value can either be an integer, float, array, or string.</p>
 <span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">lessOrEquals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
 </code></pre></div>
+<h3 id="like">Like<a class="headerlink" href="#like" title="Permanent link">#</a></h3>
+<p>The <code>like</code> condition can be used to determine if the operand matches a wildcard pattern.
+One or more patterns to compare can be specified.</p>
+<ul>
+<li><code>caseSensitive</code> - Optionally, a case sensitive-comparison can be performed.
+  By default, case-insensitive comparison is performed.</li>
+<li><code>convert</code> - Optionally, types can be converted to string type.
+  By default <code>convert</code> is <code>false</code>.</li>
+</ul>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">like</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | array&gt;</span><span class="w"></span>
+<span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
+<span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>If the operand is a field, and the field does not exist, <em>like</em> always returns <code>false</code>.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleLike&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">like</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;http://*&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">like</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;http://*&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;https://*&#39;</span><span class="w"></span>
+
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleLike&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">like</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;http://*&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">like</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;http://*&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;https://*&#39;</span><span class="w"></span>
+</code></pre></div>
 <h3 id="match">Match<a class="headerlink" href="#match" title="Permanent link">#</a></h3>
 <p>The <code>match</code> condition can be used to compare if a field matches a supplied regular expression.</p>
 <p>Syntax:</p>
@@ -3217,6 +3340,104 @@ When a nested expression does not match, <code>not</code> matches.</p>
 <span class="w">      </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;AlternativeName&#39;</span><span class="w"></span>
 <span class="w">      </span><span class="nt">exists</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
+<h3 id="notcontains">NotContains<a class="headerlink" href="#notcontains" title="Permanent link">#</a></h3>
+<p>The <code>notContains</code> condition can be used to determine if the operand contains a specified sub-string.
+This condition fails when any of the specified sub-strings are found in the operand.
+One or more strings to compare can be specified.</p>
+<ul>
+<li><code>caseSensitive</code> - Optionally, a case sensitive-comparison can be performed.
+  By default, case-insensitive comparison is performed.</li>
+<li><code>convert</code> - Optionally, types can be converted to string type.
+  By default <code>convert</code> is <code>false</code>.</li>
+</ul>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">notContains</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | array&gt;</span><span class="w"></span>
+<span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
+<span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>If the operand is a field, and the field does not exist, <em>notContains</em> always returns <code>false</code>.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleNotContains&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notContains</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/azure/&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notContains</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;github.io&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;github.com&#39;</span><span class="w"></span>
+
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleNotContains&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notContains</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/azure/&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notContains</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;github.io&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;github.com&#39;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="notendswith">NotEndsWith<a class="headerlink" href="#notendswith" title="Permanent link">#</a></h3>
+<p>The <code>notEndsWith</code> condition can be used to determine if the operand ends with a specified string.
+This condition fails when any of the specified sub-strings are found at the end of the operand.
+One or more strings to compare can be specified.</p>
+<ul>
+<li><code>caseSensitive</code> - Optionally, a case sensitive-comparison can be performed.
+  By default, case-insensitive comparison is performed.</li>
+<li><code>convert</code> - Optionally, types can be converted to string type.
+  By default <code>convert</code> is <code>false</code>.</li>
+</ul>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">notEndsWith</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | array&gt;</span><span class="w"></span>
+<span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
+<span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>If the operand is a field, and the field does not exist, <em>notEndsWith</em> always returns <code>false</code>.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleNotEndsWith&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;hostname&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notEndsWith</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.com&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;hostname&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notEndsWith</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;.com.au&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;.com&#39;</span><span class="w"></span>
+
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleNotEndsWith&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;hostname&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notEndsWith</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.com&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;hostname&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notEndsWith</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;.com.au&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;.com&#39;</span><span class="w"></span>
+</code></pre></div>
 <h3 id="notequals">NotEquals<a class="headerlink" href="#notequals" title="Permanent link">#</a></h3>
 <p>The <code>notEquals</code> condition can be used to compare if a field is equal to a supplied value.</p>
 <ul>
@@ -3282,6 +3503,55 @@ When a nested expression does not match, <code>not</code> matches.</p>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Value1&#39;</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Value2&#39;</span><span class="w"></span>
 </code></pre></div>
+<h3 id="notlike">NotLike<a class="headerlink" href="#notlike" title="Permanent link">#</a></h3>
+<p>The <code>notLike</code> condition can be used to determine if the operand matches a wildcard pattern.
+This condition fails when any of the specified patterns match the operand.
+One or more patterns to compare can be specified.</p>
+<ul>
+<li><code>caseSensitive</code> - Optionally, a case sensitive-comparison can be performed.
+  By default, case-insensitive comparison is performed.</li>
+<li><code>convert</code> - Optionally, types can be converted to string type.
+  By default <code>convert</code> is <code>false</code>.</li>
+</ul>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">notLike</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | array&gt;</span><span class="w"></span>
+<span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
+<span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>If the operand is a field, and the field does not exist, <em>notLike</em> always returns <code>false</code>.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleNotLike&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notLike</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;http://*&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notLike</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;http://&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;https://&#39;</span><span class="w"></span>
+
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleNotLike&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notLike</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;http://*&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notLike</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;http://&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;https://&#39;</span><span class="w"></span>
+</code></pre></div>
 <h3 id="notmatch">NotMatch<a class="headerlink" href="#notmatch" title="Permanent link">#</a></h3>
 <p>The <code>notMatch</code> condition can be used to compare if a field does not matches a supplied regular expression.</p>
 <p>Syntax:</p>
@@ -3307,6 +3577,55 @@ When a nested expression does not match, <code>not</code> matches.</p>
 <span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Name&#39;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">notMatch</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$(abc|efg)$&#39;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="notstartswith">NotStartsWith<a class="headerlink" href="#notstartswith" title="Permanent link">#</a></h3>
+<p>The <code>notStartsWith</code> condition can be used to determine if the operand starts with a specified string.
+This condition fails when any of the specified sub-strings are found at the start of the operand.
+One or more strings to compare can be specified.</p>
+<ul>
+<li><code>caseSensitive</code> - Optionally, a case sensitive-comparison can be performed.
+  By default, case-insensitive comparison is performed.</li>
+<li><code>convert</code> - Optionally, types can be converted to string type.
+  By default <code>convert</code> is <code>false</code>.</li>
+</ul>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">notStartsWith</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string | array&gt;</span><span class="w"></span>
+<span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
+<span class="nt">convert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>If the operand is a field, and the field does not exist, <em>notStartsWith</em> always returns <code>false</code>.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleNotStartsWith&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notStartsWith</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;http&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notStartsWith</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;http://&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;https://&#39;</span><span class="w"></span>
+
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleNotStartsWith&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">anyOf</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notStartsWith</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;http&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;url&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notStartsWith</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;http://&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;https://&#39;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="notwithinpath">NotWithinPath<a class="headerlink" href="#notwithinpath" title="Permanent link">#</a></h3>
 <p>The <code>notWithinPath</code> condition determines if a file path is not within a required path.</p>
@@ -3609,7 +3928,7 @@ If the path is not within the required path, the condition will return <code>fal
   <small>
     
       Last update:
-      2022-03-12
+      2022-04-30
     
   </small>
 </div>

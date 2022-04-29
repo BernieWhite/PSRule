@@ -1556,8 +1556,29 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#like" class="md-nav__link">
+    Like
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#match" class="md-nav__link">
     Match
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notcontains" class="md-nav__link">
+    NotContains
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notendswith" class="md-nav__link">
+    NotEndsWith
   </a>
   
 </li>
@@ -1577,6 +1598,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#notlike" class="md-nav__link">
+    NotLike
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#notmatch" class="md-nav__link">
     NotMatch
   </a>
@@ -1586,6 +1614,13 @@
           <li class="md-nav__item">
   <a href="#notnull" class="md-nav__link">
     NotNull
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notstartswith" class="md-nav__link">
+    NotStartsWith
   </a>
   
 </li>
@@ -2131,8 +2166,29 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#like" class="md-nav__link">
+    Like
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#match" class="md-nav__link">
     Match
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notcontains" class="md-nav__link">
+    NotContains
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notendswith" class="md-nav__link">
+    NotEndsWith
   </a>
   
 </li>
@@ -2152,6 +2208,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#notlike" class="md-nav__link">
+    NotLike
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#notmatch" class="md-nav__link">
     NotMatch
   </a>
@@ -2161,6 +2224,13 @@
           <li class="md-nav__item">
   <a href="#notnull" class="md-nav__link">
     NotNull
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notstartswith" class="md-nav__link">
+    NotStartsWith
   </a>
   
 </li>
@@ -2318,11 +2388,16 @@ The <code>$Assert</code> object provides a consistent set of methods to evaluate
 <li><a href="#jsonschema">JsonSchema</a> - The object must validate successfully against a JSON schema.</li>
 <li><a href="#less">Less</a> - The field value must be less.</li>
 <li><a href="#lessorequal">LessOrEqual</a> - The field value must be less or equal to.</li>
+<li><a href="#like">Like</a> - The value must match any of the specified wildcard values.</li>
 <li><a href="#match">Match</a> - The field value matches a regular expression pattern.</li>
+<li><a href="#notcontains">NotContains</a> - The value must not contain any of the specified strings.</li>
+<li><a href="#notendswith">NotEndsWith</a> - The value must not end with any of the specified strings.</li>
 <li><a href="#nothasfield">NotHasField</a> - The object must not have any of the specified fields.</li>
 <li><a href="#notin">NotIn</a> - The field value must not be included in the set.</li>
+<li><a href="#notlike">NotLike</a> - The value must not match any of the specified wildcard values.</li>
 <li><a href="#notmatch">NotMatch</a> - The field value does not match a regular expression pattern.</li>
 <li><a href="#notnull">NotNull</a> - The field value must not be null.</li>
+<li><a href="#notstartswith">NotStartsWith</a> - The value must not start with any of the specified strings.</li>
 <li><a href="#notwithinpath">NotWithinPath</a> - The field must not be within the specified path.</li>
 <li><a href="#null">Null</a> - The field value must not exist or be null.</li>
 <li><a href="#nullorempty">NullOrEmpty</a> - The object must not have the specified field or it must be empty.</li>
@@ -3064,6 +3139,35 @@ By default the string length is compared.</li>
     <span class="nv">$Assert</span><span class="p">.</span><span class="n">LessOrEqual</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">3</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
+<h3 id="like">Like<a class="headerlink" href="#like" title="Permanent link">#</a></h3>
+<p>The <code>Like</code> assertion method checks the field value matches a specified pattern.
+Optionally a case-sensitive compare can be used, however case is ignored by default.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+<li><code>pattern</code> - A pattern or an array of patterns to compare the field value with.
+Only one pattern must match.
+When an empty array of patterns is specified, <code>Like</code> always passes.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field value.
+Case is ignored by default.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The parameter 'prefix' is null.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The field value '{0}' is not a string.</em></li>
+<li><em>The value '{0}' is not like '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Like&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Like</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;rg-*&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Like</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;st*&#39;</span><span class="p">,</span> <span class="s1">&#39;diag*&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="match">Match<a class="headerlink" href="#match" title="Permanent link">#</a></h3>
 <p>The <code>Match</code> assertion method checks the field value matches a regular expression pattern.</p>
 <p>The following parameters are accepted:</p>
@@ -3086,6 +3190,62 @@ Case is ignored by default.</li>
 <div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Match&#39;</span> <span class="p">{</span>
     <span class="nv">$Assert</span><span class="p">.</span><span class="n">Match</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;^[a-z]*$&#39;</span><span class="p">)</span>
     <span class="nv">$Assert</span><span class="p">.</span><span class="n">Match</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;^[a-z]*$&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="notcontains">NotContains<a class="headerlink" href="#notcontains" title="Permanent link">#</a></h3>
+<p>The <code>NotContains</code> assertion method checks the field value contains the specified string.
+This condition fails when any of the specified sub-strings are found.
+Optionally a case-sensitive compare can be used, however case is ignored by default.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+<li><code>text</code> - A string or an array of strings to compare the field value with.
+When an empty array of strings is specified or text is an empty string, <code>NotContains</code> always passes.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field value.
+Case is ignored by default.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The parameter 'text' is null.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The value '{0}' contains '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotContains&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotContains</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;prod&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotContains</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;prod&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="notendswith">NotEndsWith<a class="headerlink" href="#notendswith" title="Permanent link">#</a></h3>
+<p>The <code>NotEndsWith</code> assertion method checks the field value ends with the specified suffix.
+This condition fails when any of the specified sub-strings are found at the end of the operand.
+Optionally a case-sensitive compare can be used, however case is ignored by default.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+<li><code>suffix</code> - A suffix or an array of suffixes to compare the field value with.
+When an empty array of suffixes is specified or suffix is an empty string, <code>NotEndsWith</code> always passes.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field value.
+Case is ignored by default.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The parameter 'suffix' is null.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The value '{0}' ends with '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotEndsWith&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotEndsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;eus&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotEndsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="s1">&#39;web&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="nothasfield">NotHasField<a class="headerlink" href="#nothasfield" title="Permanent link">#</a></h3>
@@ -3139,6 +3299,34 @@ Case is ignored by default.</li>
     <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotIn</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Sku.tier&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;Free&#39;</span><span class="p">,</span> <span class="s1">&#39;Shared&#39;</span><span class="p">,</span> <span class="s1">&#39;Basic&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
+<h3 id="notlike">NotLike<a class="headerlink" href="#notlike" title="Permanent link">#</a></h3>
+<p>The <code>NotLike</code> assertion method checks the field value matches a specified pattern.
+This condition fails when any of the specified patterns match the field value.
+Optionally a case-sensitive compare can be used, however case is ignored by default.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+<li><code>pattern</code> - A pattern or an array of patterns to compare the field value with.
+When an empty array of pattens is specified, <code>NotLike</code> always passes.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field value.
+Case is ignored by default.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The parameter 'prefix' is null.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The value '{0}' is like '{1}'</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotLike&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotLike</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;rg-*&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotLike</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;st*&#39;</span><span class="p">,</span> <span class="s1">&#39;diag*&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="notmatch">NotMatch<a class="headerlink" href="#notmatch" title="Permanent link">#</a></h3>
 <p>The <code>NotMatch</code> assertion method checks the field value does not match a regular expression pattern.
 If the field does not exist at all, it does not match and passes.
@@ -3183,6 +3371,34 @@ This is a case insensitive compare.</li>
 <div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotNull&#39;</span> <span class="p">{</span>
     <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotNull</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
     <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotNull</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="notstartswith">NotStartsWith<a class="headerlink" href="#notstartswith" title="Permanent link">#</a></h3>
+<p>The <code>NotStartsWith</code> assertion method checks the field value starts with the specified prefix.
+This condition fails when any of the specified sub-strings are found at the start of the operand.
+Optionally a case-sensitive compare can be used, however case is ignored by default.</p>
+<p>The following parameters are accepted:</p>
+<ul>
+<li><code>inputObject</code> - The object being checked for the specified field.</li>
+<li><code>field</code> - The name of the field to check.
+This is a case insensitive compare.</li>
+<li><code>prefix</code> - A prefix or an array of prefixes to compare the field value with.
+When an empty array of prefixes is specified or prefix is an empty string, <code>NotStartsWith</code> always passes.</li>
+<li><code>caseSensitive</code> (optional) - Use a case sensitive compare of the field value.
+Case is ignored by default.</li>
+</ul>
+<p>Reasons include:</p>
+<ul>
+<li><em>The parameter 'inputObject' is null.</em></li>
+<li><em>The parameter 'field' is null or empty.</em></li>
+<li><em>The parameter 'prefix' is null.</em></li>
+<li><em>The field '{0}' does not exist.</em></li>
+<li><em>The value '{0}' starts with '{1}'.</em></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotStartsWith&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotStartsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;rg-&#39;</span><span class="p">)</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotStartsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;st&#39;</span><span class="p">,</span> <span class="s1">&#39;diag&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="notwithinpath">NotWithinPath<a class="headerlink" href="#notwithinpath" title="Permanent link">#</a></h3>
@@ -3666,7 +3882,7 @@ If a <code>_PSRule</code> property exists with <code>issue</code> sub-property P
   <small>
     
       Last update:
-      2022-03-07
+      2022-04-30
     
   </small>
 </div>
