@@ -1022,6 +1022,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#v210" class="md-nav__link">
+    v2.1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v210-b0069-pre-release" class="md-nav__link">
     v2.1.0-B0069 (pre-release)
   </a>
@@ -1778,6 +1785,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#v210" class="md-nav__link">
+    v2.1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v210-b0069-pre-release" class="md-nav__link">
     v2.1.0-B0069 (pre-release)
   </a>
@@ -1952,6 +1966,46 @@
 </li>
 </ul>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
+<h2 id="v210">v2.1.0<a class="headerlink" href="#v210" title="Permanent link">#</a></h2>
+<p>What's changed since v2.0.1:</p>
+<ul>
+<li>General improvements:<ul>
+<li>Added <code>notStartsWith</code>, <code>notEndsWith</code>, and <code>notContains</code> expressions and assertion helpers. <a href="https://github.com/microsoft/PSRule/issues/1047">#1047</a></li>
+<li>Added <code>like</code>, <code>notLike</code> expressions and assertion helpers. <a href="https://github.com/microsoft/PSRule/issues/1048">#1048</a></li>
+<li>Added additional repository paths to ignore by default. <a href="https://github.com/microsoft/PSRule/issues/1043">#1043</a></li>
+<li>Added custom suppression message during PSRule runs. <a href="https://github.com/microsoft/PSRule/issues/1046">#1046</a><ul>
+<li>When a rule is suppressed using a suppression group the synopsis is shown in the suppression warning.</li>
+<li>Configure the suppression group synopsis to display a custom message.</li>
+<li>Suppression groups synopsis can be localized using markdown documentation.</li>
+<li>Use markdown to set a culture specific synopsis.</li>
+<li>Custom suppression messages are not supported when suppressing individual rules using <code>ps-rule.yaml</code>.</li>
+<li>See <a href="../concepts/PSRule/en-US/about_PSRule_SuppressionGroups/">about_PSRule_SuppressionGroups</a> for details.</li>
+</ul>
+</li>
+<li>Added source support for string conditions. <a href="https://github.com/microsoft/PSRule/issues/1068">#1068</a></li>
+</ul>
+</li>
+<li>Engineering:<ul>
+<li>Added code signing of module. <a href="https://github.com/microsoft/PSRule/issues/1049">#1049</a></li>
+<li>Added SBOM manifests to module. <a href="https://github.com/microsoft/PSRule/issues/1050">#1050</a></li>
+<li>Bump Sarif.Sdk to 2.4.15. <a href="https://github.com/microsoft/PSRule/pull/1075">#1075</a></li>
+<li>Bump Pester to 5.3.2. <a href="https://github.com/microsoft/PSRule/pull/1062">#1062</a></li>
+</ul>
+</li>
+<li>Bug fixes:<ul>
+<li><strong>Important change:</strong> Fixed source scope not updated in multi-module runs. <a href="https://github.com/microsoft/PSRule/issues/1053">#1053</a><ul>
+<li>Several properties of rule and language block elements have been renamed to improve consistency.</li>
+<li>From <em>v3</em> custom scripts may not work correctly until you update these names.</li>
+<li>For details on the updated property names see <a href="https://microsoft.github.io/PSRule/latest/deprecations/#deprecations-for-v3">deprecations</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>What's changed since pre-release v2.1.0-B0069:</p>
+<ul>
+<li>No additional changes.</li>
+</ul>
 <h2 id="v210-b0069-pre-release">v2.1.0-B0069 (pre-release)<a class="headerlink" href="#v210-b0069-pre-release" title="Permanent link">#</a></h2>
 <p>What's changed since pre-release v2.1.0-B0040:</p>
 <ul>
@@ -2455,7 +2509,7 @@
   <small>
     
       Last update:
-      2022-05-01
+      2022-05-03
     
   </small>
 </div>
