@@ -2,8 +2,8 @@
 # Licensed under the MIT License.
 
 # Install PSRule module
-if ($Null -eq (Get-InstalledModule -Name PSRule -MinimumVersion '0.12.0' -ErrorAction SilentlyContinue)) {
-    Install-Module -Name PSRule -Scope CurrentUser -MinimumVersion '0.12.0' -Force;
+if ($Null -eq (Get-InstalledModule -Name PSRule -MinimumVersion '2.1.0' -ErrorAction SilentlyContinue)) {
+    Install-Module -Name PSRule -Scope CurrentUser -MinimumVersion '2.1.0' -Force;
 }
 
 # Validate files

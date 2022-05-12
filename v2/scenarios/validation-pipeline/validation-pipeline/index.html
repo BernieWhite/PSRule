@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/scenarios/validation-pipeline/validation-pipeline/">
       
       <link rel="icon" href="../../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.14">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.e411adfe.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3de6f41f.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.cc9b2e1e.min.css">
@@ -1906,8 +1906,8 @@ The NuGet package provider can be installed using the <code>Install-PackageProvi
     <span class="nb">Install-Module</span> <span class="n">PowerShellGet</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.2.1&#39;</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span> <span class="n">-AllowClobber</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-InstalledModule</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;0.12.0&#39;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;0.12.0&#39;</span> <span class="n">-Force</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-InstalledModule</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-Force</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>See the <a href="https://github.com/Microsoft/PSRule/blob/main/CHANGELOG.md">change log</a> for the latest version.</p>
@@ -2010,8 +2010,8 @@ Using a common format allows integration with any system that supports the NUnit
 </code></pre></div>
 <h3 id="validate-files">Validate files<a class="headerlink" href="#validate-files" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c"># Install PSRule module</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-InstalledModule</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;0.12.0&#39;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;0.12.0&#39;</span> <span class="n">-Force</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-InstalledModule</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-Force</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c"># Validate files</span>
@@ -2053,8 +2053,8 @@ Within Invoke-Build, each build process is broken into tasks.</p>
 <p>The following example shows an example of using PSRule with Invoke-Build tasks.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Install PSRule</span>
 <span class="n">task</span> <span class="n">PSRule</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-InstalledModule</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;0.12.0&#39;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;0.12.0&#39;</span> <span class="n">-Force</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-InstalledModule</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-Force</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
@@ -2111,7 +2111,7 @@ By using <code>-If</code> or <code>-Type</code> pre-conditions, rules can dynami
   <small>
     
       Last update:
-      2020-07-22
+      2022-05-08
     
   </small>
 </div>
@@ -2196,7 +2196,7 @@ By using <code>-If</code> or <code>-Type</code> pre-conditions, rules can dynami
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.ed9748b7.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c2e1ee47.min.js"></script>
       
     
   </body>
