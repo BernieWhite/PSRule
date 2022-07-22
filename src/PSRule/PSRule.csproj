@@ -23,7 +23,7 @@
     </PackageReference>
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" PrivateAssets="All" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Sarif.Sdk" Version="2.4.15" />
+    <PackageReference Include="Sarif.Sdk" Version="2.4.16" />
     <PackageReference Include="YamlDotNet" Version="11.2.1" />
   </ItemGroup>
 
