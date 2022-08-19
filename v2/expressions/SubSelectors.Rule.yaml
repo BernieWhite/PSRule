@@ -1,0 +1,25 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+
+#
+# YAML-based rules for documentation
+#
+
+---
+# Synopsis: 
+apiVersion: github.com/microsoft/PSRule/v1
+kind: Rule
+metadata:
+  name: aaa
+spec:
+  condition:
+    anyOf:
+      - field: resourecs
+        where:
+          field: type
+          equals: a
+        allOf:
+        - field: properties.detailedErrorLoggingEnabled
+          equals: true
+        - field: properties.httpLoggingEnabled
+          equals: true
