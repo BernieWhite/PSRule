@@ -61,10 +61,15 @@
     
   
 
+  <!-- Determine description -->
+  
+  
+
   <!-- The image needs to have an absolute URL -->
   
 
   <!-- Open graph meta tags -->
+  <meta property="og:site_name" content="PSRule" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="PSRule - Sub-selectors" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
@@ -1951,7 +1956,7 @@ Properties that contain a list of items may contain a sub-set of items that you 
 <h3 id="when-there-are-no-results">When there are no results<a class="headerlink" href="#when-there-are-no-results" title="Permanent link">#</a></h3>
 <p>Given the example, is important to understand what happens if:</p>
 <ul>
-<li>The <code>resources</code> property doesn't exist.</li>
+<li>The <code>resources</code> property doesn't exist. <strong>OR</strong></li>
 <li>The <code>resources</code> property doesn't contain any items that match the sub-selector condition.</li>
 </ul>
 <p>In either of these two cases, the sub-selector will return <code>false</code> and fail the rule.

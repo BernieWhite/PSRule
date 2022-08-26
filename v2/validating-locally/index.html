@@ -61,10 +61,15 @@
     
   
 
+  <!-- Determine description -->
+  
+  
+
   <!-- The image needs to have an absolute URL -->
   
 
   <!-- Open graph meta tags -->
+  <meta property="og:site_name" content="PSRule" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="PSRule - Validating locally" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
@@ -752,6 +757,19 @@
   <a href="#with-visual-studio-code" class="md-nav__link">
     With Visual Studio Code
   </a>
+  
+    <nav class="md-nav" aria-label="With Visual Studio Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-the-task" class="md-nav__link">
+    Customizing the task
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1710,6 +1728,19 @@
     With Visual Studio Code
   </a>
   
+    <nav class="md-nav" aria-label="With Visual Studio Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-the-task" class="md-nav__link">
+    Customizing the task
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1731,22 +1762,28 @@
 
 
 <h1 id="validating-locally">Validating locally<a class="headerlink" href="#validating-locally" title="Permanent link">#</a></h1>
-<p>PSRule can be installed locally on MacOS, Linux, and Windows for local validation.</p>
+<p>PSRule can be installed locally on MacOS, Linux, and Windows for local validation.
+This allows you to test Infrastructure as Code (IaC) artifacts before pushing changes to a repository.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you haven't already, follow the instructions on <a href="../install-instructions/#installinglocally">installing locally</a> before continuing.</p>
+<p>If you haven't already, follow the instructions on <a href="../install-instructions/#installing-locally">installing locally</a> before continuing.</p>
 </div>
 <h2 id="with-visual-studio-code">With Visual Studio Code<a class="headerlink" href="#with-visual-studio-code" title="Permanent link">#</a></h2>
 <p><a href="https://marketplace.visualstudio.com/items?itemName=bewhite.psrule-vscode"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.97 11.03a.75.75 0 1 1 1.06-1.06L11 14.94V2.75a.75.75 0 0 1 1.5 0v12.19l4.97-4.97a.75.75 0 1 1 1.06 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0l-6.25-6.25zm-.22 9.47a.75.75 0 0 0 0 1.5h14.5a.75.75 0 0 0 0-1.5H4.75z"/></svg></span> Extension</a></p>
 <p>An extension for Visual Studio Code is available for an integrated experience using PSRule.
-The Visual Studio Code extension includes a built-in <code>PSRule: Run analysis</code> task.</p>
+The Visual Studio Code extension includes a built-in task <em>PSRule: Run analysis</em> task.</p>
 <p align="center">
   <img src="https://raw.githubusercontent.com/microsoft/PSRule-vscode/main/docs/images/tasks-provider.png" alt="Built-in tasks shown in task list" />
 </p>
 
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>To learn about tasks in Visual Studio Code see <a href="https://code.visualstudio.com/docs/editor/tasks">Integrate with External Tools via Tasks</a>.</p>
-<p>To use PSRule for Azure with the built-in <code>PSRule: Run analysis</code> task, insert the following into <code>.vscode/tasks.json</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+</div>
+<h3 id="customizing-the-task">Customizing the task<a class="headerlink" href="#customizing-the-task" title="Permanent link">#</a></h3>
+<p>The <em>PSRule: Run analysis</em> task will be available automatically after you install the PSRule extension.
+You can customize the defaults of the task by editing or inserting the task into <code>.vscode/tasks.json</code> within your workspace.</p>
+<div class="highlight"><span class="filename">JSON</span><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSRule&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;problemMatcher&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">        </span><span class="s2">&quot;$PSRule&quot;</span><span class="w"></span>
@@ -1764,7 +1801,7 @@ The Visual Studio Code extension includes a built-in <code>PSRule: Run analysis<
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>A complete <code>.vscode/tasks.json</code> might look like the following:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<div class="highlight"><span class="filename">.vscode/tasks.json</span><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
@@ -1791,7 +1828,7 @@ The Visual Studio Code extension includes a built-in <code>PSRule: Run analysis<
   <small>
     
       Last update:
-      2022-03-07
+      2022-08-26
     
   </small>
 </div>
