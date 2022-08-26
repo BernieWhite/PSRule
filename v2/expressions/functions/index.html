@@ -101,7 +101,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#expression-functions" class="md-skip">
+        <a href="#functions" class="md-skip">
           Skip to content
         </a>
       
@@ -357,6 +357,8 @@
       
       
       
+        
+          
         
           
         
@@ -864,38 +866,6 @@
     
   
   
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_1" type="checkbox" id="__nav_2_7_1" checked>
-      
-      
-      
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_2_7_1">
-          Expressions
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Expressions" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_7_1">
-          <span class="md-nav__icon md-icon"></span>
-          Expressions
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-    
-  
-  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -958,12 +928,56 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sub-selectors/" class="md-nav__link">
+        Sub-selectors
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
   
 
             
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_8">
+          Scenarios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Scenarios" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Scenarios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
             
               
@@ -1023,7 +1037,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_11" type="checkbox" id="__nav_2_11" >
       
       
       
@@ -1034,15 +1048,17 @@
         
           
         
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_2_10">
+        <label class="md-nav__link" for="__nav_2_11">
           Releases
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Releases" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_10">
+        <label class="md-nav__title" for="__nav_2_11">
           <span class="md-nav__icon md-icon"></span>
           Releases
         </label>
@@ -1057,7 +1073,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10_1" type="checkbox" id="__nav_2_10_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_11_1" type="checkbox" id="__nav_2_11_1" >
       
       
       
@@ -1070,13 +1086,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_10_1">
+        <label class="md-nav__link" for="__nav_2_11_1">
           Change log
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Change log" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_10_1">
+        <label class="md-nav__title" for="__nav_2_11_1">
           <span class="md-nav__icon md-icon"></span>
           Change log
         </label>
@@ -1153,6 +1169,20 @@
     <li class="md-nav__item">
       <a href="../../deprecations/" class="md-nav__link">
         Deprecations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../versioning/" class="md-nav__link">
+        Changes and versioning
       </a>
     </li>
   
@@ -1728,18 +1758,24 @@
 
 
 
-<h1 id="expression-functions">Expression functions<a class="headerlink" href="#expression-functions" title="Permanent link">#</a></h1>
+<h1 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">#</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
-<p>Functions are an advanced lanaguage feature specific to YAML and JSON resources.
-That extend the language to allow for more complex use cases with expressions.</p>
+<p><em>Functions</em> are an advanced lanaguage feature specific to YAML and JSON expressions.
+That extend the language to allow for more complex use cases with expressions.
+Functions don't apply to script expressions because PowerShell already has rich support for complex manipulation.</p>
 </div>
 <div class="admonition experimental">
 <p class="admonition-title">Experimental</p>
-<p>Functions are a work in progress and subject to change.
+<p><em>Functions</em> are a work in progress and subject to change.
 We hope to add more functions, broader support, and more detailed documentation in the future.
 <a href="https://github.com/microsoft/PSRule/discussions">Join or start a disucssion</a> to let us know how we can improve this feature going forward.</p>
 </div>
+<p>Functions cover two (2) main scenarios:</p>
+<ul>
+<li><strong>Transformation</strong> &mdash; you need to perform minor transformation before a condition.</li>
+<li><strong>Configuration</strong> &mdash; you want to configure an input into a condition.</li>
+</ul>
 <h2 id="using-functions">Using functions<a class="headerlink" href="#using-functions" title="Permanent link">#</a></h2>
 <p>It may be necessary to perform minor transformation before evaluating a condition.</p>
 <ul>
@@ -1856,7 +1892,7 @@ The conditions that are supported are:</p>
   <small>
     
       Last update:
-      2022-08-17
+      2022-08-26
     
   </small>
 </div>
@@ -1867,6 +1903,8 @@ The conditions that are supported are:</p>
               
             </article>
             
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
           </div>
         </div>
         
@@ -1894,13 +1932,13 @@ The conditions that are supported are:</p>
       
       
         
-        <a href="../../scenarios/validation-pipeline/validation-pipeline/" class="md-footer__link md-footer__link--next" aria-label="Next: Using within continuous integration" rel="next">
+        <a href="../sub-selectors/" class="md-footer__link md-footer__link--next" aria-label="Next: Sub-selectors" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Using within continuous integration
+              Sub-selectors
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1944,7 +1982,7 @@ The conditions that are supported are:</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>

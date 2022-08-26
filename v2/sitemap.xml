@@ -86,6 +86,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://microsoft.github.io/PSRule/v2/versioning/</loc>
+         <lastmod>2022-08-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://microsoft.github.io/PSRule/v2/authoring/packaging-rules/</loc>
          <lastmod>2022-08-26</lastmod>
          <changefreq>daily</changefreq>
@@ -237,6 +242,11 @@
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v2/expressions/functions/</loc>
+         <lastmod>2022-08-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://microsoft.github.io/PSRule/v2/expressions/sub-selectors/</loc>
          <lastmod>2022-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>

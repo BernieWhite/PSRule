@@ -380,6 +380,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2">
@@ -860,30 +862,14 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_1" type="checkbox" id="__nav_2_7_1" >
-      
-      
-      
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_2_7_1">
-          Expressions
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Expressions" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_7_1">
-          <span class="md-nav__icon md-icon"></span>
-          Expressions
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+    <li class="md-nav__item">
+      <a href="../expressions/functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -891,8 +877,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../expressions/functions/" class="md-nav__link">
-        Functions
+      <a href="../expressions/sub-selectors/" class="md-nav__link">
+        Sub-selectors
       </a>
     </li>
   
@@ -905,6 +891,36 @@
   
 
             
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_8">
+          Scenarios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Scenarios" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Scenarios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
             
               
@@ -966,7 +982,7 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_11" type="checkbox" id="__nav_2_11" checked>
       
       
       
@@ -977,15 +993,17 @@
         
           
         
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_2_10">
+        <label class="md-nav__link" for="__nav_2_11">
           Releases
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Releases" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_10">
+        <label class="md-nav__title" for="__nav_2_11">
           <span class="md-nav__icon md-icon"></span>
           Releases
         </label>
@@ -1002,7 +1020,7 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10_1" type="checkbox" id="__nav_2_10_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_11_1" type="checkbox" id="__nav_2_11_1" checked>
       
       
       
@@ -1015,13 +1033,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_10_1">
+        <label class="md-nav__link" for="__nav_2_11_1">
           Change log
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Change log" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_10_1">
+        <label class="md-nav__title" for="__nav_2_11_1">
           <span class="md-nav__icon md-icon"></span>
           Change log
         </label>
@@ -1440,6 +1458,20 @@
     <li class="md-nav__item">
       <a href="../deprecations/" class="md-nav__link">
         Deprecations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../versioning/" class="md-nav__link">
+        Changes and versioning
       </a>
     </li>
   
@@ -2313,9 +2345,28 @@
 </ul>
 <p><strong>Experimental features</strong>:</p>
 <ul>
-<li>Functions within YAML expressions can be used to perform manipulation prior to testing a condition.</li>
+<li>Functions within YAML and JSON expressions can be used to perform manipulation prior to testing a condition.
+  See <a href="../expressions/functions/">functions</a> for more information.</li>
+<li>
+<p>Sub-selectors within YAML and JSON expressions can be used to filter rules and list properties.
+  See <a href="../expressions/sub-selectors/">sub-selectors</a> for more information.</p>
+</li>
 </ul>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
+<p>What's changed since pre-release v2.4.0-B0039:</p>
+<ul>
+<li>New features:<ul>
+<li><strong>Experimental</strong>: Added support for sub-selectors YAML and JSON expressions by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1024">#1024</a>
+  <a href="https://github.com/microsoft/PSRule/issues/1045">#1045</a><ul>
+<li>Sub-selector pre-conditions add an additional expression to determine if a rule is executed.</li>
+<li>Sub-selector object filters provide an way to filter items from list properties.</li>
+<li>See <a href="../expressions/sub-selectors/">sub-selectors</a> for more information.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="v240-b0039-pre-release">v2.4.0-B0039 (pre-release)<a class="headerlink" href="#v240-b0039-pre-release" title="Permanent link">#</a></h2>
 <p>What's changed since pre-release v2.4.0-B0022:</p>
 <ul>
@@ -2325,6 +2376,7 @@
 <li>Added conversion functions <code>boolean</code>, <code>string</code>, and <code>integer</code>.</li>
 <li>Added lookup functions <code>configuration</code>, and <code>path</code>.</li>
 <li>Added string functions <code>concat</code>, <code>substring</code>.</li>
+<li>See <a href="../expressions/functions/">functions</a> for more information.</li>
 </ul>
 </li>
 </ul>
@@ -3259,7 +3311,7 @@
   <small>
     
       Last update:
-      2022-08-18
+      2022-08-26
     
   </small>
 </div>
@@ -3270,6 +3322,8 @@
               
             </article>
             
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
           </div>
         </div>
         
@@ -3347,7 +3401,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate"], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate", "content.tabs.link"], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
       <script src="../assets/javascripts/bundle.9c69f0bc.min.js"></script>
