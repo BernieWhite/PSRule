@@ -1097,6 +1097,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#v240" class="md-nav__link">
+    v2.4.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v240-b0091-pre-release" class="md-nav__link">
     v2.4.0-B0091 (pre-release)
   </a>
@@ -2035,6 +2042,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#v240" class="md-nav__link">
+    v2.4.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v240-b0091-pre-release" class="md-nav__link">
     v2.4.0-B0091 (pre-release)
   </a>
@@ -2386,6 +2400,67 @@
 </li>
 </ul>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
+<h2 id="v240">v2.4.0<a class="headerlink" href="#v240" title="Permanent link">#</a></h2>
+<p>What's changed since v2.3.2:</p>
+<ul>
+<li>New features:<ul>
+<li><strong>Experimental</strong>: Added support for functions within YAML and JSON expressions by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1227">#1227</a>
+  <a href="https://github.com/microsoft/PSRule/issues/1016">#1016</a><ul>
+<li>Added conversion functions <code>boolean</code>, <code>string</code>, and <code>integer</code>.</li>
+<li>Added lookup functions <code>configuration</code>, and <code>path</code>.</li>
+<li>Added string functions <code>concat</code>, <code>substring</code>.</li>
+<li>See <a href="../expressions/functions/">functions</a> for more information.</li>
+</ul>
+</li>
+<li><strong>Experimental</strong>: Added support for sub-selector YAML and JSON expressions by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1024">#1024</a>
+  <a href="https://github.com/microsoft/PSRule/issues/1045">#1045</a><ul>
+<li>Sub-selector pre-conditions add an additional expression to determine if a rule is executed.</li>
+<li>Sub-selector object filters provide an way to filter items from list properties.</li>
+<li>See <a href="../expressions/sub-selectors/">sub-selectors</a> for more information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Engineering:<ul>
+<li>Improvements to PSRule engine API documentation by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1186">#1186</a></li>
+<li>Updates to PSRule engine API by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1152">#1152</a><ul>
+<li>Added tool support for baselines parameter.</li>
+<li>Added module path discovery.</li>
+<li>Added output for verbose and debug messages.</li>
+</ul>
+</li>
+<li>Bump support projects to .NET 6 by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1209">#1209</a></li>
+<li>Bump Microsoft.NET.Test.Sdk to v17.3.0.
+  <a href="https://github.com/microsoft/PSRule/pull/1213">#1213</a></li>
+<li>Bump BenchmarkDotNet to v0.13.2.
+  <a href="https://github.com/microsoft/PSRule/pull/1241">#1241</a></li>
+<li>Bump BenchmarkDotNet.Diagnostics.Windows to v0.13.2.
+  <a href="https://github.com/microsoft/PSRule/pull/1242">#1242</a></li>
+</ul>
+</li>
+<li>Bug fixes:<ul>
+<li>Fixed reporting of duplicate identifiers which were not generating an error for all cases by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1229">#1229</a><ul>
+<li>Added <code>Execution.DuplicateResourceId</code> option to configure PSRule behaviour.</li>
+<li>By default, duplicate resource identifiers return an error.</li>
+</ul>
+</li>
+<li>Fixed exception on JSON baseline without a synopsis by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1230">#1230</a></li>
+<li>Fixed repository information not in output by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1219">#1219</a></li>
+</ul>
+</li>
+</ul>
+<p>What's changed since pre-release v2.4.0-B0091:</p>
+<ul>
+<li>No additional changes.</li>
+</ul>
 <h2 id="v240-b0091-pre-release">v2.4.0-B0091 (pre-release)<a class="headerlink" href="#v240-b0091-pre-release" title="Permanent link">#</a></h2>
 <p>What's changed since pre-release v2.4.0-B0063:</p>
 <ul>
@@ -3362,7 +3437,7 @@
   <small>
     
       Last update:
-      2022-08-28
+      2022-08-29
     
   </small>
 </div>
