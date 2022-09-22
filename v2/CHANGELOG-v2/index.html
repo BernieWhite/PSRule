@@ -866,6 +866,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_7">
@@ -888,6 +890,20 @@
     <li class="md-nav__item">
       <a href="../expressions/functions/" class="md-nav__link">
         Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/grouping-rules/" class="md-nav__link">
+        Grouping rules
       </a>
     </li>
   
@@ -2448,6 +2464,23 @@
 </li>
 </ul>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
+<p>What's changed since pre-release v2.5.0-B0015:</p>
+<ul>
+<li>General improvements:<ul>
+<li>Added taxa metadata from grouping and filtering rules by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1272">#1272</a><ul>
+<li>Taxa is metadata that extends on tags to provide a more structured way to group rules.</li>
+<li>Rules can be classified by setting the <code>metadata.taxa</code> property or <code>-Taxa</code> parameter.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bug fixes:<ul>
+<li>Fixed Dockerfile case sensitivity by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1269">#1269</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="v250-b0015-pre-release">v2.5.0-B0015 (pre-release)<a class="headerlink" href="#v250-b0015-pre-release" title="Permanent link">#</a></h2>
 <p>What's changed since pre-release v2.5.0-B0004:</p>
 <ul>
@@ -3513,7 +3546,7 @@
   <small>
     
       Last update:
-      2022-09-15
+      2022-09-22
     
   </small>
 </div>
