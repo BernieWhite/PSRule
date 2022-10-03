@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/CHANGELOG-v2/">
       
       <link rel="icon" href="../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.5">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7a952b86.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.80dcb947.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
@@ -2472,14 +2472,25 @@
 <ul>
 <li>Functions within YAML and JSON expressions can be used to perform manipulation prior to testing a condition.
   See <a href="../expressions/functions/">functions</a> for more information.</li>
+<li>Sub-selectors within YAML and JSON expressions can be used to filter rules and list properties.
+  See <a href="../expressions/sub-selectors/">sub-selectors</a> for more information.</li>
 <li>
-<p>Sub-selectors within YAML and JSON expressions can be used to filter rules and list properties.
-  See <a href="../expressions/sub-selectors/">sub-selectors</a> for more information.</p>
+<p>Processing of changes files only within a pipeline.
+  See <a href="../creating-your-pipeline/#processing-changed-files-only">creating your pipeline</a> for more information.</p>
 </li>
 </ul>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
 <p>What's changed since pre-release v2.5.0-B0015:</p>
 <ul>
+<li>New features:<ul>
+<li><strong>Experimental</strong>: Added support for only processing changed files by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/688">#688</a><ul>
+<li>To ignore unchanged files, set the <code>Input.IgnoreUnchangedPath</code> option to <code>true</code>.</li>
+<li>See <a href="../creating-your-pipeline/#processing-changed-files-only">creating your pipeline</a> for more information.</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>General improvements:<ul>
 <li>Added labels metadata from grouping and filtering rules by @BernieWhite.
   <a href="https://github.com/microsoft/PSRule/issues/1272">#1272</a><ul>
@@ -3573,7 +3584,7 @@
   <small>
     
       Last update:
-      2022-09-30
+      2022-10-03
     
   </small>
 </div>
@@ -3668,7 +3679,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate", "content.tabs.link"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.37e9125f.min.js"></script>
+      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
       
     
   </body>
