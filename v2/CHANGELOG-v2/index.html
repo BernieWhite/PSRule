@@ -1131,6 +1131,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#v250" class="md-nav__link">
+    v2.5.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v250-b0080-pre-release" class="md-nav__link">
     v2.5.0-B0080 (pre-release)
   </a>
@@ -2118,6 +2125,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#v250" class="md-nav__link">
+    v2.5.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v250-b0080-pre-release" class="md-nav__link">
     v2.5.0-B0080 (pre-release)
   </a>
@@ -2523,6 +2537,51 @@
 </li>
 </ul>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
+<h2 id="v250">v2.5.0<a class="headerlink" href="#v250" title="Permanent link">#</a></h2>
+<p>What's changed since v2.4.2:</p>
+<ul>
+<li>New features:<ul>
+<li><strong>Experimental</strong>: Added support for only processing changed files by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/688">#688</a><ul>
+<li>To ignore unchanged files, set the <code>Input.IgnoreUnchangedPath</code> option to <code>true</code>.</li>
+<li>See <a href="../creating-your-pipeline/#processing-changed-files-only">creating your pipeline</a> for more information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>General improvements:<ul>
+<li>Added labels metadata from grouping and filtering rules by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1272">#1272</a><ul>
+<li>Labels are metadata that extends on tags to provide a more structured way to group rules.</li>
+<li>Rules can be classified by setting the <code>metadata.labels</code> property or <code>-Labels</code> parameter.</li>
+</ul>
+</li>
+<li>Provide unblock for command line tools by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1261">#1261</a></li>
+</ul>
+</li>
+<li>Engineering:<ul>
+<li>Bump Microsoft.NET.Test.Sdk to v17.3.1.
+  <a href="https://github.com/microsoft/PSRule/pull/1248">#1248</a></li>
+</ul>
+</li>
+<li>Bug fixes:<ul>
+<li>Fixed could not load Microsoft.Management.Infrastructure by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1249">#1249</a><ul>
+<li>To use minimal initial session state set <code>Execution.InitialSessionState</code> to <code>Minimal</code>.</li>
+</ul>
+</li>
+<li>Fixed unhandled exception with GetRootedPath by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1251">#1251</a></li>
+<li>Fixed Dockerfile case sensitivity by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1269">#1269</a></li>
+</ul>
+</li>
+</ul>
+<p>What's changed since pre-release v2.5.0-B0080:</p>
+<ul>
+<li>No additional changes.</li>
+</ul>
 <h2 id="v250-b0080-pre-release">v2.5.0-B0080 (pre-release)<a class="headerlink" href="#v250-b0080-pre-release" title="Permanent link">#</a></h2>
 <p>What's changed since pre-release v2.5.0-B0045:</p>
 <ul>
@@ -3646,7 +3705,7 @@
   <small>
     
       Last update:
-      2022-10-05
+      2022-10-06
     
   </small>
 </div>
