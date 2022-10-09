@@ -1834,7 +1834,7 @@ By using validation within a continuous integration (CI) pipeline, any issues pr
 
 <span class="w">    </span><span class="c1"># Analyze Azure resources using PSRule for Azure</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze Azure template files</span><span class="w"></span>
-<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">microsoft/ps-rule@v2.3.2</span><span class="w"></span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">microsoft/ps-rule@v2.4.2</span><span class="w"></span>
 <span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">modules</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;PSRule.Rules.Azure&#39;</span><span class="w"></span>
 </code></pre></div>
@@ -1855,8 +1855,9 @@ By using validation within a continuous integration (CI) pipeline, any issues pr
 </div>
 <div class="tabbed-block">
 <p>Create a pipeline in any CI environment by using PowerShell.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PSRule.Rules.Azure&#39;</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
-<span class="nb">Assert-PSRule</span> <span class="n">-InputPath</span> <span class="s1">&#39;.&#39;</span> <span class="n">-Module</span> <span class="s1">&#39;PSRule.Rules.Azure&#39;</span> <span class="n">-Format</span> <span class="n">File</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="nv">$modules</span> <span class="p">=</span> <span class="p">@(</span><span class="s1">&#39;PSRule.Rules.Azure&#39;</span><span class="p">)</span>
+<span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="nv">$modules</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
+<span class="nb">Assert-PSRule</span> <span class="n">-InputPath</span> <span class="s1">&#39;.&#39;</span> <span class="n">-Module</span> <span class="nv">$modules</span> <span class="n">-Format</span> <span class="n">File</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
 </code></pre></div>
 </div>
 </div>
@@ -1929,14 +1930,59 @@ Meaningful comments help during peer review within a Pull Request (PR).
 Also consider including a date if the exclusions or suppressions are temporary.</p>
 </div>
 <h3 id="processing-changed-files-only">Processing changed files only<a class="headerlink" href="#processing-changed-files-only" title="Permanent link">#</a></h3>
-<p><a href="../concepts/PSRule/en-US/about_PSRule_Options/#inputignoreunchangedpath"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M0 3.75A.75.75 0 0 1 .75 3h7.497c1.566 0 2.945.8 3.751 2.014A4.496 4.496 0 0 1 15.75 3h7.5a.75.75 0 0 1 .75.75v15.063a.75.75 0 0 1-.755.75l-7.682-.052a3 3 0 0 0-2.142.878l-.89.891a.75.75 0 0 1-1.061 0l-.902-.901a3 3 0 0 0-2.121-.879H.75a.75.75 0 0 1-.75-.75v-15zm11.247 3.747a3 3 0 0 0-3-2.997H1.5V18h6.947a4.5 4.5 0 0 1 2.803.98l-.003-11.483zm1.503 11.485V7.5a3 3 0 0 1 3-3h6.75v13.558l-6.927-.047a4.5 4.5 0 0 0-2.823.971z"/></svg></span> Docs</a></p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75zm0 4.5h7.282a.25.25 0 0 1 .163.06l3.188 2.75a.25.25 0 0 1 0 .38l-3.188 2.75a.25.25 0 0 1-.163.06H3.75a.25.25 0 0 1-.25-.25v-5.5a.25.25 0 0 1 .25-.25h8z"/></svg></span> v2.5.0 · <a href="../concepts/PSRule/en-US/about_PSRule_Options/#inputignoreunchangedpath"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M0 3.75A.75.75 0 0 1 .75 3h7.497c1.566 0 2.945.8 3.751 2.014A4.496 4.496 0 0 1 15.75 3h7.5a.75.75 0 0 1 .75.75v15.063a.75.75 0 0 1-.755.75l-7.682-.052a3 3 0 0 0-2.142.878l-.89.891a.75.75 0 0 1-1.061 0l-.902-.901a3 3 0 0 0-2.121-.879H.75a.75.75 0 0 1-.75-.75v-15zm11.247 3.747a3 3 0 0 0-3-2.997H1.5V18h6.947a4.5 4.5 0 0 1 2.803.98l-.003-11.483zm1.503 11.485V7.5a3 3 0 0 1 3-3h6.75v13.558l-6.927-.047a4.5 4.5 0 0 0-2.823.971z"/></svg></span> Docs</a></p>
 <p>To only process files that have changed within a pull request, set the <code>Input.IgnoreUnchangedPath</code> option.</p>
-<div class="highlight"><span class="filename">ps-rule.yaml</span><pre><span></span><code><span class="nt">repository</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">baseRef</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span><span class="w"></span>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">GitHub Actions</label><label for="__tabbed_3_2">Azure Pipelines</label><label for="__tabbed_3_3">Generic with PowerShell</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Update your GitHub Actions workflow by setting the <code>PSRULE_INPUT_IGNOREUNCHANGEDPATH</code> environment variable.</p>
+<div class="highlight"><span class="filename">.github/workflows/analyze-arm.yaml</span><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze templates</span><span class="w"></span>
+<span class="nt">on</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pull_request</span><span class="w"></span>
+<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">analyze_arm</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze templates</span><span class="w"></span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span><span class="w"></span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
 
-<span class="nt">input</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">ignoreUnchangedPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout</span><span class="w"></span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1"># Analyze Azure resources using PSRule for Azure</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze Azure template files</span><span class="w"></span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">microsoft/ps-rule@v2.4.2</span><span class="w"></span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">modules</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;PSRule.Rules.Azure&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">PSRULE_INPUT_IGNOREUNCHANGEDPATH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Update your Azure DevOps YAML pipeline by setting the <code>PSRULE_INPUT_IGNOREUNCHANGEDPATH</code> environment variable.</p>
+<div class="highlight"><span class="filename">.azure-pipelines/analyze-arm.yaml</span><pre><span></span><code><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+
+<span class="c1"># Analyze Azure resources using PSRule for Azure</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ps-rule-assert@2</span><span class="w"></span>
+<span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze Azure template files</span><span class="w"></span>
+<span class="w">  </span><span class="nt">inputs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">inputType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repository</span><span class="w"></span>
+<span class="w">    </span><span class="nt">modules</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;PSRule.Rules.Azure&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">PSRULE_INPUT_IGNOREUNCHANGEDPATH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Update your PowerShell command-line to include the <code>Input.IgnoreUnchangedPath</code> option.</p>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="nv">$modules</span> <span class="p">=</span> <span class="p">@(</span><span class="s1">&#39;PSRule.Rules.Azure&#39;</span><span class="p">)</span>
+<span class="nv">$options</span> <span class="p">=</span> <span class="p">@{</span>
+    <span class="s1">&#39;Input.IgnoreUnchangedPath&#39;</span> <span class="p">=</span> <span class="nv">$True</span>
+<span class="p">}</span>
+<span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="nv">$modules</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
+<span class="nb">Assert-PSRule</span> <span class="n">-Options</span> <span class="nv">$options</span> <span class="n">-InputPath</span> <span class="s1">&#39;.&#39;</span> <span class="n">-Module</span> <span class="nv">$modules</span> <span class="n">-Format</span> <span class="n">File</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>In some cases it may be nessessary to set <code>Repository.BaseRef</code> to the default branch of your repository.
@@ -1948,7 +1994,7 @@ By default, PSRule will detect the default branch of the repository from the bui
   <small>
     
       Last update:
-      2022-10-03
+      2022-10-07
     
   </small>
 </div>

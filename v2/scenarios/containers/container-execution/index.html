@@ -1815,11 +1815,15 @@
 
 
 <h1 id="using-psrule-from-a-container">Using PSRule from a Container<a class="headerlink" href="#using-psrule-from-a-container" title="Permanent link">#</a></h1>
-<p>Depending on your development or CI/CD process for your environment you may desire to use PSRules to validate your Infrastructure as Code (IaC) from a container. This document shows how you can use a simple container based on the <a href="https://hub.docker.com/_/microsoft-powershell">mcr.microsoft.com/powershell</a> image from Microsoft.</p>
-<p>In this tutorial we are going to use a simple Ubuntu based PowerShell image to validate an ARM template. We will do this by creating a dockerfile to describe and create a container image that we can then run. When we run the container we will use a volume mount to share our ARM template and test code for the container to then execute the PSRule.Rules.Azure PSRules against our ARM template and output the results.</p>
+<p>Depending on your development or CI/CD process for your environment you may desire to use PSRules to validate your Infrastructure as Code (IaC) from a container.
+This document shows how you can use a simple container based on the <a href="https://hub.docker.com/_/microsoft-powershell">mcr.microsoft.com/powershell</a> image from Microsoft.</p>
+<p>In this tutorial we are going to use a simple Ubuntu based PowerShell image to validate an ARM template.
+We will do this by creating a dockerfile to describe and create a container image that we can then run.
+When we run the container we will use a volume mount to share our ARM template and test code for the container to then execute the <em>PSRule for Azure</em> against our ARM template and output the results.</p>
 <h2 id="creating-the-image">Creating the image<a class="headerlink" href="#creating-the-image" title="Permanent link">#</a></h2>
-<p>Creating an image ready to run PSRules first requires a dockerfile. The below example will use the latest powershell image released and install the PSRule and PSRule.Rules.Azure modules. </p>
-<div class="highlight"><pre><span></span><code><span class="c"># Copyright (c) Microsoft Corporation.</span>
+<p>Creating an image ready to run PSRules first requires a dockerfile.
+The below example will use the latest PowerShell image released and install the <code>PSRule</code> and <code>PSRule.Rules.Azure</code> modules.</p>
+<div class="highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span class="c"># Copyright (c) Microsoft Corporation.</span>
 <span class="c"># Licensed under the MIT License.</span>
 
 <span class="k">FROM</span><span class="w"> </span><span class="s">mcr.microsoft.com/powershell:7.2-ubuntu-22.04</span>
@@ -1832,13 +1836,13 @@
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>While fine for an example, it is common to always reference a container by a version 
-number and not the "latest" tag. Using the "latest" tag may lead to unexpected behavior as
-version changes occur.</p>
+<p>While fine for an example, it is common to always reference a container by a version number and not the <code>latest</code> tag.
+Using the <code>latest</code> tag may lead to unexpected behavior as version changes occur.</p>
 </div>
 <h2 id="create-your-test-script">Create your test script<a class="headerlink" href="#create-your-test-script" title="Permanent link">#</a></h2>
-<p>Create a new directory and add a new file named <code>validate-files.ps1</code>. This file will run the PSRule
-test for us on our new container image. Add the below code to the file.</p>
+<p>Create a new directory and add a new file named <code>validate-files.ps1</code>.
+This file will run the PSRule test for us on our new container image.
+Add the below code to the file.</p>
 <div class="highlight"><pre><span></span><code><span class="c"># Copyright (c) Microsoft Corporation.</span>
 <span class="c"># Licensed under the MIT License.</span>
 
@@ -1851,8 +1855,9 @@ test for us on our new container image. Add the below code to the file.</p>
 
 <span class="nb">Assert-PSRule</span> <span class="n">-InputPath</span> <span class="s2">&quot;$PSScriptRoot/out/&quot;</span> <span class="n">-Module</span> <span class="s1">&#39;PSRule.Rules.Azure&#39;</span> <span class="o">-As</span> <span class="n">Summary</span>
 </code></pre></div>
-<p>Also, within the new directory add another directory named <code>template</code>. Add any ARM template you would like to
-test in this directory. For a starting point you can get a template from <a href="https://azure.microsoft.com/resources/templates/">Azure Quickstart Templates.</a></p>
+<p>Also, within the new directory add another directory named <code>template</code>.
+Add any ARM template you would like to test in this directory.
+For a starting point you can get a template from <a href="https://azure.microsoft.com/resources/templates/">Azure Quickstart Templates.</a></p>
 <p>Your directory should now look like the below.</p>
 <div class="highlight"><pre><span></span><code>- Directory 
   |--&gt; validate-files.ps1
@@ -1863,7 +1868,7 @@ test in this directory. For a starting point you can get a template from <a href
 <p>Now we are ready to go! Run the below docker command to test the ARM template.</p>
 <div class="highlight"><pre><span></span><code><span class="n">docker</span> <span class="n">run</span> <span class="n">-it</span> <span class="p">-</span><span class="n">-rm</span> <span class="n">-v</span> <span class="nv">$PWD</span><span class="p">/:/</span><span class="n">src</span> <span class="n">psrule</span><span class="p">:</span><span class="n">latest</span> <span class="n">pwsh</span> <span class="o">-file</span> <span class="p">/</span><span class="n">src</span><span class="p">/</span><span class="n">validate-files</span><span class="p">.</span><span class="n">ps1</span>
 </code></pre></div>
-<p>This command runs the container and the PSRule tests by mounting the directory to the /src path
+<p>This command runs the container and the PSRule tests by mounting the directory to the <code>/src</code> path
 and then executing the <code>validate-files.ps1</code> script.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1880,7 +1885,7 @@ You can change this to an absolute or relative path if desired.</p>
   <small>
     
       Last update:
-      2022-09-17
+      2022-10-07
     
   </small>
 </div>
