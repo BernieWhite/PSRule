@@ -30,6 +30,12 @@ See [upgrade notes][1] for helpful information when upgrading from previous vers
 
 ## Unreleased
 
+What's changed since pre-release v2.6.0-B0013:
+
+- Engineering:
+  - Bump Microsoft.NET.Test.Sdk to v17.4.0.
+    [#1331](https://github.com/microsoft/PSRule/pull/1331)
+
 ## v2.6.0-B0013 (pre-release)
 
 What's changed since v2.5.3:
