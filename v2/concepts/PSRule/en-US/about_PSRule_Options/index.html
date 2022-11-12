@@ -1882,6 +1882,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#outputjobsummarypath" class="md-nav__link">
+    Output.JobSummaryPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#outputjsonindent" class="md-nav__link">
     Output.JsonIndent
   </a>
@@ -2435,6 +2442,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#outputjobsummarypath" class="md-nav__link">
+    Output.JobSummaryPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#outputjsonindent" class="md-nav__link">
     Output.JsonIndent
   </a>
@@ -2600,6 +2614,7 @@ This topic describes what options are available, when to and how to use them.</p
 <li><a href="#outputencoding">Output.Encoding</a></li>
 <li><a href="#outputfooter">Output.Footer</a></li>
 <li><a href="#outputformat">Output.Format</a></li>
+<li><a href="#outputjobsummarypath">Output.JobSummaryPath</a></li>
 <li><a href="#outputjsonindent">Output.JsonIndent</a></li>
 <li><a href="#outputoutcome">Output.Outcome</a></li>
 <li><a href="#outputpath">Output.Path</a></li>
@@ -4208,13 +4223,13 @@ This option only applies when the output format is <code>Sarif</code>.</p>
 If specified, the <code>-Style</code> parameter takes precedence, over this option.</p>
 <p>The following styles are available:</p>
 <ul>
-<li>Client - Output is written to the host directly in green/ red to indicate outcome.</li>
-<li>Plain - Output is written as an unformatted string.
+<li><code>Client</code> - Output is written to the host directly in green/ red to indicate outcome.</li>
+<li><code>Plain</code> - Output is written as an unformatted string.
 This option can be redirected to a file.</li>
-<li>AzurePipelines - Output is written for integration Azure Pipelines.</li>
-<li>GitHubActions - Output is written for integration GitHub Actions.</li>
-<li>VisualStudioCode - Output is written for integration with Visual Studio Code.</li>
-<li>Detect - Output style will be detected by checking the environment variables.
+<li><code>AzurePipelines</code> - Output is written for integration Azure Pipelines.</li>
+<li><code>GitHubActions</code> - Output is written for integration GitHub Actions.</li>
+<li><code>VisualStudioCode</code> - Output is written for integration with Visual Studio Code.</li>
+<li><code>Detect</code> - Output style will be detected by checking the environment variables.
 This is the default.</li>
 </ul>
 <p>Detect uses the following logic:</p>
@@ -4258,6 +4273,47 @@ This is the default.</li>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_STYLE</span><span class="w"></span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AzurePipelines</span><span class="w"></span>
 </code></pre></div>
+<h3 id="outputjobsummarypath">Output.JobSummaryPath<a class="headerlink" href="#outputjobsummarypath" title="Permanent link">#</a></h3>
+<p>Configures the file path a job summary will be written to when using <code>Assert-PSRule</code>.
+A job summary is a markdown file that summarizes the results of a job.
+When not specified, a job summary will not be generated.</p>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">jobSummaryPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+</code></pre></div>
+<p>Default:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">jobSummaryPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"></span>
+</code></pre></div>
+<p>This option can be specified using:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputJobSummaryPath parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-OutputJobSummaryPath</span> <span class="s1">&#39;reports/summary.md&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Output.JobSummaryPath hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Output.JobSummaryPath&#39;</span> <span class="p">=</span> <span class="s1">&#39;reports/summary.md&#39;</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputJobSummaryPath parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-OutputJobSummaryPath</span> <span class="s1">&#39;reports/summary.md&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/jobSummaryPath property</span><span class="w"></span>
+<span class="nt">output</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">jobSummaryPath</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;reports/summary.md&#39;</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span> <span class="nv">PSRULE_OUTPUT_JOBSUMMARYPATH</span><span class="o">=</span><span class="s1">&#39;reports/summary.md&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using environment variable</span>
+<span class="nv">$env:PSRULE_OUTPUT_JOBSUMMARYPATH</span> <span class="p">=</span> <span class="s1">&#39;reports/summary.md&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_OUTPUT_JOBSUMMARYPATH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reports/summary.md</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_JOBSUMMARYPATH</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reports/summary.md</span><span class="w"></span>
+</code></pre></div>
 <h3 id="outputjsonindent">Output.JsonIndent<a class="headerlink" href="#outputjsonindent" title="Permanent link">#</a></h3>
 <p>Configures the number of spaces to indent JSON properties and elements.
 The default number of spaces is 0.</p>
@@ -4271,7 +4327,7 @@ This option also applies to output generated from <code>-OutputPath</code> for <
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Output.JsonIndent hashtable key</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Output.JsonIndent&#39;</span> <span class="p">=</span> <span class="n">2</span> <span class="p">};</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputStyle parameter to set YAML</span>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the OutputJsonIndent parameter to set YAML</span>
 <span class="nb">Set-PSRuleOption</span> <span class="n">-OutputJsonIndent</span> <span class="n">2</span><span class="p">;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/jsonIndent property</span><span class="w"></span>
@@ -4614,6 +4670,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
 <span class="w">  </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UTF8</span><span class="w"></span>
 <span class="w">  </span><span class="nt">footer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RuleCount</span><span class="w"></span>
 <span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Json</span><span class="w"></span>
+<span class="w">  </span><span class="nt">jobSummaryPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reports/summary.md</span><span class="w"></span>
 <span class="w">  </span><span class="nt">outcome</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Fail</span><span class="w"></span>
 <span class="w">  </span><span class="nt">sarifProblemsOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitHubActions</span><span class="w"></span>
@@ -4711,6 +4768,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
 <span class="w">  </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Default</span><span class="w"></span>
 <span class="w">  </span><span class="nt">footer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Default</span><span class="w"></span>
 <span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span><span class="w"></span>
+<span class="w">  </span><span class="nt">jobSummaryPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"></span>
 <span class="w">  </span><span class="nt">outcome</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Processed</span><span class="w"></span>
 <span class="w">  </span><span class="nt">sarifProblemsOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect</span><span class="w"></span>
@@ -4751,7 +4809,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
   <small>
     
       Last update:
-      2022-10-03
+      2022-11-12
     
   </small>
 </div>
