@@ -1899,6 +1899,7 @@ We recommend using <code>.jsonc</code> to view <a href="https://code.visualstudi
 <span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;{{</span><span class="nv"> </span><span class="s">Name</span><span class="nv"> </span><span class="s">}}&#39;</span><span class="w"></span>
 <span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">expiresOn</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"></span>
 <span class="w">  </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
 <span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
 </code></pre></div>
@@ -1911,6 +1912,7 @@ We recommend using <code>.jsonc</code> to view <a href="https://code.visualstudi
       &quot;name&quot;: &quot;{{ Name }}&quot;
     },
     &quot;spec&quot;: {
+      &quot;expiresOn&quot;: null,
       &quot;rule&quot;: [],
       &quot;if&quot;: {}
     }
@@ -1922,6 +1924,9 @@ Within the <code>rule</code> array, one or more rule names can be used.
 If no rules are specified, suppression will occur for all rules.
 Within the <code>if</code> object, one or more conditions or logical operators can be used.
 When the <code>if</code> condition is <code>true</code> the object will be suppressed for the current rule.</p>
+<p>Optionally, an expiry can be set using the <code>expiresOn</code> property.
+When the expiry date is reached, the suppression will no longer be applied.
+To configure an expiry, set a RFC3339 (ISO 8601) formatted date time using the format <code>yyyy-MM-ddTHH:mm:ssZ</code>.</p>
 <h3 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">#</a></h3>
 <p>Suppression groups can be configured with a synopsis.
 When set, the synopsis will be included in output for any suppression warnings that are shown.
@@ -1962,6 +1967,7 @@ See <a href="../about_PSRule_Docs/">about_PSRule_Docs</a> for details.</p>
 <span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SuppressWithTestType</span><span class="w"></span>
 <span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">expiresOn</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;2030-01-01T00:00:00Z&#39;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">rule</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;FromFile3&#39;</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;FromFile5&#39;</span><span class="w"></span>
@@ -2001,6 +2007,7 @@ See <a href="../about_PSRule_Docs/">about_PSRule_Docs</a> for details.</p>
       &quot;name&quot;: &quot;SuppressWithTestType&quot;
     },
     &quot;spec&quot;: {
+      &quot;expiresOn&quot;: &quot;2030-01-01T00:00:00Z&quot;,
       &quot;rule&quot;: [
         &quot;FromFile3&quot;,
         &quot;FromFile5&quot;
@@ -2023,7 +2030,7 @@ See <a href="../about_PSRule_Docs/">about_PSRule_Docs</a> for details.</p>
   <small>
     
       Last update:
-      2022-04-26
+      2022-11-13
     
   </small>
 </div>

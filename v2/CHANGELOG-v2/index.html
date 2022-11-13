@@ -2602,6 +2602,13 @@
 <li>To use, configure the <code>Output.JobSummaryPath</code> option.</li>
 </ul>
 </li>
+<li>Added support for time bound suppression groups by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1335">#1335</a><ul>
+<li>Suppression groups can be configured to expire after a specified time by setting the <code>spec.expiresOn</code> property.</li>
+<li>When a suppression group expires, the suppression group will generate a warning by default.</li>
+<li>Configure the <code>Execution.SuppressionGroupExpired</code> option to ignore or error on expired suppression groups.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Engineering:<ul>
@@ -3818,7 +3825,7 @@
   <small>
     
       Last update:
-      2022-11-12
+      2022-11-13
     
   </small>
 </div>

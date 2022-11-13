@@ -1686,6 +1686,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#executioninvariantculturewarning" class="md-nav__link">
+    Execution.InvariantCultureWarning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executioninitialsessionstate" class="md-nav__link">
+    Execution.InitialSessionState
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#executionnotprocessedwarning" class="md-nav__link">
     Execution.NotProcessedWarning
   </a>
@@ -1700,15 +1714,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#executioninvariantculturewarning" class="md-nav__link">
-    Execution.InvariantCultureWarning
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#executioninitialsessionstate" class="md-nav__link">
-    Execution.InitialSessionState
+  <a href="#executionsuppressiongroupexpired" class="md-nav__link">
+    Execution.SuppressionGroupExpired
   </a>
   
 </li>
@@ -2246,6 +2253,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#executioninvariantculturewarning" class="md-nav__link">
+    Execution.InvariantCultureWarning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executioninitialsessionstate" class="md-nav__link">
+    Execution.InitialSessionState
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#executionnotprocessedwarning" class="md-nav__link">
     Execution.NotProcessedWarning
   </a>
@@ -2260,15 +2281,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#executioninvariantculturewarning" class="md-nav__link">
-    Execution.InvariantCultureWarning
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#executioninitialsessionstate" class="md-nav__link">
-    Execution.InitialSessionState
+  <a href="#executionsuppressiongroupexpired" class="md-nav__link">
+    Execution.SuppressionGroupExpired
   </a>
   
 </li>
@@ -2590,10 +2604,11 @@ This topic describes what options are available, when to and how to use them.</p
 <li><a href="#executionduplicateresourceid">Execution.DuplicateResourceId</a></li>
 <li><a href="#executionlanguagemode">Execution.LanguageMode</a></li>
 <li><a href="#executioninconclusivewarning">Execution.InconclusiveWarning</a></li>
-<li><a href="#executionnotprocessedwarning">Execution.NotProcessedWarning</a></li>
-<li><a href="#executionsuppressedrulewarning">Execution.SuppressedRuleWarning</a></li>
 <li><a href="#executioninvariantculturewarning">Execution.InvariantCultureWarning</a></li>
 <li><a href="#executioninitialsessionstate">Execution.InitialSessionState</a></li>
+<li><a href="#executionnotprocessedwarning">Execution.NotProcessedWarning</a></li>
+<li><a href="#executionsuppressedrulewarning">Execution.SuppressedRuleWarning</a></li>
+<li><a href="#executionsuppressiongroupexpired">Execution.SuppressionGroupExpired</a></li>
 <li><a href="#includemodule">Include.Module</a></li>
 <li><a href="#includepath">Include.Path</a></li>
 <li><a href="#inputformat">Input.Format</a></li>
@@ -3135,6 +3150,7 @@ however PSRule will continue to execute.</p>
 <li><code>Warn</code> (2) - Continue to execute but log a warning.</li>
 <li><code>Error</code> (3) - Abort and throw an error.
   This is the default.</li>
+<li><code>Debug</code> (4) - Continue to execute but log a debug message.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the DuplicateResourceId parameter</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-DuplicateResourceId</span> <span class="s1">&#39;Warn&#39;</span><span class="p">;</span>
@@ -3226,6 +3242,68 @@ In locked down environments, a reduced set of language features may be desired.<
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_INCONCLUSIVEWARNING</span><span class="w"></span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
+<h3 id="executioninvariantculturewarning">Execution.InvariantCultureWarning<a class="headerlink" href="#executioninvariantculturewarning" title="Permanent link">#</a></h3>
+<p>When evaluating rules inside a CI host, if invariant culture is used, a warning is shown by default.
+You can suppress this warning if you set the culture with <code>-Culture</code> or the <code>Output.Culture</code> option.</p>
+<p>This warning can also be suppressed by using:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InvariantCultureWarning parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-InvariantCultureWarning</span> <span class="nv">$False</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.InvariantCultureWarning hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.InvariantCultureWarning&#39;</span> <span class="p">=</span> <span class="nv">$False</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InvariantCultureWarning parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-InvariantCultureWarning</span> <span class="nv">$False</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/invariantCultureWarning property</span><span class="w"></span>
+<span class="nt">execution</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">invariantCultureWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span> <span class="nv">PSRULE_EXECUTION_INVARIANTCULTUREWARNING</span><span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_INVARIANTCULTUREWARNING</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_INVARIANTCULTUREWARNING</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+<h3 id="executioninitialsessionstate">Execution.InitialSessionState<a class="headerlink" href="#executioninitialsessionstate" title="Permanent link">#</a></h3>
+<p>Determines how the initial session state for executing PowerShell code is created.</p>
+<p>The following preferences are available:</p>
+<ul>
+<li><code>BuiltIn</code> (0) - Create the initial session state with all built-in cmdlets loaded.
+  This is the default.</li>
+<li><code>Minimal</code> (1) - Create the initial session state with only a minimum set of cmdlets loaded.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InitialSessionState parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-InitialSessionState</span> <span class="s1">&#39;Minimal&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.InitialSessionState hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.InitialSessionState&#39;</span> <span class="p">=</span> <span class="s1">&#39;Minimal&#39;</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InitialSessionState parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-InitialSessionState</span> <span class="s1">&#39;Minimal&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/initialSessionState property</span><span class="w"></span>
+<span class="nt">execution</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">initialSessionState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Minimal</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span> <span class="nv">PSRULE_EXECUTION_INITIALSESSIONSTATE</span><span class="o">=</span>Minimal
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_INITIALSESSIONSTATE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Minimal</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_INITIALSESSIONSTATE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Minimal</span><span class="w"></span>
+</code></pre></div>
 <h3 id="executionnotprocessedwarning">Execution.NotProcessedWarning<a class="headerlink" href="#executionnotprocessedwarning" title="Permanent link">#</a></h3>
 <p>When evaluating rules, it is possible to incorrectly select a path with rules that use pre-conditions that do not accept the pipeline object.
 In this case the object has not been processed by any rule.</p>
@@ -3294,67 +3372,44 @@ In this case the object has not been processed by any rule.</p>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_SUPPRESSEDRULEWARNING</span><span class="w"></span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
-<h3 id="executioninvariantculturewarning">Execution.InvariantCultureWarning<a class="headerlink" href="#executioninvariantculturewarning" title="Permanent link">#</a></h3>
-<p>When evaluating rules inside a CI host, if invariant culture is used, a warning is shown by default.
-You can suppress this warning if you set the culture with <code>-Culture</code> or the <code>Output.Culture</code> option.</p>
-<p>This warning can also be suppressed by using:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InvariantCultureWarning parameter</span>
-<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-InvariantCultureWarning</span> <span class="nv">$False</span><span class="p">;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.InvariantCultureWarning hashtable key</span>
-<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.InvariantCultureWarning&#39;</span> <span class="p">=</span> <span class="nv">$False</span> <span class="p">};</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InvariantCultureWarning parameter to set YAML</span>
-<span class="nb">Set-PSRuleOption</span> <span class="n">-InvariantCultureWarning</span> <span class="nv">$False</span><span class="p">;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/invariantCultureWarning property</span><span class="w"></span>
-<span class="nt">execution</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">invariantCultureWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
-<span class="nb">export</span> <span class="nv">PSRULE_EXECUTION_INVARIANTCULTUREWARNING</span><span class="o">=</span><span class="nb">false</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
-<span class="nt">env</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">PSRULE_EXECUTION_INVARIANTCULTUREWARNING</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
-<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_INVARIANTCULTUREWARNING</span><span class="w"></span>
-<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-</code></pre></div>
-<h3 id="executioninitialsessionstate">Execution.InitialSessionState<a class="headerlink" href="#executioninitialsessionstate" title="Permanent link">#</a></h3>
-<p>Determines how the initial session state for executing PowerShell code is created.</p>
+<h3 id="executionsuppressiongroupexpired">Execution.SuppressionGroupExpired<a class="headerlink" href="#executionsuppressiongroupexpired" title="Permanent link">#</a></h3>
+<p>Determines how to handle expired suppression groups.
+Regardless of the value, an expired suppression group will be ignored.
+By defaut, a warning is generated, however this behaviour can be modified by this option.</p>
 <p>The following preferences are available:</p>
 <ul>
-<li><code>BuiltIn</code> (0) - Create the initial session state with all built-in cmdlets loaded.
+<li><code>None</code> (0) - No preference.
+  Inherits the default of <code>Warn</code>.</li>
+<li><code>Ignore</code> (1) - Continue to execute silently.</li>
+<li><code>Warn</code> (2) - Continue to execute but log a warning.
   This is the default.</li>
-<li><code>Minimal</code> (1) - Create the initial session state with only a minimum set of cmdlets loaded.</li>
+<li><code>Error</code> (3) - Abort and throw an error.</li>
+<li><code>Debug</code> (4) - Continue to execute but log a debug message.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InitialSessionState parameter</span>
-<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-InitialSessionState</span> <span class="s1">&#39;Minimal&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the SuppressionGroupExpired parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-SuppressionGroupExpired</span> <span class="s1">&#39;Error&#39;</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.InitialSessionState hashtable key</span>
-<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.InitialSessionState&#39;</span> <span class="p">=</span> <span class="s1">&#39;Minimal&#39;</span> <span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.SuppressionGroupExpired hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.SuppressionGroupExpired&#39;</span> <span class="p">=</span> <span class="s1">&#39;Error&#39;</span> <span class="p">};</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InitialSessionState parameter to set YAML</span>
-<span class="nb">Set-PSRuleOption</span> <span class="n">-InitialSessionState</span> <span class="s1">&#39;Minimal&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the SuppressionGroupExpired parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-SuppressionGroupExpired</span> <span class="s1">&#39;Error&#39;</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/initialSessionState property</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/suppressionGroupExpired property</span><span class="w"></span>
 <span class="nt">execution</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">initialSessionState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Minimal</span><span class="w"></span>
+<span class="w">  </span><span class="nt">suppressionGroupExpired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
-<span class="nb">export</span> <span class="nv">PSRULE_EXECUTION_INITIALSESSIONSTATE</span><span class="o">=</span>Minimal
+<span class="nb">export</span> <span class="nv">PSRULE_EXECUTION_SUPPRESSIONGROUPEXPIRED</span><span class="o">=</span>Error
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span><span class="w"></span>
 <span class="nt">env</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">PSRULE_EXECUTION_INITIALSESSIONSTATE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Minimal</span><span class="w"></span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_SUPPRESSIONGROUPEXPIRED</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span><span class="w"></span>
 <span class="nt">variables</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_INITIALSESSIONSTATE</span><span class="w"></span>
-<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Minimal</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_SUPPRESSIONGROUPEXPIRED</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span><span class="w"></span>
 </code></pre></div>
 <h3 id="includemodule">Include.Module<a class="headerlink" href="#includemodule" title="Permanent link">#</a></h3>
 <p>Automatically include rules and resources from the specified module.
@@ -4626,10 +4681,12 @@ Objects that are suppressed are not processed by the rule at all but will contin
 <span class="c1"># Configure execution options</span><span class="w"></span>
 <span class="nt">execution</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">aliasReferenceWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">  </span><span class="nt">duplicateResourceId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span><span class="w"></span>
 <span class="w">  </span><span class="nt">languageMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConstrainedLanguage</span><span class="w"></span>
 <span class="w">  </span><span class="nt">inconclusiveWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">  </span><span class="nt">notProcessedWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">  </span><span class="nt">suppressedRuleWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">  </span><span class="nt">suppressionGroupExpired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span><span class="w"></span>
 
 <span class="c1"># Configure include options</span><span class="w"></span>
 <span class="nt">include</span><span class="p">:</span><span class="w"></span>
@@ -4732,10 +4789,12 @@ Objects that are suppressed are not processed by the rule at all but will contin
 <span class="c1"># Configure execution options</span><span class="w"></span>
 <span class="nt">execution</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">aliasReferenceWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">duplicateResourceId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span><span class="w"></span>
 <span class="w">  </span><span class="nt">languageMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FullLanguage</span><span class="w"></span>
 <span class="w">  </span><span class="nt">inconclusiveWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="w">  </span><span class="nt">notProcessedWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="w">  </span><span class="nt">suppressedRuleWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">suppressionGroupExpired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span><span class="w"></span>
 
 <span class="c1"># Configure include options</span><span class="w"></span>
 <span class="nt">include</span><span class="p">:</span><span class="w"></span>
@@ -4809,7 +4868,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
   <small>
     
       Last update:
-      2022-11-12
+      2022-11-13
     
   </small>
 </div>
