@@ -1131,6 +1131,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#v260" class="md-nav__link">
+    v2.6.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v260-b0034-pre-release" class="md-nav__link">
     v2.6.0-B0034 (pre-release)
   </a>
@@ -2160,6 +2167,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#v260" class="md-nav__link">
+    v2.6.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v260-b0034-pre-release" class="md-nav__link">
     v2.6.0-B0034 (pre-release)
   </a>
@@ -2607,6 +2621,39 @@
 </li>
 </ul>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
+<h2 id="v260">v2.6.0<a class="headerlink" href="#v260" title="Permanent link">#</a></h2>
+<p>What's changed since v2.5.3:</p>
+<ul>
+<li>New features:<ul>
+<li>Added support for generating job summaries by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1264">#1264</a><ul>
+<li>Job summaries provide a markdown output for pipelines in addition to other supported output formats.</li>
+<li>To use, configure the <code>Output.JobSummaryPath</code> option.</li>
+</ul>
+</li>
+<li>Added support for time bound suppression groups by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1335">#1335</a><ul>
+<li>Suppression groups can be configured to expire after a specified time by setting the <code>spec.expiresOn</code> property.</li>
+<li>When a suppression group expires, the suppression group will generate a warning by default.</li>
+<li>Configure the <code>Execution.SuppressionGroupExpired</code> option to ignore or error on expired suppression groups.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Engineering:<ul>
+<li>Bump Microsoft.NET.Test.Sdk to v17.4.0.
+  <a href="https://github.com/microsoft/PSRule/pull/1331">#1331</a></li>
+<li>Bump PSScriptAnalyzer to v1.21.0.
+  <a href="https://github.com/microsoft/PSRule/pull/1318">#1318</a></li>
+<li>Class clean up and documentation by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1186">#1186</a></li>
+</ul>
+</li>
+</ul>
+<p>What's changed since pre-release v2.6.0-B0034:</p>
+<ul>
+<li>No additional changes.</li>
+</ul>
 <h2 id="v260-b0034-pre-release">v2.6.0-B0034 (pre-release)<a class="headerlink" href="#v260-b0034-pre-release" title="Permanent link">#</a></h2>
 <p>What's changed since pre-release v2.6.0-B0013:</p>
 <ul>
@@ -3840,7 +3887,7 @@
   <small>
     
       Last update:
-      2022-11-13
+      2022-11-17
     
   </small>
 </div>
