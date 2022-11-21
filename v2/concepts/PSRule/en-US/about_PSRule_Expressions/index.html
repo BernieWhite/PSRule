@@ -1826,6 +1826,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    Scope
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setof" class="md-nav__link">
     SetOf
   </a>
@@ -2331,6 +2338,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    Scope
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setof" class="md-nav__link">
     SetOf
   </a>
@@ -2467,6 +2481,7 @@ Expressions are comprised of nested conditions, operators, and comparison proper
 <ul>
 <li><a href="#field">Field</a></li>
 <li><a href="#name">Name</a></li>
+<li><a href="#scope">Scope</a></li>
 <li><a href="#source">Source</a></li>
 <li><a href="#type">Type</a></li>
 </ul>
@@ -3829,6 +3844,34 @@ If the path is within the required path, the condition will return <code>false</
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Deployments/Path/&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
+<h3 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">#</a></h3>
+<p>The comparison property <code>scope</code> is used with a condition to evaluate the scope of the object.
+The <code>scope</code> property must be set to <code>.</code>.
+Any other value will cause the condition to evaluate to <code>false</code>.</p>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">scope</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.&#39;</span><span class="w"></span>
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleScope&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">scope</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">startsWith</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/&#39;</span><span class="w"></span>
+
+<span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ExampleScope&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">scope</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">startsWith</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/&#39;</span><span class="w"></span>
+</code></pre></div>
 <h3 id="setof">SetOf<a class="headerlink" href="#setof" title="Permanent link">#</a></h3>
 <p>The <code>setOf</code> condition can be used to determine if the operand is a set of specified values.
 Additionally the following properties are accepted:</p>
@@ -4095,7 +4138,7 @@ If the path is not within the required path, the condition will return <code>fal
   <small>
     
       Last update:
-      2022-06-13
+      2022-11-22
     
   </small>
 </div>
