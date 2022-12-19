@@ -2715,7 +2715,8 @@ Additionally an optional string prerelease identifier can be used <code>yyyy-MM-
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="contains">Contains<a class="headerlink" href="#contains" title="Permanent link">#</a></h3>
-<p>The <code>Contains</code> assertion method checks the field value contains the specified string.
+<p>The <code>Contains</code> assertion method checks the operand contains the specified string.
+If the operand is an array of strings, only one string must contain the specified string.
 Optionally a case-sensitive compare can be used, however case is ignored by default.</p>
 <p>The following parameters are accepted:</p>
 <ul>
@@ -2766,7 +2767,8 @@ The field value must be an array or collection.</p>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="endswith">EndsWith<a class="headerlink" href="#endswith" title="Permanent link">#</a></h3>
-<p>The <code>EndsWith</code> assertion method checks the field value ends with the specified suffix.
+<p>The <code>EndsWith</code> assertion method checks the operand ends with the specified suffix.
+If the operand is an array of strings, only one string must end with the specified suffix.
 Optionally a case-sensitive compare can be used, however case is ignored by default.</p>
 <p>The following parameters are accepted:</p>
 <ul>
@@ -3436,8 +3438,9 @@ Case is ignored by default.</li>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="notcontains">NotContains<a class="headerlink" href="#notcontains" title="Permanent link">#</a></h3>
-<p>The <code>NotContains</code> assertion method checks the field value contains the specified string.
+<p>The <code>NotContains</code> assertion method checks the operand contains the specified string.
 This condition fails when any of the specified sub-strings are found.
+If the operand is an array of strings, this condition fails if any of the strings contain the specified string.
 Optionally a case-sensitive compare can be used, however case is ignored by default.</p>
 <p>The following parameters are accepted:</p>
 <ul>
@@ -3486,8 +3489,9 @@ The field value must be an array or collection.</p>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="notendswith">NotEndsWith<a class="headerlink" href="#notendswith" title="Permanent link">#</a></h3>
-<p>The <code>NotEndsWith</code> assertion method checks the field value ends with the specified suffix.
+<p>The <code>NotEndsWith</code> assertion method checks the operand ends with the specified suffix.
 This condition fails when any of the specified sub-strings are found at the end of the operand.
+If the operand is an array of strings, this condition fails if any of the strings ends with the specified suffix.
 Optionally a case-sensitive compare can be used, however case is ignored by default.</p>
 <p>The following parameters are accepted:</p>
 <ul>
@@ -3639,8 +3643,9 @@ This is a case insensitive compare.</li>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="notstartswith">NotStartsWith<a class="headerlink" href="#notstartswith" title="Permanent link">#</a></h3>
-<p>The <code>NotStartsWith</code> assertion method checks the field value starts with the specified prefix.
+<p>The <code>NotStartsWith</code> assertion method checks the operand starts with the specified prefix.
 This condition fails when any of the specified sub-strings are found at the start of the operand.
+If the operand is an array of strings, this condition fails if any of the strings start with the specified prefix.
 Optionally a case-sensitive compare can be used, however case is ignored by default.</p>
 <p>The following parameters are accepted:</p>
 <ul>
@@ -3803,7 +3808,8 @@ Specified values can be included in the field value in any order.</p>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="startswith">StartsWith<a class="headerlink" href="#startswith" title="Permanent link">#</a></h3>
-<p>The <code>StartsWith</code> assertion method checks the field value starts with the specified prefix.
+<p>The <code>StartsWith</code> assertion method checks the operand starts with the specified prefix.
+If the operand is an array of strings, only one string must start with the specified prefix.
 Optionally a case-sensitive compare can be used, however case is ignored by default.</p>
 <p>The following parameters are accepted:</p>
 <ul>
@@ -4164,7 +4170,7 @@ If a <code>_PSRule</code> property exists with <code>issue</code> sub-property P
   <small>
     
       Last update:
-      2022-12-03
+      2022-12-19
     
   </small>
 </div>
