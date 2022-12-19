@@ -687,16 +687,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-inline-help" class="md-nav__link">
-    Using inline help
+  <a href="#inline-help-with-yaml-and-json" class="md-nav__link">
+    Inline help with YAML and JSON
   </a>
   
-    <nav class="md-nav" aria-label="Using inline help">
+    <nav class="md-nav" aria-label="Inline help with YAML and JSON">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#comment-metadata" class="md-nav__link">
-    Comment metadata
+  <a href="#synopsis-resource-comment" class="md-nav__link">
+    Synopsis resource comment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-name-property" class="md-nav__link">
+    Display name property
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description-property" class="md-nav__link">
+    Description property
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-property" class="md-nav__link">
+    Link property
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommend-property" class="md-nav__link">
+    Recommend property
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inline-help-with-powershell" class="md-nav__link">
+    Inline help with PowerShell
+  </a>
+  
+    <nav class="md-nav" aria-label="Inline help with PowerShell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synopsis-script-comment" class="md-nav__link">
+    Synopsis script comment
   </a>
   
 </li>
@@ -1868,16 +1916,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-inline-help" class="md-nav__link">
-    Using inline help
+  <a href="#inline-help-with-yaml-and-json" class="md-nav__link">
+    Inline help with YAML and JSON
   </a>
   
-    <nav class="md-nav" aria-label="Using inline help">
+    <nav class="md-nav" aria-label="Inline help with YAML and JSON">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#comment-metadata" class="md-nav__link">
-    Comment metadata
+  <a href="#synopsis-resource-comment" class="md-nav__link">
+    Synopsis resource comment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-name-property" class="md-nav__link">
+    Display name property
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description-property" class="md-nav__link">
+    Description property
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-property" class="md-nav__link">
+    Link property
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommend-property" class="md-nav__link">
+    Recommend property
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inline-help-with-powershell" class="md-nav__link">
+    Inline help with PowerShell
+  </a>
+  
+    <nav class="md-nav" aria-label="Inline help with PowerShell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synopsis-script-comment" class="md-nav__link">
+    Synopsis script comment
   </a>
   
 </li>
@@ -2027,20 +2123,252 @@ Documentation can optionally be added for each rule to provide detailed informat
 <li>Writing markdown documentation</li>
 <li>Localizing documentation files</li>
 </ul>
-<h2 id="using-inline-help">Using inline help<a class="headerlink" href="#using-inline-help" title="Permanent link">#</a></h2>
+<h2 id="inline-help-with-yaml-and-json">Inline help with YAML and JSON<a class="headerlink" href="#inline-help-with-yaml-and-json" title="Permanent link">#</a></h2>
+<p>With authoring rules in YAML and JSON, PSRule provides the following syntax features:</p>
+<ul>
+<li>Synopsis resource comment.</li>
+<li><code>metadata.displayName</code> property.</li>
+<li><code>metadata.description</code> property.</li>
+<li><code>metadata.link</code> property.</li>
+<li><code>spec.recommend</code> property.</li>
+</ul>
+<h3 id="synopsis-resource-comment">Synopsis resource comment<a class="headerlink" href="#synopsis-resource-comment" title="Permanent link">#</a></h3>
+<p>Specify the synopsis of the rule with the <code>Synopsis</code> comment above the rule properties.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">YAML</label><label for="__tabbed_1_2">JSON</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="hll"><span class="c1"># Synopsis: An example rule to require TLS.</span><span class="w"></span>
+</span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Local.YAML.RequireTLS&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;configure.supportsHttpsTrafficOnly&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="c1">// Synopsis: An example rule to require TLS.</span><span class="w"></span>
+</span><span class="w">        </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rule&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Local.JSON.RequireTLS&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;spec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;configure.supportsHttpsTrafficOnly&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The resource comment is not localized.
+Use <a href="#writing-markdown-documentation">markdown documentation</a> for a localized synopsis.</p>
+</div>
+<h3 id="display-name-property">Display name property<a class="headerlink" href="#display-name-property" title="Permanent link">#</a></h3>
+<p>Specify the display name of the rule with the <code>metadata.displayName</code> property.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">YAML</label><label for="__tabbed_2_2">JSON</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: An example rule to require TLS.</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Local.YAML.RequireTLS&#39;</span><span class="w"></span>
+<span class="hll"><span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Require TLS</span><span class="w"></span>
+</span><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;configure.supportsHttpsTrafficOnly&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Synopsis: An example rule to require TLS.</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rule&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Local.JSON.RequireTLS&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="w">            </span><span class="nt">&quot;displayName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Require TLS&quot;</span><span class="w"></span>
+</span><span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;spec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;configure.supportsHttpsTrafficOnly&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property is not localized.
+Use <a href="#writing-markdown-documentation">markdown documentation</a> for a localized display name.</p>
+</div>
+<h3 id="description-property">Description property<a class="headerlink" href="#description-property" title="Permanent link">#</a></h3>
+<p>Specify the description of the rule with the <code>metadata.description</code> property.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">YAML</label><label for="__tabbed_3_2">JSON</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: An example rule to require TLS.</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Local.YAML.RequireTLS&#39;</span><span class="w"></span>
+<span class="hll"><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The resource should only use TLS.</span><span class="w"></span>
+</span><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;configure.supportsHttpsTrafficOnly&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Synopsis: An example rule to require TLS.</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rule&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Local.JSON.RequireTLS&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The resource should only use TLS.&quot;</span><span class="w"></span>
+</span><span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;spec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;configure.supportsHttpsTrafficOnly&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property is not localized.
+Use <a href="#writing-markdown-documentation">markdown documentation</a> for a localized description.</p>
+</div>
+<h3 id="link-property">Link property<a class="headerlink" href="#link-property" title="Permanent link">#</a></h3>
+<p>Specify the online help URL of the rule with the <code>metadata.link</code> property.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">YAML</label><label for="__tabbed_4_2">JSON</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: An example rule to require TLS.</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Local.YAML.RequireTLS&#39;</span><span class="w"></span>
+<span class="hll"><span class="w">  </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://aka.ms/ps-rule</span><span class="w"></span>
+</span><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;configure.supportsHttpsTrafficOnly&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Synopsis: An example rule to require TLS.</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rule&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Local.JSON.RequireTLS&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="w">            </span><span class="nt">&quot;link&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://aka.ms/ps-rule&quot;</span><span class="w"></span>
+</span><span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;spec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;configure.supportsHttpsTrafficOnly&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property is not localized.
+Use <a href="#writing-markdown-documentation">markdown documentation</a> for a localized online help URL.</p>
+</div>
+<h3 id="recommend-property">Recommend property<a class="headerlink" href="#recommend-property" title="Permanent link">#</a></h3>
+<p>Specify the rule recommendation with the <code>spec.recommend</code> property.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">YAML</label><label for="__tabbed_5_2">JSON</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># Synopsis: An example rule to require TLS.</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Local.YAML.RequireTLS&#39;</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="hll"><span class="w">  </span><span class="nt">recommend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The resource should only use TLS.</span><span class="w"></span>
+</span><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;configure.supportsHttpsTrafficOnly&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Synopsis: An example rule to require TLS.</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rule&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Local.JSON.RequireTLS&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;spec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">            </span><span class="nt">&quot;recommend&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+</span><span class="w">            </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;configure.supportsHttpsTrafficOnly&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property is not localized.
+Use <a href="#writing-markdown-documentation">markdown documentation</a> for a localized recommendation.</p>
+</div>
+<h2 id="inline-help-with-powershell">Inline help with PowerShell<a class="headerlink" href="#inline-help-with-powershell" title="Permanent link">#</a></h2>
 <p>When authoring rules in PowerShell, PSRule provides the following syntax features:</p>
 <ul>
-<li>Comment metadata.</li>
+<li>Synopsis script comment.</li>
 <li><code>Recommend</code> keyword.</li>
 <li><code>Reason</code> keyword.</li>
 </ul>
 <p>These features are each describe in detail in the following sections.</p>
-<h3 id="comment-metadata">Comment metadata<a class="headerlink" href="#comment-metadata" title="Permanent link">#</a></h3>
+<h3 id="synopsis-script-comment">Synopsis script comment<a class="headerlink" href="#synopsis-script-comment" title="Permanent link">#</a></h3>
 <p>Comment metadata can be included directly above a rule block by using the syntax <code># Synopsis: &lt;text&gt;</code>.
 This is only supported for populating a rule synopsis.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Must have the app.kubernetes.io/name label</span>
-<span class="n">Rule</span> <span class="s1">&#39;metadata.Name&#39;</span> <span class="n">-Type</span> <span class="s1">&#39;Deployment&#39;</span><span class="p">,</span> <span class="s1">&#39;Service&#39;</span> <span class="p">{</span>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="hll"><span class="c"># Synopsis: Must have the app.kubernetes.io/name label</span>
+</span><span class="n">Rule</span> <span class="s1">&#39;metadata.Name&#39;</span> <span class="n">-Type</span> <span class="s1">&#39;Deployment&#39;</span><span class="p">,</span> <span class="s1">&#39;Service&#39;</span> <span class="p">{</span>
     <span class="n">Exists</span> <span class="s2">&quot;metadata.labels.&#39;app.kubernetes.io/name&#39;&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -2051,16 +2379,21 @@ A rule synopsis is displayed when using <code>Get-PSRule</code> and <code>Get-PS
 The synopsis can not break over multiple lines.</p>
 <p>The key limitation of <em>only</em> using comment metadata is that it can not be localized for multiple languages.
 Consider using comment metadata and also using markdown documentation for a multi-language experience.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The script comment is not localized.
+Use <a href="#writing-markdown-documentation">markdown documentation</a> for a localized synopsis.</p>
+</div>
 <h3 id="recommend-keyword">Recommend keyword<a class="headerlink" href="#recommend-keyword" title="Permanent link">#</a></h3>
 <p>The <code>Recommend</code> keyword sets the recommendation for a rule.
 Use the keyword with a text recommendation at the top of your rule body.</p>
 <p>Using the <code>Recommend</code> keyword is recommended for rules that are not packaged in a module.
 When packaging rules in a module consider using markdown help instead.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Must have the app.kubernetes.io/name label</span>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="c"># Synopsis: Must have the app.kubernetes.io/name label</span>
 <span class="n">Rule</span> <span class="s1">&#39;metadata.Name&#39;</span> <span class="n">-Type</span> <span class="s1">&#39;Deployment&#39;</span><span class="p">,</span> <span class="s1">&#39;Service&#39;</span> <span class="p">{</span>
-    <span class="n">Recommend</span> <span class="s1">&#39;Consider setting the recommended label &#39;&#39;app.kubernetes.io/name&#39;&#39; on deployment and service resources.&#39;</span>
-    <span class="n">Exists</span> <span class="s2">&quot;metadata.labels.&#39;app.kubernetes.io/name&#39;&quot;</span>
+<span class="hll">    <span class="n">Recommend</span> <span class="s1">&#39;Consider setting the recommended label &#39;&#39;app.kubernetes.io/name&#39;&#39; on deployment and service resources.&#39;</span>
+</span>    <span class="n">Exists</span> <span class="s2">&quot;metadata.labels.&#39;app.kubernetes.io/name&#39;&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>A rule recommendation is displayed when using <code>Invoke-PSRule</code> or <code>Get-PSRuleHelp</code>.</p>
@@ -2070,10 +2403,10 @@ Supplying a unique recommendation within a rule based on conditions/ logic is no
 To return a custom unique reason for why the rule failed, use the <code>Reason</code> keyword.</p>
 <p>Localized recommendations can set by using the <code>$LocalizedData</code>.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Must have the app.kubernetes.io/name label</span>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="c"># Synopsis: Must have the app.kubernetes.io/name label</span>
 <span class="n">Rule</span> <span class="s1">&#39;metadata.Name&#39;</span> <span class="n">-Type</span> <span class="s1">&#39;Deployment&#39;</span><span class="p">,</span> <span class="s1">&#39;Service&#39;</span> <span class="p">{</span>
-    <span class="n">Recommend</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">RecommendNameLabel</span>
-    <span class="n">Exists</span> <span class="s2">&quot;metadata.labels.&#39;app.kubernetes.io/name&#39;&quot;</span>
+<span class="hll">    <span class="n">Recommend</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">RecommendNameLabel</span>
+</span>    <span class="n">Exists</span> <span class="s2">&quot;metadata.labels.&#39;app.kubernetes.io/name&#39;&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="reason-keyword">Reason keyword<a class="headerlink" href="#reason-keyword" title="Permanent link">#</a></h3>
@@ -2083,25 +2416,25 @@ If the rule passed, then reason is empty it returned output.</p>
 <p>Reasons are not included in the default view when using <code>Invoke-PSRule</code>.
 Use <code>-OutputFormat Wide</code> to display reason messages.</p>
 <p>To set a reason use the <code>Reason</code> keyword followed by the reason. For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Must have the app.kubernetes.io/name label</span>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="c"># Synopsis: Must have the app.kubernetes.io/name label</span>
 <span class="n">Rule</span> <span class="s1">&#39;metadata.Name&#39;</span> <span class="n">-Type</span> <span class="s1">&#39;Deployment&#39;</span><span class="p">,</span> <span class="s1">&#39;Service&#39;</span> <span class="p">{</span>
     <span class="n">Recommend</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">RecommendNameLabel</span>
     <span class="n">Exists</span> <span class="s2">&quot;metadata.labels.&#39;app.kubernetes.io/name&#39;&quot;</span>
 
-    <span class="n">Reason</span> <span class="s1">&#39;The standard name label is not set.&#39;</span>
-<span class="p">}</span>
+<span class="hll">    <span class="n">Reason</span> <span class="s1">&#39;The standard name label is not set.&#39;</span>
+</span><span class="p">}</span>
 </code></pre></div>
 <p>The <code>Reason</code> keyword can be used multiple times within conditional logic to return a list of reasons the rule failed.
 Additionally the reason messages can be localized by using the <code>$LocalizedData</code> variable.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Must have the app.kubernetes.io/name label</span>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="c"># Synopsis: Must have the app.kubernetes.io/name label</span>
 <span class="n">Rule</span> <span class="s1">&#39;metadata.Name&#39;</span> <span class="n">-Type</span> <span class="s1">&#39;Deployment&#39;</span><span class="p">,</span> <span class="s1">&#39;Service&#39;</span> <span class="p">{</span>
     <span class="n">Recommend</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">RecommendNameLabel</span>
     <span class="n">Exists</span> <span class="s2">&quot;metadata.labels.&#39;app.kubernetes.io/name&#39;&quot;</span>
 
     <span class="c"># $LocalizedData.ReasonLabelMissing is set to &#39;The standard {0} label is not set.&#39;.</span>
-    <span class="n">Reason</span> <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ReasonLabelMissing</span> <span class="o">-f</span> <span class="s1">&#39;name&#39;</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="hll">    <span class="n">Reason</span> <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ReasonLabelMissing</span> <span class="o">-f</span> <span class="s1">&#39;name&#39;</span><span class="p">)</span>
+</span><span class="p">}</span>
 </code></pre></div>
 <h2 id="writing-markdown-documentation">Writing markdown documentation<a class="headerlink" href="#writing-markdown-documentation" title="Permanent link">#</a></h2>
 <p>In addition to inline help, documentation can be written in markdown to provide online and offline help.
@@ -2122,23 +2455,23 @@ While it is possible to have additional sections, they will be ignored by the he
 
 # {{ Name of rule }}
 
-
+## SYNOPSIS
 
 {{ A brief summary of the rule }}
 
-## Description
+## DESCRIPTION
 
 {{ A detailed description of the rule }}
 
-## Recommendation
+## RECOMMENDATION
 
 {{ A detailed explanation of the steps required to pass the rule }}
 
-## Notes
+## NOTES
 
 {{ Additional information or configuration options }}
 
-## Links
+## LINKS
 
 {{ Links to external references }}
 </code></pre></div>
@@ -2174,17 +2507,19 @@ Wrapping the display name across multiple lines is not supported.</p>
 <div class="highlight"><pre><span></span><code># Use recommended name label
 </code></pre></div>
 <h3 id="synopsis-section">Synopsis section<a class="headerlink" href="#synopsis-section" title="Permanent link">#</a></h3>
-<p>The synopsis section is indicated by the heading <code>`.
+<p>The synopsis section is indicated by the heading <code>## SYNOPSIS</code>.
 Any text following the heading is interpreted by PSRule and included in output.
-The synopsis is displayed when using</code>Get-PSRule<code>and</code>Get-PSRuleHelp` cmdlets.</p>
+The synopsis is displayed when using <code>Get-PSRule</code> and <code>Get-PSRuleHelp</code> cmdlets.</p>
 <p>The <em>synopsis</em> is intended to be a brief description of the rule, over a single line.
 A good synopsis should convey the purpose of the rule.
 A more verbose description can be included in the <em>description</em> section.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code>Deployments and services must use the app.kubernetes.io/name label.
+<div class="highlight"><pre><span></span><code>## SYNOPSIS
+
+Deployments and services must use the app.kubernetes.io/name label.
 </code></pre></div>
 <h3 id="description-section">Description section<a class="headerlink" href="#description-section" title="Permanent link">#</a></h3>
-<p>The description section is indicated by the heading <code>## Description</code>.
+<p>The description section is indicated by the heading <code>## DESCRIPTION</code>.
 Any text following the heading is interpreted by PSRule and included in output.
 The description is displayed when using the <code>Get-PSRuleHelp</code> cmdlet.</p>
 <p>The <em>description</em> is intended to be a verbose description of the rule.
@@ -2192,7 +2527,7 @@ If your rule documentation needs to include background information include it he
 <p>PSRule supports semantic line breaks, and will automatically run together lines into a single paragraph.
 Use a blank line to separate paragraphs.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code>## Description
+<div class="highlight"><pre><span></span><code>## DESCRIPTION
 
 Kubernetes defines a common set of labels that are recommended for tool interoperability.
 These labels should be used to consistently apply standard metadata.
@@ -2200,21 +2535,21 @@ These labels should be used to consistently apply standard metadata.
 The `app.kubernetes.io/name` label should be used to specify the name of the application.
 </code></pre></div>
 <h3 id="recommendation-section">Recommendation section<a class="headerlink" href="#recommendation-section" title="Permanent link">#</a></h3>
-<p>The recommendation section is indicated by the heading <code>## Recommendation</code>.
+<p>The recommendation section is indicated by the heading <code>## RECOMMENDATION</code>.
 Any text following the heading is interpreted by PSRule and included in output.
 The recommendation is displayed when using the <code>Invoke-PSRule</code> and <code>Get-PSRuleHelp</code> cmdlets.</p>
 <p>The <em>recommendation</em> is intended to identify corrective actions that can be taken to address any failures.
-Avoid using URLs within the recommendations.
+Avoid using URLs within the recommendation.
 Use the <em>links</em> section to include references to external sources.</p>
 <p>PSRule supports semantic line breaks, and will automatically run together lines into a single paragraph.
 Use a blank line to separate paragraphs.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code>## Recommendation
+<div class="highlight"><pre><span></span><code>## RECOMMENDATION
 
 Consider setting the recommended label `app.kubernetes.io/name` on deployment and service resources.
 </code></pre></div>
 <h3 id="notes-section">Notes section<a class="headerlink" href="#notes-section" title="Permanent link">#</a></h3>
-<p>The notes section is indicated by the heading <code>## Notes</code>.
+<p>The notes section is indicated by the heading <code>## NOTES</code>.
 Any text following the heading is interpreted by PSRule and included in pipeline output.
 Notes are excluded when formatting output as YAML and JSON.</p>
 <p>To view any included notes use the <code>Get-PSRuleHelp</code> cmdlet with the <code>-Full</code> switch.</p>
@@ -2222,7 +2557,7 @@ Notes are excluded when formatting output as YAML and JSON.</p>
 <p>PSRule supports semantic line breaks, and will automatically run together lines into a single paragraph.
 Use a blank line to separate paragraphs.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code>## Notes
+<div class="highlight"><pre><span></span><code>## NOTES
 
 The Kubernetes recommended labels include:
 
@@ -2234,7 +2569,7 @@ The Kubernetes recommended labels include:
 - `app.kubernetes.io/managed-by`
 </code></pre></div>
 <h3 id="links-section">Links section<a class="headerlink" href="#links-section" title="Permanent link">#</a></h3>
-<p>The links section is indicated by the heading <code>## Links</code>.
+<p>The links section is indicated by the heading <code>## LINKS</code>.
 Any markdown links following the heading are interpreted by PSRule and included in pipeline output.
 Links are excluded when formatting output as YAML and JSON.</p>
 <p>To view any included links use the <code>Get-PSRuleHelp</code> cmdlet with the <code>-Full</code> switch.</p>
@@ -2244,7 +2579,7 @@ Include each link on a separate line.
 To improve display in web rendered markdown, use a list of links by prefixing the line with <code>-</code>.</p>
 <p>Additional text such as <code>See additional information:</code> is useful for web rendered views, but ignored by PSRule.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code>## Links
+<div class="highlight"><pre><span></span><code>## LINKS
 
 - [Recommended Labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/)
 </code></pre></div>
@@ -2322,7 +2657,7 @@ Rules can be redistributed individually (loose) or included in a module.</p>
   <small>
     
       Last update:
-      2022-01-03
+      2022-12-19
     
   </small>
 </div>

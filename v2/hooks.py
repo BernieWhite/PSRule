@@ -42,12 +42,13 @@ def replace_maml(markdown: str, page: mkdocs.structure.nav.Page, config: mkdocs.
     markdown = markdown.replace("# PSRule_Variables", "# Variables")
 
     # Rules
-    markdown = markdown.replace("## SYNOPSIS", "")
-    markdown = markdown.replace("## DESCRIPTION", "## Description")
-    markdown = markdown.replace("## RECOMMENDATION", "## Recommendation")
-    markdown = markdown.replace("## NOTES", "## Notes")
-    markdown = markdown.replace("## EXAMPLES", "## Examples")
-    markdown = markdown.replace("## LINKS", "## Links")
+    if page.canonical_url.__contains__("/concepts/PSRule/") or page.canonical_url.__contains__("/keywords/PSRule/"):
+        markdown = markdown.replace("## SYNOPSIS", "")
+        markdown = markdown.replace("## DESCRIPTION", "## Description")
+        markdown = markdown.replace("## RECOMMENDATION", "## Recommendation")
+        markdown = markdown.replace("## NOTES", "## Notes")
+        markdown = markdown.replace("## EXAMPLES", "## Examples")
+        markdown = markdown.replace("## LINKS", "## Links")
 
     # Conceptual topics
     markdown = markdown.replace("## SHORT DESCRIPTION", "")

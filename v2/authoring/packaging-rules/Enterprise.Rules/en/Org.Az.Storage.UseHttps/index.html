@@ -1698,22 +1698,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#synopsis" class="md-nav__link">
+    SYNOPSIS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#description" class="md-nav__link">
-    Description
+    DESCRIPTION
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#recommendation" class="md-nav__link">
-    Recommendation
+    RECOMMENDATION
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#links" class="md-nav__link">
-    Links
+    LINKS
   </a>
   
 </li>
@@ -1740,19 +1747,20 @@
 
 
 <h1 id="enforce-encrypted-storage-connections">Enforce encrypted Storage connections<a class="headerlink" href="#enforce-encrypted-storage-connections" title="Permanent link">#</a></h1>
+<h2 id="synopsis">SYNOPSIS<a class="headerlink" href="#synopsis" title="Permanent link">#</a></h2>
 <p>Storage accounts should only accept encrypted connections.</p>
-<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
+<h2 id="description">DESCRIPTION<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
 <p>An Azure Storage Account is configured to allow unencrypted connections.
 This does not indicate that unencrypted connections are being used.</p>
 <p>Unencrypted communication to storage accounts could allow disclosure of information to an untrusted party.</p>
 <p>Storage Accounts can be configured to require encrypted connections, by setting the <em>Secure transfer required</em> option.
 If <em>secure transfer required</em> is not enabled (the default), unencrypted and encrypted connections are permitted.</p>
 <p>When <em>secure transfer required</em> is enabled, attempts to connect to storage using HTTP or unencrypted SMB connections are rejected.</p>
-<h2 id="recommendation">Recommendation<a class="headerlink" href="#recommendation" title="Permanent link">#</a></h2>
+<h2 id="recommendation">RECOMMENDATION<a class="headerlink" href="#recommendation" title="Permanent link">#</a></h2>
 <p>Storage accounts should only accept secure traffic.
 Consider <em>setting secure transfer</em> required if there is no requirement to access storage over unencrypted connections.
 Also consider using Azure Policy to audit or enforce this configuration.</p>
-<h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">#</a></h2>
+<h2 id="links">LINKS<a class="headerlink" href="#links" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="https://docs.microsoft.com/en-au/azure/storage/common/storage-require-secure-transfer">Require secure transfer in Azure Storage</a></li>
 <li><a href="https://docs.microsoft.com/en-au/azure/governance/policy/samples/ensure-https-stor-acct">Sample policy for ensuring https traffic</a></li>
