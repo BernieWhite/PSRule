@@ -538,6 +538,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-do-exclude-or-ignore-files-from-being-processed" class="md-nav__link">
+    How do exclude or ignore files from being processed?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-disable-or-suppress-the-not-processed-warning" class="md-nav__link">
+    How do I disable or suppress the not processed warning?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-do-i-layer-on-custom-rules-on-top-of-an-existing-module" class="md-nav__link">
     How do I layer on custom rules on top of an existing module?
   </a>
@@ -547,6 +561,13 @@
         <li class="md-nav__item">
   <a href="#why-should-i-use-psrule-keywords-and-assertions" class="md-nav__link">
     Why should I use PSRule keywords and assertions?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collection-of-telemetry" class="md-nav__link">
+    Collection of telemetry
   </a>
   
 </li>
@@ -1822,6 +1843,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-do-exclude-or-ignore-files-from-being-processed" class="md-nav__link">
+    How do exclude or ignore files from being processed?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-disable-or-suppress-the-not-processed-warning" class="md-nav__link">
+    How do I disable or suppress the not processed warning?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-do-i-layer-on-custom-rules-on-top-of-an-existing-module" class="md-nav__link">
     How do I layer on custom rules on top of an existing module?
   </a>
@@ -1831,6 +1866,13 @@
         <li class="md-nav__item">
   <a href="#why-should-i-use-psrule-keywords-and-assertions" class="md-nav__link">
     Why should I use PSRule keywords and assertions?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collection-of-telemetry" class="md-nav__link">
+    Collection of telemetry
   </a>
   
 </li>
@@ -1972,6 +2014,41 @@ To do this in YAML, add the following to the <code>ps-rule.yaml</code> options f
 </code></pre></div>
 <p>The name of the object is reported by PSRule in output results.</p>
 <p>See <a href="../concepts/PSRule/en-US/about_PSRule_Options/">about_PSRule_Options</a> for additional usage for both of these options.</p>
+<h2 id="how-do-exclude-or-ignore-files-from-being-processed">How do exclude or ignore files from being processed?<a class="headerlink" href="#how-do-exclude-or-ignore-files-from-being-processed" title="Permanent link">#</a></h2>
+<p>To exclude or ignore files from being processed, configure the <a href="../concepts/PSRule/en-US/about_PSRule_Options/#inputpathignore">Input.PathIgnore</a> option.
+This option allows you to ignore files using a path spec.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">input</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">pathIgnore</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Exclude files with these extensions</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;*.md&#39;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;*.png&#39;</span>
+<span class="w">  </span><span class="c1"># Exclude specific configuration files</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;bicepconfig.json&#39;</span>
+</code></pre></div>
+<p>Or:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">input</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">pathIgnore</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Exclude all files</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;*&#39;</span>
+<span class="w">  </span><span class="c1"># Only process deploy.bicep files</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;!**/deploy.bicep&#39;</span>
+</code></pre></div>
+<h2 id="how-do-i-disable-or-suppress-the-not-processed-warning">How do I disable or suppress the not processed warning?<a class="headerlink" href="#how-do-i-disable-or-suppress-the-not-processed-warning" title="Permanent link">#</a></h2>
+<p>You may recieve a warning message suggesting a file or object <em>has not been processed</em>.
+If there are no rules that apply to the file or object this warning will be displayed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This warning is intended as a verification so that you are able to confirm your configuration is correct.</p>
+</div>
+<p>After you have tuned your configuration, you may wish to disable this warning to reduce output noise.
+To do this you have two options:</p>
+<ol>
+<li>Exclude files from analysis &mdash; Configure the <a href="../concepts/PSRule/en-US/about_PSRule_Options/#inputpathignore">Input.PathIgnore</a> option.</li>
+<li>
+<p>Disable the warning entirely &mdash; Set the <a href="concepts/PSRule/en-US/about_PSRule_Options/#executionnotprocessedwarning">Execution.NotProcessedWarning</a> option to <code>false</code>.</p>
+</li>
+</ol>
 <h2 id="how-do-i-layer-on-custom-rules-on-top-of-an-existing-module">How do I layer on custom rules on top of an existing module?<a class="headerlink" href="#how-do-i-layer-on-custom-rules-on-top-of-an-existing-module" title="Permanent link">#</a></h2>
 <p>PSRule allows rules from modules and standalone <em>(loose)</em> rules to be run together.</p>
 <p>To run rules from a standalone path use:</p>
@@ -1999,13 +2076,17 @@ To do this in YAML, add the following to the <code>ps-rule.yaml</code> options f
 They do this by providing a condition and a set of reasons in a single command.</p>
 <p>Reasons are also optional; however, they provide additional context as to why the rule failed.
 Alternatively, you can provide your own reasons to complement standard PowerShell with the <code>Reason</code> keyword.</p>
+<h2 id="collection-of-telemetry">Collection of telemetry<a class="headerlink" href="#collection-of-telemetry" title="Permanent link">#</a></h2>
+<p>PSRule and PSRule for Azure currently do not collect any telemetry during installation or execution.</p>
+<p>PowerShell (used by PSRule for Azure) does collect basic telemetry by default.
+Collection of telemetry in PowerShell and how to opt-out is explained in <a href="https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_telemetry">about_Telemetry</a>.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-08-26
+      2023-02-12
     
   </small>
 </div>

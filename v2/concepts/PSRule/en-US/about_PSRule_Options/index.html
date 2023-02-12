@@ -3746,6 +3746,23 @@ If the property specified by <code>ObjectPath</code> is a collection/ array, the
 <p>Ignores input files that match the path spec when using <code>-InputPath</code>.
 If specified, files that match the path spec will not be processed.
 By default, all files are processed.</p>
+<p>For example, ignoring file extensions:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">input</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">pathIgnore</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Exclude files with these extensions</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;*.md&#39;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;*.png&#39;</span>
+<span class="w">  </span><span class="c1"># Exclude specific configuration files</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;bicepconfig.json&#39;</span>
+</code></pre></div>
+<p>For example, ignoring all files with exceptions:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">input</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">pathIgnore</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Exclude all files</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;*&#39;</span>
+<span class="w">  </span><span class="c1"># Only process deploy.bicep files</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;!**/deploy.bicep&#39;</span>
+</code></pre></div>
 <p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InputPathIgnore parameter</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-InputPathIgnore</span> <span class="s1">&#39;*.Designer.cs&#39;</span><span class="p">;</span>
@@ -4881,7 +4898,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
   <small>
     
       Last update:
-      2022-11-13
+      2023-02-12
     
   </small>
 </div>
