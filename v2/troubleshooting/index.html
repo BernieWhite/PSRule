@@ -21,7 +21,7 @@
         <link rel="next" href="../license-contributing/">
       
       <link rel="icon" href="../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.14">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ffa9267a.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.113286f1.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -1046,6 +1046,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#psr0001-unable-to-read-options-file" class="md-nav__link">
+    PSR0001 - Unable to read options file
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1793,6 +1800,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#psr0001-unable-to-read-options-file" class="md-nav__link">
+    PSR0001 - Unable to read options file
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1860,13 +1874,22 @@ These components are required for installing and checking versions of PSRule mod
     <span class="nb">Install-Module</span> <span class="n">PowerShellGet</span> <span class="n">-MinimumVersion</span> <span class="n">2</span><span class="p">.</span><span class="n">2</span><span class="p">.</span><span class="n">1</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span> <span class="n">-AllowClobber</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+<h2 id="psr0001-unable-to-read-options-file">PSR0001 - Unable to read options file<a class="headerlink" href="#psr0001-unable-to-read-options-file" title="Permanent link">#</a></h2>
+<p>When running PSRule you may encounter an error similar to the following:</p>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>PSR0001: Unable to read options file 'ps-rule.yaml'.</p>
+</div>
+<p>This error typically indicates a problem with the YAML syntax in the <code>ps-rule.yaml</code> file.
+Double check the file for incorrect indentation or missing punctuation such as <code>-</code> and <code>:</code> characters.</p>
+<p>If you still have an issue, try resaving the file as UTF-8 in an editor such as Visual Studio Code.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2023-02-22
+      2023-02-24
     
   </small>
 </div>
