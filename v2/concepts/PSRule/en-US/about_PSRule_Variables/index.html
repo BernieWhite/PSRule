@@ -2066,9 +2066,14 @@ Use custom data to store data that must be calculated during rule execution.</p>
   If more than one object is contained in the file, only the first object is returned.
   When the source file contains no objects null is returned.</li>
 <li><code>Import(PSObject[] sourceObject)</code> - Imports one or more source objects into the pipeline.
-  This method can only be called within the <code>-Begin</code> block of a convention.
+  This method can only be called within the <code>-Initialize</code> or <code>-Begin</code> block of a convention.
   Use this method to expand an object into child objects that will be processed independently.
   Objects imported using this method will be excluded from the <code>Input.ObjectPath</code> option if set.</li>
+<li><code>ImportWithType(string type, PSObject[] sourceObject)</code> - Imports one or more source objects into the pipeline.
+  This method can only be called within the <code>-Initialize</code> or <code>-Begin</code> block of a convention.
+  Use this method to expand an object into child objects that will be processed independently.
+  Objects imported using this method will be excluded from the <code>Input.ObjectPath</code> option if set.
+  When <code>Binding.PreferTargetInfo</code> is true, the type will be automatically used as the <code>TargetType</code> for the imported object.</li>
 <li><code>AddService(string id, object service)</code> - Add a service to the current context.
   The service can be retrieved using <code>$PSRule.GetService(id)</code>.
   The service object will be available to all rules and cleaned up after all rules are executed.
@@ -2143,7 +2148,7 @@ i.e. Yaml, Json, Markdown, and PowerShell Data.</p>
   <small>
     
       Last update:
-      2022-12-19
+      2023-02-25
     
   </small>
 </div>
