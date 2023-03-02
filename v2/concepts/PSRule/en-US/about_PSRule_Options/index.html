@@ -21,7 +21,7 @@
         <link rel="next" href="../about_PSRule_Rules/">
       
       <link rel="icon" href="../../../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.14">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
     
     
       
@@ -1750,6 +1750,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#executionruleexcluded" class="md-nav__link">
+    Execution.RuleExcluded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executionrulesuppressed" class="md-nav__link">
+    Execution.RuleSuppressed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#includemodule" class="md-nav__link">
     Include.Module
   </a>
@@ -2313,6 +2327,20 @@
           <li class="md-nav__item">
   <a href="#executionsuppressiongroupexpired" class="md-nav__link">
     Execution.SuppressionGroupExpired
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executionruleexcluded" class="md-nav__link">
+    Execution.RuleExcluded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executionrulesuppressed" class="md-nav__link">
+    Execution.RuleSuppressed
   </a>
   
 </li>
@@ -3367,6 +3395,8 @@ In this case the object has not been processed by any rule.</p>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
 <h3 id="executionsuppressedrulewarning">Execution.SuppressedRuleWarning<a class="headerlink" href="#executionsuppressedrulewarning" title="Permanent link">#</a></h3>
+<p>This option has been deprecated and will be removed from v3 in favor of <code>ruleSuppressed</code>.
+Use <code>ruleSuppressed</code> instead.</p>
 <p>When evaluating rules, it is possible to output suppressed rules as warnings.</p>
 <p>Suppressed rules will:</p>
 <ul>
@@ -3437,6 +3467,87 @@ By defaut, a warning is generated, however this behaviour can be modified by thi
 <div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
 <span class="nt">variables</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_SUPPRESSIONGROUPEXPIRED</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+</code></pre></div>
+<h3 id="executionruleexcluded">Execution.RuleExcluded<a class="headerlink" href="#executionruleexcluded" title="Permanent link">#</a></h3>
+<p>Determines how to handle excluded rules.
+Regardless of the value, excluded rules are ignored.
+By defaut, a rule is excluded silently, however this behaviour can be modified by this option.</p>
+<p>The following preferences are available:</p>
+<ul>
+<li><code>None</code> (0) - No preference.
+  Inherits the default of <code>Ignore</code>.</li>
+<li><code>Ignore</code> (1) - Continue to execute silently.
+  This is the default.</li>
+<li><code>Warn</code> (2) - Continue to execute but log a warning.</li>
+<li><code>Error</code> (3) - Abort and throw an error.</li>
+<li><code>Debug</code> (4) - Continue to execute but log a debug message.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionRuleExcluded parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-ExecutionRuleExcluded</span> <span class="s1">&#39;Warn&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.RuleExcluded hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.RuleExcluded&#39;</span> <span class="p">=</span> <span class="s1">&#39;Warn&#39;</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionRuleExcluded parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-ExecutionRuleExcluded</span> <span class="s1">&#39;Warn&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/ruleExcluded property</span>
+<span class="nt">execution</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ruleExcluded</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_EXECUTION_RULEEXCLUDED</span><span class="o">=</span>Warn
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_RULEEXCLUDED</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
+<span class="nt">variables</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_RULEEXCLUDED</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span>
+</code></pre></div>
+<h3 id="executionrulesuppressed">Execution.RuleSuppressed<a class="headerlink" href="#executionrulesuppressed" title="Permanent link">#</a></h3>
+<p>Determines how to handle suppressed rules.
+Regardless of the value, a suppressed rule is ignored.
+By defaut, a warning is generated, however this behaviour can be modified by this option.</p>
+<p>This option replaces <code>suppressedRuleWarning</code>.
+You do not need to configure both options.
+If <code>suppressedRuleWarning</code> is configured, it will override <code>ruleSuppressed</code> with <code>Warn</code> or <code>Ignore</code> until removal in PSRule v3.</p>
+<p>The following preferences are available:</p>
+<ul>
+<li><code>None</code> (0) - No preference.
+  Inherits the default of <code>Warn</code>.</li>
+<li><code>Ignore</code> (1) - Continue to execute silently.</li>
+<li><code>Warn</code> (2) - Continue to execute but log a warning.
+  This is the default.</li>
+<li><code>Error</code> (3) - Abort and throw an error.</li>
+<li><code>Debug</code> (4) - Continue to execute but log a debug message.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionRuleSuppressed parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-ExecutionRuleSuppressed</span> <span class="s1">&#39;Error&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.RuleSuppressed hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.RuleSuppressed&#39;</span> <span class="p">=</span> <span class="s1">&#39;Error&#39;</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionRuleSuppressed parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-ExecutionRuleSuppressed</span> <span class="s1">&#39;Error&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/ruleSuppressed property</span>
+<span class="nt">execution</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ruleSuppressed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_EXECUTION_RULESUPPRESSED</span><span class="o">=</span>Error
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_RULESUPPRESSED</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
+<span class="nt">variables</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_RULESUPPRESSED</span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
 </code></pre></div>
 <h3 id="includemodule">Include.Module<a class="headerlink" href="#includemodule" title="Permanent link">#</a></h3>
@@ -4913,7 +5024,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
   <small>
     
       Last update:
-      2023-02-12
+      2023-03-02
     
   </small>
 </div>
@@ -5029,7 +5140,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate", "content.tabs.link"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>

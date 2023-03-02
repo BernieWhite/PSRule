@@ -21,7 +21,7 @@
         <link rel="next" href="../deprecations/">
       
       <link rel="icon" href="../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.14">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
     
     
       
@@ -2089,7 +2089,7 @@ Any duplicate rule names from loose files are outputted as a warning instead.</p
 This behavior has now been removed from <em>v2.0.0</em>.</p>
 <p>Rules sources in the current working directory are only included if <code>-Path .</code> or <code>-Path $PWD</code> is specified.</p>
 <p>The old behavior:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Set-Location</span> <span class="n">docs</span><span class="p">\</span><span class="n">scenarios</span><span class="p">\</span><span class="n">azure-resources</span>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="nb">Set-Location</span> <span class="n">docs</span><span class="p">\</span><span class="n">scenarios</span><span class="p">\</span><span class="n">azure-resources</span>
 <span class="nb">Get-PSRule</span>
 
 <span class="n">RuleName</span>                            <span class="n">ModuleName</span>                 <span class="n">Synopsis</span>
@@ -2102,7 +2102,7 @@ This behavior has now been removed from <em>v2.0.0</em>.</p>
 <span class="n">storageAccounts</span><span class="p">.</span><span class="n">UseEncryption</span>                                  <span class="n">Use</span> <span class="n">at-rest</span> <span class="n">storage</span> <span class="n">encryption</span>
 </code></pre></div>
 <p>The new behavior:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Set-Location</span> <span class="n">docs</span><span class="p">\</span><span class="n">scenarios</span><span class="p">\</span><span class="n">azure-resources</span>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="nb">Set-Location</span> <span class="n">docs</span><span class="p">\</span><span class="n">scenarios</span><span class="p">\</span><span class="n">azure-resources</span>
 <span class="nb">Get-PSRule</span>
 
 <span class="c"># No output, need to specify -Path explicitly</span>
@@ -2138,18 +2138,18 @@ From <em>v1.4.0</em> PSRule now defaults to <code>Detect</code>.</p>
 </ol>
 <p>To force usage of the <code>Client</code> output style set the <code>Output.Style</code> option.
 For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the output/style property</span>
+<div class="highlight"><span class="filename">ps-rule.yaml</span><pre><span></span><code><span class="c1"># YAML: Using the output/style property</span>
 <span class="nt">output</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Client</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_OUTPUT_STYLE</span><span class="o">=</span>Client
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
+<div class="highlight"><span class="filename">GitHub Actions</span><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
 <span class="nt">env</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">PSRULE_OUTPUT_STYLE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Client</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
+<div class="highlight"><span class="filename">Azure Pipelines</span><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
 <span class="nt">variables</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_OUTPUT_STYLE</span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Client</span>
@@ -2164,7 +2164,7 @@ For example:</p>
 <li><code>TargetObject</code></li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Rule1&#39;</span> <span class="p">{</span>
+<div class="highlight"><span class="filename">PowerShell rules</span><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Rule1&#39;</span> <span class="p">{</span>
     <span class="nv">$Rule</span><span class="p">.</span><span class="n">TargetName</span> <span class="o">-eq</span> <span class="s1">&#39;Name1&#39;</span><span class="p">;</span>
     <span class="nv">$Rule</span><span class="p">.</span><span class="n">TargetType</span> <span class="o">-eq</span> <span class="s1">&#39;.json&#39;</span><span class="p">;</span>
     <span class="nv">$Rule</span><span class="p">.</span><span class="n">TargetObject</span><span class="p">.</span><span class="n">someProperty</span> <span class="o">-eq</span> <span class="n">1</span><span class="p">;</span>
@@ -2174,7 +2174,7 @@ For example:</p>
 These properties are instead available on the <code>$PSRule</code> variable.
 Rules referencing the deprecated properties of <code>$Rule</code> must be updated.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Rule1&#39;</span> <span class="p">{</span>
+<div class="highlight"><span class="filename">PowerShell rules</span><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Rule1&#39;</span> <span class="p">{</span>
     <span class="nv">$PSRule</span><span class="p">.</span><span class="n">TargetName</span> <span class="o">-eq</span> <span class="s1">&#39;Name1&#39;</span><span class="p">;</span>
     <span class="nv">$PSRule</span><span class="p">.</span><span class="n">TargetType</span> <span class="o">-eq</span> <span class="s1">&#39;.json&#39;</span><span class="p">;</span>
     <span class="nv">$PSRule</span><span class="p">.</span><span class="n">TargetObject</span><span class="p">.</span><span class="n">someProperty</span> <span class="o">-eq</span> <span class="n">1</span><span class="p">;</span>
@@ -2186,7 +2186,7 @@ Rules referencing the deprecated properties of <code>$Rule</code> must be update
   <small>
     
       Last update:
-      2022-10-04
+      2023-03-02
     
   </small>
 </div>
@@ -2248,7 +2248,7 @@ Rules referencing the deprecated properties of <code>$Rule</code> must be update
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate", "content.tabs.link"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
       <script src="../assets/javascripts/bundle.2a6f1dda.min.js"></script>
