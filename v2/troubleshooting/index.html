@@ -1053,6 +1053,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#psr0002-summary-results-are-not-supported-with-job-summaries" class="md-nav__link">
+    PSR0002 - Summary results are not supported with Job Summaries
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1807,6 +1814,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#psr0002-summary-results-are-not-supported-with-job-summaries" class="md-nav__link">
+    PSR0002 - Summary results are not supported with Job Summaries
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1883,13 +1897,21 @@ These components are required for installing and checking versions of PSRule mod
 <p>This error typically indicates a problem with the YAML syntax in the <code>ps-rule.yaml</code> file.
 Double check the file for incorrect indentation or missing punctuation such as <code>-</code> and <code>:</code> characters.</p>
 <p>If you still have an issue, try resaving the file as UTF-8 in an editor such as Visual Studio Code.</p>
+<h2 id="psr0002-summary-results-are-not-supported-with-job-summaries">PSR0002 - Summary results are not supported with Job Summaries<a class="headerlink" href="#psr0002-summary-results-are-not-supported-with-job-summaries" title="Permanent link">#</a></h2>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>PSR0002: Summary results are not supported with Job Summaries.</p>
+</div>
+<p>Currently using the <code>Output.As</code> with the <code>Summary</code> option is not supported with job summaries.
+Choose to use one or the other.</p>
+<p>If you have a specific use case your would like to enable, please start a <a href="https://github.com/microsoft/PSRule/discussions">discussion</a>.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2023-02-24
+      2023-03-25
     
   </small>
 </div>
