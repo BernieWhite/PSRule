@@ -3493,8 +3493,13 @@ One or more patterns to compare can be specified.</p>
 </code></pre></div>
 <h3 id="match">Match<a class="headerlink" href="#match" title="Permanent link">#</a></h3>
 <p>The <code>match</code> condition can be used to compare if a field matches a supplied regular expression.</p>
+<ul>
+<li><code>caseSensitive</code> - Optionally, a case sensitive-comparison can be performed.
+  By default, case-insensitive comparison is performed.</li>
+</ul>
 <p>Syntax:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">match</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span>
 </code></pre></div>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span>
@@ -3819,8 +3824,13 @@ One or more patterns to compare can be specified.</p>
 </code></pre></div>
 <h3 id="notmatch">NotMatch<a class="headerlink" href="#notmatch" title="Permanent link">#</a></h3>
 <p>The <code>notMatch</code> condition can be used to compare if a field does not matches a supplied regular expression.</p>
+<ul>
+<li><code>caseSensitive</code> - Optionally, a case sensitive-comparison can be performed.
+  By default, case-insensitive comparison is performed.</li>
+</ul>
 <p>Syntax:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">notMatch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string&gt;</span>
+<span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span>
 </code></pre></div>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span>
@@ -3901,6 +3911,10 @@ If the path is within the required path, the condition will return <code>false</
 <li><code>caseSensitive</code> - Optionally, a case-sensitive comparison can be performed for string values.
   By default, case-insensitive comparison is performed.</li>
 </ul>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">notWithinPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;array&gt;</span>
+<span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span>
+</code></pre></div>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span>
 <span class="c1"># Synopsis: Test notWithinPath with source</span>
@@ -4185,6 +4199,10 @@ If the path is not within the required path, the condition will return <code>fal
 <li><code>caseSensitive</code> - Optionally, a case-sensitive comparison can be performed for string values.
   By default, case-insensitive comparison is performed.</li>
 </ul>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">withinPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;array&gt;</span>
+<span class="nt">caseSensitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;boolean&gt;</span>
+</code></pre></div>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span>
 <span class="c1"># Synopsis: Test withinPath with source</span>
@@ -4221,7 +4239,7 @@ If the path is not within the required path, the condition will return <code>fal
   <small>
     
       Last update:
-      2022-12-19
+      2023-03-25
     
   </small>
 </div>
