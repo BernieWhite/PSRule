@@ -1158,6 +1158,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#v280" class="md-nav__link">
+    v2.8.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v280-b0171-pre-release" class="md-nav__link">
     v2.8.0-B0171 (pre-release)
   </a>
@@ -2288,6 +2295,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#v280" class="md-nav__link">
+    v2.8.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v280-b0171-pre-release" class="md-nav__link">
     v2.8.0-B0171 (pre-release)
   </a>
@@ -2831,6 +2845,71 @@
 </li>
 </ul>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
+<h2 id="v280">v2.8.0<a class="headerlink" href="#v280" title="Permanent link">#</a></h2>
+<p>What's changed since release v2.7.0:</p>
+<ul>
+<li>General improvements:<ul>
+<li><strong>Important change</strong>: Replaced <code>SuppressedRuleWarning</code> execution option with <code>RuleSuppressed</code> by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1456">#1456</a><ul>
+<li>Improved options for output of suppressed rules with <code>RuleSuppressed</code> option.</li>
+<li>Deprecated <code>SuppressedRuleWarning</code> option, which will be removed in v3.</li>
+</ul>
+</li>
+<li>Added support for logging excluded rules by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1432">#1432</a></li>
+<li>Added additional options to schema for PSRule for Azure by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1446">#1446</a></li>
+<li>Improved error message for failing to read options file by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1433">#1433</a></li>
+<li>Added support for import within initialize block by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1448">#1448</a></li>
+<li>Added support for direct typing on import by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1449">#1449</a><ul>
+<li>Use the <code>$PSRule.ImportWithType</code> method to import an object with a specific type.</li>
+</ul>
+</li>
+<li>Added support for case sensitivity matching with <code>match</code> and <code>notMatch</code> expressions by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1480">#1480</a></li>
+</ul>
+</li>
+<li>Engineering:<ul>
+<li>Bump Pester to v5.4.0.
+  <a href="https://github.com/microsoft/PSRule/pull/1414">#1414</a>
+  Bump Microsoft.CodeAnalysis.Common to v4.4.0.
+  <a href="https://github.com/microsoft/PSRule/pull/1341">#1341</a></li>
+<li>Bump BenchmarkDotNet to v0.13.5.
+  <a href="https://github.com/microsoft/PSRule/pull/1437">#1413</a></li>
+<li>Bump BenchmarkDotNet.Diagnostics.Windows to v0.13.5.
+  <a href="https://github.com/microsoft/PSRule/pull/1437">#1413</a></li>
+<li>Bump Microsoft.NET.Test.Sdk to v17.5.0.
+  <a href="https://github.com/microsoft/PSRule/pull/1442">#1442</a></li>
+<li>Bump Newtonsoft.Json to v13.0.3.
+  <a href="https://github.com/microsoft/PSRule/pull/1467">#1467</a></li>
+<li>Bump Microsoft.CodeAnalysis.NetAnalyzers to v7.0.1.
+  <a href="https://github.com/microsoft/PSRule/pull/1468">#1468</a></li>
+</ul>
+</li>
+<li>Bug fixes:<ul>
+<li>Fixes handling of numerics in tests for that are impacted by regional format by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1405">#1405</a></li>
+<li>Fixed no output with using job summary with as summary by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1483">#1483</a><ul>
+<li>Fixed output and added error for unsupported scenarios.</li>
+</ul>
+</li>
+<li>Fixed LocalizedData is not exposed to if pre-conditions by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1083">#1083</a></li>
+<li>Fixed LocalizedData is not exposed to conventions by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1477">#1477</a></li>
+<li>Fixed problem binding when not set locally by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1473">#1473</a></li>
+</ul>
+</li>
+</ul>
+<p>What's changed since pre-release v2.8.0-B0171:</p>
+<ul>
+<li>No additional changes.</li>
+</ul>
 <h2 id="v280-b0171-pre-release">v2.8.0-B0171 (pre-release)<a class="headerlink" href="#v280-b0171-pre-release" title="Permanent link">#</a></h2>
 <p>What's changed since pre-release v2.8.0-B0121:</p>
 <ul>
@@ -4370,7 +4449,7 @@
   <small>
     
       Last update:
-      2023-03-25
+      2023-03-27
     
   </small>
 </div>
