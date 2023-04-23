@@ -1694,6 +1694,34 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-executionaliasreference" class="md-nav__link">
+    -ExecutionAliasReference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-executioninvariantculture" class="md-nav__link">
+    -ExecutionInvariantCulture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-executionruleinconclusive" class="md-nav__link">
+    -ExecutionRuleInconclusive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-executionunprocessedobject" class="md-nav__link">
+    -ExecutionUnprocessedObject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-includemodule" class="md-nav__link">
     -IncludeModule
   </a>
@@ -2532,6 +2560,34 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-executionaliasreference" class="md-nav__link">
+    -ExecutionAliasReference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-executioninvariantculture" class="md-nav__link">
+    -ExecutionInvariantCulture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-executionruleinconclusive" class="md-nav__link">
+    -ExecutionRuleInconclusive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-executionunprocessedobject" class="md-nav__link">
+    -ExecutionUnprocessedObject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-includemodule" class="md-nav__link">
     -IncludeModule
   </a>
@@ -2882,16 +2938,20 @@
  [-InconclusiveWarning &lt;Boolean&gt;] [-InvariantCultureWarning &lt;Boolean&gt;] [-InitialSessionState &lt;SessionState&gt;]
  [-NotProcessedWarning &lt;Boolean&gt;] [-SuppressedRuleWarning &lt;Boolean&gt;]
  [-SuppressionGroupExpired &lt;ExecutionActionPreference&gt;] [-ExecutionRuleExcluded &lt;ExecutionActionPreference&gt;]
- [-ExecutionRuleSuppressed &lt;ExecutionActionPreference&gt;] [-IncludeModule &lt;String[]&gt;] [-IncludePath &lt;String[]&gt;]
- [-Format &lt;InputFormat&gt;] [-InputIgnoreGitPath &lt;Boolean&gt;] [-InputIgnoreRepositoryCommon &lt;Boolean&gt;]
- [-InputIgnoreObjectSource &lt;Boolean&gt;] [-InputIgnoreUnchangedPath &lt;Boolean&gt;] [-ObjectPath &lt;String&gt;]
- [-InputTargetType &lt;String[]&gt;] [-InputPathIgnore &lt;String[]&gt;] [-LoggingLimitDebug &lt;String[]&gt;]
- [-LoggingLimitVerbose &lt;String[]&gt;] [-LoggingRuleFail &lt;OutcomeLogStream&gt;] [-LoggingRulePass &lt;OutcomeLogStream&gt;]
- [-OutputAs &lt;ResultFormat&gt;] [-OutputBanner &lt;BannerFormat&gt;] [-OutputCulture &lt;String[]&gt;]
- [-OutputEncoding &lt;OutputEncoding&gt;] [-OutputFooter &lt;FooterFormat&gt;] [-OutputFormat &lt;OutputFormat&gt;]
- [-OutputJobSummaryPath &lt;String&gt;] [-OutputJsonIndent &lt;Int32&gt;] [-OutputOutcome &lt;RuleOutcome&gt;]
- [-OutputPath &lt;String&gt;] [-OutputSarifProblemsOnly &lt;Boolean&gt;] [-OutputStyle &lt;OutputStyle&gt;]
- [-RepositoryBaseRef &lt;String&gt;] [-RepositoryUrl &lt;String&gt;] [-RuleIncludeLocal &lt;Boolean&gt;] [&lt;CommonParameters&gt;]
+ [-ExecutionRuleSuppressed &lt;ExecutionActionPreference&gt;] [-ExecutionAliasReference &lt;ExecutionActionPreference&gt;]
+ [-ExecutionRuleInconclusive &lt;ExecutionActionPreference&gt;]
+ [-ExecutionInvariantCulture &lt;ExecutionActionPreference&gt;]
+ [-ExecutionUnprocessedObject &lt;ExecutionActionPreference&gt;] [-IncludeModule &lt;String[]&gt;]
+ [-IncludePath &lt;String[]&gt;] [-Format &lt;InputFormat&gt;] [-InputIgnoreGitPath &lt;Boolean&gt;]
+ [-InputIgnoreRepositoryCommon &lt;Boolean&gt;] [-InputIgnoreObjectSource &lt;Boolean&gt;]
+ [-InputIgnoreUnchangedPath &lt;Boolean&gt;] [-ObjectPath &lt;String&gt;] [-InputTargetType &lt;String[]&gt;]
+ [-InputPathIgnore &lt;String[]&gt;] [-LoggingLimitDebug &lt;String[]&gt;] [-LoggingLimitVerbose &lt;String[]&gt;]
+ [-LoggingRuleFail &lt;OutcomeLogStream&gt;] [-LoggingRulePass &lt;OutcomeLogStream&gt;] [-OutputAs &lt;ResultFormat&gt;]
+ [-OutputBanner &lt;BannerFormat&gt;] [-OutputCulture &lt;String[]&gt;] [-OutputEncoding &lt;OutputEncoding&gt;]
+ [-OutputFooter &lt;FooterFormat&gt;] [-OutputFormat &lt;OutputFormat&gt;] [-OutputJobSummaryPath &lt;String&gt;]
+ [-OutputJsonIndent &lt;Int32&gt;] [-OutputOutcome &lt;RuleOutcome&gt;] [-OutputPath &lt;String&gt;]
+ [-OutputSarifProblemsOnly &lt;Boolean&gt;] [-OutputStyle &lt;OutputStyle&gt;] [-RepositoryBaseRef &lt;String&gt;]
+ [-RepositoryUrl &lt;String&gt;] [-RuleIncludeLocal &lt;Boolean&gt;] [&lt;CommonParameters&gt;]
 </code></pre></div>
 <h3 id="fromoption">FromOption<a class="headerlink" href="#fromoption" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>New-PSRuleOption [-Option] &lt;PSRuleOption&gt; [-Configuration &lt;ConfigurationOption&gt;]
@@ -2903,16 +2963,20 @@
  [-InconclusiveWarning &lt;Boolean&gt;] [-InvariantCultureWarning &lt;Boolean&gt;] [-InitialSessionState &lt;SessionState&gt;]
  [-NotProcessedWarning &lt;Boolean&gt;] [-SuppressedRuleWarning &lt;Boolean&gt;]
  [-SuppressionGroupExpired &lt;ExecutionActionPreference&gt;] [-ExecutionRuleExcluded &lt;ExecutionActionPreference&gt;]
- [-ExecutionRuleSuppressed &lt;ExecutionActionPreference&gt;] [-IncludeModule &lt;String[]&gt;] [-IncludePath &lt;String[]&gt;]
- [-Format &lt;InputFormat&gt;] [-InputIgnoreGitPath &lt;Boolean&gt;] [-InputIgnoreRepositoryCommon &lt;Boolean&gt;]
- [-InputIgnoreObjectSource &lt;Boolean&gt;] [-InputIgnoreUnchangedPath &lt;Boolean&gt;] [-ObjectPath &lt;String&gt;]
- [-InputTargetType &lt;String[]&gt;] [-InputPathIgnore &lt;String[]&gt;] [-LoggingLimitDebug &lt;String[]&gt;]
- [-LoggingLimitVerbose &lt;String[]&gt;] [-LoggingRuleFail &lt;OutcomeLogStream&gt;] [-LoggingRulePass &lt;OutcomeLogStream&gt;]
- [-OutputAs &lt;ResultFormat&gt;] [-OutputBanner &lt;BannerFormat&gt;] [-OutputCulture &lt;String[]&gt;]
- [-OutputEncoding &lt;OutputEncoding&gt;] [-OutputFooter &lt;FooterFormat&gt;] [-OutputFormat &lt;OutputFormat&gt;]
- [-OutputJobSummaryPath &lt;String&gt;] [-OutputJsonIndent &lt;Int32&gt;] [-OutputOutcome &lt;RuleOutcome&gt;]
- [-OutputPath &lt;String&gt;] [-OutputSarifProblemsOnly &lt;Boolean&gt;] [-OutputStyle &lt;OutputStyle&gt;]
- [-RepositoryBaseRef &lt;String&gt;] [-RepositoryUrl &lt;String&gt;] [-RuleIncludeLocal &lt;Boolean&gt;] [&lt;CommonParameters&gt;]
+ [-ExecutionRuleSuppressed &lt;ExecutionActionPreference&gt;] [-ExecutionAliasReference &lt;ExecutionActionPreference&gt;]
+ [-ExecutionRuleInconclusive &lt;ExecutionActionPreference&gt;]
+ [-ExecutionInvariantCulture &lt;ExecutionActionPreference&gt;]
+ [-ExecutionUnprocessedObject &lt;ExecutionActionPreference&gt;] [-IncludeModule &lt;String[]&gt;]
+ [-IncludePath &lt;String[]&gt;] [-Format &lt;InputFormat&gt;] [-InputIgnoreGitPath &lt;Boolean&gt;]
+ [-InputIgnoreRepositoryCommon &lt;Boolean&gt;] [-InputIgnoreObjectSource &lt;Boolean&gt;]
+ [-InputIgnoreUnchangedPath &lt;Boolean&gt;] [-ObjectPath &lt;String&gt;] [-InputTargetType &lt;String[]&gt;]
+ [-InputPathIgnore &lt;String[]&gt;] [-LoggingLimitDebug &lt;String[]&gt;] [-LoggingLimitVerbose &lt;String[]&gt;]
+ [-LoggingRuleFail &lt;OutcomeLogStream&gt;] [-LoggingRulePass &lt;OutcomeLogStream&gt;] [-OutputAs &lt;ResultFormat&gt;]
+ [-OutputBanner &lt;BannerFormat&gt;] [-OutputCulture &lt;String[]&gt;] [-OutputEncoding &lt;OutputEncoding&gt;]
+ [-OutputFooter &lt;FooterFormat&gt;] [-OutputFormat &lt;OutputFormat&gt;] [-OutputJobSummaryPath &lt;String&gt;]
+ [-OutputJsonIndent &lt;Int32&gt;] [-OutputOutcome &lt;RuleOutcome&gt;] [-OutputPath &lt;String&gt;]
+ [-OutputSarifProblemsOnly &lt;Boolean&gt;] [-OutputStyle &lt;OutputStyle&gt;] [-RepositoryBaseRef &lt;String&gt;]
+ [-RepositoryUrl &lt;String&gt;] [-RuleIncludeLocal &lt;Boolean&gt;] [&lt;CommonParameters&gt;]
 </code></pre></div>
 <h3 id="fromdefault">FromDefault<a class="headerlink" href="#fromdefault" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>New-PSRuleOption [-Default] [-Configuration &lt;ConfigurationOption&gt;] [-SuppressTargetName &lt;SuppressionOption&gt;]
@@ -2923,16 +2987,20 @@
  [-InconclusiveWarning &lt;Boolean&gt;] [-InvariantCultureWarning &lt;Boolean&gt;] [-InitialSessionState &lt;SessionState&gt;]
  [-NotProcessedWarning &lt;Boolean&gt;] [-SuppressedRuleWarning &lt;Boolean&gt;]
  [-SuppressionGroupExpired &lt;ExecutionActionPreference&gt;] [-ExecutionRuleExcluded &lt;ExecutionActionPreference&gt;]
- [-ExecutionRuleSuppressed &lt;ExecutionActionPreference&gt;] [-IncludeModule &lt;String[]&gt;] [-IncludePath &lt;String[]&gt;]
- [-Format &lt;InputFormat&gt;] [-InputIgnoreGitPath &lt;Boolean&gt;] [-InputIgnoreRepositoryCommon &lt;Boolean&gt;]
- [-InputIgnoreObjectSource &lt;Boolean&gt;] [-InputIgnoreUnchangedPath &lt;Boolean&gt;] [-ObjectPath &lt;String&gt;]
- [-InputTargetType &lt;String[]&gt;] [-InputPathIgnore &lt;String[]&gt;] [-LoggingLimitDebug &lt;String[]&gt;]
- [-LoggingLimitVerbose &lt;String[]&gt;] [-LoggingRuleFail &lt;OutcomeLogStream&gt;] [-LoggingRulePass &lt;OutcomeLogStream&gt;]
- [-OutputAs &lt;ResultFormat&gt;] [-OutputBanner &lt;BannerFormat&gt;] [-OutputCulture &lt;String[]&gt;]
- [-OutputEncoding &lt;OutputEncoding&gt;] [-OutputFooter &lt;FooterFormat&gt;] [-OutputFormat &lt;OutputFormat&gt;]
- [-OutputJobSummaryPath &lt;String&gt;] [-OutputJsonIndent &lt;Int32&gt;] [-OutputOutcome &lt;RuleOutcome&gt;]
- [-OutputPath &lt;String&gt;] [-OutputSarifProblemsOnly &lt;Boolean&gt;] [-OutputStyle &lt;OutputStyle&gt;]
- [-RepositoryBaseRef &lt;String&gt;] [-RepositoryUrl &lt;String&gt;] [-RuleIncludeLocal &lt;Boolean&gt;] [&lt;CommonParameters&gt;]
+ [-ExecutionRuleSuppressed &lt;ExecutionActionPreference&gt;] [-ExecutionAliasReference &lt;ExecutionActionPreference&gt;]
+ [-ExecutionRuleInconclusive &lt;ExecutionActionPreference&gt;]
+ [-ExecutionInvariantCulture &lt;ExecutionActionPreference&gt;]
+ [-ExecutionUnprocessedObject &lt;ExecutionActionPreference&gt;] [-IncludeModule &lt;String[]&gt;]
+ [-IncludePath &lt;String[]&gt;] [-Format &lt;InputFormat&gt;] [-InputIgnoreGitPath &lt;Boolean&gt;]
+ [-InputIgnoreRepositoryCommon &lt;Boolean&gt;] [-InputIgnoreObjectSource &lt;Boolean&gt;]
+ [-InputIgnoreUnchangedPath &lt;Boolean&gt;] [-ObjectPath &lt;String&gt;] [-InputTargetType &lt;String[]&gt;]
+ [-InputPathIgnore &lt;String[]&gt;] [-LoggingLimitDebug &lt;String[]&gt;] [-LoggingLimitVerbose &lt;String[]&gt;]
+ [-LoggingRuleFail &lt;OutcomeLogStream&gt;] [-LoggingRulePass &lt;OutcomeLogStream&gt;] [-OutputAs &lt;ResultFormat&gt;]
+ [-OutputBanner &lt;BannerFormat&gt;] [-OutputCulture &lt;String[]&gt;] [-OutputEncoding &lt;OutputEncoding&gt;]
+ [-OutputFooter &lt;FooterFormat&gt;] [-OutputFormat &lt;OutputFormat&gt;] [-OutputJobSummaryPath &lt;String&gt;]
+ [-OutputJsonIndent &lt;Int32&gt;] [-OutputOutcome &lt;RuleOutcome&gt;] [-OutputPath &lt;String&gt;]
+ [-OutputSarifProblemsOnly &lt;Boolean&gt;] [-OutputStyle &lt;OutputStyle&gt;] [-RepositoryBaseRef &lt;String&gt;]
+ [-RepositoryUrl &lt;String&gt;] [-RuleIncludeLocal &lt;Boolean&gt;] [&lt;CommonParameters&gt;]
 </code></pre></div>
 <h2 id="description">DESCRIPTION<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
 <p>The <strong>New-PSRuleOption</strong> cmdlet creates an options object that can be passed to PSRule cmdlets to configure execution.</p>
@@ -3215,6 +3283,62 @@ See about_PSRule_Options for more information.</p>
 <span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
 <span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-executionaliasreference">-ExecutionAliasReference<a class="headerlink" href="#-executionaliasreference" title="Permanent link">#</a></h3>
+<p>Sets the <code>Execution.AliasReference</code> option.
+Determines how to handle when an alias to a resource is used.
+See about_PSRule_Options for more information.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExecutionActionPreference</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-executioninvariantculture">-ExecutionInvariantCulture<a class="headerlink" href="#-executioninvariantculture" title="Permanent link">#</a></h3>
+<p>Sets the <code>Execution.InvariantCulture</code> option.
+Determines how to report when an invariant culture is used.
+See about_PSRule_Options for more information.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExecutionActionPreference</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-executionruleinconclusive">-ExecutionRuleInconclusive<a class="headerlink" href="#-executionruleinconclusive" title="Permanent link">#</a></h3>
+<p>Sets the <code>Execution.RuleInconclusive</code> option.
+Determines how to handle rules that generate inconclusive results.
+See about_PSRule_Options for more information.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExecutionActionPreference</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-executionunprocessedobject">-ExecutionUnprocessedObject<a class="headerlink" href="#-executionunprocessedobject" title="Permanent link">#</a></h3>
+<p>Sets the <code>Execution.UnprocessedObject</code> option.
+Determines how to report objects that are not processed by any rule.
+See about_PSRule_Options for more information.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExecutionActionPreference</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
 <span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
@@ -3717,7 +3841,7 @@ The <code>Execution.SuppressionGroupExpired</code> option determines how to hand
   <small>
     
       Last update:
-      2023-03-02
+      2023-04-23
     
   </small>
 </div>

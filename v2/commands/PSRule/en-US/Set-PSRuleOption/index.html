@@ -1653,6 +1653,34 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-executionaliasreference" class="md-nav__link">
+    -ExecutionAliasReference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-executioninvariantculture" class="md-nav__link">
+    -ExecutionInvariantCulture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-executionruleinconclusive" class="md-nav__link">
+    -ExecutionRuleInconclusive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-executionunprocessedobject" class="md-nav__link">
+    -ExecutionUnprocessedObject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-includemodule" class="md-nav__link">
     -IncludeModule
   </a>
@@ -2423,6 +2451,34 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-executionaliasreference" class="md-nav__link">
+    -ExecutionAliasReference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-executioninvariantculture" class="md-nav__link">
+    -ExecutionInvariantCulture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-executionruleinconclusive" class="md-nav__link">
+    -ExecutionRuleInconclusive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-executionunprocessedobject" class="md-nav__link">
+    -ExecutionUnprocessedObject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-includemodule" class="md-nav__link">
     -IncludeModule
   </a>
@@ -2772,7 +2828,11 @@
  [-InvariantCultureWarning &lt;Boolean&gt;] [-InitialSessionState &lt;SessionState&gt;] [-NotProcessedWarning &lt;Boolean&gt;]
  [-SuppressedRuleWarning &lt;Boolean&gt;] [-SuppressionGroupExpired &lt;ExecutionActionPreference&gt;]
  [-ExecutionRuleExcluded &lt;ExecutionActionPreference&gt;] [-ExecutionRuleSuppressed &lt;ExecutionActionPreference&gt;]
- [-IncludeModule &lt;String[]&gt;] [-IncludePath &lt;String[]&gt;] [-Format &lt;InputFormat&gt;] [-InputIgnoreGitPath &lt;Boolean&gt;]
+ [-ExecutionAliasReference &lt;ExecutionActionPreference&gt;]
+ [-ExecutionRuleInconclusive &lt;ExecutionActionPreference&gt;]
+ [-ExecutionInvariantCulture &lt;ExecutionActionPreference&gt;]
+ [-ExecutionUnprocessedObject &lt;ExecutionActionPreference&gt;] [-IncludeModule &lt;String[]&gt;]
+ [-IncludePath &lt;String[]&gt;] [-Format &lt;InputFormat&gt;] [-InputIgnoreGitPath &lt;Boolean&gt;]
  [-InputIgnoreObjectSource &lt;Boolean&gt;] [-InputIgnoreRepositoryCommon &lt;Boolean&gt;]
  [-InputIgnoreUnchangedPath &lt;Boolean&gt;] [-ObjectPath &lt;String&gt;] [-InputPathIgnore &lt;String[]&gt;]
  [-InputTargetType &lt;String[]&gt;] [-LoggingLimitDebug &lt;String[]&gt;] [-LoggingLimitVerbose &lt;String[]&gt;]
@@ -3016,6 +3076,62 @@ See about_PSRule_Options for more information.</p>
 <span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
 <span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-executionaliasreference">-ExecutionAliasReference<a class="headerlink" href="#-executionaliasreference" title="Permanent link">#</a></h3>
+<p>Sets the <code>Execution.AliasReference</code> option.
+Determines how to handle when an alias to a resource is used.
+See about_PSRule_Options for more information.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExecutionActionPreference</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-executioninvariantculture">-ExecutionInvariantCulture<a class="headerlink" href="#-executioninvariantculture" title="Permanent link">#</a></h3>
+<p>Sets the <code>Execution.InvariantCulture</code> option.
+Determines how to report when an invariant culture is used.
+See about_PSRule_Options for more information.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExecutionActionPreference</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-executionruleinconclusive">-ExecutionRuleInconclusive<a class="headerlink" href="#-executionruleinconclusive" title="Permanent link">#</a></h3>
+<p>Sets the <code>Execution.RuleInconclusive</code> option.
+Determines how to handle rules that generate inconclusive results.
+See about_PSRule_Options for more information.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExecutionActionPreference</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-executionunprocessedobject">-ExecutionUnprocessedObject<a class="headerlink" href="#-executionunprocessedobject" title="Permanent link">#</a></h3>
+<p>Sets the <code>Execution.UnprocessedObject</code> option.
+Determines how to report objects that are not processed by any rule.
+See about_PSRule_Options for more information.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExecutionActionPreference</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
 <span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
@@ -3537,7 +3653,7 @@ The <code>Execution.SuppressionGroupExpired</code> option determines how to hand
   <small>
     
       Last update:
-      2023-03-02
+      2023-04-23
     
   </small>
 </div>
