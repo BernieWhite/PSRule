@@ -1687,6 +1687,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#executionaliasreference" class="md-nav__link">
+    Execution.AliasReference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#executionaliasreferencewarning" class="md-nav__link">
     Execution.AliasReferenceWarning
   </a>
@@ -1715,6 +1722,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#executioninvariantculture" class="md-nav__link">
+    Execution.InvariantCulture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#executioninvariantculturewarning" class="md-nav__link">
     Execution.InvariantCultureWarning
   </a>
@@ -1731,6 +1745,13 @@
           <li class="md-nav__item">
   <a href="#executionnotprocessedwarning" class="md-nav__link">
     Execution.NotProcessedWarning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executionruleinconclusive" class="md-nav__link">
+    Execution.RuleInconclusive
   </a>
   
 </li>
@@ -1759,6 +1780,13 @@
           <li class="md-nav__item">
   <a href="#executionrulesuppressed" class="md-nav__link">
     Execution.RuleSuppressed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executionunprocessedobject" class="md-nav__link">
+    Execution.UnprocessedObject
   </a>
   
 </li>
@@ -2269,6 +2297,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#executionaliasreference" class="md-nav__link">
+    Execution.AliasReference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#executionaliasreferencewarning" class="md-nav__link">
     Execution.AliasReferenceWarning
   </a>
@@ -2297,6 +2332,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#executioninvariantculture" class="md-nav__link">
+    Execution.InvariantCulture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#executioninvariantculturewarning" class="md-nav__link">
     Execution.InvariantCultureWarning
   </a>
@@ -2313,6 +2355,13 @@
           <li class="md-nav__item">
   <a href="#executionnotprocessedwarning" class="md-nav__link">
     Execution.NotProcessedWarning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executionruleinconclusive" class="md-nav__link">
+    Execution.RuleInconclusive
   </a>
   
 </li>
@@ -2341,6 +2390,13 @@
           <li class="md-nav__item">
   <a href="#executionrulesuppressed" class="md-nav__link">
     Execution.RuleSuppressed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executionunprocessedobject" class="md-nav__link">
+    Execution.UnprocessedObject
   </a>
   
 </li>
@@ -2656,15 +2712,19 @@ This topic describes what options are available, when to and how to use them.</p
 <p>The following workspace options are available for use:</p>
 <ul>
 <li><a href="#conventioninclude">Convention.Include</a></li>
+<li><a href="#executionaliasreference">Execution.AliasReference</a></li>
 <li><a href="#executionaliasreferencewarning">Execution.AliasReferenceWarning</a></li>
 <li><a href="#executionduplicateresourceid">Execution.DuplicateResourceId</a></li>
 <li><a href="#executionlanguagemode">Execution.LanguageMode</a></li>
 <li><a href="#executioninconclusivewarning">Execution.InconclusiveWarning</a></li>
+<li><a href="#executioninvariantculture">Execution.InvariantCulture</a></li>
 <li><a href="#executioninvariantculturewarning">Execution.InvariantCultureWarning</a></li>
 <li><a href="#executioninitialsessionstate">Execution.InitialSessionState</a></li>
 <li><a href="#executionnotprocessedwarning">Execution.NotProcessedWarning</a></li>
+<li><a href="#executionruleinconclusive">Execution.RuleInconclusive</a></li>
 <li><a href="#executionsuppressedrulewarning">Execution.SuppressedRuleWarning</a></li>
 <li><a href="#executionsuppressiongroupexpired">Execution.SuppressionGroupExpired</a></li>
+<li><a href="#executionunprocessedobject">Execution.UnprocessedObject</a></li>
 <li><a href="#includemodule">Include.Module</a></li>
 <li><a href="#includepath">Include.Path</a></li>
 <li><a href="#inputformat">Input.Format</a></li>
@@ -3158,7 +3218,50 @@ Conventions are included by name and must be defined within files included in <c
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_CONVENTION_INCLUDE</span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Convention1;Convention2&#39;</span>
 </code></pre></div>
+<h3 id="executionaliasreference">Execution.AliasReference<a class="headerlink" href="#executionaliasreference" title="Permanent link">#</a></h3>
+<p>Determines how to handle when an alias to a resource is used.
+By defaut, a warning is generated, however this behaviour can be modified by this option.</p>
+<p>This option replaces <code>AliasReferenceWarning</code>.
+You do not need to configure both options.
+If <code>AliasReferenceWarning</code> is configured, it will override <code>AliasReference</code> with <code>Warn</code> or <code>Ignore</code> until removal in PSRule v3.</p>
+<p>The following preferences are available:</p>
+<ul>
+<li><code>None</code> (0) - No preference.
+  Inherits the default of <code>Warn</code>.</li>
+<li><code>Ignore</code> (1) - Continue to execute silently.</li>
+<li><code>Warn</code> (2) - Continue to execute but log a warning.
+  This is the default.</li>
+<li><code>Error</code> (3) - Abort and throw an error.</li>
+<li><code>Debug</code> (4) - Continue to execute but log a debug message.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionAliasReference parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-ExecutionAliasReference</span> <span class="s1">&#39;Error&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.AliasReference hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.AliasReference&#39;</span> <span class="p">=</span> <span class="s1">&#39;Error&#39;</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionAliasReference parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-ExecutionAliasReference</span> <span class="s1">&#39;Error&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/aliasReference property</span>
+<span class="nt">execution</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">aliasReference</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_EXECUTION_ALIASREFERENCE</span><span class="o">=</span>Error
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_ALIASREFERENCE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
+<span class="nt">variables</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_ALIASREFERENCE</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+</code></pre></div>
 <h3 id="executionaliasreferencewarning">Execution.AliasReferenceWarning<a class="headerlink" href="#executionaliasreferencewarning" title="Permanent link">#</a></h3>
+<p>This option has been deprecated and will be removed from v3 in favor of <code>aliasReference</code>.
+Use <code>aliasReference</code> instead.</p>
 <p>Rules may define one or more aliases.
 These aliases are alternative names to identify the rule.
 An alias may be used to reference the rule anywhere a rule name is used.
@@ -3263,6 +3366,8 @@ In locked down environments, a reduced set of language features may be desired.<
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConstrainedLanguage</span>
 </code></pre></div>
 <h3 id="executioninconclusivewarning">Execution.InconclusiveWarning<a class="headerlink" href="#executioninconclusivewarning" title="Permanent link">#</a></h3>
+<p>This option has been deprecated and will be removed from v3 in favor of <code>ruleInconclusive</code>.
+Use <code>ruleInconclusive</code> instead.</p>
 <p>When defining rules, it is possible not return a valid <code>$True</code> or <code>$False</code> result within the definition script block.</p>
 <p>Rule authors should not intentionally avoid returning a result, however a possible cause for not returning a result may be a rule logic error.</p>
 <p>If a rule should not be evaluated, use pre-conditions to avoid processing the rule for objects where the rule is not applicable.</p>
@@ -3298,7 +3403,50 @@ In locked down environments, a reduced set of language features may be desired.<
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_INCONCLUSIVEWARNING</span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
+<h3 id="executioninvariantculture">Execution.InvariantCulture<a class="headerlink" href="#executioninvariantculture" title="Permanent link">#</a></h3>
+<p>Determines how to report when an invariant culture is used.
+By defaut, a warning is generated, however this behaviour can be modified by this option.</p>
+<p>This option replaces <code>InvariantCultureWarning</code>.
+You do not need to configure both options.
+If <code>InvariantCultureWarning</code> is configured, it will override <code>InvariantCulture</code> with <code>Warn</code> or <code>Ignore</code> until removal in PSRule v3.</p>
+<p>The following preferences are available:</p>
+<ul>
+<li><code>None</code> (0) - No preference.
+  Inherits the default of <code>Warn</code>.</li>
+<li><code>Ignore</code> (1) - Continue to execute silently.</li>
+<li><code>Warn</code> (2) - Continue to execute but log a warning.
+  This is the default.</li>
+<li><code>Error</code> (3) - Abort and throw an error.</li>
+<li><code>Debug</code> (4) - Continue to execute but log a debug message.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionInvariantCulture parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-ExecutionInvariantCulture</span> <span class="s1">&#39;Error&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.InvariantCulture hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.InvariantCulture&#39;</span> <span class="p">=</span> <span class="s1">&#39;Error&#39;</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionInvariantCulture parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-ExecutionInvariantCulture</span> <span class="s1">&#39;Error&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/invariantCulture property</span>
+<span class="nt">execution</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">invariantCulture</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_EXECUTION_INVARIANTCULTURE</span><span class="o">=</span>Error
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_INVARIANTCULTURE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
+<span class="nt">variables</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_INVARIANTCULTURE</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+</code></pre></div>
 <h3 id="executioninvariantculturewarning">Execution.InvariantCultureWarning<a class="headerlink" href="#executioninvariantculturewarning" title="Permanent link">#</a></h3>
+<p>This option has been deprecated and will be removed from v3 in favor of <code>invariantCulture</code>.
+Use <code>invariantCulture</code> instead.</p>
 <p>When evaluating rules inside a CI host, if invariant culture is used, a warning is shown by default.
 You can suppress this warning if you set the culture with <code>-Culture</code> or the <code>Output.Culture</code> option.</p>
 <p>This warning can also be suppressed by using:</p>
@@ -3361,6 +3509,8 @@ You can suppress this warning if you set the culture with <code>-Culture</code> 
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Minimal</span>
 </code></pre></div>
 <h3 id="executionnotprocessedwarning">Execution.NotProcessedWarning<a class="headerlink" href="#executionnotprocessedwarning" title="Permanent link">#</a></h3>
+<p>This option has been deprecated and will be removed from v3 in favor of <code>unprocessedObject</code>.
+Use <code>unprocessedObject</code> instead.</p>
 <p>When evaluating rules, it is possible to incorrectly select a path with rules that use pre-conditions that do not accept the pipeline object.
 In this case the object has not been processed by any rule.</p>
 <p>Not processed objects will:</p>
@@ -3393,6 +3543,47 @@ In this case the object has not been processed by any rule.</p>
 <span class="nt">variables</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_NOTPROCESSEDWARNING</span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<h3 id="executionruleinconclusive">Execution.RuleInconclusive<a class="headerlink" href="#executionruleinconclusive" title="Permanent link">#</a></h3>
+<p>Determines how to handle rules that generate inconclusive results.
+By defaut, a warning is generated, however this behaviour can be modified by this option.</p>
+<p>This option replaces <code>InconclusiveWarning</code>.
+You do not need to configure both options.
+If <code>InconclusiveWarning</code> is configured, it will override <code>RuleInconclusive</code> with <code>Warn</code> or <code>Ignore</code> until removal in PSRule v3.</p>
+<p>The following preferences are available:</p>
+<ul>
+<li><code>None</code> (0) - No preference.
+  Inherits the default of <code>Warn</code>.</li>
+<li><code>Ignore</code> (1) - Continue to execute silently.</li>
+<li><code>Warn</code> (2) - Continue to execute but log a warning.
+  This is the default.</li>
+<li><code>Error</code> (3) - Abort and throw an error.</li>
+<li><code>Debug</code> (4) - Continue to execute but log a debug message.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionRuleInconclusive parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-ExecutionRuleInconclusive</span> <span class="s1">&#39;Error&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.RuleInconclusive hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.RuleInconclusive&#39;</span> <span class="p">=</span> <span class="s1">&#39;Error&#39;</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionRuleInconclusive parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-ExecutionRuleInconclusive</span> <span class="s1">&#39;Error&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/ruleInconclusive property</span>
+<span class="nt">execution</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ruleInconclusive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_EXECUTION_RULEINCONCLUSIVE</span><span class="o">=</span>Error
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_RULEINCONCLUSIVE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
+<span class="nt">variables</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_RULEINCONCLUSIVE</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
 </code></pre></div>
 <h3 id="executionsuppressedrulewarning">Execution.SuppressedRuleWarning<a class="headerlink" href="#executionsuppressedrulewarning" title="Permanent link">#</a></h3>
 <p>This option has been deprecated and will be removed from v3 in favor of <code>ruleSuppressed</code>.
@@ -3548,6 +3739,47 @@ If <code>suppressedRuleWarning</code> is configured, it will override <code>rule
 <div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
 <span class="nt">variables</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_RULESUPPRESSED</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+</code></pre></div>
+<h3 id="executionunprocessedobject">Execution.UnprocessedObject<a class="headerlink" href="#executionunprocessedobject" title="Permanent link">#</a></h3>
+<p>Determines how to report objects that are not processed by any rule.
+By defaut, a warning is generated, however this behaviour can be modified by this option.</p>
+<p>This option replaces <code>NotProcessedWarning</code>.
+You do not need to configure both options.
+If <code>NotProcessedWarning</code> is configured, it will override <code>UnprocessedObject</code> with <code>Warn</code> or <code>Ignore</code> until removal in PSRule v3.</p>
+<p>The following preferences are available:</p>
+<ul>
+<li><code>None</code> (0) - No preference.
+  Inherits the default of <code>Warn</code>.</li>
+<li><code>Ignore</code> (1) - Continue to execute silently.</li>
+<li><code>Warn</code> (2) - Continue to execute but log a warning.
+  This is the default.</li>
+<li><code>Error</code> (3) - Abort and throw an error.</li>
+<li><code>Debug</code> (4) - Continue to execute but log a debug message.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionUnprocessedObject parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-ExecutionUnprocessedObject</span> <span class="s1">&#39;Error&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.UnprocessedObject hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.UnprocessedObject&#39;</span> <span class="p">=</span> <span class="s1">&#39;Error&#39;</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionUnprocessedObject parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-ExecutionUnprocessedObject</span> <span class="s1">&#39;Error&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/unprocessedObject property</span>
+<span class="nt">execution</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">unprocessedObject</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_EXECUTION_UNPROCESSEDOBJECT</span><span class="o">=</span>Error
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_UNPROCESSEDOBJECT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
+<span class="nt">variables</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_UNPROCESSEDOBJECT</span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
 </code></pre></div>
 <h3 id="includemodule">Include.Module<a class="headerlink" href="#includemodule" title="Permanent link">#</a></h3>
@@ -4944,13 +5176,14 @@ Objects that are suppressed are not processed by the rule at all but will contin
 
 <span class="c1"># Configure execution options</span>
 <span class="nt">execution</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">aliasReferenceWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">aliasReference</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span>
 <span class="w">  </span><span class="nt">duplicateResourceId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+<span class="w">  </span><span class="nt">invariantCulture</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span>
 <span class="w">  </span><span class="nt">languageMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FullLanguage</span>
-<span class="w">  </span><span class="nt">inconclusiveWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">notProcessedWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">suppressedRuleWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">ruleInconclusive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span>
+<span class="w">  </span><span class="nt">ruleSuppressed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span>
 <span class="w">  </span><span class="nt">suppressionGroupExpired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span>
+<span class="w">  </span><span class="nt">unprocessedObject</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span>
 
 <span class="c1"># Configure include options</span>
 <span class="nt">include</span><span class="p">:</span>
@@ -5024,7 +5257,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
   <small>
     
       Last update:
-      2023-03-02
+      2023-04-23
     
   </small>
 </div>

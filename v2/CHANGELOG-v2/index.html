@@ -2862,6 +2862,19 @@
 <p>What's changed since release v2.8.1:</p>
 <ul>
 <li>General improvements:<ul>
+<li><strong>Important change</strong>: Rename of execution options by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1456">#1456</a><ul>
+<li>Renamed options allow configuration of output level as <code>Ignore</code>, <code>Warn</code>, <code>Error</code>, or <code>Debug</code>.</li>
+<li><code>Execution.AliasReferenceWarning</code> is replaced with <code>Execution.AliasReference</code>.</li>
+<li><code>Execution.InconclusiveWarning</code> is replaced with <code>Execution.RuleInconclusive</code>.</li>
+<li><code>Execution.InvariantCultureWarning</code> is replaced with <code>Execution.InvariantCulture</code>.</li>
+<li><code>Execution.NotProcessedWarning</code> is replaced with <code>Execution.UnprocessedObject</code>.</li>
+<li>Deprecated <code>AliasReferenceWarning</code> option, which will be removed in v3.</li>
+<li>Deprecated <code>InconclusiveWarning</code> option, which will be removed in v3.</li>
+<li>Deprecated <code>InvariantCultureWarning</code> option, which will be removed in v3.</li>
+<li>Deprecated <code>NotProcessedWarning</code> option, which will be removed in v3.</li>
+</ul>
+</li>
 <li>Improved schema display names by @BernieWhite.
   <a href="https://github.com/microsoft/PSRule/issues/1488">#1488</a></li>
 </ul>
@@ -4496,7 +4509,7 @@
   <small>
     
       Last update:
-      2023-04-22
+      2023-04-23
     
   </small>
 </div>
