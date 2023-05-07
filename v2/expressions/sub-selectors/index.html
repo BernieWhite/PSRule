@@ -21,7 +21,7 @@
         <link rel="next" href="../../scenarios/validation-pipeline/validation-pipeline/">
       
       <link rel="icon" href="../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.9">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -151,6 +151,8 @@
         </div>
       </div>
     </div>
+    
+      
     
     
     
@@ -983,8 +985,22 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#using-a-quantifier-with-sub-selectors" class="md-nav__link">
+    Using a quantifier with sub-selectors
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-content" class="md-nav__link">
+    Recommended content
+  </a>
   
 </li>
       
@@ -1816,8 +1832,22 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#using-a-quantifier-with-sub-selectors" class="md-nav__link">
+    Using a quantifier with sub-selectors
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-content" class="md-nav__link">
+    Recommended content
+  </a>
   
 </li>
       
@@ -2019,7 +2049,7 @@ Properties that contain a list of items may contain a sub-set of items that you 
 <li>If the <code>resources</code> property exists and has any items of type <code>Microsoft.Web/sites/config</code> and all pass, the rule passes.</li>
 </ul>
 <h3 id="when-there-are-no-results">When there are no results<a class="headerlink" href="#when-there-are-no-results" title="Permanent link">#</a></h3>
-<p>Given the example, is important to understand what happens if:</p>
+<p>Given the example, is important to understand what happens by default if:</p>
 <ul>
 <li>The <code>resources</code> property doesn't exist. <strong>OR</strong></li>
 <li>The <code>resources</code> property doesn't contain any items that match the sub-selector condition.</li>
@@ -2030,6 +2060,7 @@ The rule fails because there is no secondary conditions that could be used inste
 <ul>
 <li>Use a pre-condition to avoid running the rule.</li>
 <li>Group the sub-selector into a <code>anyOf</code>, and provide a secondary condition.</li>
+<li>Use a quantifier to determine how many items must match sub-selector and match the <code>allOf</code> / <code>anyOf</code> operator.</li>
 </ul>
 <p>For example:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">YAML</label><label for="__tabbed_4_2">JSON</label></div>
@@ -2106,13 +2137,95 @@ The rule fails because there is no secondary conditions that could be used inste
 <li>If the <code>resources</code> property exists and has any items of type <code>Microsoft.Web/sites/config</code> but any fail, the rule fails.</li>
 <li>If the <code>resources</code> property exists and has any items of type <code>Microsoft.Web/sites/config</code> and all pass, the rule passes.</li>
 </ul>
+<h3 id="using-a-quantifier-with-sub-selectors">Using a quantifier with sub-selectors<a class="headerlink" href="#using-a-quantifier-with-sub-selectors" title="Permanent link">#</a></h3>
+<p>When iterating over a list of items, you may want to determine how many items must match.
+A quantifier determines how many items in the list match.
+Matching items must be:</p>
+<ul>
+<li>Selected by the sub-selector.</li>
+<li>Match the condition of the operator.</li>
+</ul>
+<p>Supported quantifiers are:</p>
+<ul>
+<li><code>count</code> &mdash; The number of items must equal then the specified value.</li>
+<li><code>less</code> &mdash; The number of items must less then the specified value.</li>
+<li><code>lessOrEqual</code> &mdash; The number of items must less or equal to the specified value.</li>
+<li><code>greater</code> &mdash; The number of items must greater then the specified value.</li>
+<li><code>greaterOrEqual</code> &mdash; The number of items must greater or equal to the specified value.</li>
+</ul>
+<p>For example:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">YAML</label><label for="__tabbed_5_2">JSON</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="c1"># Synopsis: A rule with a sub-selector quantifier.</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rule</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Yaml.Subselector.Quantifier</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">resources</span>
+<span class="w">    </span><span class="nt">where</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.&#39;</span>
+<span class="w">      </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Microsoft.Web/sites/config&#39;</span>
+<span class="hll"><span class="w">    </span><span class="nt">greaterOrEqual</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span class="w">    </span><span class="nt">allOf</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">properties.detailedErrorLoggingEnabled</span>
+<span class="w">      </span><span class="nt">equals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Synopsis: A rule with a sub-selector quantifier.</span>
+<span class="w">  </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;github.com/microsoft/PSRule/v1&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rule&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Json.Subselector.Quantifier&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;spec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;resources&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;where&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft.Web/sites/config&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="hll"><span class="w">      </span><span class="nt">&quot;greaterOrEqual&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span class="w">      </span><span class="nt">&quot;allOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;properties.detailedErrorLoggingEnabled&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;equals&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>In the example:</p>
+<ul>
+<li>If the array property <code>resources</code> exists, any items with a type of <code>Microsoft.Web/sites/config</code> are evaluated.<ul>
+<li>Each item must have the <code>properties.detailedErrorLoggingEnabled</code> property set to <code>true</code> to pass.</li>
+<li>The number of items that pass must be greater or equal to <code>1</code>.</li>
+</ul>
+</li>
+<li>If the <code>resources</code> property does not exist or is empty, the number of items is <code>0</code> which fails greater or equal to <code>1</code>.</li>
+</ul>
+<h2 id="recommended-content">Recommended content<a class="headerlink" href="#recommended-content" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="../../quickstart/standalone-rule/">Create a standalone rule</a></li>
+<li><a href="../functions/">Functions</a></li>
+<li><a href="../../concepts/PSRule/en-US/about_PSRule_Expressions/">Expressions</a></li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-08-26
+      2023-05-07
     
   </small>
 </div>
@@ -2231,7 +2344,7 @@ The rule fails because there is no secondary conditions that could be used inste
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
       
     
   </body>

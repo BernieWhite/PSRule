@@ -21,7 +21,7 @@
         <link rel="next" href="../about_PSRule_Docs/">
       
       <link rel="icon" href="../../../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.9">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -151,6 +151,8 @@
         </div>
       </div>
     </div>
+    
+      
     
     
     
@@ -1986,8 +1988,7 @@ For example:</p>
 <h3 id="including-with-options">Including with options<a class="headerlink" href="#including-with-options" title="Permanent link">#</a></h3>
 <p>Conventions can be included by name within options in addition to using the <code>-Convention</code> parameter.
 To specify a convention within YAML options use the following:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Example ps-docs.yaml</span>
-<span class="nt">convention</span><span class="p">:</span>
+<div class="highlight"><span class="filename">ps-rule.yaml</span><pre><span></span><code><span class="nt">convention</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">include</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;ExampleConvention1&#39;</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;ExampleConvention2&#39;</span>
@@ -1999,8 +2000,7 @@ By default, PSRule does not include conventions shipped within a module.
 To use a convention included in a module use the <code>-Convention</code> parameter or options configuration.</p>
 <p>A module can automatically include a convention by specifying the convention by name in module configuration.
 For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Example Config.Rule.yaml</span>
-<span class="nn">---</span>
+<div class="highlight"><span class="filename">Config.Rule.yaml</span><pre><span></span><code><span class="nn">---</span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ModuleConfig</span>
 <span class="nt">metadata</span><span class="p">:</span>
@@ -2033,7 +2033,7 @@ i.e. In the following example <code>ExampleConvention1</code> is execute before 
   <small>
     
       Last update:
-      2022-02-19
+      2023-04-24
     
   </small>
 </div>
@@ -2152,7 +2152,7 @@ i.e. In the following example <code>ExampleConvention1</code> is execute before 
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.fac441b0.min.js"></script>
       
     
   </body>

@@ -21,7 +21,7 @@
         <link rel="next" href="../../../../keywords/PSRule/en-US/about_PSRule_Keywords/">
       
       <link rel="icon" href="../../../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.9">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -151,6 +151,8 @@
         </div>
       </div>
     </div>
+    
+      
     
     
     
@@ -2532,6 +2534,9 @@ Expressions are comprised of nested conditions, operators, and comparison proper
 <p>The <code>allOf</code> operator is used to require all nested expressions to match.
 When any nested expression does not match, <code>allOf</code> does not match.
 This is similar to a logical <em>and</em> operation.</p>
+<p>Additionally sub-selectors can be used to modify the <code>allOf</code> operator.
+Sub-selectors allow filtering and looping through arrays of objects before the <code>allOf</code> operator is applied.
+See sub-selectors for more information.</p>
 <p>Syntax:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">allOf</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;expression[]&gt;</span>
 </code></pre></div>
@@ -2568,6 +2573,9 @@ This is similar to a logical <em>and</em> operation.</p>
 <p>The <code>anyOf</code> operator is used to require one or more nested expressions to match.
 When any nested expression matches, <code>allOf</code> matches.
 This is similar to a logical <em>or</em> operation.</p>
+<p>Additionally sub-selectors can be used to modify the <code>anyOf</code> operator.
+Sub-selectors allow filtering and looping through arrays of objects before the <code>anyOf</code> operator is applied.
+See sub-selectors for more information.</p>
 <p>Syntax:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">anyOf</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;expression[]&gt;</span>
 </code></pre></div>
@@ -4239,7 +4247,7 @@ If the path is not within the required path, the condition will return <code>fal
   <small>
     
       Last update:
-      2023-03-25
+      2023-05-07
     
   </small>
 </div>
@@ -4358,7 +4366,7 @@ If the path is not within the required path, the condition will return <code>fal
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.fac441b0.min.js"></script>
       
     
   </body>
