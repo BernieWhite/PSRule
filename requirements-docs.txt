@@ -1,5 +1,5 @@
 mkdocs==1.4.3
-mkdocs-material==9.1.12
+mkdocs-material==9.1.13
 pymdown-extensions==10.0
 mike==1.1.2
 mkdocs-simple-hooks==0.1.5
