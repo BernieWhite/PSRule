@@ -880,6 +880,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
@@ -893,6 +895,20 @@
           Concepts
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/baselines/" class="md-nav__link">
+        Baselines
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -2881,6 +2897,8 @@
 </ul>
 <p><strong>Experimental features</strong>:</p>
 <ul>
+<li>Baseline groups allow you to use a friendly name to reference baselines.
+  See <a href="../concepts/baselines/">baselines</a> for more information.</li>
 <li>Functions within YAML and JSON expressions can be used to perform manipulation prior to testing a condition.
   See <a href="../expressions/functions/">functions</a> for more information.</li>
 <li>Sub-selectors within YAML and JSON expressions can be used to filter rules and list properties.
@@ -2893,6 +2911,17 @@
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
 <p>What's changed since pre-release v2.9.0-B0033:</p>
 <ul>
+<li>New features:<ul>
+<li><strong>Experimental</strong>: Added support for baseline groups by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1541">#1541</a><ul>
+<li>Baseline groups allow you to reference a baseline by a friendly name.</li>
+<li>Update the baseline group to point to a new baseline.</li>
+<li>Currently only a single baseline can be referenced by a baseline group.</li>
+<li>See <a href="../concepts/baselines/">baselines</a> for more information.</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Engineering:<ul>
 <li>Bump Microsoft.NET.Test.Sdk to v17.6.1.
   <a href="https://github.com/microsoft/PSRule/pull/1540">#1540</a></li>
@@ -4568,7 +4597,7 @@
   <small>
     
       Last update:
-      2023-06-03
+      2023-06-04
     
   </small>
 </div>

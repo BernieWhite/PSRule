@@ -878,6 +878,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
@@ -891,6 +893,20 @@
           Concepts
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../baselines/" class="md-nav__link">
+        Baselines
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1626,6 +1642,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#baselinegroup" class="md-nav__link">
+    Baseline.Group
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#bindingfield" class="md-nav__link">
     Binding.Field
   </a>
@@ -2236,6 +2259,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#baselinegroup" class="md-nav__link">
+    Baseline.Group
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#bindingfield" class="md-nav__link">
     Binding.Field
   </a>
@@ -2713,6 +2743,7 @@
 This topic describes what options are available, when to and how to use them.</p>
 <p>The following workspace options are available for use:</p>
 <ul>
+<li><a href="#baselinegroup">Baseline.Group</a></li>
 <li><a href="#conventioninclude">Convention.Include</a></li>
 <li><a href="#executionaliasreference">Execution.AliasReference</a></li>
 <li><a href="#executionaliasreferencewarning">Execution.AliasReferenceWarning</a></li>
@@ -2846,6 +2877,37 @@ Boolean values are case-insensitive.</li>
 <li>String array values can specify multiple items by using a semi-colon separator.
 For example <code>PSRULE_INPUT_TARGETTYPE</code> could be set to <code>virtualMachine;virtualNetwork</code>.</li>
 </ul>
+<h3 id="baselinegroup">Baseline.Group<a class="headerlink" href="#baselinegroup" title="Permanent link">#</a></h3>
+<p>You can use a baseline group to provide a friendly name to an existing baseline.
+When you run PSRule you can opt to use the baseline group name as an alternative name for the baseline.
+To indicate a baseline group, prefix the group name with <code>@</code> where you would use the name of a baseline.</p>
+<p>Baseline groups can be specified using:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the BaselineGroup parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-BaselineGroup</span> <span class="p">@{</span> <span class="n">latest</span> <span class="p">=</span> <span class="s1">&#39;YourBaseline&#39;</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Baseline.Group hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Baseline.Group&#39;</span> <span class="p">=</span> <span class="p">@{</span> <span class="n">latest</span> <span class="p">=</span> <span class="s1">&#39;YourBaseline&#39;</span> <span class="p">}</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the BaselineGroup parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-BaselineGroup</span> <span class="p">@{</span> <span class="n">latest</span> <span class="p">=</span> <span class="s1">&#39;YourBaseline&#39;</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the baseline/group property</span>
+<span class="nt">baseline</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">group</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">latest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YourBaseline</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_BASELINE_GROUP</span><span class="o">=</span><span class="s1">&#39;latest=YourBaseline&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSRULE_BASELINE_GROUP</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;latest=YourBaseline&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
+<span class="nt">variables</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_BASELINE_GROUP</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;latest=YourBaseline&#39;</span>
+</code></pre></div>
 <h3 id="bindingfield">Binding.Field<a class="headerlink" href="#bindingfield" title="Permanent link">#</a></h3>
 <p>When an object is passed from the pipeline, PSRule automatically extracts fields from object properties.
 PSRule provides standard fields such as <code>TargetName</code> and <code>TargetType</code>.
@@ -5259,7 +5321,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
   <small>
     
       Last update:
-      2023-04-23
+      2023-06-04
     
   </small>
 </div>

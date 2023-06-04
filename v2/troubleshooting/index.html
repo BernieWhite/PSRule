@@ -880,6 +880,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
@@ -893,6 +895,20 @@
           Concepts
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/baselines/" class="md-nav__link">
+        Baselines
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1058,6 +1074,20 @@
         <li class="md-nav__item">
   <a href="#psr0002-summary-results-are-not-supported-with-job-summaries" class="md-nav__link">
     PSR0002 - Summary results are not supported with Job Summaries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#psr0003-the-specified-baseline-group-is-not-known" class="md-nav__link">
+    PSR0003 - The specified baseline group is not known
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#psr0004-the-specified-resource-is-not-known" class="md-nav__link">
+    PSR0004 - The specified resource is not known
   </a>
   
 </li>
@@ -1823,6 +1853,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#psr0003-the-specified-baseline-group-is-not-known" class="md-nav__link">
+    PSR0003 - The specified baseline group is not known
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#psr0004-the-specified-resource-is-not-known" class="md-nav__link">
+    PSR0004 - The specified resource is not known
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1907,13 +1951,26 @@ Double check the file for incorrect indentation or missing punctuation such as <
 <p>Currently using the <code>Output.As</code> with the <code>Summary</code> option is not supported with job summaries.
 Choose to use one or the other.</p>
 <p>If you have a specific use case your would like to enable, please start a <a href="https://github.com/microsoft/PSRule/discussions">discussion</a>.</p>
+<h2 id="psr0003-the-specified-baseline-group-is-not-known">PSR0003 - The specified baseline group is not known<a class="headerlink" href="#psr0003-the-specified-baseline-group-is-not-known" title="Permanent link">#</a></h2>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>PSR0003: The specified baseline group 'latest' is not known.</p>
+</div>
+<p>This error is caused by attempting to reference a baseline group which has not been defined.
+To define a baseline group, see <a href="https://aka.ms/ps-rule/options#baselinegroup">Baseline.Group</a> option.</p>
+<h2 id="psr0004-the-specified-resource-is-not-known">PSR0004 - The specified resource is not known<a class="headerlink" href="#psr0004-the-specified-resource-is-not-known" title="Permanent link">#</a></h2>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>PSR0004: The specified Baseline resource 'TestModule4\Module4' is not known.</p>
+</div>
+<p>This error is caused when you attempt to reference a resource such as a baseline, rule, or selector which has not been defined.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2023-03-25
+      2023-06-04
     
   </small>
 </div>

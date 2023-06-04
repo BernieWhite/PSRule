@@ -12,27 +12,27 @@
         <meta name="author" content="Microsoft">
       
       
-        <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/Export-PSRuleBaseline/">
+        <link rel="canonical" href="https://microsoft.github.io/PSRule/v2/concepts/baselines/">
       
       
-        <link rel="prev" href="../Assert-PSRule/">
+        <link rel="prev" href="../../scenarios/containers/container-execution/">
       
       
-        <link rel="next" href="../Get-PSRule/">
+        <link rel="next" href="../../expressions/functions/">
       
-      <link rel="icon" href="../../../../assets/ms_icon.png">
+      <link rel="icon" href="../../assets/ms_icon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
-        <title>Export-PSRuleBaseline - PSRule</title>
+        <title>Baselines - PSRule</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,9 +74,9 @@
   <!-- Open graph meta tags -->
   <meta property="og:site_name" content="PSRule" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="PSRule - Export-PSRuleBaseline" />
+  <meta property="og:title" content="PSRule - Baselines" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta property="og:url" content="https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/Export-PSRuleBaseline/" />
+  <meta property="og:url" content="https://microsoft.github.io/PSRule/v2/concepts/baselines/" />
   <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
@@ -86,7 +86,7 @@
   <!-- Twitter meta tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@github" />
-  <meta name="twitter:title" content="PSRule - Export-PSRuleBaseline" />
+  <meta name="twitter:title" content="PSRule - Baselines" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
@@ -109,7 +109,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#export-psrulebaseline" class="md-skip">
+        <a href="#baselines" class="md-skip">
           Skip to content
         </a>
       
@@ -127,9 +127,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="PSRule" class="md-header__button md-logo" aria-label="PSRule" data-md-component="logo">
+    <a href="../.." title="PSRule" class="md-header__button md-logo" aria-label="PSRule" data-md-component="logo">
       
-  <img src="../../../../assets/ms_icon.png" alt="logo">
+  <img src="../../assets/ms_icon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -145,7 +145,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Export-PSRuleBaseline
+              Baselines
             
           </span>
         </div>
@@ -222,7 +222,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../.." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -230,6 +230,8 @@
       
         
   
+  
+    
   
 
 
@@ -242,7 +244,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../about/" class="md-tabs__link">
+      <a href="../../about/" class="md-tabs__link md-tabs__link--active">
         Getting started
       </a>
     </li>
@@ -254,8 +256,6 @@
         
   
   
-    
-  
 
 
   
@@ -267,7 +267,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../Assert-PSRule/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../commands/PSRule/en-US/Assert-PSRule/" class="md-tabs__link">
         Reference
       </a>
     </li>
@@ -285,7 +285,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../addon-modules/" class="md-tabs__link">
+      <a href="../../addon-modules/" class="md-tabs__link">
         Addons
       </a>
     </li>
@@ -313,9 +313,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="PSRule" class="md-nav__button md-logo" aria-label="PSRule" data-md-component="logo">
+    <a href="../.." title="PSRule" class="md-nav__button md-logo" aria-label="PSRule" data-md-component="logo">
       
-  <img src="../../../../assets/ms_icon.png" alt="logo">
+  <img src="../../assets/ms_icon.png" alt="logo">
 
     </a>
     PSRule
@@ -343,7 +343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -356,14 +356,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
         
@@ -400,7 +402,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Getting started
@@ -448,7 +450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -462,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../features/" class="md-nav__link">
+      <a href="../../features/" class="md-nav__link">
         Features
       </a>
     </li>
@@ -476,7 +478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../faq/" class="md-nav__link">
+      <a href="../../faq/" class="md-nav__link">
         FAQ
       </a>
     </li>
@@ -497,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../install-instructions/" class="md-nav__link">
+      <a href="../../install-instructions/" class="md-nav__link">
         Installation
       </a>
     </li>
@@ -542,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../quickstart/standalone-rule/" class="md-nav__link">
+      <a href="../../quickstart/standalone-rule/" class="md-nav__link">
         Create a standalone rule
       </a>
     </li>
@@ -602,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../authoring/testing-infrastructure/" class="md-nav__link">
+      <a href="../../authoring/testing-infrastructure/" class="md-nav__link">
         Testing infrastructure
       </a>
     </li>
@@ -616,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../authoring/using-expressions/" class="md-nav__link">
+      <a href="../../authoring/using-expressions/" class="md-nav__link">
         Using expressions
       </a>
     </li>
@@ -630,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../authoring/storing-rules/" class="md-nav__link">
+      <a href="../../authoring/storing-rules/" class="md-nav__link">
         Storing and naming rules
       </a>
     </li>
@@ -644,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../authoring/packaging-rules/" class="md-nav__link">
+      <a href="../../authoring/packaging-rules/" class="md-nav__link">
         Packaging rules in a module
       </a>
     </li>
@@ -658,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../authoring/writing-rule-help/" class="md-nav__link">
+      <a href="../../authoring/writing-rule-help/" class="md-nav__link">
         Writing rule help
       </a>
     </li>
@@ -714,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../creating-your-pipeline/" class="md-nav__link">
+      <a href="../../creating-your-pipeline/" class="md-nav__link">
         Creating your pipeline
       </a>
     </li>
@@ -728,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../validating-locally/" class="md-nav__link">
+      <a href="../../validating-locally/" class="md-nav__link">
         Validating locally
       </a>
     </li>
@@ -742,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../analysis-output/" class="md-nav__link">
+      <a href="../../analysis-output/" class="md-nav__link">
         Analysis output
       </a>
     </li>
@@ -800,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scenarios/azure-resources/azure-resources/" class="md-nav__link">
+      <a href="../../scenarios/azure-resources/azure-resources/" class="md-nav__link">
         Validate Azure resource configuration
       </a>
     </li>
@@ -814,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scenarios/azure-tags/azure-tags/" class="md-nav__link">
+      <a href="../../scenarios/azure-tags/azure-tags/" class="md-nav__link">
         Azure resource tagging example
       </a>
     </li>
@@ -828,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scenarios/kubernetes-resources/kubernetes-resources/" class="md-nav__link">
+      <a href="../../scenarios/kubernetes-resources/kubernetes-resources/" class="md-nav__link">
         Kubernetes resource validation example
       </a>
     </li>
@@ -842,7 +844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scenarios/containers/container-execution/" class="md-nav__link">
+      <a href="../../scenarios/containers/container-execution/" class="md-nav__link">
         Using PSRule from a Container
       </a>
     </li>
@@ -861,14 +863,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
       
       
         
@@ -887,7 +891,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2_7">
           <span class="md-nav__icon md-icon"></span>
           Concepts
@@ -898,11 +902,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../../concepts/baselines/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Baselines
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Baselines
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#defining-baselines" class="md-nav__link">
+    Defining baselines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baseline-groups" class="md-nav__link">
+    Baseline groups
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -914,7 +966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../expressions/functions/" class="md-nav__link">
+      <a href="../../expressions/functions/" class="md-nav__link">
         Functions
       </a>
     </li>
@@ -928,7 +980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../concepts/grouping-rules/" class="md-nav__link">
+      <a href="../grouping-rules/" class="md-nav__link">
         Grouping rules
       </a>
     </li>
@@ -942,7 +994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../expressions/sub-selectors/" class="md-nav__link">
+      <a href="../../expressions/sub-selectors/" class="md-nav__link">
         Sub-selectors
       </a>
     </li>
@@ -994,7 +1046,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scenarios/validation-pipeline/validation-pipeline/" class="md-nav__link">
+      <a href="../../scenarios/validation-pipeline/validation-pipeline/" class="md-nav__link">
         Using within continuous integration
       </a>
     </li>
@@ -1015,7 +1067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../troubleshooting/" class="md-nav__link">
+      <a href="../../troubleshooting/" class="md-nav__link">
         Troubleshooting
       </a>
     </li>
@@ -1029,7 +1081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../license-contributing/" class="md-nav__link">
+      <a href="../../license-contributing/" class="md-nav__link">
         License and contributing
       </a>
     </li>
@@ -1043,7 +1095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../related-projects/" class="md-nav__link">
+      <a href="../../related-projects/" class="md-nav__link">
         Related projects
       </a>
     </li>
@@ -1129,7 +1181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../CHANGELOG-v2/" class="md-nav__link">
+      <a href="../../CHANGELOG-v2/" class="md-nav__link">
         v2
       </a>
     </li>
@@ -1143,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../CHANGELOG-v1/" class="md-nav__link">
+      <a href="../../CHANGELOG-v1/" class="md-nav__link">
         v1
       </a>
     </li>
@@ -1157,7 +1209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../CHANGELOG-v0/" class="md-nav__link">
+      <a href="../../CHANGELOG-v0/" class="md-nav__link">
         v0
       </a>
     </li>
@@ -1178,7 +1230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../upgrade-notes/" class="md-nav__link">
+      <a href="../../upgrade-notes/" class="md-nav__link">
         Upgrade notes
       </a>
     </li>
@@ -1192,7 +1244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../deprecations/" class="md-nav__link">
+      <a href="../../deprecations/" class="md-nav__link">
         Deprecations
       </a>
     </li>
@@ -1206,7 +1258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../versioning/" class="md-nav__link">
+      <a href="../../versioning/" class="md-nav__link">
         Changes and versioning
       </a>
     </li>
@@ -1227,7 +1279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/" class="md-nav__link">
+      <a href="../../support/" class="md-nav__link">
         Support
       </a>
     </li>
@@ -1247,16 +1299,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
         
@@ -1293,7 +1343,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Reference
@@ -1304,16 +1354,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
       
       
         
@@ -1344,7 +1392,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_1">
           <span class="md-nav__icon md-icon"></span>
           Commands
@@ -1357,7 +1405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Assert-PSRule/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Assert-PSRule/" class="md-nav__link">
         Assert-PSRule
       </a>
     </li>
@@ -1369,204 +1417,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Export-PSRuleBaseline
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../commands/PSRule/en-US/Export-PSRuleBaseline/" class="md-nav__link">
         Export-PSRuleBaseline
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#synopsis" class="md-nav__link">
-    SYNOPSIS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    SYNTAX
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    DESCRIPTION
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    EXAMPLES
-  </a>
-  
-    <nav class="md-nav" aria-label="EXAMPLES">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-1" class="md-nav__link">
-    Example 1
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    PARAMETERS
-  </a>
-  
-    <nav class="md-nav" aria-label="PARAMETERS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#-module" class="md-nav__link">
-    -Module
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-path" class="md-nav__link">
-    -Path
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-name" class="md-nav__link">
-    -Name
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-option" class="md-nav__link">
-    -Option
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-culture" class="md-nav__link">
-    -Culture
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-outputformat" class="md-nav__link">
-    -OutputFormat
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-outputencoding" class="md-nav__link">
-    -OutputEncoding
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-outputpath" class="md-nav__link">
-    -OutputPath
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-whatif" class="md-nav__link">
-    -WhatIf
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-confirm" class="md-nav__link">
-    -Confirm
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#commonparameters" class="md-nav__link">
-    CommonParameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inputs" class="md-nav__link">
-    INPUTS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#outputs" class="md-nav__link">
-    OUTPUTS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    NOTES
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-links" class="md-nav__link">
-    RELATED LINKS
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1578,7 +1433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Get-PSRule/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Get-PSRule/" class="md-nav__link">
         Get-PSRule
       </a>
     </li>
@@ -1592,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Get-PSRuleBaseline/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Get-PSRuleBaseline/" class="md-nav__link">
         Get-PSRuleBaseline
       </a>
     </li>
@@ -1606,7 +1461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Get-PSRuleHelp/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Get-PSRuleHelp/" class="md-nav__link">
         Get-PSRuleHelp
       </a>
     </li>
@@ -1620,7 +1475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Get-PSRuleTarget/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Get-PSRuleTarget/" class="md-nav__link">
         Get-PSRuleTarget
       </a>
     </li>
@@ -1634,7 +1489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Invoke-PSRule/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Invoke-PSRule/" class="md-nav__link">
         Invoke-PSRule
       </a>
     </li>
@@ -1648,7 +1503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../New-PSRuleOption/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/New-PSRuleOption/" class="md-nav__link">
         New-PSRuleOption
       </a>
     </li>
@@ -1662,7 +1517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Set-PSRuleOption/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Set-PSRuleOption/" class="md-nav__link">
         Set-PSRuleOption
       </a>
     </li>
@@ -1676,7 +1531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Test-PSRuleTarget/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Test-PSRuleTarget/" class="md-nav__link">
         Test-PSRuleTarget
       </a>
     </li>
@@ -1697,7 +1552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../concepts/PSRule/en-US/about_PSRule_Assert/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Assert/" class="md-nav__link">
         Assertion methods
       </a>
     </li>
@@ -1711,7 +1566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../concepts/PSRule/en-US/about_PSRule_Baseline/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Baseline/" class="md-nav__link">
         Baselines
       </a>
     </li>
@@ -1725,7 +1580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../concepts/PSRule/en-US/about_PSRule_Badges/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Badges/" class="md-nav__link">
         Badges
       </a>
     </li>
@@ -1739,7 +1594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../concepts/PSRule/en-US/about_PSRule_Conventions/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Conventions/" class="md-nav__link">
         Conventions
       </a>
     </li>
@@ -1753,7 +1608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../concepts/PSRule/en-US/about_PSRule_Docs/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Docs/" class="md-nav__link">
         Documentation
       </a>
     </li>
@@ -1767,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../concepts/PSRule/en-US/about_PSRule_Expressions/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Expressions/" class="md-nav__link">
         Expressions
       </a>
     </li>
@@ -1781,7 +1636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../keywords/PSRule/en-US/about_PSRule_Keywords/" class="md-nav__link">
+      <a href="../../keywords/PSRule/en-US/about_PSRule_Keywords/" class="md-nav__link">
         Keywords
       </a>
     </li>
@@ -1795,7 +1650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../concepts/PSRule/en-US/about_PSRule_Options/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Options/" class="md-nav__link">
         Options
       </a>
     </li>
@@ -1809,7 +1664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../concepts/PSRule/en-US/about_PSRule_Rules/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Rules/" class="md-nav__link">
         Rules
       </a>
     </li>
@@ -1823,7 +1678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../concepts/PSRule/en-US/about_PSRule_Selectors/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Selectors/" class="md-nav__link">
         Selectors
       </a>
     </li>
@@ -1837,7 +1692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../concepts/PSRule/en-US/about_PSRule_SuppressionGroups/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_SuppressionGroups/" class="md-nav__link">
         Suppression Groups
       </a>
     </li>
@@ -1851,7 +1706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../concepts/PSRule/en-US/about_PSRule_Variables/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Variables/" class="md-nav__link">
         Variables
       </a>
     </li>
@@ -1904,7 +1759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../addon-modules/" class="md-nav__link">
+      <a href="../../addon-modules/" class="md-nav__link">
         Additional modules
       </a>
     </li>
@@ -1945,160 +1800,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#synopsis" class="md-nav__link">
-    SYNOPSIS
+  <a href="#defining-baselines" class="md-nav__link">
+    Defining baselines
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    SYNTAX
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    DESCRIPTION
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    EXAMPLES
-  </a>
-  
-    <nav class="md-nav" aria-label="EXAMPLES">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-1" class="md-nav__link">
-    Example 1
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    PARAMETERS
-  </a>
-  
-    <nav class="md-nav" aria-label="PARAMETERS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#-module" class="md-nav__link">
-    -Module
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-path" class="md-nav__link">
-    -Path
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-name" class="md-nav__link">
-    -Name
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-option" class="md-nav__link">
-    -Option
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-culture" class="md-nav__link">
-    -Culture
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-outputformat" class="md-nav__link">
-    -OutputFormat
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-outputencoding" class="md-nav__link">
-    -OutputEncoding
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-outputpath" class="md-nav__link">
-    -OutputPath
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-whatif" class="md-nav__link">
-    -WhatIf
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-confirm" class="md-nav__link">
-    -Confirm
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#commonparameters" class="md-nav__link">
-    CommonParameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inputs" class="md-nav__link">
-    INPUTS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#outputs" class="md-nav__link">
-    OUTPUTS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    NOTES
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-links" class="md-nav__link">
-    RELATED LINKS
+  <a href="#baseline-groups" class="md-nav__link">
+    Baseline groups
   </a>
   
 </li>
@@ -2122,173 +1832,80 @@
   
 
 
-<h1 id="export-psrulebaseline">Export-PSRuleBaseline<a class="headerlink" href="#export-psrulebaseline" title="Permanent link">#</a></h1>
-<h2 id="synopsis">SYNOPSIS<a class="headerlink" href="#synopsis" title="Permanent link">#</a></h2>
-<p>Exports a list of baselines.</p>
-<h2 id="syntax">SYNTAX<a class="headerlink" href="#syntax" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>Export-PSRuleBaseline [-Module &lt;String[]&gt;] [[-Path] &lt;String[]&gt;] [-Name &lt;String[]&gt;] [-Option &lt;PSRuleOption&gt;]
- [-Culture &lt;String&gt;] [-OutputFormat &lt;OutputFormat&gt;] -OutputPath &lt;String&gt; [-OutputEncoding &lt;OutputEncoding&gt;]
- [-WhatIf] [-Confirm] [&lt;CommonParameters&gt;]
-</code></pre></div>
-<h2 id="description">DESCRIPTION<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
-<p>Exports a list of baselines to a file.</p>
-<h2 id="examples">EXAMPLES<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
-<h3 id="example-1">Example 1<a class="headerlink" href="#example-1" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">Export-PSRuleBaseline</span> <span class="n">-Module</span> <span class="n">PSRule</span><span class="p">.</span><span class="n">Rules</span><span class="p">.</span><span class="n">Azure</span> <span class="n">-OutputFormat</span> <span class="n">Yaml</span> <span class="n">-OutputPath</span> <span class="n">Baseline</span><span class="p">.</span><span class="n">Rule</span><span class="p">.</span><span class="n">yml</span>
-</code></pre></div>
-<p>Exports list of baselines from <code>PSRule.Rules.Azure</code> module to file <code>Baseline.Rule.yml</code> in YAML output format.</p>
-<h2 id="parameters">PARAMETERS<a class="headerlink" href="#parameters" title="Permanent link">#</a></h2>
-<h3 id="-module">-Module<a class="headerlink" href="#-module" title="Permanent link">#</a></h3>
-<p>Search for baselines definitions within a module.
-If no sources are specified by <code>-Path</code>, <code>-Module</code>, or options, the current working directory is used.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String[]</span>
-<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">m</span>
-
-<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
-<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
-<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-</code></pre></div>
-<h3 id="-path">-Path<a class="headerlink" href="#-path" title="Permanent link">#</a></h3>
-<p>One or more paths to search for baselines within.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String[]</span>
-<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">p</span>
-
-<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
-<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-</code></pre></div>
-<h3 id="-name">-Name<a class="headerlink" href="#-name" title="Permanent link">#</a></h3>
-<p>The name of a specific baseline to list.
-If this parameter is not specified all baselines in search paths will be listed.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String[]</span>
-<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">n</span>
-
-<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
-<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
-<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
-</code></pre></div>
-<h3 id="-option">-Option<a class="headerlink" href="#-option" title="Permanent link">#</a></h3>
-<p>Additional options that configure execution.
-A <code>PSRuleOption</code> can be created by using the <code>New-PSRuleOption</code> cmdlet.
-Alternatively a hashtable or path to YAML file can be specified with options.</p>
-<p>For more information on PSRule options see about_PSRule_Options.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRuleOption</span>
-<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span>
-
-<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
-<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
-<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-</code></pre></div>
-<h3 id="-culture">-Culture<a class="headerlink" href="#-culture" title="Permanent link">#</a></h3>
-<p>Specifies the culture to use for documentation and messages. By default, the culture of PowerShell is used.</p>
-<p>This option does not affect the culture used for the PSRule engine, which always uses the culture of PowerShell.</p>
-<p>The PowerShell cmdlet <code>Get-Culture</code> shows the current culture of PowerShell.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
-<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span>
-
-<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
-<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
-<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-</code></pre></div>
-<h3 id="-outputformat">-OutputFormat<a class="headerlink" href="#-outputformat" title="Permanent link">#</a></h3>
-<p>Configures the format that output is presented in.</p>
-<p>The following format options are available:</p>
+<h1 id="baselines">Baselines<a class="headerlink" href="#baselines" title="Permanent link">#</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p>A <em>baseline</em> is a set of rules and configuration options.
+You can define a named baseline to run a set of rules for a specific use case.</p>
+</div>
+<p>Baselines cover two (2) main scenarios:</p>
 <ul>
-<li>Yaml - Output is serialized as YAML. This is the default.</li>
-<li>Json - Output is serialized as JSON.</li>
+<li><strong>Rules</strong> &mdash; PSRule supports running rules by name or tag.
+  However, when working with a large number of rules it is often easier to group and run rules based on a name.</li>
+<li><strong>Configuration</strong> &mdash; A baseline allows you to run any included rules with a predefined configuration by name.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OutputFormat</span>
-<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">o</span>
-<span class="nt">Accepted values</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Yaml, Json</span>
-
-<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
-<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Yaml</span>
-<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<h2 id="defining-baselines">Defining baselines<a class="headerlink" href="#defining-baselines" title="Permanent link">#</a></h2>
+<p>A baseline is defined as a resource within YAML or JSON.
+Baselines can be defined side-by-side with rules you create or included separately as a custom baseline.</p>
+<p>Continue reading <a href="../PSRule/en-US/about_PSRule_Baseline/">baseline</a> reference.</p>
+<h2 id="baseline-groups">Baseline groups<a class="headerlink" href="#baseline-groups" title="Permanent link">#</a></h2>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75Zm7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.249.249 0 0 0-.163-.06Z"/></svg></span> v2.9.0</p>
+<p>In addition to regular baselines, you can use a baseline group to provide a friendly name to an existing baseline.
+A baseline groups are set by configuring the <a href="../PSRule/en-US/about_PSRule_Options/#baselinegroup">Baseline.Group</a> option.</p>
+<div class="admonition experimental">
+<p class="admonition-title">Experimental</p>
+<p><em>Baseline groups</em> are a work in progress and subject to change.
+Currently, <em>baseline groups</em> allow only a single baseline to be referenced.
+<a href="https://github.com/microsoft/PSRule/discussions">Join or start a disucssion</a> to let us know how we can improve this feature going forward.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use baseline groups to reference a baseline.
+If a new baseline is made available in the future, update your baseline group in one place to start using the new baseline.</p>
+</div>
+<p>In the following example, two baseline groups <code>latest</code> and <code>preview</code> are defined:</p>
+<div class="highlight"><span class="filename">ps-rule.yaml</span><pre><span></span><code><span class="nt">baseline</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">group</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">latest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRule.Rules.Azure\Azure.GA_2023_03</span>
+<span class="w">    </span><span class="nt">preview</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRule.Rules.Azure\Azure.Preview_2023_03</span>
 </code></pre></div>
-<h3 id="-outputencoding">-OutputEncoding<a class="headerlink" href="#-outputencoding" title="Permanent link">#</a></h3>
-<p>Sets the option <code>Output.Encoding</code>.
-The <code>Output.Encoding</code> option configured the encoding used to write results to file.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OutputEncoding</span>
-<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span>
-<span class="nt">Accepted values</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Default, UTF8, UTF7, Unicode, UTF32, ASCII</span>
-
-<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
-<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
-<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<ul>
+<li>The <code>latest</code> baseline group is set to <code>Azure.GA_2023_03</code> within the <code>PSRule.Rules.Azure</code> module.</li>
+<li>The <code>preview</code> baseline group is set to <code>Azure.Preview_2023_03</code> within the <code>PSRule.Rules.Azure</code> module.</li>
+</ul>
+<p>To use the baseline group, prefix the group name with <code>@</code> when running PSRule.
+For example:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">GitHub Actions</label><label for="__tabbed_1_2">Azure Pipelines</label><label for="__tabbed_1_3">Generic with PowerShell</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run PSRule</span>
+<span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">microsoft/ps-rule@v2.8.1</span>
+<span class="w">  </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">modules</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;PSRule.Rules.Azure&#39;</span>
+<span class="w">    </span><span class="nt">baseline</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;@latest&#39;</span>
 </code></pre></div>
-<h3 id="-outputpath">-OutputPath<a class="headerlink" href="#-outputpath" title="Permanent link">#</a></h3>
-<p>Sets the option <code>Output.Path</code>.
-The <code>Output.Path</code> option configures the output path the results are written to.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
-<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span>
-
-<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
-<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
-<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
-<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ps-rule-assert@2</span>
+<span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run PSRule</span>
+<span class="w">  </span><span class="nt">inputs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">modules</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;PSRule.Rules.Azure&#39;</span>
+<span class="w">    </span><span class="nt">baseline</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;@latest&#39;</span>
 </code></pre></div>
-<h3 id="-whatif">-WhatIf<a class="headerlink" href="#-whatif" title="Permanent link">#</a></h3>
-<p>Shows what would happen if the cmdlet runs.
-The cmdlet is not run.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SwitchParameter</span>
-<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wi</span>
-
-<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
-<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
-<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">Assert-PSRule</span> <span class="n">-InputPath</span> <span class="s1">&#39;.&#39;</span> <span class="n">-Baseline</span> <span class="s1">&#39;@latest&#39;</span> <span class="n">-Module</span> <span class="n">PSRule</span><span class="p">.</span><span class="n">Rules</span><span class="p">.</span><span class="n">Azure</span> <span class="n">-Format</span> <span class="n">File</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="-confirm">-Confirm<a class="headerlink" href="#-confirm" title="Permanent link">#</a></h3>
-<p>Prompts you for confirmation before running the cmdlet.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SwitchParameter</span>
-<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cf</span>
-
-<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
-<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
-<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-</code></pre></div>
-<h3 id="commonparameters">CommonParameters<a class="headerlink" href="#commonparameters" title="Permanent link">#</a></h3>
-<p>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see <a href="https://go.microsoft.com/fwlink/?LinkID=113216">about_CommonParameters</a>.</p>
-<h2 id="inputs">INPUTS<a class="headerlink" href="#inputs" title="Permanent link">#</a></h2>
-<h2 id="outputs">OUTPUTS<a class="headerlink" href="#outputs" title="Permanent link">#</a></h2>
-<h2 id="notes">NOTES<a class="headerlink" href="#notes" title="Permanent link">#</a></h2>
-<h2 id="related-links">RELATED LINKS<a class="headerlink" href="#related-links" title="Permanent link">#</a></h2>
-<p><a href="../Get-PSRuleBaseline/">Get-PSRuleBaseline</a></p>
+</div>
+</div>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-03-21
+      2023-06-04
     
   </small>
 </div>
@@ -2404,10 +2021,10 @@ The cmdlet is not run.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
   </body>

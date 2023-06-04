@@ -878,6 +878,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
@@ -891,6 +893,20 @@
           Concepts
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../concepts/baselines/" class="md-nav__link">
+        Baselines
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1607,6 +1623,13 @@
           <li class="md-nav__item">
   <a href="#-configuration" class="md-nav__link">
     -Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-baselinegroup" class="md-nav__link">
+    -BaselineGroup
   </a>
   
 </li>
@@ -2478,6 +2501,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-baselinegroup" class="md-nav__link">
+    -BaselineGroup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-bindtargettype" class="md-nav__link">
     -BindTargetType
   </a>
@@ -2933,10 +2963,10 @@
 <h3 id="frompath-default">FromPath (Default)<a class="headerlink" href="#frompath-default" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>New-PSRuleOption [[-Path] &lt;String&gt;] [-Configuration &lt;ConfigurationOption&gt;]
  [-SuppressTargetName &lt;SuppressionOption&gt;] [-BindTargetName &lt;BindTargetName[]&gt;]
- [-BindTargetType &lt;BindTargetName[]&gt;] [-BindingIgnoreCase &lt;Boolean&gt;] [-BindingField &lt;Hashtable&gt;]
- [-BindingNameSeparator &lt;String&gt;] [-BindingPreferTargetInfo &lt;Boolean&gt;] [-TargetName &lt;String[]&gt;]
- [-TargetType &lt;String[]&gt;] [-BindingUseQualifiedName &lt;Boolean&gt;] [-Convention &lt;String[]&gt;]
- [-AliasReferenceWarning &lt;Boolean&gt;] [-DuplicateResourceId &lt;ExecutionActionPreference&gt;]
+ [-BindTargetType &lt;BindTargetName[]&gt;] [-BaselineGroup &lt;Hashtable&gt;] [-BindingIgnoreCase &lt;Boolean&gt;]
+ [-BindingField &lt;Hashtable&gt;] [-BindingNameSeparator &lt;String&gt;] [-BindingPreferTargetInfo &lt;Boolean&gt;]
+ [-TargetName &lt;String[]&gt;] [-TargetType &lt;String[]&gt;] [-BindingUseQualifiedName &lt;Boolean&gt;]
+ [-Convention &lt;String[]&gt;] [-AliasReferenceWarning &lt;Boolean&gt;] [-DuplicateResourceId &lt;ExecutionActionPreference&gt;]
  [-InconclusiveWarning &lt;Boolean&gt;] [-InvariantCultureWarning &lt;Boolean&gt;] [-InitialSessionState &lt;SessionState&gt;]
  [-NotProcessedWarning &lt;Boolean&gt;] [-SuppressedRuleWarning &lt;Boolean&gt;]
  [-SuppressionGroupExpired &lt;ExecutionActionPreference&gt;] [-ExecutionRuleExcluded &lt;ExecutionActionPreference&gt;]
@@ -2958,10 +2988,10 @@
 <h3 id="fromoption">FromOption<a class="headerlink" href="#fromoption" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>New-PSRuleOption [-Option] &lt;PSRuleOption&gt; [-Configuration &lt;ConfigurationOption&gt;]
  [-SuppressTargetName &lt;SuppressionOption&gt;] [-BindTargetName &lt;BindTargetName[]&gt;]
- [-BindTargetType &lt;BindTargetName[]&gt;] [-BindingIgnoreCase &lt;Boolean&gt;] [-BindingField &lt;Hashtable&gt;]
- [-BindingNameSeparator &lt;String&gt;] [-BindingPreferTargetInfo &lt;Boolean&gt;] [-TargetName &lt;String[]&gt;]
- [-TargetType &lt;String[]&gt;] [-BindingUseQualifiedName &lt;Boolean&gt;] [-Convention &lt;String[]&gt;]
- [-AliasReferenceWarning &lt;Boolean&gt;] [-DuplicateResourceId &lt;ExecutionActionPreference&gt;]
+ [-BindTargetType &lt;BindTargetName[]&gt;] [-BaselineGroup &lt;Hashtable&gt;] [-BindingIgnoreCase &lt;Boolean&gt;]
+ [-BindingField &lt;Hashtable&gt;] [-BindingNameSeparator &lt;String&gt;] [-BindingPreferTargetInfo &lt;Boolean&gt;]
+ [-TargetName &lt;String[]&gt;] [-TargetType &lt;String[]&gt;] [-BindingUseQualifiedName &lt;Boolean&gt;]
+ [-Convention &lt;String[]&gt;] [-AliasReferenceWarning &lt;Boolean&gt;] [-DuplicateResourceId &lt;ExecutionActionPreference&gt;]
  [-InconclusiveWarning &lt;Boolean&gt;] [-InvariantCultureWarning &lt;Boolean&gt;] [-InitialSessionState &lt;SessionState&gt;]
  [-NotProcessedWarning &lt;Boolean&gt;] [-SuppressedRuleWarning &lt;Boolean&gt;]
  [-SuppressionGroupExpired &lt;ExecutionActionPreference&gt;] [-ExecutionRuleExcluded &lt;ExecutionActionPreference&gt;]
@@ -2982,14 +3012,15 @@
 </code></pre></div>
 <h3 id="fromdefault">FromDefault<a class="headerlink" href="#fromdefault" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>New-PSRuleOption [-Default] [-Configuration &lt;ConfigurationOption&gt;] [-SuppressTargetName &lt;SuppressionOption&gt;]
- [-BindTargetName &lt;BindTargetName[]&gt;] [-BindTargetType &lt;BindTargetName[]&gt;] [-BindingIgnoreCase &lt;Boolean&gt;]
- [-BindingField &lt;Hashtable&gt;] [-BindingNameSeparator &lt;String&gt;] [-BindingPreferTargetInfo &lt;Boolean&gt;]
- [-TargetName &lt;String[]&gt;] [-TargetType &lt;String[]&gt;] [-BindingUseQualifiedName &lt;Boolean&gt;]
- [-Convention &lt;String[]&gt;] [-AliasReferenceWarning &lt;Boolean&gt;] [-DuplicateResourceId &lt;ExecutionActionPreference&gt;]
- [-InconclusiveWarning &lt;Boolean&gt;] [-InvariantCultureWarning &lt;Boolean&gt;] [-InitialSessionState &lt;SessionState&gt;]
- [-NotProcessedWarning &lt;Boolean&gt;] [-SuppressedRuleWarning &lt;Boolean&gt;]
- [-SuppressionGroupExpired &lt;ExecutionActionPreference&gt;] [-ExecutionRuleExcluded &lt;ExecutionActionPreference&gt;]
- [-ExecutionRuleSuppressed &lt;ExecutionActionPreference&gt;] [-ExecutionAliasReference &lt;ExecutionActionPreference&gt;]
+ [-BindTargetName &lt;BindTargetName[]&gt;] [-BindTargetType &lt;BindTargetName[]&gt;] [-BaselineGroup &lt;Hashtable&gt;]
+ [-BindingIgnoreCase &lt;Boolean&gt;] [-BindingField &lt;Hashtable&gt;] [-BindingNameSeparator &lt;String&gt;]
+ [-BindingPreferTargetInfo &lt;Boolean&gt;] [-TargetName &lt;String[]&gt;] [-TargetType &lt;String[]&gt;]
+ [-BindingUseQualifiedName &lt;Boolean&gt;] [-Convention &lt;String[]&gt;] [-AliasReferenceWarning &lt;Boolean&gt;]
+ [-DuplicateResourceId &lt;ExecutionActionPreference&gt;] [-InconclusiveWarning &lt;Boolean&gt;]
+ [-InvariantCultureWarning &lt;Boolean&gt;] [-InitialSessionState &lt;SessionState&gt;] [-NotProcessedWarning &lt;Boolean&gt;]
+ [-SuppressedRuleWarning &lt;Boolean&gt;] [-SuppressionGroupExpired &lt;ExecutionActionPreference&gt;]
+ [-ExecutionRuleExcluded &lt;ExecutionActionPreference&gt;] [-ExecutionRuleSuppressed &lt;ExecutionActionPreference&gt;]
+ [-ExecutionAliasReference &lt;ExecutionActionPreference&gt;]
  [-ExecutionRuleInconclusive &lt;ExecutionActionPreference&gt;]
  [-ExecutionInvariantCulture &lt;ExecutionActionPreference&gt;]
  [-ExecutionUnprocessedObject &lt;ExecutionActionPreference&gt;] [-IncludeModule &lt;String[]&gt;]
@@ -3114,6 +3145,20 @@ See about_PSRule_Options for more information.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigurationOption</span>
 <span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
 <span class="nt">Aliases</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BaselineConfiguration</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-baselinegroup">-BaselineGroup<a class="headerlink" href="#-baselinegroup" title="Permanent link">#</a></h3>
+<p>Sets the option <code>Baseline.Group</code>.
+The option <code>Baseline.Group</code> allows a named group of baselines to be defined and later referenced.
+See about_PSRule_Options for more information.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hashtable</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
 
 <span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
@@ -3843,7 +3888,7 @@ The <code>Execution.SuppressionGroupExpired</code> option determines how to hand
   <small>
     
       Last update:
-      2023-04-23
+      2023-06-04
     
   </small>
 </div>
