@@ -1176,6 +1176,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#v290" class="md-nav__link">
+    v2.9.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v290-b0068-pre-release" class="md-nav__link">
     v2.9.0-B0068 (pre-release)
   </a>
@@ -2341,6 +2348,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#v290" class="md-nav__link">
+    v2.9.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v290-b0068-pre-release" class="md-nav__link">
     v2.9.0-B0068 (pre-release)
   </a>
@@ -2923,6 +2937,74 @@
 </li>
 </ul>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
+<h2 id="v290">v2.9.0<a class="headerlink" href="#v290" title="Permanent link">#</a></h2>
+<p>What's changed since release v2.8.1:</p>
+<ul>
+<li>New features:<ul>
+<li>Added sub-selector quantifiers for <code>allOf</code> or <code>anyOf</code> operators by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1423">#1423</a><ul>
+<li>Quantifiers allow you to specify the number of matches with <code>count</code>, <code>less</code>, <code>lessOrEqual</code>, <code>greater</code>, or <code>greaterOrEqual</code>.</li>
+<li>See <a href="../expressions/sub-selectors/">Sub-selectors</a> for more information.</li>
+</ul>
+</li>
+<li>Added support for new functions by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1422">#1422</a><ul>
+<li>Added support for <code>padLeft</code>, and <code>padRight</code>.</li>
+</ul>
+</li>
+<li><strong>Experimental</strong>: Added support for baseline groups by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1541">#1541</a><ul>
+<li>Baseline groups allow you to reference a baseline by a friendly name.</li>
+<li>Update the baseline group to point to a new baseline.</li>
+<li>Currently only a single baseline can be referenced by a baseline group.</li>
+<li>See <a href="../concepts/baselines/">baselines</a> for more information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>General improvements:<ul>
+<li>Added style and improved handling for restore command by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1152">#1152</a></li>
+<li><strong>Important change</strong>: Rename of execution options by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1456">#1456</a><ul>
+<li>Renamed options allow configuration of output level as <code>Ignore</code>, <code>Warn</code>, <code>Error</code>, or <code>Debug</code>.</li>
+<li><code>Execution.AliasReferenceWarning</code> is replaced with <code>Execution.AliasReference</code>.</li>
+<li><code>Execution.InconclusiveWarning</code> is replaced with <code>Execution.RuleInconclusive</code>.</li>
+<li><code>Execution.InvariantCultureWarning</code> is replaced with <code>Execution.InvariantCulture</code>.</li>
+<li><code>Execution.NotProcessedWarning</code> is replaced with <code>Execution.UnprocessedObject</code>.</li>
+<li>Deprecated <code>AliasReferenceWarning</code> option, which will be removed in v3.</li>
+<li>Deprecated <code>InconclusiveWarning</code> option, which will be removed in v3.</li>
+<li>Deprecated <code>InvariantCultureWarning</code> option, which will be removed in v3.</li>
+<li>Deprecated <code>NotProcessedWarning</code> option, which will be removed in v3.</li>
+</ul>
+</li>
+<li>Improved schema display names by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1488">#1488</a></li>
+</ul>
+</li>
+<li>Engineering:<ul>
+<li>Bump Pester to v5.4.1.
+  <a href="https://github.com/microsoft/PSRule/pull/1510">#1510</a></li>
+<li>Bump Microsoft.NET.Test.Sdk to v17.6.2.
+  <a href="https://github.com/microsoft/PSRule/pull/1544">#1544</a></li>
+<li>Bump Microsoft.CodeAnalysis.Common to v4.6.0.
+  <a href="https://github.com/microsoft/PSRule/pull/1534">#1534</a></li>
+</ul>
+</li>
+<li>Bug fixes:<ul>
+<li>Fixed tool output on access denied to path by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1490">#1490</a></li>
+<li>Fixed tool exit code on error or failure by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1491">#1491</a></li>
+<li>Fixed include local not automatically being enabled for default module baseline by @BernieWhite.
+  <a href="https://github.com/microsoft/PSRule/issues/1506">#1506</a></li>
+</ul>
+</li>
+</ul>
+<p>What's changed since pre-release v2.9.0-B0068:</p>
+<ul>
+<li>No additional changes.</li>
+</ul>
 <h2 id="v290-b0068-pre-release">v2.9.0-B0068 (pre-release)<a class="headerlink" href="#v290-b0068-pre-release" title="Permanent link">#</a></h2>
 <p>What's changed since pre-release v2.9.0-B0033:</p>
 <ul>
@@ -4624,7 +4706,7 @@
   <small>
     
       Last update:
-      2023-06-07
+      2023-06-08
     
   </small>
 </div>
