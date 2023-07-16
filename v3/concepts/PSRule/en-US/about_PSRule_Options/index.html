@@ -1762,6 +1762,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#executionhashalgorithm" class="md-nav__link">
+    Execution.HashAlgorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#executionlanguagemode" class="md-nav__link">
     Execution.LanguageMode
   </a>
@@ -2379,6 +2386,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#executionhashalgorithm" class="md-nav__link">
+    Execution.HashAlgorithm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#executionlanguagemode" class="md-nav__link">
     Execution.LanguageMode
   </a>
@@ -2777,6 +2791,7 @@ This topic describes what options are available, when to and how to use them.</p
 <li><a href="#executionaliasreference">Execution.AliasReference</a></li>
 <li><a href="#executionaliasreferencewarning">Execution.AliasReferenceWarning</a></li>
 <li><a href="#executionduplicateresourceid">Execution.DuplicateResourceId</a></li>
+<li><a href="#executionhashalgorithm">Execution.HashAlgorithm</a></li>
 <li><a href="#executionlanguagemode">Execution.LanguageMode</a></li>
 <li><a href="#executioninconclusivewarning">Execution.InconclusiveWarning</a></li>
 <li><a href="#executioninvariantculture">Execution.InvariantCulture</a></li>
@@ -2846,7 +2861,8 @@ This topic describes what options are available, when to and how to use them.</p
 </ul>
 <p>Each of these cmdlets support:</p>
 <ul>
-<li>Using the <code>-Option</code> parameter with an object created with the <code>New-PSRuleOption</code> cmdlet. See cmdlet help for syntax and examples.</li>
+<li>Using the <code>-Option</code> parameter with an object created with the <code>New-PSRuleOption</code> cmdlet.
+  See cmdlet help for syntax and examples.</li>
 <li>Using the <code>-Option</code> parameter with a hashtable object.</li>
 <li>Using the <code>-Option</code> parameter with a YAML file path.</li>
 </ul>
@@ -2868,7 +2884,8 @@ Storing options as YAML allows different configurations to be loaded in a repeat
 <p>The <code>Set-PSRuleOption</code> cmdlet can be used to set options stored in YAML or the YAML file can be manually edited.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Set-PSRuleOption</span> <span class="n">-OutputFormat</span> <span class="n">Yaml</span><span class="p">;</span>
 </code></pre></div>
-<p>By default, PSRule will automatically look for a default YAML options file in the current working directory. Alternatively, you can specify a specific file path.</p>
+<p>By default, PSRule will automatically look for a default YAML options file in the current working directory.
+Alternatively, you can specify a specific file path.</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">Invoke-PSRule</span> <span class="n">-Option</span> <span class="s1">&#39;.\myconfig.yml&#39;</span><span class="p">;</span>
 </code></pre></div>
@@ -3084,12 +3101,14 @@ To prefer automatic binding when specified set this option to <code>$True</code>
 <em>TargetName</em> is used in output results to identify one object from another.
 Many objects could be passed down the pipeline at the same time, so using a <em>TargetName</em> that is meaningful is important.
 <em>TargetName</em> is also used for advanced features such as rule suppression.</p>
-<p>The value that PSRule uses for <em>TargetName</em> is configurable. PSRule uses the following logic to determine what <em>TargetName</em> should be used:</p>
+<p>The value that PSRule uses for <em>TargetName</em> is configurable.
+PSRule uses the following logic to determine what <em>TargetName</em> should be used:</p>
 <ul>
 <li>By default PSRule will:<ul>
 <li>Use <code>TargetName</code> or <code>Name</code> properties on the object. These property names are case insensitive.</li>
 <li>If both <code>TargetName</code> and <code>Name</code> properties exist, <code>TargetName</code> will take precedence over <code>Name</code>.</li>
-<li>If neither <code>TargetName</code> or <code>Name</code> properties exist, a SHA1 hash of the object will be used as <em>TargetName</em>.</li>
+<li>If neither <code>TargetName</code> or <code>Name</code> properties exist, a hash of the object will be used as <em>TargetName</em>.</li>
+<li>The hash algorithm used can be set by the <code>Execution.HashAlgorithm</code> option.</li>
 </ul>
 </li>
 <li>If custom <em>TargetName</em> binding properties are configured, the property names specified will override the defaults.<ul>
@@ -3098,13 +3117,15 @@ Many objects could be passed down the pipeline at the same time, so using a <em>
 <li>i.e. The first configured property name will take precedence over the second property name.</li>
 </ul>
 </li>
-<li>By default the property name will be matched ignoring case sensitivity. To use a case sensitive match, configure the <a href="#bindingignorecase">Binding.IgnoreCase</a> option.</li>
+<li>By default the property name will be matched ignoring case sensitivity.
+  To use a case sensitive match, configure the <a href="#bindingignorecase">Binding.IgnoreCase</a> option.</li>
 </ul>
 </li>
 <li>If a custom <em>TargetName</em> binding function is specified, the function will be evaluated first before any other option.<ul>
 <li>If the function returns <code>$Null</code> then custom properties, <code>TargetName</code> and <code>Name</code> properties will be used.</li>
 <li>The custom binding function is executed outside the PSRule engine, so PSRule keywords and variables will not be available.</li>
-<li>Custom binding functions are blocked in constrained language mode is used. See <a href="#executionlanguagemode">language mode</a> for more information.</li>
+<li>Custom binding functions are blocked in constrained language mode is used.
+  See <a href="#executionlanguagemode">language mode</a> for more information.</li>
 </ul>
 </li>
 </ul>
@@ -3165,13 +3186,15 @@ PSRule uses the following logic to determine what <em>TargetType</em> should be 
 <li>i.e. The first configured property name will take precedence over the second property name.</li>
 </ul>
 </li>
-<li>By default the property name will be matched ignoring case sensitivity. To use a case sensitive match, configure the <a href="#bindingignorecase"><code>Binding.IgnoreCase</code></a> option.</li>
+<li>By default the property name will be matched ignoring case sensitivity.
+  To use a case sensitive match, configure the <a href="#bindingignorecase"><code>Binding.IgnoreCase</code></a> option.</li>
 </ul>
 </li>
 <li>If a custom <em>TargetType</em> binding function is specified, the function will be evaluated first before any other option.<ul>
 <li>If the function returns <code>$Null</code> then custom properties, or the type presented by PowerShell will be used in order instead.</li>
 <li>The custom binding function is executed outside the PSRule engine, so PSRule keywords and variables will not be available.</li>
-<li>Custom binding functions are blocked in constrained language mode is used. See <a href="#executionlanguagemode">language mode</a> for more information.</li>
+<li>Custom binding functions are blocked in constrained language mode is used.
+  See <a href="#executionlanguagemode">language mode</a> for more information.</li>
 </ul>
 </li>
 </ul>
@@ -3428,6 +3451,36 @@ however PSRule will continue to execute.</p>
 <span class="nt">variables</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_DUPLICATERESOURCEID</span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span>
+</code></pre></div>
+<h3 id="executionhashalgorithm">Execution.HashAlgorithm<a class="headerlink" href="#executionhashalgorithm" title="Permanent link">#</a></h3>
+<p>Specifies the hashing algorithm used by the PSRule runtime.
+This hash algorithm is used when generating a resource identifier for an object that does not have a bound name.</p>
+<p>By default, the <em>SHA512</em> algorithm is used.</p>
+<p>The following algorithms are available for use in PSRule:</p>
+<ul>
+<li>SHA512</li>
+<li>SHA384</li>
+<li>SHA256</li>
+</ul>
+<p>This option can be specified using:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.HashAlgorithm hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.HashAlgorithm&#39;</span> <span class="p">=</span> <span class="s1">&#39;SHA256&#39;</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/hashAlgorithm property</span>
+<span class="nt">execution</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">hashAlgorithm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SHA256</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_EXECUTION_HASHALGORITHM</span><span class="o">=</span>SHA256
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_HASHALGORITHM</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SHA256</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
+<span class="nt">variables</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_HASHALGORITHM</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SHA256</span>
 </code></pre></div>
 <h3 id="executionlanguagemode">Execution.LanguageMode<a class="headerlink" href="#executionlanguagemode" title="Permanent link">#</a></h3>
 <p>Unless PowerShell has been constrained, full language features of PowerShell are available to use within rule definitions.
@@ -5350,7 +5403,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
   <small>
     
       Last update:
-      2023-06-04
+      2023-07-17
     
   </small>
 </div>

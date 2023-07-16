@@ -1245,6 +1245,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#upgrading-to-v300" class="md-nav__link">
+    Upgrading to v3.0.0
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrading to v3.0.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unbound-object-names" class="md-nav__link">
+    Unbound object names
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#upgrading-to-v200" class="md-nav__link">
     Upgrading to v2.0.0
   </a>
@@ -1903,6 +1923,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#upgrading-to-v300" class="md-nav__link">
+    Upgrading to v3.0.0
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrading to v3.0.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unbound-object-names" class="md-nav__link">
+    Unbound object names
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#upgrading-to-v200" class="md-nav__link">
     Upgrading to v2.0.0
   </a>
@@ -2011,6 +2051,21 @@
 
 <h1 id="upgrade-notes">Upgrade notes<a class="headerlink" href="#upgrade-notes" title="Permanent link">#</a></h1>
 <p>This document contains notes to help upgrade from previous versions of PSRule.</p>
+<h2 id="upgrading-to-v300">Upgrading to v3.0.0<a class="headerlink" href="#upgrading-to-v300" title="Permanent link">#</a></h2>
+<h3 id="unbound-object-names">Unbound object names<a class="headerlink" href="#unbound-object-names" title="Permanent link">#</a></h3>
+<p>When an object is processed by PSRule, it is assigned a name.
+This name is used to identify the object in the output and to suppress the object from future processing.</p>
+<p>Prior to <em>v3.0.0</em>, the name was generated using a SHA-1 hash of the object.
+The SHA-1 algorithm is no longer considered secure and has been replaced with SHA-512.</p>
+<p>From <em>v3.0.0</em>, if the name of an object can not be determined, the SHA-512 hash of the object will be used.
+Any objects that have previously been suppressed with a name based on a SHA-1 hash will no longer be suppressed.</p>
+<p>To resolve any issue caused by this change, you can:</p>
+<ol>
+<li>Configure binding by setting the <a href="https://aka.ms/ps-rule/options#bindingtargetname">Binding.TargetName</a> option to set an alternative property to use as the name. <em>OR</em></li>
+<li>
+<p>Update any existing keys set with the <a href="https://aka.ms/ps-rule/options#suppression">Suppression</a> option to use the new SHA-512 hash.</p>
+</li>
+</ol>
 <h2 id="upgrading-to-v200">Upgrading to v2.0.0<a class="headerlink" href="#upgrading-to-v200" title="Permanent link">#</a></h2>
 <h3 id="resources-naming-restrictions">Resources naming restrictions<a class="headerlink" href="#resources-naming-restrictions" title="Permanent link">#</a></h3>
 <p>When naming resources such as rules or selectors, the following restrictions apply:</p>
@@ -2233,7 +2288,7 @@ Rules referencing the deprecated properties of <code>$Rule</code> must be update
   <small>
     
       Last update:
-      2023-03-02
+      2023-07-17
     
   </small>
 </div>
