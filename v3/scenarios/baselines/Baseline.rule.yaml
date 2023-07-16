@@ -1,0 +1,36 @@
+
+---
+# Synopsis: This is an example baseline
+apiVersion: github.com/microsoft/PSRule/v1
+kind: Baseline
+metadata:
+  name: TestBaseline1
+spec:
+  binding:
+    targetName:
+    - AlternateName
+    targetType:
+    - kind
+  rule:
+    include:
+    - 'WithBaseline'
+  configuration:
+    key1: value1
+
+---
+# Synopsis: This is an example baseline
+apiVersion: github.com/microsoft/PSRule/v1
+kind: Baseline
+metadata:
+  name: TestBaseline2
+spec:
+  binding:
+    targetName:
+    - AlternateName
+    targetType:
+    - kind
+  rule:
+    include:
+    - 'WithBaseline'
+  configuration:
+    key1: value1

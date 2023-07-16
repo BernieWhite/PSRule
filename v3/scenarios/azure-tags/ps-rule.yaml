@@ -1,0 +1,13 @@
+#
+# Configuration for Azure resource tagging standard
+#
+
+# Configure business units that are allowed
+configuration:
+  allowedBusinessUnits:
+  - 'IT Operations'
+  - 'Finance'
+  - 'HR'
+
+execution:
+  invariantCultureWarning: false

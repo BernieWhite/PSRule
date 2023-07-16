@@ -1,0 +1,2321 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules.">
+      
+      
+        <meta name="author" content="Microsoft">
+      
+      
+        <link rel="canonical" href="https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_Variables/">
+      
+      
+        <link rel="prev" href="../about_PSRule_SuppressionGroups/">
+      
+      
+        <link rel="next" href="../../../../addon-modules/">
+      
+      <link rel="icon" href="../../../../assets/ms_icon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>Variables - PSRule</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+  <!-- Determine title -->
+  
+  
+    
+  
+
+  <!-- Determine description -->
+  
+  
+
+  <!-- The image needs to have an absolute URL -->
+  
+
+  <!-- Open graph meta tags -->
+  <meta property="og:site_name" content="PSRule" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PSRule - Variables" />
+  <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
+  <meta property="og:url" content="https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_Variables/" />
+  <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="640" />
+  <meta property="og:image:alt" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
+
+  <!-- Twitter meta tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@github" />
+  <meta name="twitter:title" content="PSRule - Variables" />
+  <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
+  <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
+
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#variables" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  You are viewing the next version PSRule.
+  <a href="../../../../.."> 
+    <strong>Click here to go to latest stable version.</strong>
+  </a>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="PSRule" class="md-header__button md-logo" aria-label="PSRule" data-md-component="logo">
+      
+  <img src="../../../../assets/ms_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PSRule
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Variables
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/microsoft/PSRule" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../about/" class="md-tabs__link">
+        Getting started
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../commands/PSRule/en-US/Assert-PSRule/" class="md-tabs__link md-tabs__link--active">
+        Reference
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../addon-modules/" class="md-tabs__link">
+        Addons
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="PSRule" class="md-nav__button md-logo" aria-label="PSRule" data-md-component="logo">
+      
+  <img src="../../../../assets/ms_icon.png" alt="logo">
+
+    </a>
+    PSRule
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/microsoft/PSRule" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Getting started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../features/" class="md-nav__link">
+        Features
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../install-instructions/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          Quickstarts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Quickstarts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quickstart/standalone-rule/" class="md-nav__link">
+        Create a standalone rule
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          Authoring rules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Authoring rules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../authoring/testing-infrastructure/" class="md-nav__link">
+        Testing infrastructure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../authoring/using-expressions/" class="md-nav__link">
+        Using expressions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../authoring/storing-rules/" class="md-nav__link">
+        Storing and naming rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../authoring/packaging-rules/" class="md-nav__link">
+        Packaging rules in a module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../authoring/writing-rule-help/" class="md-nav__link">
+        Writing rule help
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          Running rules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Running rules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../creating-your-pipeline/" class="md-nav__link">
+        Creating your pipeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../validating-locally/" class="md-nav__link">
+        Validating locally
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analysis-output/" class="md-nav__link">
+        Analysis output
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../scenarios/azure-resources/azure-resources/" class="md-nav__link">
+        Validate Azure resource configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../scenarios/azure-tags/azure-tags/" class="md-nav__link">
+        Azure resource tagging example
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../scenarios/kubernetes-resources/kubernetes-resources/" class="md-nav__link">
+        Kubernetes resource validation example
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../scenarios/containers/container-execution/" class="md-nav__link">
+        Using PSRule from a Container
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          Concepts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../baselines/" class="md-nav__link">
+        Baselines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../expressions/functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../grouping-rules/" class="md-nav__link">
+        Grouping rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../expressions/sub-selectors/" class="md-nav__link">
+        Sub-selectors
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+          Scenarios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Scenarios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../scenarios/validation-pipeline/validation-pipeline/" class="md-nav__link">
+        Using within continuous integration
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../license-contributing/" class="md-nav__link">
+        License and contributing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../related-projects/" class="md-nav__link">
+        Related projects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+          Releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_12">
+          <span class="md-nav__icon md-icon"></span>
+          Releases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_12_1" id="__nav_2_12_1_label" tabindex="0">
+          Change log
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_12_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_12_1">
+          <span class="md-nav__icon md-icon"></span>
+          Change log
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../CHANGELOG-v3/" class="md-nav__link">
+        v3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../CHANGELOG-v2/" class="md-nav__link">
+        v2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../CHANGELOG-v1/" class="md-nav__link">
+        v1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../CHANGELOG-v0/" class="md-nav__link">
+        v0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../upgrade-notes/" class="md-nav__link">
+        Upgrade notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deprecations/" class="md-nav__link">
+        Deprecations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../versioning/" class="md-nav__link">
+        Changes and versioning
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          Commands
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Commands
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../commands/PSRule/en-US/Assert-PSRule/" class="md-nav__link">
+        Assert-PSRule
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../commands/PSRule/en-US/Export-PSRuleBaseline/" class="md-nav__link">
+        Export-PSRuleBaseline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../commands/PSRule/en-US/Get-PSRule/" class="md-nav__link">
+        Get-PSRule
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../commands/PSRule/en-US/Get-PSRuleBaseline/" class="md-nav__link">
+        Get-PSRuleBaseline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../commands/PSRule/en-US/Get-PSRuleHelp/" class="md-nav__link">
+        Get-PSRuleHelp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../commands/PSRule/en-US/Get-PSRuleTarget/" class="md-nav__link">
+        Get-PSRuleTarget
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../commands/PSRule/en-US/Invoke-PSRule/" class="md-nav__link">
+        Invoke-PSRule
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../commands/PSRule/en-US/New-PSRuleOption/" class="md-nav__link">
+        New-PSRuleOption
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../commands/PSRule/en-US/Set-PSRuleOption/" class="md-nav__link">
+        Set-PSRuleOption
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../commands/PSRule/en-US/Test-PSRuleTarget/" class="md-nav__link">
+        Test-PSRuleTarget
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Assert/" class="md-nav__link">
+        Assertion methods
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Baseline/" class="md-nav__link">
+        Baselines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Badges/" class="md-nav__link">
+        Badges
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Conventions/" class="md-nav__link">
+        Conventions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Docs/" class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Expressions/" class="md-nav__link">
+        Expressions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../keywords/PSRule/en-US/about_PSRule_Keywords/" class="md-nav__link">
+        Keywords
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Options/" class="md-nav__link">
+        Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Rules/" class="md-nav__link">
+        Rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_Selectors/" class="md-nav__link">
+        Selectors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_PSRule_SuppressionGroups/" class="md-nav__link">
+        Suppression Groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Variables
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Variables
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assert" class="md-nav__link">
+    Assert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localizeddata" class="md-nav__link">
+    LocalizedData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psrule" class="md-nav__link">
+    PSRule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rule" class="md-nav__link">
+    Rule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#targetobject" class="md-nav__link">
+    TargetObject
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Addons
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Addons
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../addon-modules/" class="md-nav__link">
+        Additional modules
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assert" class="md-nav__link">
+    Assert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localizeddata" class="md-nav__link">
+    LocalizedData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psrule" class="md-nav__link">
+    PSRule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rule" class="md-nav__link">
+    Rule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#targetobject" class="md-nav__link">
+    TargetObject
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+  
+  
+
+
+<h1 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">#</a></h1>
+<p>Describes the automatic variables that can be used within PSRule rule definitions.</p>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
+<p>PSRule lets you define rules using PowerShell blocks.
+A rule is defined within script files by using the <code>rule</code> keyword.</p>
+<p>Within a rule definition, PSRule exposes a number of automatic variables that can be read to assist with rule execution.
+Overwriting these variables or variable properties is not supported.</p>
+<p>These variables are only available while <code>Invoke-PSRule</code> is executing.</p>
+<p>The following variables are available for use:</p>
+<ul>
+<li><a href="#assert">$Assert</a></li>
+<li><a href="#configuration">$Configuration</a></li>
+<li><a href="#localizeddata">$LocalizedData</a></li>
+<li><a href="#psrule">$PSRule</a></li>
+<li><a href="#rule">$Rule</a></li>
+<li><a href="#targetobject">$TargetObject</a></li>
+</ul>
+<h3 id="assert">Assert<a class="headerlink" href="#assert" title="Permanent link">#</a></h3>
+<p>An assertion helper with methods to evaluate objects.
+The <code>$Assert</code> object provides a set of built-in methods and provides a consistent variable for extension.</p>
+<p>Each <code>$Assert</code> method returns an <code>AssertResult</code> object that contains the result of the condition.</p>
+<p>The following built-in assertion methods are provided:</p>
+<ul>
+<li><code>Contains</code> - The field value must contain at least one of the strings.</li>
+<li><code>EndsWith</code> - The field value must match at least one suffix.</li>
+<li><code>FileHeader</code> - The file must contain a comment header.</li>
+<li><code>FilePath</code> - The file path must exist.</li>
+<li><code>Greater</code> - The field value must be greater.</li>
+<li><code>GreaterOrEqual</code> - The field value must be greater or equal to.</li>
+<li><code>HasDefaultValue</code> - The object should not have the field or the field value is set to the default value.</li>
+<li><code>HasField</code> - The object must have any of the specified fields.</li>
+<li><code>HasFields</code> - The object must have all of the specified fields.</li>
+<li><code>HasFieldValue</code> - The object must have the specified field and that field is not empty.</li>
+<li><code>HasJsonSchema</code> - The object must reference a JSON schema with the <code>$schema</code> field.</li>
+<li><code>In</code> - The field value must be included in the set.</li>
+<li><code>IsArray</code> - The field value must be an array.</li>
+<li><code>IsBoolean</code> - The field value must be a boolean.</li>
+<li><code>IsInteger</code> - The field value must be an integer.</li>
+<li><code>IsLower</code> - The field value must include only lowercase characters.</li>
+<li><code>IsNumeric</code> - The field value must be a numeric type.</li>
+<li><code>IsString</code> - The field value must be a string.</li>
+<li><code>IsUpper</code> - The field value must include only uppercase characters.</li>
+<li><code>JsonSchema</code> - The object must validate successfully against a JSON schema.</li>
+<li><code>Less</code> - The field value must be less.</li>
+<li><code>LessOrEqual</code> - The field value must be less or equal to.</li>
+<li><code>Match</code> - The field value matches a regular expression pattern.</li>
+<li><code>NotIn</code> - The field value must not be included in the set.</li>
+<li><code>NotMatch</code> - The field value does not match a regular expression pattern.</li>
+<li><code>NullOrEmpty</code> - The object must not have the specified field or it must be empty.</li>
+<li><code>TypeOf</code> - The field value must be of the specified type.</li>
+<li><code>StartsWith</code> - The field value must match at least one prefix.</li>
+<li><code>Version</code> - The field value must be a semantic version string.</li>
+</ul>
+<p>The <code>$Assert</code> variable can only be used within a rule definition block.</p>
+<p>For detailed information on the assertion helper see <a href="../about_PSRule_Assert/">about_PSRule_Assert</a>.</p>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$Assert</span>
+</code></pre></div>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Determine if $TargetObject is valid against the provided schema</span>
+<span class="n">Rule</span> <span class="s1">&#39;UseJsonSchema&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">JsonSchema</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;schemas/PSRule-options.schema.json&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h3>
+<p>A dynamic object with properties names that map to configuration values set in the baseline.</p>
+<p>When accessing configuration:</p>
+<ul>
+<li>Configuration keys are case sensitive.</li>
+<li>Configuration values are read only.</li>
+<li>Configuration values can be accessed through helper methods.</li>
+</ul>
+<p>The following helper methods are available:</p>
+<ul>
+<li><code>GetStringValues(string configurationKey)</code> - Returns an array of strings, based on <code>configurationKey</code>.</li>
+</ul>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$Configuration</span><span class="p">.&lt;</span><span class="n">configurationKey</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">$Configuration</span><span class="p">.</span><span class="n">GetStringValues</span><span class="p">(&lt;</span><span class="n">configurationKey</span><span class="p">&gt;)</span>
+</code></pre></div>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: This rule uses a threshold stored as $Configuration.appServiceMinInstanceCount</span>
+<span class="n">Rule</span> <span class="s1">&#39;appServicePlan.MinInstanceCount&#39;</span> <span class="n">-If</span> <span class="p">{</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">ResourceType</span> <span class="o">-eq</span> <span class="s1">&#39;Microsoft.Web/serverfarms&#39;</span> <span class="p">}</span> <span class="p">{</span>
+    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Sku</span><span class="p">.</span><span class="n">capacity</span> <span class="o">-ge</span> <span class="nv">$Configuration</span><span class="p">.</span><span class="n">appServiceMinInstanceCount</span>
+<span class="p">}</span> <span class="n">-Configure</span> <span class="p">@{</span> <span class="n">appServiceMinInstanceCount</span> <span class="p">=</span> <span class="n">2</span> <span class="p">}</span>
+</code></pre></div>
+<h3 id="localizeddata">LocalizedData<a class="headerlink" href="#localizeddata" title="Permanent link">#</a></h3>
+<p>A dynamic object with properties names that map to localized data messages in a <code>.psd1</code> file.</p>
+<p>When using localized data, PSRule loads localized strings as a hashtable from <code>PSRule-rules.psd1</code>.</p>
+<p>The following logic is used to locate <code>PSRule-rules.psd1</code>:</p>
+<ul>
+<li>If the rules are loose (not part of a module), PSRule will search for <code>PSRule-rules.psd1</code> in the <code>.\&lt;culture&gt;\</code> subdirectory relative to where the rule script <em>.ps1</em> file is located.</li>
+<li>When the rules are shipped as part of a module, PSRule will search for <code>PSRule-rules.psd1</code> in the <code>.\&lt;culture&gt;\</code> subdirectory relative to where the module manifest <em>.psd1</em> file is located.</li>
+</ul>
+<p>When accessing localized data:</p>
+<ul>
+<li>Message names are case sensitive.</li>
+<li>Message values are read only.</li>
+</ul>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$LocalizedData</span><span class="p">.&lt;</span><span class="n">messageName</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Data for rules stored in PSRule-rules.psd1</span>
+<span class="p">@{</span>
+    <span class="n">WithLocalizedDataMessage</span> <span class="p">=</span> <span class="s1">&#39;LocalizedMessage for en-ZZ. Format={0}.&#39;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Use -f to generate a formatted localized warning</span>
+<span class="n">Rule</span> <span class="s1">&#39;WithLocalizedData&#39;</span> <span class="p">{</span>
+    <span class="nb">Write-Warning</span> <span class="n">-Message</span> <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">WithLocalizedDataMessage</span> <span class="o">-f</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Type</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This rule returns a warning message similar to:</p>
+<div class="highlight"><pre><span></span><code>LocalizedMessage for en-ZZ. Format=TestType.
+</code></pre></div>
+<h3 id="psrule">PSRule<a class="headerlink" href="#psrule" title="Permanent link">#</a></h3>
+<p>An object representing the current context during execution.</p>
+<p>The following properties are available for read access:</p>
+<ul>
+<li><code>Badges</code> - A helper to generate badges within PSRule.
+  This property can only be called within the <code>-End</code> block of a convention.</li>
+<li><code>Field</code> - A hashtable of custom bound fields.
+  See option <code>Binding.Field</code> for more information.</li>
+<li><code>Input</code> - Allows adding additional input paths to the pipeline.</li>
+<li><code>Repository</code> - Provides access to information about the current repository.</li>
+<li><code>Scope</code> - Any scopes assigned to the object currently being processed by the pipeline.</li>
+<li><code>Source</code> - A collection of sources for the object currently being processed on the pipeline.</li>
+<li><code>TargetObject</code> - The object currently being processed on the pipeline.</li>
+<li><code>TargetName</code> - The name of the object currently being processed on the pipeline.
+  This property will automatically default to <code>TargetName</code> or <code>Name</code> properties of the object if they exist.</li>
+<li><code>TargetType</code> - The type of the object currently being processed on the pipeline.
+  This property will automatically bind to <code>PSObject.TypeNames[0]</code> by default.</li>
+<li><code>Output</code> - The output of all rules.
+  This property can only be called within the <code>-End</code> block of a convention.</li>
+</ul>
+<p>The following properties are available for read/ write access:</p>
+<ul>
+<li><code>Data</code> - A hashtable of custom data.
+This property can be populated during rule or begin/ process convention execution.
+Custom data is not used by PSRule directly, and is intended to be used by downstream processes that need to interpret PSRule results.</li>
+</ul>
+<p>To bind fields that already exist on the target object use custom binding and <code>Binding.Field</code>.
+Use custom data to store data that must be calculated during rule execution.</p>
+<p>The following helper methods are available:</p>
+<ul>
+<li><code>GetContent(PSObject sourceObject)</code> - Returns the content of a file as one or more objects.
+  The parameter <code>sourceObject</code> should be a <code>InputFileInfo</code>,<code>FileInfo</code>, or <code>Uri</code> object.</li>
+<li><code>GetContentField(PSObject sourceObject, string field)</code> - Returns the content of a file as one or more objects.
+  The parameter <code>sourceObject</code> should be a <code>InputFileInfo</code>,<code>FileInfo</code>, or <code>Uri</code> object.
+  The parameter <code>field</code> is an field within each object to return.
+  If the field does not exist on the object, an object is not returned.</li>
+<li><code>GetContentFirstOrDefault(PSObject sourceObject)</code> - Returns the content of a file as on object.
+  The parameter <code>sourceObject</code> should be a <code>InputFileInfo</code>,<code>FileInfo</code>, or <code>Uri</code> object.
+  If more than one object is contained in the file, only the first object is returned.
+  When the source file contains no objects null is returned.</li>
+<li><code>Import(PSObject[] sourceObject)</code> - Imports one or more source objects into the pipeline.
+  This method can only be called within the <code>-Initialize</code> or <code>-Begin</code> block of a convention.
+  Use this method to expand an object into child objects that will be processed independently.
+  Objects imported using this method will be excluded from the <code>Input.ObjectPath</code> option if set.</li>
+<li><code>ImportWithType(string type, PSObject[] sourceObject)</code> - Imports one or more source objects into the pipeline.
+  This method can only be called within the <code>-Initialize</code> or <code>-Begin</code> block of a convention.
+  Use this method to expand an object into child objects that will be processed independently.
+  Objects imported using this method will be excluded from the <code>Input.ObjectPath</code> option if set.
+  When <code>Binding.PreferTargetInfo</code> is true, the type will be automatically used as the <code>TargetType</code> for the imported object.</li>
+<li><code>AddService(string id, object service)</code> - Add a service to the current context.
+  The service can be retrieved using <code>$PSRule.GetService(id)</code>.
+  The service object will be available to all rules and cleaned up after all rules are executed.
+  Services should implement the <code>IDisposable</code> interface to perform additional cleanup.
+  This method can only be called within the <code>-Initialize</code> block of a convention.</li>
+<li><code>GetService(string id)</code> - Retrieves a service previously added by a convention.</li>
+<li><code>GetPath(object sourceObject, string path)</code> - Evalute an object path expression and returns the resulting objects.</li>
+</ul>
+<p>The file format is detected based on the same file formats as the option <code>Input.Format</code>.
+i.e. Yaml, Json, Markdown, and PowerShell Data.</p>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$PSRule</span>
+</code></pre></div>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: This rule determines if the target object matches the naming convention</span>
+<span class="n">Rule</span> <span class="s1">&#39;NamingConvention&#39;</span> <span class="p">{</span>
+    <span class="nv">$PSRule</span><span class="p">.</span><span class="n">TargetName</span><span class="p">.</span><span class="n">ToLower</span><span class="p">()</span> <span class="o">-ceq</span> <span class="nv">$PSRule</span><span class="p">.</span><span class="n">TargetName</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Use allowed environment tags</span>
+<span class="n">Rule</span> <span class="s1">&#39;CustomData&#39;</span> <span class="p">{</span>
+    <span class="n">Recommend</span> <span class="s1">&#39;Environment must be set to an allowed value&#39;</span>
+    <span class="n">Within</span> <span class="s1">&#39;Tags.environment&#39;</span> <span class="s1">&#39;production&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="s1">&#39;development&#39;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Tags</span><span class="p">.</span><span class="n">environment</span> <span class="n">-in</span> <span class="s1">&#39;prod&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$PSRule</span><span class="p">.</span><span class="n">Data</span><span class="p">[</span><span class="s1">&#39;targetEnvironment&#39;</span><span class="p">]</span> <span class="p">=</span> <span class="s1">&#39;production&#39;</span>
+    <span class="p">}</span>
+    <span class="k">elseif</span> <span class="p">(</span><span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Tags</span><span class="p">.</span><span class="n">environment</span> <span class="n">-in</span> <span class="s1">&#39;dev&#39;</span><span class="p">,</span> <span class="s1">&#39;develop&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$PSRule</span><span class="p">.</span><span class="n">Data</span><span class="p">[</span><span class="s1">&#39;targetEnvironment&#39;</span><span class="p">]</span> <span class="p">=</span> <span class="s1">&#39;development&#39;</span>
+    <span class="p">}</span>
+    <span class="k">elseif</span> <span class="p">(</span><span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Tags</span><span class="p">.</span><span class="n">environment</span> <span class="n">-in</span> <span class="s1">&#39;tst&#39;</span><span class="p">,</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$PSRule</span><span class="p">.</span><span class="n">Data</span><span class="p">[</span><span class="s1">&#39;targetEnvironment&#39;</span><span class="p">]</span> <span class="p">=</span> <span class="s1">&#39;test&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="rule">Rule<a class="headerlink" href="#rule" title="Permanent link">#</a></h3>
+<p>An object representing the current rule during execution.</p>
+<p>The following properties are available for read access:</p>
+<ul>
+<li><code>RuleName</code> - The name of the rule.</li>
+<li><code>RuleId</code> - A unique identifier for the rule.</li>
+</ul>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$Rule</span>
+</code></pre></div>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: This rule determines if the target object matches the naming convention</span>
+<span class="n">Rule</span> <span class="s1">&#39;resource.NamingConvention&#39;</span> <span class="p">{</span>
+    <span class="nv">$PSRule</span><span class="p">.</span><span class="n">TargetName</span><span class="p">.</span><span class="n">ToLower</span><span class="p">()</span> <span class="o">-ceq</span> <span class="nv">$PSRule</span><span class="p">.</span><span class="n">TargetName</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="targetobject">TargetObject<a class="headerlink" href="#targetobject" title="Permanent link">#</a></h3>
+<p>The value of the pipeline object currently being processed.
+<code>$TargetObject</code> is set by using the <code>-InputObject</code> parameter of <code>Invoke-PSRule</code>.</p>
+<p>When more than one input object is set, each object will be processed sequentially.</p>
+<p>Syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$TargetObject</span>
+</code></pre></div>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Check that sku capacity is set to at least 2</span>
+<span class="n">Rule</span> <span class="s1">&#39;HasMinInstances&#39;</span> <span class="p">{</span>
+    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Sku</span><span class="p">.</span><span class="n">capacity</span> <span class="o">-ge</span> <span class="n">2</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/Invoke-PSRule/">Invoke-PSRule</a></li>
+</ul>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      2023-02-25
+    
+  </small>
+</div>
+
+
+
+
+
+                
+
+  
+
+
+  <!-- Giscus -->
+  <h2 id="__comments">Comments</h2>
+  
+
+  
+    <script src="https://giscus.app/client.js"
+      data-repo="microsoft/PSRule"
+      data-repo-id="MMDEwOlJlcG9zaXRvcnkxMjU4MzI1NTY="
+      data-category="Documentation"
+      data-category-id="DIC_kwDOB4ANbM4CRxSO"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="en"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async>
+    </script>
+  
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/microsoft/PSRule/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

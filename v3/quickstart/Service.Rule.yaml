@@ -1,0 +1,28 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+
+---
+# Synopsis: Find services with an automatic start type.
+apiVersion: github.com/microsoft/PSRule/v1
+kind: Selector
+metadata:
+  name: IsAutomaticService
+spec:
+  if:
+    field: StartType
+    startsWith: Automatic
+    convert: true
+
+---
+# Synopsis: Automatic services should be running.
+apiVersion: github.com/microsoft/PSRule/v1
+kind: Rule
+metadata:
+  name: Yaml.ServiceStarted
+spec:
+  with:
+  - IsAutomaticService
+  condition:
+    field: Status
+    equals: Running
+    convert: true

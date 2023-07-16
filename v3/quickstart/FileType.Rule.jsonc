@@ -1,0 +1,22 @@
+[
+    {
+        // Synopsis: Image files are not permitted.
+        "apiVersion": "github.com/microsoft/PSRule/v1",
+        "kind": "Rule",
+        "metadata": {
+            "name": "Json.FileType"
+        },
+        "spec": {
+            "type": [
+                "System.IO.FileInfo"
+            ],
+            "condition": {
+                "field": "Extension",
+                "notIn": [
+                    ".jpg",
+                    ".png"
+                ]
+            }
+        }
+    }
+]

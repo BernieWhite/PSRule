@@ -1,0 +1,35 @@
+[
+    {
+        // Synopsis: Find services with an automatic start type.
+        "apiVersion": "github.com/microsoft/PSRule/v1",
+        "kind": "Selector",
+        "metadata": {
+            "name": "Json.IsAutomaticService"
+        },
+        "spec": {
+            "if": {
+                "field": "StartType",
+                "startsWith": "Automatic",
+                "convert": true
+            }
+        }
+    },
+    {
+        // Synopsis: Automatic services should be running.
+        "apiVersion": "github.com/microsoft/PSRule/v1",
+        "kind": "Rule",
+        "metadata": {
+            "name": "Json.ServiceStarted"
+        },
+        "spec": {
+            "with": [
+                "Json.IsAutomaticService"
+            ],
+            "condition": {
+                "field": "Status",
+                "equals": "Running",
+                "convert": true
+            }
+        }
+    }
+]

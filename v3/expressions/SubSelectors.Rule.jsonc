@@ -1,0 +1,74 @@
+[
+  {
+    // Synopsis: A rule with a sub-selector precondition.
+    "apiVersion": "github.com/microsoft/PSRule/v1",
+    "kind": "Rule",
+    "metadata": {
+      "name": "Json.Subselector.Precondition"
+    },
+    "spec": {
+      "where": {
+        "field": "kind",
+        "equals": "api"
+      },
+      "condition": {
+        "field": "resources",
+        "count": 10
+      }
+    }
+  },
+  {
+    // Synopsis: A rule with a sub-selector filter.
+    "apiVersion": "github.com/microsoft/PSRule/v1",
+    "kind": "Rule",
+    "metadata": {
+      "name": "Json.Subselector.Filter"
+    },
+    "spec": {
+      "condition": {
+        "field": "resources",
+        "where": {
+          "type": ".",
+          "equals": "Microsoft.Web/sites/config"
+        },
+        "allOf": [
+          {
+            "field": "properties.detailedErrorLoggingEnabled",
+            "equals": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    // Synopsis: A rule with a sub-selector filter.
+    "apiVersion": "github.com/microsoft/PSRule/v1",
+    "kind": "Rule",
+    "metadata": {
+      "name": "Json.Subselector.FilterOr"
+    },
+    "spec": {
+      "condition": {
+        "anyOf": [
+          {
+            "field": "resources",
+            "where": {
+              "type": ".",
+              "equals": "Microsoft.Web/sites/config"
+            },
+            "allOf": [
+              {
+                "field": "properties.detailedErrorLoggingEnabled",
+                "equals": true
+              }
+            ]
+          },
+          {
+            "field": "resources",
+            "exists": false
+          }
+        ]
+      }
+    }
+  }
+]

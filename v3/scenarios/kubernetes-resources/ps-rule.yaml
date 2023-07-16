@@ -1,0 +1,9 @@
+
+binding:
+  targetName:
+    - metadata.name
+  targetType:
+    - kind
+
+execution:
+  invariantCultureWarning: false
