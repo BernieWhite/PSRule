@@ -2670,7 +2670,7 @@
 <h2 id="synopsis">SYNOPSIS<a class="headerlink" href="#synopsis" title="Permanent link">#</a></h2>
 <p>Displays information about a rule.</p>
 <h2 id="syntax">SYNTAX<a class="headerlink" href="#syntax" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>Get-PSRuleHelp [-Module &lt;String&gt;] [-Online] [-Full] [[-Name] &lt;String&gt;] [-Path &lt;String&gt;]
+<div class="highlight"><pre><span></span><code>Get-PSRuleHelp [-Module &lt;String&gt;] [-Online] [-Full] [[-Name] &lt;String[]&gt;] [-Path &lt;String&gt;]
  [-Option &lt;PSRuleOption&gt;] [-Culture &lt;String&gt;] [&lt;CommonParameters&gt;]
 </code></pre></div>
 <h2 id="description">DESCRIPTION<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
@@ -2694,7 +2694,7 @@ To get help for a specific rule or module use the <code>-Name</code> or <code>-M
 <h2 id="parameters">PARAMETERS<a class="headerlink" href="#parameters" title="Permanent link">#</a></h2>
 <h3 id="-name">-Name<a class="headerlink" href="#-name" title="Permanent link">#</a></h3>
 <p>The name of the rule to get documentation for.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String[]</span>
 <span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
 <span class="nt">Aliases</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">n</span>
 
@@ -2799,7 +2799,7 @@ Alternatively a hashtable or path to YAML file can be specified with options.</p
   <small>
     
       Last update:
-      2022-03-21
+      2023-08-25
     
   </small>
 </div>

@@ -2496,7 +2496,7 @@ When checking into source control, store this file in the root directory of the 
 </ul>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># With cmdlet</span>
-<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-OutputAs</span> <span class="n">Summary</span> <span class="n">-OutputCulture</span> <span class="s1">&#39;en-AU&#39;</span> <span class="n">-NotProcessedWarning</span> <span class="nv">$False</span> <span class="n">-Configuration</span> <span class="p">@{</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-OutputAs</span> <span class="n">Summary</span> <span class="n">-OutputCulture</span> <span class="s1">&#39;en-AU&#39;</span> <span class="n">-ExecutionUnprocessedObject</span> <span class="s1">&#39;Ignore&#39;</span> <span class="n">-Configuration</span> <span class="p">@{</span>
   <span class="n">CUSTOM_VALUE</span> <span class="p">=</span> <span class="s1">&#39;example&#39;</span>
 <span class="p">}</span>
 <span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Option</span> <span class="nv">$option</span>
@@ -2505,7 +2505,7 @@ When checking into source control, store this file in the root directory of the 
 <span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Option</span> <span class="p">@{</span>
   <span class="s1">&#39;Output.As&#39;</span> <span class="p">=</span> <span class="s1">&#39;Summary&#39;</span>
   <span class="s1">&#39;Output.Culture&#39;</span> <span class="p">=</span> <span class="s1">&#39;en-AU&#39;</span>
-  <span class="s1">&#39;Execution.NotProcessedWarning&#39;</span> <span class="p">=</span> <span class="nv">$False</span>
+  <span class="s1">&#39;Execution.UnprocessedObject&#39;</span> <span class="p">=</span> <span class="s1">&#39;Ignore&#39;</span>
   <span class="s1">&#39;Configuration.CUSTOM_VALUE&#39;</span> <span class="p">=</span> <span class="s1">&#39;Example&#39;</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -2515,13 +2515,13 @@ When checking into source control, store this file in the root directory of the 
 <span class="w">  </span><span class="nt">culture</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&#39;en-AU&#39;</span><span class="w"> </span><span class="p p-Indicator">]</span>
 
 <span class="nt">execution</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">notProcessedWarning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">unprocessedObject</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ignore</span>
 
 <span class="nt">configuration</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">CUSTOM_VALUE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Example</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># With environment variable in bash</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_EXECUTION_NOTPROCESSEDWARNING</span><span class="o">=</span><span class="nb">false</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_EXECUTION_UNPROCESSEDOBJECT</span><span class="o">=</span>Ignore
 <span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_OUTPUT_AS</span><span class="o">=</span>Summary
 <span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_OUTPUT_CULTURE</span><span class="o">=</span>en-AU
 <span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_CONFIGURATION_CUSTOM_VALUE</span><span class="o">=</span>Example
@@ -2585,7 +2585,7 @@ To do this you have two options:</p>
 <ol>
 <li>Exclude files from analysis &mdash; Configure the <a href="../concepts/PSRule/en-US/about_PSRule_Options/#inputpathignore">Input.PathIgnore</a> option.</li>
 <li>
-<p>Disable the warning entirely &mdash; Set the <a href="concepts/PSRule/en-US/about_PSRule_Options/#executionnotprocessedwarning">Execution.NotProcessedWarning</a> option to <code>false</code>.</p>
+<p>Disable the warning entirely &mdash; Set the <a href="concepts/PSRule/en-US/about_PSRule_Options/#executionunprocessedobject">Execution.UnprocessedObject</a> option to <code>Ignore</code>.</p>
 </li>
 </ol>
 <h2 id="how-do-i-layer-on-custom-rules-on-top-of-an-existing-module">How do I layer on custom rules on top of an existing module?<a class="headerlink" href="#how-do-i-layer-on-custom-rules-on-top-of-an-existing-module" title="Permanent link">#</a></h2>
@@ -2625,7 +2625,7 @@ Collection of telemetry in PowerShell and how to opt-out is explained in <a href
   <small>
     
       Last update:
-      2023-02-12
+      2023-08-25
     
   </small>
 </div>
