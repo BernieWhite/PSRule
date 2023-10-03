@@ -56,6 +56,9 @@ def replace_maml(markdown: str, page: mkdocs.structure.nav.Page, config: mkdocs.
     markdown = re.sub("(\#\#\s+(NOTE|KEYWORDS)\s+(.|\s{1,2}(?!\#))+)", "", markdown)
     markdown = markdown.replace("## SEE ALSO", "## Links")
 
+    if page.meta.get('link_users', 'false') != 'false':
+        markdown = re.sub(r"\@([\w-]*)", r"[@\g<1>](https://github.com/\g<1>)", markdown)
+
     return markdown
 
 # Dynamically build reference nav

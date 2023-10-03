@@ -2380,7 +2380,7 @@
 <p>What's changed since release v2.9.0:</p>
 <ul>
 <li>General improvements:<ul>
-<li><strong>Breaking change:</strong> Switch to use SHA-512 for generating unbound objects by @BernieWhite.
+<li><strong>Breaking change:</strong> Switch to use SHA-512 for generating unbound objects by <a href="https://github.com/BernieWhite">@BernieWhite</a>.
   <a href="https://github.com/microsoft/PSRule/issues/1155">#1155</a><ul>
 <li>Objects that have no bound name will automatically be assigned a name based on the SHA-512 hash of the object.</li>
 <li>Previously a SHA-1 hash was used, however this is no longer considered secure.</li>
@@ -2389,11 +2389,11 @@
 <li>See <a href="https://aka.ms/ps-rule/upgrade">upgrade notes</a> for details.</li>
 </ul>
 </li>
-<li><strong>Breaking change:</strong> Removed deprecated execution options by @BernieWhite.
+<li><strong>Breaking change:</strong> Removed deprecated execution options by <a href="https://github.com/BernieWhite">@BernieWhite</a>.
   <a href="https://github.com/microsoft/PSRule/issues/1457">#1457</a></li>
-<li><strong>Breaking change:</strong> Removed deprecated object properties by @BernieWhite.
+<li><strong>Breaking change:</strong> Removed deprecated object properties by <a href="https://github.com/BernieWhite">@BernieWhite</a>.
   <a href="https://github.com/microsoft/PSRule/issues/1601">#1601</a></li>
-<li>Expanded support for <code>FileHeader</code> assertion by @BernieWhite.
+<li>Expanded support for <code>FileHeader</code> assertion by <a href="https://github.com/BernieWhite">@BernieWhite</a>.
   <a href="https://github.com/microsoft/PSRule/issues/1521">#1521</a><ul>
 <li>Added support for <code>.bicepparam</code>, <code>.tsp</code>, <code>.tsx</code>, <code>.editorconfig</code>, <code>.ipynb</code>, and <code>.toml</code> files.</li>
 </ul>
@@ -2401,8 +2401,12 @@
 </ul>
 </li>
 <li>Engineering:<ul>
-<li>Bump development tools to .NET 7.0 SDK by @BernieWhite.
-  <a href="https://github.com/microsoft/PSRule/issues/1631">#1631</a></li>
+<li><strong>Breaking change:</strong> Bump development tools to .NET 7.0 SDK by <a href="https://github.com/BernieWhite">@BernieWhite</a>.
+  <a href="https://github.com/microsoft/PSRule/issues/1631">#1631</a><ul>
+<li>Running PSRule from PowerShell 7.x is supported on 7.3 and above.</li>
+<li>Running PSRule from Windows PowerShell 5.1 is still supported but deprecated and will be removed in PSRule v4.</li>
+</ul>
+</li>
 <li>Bump Microsoft.CodeAnalysis.NetAnalyzers to v7.0.4.
   <a href="https://github.com/microsoft/PSRule/pull/1602">#1602</a></li>
 <li>Bump Microsoft.CodeAnalysis.Common to v4.7.0.
