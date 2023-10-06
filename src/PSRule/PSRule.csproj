@@ -18,7 +18,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" PrivateAssets="All" />
-    <PackageReference Include="Sarif.Sdk" Version="2.4.16" />
+    <PackageReference Include="Sarif.Sdk" Version="4.3.4" />
   </ItemGroup>
 
   <!-- Add code generators -->
