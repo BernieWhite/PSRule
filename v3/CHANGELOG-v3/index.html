@@ -1087,6 +1087,8 @@
       
         
       
+        
+      
     
     
     
@@ -1188,6 +1190,26 @@
   
   <span class="md-ellipsis">
     Sub-selectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/lockfile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lock file
   </span>
   
 
@@ -1693,6 +1715,8 @@
       
         
       
+        
+      
     
     
     
@@ -1770,7 +1794,7 @@
             
   
   <span class="md-ellipsis">
-    Commands
+    PowerShell cmdlets
   </span>
   
 
@@ -1780,7 +1804,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
-            Commands
+            PowerShell cmdlets
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1987,6 +2011,26 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI commands
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2379,6 +2423,14 @@
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
 <p>What's changed since release v2.9.0:</p>
 <ul>
+<li>New features:<ul>
+<li>Added lock file support when using CLI and related tools by <a href="https://github.com/BernieWhite">@BernieWhite</a>.
+  <a href="https://github.com/microsoft/PSRule/issues/1660">#1660</a><ul>
+<li>The lock file used used during analysis and when installing modules to select a specific version.</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>General improvements:<ul>
 <li><strong>Breaking change:</strong> Switch to use SHA-512 for generating unbound objects by <a href="https://github.com/BernieWhite">@BernieWhite</a>.
   <a href="https://github.com/microsoft/PSRule/issues/1155">#1155</a><ul>
@@ -2432,7 +2484,7 @@
   <small>
     
       Last update:
-      2023-11-03
+      2023-11-12
     
   </small>
 </div>
