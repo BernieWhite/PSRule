@@ -125,7 +125,7 @@ jobs:
         run: ./scripts/pipeline-deps.ps1
 
       - name: Download module
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: Module
           path: ./out/modules/PSRule
