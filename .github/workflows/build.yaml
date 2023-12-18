@@ -46,7 +46,7 @@ jobs:
         run: Invoke-Build -Configuration Release -AssertStyle GitHubActions
 
       - name: Upload module
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Module
           path: ./out/modules/PSRule/*
@@ -54,7 +54,7 @@ jobs:
           if-no-files-found: error
 
       # - name: Upload Test Results
-      #   uses: actions/upload-artifact@v3
+      #   uses: actions/upload-artifact@v4
       #   if: always()
       #   with:
       #     name: Module.DotNet.TestResults
@@ -63,7 +63,7 @@ jobs:
       #     if-no-files-found: error
 
       - name: Upload PSRule Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: Module.PSRule.TestResults
