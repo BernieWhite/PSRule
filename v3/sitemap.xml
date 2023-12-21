@@ -201,11 +201,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://microsoft.github.io/PSRule/v3/concepts/cli/</loc>
-         <lastmod>2023-12-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/grouping-rules/</loc>
          <lastmod>2023-12-21</lastmod>
          <changefreq>daily</changefreq>
@@ -267,6 +262,26 @@
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_Variables/</loc>
+         <lastmod>2023-12-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://microsoft.github.io/PSRule/v3/concepts/cli/</loc>
+         <lastmod>2023-12-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://microsoft.github.io/PSRule/v3/concepts/cli/module/</loc>
+         <lastmod>2023-12-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://microsoft.github.io/PSRule/v3/concepts/cli/restore/</loc>
+         <lastmod>2023-12-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://microsoft.github.io/PSRule/v3/concepts/cli/run/</loc>
          <lastmod>2023-12-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
