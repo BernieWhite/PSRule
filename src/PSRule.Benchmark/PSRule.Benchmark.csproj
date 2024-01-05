@@ -15,11 +15,11 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(OS)' != 'Windows_NT'">
-    <PackageReference Include="BenchmarkDotNet" Version="0.13.11" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(OS)' == 'Windows_NT'">
-    <PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.11" />
+    <PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.12" />
   </ItemGroup>
 
   <ItemGroup>
