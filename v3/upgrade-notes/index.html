@@ -1659,9 +1659,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rename-of-analyze-cli-command-to-run" class="md-nav__link">
+  <a href="#changes-to-cli-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      Rename of analyze CLI command to run
+      Changes to CLI commands
     </span>
   </a>
   
@@ -2707,9 +2707,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rename-of-analyze-cli-command-to-run" class="md-nav__link">
+  <a href="#changes-to-cli-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      Rename of analyze CLI command to run
+      Changes to CLI commands
     </span>
   </a>
   
@@ -2880,19 +2880,31 @@ Any objects that have previously been suppressed with a name based on a SHA-1 ha
 <h3 id="using-powershell-73-or-later">Using PowerShell 7.3 or later<a class="headerlink" href="#using-powershell-73-or-later" title="Permanent link">#</a></h3>
 <p>From <em>v3.0.0</em>, PSRule requires:</p>
 <ul>
-<li>Windows PowerShell 5.1 for running as a PowerShell module. OR</li>
+<li>Windows PowerShell 5.1 for running as a PowerShell module. <em>OR</em></li>
 <li>PowerShell 7.3 or later for development, building locally, or running as a PowerShell module.</li>
 </ul>
 <p>Support for Windows PowerShell 5.1 is deprecated and will be removed in a future release of PSRule (v4).
 We recommend upgrading to PowerShell 7.3 or later.</p>
 <p>At the time of writing, PowerShell 7.3 is the most recent version of PowerShell.
 PowerShell 7.4 is expected, and PSRule v4 will aim to support the latest version of PowerShell as the minimum requirement.</p>
-<h3 id="rename-of-analyze-cli-command-to-run">Rename of analyze CLI command to run<a class="headerlink" href="#rename-of-analyze-cli-command-to-run" title="Permanent link">#</a></h3>
-<p>Previously in PSRule <em>v2.8.0</em> to <em>v2.9.0, the CLI command used to run rules was <code>analyze</code>.
-From _v3.0.0</em>, the CLI command has been renamed to <code>run</code>.
-This change was made to simplify the CLI usage and reduce confusion that might occur between locales.</p>
-<p>For example: <code>ps-rule analyze</code> is now <code>ps-rule run</code>.</p>
+<h3 id="changes-to-cli-commands">Changes to CLI commands<a class="headerlink" href="#changes-to-cli-commands" title="Permanent link">#</a></h3>
+<p>From <em>v3.0.0</em>, the CLI command names have been renamed to simplify usage.
+The following changes have been made:</p>
+<ul>
+<li>To run rules, use <code>run</code> instead of <code>analyze</code>. i.e. <code>ps-rule run</code>.</li>
+<li>To restore modules for a workspace, use <code>module restore</code> instead of <code>restore</code>. i.e. <code>ps-rule module restore</code>.</li>
+</ul>
 <p>The <code>run</code> command provides similar output to the <code>Assert-PSRule</code> cmdlet in PowerShell.</p>
+<p>Previously the <code>restore</code> command installed modules based on the configuration of the <a href="../concepts/PSRule/en-US/about_PSRule_Options/#requires">Requires</a> option.
+From <em>v3.0.0</em>, the <code>module restore</code> command installs modules based on:</p>
+<ul>
+<li>The module lock file <code>ps-rule.lock.json</code> if set.
+  Use <code>module</code> <a href="../concepts/cli/module/">CLI commands</a> to manage the <a href="../concepts/lockfile/">lock file</a>. <em>AND</em></li>
+<li>
+<p>Modules defined in the <a href="../concepts/PSRule/en-US/about_PSRule_Options/#includemodule">Include.Module</a> option, if set.
+  Additionally the <a href="../concepts/PSRule/en-US/about_PSRule_Options/#requires">Requires</a> option is used to constrain the version of modules installed.</p>
+</li>
+</ul>
 <h2 id="upgrading-to-v200">Upgrading to v2.0.0<a class="headerlink" href="#upgrading-to-v200" title="Permanent link">#</a></h2>
 <h3 id="resources-naming-restrictions">Resources naming restrictions<a class="headerlink" href="#resources-naming-restrictions" title="Permanent link">#</a></h3>
 <p>When naming resources such as rules or selectors, the following restrictions apply:</p>
@@ -2992,7 +3004,8 @@ Currently this must be set to <code>github.com/microsoft/PSRule/v1</code>.</p>
 </div>
 </div>
 <h3 id="change-in-source-file-discovery-for-get-psrulehelp">Change in source file discovery for Get-PSRuleHelp<a class="headerlink" href="#change-in-source-file-discovery-for-get-psrulehelp" title="Permanent link">#</a></h3>
-<p>Previously in PSRule <em>v1.11.0</em> and prior versions, rules would show up twice when running <code>Get-PSRuleHelp</code> in the context of a module and in the same working directory of the module.
+<p>Previously in PSRule <em>v1.11.0</em> and prior versions,
+rules would show up twice when running <code>Get-PSRuleHelp</code> in the context of a module and in the same working directory of the module.
 This behavior has now been removed from <em>v2.0.0</em>.</p>
 <p>Module files are now preferred over loose files, and rules are only shown once in the output.
 Any duplicate rule names from loose files are outputted as a warning instead.</p>
@@ -3014,7 +3027,8 @@ Any duplicate rule names from loose files are outputted as a warning instead.</p
 <span class="n">M1</span><span class="p">.</span><span class="n">Rule2</span>                            <span class="n">TestModule</span>               <span class="n">This</span> <span class="n">is</span> <span class="n">the</span> <span class="k">default</span>
 </code></pre></div>
 <h3 id="require-source-discovery-from-current-working-directory-to-be-explicitly-included">Require source discovery from current working directory to be explicitly included<a class="headerlink" href="#require-source-discovery-from-current-working-directory-to-be-explicitly-included" title="Permanent link">#</a></h3>
-<p>Previously in PSRule <em>v1.11.0</em> and prior versions, rule sources from the current working directory without the <code>-Path</code> and <code>-Module</code> parameters were automatically included.
+<p>Previously in PSRule <em>v1.11.0</em> and prior versions,
+rule sources from the current working directory without the <code>-Path</code> and <code>-Module</code> parameters were automatically included.
 This behavior has now been removed from <em>v2.0.0</em>.</p>
 <p>Rules sources in the current working directory are only included if <code>-Path .</code> or <code>-Path $PWD</code> is specified.</p>
 <p>The old behavior:</p>
@@ -3131,7 +3145,7 @@ Rules referencing the deprecated properties of <code>$Rule</code> must be update
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 16, 2024</span>
   </span>
 
     
