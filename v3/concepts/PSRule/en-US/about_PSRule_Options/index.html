@@ -2483,6 +2483,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#executionrestrictscriptsource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution.RestrictScriptSource
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#executionruleinconclusive" class="md-nav__link">
     <span class="md-ellipsis">
       Execution.RuleInconclusive
@@ -3242,6 +3251,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#executionrestrictscriptsource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution.RestrictScriptSource
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#executionruleinconclusive" class="md-nav__link">
     <span class="md-ellipsis">
       Execution.RuleInconclusive
@@ -3695,6 +3713,7 @@ This topic describes what options are available, when to and how to use them.</p
 <li><a href="#executionlanguagemode">Execution.LanguageMode</a></li>
 <li><a href="#executioninvariantculture">Execution.InvariantCulture</a></li>
 <li><a href="#executioninitialsessionstate">Execution.InitialSessionState</a></li>
+<li><a href="#executionrestrictscriptsource">Execution.RestrictScriptSource</a></li>
 <li><a href="#executionruleinconclusive">Execution.RuleInconclusive</a></li>
 <li><a href="#executionsuppressiongroupexpired">Execution.SuppressionGroupExpired</a></li>
 <li><a href="#executionunprocessedobject">Execution.UnprocessedObject</a></li>
@@ -3864,7 +3883,8 @@ Custom fields are available to rules and included in output.</p>
 <li>i.e. The first configured property name will take precedence over the second property name.</li>
 </ul>
 </li>
-<li>By default the property name will be matched ignoring case sensitivity. To use a case sensitive match, configure the <a href="#bindingignorecase">Binding.IgnoreCase</a> option.</li>
+<li>By default the property name will be matched ignoring case sensitivity.
+  To use a case sensitive match, configure the <a href="#bindingignorecase">Binding.IgnoreCase</a> option.</li>
 </ul>
 </li>
 </ul>
@@ -4233,7 +4253,7 @@ Conventions are included by name and must be defined within files included in <c
 <h3 id="executionaliasreference">Execution.AliasReference<a class="headerlink" href="#executionaliasreference" title="Permanent link">#</a></h3>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75Zm7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.249.249 0 0 0-.163-.06Z"/></svg></span> v2.9.0</p>
 <p>Determines how to handle when an alias to a resource is used.
-By defaut, a warning is generated, however this behaviour can be modified by this option.</p>
+By default, a warning is generated, however this behavior can be modified by this option.</p>
 <p>The following preferences are available:</p>
 <ul>
 <li><code>None</code> (0) - No preference.
@@ -4244,6 +4264,7 @@ By defaut, a warning is generated, however this behaviour can be modified by thi
 <li><code>Error</code> (3) - Abort and throw an error.</li>
 <li><code>Debug</code> (4) - Continue to execute but log a debug message.</li>
 </ul>
+<p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionAliasReference parameter</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-ExecutionAliasReference</span> <span class="s1">&#39;Error&#39;</span><span class="p">;</span>
 </code></pre></div>
@@ -4273,7 +4294,7 @@ By defaut, a warning is generated, however this behaviour can be modified by thi
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75Zm7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.249.249 0 0 0-.163-.06Z"/></svg></span> v2.4.0</p>
 <p>Determines how to handle duplicate resources identifiers during execution.
 A duplicate resource identifier may exist if two resources are defined with the same name, ref, or alias.
-By defaut, an error is thrown, however this behaviour can be modified by this option.</p>
+By default, an error is thrown, however this behavior can be modified by this option.</p>
 <p>If this option is configured to <code>Warn</code> or <code>Ignore</code> only the first resource will be used,
 however PSRule will continue to execute.</p>
 <p>The following preferences are available:</p>
@@ -4286,6 +4307,7 @@ however PSRule will continue to execute.</p>
   This is the default.</li>
 <li><code>Debug</code> (4) - Continue to execute but log a debug message.</li>
 </ul>
+<p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the DuplicateResourceId parameter</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-DuplicateResourceId</span> <span class="s1">&#39;Warn&#39;</span><span class="p">;</span>
 </code></pre></div>
@@ -4318,9 +4340,9 @@ This hash algorithm is used when generating a resource identifier for an object 
 <p>By default, the <em>SHA512</em> algorithm is used.</p>
 <p>The following algorithms are available for use in PSRule:</p>
 <ul>
-<li>SHA512</li>
-<li>SHA384</li>
-<li>SHA256</li>
+<li><code>SHA512</code></li>
+<li><code>SHA384</code></li>
+<li><code>SHA256</code></li>
 </ul>
 <p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.HashAlgorithm hashtable key</span>
@@ -4348,8 +4370,9 @@ In locked down environments, a reduced set of language features may be desired.<
 <p>When PSRule is executed in an environment configured for Device Guard, only constrained language features are available.</p>
 <p>The following language modes are available for use in PSRule:</p>
 <ul>
-<li>FullLanguage</li>
-<li>ConstrainedLanguage</li>
+<li><code>FullLanguage</code> - Executes with all language features.
+  This is the default.</li>
+<li><code>ConstrainedLanguage</code> - Executes in constrained language mode that restricts the types and methods that can be used.</li>
 </ul>
 <p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.LanguageMode hashtable key</span>
@@ -4374,7 +4397,7 @@ In locked down environments, a reduced set of language features may be desired.<
 <h3 id="executioninvariantculture">Execution.InvariantCulture<a class="headerlink" href="#executioninvariantculture" title="Permanent link">#</a></h3>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75Zm7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.249.249 0 0 0-.163-.06Z"/></svg></span> v2.9.0</p>
 <p>Determines how to report when an invariant culture is used.
-By defaut, a warning is generated, however this behaviour can be modified by this option.</p>
+By default, a warning is generated, however this behavior can be modified by this option.</p>
 <p>The following preferences are available:</p>
 <ul>
 <li><code>None</code> (0) - No preference.
@@ -4385,6 +4408,7 @@ By defaut, a warning is generated, however this behaviour can be modified by thi
 <li><code>Error</code> (3) - Abort and throw an error.</li>
 <li><code>Debug</code> (4) - Continue to execute but log a debug message.</li>
 </ul>
+<p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionInvariantCulture parameter</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-ExecutionInvariantCulture</span> <span class="s1">&#39;Error&#39;</span><span class="p">;</span>
 </code></pre></div>
@@ -4419,6 +4443,7 @@ By defaut, a warning is generated, however this behaviour can be modified by thi
   This is the default.</li>
 <li><code>Minimal</code> (1) - Create the initial session state with only a minimum set of cmdlets loaded.</li>
 </ul>
+<p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InitialSessionState parameter</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-InitialSessionState</span> <span class="s1">&#39;Minimal&#39;</span><span class="p">;</span>
 </code></pre></div>
@@ -4444,10 +4469,52 @@ By defaut, a warning is generated, however this behaviour can be modified by thi
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_INITIALSESSIONSTATE</span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Minimal</span>
 </code></pre></div>
+<h3 id="executionrestrictscriptsource">Execution.RestrictScriptSource<a class="headerlink" href="#executionrestrictscriptsource" title="Permanent link">#</a></h3>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75Zm7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.249.249 0 0 0-.163-.06Z"/></svg></span> v3.0.0</p>
+<p>Configures where to allow PowerShell language features (such as rules and conventions) to run from.
+In locked down environments, running PowerShell scripts from the workspace may not be allowed.
+Only run scripts from a trusted source.</p>
+<p>This option does not affect YAML or JSON based rules and resources.</p>
+<p>The following script source restrictions are available:</p>
+<ul>
+<li><code>Unrestricted</code> - PowerShell language features are allowed from workspace and modules.
+  This is the default.</li>
+<li><code>ModuleOnly</code> - PowerShell language features are allowed from loaded modules,
+  but script files within the workspace are ignored.</li>
+<li><code>DisablePowerShell</code> - No PowerShell language features are used during PSRule run.
+  When this mode is used, rules and conventions written in PowerShell will not execute.
+  Modules that use PowerShell rules and conventions may not work as expected.</li>
+</ul>
+<p>This option can be specified using:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the RestrictScriptSource parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-RestrictScriptSource</span> <span class="s1">&#39;ModuleOnly&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Execution.RestrictScriptSource hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Execution.RestrictScriptSource&#39;</span> <span class="p">=</span> <span class="s1">&#39;ModuleOnly&#39;</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the RestrictScriptSource parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-RestrictScriptSource</span> <span class="s1">&#39;ModuleOnly&#39;</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the execution/restrictScriptSource property</span>
+<span class="nt">execution</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">restrictScriptSource</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ModuleOnly</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_EXECUTION_RESTRICTSCRIPTSOURCE</span><span class="o">=</span>ModuleOnly
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSRULE_EXECUTION_RESTRICTSCRIPTSOURCE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ModuleOnly</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
+<span class="nt">variables</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_EXECUTION_RESTRICTSCRIPTSOURCE</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ModuleOnly</span>
+</code></pre></div>
 <h3 id="executionruleinconclusive">Execution.RuleInconclusive<a class="headerlink" href="#executionruleinconclusive" title="Permanent link">#</a></h3>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75Zm7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.249.249 0 0 0-.163-.06Z"/></svg></span> v2.9.0</p>
 <p>Determines how to handle rules that generate inconclusive results.
-By defaut, a warning is generated, however this behaviour can be modified by this option.</p>
+By default, a warning is generated, however this behavior can be modified by this option.</p>
 <p>The following preferences are available:</p>
 <ul>
 <li><code>None</code> (0) - No preference.
@@ -4458,6 +4525,7 @@ By defaut, a warning is generated, however this behaviour can be modified by thi
 <li><code>Error</code> (3) - Abort and throw an error.</li>
 <li><code>Debug</code> (4) - Continue to execute but log a debug message.</li>
 </ul>
+<p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionRuleInconclusive parameter</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-ExecutionRuleInconclusive</span> <span class="s1">&#39;Error&#39;</span><span class="p">;</span>
 </code></pre></div>
@@ -4487,7 +4555,7 @@ By defaut, a warning is generated, however this behaviour can be modified by thi
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75Zm7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.249.249 0 0 0-.163-.06Z"/></svg></span> v2.6.0</p>
 <p>Determines how to handle expired suppression groups.
 Regardless of the value, an expired suppression group will be ignored.
-By defaut, a warning is generated, however this behaviour can be modified by this option.</p>
+By default, a warning is generated, however this behavior can be modified by this option.</p>
 <p>The following preferences are available:</p>
 <ul>
 <li><code>None</code> (0) - No preference.
@@ -4498,6 +4566,7 @@ By defaut, a warning is generated, however this behaviour can be modified by thi
 <li><code>Error</code> (3) - Abort and throw an error.</li>
 <li><code>Debug</code> (4) - Continue to execute but log a debug message.</li>
 </ul>
+<p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the SuppressionGroupExpired parameter</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-SuppressionGroupExpired</span> <span class="s1">&#39;Error&#39;</span><span class="p">;</span>
 </code></pre></div>
@@ -4527,7 +4596,7 @@ By defaut, a warning is generated, however this behaviour can be modified by thi
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75Zm7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.249.249 0 0 0-.163-.06Z"/></svg></span> v2.8.0</p>
 <p>Determines how to handle excluded rules.
 Regardless of the value, excluded rules are ignored.
-By defaut, a rule is excluded silently, however this behaviour can be modified by this option.</p>
+By default, a rule is excluded silently, however this behavior can be modified by this option.</p>
 <p>The following preferences are available:</p>
 <ul>
 <li><code>None</code> (0) - No preference.
@@ -4538,6 +4607,7 @@ By defaut, a rule is excluded silently, however this behaviour can be modified b
 <li><code>Error</code> (3) - Abort and throw an error.</li>
 <li><code>Debug</code> (4) - Continue to execute but log a debug message.</li>
 </ul>
+<p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionRuleExcluded parameter</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-ExecutionRuleExcluded</span> <span class="s1">&#39;Warn&#39;</span><span class="p">;</span>
 </code></pre></div>
@@ -4567,7 +4637,7 @@ By defaut, a rule is excluded silently, however this behaviour can be modified b
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75Zm7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.249.249 0 0 0-.163-.06Z"/></svg></span> v2.8.0</p>
 <p>Determines how to handle suppressed rules.
 Regardless of the value, a suppressed rule is ignored.
-By defaut, a warning is generated, however this behaviour can be modified by this option.</p>
+By default, a warning is generated, however this behavior can be modified by this option.</p>
 <p>The following preferences are available:</p>
 <ul>
 <li><code>None</code> (0) - No preference.
@@ -4606,7 +4676,7 @@ By defaut, a warning is generated, however this behaviour can be modified by thi
 <h3 id="executionunprocessedobject">Execution.UnprocessedObject<a class="headerlink" href="#executionunprocessedobject" title="Permanent link">#</a></h3>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75Zm7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.249.249 0 0 0-.163-.06Z"/></svg></span> v2.9.0</p>
 <p>Determines how to report objects that are not processed by any rule.
-By defaut, a warning is generated, however this behaviour can be modified by this option.</p>
+By default, a warning is generated, however this behavior can be modified by this option.</p>
 <p>The following preferences are available:</p>
 <ul>
 <li><code>None</code> (0) - No preference.
@@ -4617,6 +4687,7 @@ By defaut, a warning is generated, however this behaviour can be modified by thi
 <li><code>Error</code> (3) - Abort and throw an error.</li>
 <li><code>Debug</code> (4) - Continue to execute but log a debug message.</li>
 </ul>
+<p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ExecutionUnprocessedObject parameter</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-ExecutionUnprocessedObject</span> <span class="s1">&#39;Ignore&#39;</span><span class="p">;</span>
 </code></pre></div>
@@ -4934,7 +5005,7 @@ When this option is set, instead of evaluating the pipeline object,
 PSRule looks for a property of the pipeline object specified by <code>ObjectPath</code> and uses that instead.
 If the property specified by <code>ObjectPath</code> is a collection/ array, then each item is evaluated separately.</p>
 <p>If the property specified by <code>ObjectPath</code> does not exist, PSRule skips the object.</p>
-<p>When using <code>Invoke-PSRule</code>, <code>Test-PSRuleTarget</code> and <code>Assert-PSRule</code> the <code>-ObjectPath</code> parameter will override any value set in configuration.</p>
+<p>When using <code>Invoke-PSRule</code>, <code>Test-PSRuleTarget</code>, and <code>Assert-PSRule</code> the <code>-ObjectPath</code> parameter will override any value set in configuration.</p>
 <p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the ObjectPath parameter</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-ObjectPath</span> <span class="s1">&#39;items&#39;</span><span class="p">;</span>
@@ -5016,7 +5087,7 @@ Objects that do not match TargetType are ignored.
 If multiple values are specified, only one TargetType must match. This option is not case-sensitive.</p>
 <p>By default, all objects are processed.</p>
 <p>To change the field TargetType is bound to set the <code>Binding.TargetType</code> option.</p>
-<p>When using <code>Invoke-PSRule</code>, <code>Test-PSRuleTarget</code> and <code>Assert-PSRule</code> the <code>-TargetType</code> parameter will override any value set in configuration.</p>
+<p>When using <code>Invoke-PSRule</code>, <code>Test-PSRuleTarget</code>, and <code>Assert-PSRule</code> the <code>-TargetType</code> parameter will override any value set in configuration.</p>
 <p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InputTargetType parameter</span>
 <span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-InputTargetType</span> <span class="s1">&#39;virtualMachine&#39;</span><span class="p">,</span> <span class="s1">&#39;virtualNetwork&#39;</span><span class="p">;</span>
@@ -5073,7 +5144,8 @@ When using debug output for debugging a specific rule, it may be helpful to limi
 <h3 id="logginglimitverbose">Logging.LimitVerbose<a class="headerlink" href="#logginglimitverbose" title="Permanent link">#</a></h3>
 <p>Limits verbose messages to a list of named verbose scopes.</p>
 <p>When using the <code>-Verbose</code> switch or preference variable, by default PSRule cmdlets log all verbose output.
-When using verbose output for troubleshooting a specific rule, it may be helpful to limit verbose messages to a specific rule.</p>
+When using verbose output for troubleshooting a specific rule,
+it may be helpful to limit verbose messages to a specific rule.</p>
 <p>To identify a rule to include in verbose output use the rule name.</p>
 <p>The following built-in scopes exist in addition to rule names:</p>
 <ul>
@@ -5099,7 +5171,8 @@ When using verbose output for troubleshooting a specific rule, it may be helpful
 <h3 id="loggingrulefail">Logging.RuleFail<a class="headerlink" href="#loggingrulefail" title="Permanent link">#</a></h3>
 <p>When an object fails a rule condition the results are written to output as a structured object marked with the outcome of <em>Fail</em>.
 If the rule executed successfully regardless of outcome no other informational messages are shown by default.</p>
-<p>In some circumstances such as a continuous integration (CI) pipeline, it may be preferable to see informational messages or abort the CI process if one or more <em>Fail</em> outcomes are returned.</p>
+<p>In some circumstances such as a continuous integration (CI) pipeline,
+it may be preferable to see informational messages or abort the CI process if one or more <em>Fail</em> outcomes are returned.</p>
 <p>By settings this option, error, warning or information messages will be generated for each rule <em>fail</em> outcome in addition to structured output.
 By default, outcomes are not logged to an informational stream (i.e. None).</p>
 <p>The following streams available:</p>
@@ -5930,9 +6003,11 @@ Objects that are suppressed are not processed by the rule at all but will contin
 
 <span class="c1"># Configure execution options</span>
 <span class="nt">execution</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">hashAlgorithm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SHA256</span>
 <span class="w">  </span><span class="nt">duplicateResourceId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span>
 <span class="w">  </span><span class="nt">languageMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConstrainedLanguage</span>
 <span class="w">  </span><span class="nt">suppressionGroupExpired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+<span class="w">  </span><span class="nt">restrictScriptSource</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ModuleOnly</span>
 
 <span class="c1"># Configure include options</span>
 <span class="nt">include</span><span class="p">:</span>
@@ -6034,10 +6109,13 @@ Objects that are suppressed are not processed by the rule at all but will contin
 
 <span class="c1"># Configure execution options</span>
 <span class="nt">execution</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">hashAlgorithm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SHA512</span>
 <span class="w">  </span><span class="nt">aliasReference</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span>
 <span class="w">  </span><span class="nt">duplicateResourceId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
 <span class="w">  </span><span class="nt">invariantCulture</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span>
 <span class="w">  </span><span class="nt">languageMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FullLanguage</span>
+<span class="w">  </span><span class="nt">initialSessionState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BuiltIn</span>
+<span class="w">  </span><span class="nt">restrictScriptSource</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unrestricted</span>
 <span class="w">  </span><span class="nt">ruleInconclusive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span>
 <span class="w">  </span><span class="nt">ruleSuppressed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span>
 <span class="w">  </span><span class="nt">suppressionGroupExpired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warn</span>
@@ -6131,7 +6209,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 27, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 27, 2024</span>
   </span>
 
     
