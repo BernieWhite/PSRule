@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.6">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -2816,10 +2816,10 @@ When new versions a released Dependabot will automatically add a pull request (P
 <span class="nt">updates</span><span class="p">:</span>
 
 <span class="w">  </span><span class="c1"># Maintain GitHub Actions</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">package-ecosystem</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;github-actions&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">package-ecosystem</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github-actions</span>
 <span class="w">    </span><span class="nt">directory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/&quot;</span>
 <span class="w">    </span><span class="nt">schedule</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;daily&quot;</span>
+<span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">daily</span>
 </code></pre></div>
 <h2 id="with-azure-pipelines">With Azure Pipelines<a class="headerlink" href="#with-azure-pipelines" title="Permanent link">#</a></h2>
 <p><a href="https://marketplace.visualstudio.com/items?itemName=bewhite.ps-rule"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1 3a2 2 0 0 1 2-2h6.5a2 2 0 0 1 2 2v6.5a2 2 0 0 1-2 2H7v4.063C7 16.355 7.644 17 8.438 17H12.5v-2.5a2 2 0 0 1 2-2H21a2 2 0 0 1 2 2V21a2 2 0 0 1-2 2h-6.5a2 2 0 0 1-2-2v-2.5H8.437A2.939 2.939 0 0 1 5.5 15.562V11.5H3a2 2 0 0 1-2-2Zm2-.5a.5.5 0 0 0-.5.5v6.5a.5.5 0 0 0 .5.5h6.5a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5ZM14.5 14a.5.5 0 0 0-.5.5V21a.5.5 0 0 0 .5.5H21a.5.5 0 0 0 .5-.5v-6.5a.5.5 0 0 0-.5-.5Z"/></svg></span> Extension</a></p>
@@ -2837,11 +2837,11 @@ You can also use this option to install on <abbr title="continuous integration">
 <p>The following platforms are supported:</p>
 <ul>
 <li>Windows PowerShell 5.1 with .NET Framework 4.7.2 or greater.</li>
-<li>PowerShell 7.3 or greater on MacOS, Linux, and Windows.</li>
+<li>PowerShell 7.4 or greater on MacOS, Linux, and Windows.</li>
 </ul>
 <h3 id="installing-powershell">Installing PowerShell<a class="headerlink" href="#installing-powershell" title="Permanent link">#</a></h3>
 <p>PowerShell 7.x can be installed on MacOS, Linux, and Windows but is not installed by default.
-For a list of platforms that PowerShell 7.3 is supported on and install instructions see <a href="https://github.com/PowerShell/PowerShell#get-powershell">Get PowerShell</a>.</p>
+For a list of platforms that PowerShell 7.4 is supported on and install instructions see <a href="https://github.com/PowerShell/PowerShell#get-powershell">Get PowerShell</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you are using Windows PowerShell you may need to bootstrap NuGet before you can install modules.
@@ -2920,9 +2920,9 @@ To build PSRule from source code:</p>
 <li>InvokeBuild</li>
 </ul>
 <p>These additional modules are only required for building PSRule.</p>
-<p>Additionally .NET SDK v7 is required.
+<p>Additionally .NET SDK v8 is required.
 .NET will not be automatically downloaded and installed.
-To download and install the latest SDK see <a href="https://dotnet.microsoft.com/download/dotnet/7.0">Download .NET 7.0</a>.</p>
+To download and install the latest SDK see <a href="https://dotnet.microsoft.com/download/dotnet/8.0">Download .NET 8.0</a>.</p>
 <h3 id="limited-access-networks">Limited access networks<a class="headerlink" href="#limited-access-networks" title="Permanent link">#</a></h3>
 <p>If you are on a network that does not permit Internet access to the PowerShell Gallery,
 download the required PowerShell modules on an alternative device that has access.
@@ -2979,7 +2979,7 @@ For instructions see <a href="https://learn.microsoft.com/powershell/scripting/g
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2024</span>
   </span>
 
     
@@ -3006,6 +3006,11 @@ For instructions see <a href="https://learn.microsoft.com/powershell/scripting/g
 
     
     <nav>
+      
+        <a href="https://github.com/apps/dependabot" class="md-author" title="@dependabot[bot]">
+          
+          <img src="https://avatars.githubusercontent.com/in/29110?v=4&size=72" alt="dependabot[bot]">
+        </a>
       
         <a href="https://github.com/BernieWhite" class="md-author" title="@BernieWhite">
           
@@ -3176,7 +3181,7 @@ For instructions see <a href="https://learn.microsoft.com/powershell/scripting/g
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "navigation.footer", "content.code.annotate", "content.tabs.link", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.e1c3ead8.min.js"></script>
+      <script src="../assets/javascripts/bundle.caa56a14.min.js"></script>
       
     
   </body>
