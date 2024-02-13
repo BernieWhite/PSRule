@@ -2506,6 +2506,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      --version
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#global-options" class="md-nav__link">
     <span class="md-ellipsis">
       Global options
@@ -2525,18 +2534,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-version" class="md-nav__link">
+  <a href="#-h-help" class="md-nav__link">
     <span class="md-ellipsis">
-      --version
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-help" class="md-nav__link">
-    <span class="md-ellipsis">
-      --help
+      -? | -h | --help
     </span>
   </a>
   
@@ -2602,24 +2602,25 @@
 <p class="admonition-title">Abstract</p>
 <p>PSRule provides a command-line interface (CLI) to run rules and analyze results.
 This article describes the commands available in the CLI.</p>
+<p>For details on installing the PSRule CLI, see <a href="../../install/#with-cli">Install PSRule</a>.</p>
 </div>
 <h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">#</a></h2>
-<p>The following commands are available in the PSRule CLI:</p>
+<p>The following commands are available in the CLI:</p>
 <ul>
 <li><a href="run/">run</a> &mdash; Run rules against an input path and output the results.</li>
 <li><a href="module/">module</a> &mdash; Manage or restore modules tracked by the module lock file and configured options.</li>
 </ul>
-<h2 id="global-options">Global options<a class="headerlink" href="#global-options" title="Permanent link">#</a></h2>
-<p>The following options are available in the PSRule CLI:</p>
-<h3 id="-option"><code>--option</code><a class="headerlink" href="#-option" title="Permanent link">#</a></h3>
-<p>Specifies the path to an options file.
-By default, the CLI will look for a file named <code>ps-rule.yaml</code> in the current directory.</p>
-<h3 id="-version"><code>--version</code><a class="headerlink" href="#-version" title="Permanent link">#</a></h3>
-<p>Show the version information for the PSRule CLI.</p>
+<h2 id="-version"><code>--version</code><a class="headerlink" href="#-version" title="Permanent link">#</a></h2>
+<p>Show the version information for PSRule.</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code>ps-rule<span class="w"> </span>--version
 </code></pre></div>
-<h3 id="-help"><code>--help</code><a class="headerlink" href="#-help" title="Permanent link">#</a></h3>
+<h2 id="global-options">Global options<a class="headerlink" href="#global-options" title="Permanent link">#</a></h2>
+<p>The following global options can be used with any command:</p>
+<h3 id="-option"><code>--option</code><a class="headerlink" href="#-option" title="Permanent link">#</a></h3>
+<p>Specifies the path to an options file.
+By default, the CLI will look for a file named <code>ps-rule.yaml</code> in the current directory.</p>
+<h3 id="-h-help"><code>-?</code> | <code>-h</code> | <code>--help</code><a class="headerlink" href="#-h-help" title="Permanent link">#</a></h3>
 <p>Display help and usage information for the PSRule CLI and commands.
 To display help for a specific command, use <code>--help</code> with the command name.</p>
 <p>For example:</p>
@@ -2651,7 +2652,7 @@ To display help for a specific command, use <code>--help</code> with the command
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 16, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2024</span>
   </span>
 
     

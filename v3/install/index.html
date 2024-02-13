@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#install-psrule-tools" class="md-skip">
+        <a href="#install-psrule" class="md-skip">
           Skip to content
         </a>
       
@@ -2836,7 +2836,7 @@
   
 
 
-<h1 id="install-psrule-tools">Install PSRule tools<a class="headerlink" href="#install-psrule-tools" title="Permanent link">#</a></h1>
+<h1 id="install-psrule">Install PSRule<a class="headerlink" href="#install-psrule" title="Permanent link">#</a></h1>
 <p>PSRule supports running within continuous integration (<abbr title="continuous integration">CI</abbr>) systems or locally.
 It is shipped as a PowerShell module which makes it easy to install and distribute updates.</p>
 <table>
@@ -2849,15 +2849,15 @@ It is shipped as a PowerShell module which makes it easy to install and distribu
 <tbody>
 <tr>
 <td>Run tests within <abbr title="continuous integration">CI</abbr> pipelines</td>
-<td>With <a href="#with-github-actions">GitHub Actions</a> <em>or</em> <a href="#with-azure-pipelines">Azure Pipelines</a> <em>or</em> <a href="#with-powershell">PowerShell</a></td>
+<td>With <a href="#with-github-actions">GitHub Actions</a> <em>or</em> <a href="#with-azure-pipelines">Azure Pipelines</a> <em>or</em> <a href="#with-cli">CLI</a> <em>or</em> <a href="#with-powershell">PowerShell</a></td>
 </tr>
 <tr>
 <td>Run tests locally during development</td>
-<td>With <a href="#with-visual-studio-code">Visual Studio Code</a> <em>and</em> <a href="#with-powershell">PowerShell</a></td>
+<td>With <a href="#with-visual-studio-code">Visual Studio Code</a> <em>and</em> <a href="#with-cli">CLI</a> / <a href="#with-powershell">PowerShell</a></td>
 </tr>
 <tr>
 <td>Create custom tests for your organization</td>
-<td>With <a href="#with-visual-studio-code">Visual Studio Code</a> <em>and</em> <a href="#with-powershell">PowerShell</a></td>
+<td>With <a href="#with-visual-studio-code">Visual Studio Code</a> <em>and</em> <a href="#with-cli">CLI</a> / <a href="#with-powershell">PowerShell</a></td>
 </tr>
 </tbody>
 </table>
@@ -2924,13 +2924,18 @@ The Visual Studio Code extension includes a built-in tasks and configuration sch
 </p>
 
 <h2 id="with-cli">With CLI<a class="headerlink" href="#with-cli" title="Permanent link">#</a></h2>
-<p>PSRule can be installed from the .NET CLI using the following command line:</p>
+<p>PSRule can be installed from NuGet.org using the .NET CLI where the .NET 8.0 SDK is available.
+You can use this option to install on <abbr title="continuous integration">CI</abbr> workers that are not natively supported.</p>
+<p>To install PSRule as a global tool use the following command line:</p>
 <div class="highlight"><pre><span></span><code>dotnet<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>Microsoft.PSRule.Tool
 </code></pre></div>
-<p>For a list of commands you can use with the PSRule CLI, see <a href="../concepts/cli/">PSRule CLI</a>.</p>
+<p>To install a specific version use the following command line:</p>
+<div class="highlight"><pre><span></span><code>dotnet<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>Microsoft.PSRule.Tool<span class="w"> </span>--version<span class="w"> </span><span class="m">3</span>.0.0-B0151
+</code></pre></div>
+<p>For a list of commands supported by the CLI, see <a href="../concepts/cli/">PSRule CLI</a>.</p>
 <h2 id="with-powershell">With PowerShell<a class="headerlink" href="#with-powershell" title="Permanent link">#</a></h2>
 <p>PSRule can be installed locally from the PowerShell Gallery using PowerShell.
-You can also use this option to install on <abbr title="continuous integration">CI</abbr> workers that are not natively supported.</p>
+You can use this option to install on <abbr title="continuous integration">CI</abbr> workers that are not natively supported.</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h3>
 <table>
 <thead>
@@ -3093,7 +3098,7 @@ For instructions see <a href="https://learn.microsoft.com/powershell/scripting/g
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2024</span>
   </span>
 
     
