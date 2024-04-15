@@ -1406,6 +1406,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#format-default-error-when-running-invoke-psrule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format-Default error when running Invoke-PSRule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#psr0001-unable-to-read-options-file" class="md-nav__link">
     <span class="md-ellipsis">
       PSR0001 - Unable to read options file
@@ -2607,6 +2616,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#format-default-error-when-running-invoke-psrule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format-Default error when running Invoke-PSRule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#psr0001-unable-to-read-options-file" class="md-nav__link">
     <span class="md-ellipsis">
       PSR0001 - Unable to read options file
@@ -2722,6 +2740,15 @@ These components are required for installing and checking versions of PSRule mod
     <span class="nb">Install-Module</span> <span class="n">PowerShellGet</span> <span class="n">-MinimumVersion</span> <span class="n">2</span><span class="p">.</span><span class="n">2</span><span class="p">.</span><span class="n">1</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span> <span class="n">-AllowClobber</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+<h2 id="format-default-error-when-running-invoke-psrule">Format-Default error when running Invoke-PSRule<a class="headerlink" href="#format-default-error-when-running-invoke-psrule" title="Permanent link">#</a></h2>
+<p>When running PSRule you may encounter an error similar to the following:</p>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>Format-Default: Cannot process argument because the value of argument "name" is not valid. Change the value of the "name" argument and run the operation again.</p>
+</div>
+<p>This error is caused by a known issue in PowerShell 7.4.0 and 7.4.1.
+To resolve this issue, upgrade to PowerShell 7.4.2 or later.</p>
+<p>For more details see <a href="https://github.com/microsoft/PSRule/issues/1723">#1723</a>.</p>
 <h2 id="psr0001-unable-to-read-options-file">PSR0001 - Unable to read options file<a class="headerlink" href="#psr0001-unable-to-read-options-file" title="Permanent link">#</a></h2>
 <p>When running PSRule you may encounter an error similar to the following:</p>
 <div class="admonition error">
@@ -2774,7 +2801,7 @@ To define a baseline group, see <a href="https://aka.ms/ps-rule/options#baseline
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 14, 2024</span>
   </span>
 
     
