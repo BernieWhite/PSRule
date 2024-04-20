@@ -1681,6 +1681,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#git-head-input-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git Head input object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#rule-output-object" class="md-nav__link">
     <span class="md-ellipsis">
       Rule output object
@@ -2631,6 +2640,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#git-head-input-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git Head input object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#rule-output-object" class="md-nav__link">
     <span class="md-ellipsis">
       Rule output object
@@ -2755,6 +2773,13 @@ Now you can configure the following:</p>
 <p>You do not need to configure both options.
 If you have the deprecated option configured, switch to the new option.</p>
 </div>
+<h3 id="git-head-input-object">Git Head input object<a class="headerlink" href="#git-head-input-object" title="Permanent link">#</a></h3>
+<p>Previously when the <code>Input.Format</code> option was set to <code>File</code> the <code>.git/HEAD</code> file was emitted as an input object.
+The original purpose of this feature was to allow conventions to run once against the root of the repository.
+Subsequent changes to PSRule have made this feature redundant by adding support for the <code>-Initialize</code> block.</p>
+<p>From <em>v3</em> the <code>.git/HEAD</code> file will no longer be emitted as an input object.</p>
+<p>Consider adding or updating a convention that uses the <code>-Initialize</code> block to emit run initialization logic.
+Yon can also use the <code>-Initialize</code> block to emit a custom object to the pipeline by using the <code>$PSRule.ImportWithType</code> method.</p>
 <h3 id="rule-output-object">Rule output object<a class="headerlink" href="#rule-output-object" title="Permanent link">#</a></h3>
 <p>Several properties of the rule object have been renamed to improve consistency with other objects.
 Previously rules returned by <code>Get-PSRule</code> returned a rule object which included the following properties:</p>
@@ -2827,7 +2852,7 @@ From <em>v2</em> resources without an <code>apiVersion</code> will be ignored.</
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 23, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 20, 2024</span>
   </span>
 
     
