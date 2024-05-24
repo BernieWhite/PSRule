@@ -2565,6 +2565,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#inputfileobjects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input.FileObjects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#inputformat" class="md-nav__link">
     <span class="md-ellipsis">
       Input.Format
@@ -3331,6 +3340,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#inputfileobjects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input.FileObjects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#inputformat" class="md-nav__link">
     <span class="md-ellipsis">
       Input.Format
@@ -3727,6 +3745,7 @@ This topic describes what options are available, when to and how to use them.</p
 <li><a href="#executionunprocessedobject">Execution.UnprocessedObject</a></li>
 <li><a href="#includemodule">Include.Module</a></li>
 <li><a href="#includepath">Include.Path</a></li>
+<li><a href="#inputfileobjects">Input.FileObjects</a></li>
 <li><a href="#inputformat">Input.Format</a></li>
 <li><a href="#inputignoregitpath">Input.IgnoreGitPath</a></li>
 <li><a href="#inputignoreobjectsource">Input.IgnoreObjectSource</a></li>
@@ -4795,6 +4814,37 @@ By default, <code>.ps-rule/</code> is included.</p>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_INCLUDE_PATH</span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.ps-rule/;custom-rules/</span>
 </code></pre></div>
+<h3 id="inputfileobjects">Input.FileObjects<a class="headerlink" href="#inputfileobjects" title="Permanent link">#</a></h3>
+<p>Determines if file objects are processed by rules.
+This option is for backwards compatibility with PSRule v2.x in cases where file objects are used as input.</p>
+<p>By default, file are not processed by rules.
+Set to <code>$True</code> to enable processing of file objects by rules.</p>
+<p>This option can be specified using:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InputFileObjects parameter</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-InputFileObjects</span> <span class="nv">$True</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Input.FileObjects hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Input.FileObjects&#39;</span> <span class="p">=</span> <span class="nv">$True</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InputFileObjects parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-InputFileObjects</span> <span class="nv">$True</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the input/fileObjects property</span>
+<span class="nt">input</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">fileObjects</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_INPUT_FILEOBJECTS</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSRULE_INPUT_FILEOBJECTS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
+<span class="nt">variables</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_INPUT_FILEOBJECTS</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
 <h3 id="inputformat">Input.Format<a class="headerlink" href="#inputformat" title="Permanent link">#</a></h3>
 <p>Configures the input format for when a string is passed in as a target object.
 This option determines if the target object is deserialized into an alternative form.</p>
@@ -4807,21 +4857,16 @@ The <code>-Format</code> parameter will override any value set in configuration.
 The <code>-InputPath</code> parameter can be used with a file path or URL.</p>
 <p>The following formats are available:</p>
 <ul>
-<li>None - Treat strings as plain text and do not deserialize files.</li>
-<li>Yaml - Deserialize as one or more YAML objects.</li>
-<li>Json - Deserialize as one or more JSON objects.</li>
-<li>Markdown - Deserialize as a markdown object.</li>
-<li>PowerShellData - Deserialize as a PowerShell data object.</li>
-<li>File - Files are not deserialized.</li>
-<li>Detect - Detect format based on file extension. This is the default.</li>
+<li><code>None</code> - Treat strings as plain text and do not deserialize files.
+  This is the default.</li>
+<li><code>Yaml</code> - Deserialize as one or more YAML objects.</li>
+<li><code>Json</code> - Deserialize as one or more JSON objects.</li>
+<li><code>Markdown</code> - Deserialize as a markdown object.</li>
+<li><code>PowerShellData</code> - Deserialize as a PowerShell data object.</li>
 </ul>
-<p>If the <code>Detect</code> format is used, the file extension will be used to automatically detect the format.
-When the file extension can not be determined <code>Detect</code> is the same as <code>None</code>.</p>
 <p>The <code>Markdown</code> format does not parse the whole markdown document.
 Specifically this format deserializes YAML front matter from the top of the document if any exists.</p>
-<p>The <code>File</code> format does not deserialize file contents.
-Each file is returned as an object.
-Files within <code>.git</code> sub-directories are ignored.
+<p>Files within <code>.git</code> sub-directories are ignored.
 Path specs specified in <code>.gitignore</code> directly in the current working path are ignored.
 A <code>RepositoryInfo</code> object is generated if the current working path if a <code>.git</code> sub-directory is present.
 Additionally, PSRule performs automatic type binding for file objects, using the extension as the type.
@@ -6217,7 +6262,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 27, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 24, 2024</span>
   </span>
 
     
