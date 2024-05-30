@@ -211,6 +211,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://microsoft.github.io/PSRule/v3/concepts/security/</loc>
+         <lastmod>2024-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_Assert/</loc>
          <lastmod>2024-05-30</lastmod>
          <changefreq>daily</changefreq>
