@@ -12,28 +12,24 @@
         <meta name="author" content="Microsoft">
       
       
-        <link rel="canonical" href="https://microsoft.github.io/PSRule/v3/concepts/cli/run/">
+        <link rel="canonical" href="https://microsoft.github.io/PSRule/v3/concepts/feature-flagging/">
       
       
-        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../module/">
-      
-      
-      <link rel="icon" href="../../../assets/ms_icon.png">
+      <link rel="icon" href="../../assets/ms_icon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
     
     
       
-        <title>ps-rule run command - PSRule</title>
+        <title>Feature flagging - PSRule</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,9 +74,9 @@
   <!-- Open graph meta tags -->
   <meta property="og:site_name" content="PSRule" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="PSRule - run" />
+  <meta property="og:title" content="PSRule - Feature flagging" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta property="og:url" content="https://microsoft.github.io/PSRule/v3/concepts/cli/run/" />
+  <meta property="og:url" content="https://microsoft.github.io/PSRule/v3/concepts/feature-flagging/" />
   <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
@@ -90,7 +86,7 @@
   <!-- Twitter meta tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@github" />
-  <meta name="twitter:title" content="PSRule - run" />
+  <meta name="twitter:title" content="PSRule - Feature flagging" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
@@ -112,7 +108,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ps-rule-run" class="md-skip">
+        <a href="#feature-flagging" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +120,7 @@
             
             
   You are viewing the next version PSRule.
-  <a href="../../../.."> 
+  <a href="../../.."> 
     <strong>Click here to go to latest stable version.</strong>
   </a>
 
@@ -143,9 +139,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="PSRule" class="md-header__button md-logo" aria-label="PSRule" data-md-component="logo">
+    <a href="../.." title="PSRule" class="md-header__button md-logo" aria-label="PSRule" data-md-component="logo">
       
-  <img src="../../../assets/ms_icon.png" alt="logo">
+  <img src="../../assets/ms_icon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -162,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ps-rule run command
+              Feature flagging
             
           </span>
         </div>
@@ -243,7 +239,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -268,7 +264,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../about/" class="md-tabs__link">
+        <a href="../../about/" class="md-tabs__link">
           
   
     
@@ -287,21 +283,17 @@
         
   
   
-    
-  
   
     
     
       
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../commands/PSRule/en-US/Assert-PSRule/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../commands/PSRule/en-US/Assert-PSRule/" class="md-tabs__link">
           
   
     
@@ -324,7 +316,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../addon-modules/" class="md-tabs__link">
+        <a href="../../addon-modules/" class="md-tabs__link">
           
   
     
@@ -359,9 +351,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="PSRule" class="md-nav__button md-logo" aria-label="PSRule" data-md-component="logo">
+    <a href="../.." title="PSRule" class="md-nav__button md-logo" aria-label="PSRule" data-md-component="logo">
       
-  <img src="../../../assets/ms_icon.png" alt="logo">
+  <img src="../../assets/ms_icon.png" alt="logo">
 
     </a>
     PSRule
@@ -388,7 +380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -520,7 +512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -541,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../features/" class="md-nav__link">
+      <a href="../../features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -562,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../faq/" class="md-nav__link">
+      <a href="../../faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -591,7 +583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../install/" class="md-nav__link">
+      <a href="../../install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -654,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../quickstart/standalone-rule/" class="md-nav__link">
+      <a href="../../quickstart/standalone-rule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -733,7 +725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authoring/testing-infrastructure/" class="md-nav__link">
+      <a href="../../authoring/testing-infrastructure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -754,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authoring/using-expressions/" class="md-nav__link">
+      <a href="../../authoring/using-expressions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -775,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authoring/storing-rules/" class="md-nav__link">
+      <a href="../../authoring/storing-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -796,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authoring/packaging-rules/" class="md-nav__link">
+      <a href="../../authoring/packaging-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -817,7 +809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authoring/writing-rule-help/" class="md-nav__link">
+      <a href="../../authoring/writing-rule-help/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -892,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../creating-your-pipeline/" class="md-nav__link">
+      <a href="../../creating-your-pipeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -913,7 +905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../validating-locally/" class="md-nav__link">
+      <a href="../../validating-locally/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -934,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../analysis-output/" class="md-nav__link">
+      <a href="../../analysis-output/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1011,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../scenarios/azure-resources/azure-resources/" class="md-nav__link">
+      <a href="../../scenarios/azure-resources/azure-resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1032,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../scenarios/azure-tags/azure-tags/" class="md-nav__link">
+      <a href="../../scenarios/azure-tags/azure-tags/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1053,7 +1045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../scenarios/kubernetes-resources/kubernetes-resources/" class="md-nav__link">
+      <a href="../../scenarios/kubernetes-resources/kubernetes-resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1074,7 +1066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../scenarios/containers/container-execution/" class="md-nav__link">
+      <a href="../../scenarios/containers/container-execution/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1153,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baselines/" class="md-nav__link">
+      <a href="../baselines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1174,7 +1166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../expressions/functions/" class="md-nav__link">
+      <a href="../../expressions/functions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1195,7 +1187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../grouping-rules/" class="md-nav__link">
+      <a href="../grouping-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1216,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../expressions/sub-selectors/" class="md-nav__link">
+      <a href="../../expressions/sub-selectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1237,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lockfile/" class="md-nav__link">
+      <a href="../lockfile/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1308,7 +1300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../scenarios/validation-pipeline/validation-pipeline/" class="md-nav__link">
+      <a href="../../scenarios/validation-pipeline/validation-pipeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1337,7 +1329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../troubleshooting/" class="md-nav__link">
+      <a href="../../troubleshooting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1358,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../license-contributing/" class="md-nav__link">
+      <a href="../../license-contributing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1379,7 +1371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../related-projects/" class="md-nav__link">
+      <a href="../../related-projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1496,7 +1488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CHANGELOG-v3/" class="md-nav__link">
+      <a href="../../CHANGELOG-v3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1588,7 +1580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../upgrade-notes/" class="md-nav__link">
+      <a href="../../upgrade-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1609,7 +1601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../deprecations/" class="md-nav__link">
+      <a href="../../deprecations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1630,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../versioning/" class="md-nav__link">
+      <a href="../../versioning/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1659,7 +1651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../support/" class="md-nav__link">
+      <a href="../../support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1684,10 +1676,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1724,20 +1714,17 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1748,7 +1735,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Reference
@@ -1822,7 +1809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Assert-PSRule/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Assert-PSRule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1843,7 +1830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Export-PSRuleBaseline/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Export-PSRuleBaseline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1864,7 +1851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Get-PSRule/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Get-PSRule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1885,7 +1872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Get-PSRuleBaseline/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Get-PSRuleBaseline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1906,7 +1893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Get-PSRuleHelp/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Get-PSRuleHelp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1927,7 +1914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Get-PSRuleTarget/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Get-PSRuleTarget/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1948,7 +1935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Invoke-PSRule/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Invoke-PSRule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1969,7 +1956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/New-PSRuleOption/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/New-PSRuleOption/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1990,7 +1977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Set-PSRuleOption/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Set-PSRuleOption/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2011,7 +1998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Test-PSRuleTarget/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Test-PSRuleTarget/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2037,8 +2024,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2058,16 +2043,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../cli/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2084,7 +2069,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             CLI commands
@@ -2097,30 +2082,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    run
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../cli/run/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2129,113 +2094,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Options
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#-input-path-f" class="md-nav__link">
-    <span class="md-ellipsis">
-      --input-path | -f
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-module-m" class="md-nav__link">
-    <span class="md-ellipsis">
-      --module | -m
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-baseline" class="md-nav__link">
-    <span class="md-ellipsis">
-      --baseline
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-outcome" class="md-nav__link">
-    <span class="md-ellipsis">
-      --outcome
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-output-o" class="md-nav__link">
-    <span class="md-ellipsis">
-      --output | -o
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-output-path" class="md-nav__link">
-    <span class="md-ellipsis">
-      --output-path
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next steps
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2248,7 +2106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/" class="md-nav__link">
+      <a href="../cli/module/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2277,7 +2135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PSRule/en-US/about_PSRule_Assert/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Assert/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2298,7 +2156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PSRule/en-US/about_PSRule_Baseline/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Baseline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2319,7 +2177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PSRule/en-US/about_PSRule_Badges/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Badges/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2340,7 +2198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PSRule/en-US/about_PSRule_Conventions/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Conventions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2361,7 +2219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PSRule/en-US/about_PSRule_Docs/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Docs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2382,7 +2240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PSRule/en-US/about_PSRule_Expressions/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Expressions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2403,7 +2261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../keywords/PSRule/en-US/about_PSRule_Keywords/" class="md-nav__link">
+      <a href="../../keywords/PSRule/en-US/about_PSRule_Keywords/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2424,7 +2282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PSRule/en-US/about_PSRule_Options/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Options/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2445,7 +2303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PSRule/en-US/about_PSRule_Rules/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2466,7 +2324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/" class="md-nav__link">
+      <a href="../security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2487,7 +2345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PSRule/en-US/about_PSRule_Selectors/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Selectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2508,7 +2366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PSRule/en-US/about_PSRule_SuppressionGroups/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_SuppressionGroups/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2529,7 +2387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PSRule/en-US/about_PSRule_Variables/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Variables/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2599,7 +2457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../addon-modules/" class="md-nav__link">
+      <a href="../../addon-modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2647,87 +2505,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
+  <a href="#using-feature-flags-in-emitters" class="md-nav__link">
     <span class="md-ellipsis">
-      Usage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Options
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#-input-path-f" class="md-nav__link">
-    <span class="md-ellipsis">
-      --input-path | -f
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-module-m" class="md-nav__link">
-    <span class="md-ellipsis">
-      --module | -m
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-baseline" class="md-nav__link">
-    <span class="md-ellipsis">
-      --baseline
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-outcome" class="md-nav__link">
-    <span class="md-ellipsis">
-      --outcome
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-output-o" class="md-nav__link">
-    <span class="md-ellipsis">
-      --output | -o
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-output-path" class="md-nav__link">
-    <span class="md-ellipsis">
-      --output-path
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next steps
+      Using feature flags in emitters
     </span>
   </a>
   
@@ -2749,7 +2529,7 @@
                   
 
   
-    <a href="https://github.com/microsoft/PSRule/blob/main/docs/concepts/cli/run.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/microsoft/PSRule/blob/main/docs/concepts/feature-flagging.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2758,52 +2538,22 @@
     
       
     
-    <a href="https://github.com/microsoft/PSRule/raw/main/docs/concepts/cli/run.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/microsoft/PSRule/raw/main/docs/concepts/feature-flagging.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="ps-rule-run">ps-rule run<a class="headerlink" href="#ps-rule-run" title="Permanent link">#</a></h1>
+<h1 id="feature-flagging">Feature flagging<a class="headerlink" href="#feature-flagging" title="Permanent link">#</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
-<p>Use the <code>run</code> command to run rules against an input path and output the results.</p>
+<p>Feature flags are a way to enable or disable functionality.
+Rule and module authors can use feature flags to toggle functionality on or off.</p>
 </div>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
-<div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>run<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
-</code></pre></div>
-<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">#</a></h2>
-<h3 id="-input-path-f"><code>--input-path</code> | <code>-f</code><a class="headerlink" href="#-input-path-f" title="Permanent link">#</a></h3>
-<p>The file or directory path to search for input file to use during a run.
-By default, this is the current working path.</p>
-<h3 id="-module-m"><code>--module</code> | <code>-m</code><a class="headerlink" href="#-module-m" title="Permanent link">#</a></h3>
-<p>The name of one or more modules that contain rules or resources to use during a run.</p>
-<h3 id="-baseline"><code>--baseline</code><a class="headerlink" href="#-baseline" title="Permanent link">#</a></h3>
-<p>The name of a specific baseline to use.
-Currently, only a single baseline can be used during a run.</p>
-<h3 id="-outcome"><code>--outcome</code><a class="headerlink" href="#-outcome" title="Permanent link">#</a></h3>
-<p>Specifies the rule results to show in output.
-By default, <code>Pass</code>/ <code>Fail</code>/ <code>Error</code> results are shown.</p>
-<p>Allows filtering of results by outcome.
-The supported values are:</p>
-<ul>
-<li><code>Pass</code> - Results for rules that passed.</li>
-<li><code>Fail</code> - Results for rules that did not pass.</li>
-<li><code>Error</code> - Results for rules that raised an error are returned.</li>
-<li><code>Processed</code> - All results that were processed.
-  This aggregated outcome includes <code>Pass</code>, <code>Fail</code>, or <code>Error</code> results.</li>
-<li><code>Problem</code> - Processed results that did not pass.
-  This aggregated outcome includes <code>Fail</code>, or <code>Error</code> results.</li>
-</ul>
-<p>To specify multiple values, specify the parameter multiple times.
-For example: <code>--outcome Pass --Outcome Fail</code>.</p>
-<h3 id="-output-o"><code>--output</code> | <code>-o</code><a class="headerlink" href="#-output-o" title="Permanent link">#</a></h3>
-<p>Specifies the format to use when outputting results.</p>
-<h3 id="-output-path"><code>--output-path</code><a class="headerlink" href="#-output-path" title="Permanent link">#</a></h3>
-<p>Specifies a path to write results to.</p>
-<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
-<p>To find out more about the commands available with the PSRule CLI, see <a href="../">PSRule CLI</a>.</p>
+<h2 id="using-feature-flags-in-emitters">Using feature flags in emitters<a class="headerlink" href="#using-feature-flags-in-emitters" title="Permanent link">#</a></h2>
+<p>When an emitter is executed <code>IEmitterContext</code> is passed into each call.
+This context includes a <code>Configuration</code> property that exposes <code>IConfiguration</code>.</p>
 
 
 
@@ -2826,7 +2576,7 @@ For example: <code>--outcome Pass --Outcome Fail</code>.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 25, 2024</span>
   </span>
 
     
@@ -2836,7 +2586,7 @@ For example: <code>--outcome Pass --Outcome Fail</code>.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 25, 2024</span>
   </span>
 
     
@@ -2944,44 +2694,6 @@ For example: <code>--outcome Pass --Outcome Fail</code>.</p>
         <footer class="md-footer">
   
     
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Index">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Index
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../module/" class="md-footer__link md-footer__link--next" aria-label="Next: module">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                module
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -3020,10 +2732,10 @@ For example: <code>--outcome Pass --Outcome Fail</code>.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "navigation.footer", "content.code.annotate", "content.tabs.link", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "navigation.footer", "content.code.annotate", "content.tabs.link", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
     
   </body>
