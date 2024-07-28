@@ -10,6 +10,7 @@ using Newtonsoft.Json.Linq;
 using PSRule.Configuration;
 using PSRule.Definitions;
 using PSRule.Definitions.Baselines;
+using PSRule.Definitions.Rules;
 using PSRule.Host;
 using PSRule.Pipeline;
 using PSRule.Pipeline.Output;
@@ -49,6 +50,7 @@ public sealed class BaselineTests
         // TestBaseline4
         Assert.Equal("TestBaseline4", baseline[3].Name);
         Assert.Null(baseline[3].Info.Synopsis.Text);
+        Assert.Equal(SeverityLevel.Warning, baseline[3].Spec.Override.Level["rule1"]);
 
         // TestBaseline5
         Assert.Equal("TestBaseline5", baseline[4].Name);
@@ -90,6 +92,7 @@ public sealed class BaselineTests
         // TestBaseline4
         Assert.Equal("TestBaseline4", baseline[3].Name);
         Assert.Null(baseline[3].Info.Synopsis.Text);
+        Assert.Equal(SeverityLevel.Warning, baseline[3].Spec.Override.Level["rule1"]);
 
         // TestBaseline5
         Assert.Equal("TestBaseline5", baseline[4].Name);
@@ -158,6 +161,13 @@ public sealed class BaselineTests
         Assert.Equal("value1", actual[0]["spec"]["configuration"]["key1"]);
         Assert.Equal("abc", actual[0]["spec"]["configuration"]["key2"][0]["value1"]);
         Assert.Equal("def", actual[0]["spec"]["configuration"]["key2"][1]["value2"]);
+
+        // TestBaseline4
+        Assert.Equal("github.com/microsoft/PSRule/v1", actual[3]["apiVersion"]);
+        Assert.Equal("Baseline", actual[3]["kind"]);
+        Assert.Equal("TestBaseline4", actual[3]["metadata"]["name"]);
+        Assert.NotNull(actual[3]["spec"]);
+        Assert.Equal("Warning", actual[3]["spec"]["override"]["level"]["rule1"]);
     }
 
     [Fact]
@@ -181,6 +191,13 @@ public sealed class BaselineTests
         Assert.Equal("value1", actual[0]["spec"]["configuration"]["key1"]);
         Assert.Equal("abc", actual[0]["spec"]["configuration"]["key2"][0]["value1"]);
         Assert.Equal("def", actual[0]["spec"]["configuration"]["key2"][1]["value2"]);
+
+        // TestBaseline4
+        Assert.Equal("github.com/microsoft/PSRule/v1", actual[3]["apiVersion"]);
+        Assert.Equal("Baseline", actual[3]["kind"]);
+        Assert.Equal("TestBaseline4", actual[3]["metadata"]["name"]);
+        Assert.NotNull(actual[3]["spec"]);
+        Assert.Equal("Warning", actual[3]["spec"]["override"]["level"]["rule1"]);
     }
 
     #region Helper methods

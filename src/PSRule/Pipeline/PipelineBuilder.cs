@@ -272,6 +272,7 @@ internal abstract class PipelineBuilderBase : IPipelineBuilder
         Option.Output.Outcome ??= OutputOption.Default.Outcome;
         Option.Output.Banner ??= OutputOption.Default.Banner;
         Option.Output.Style = GetStyle(option.Output.Style ?? OutputOption.Default.Style.Value);
+        Option.Override = new OverrideOption(option.Override);
         Option.Repository = GetRepository(option.Repository);
         return this;
     }

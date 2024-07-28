@@ -67,6 +67,8 @@ internal class OptionScope
 
     public OutputOption Output { get; set; }
 
+    public OverrideOption Override { get; set; }
+
     public RepositoryOption Repository { get; set; }
 
     public RequiresOption Requires { get; set; }
@@ -107,6 +109,7 @@ internal class OptionScope
             Input = option.Input,
             Logging = option.Logging,
             Output = option.Output,
+            Override = option.Override,
             Repository = option.Repository,
             Requires = option.Requires,
             Rule = option.Rule,
@@ -145,7 +148,8 @@ internal class OptionScope
                 Tag = spec.Rule?.Tag,
                 Labels = spec.Rule?.Labels,
                 IncludeLocal = type == ScopeType.Explicit ? false : null
-            }
+            },
+            Override = spec.Override
         };
     }
 

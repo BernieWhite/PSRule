@@ -9,6 +9,7 @@ using System.Management.Automation;
 using System.Threading;
 using Newtonsoft.Json.Linq;
 using PSRule.Configuration;
+using PSRule.Definitions.Rules;
 using PSRule.Options;
 using PSRule.Pipeline;
 using PSRule.Resources;
@@ -80,9 +81,15 @@ public sealed class PipelineTests
 
         var actual = (writer.Output[0] as InvokeResult).AsRecord().FirstOrDefault();
         Assert.Equal(RuleOutcome.Pass, actual.Outcome);
+        Assert.Equal(SeverityLevel.Error, actual.Default.Level);
+        Assert.Equal(SeverityLevel.Warning, actual.Override.Level);
+        Assert.Equal(SeverityLevel.Warning, actual.Level);
 
         actual = (writer.Output[1] as InvokeResult).AsRecord().FirstOrDefault();
         Assert.Equal(RuleOutcome.Fail, actual.Outcome);
+        Assert.Equal(SeverityLevel.Error, actual.Default.Level);
+        Assert.Equal(SeverityLevel.Warning, actual.Override.Level);
+        Assert.Equal(SeverityLevel.Warning, actual.Level);
         Assert.Equal("Name", actual.Detail.Reason.First().Path);
         Assert.Equal("resources[1].Name", actual.Detail.Reason.First().FullPath);
     }
@@ -349,6 +356,8 @@ public sealed class PipelineTests
         var option = path == null ? new PSRuleOption() : PSRuleOption.FromFile(path);
         option.Rule.IncludeLocal = false;
         option.Execution.RuleExcluded = ruleExcludedAction;
+        option.Override.Level ??= new Data.EnumMap<SeverityLevel>();
+        option.Override.Level.Add("ScriptReasonTest", SeverityLevel.Warning);
         return option;
     }
 

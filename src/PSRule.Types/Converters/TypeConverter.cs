@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+using System;
 using System.Collections;
 using Newtonsoft.Json.Linq;
 
@@ -262,6 +263,20 @@ internal static class TypeConverter
             return true;
         }
         value = default;
+        return false;
+    }
+
+    /// <summary>
+    /// Try to get the environment variable as a enum of type <typeparamref name="T"/>.
+    /// </summary>
+    public static bool TryEnum<T>(object o, bool convert, out T? value) where T : struct, Enum
+    {
+        if (o is T t || convert && o is string s && Enum.TryParse(s, ignoreCase: true, out t))
+        {
+            value = t;
+            return true;
+        }
+        value = null;
         return false;
     }
 

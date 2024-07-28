@@ -312,14 +312,14 @@ public static class Environment
     /// <summary>
     /// Try to get any environment variable with a specific prefix.
     /// </summary>
-    public static IEnumerable<KeyValuePair<string, object>> GetByPrefix(string prefix)
+    public static IEnumerable<KeyValuePair<string, object>> GetByPrefix(string? prefix)
     {
         var env = System.Environment.GetEnvironmentVariables();
         var enumerator = env.GetEnumerator();
         while (enumerator.MoveNext())
         {
             var key = enumerator.Key.ToString();
-            if (key.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+            if (prefix == null || key.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
                 yield return new KeyValuePair<string, object>(key, enumerator.Value);
         }
     }

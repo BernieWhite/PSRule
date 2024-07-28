@@ -1,4 +1,3 @@
-
 ---
 # Synopsis: This is an example baseline
 apiVersion: github.com/microsoft/PSRule/v1
@@ -12,24 +11,24 @@ spec:
   binding:
     field:
       kind:
-      - kind
+        - kind
       uniqueIdentifer:
-      - Id
-      - AlternateName
+        - Id
+        - AlternateName
     targetName:
-    - AlternateName
+      - AlternateName
     targetType:
-    - kind
+      - kind
   rule:
     include:
-    # Additional comment
-    - 'WithBaseline'
-    # Additional comment
+      # Additional comment
+      - 'WithBaseline'
+      # Additional comment
   configuration:
     key1: value1
     key2:
-    - value1: abc
-    - value2: def
+      - value1: abc
+      - value2: def
 
 ---
 # Synopsis: This is an example baseline
@@ -40,12 +39,12 @@ metadata:
 spec:
   binding:
     targetName:
-    - metadata.name
+      - metadata.name
     targetType:
-    - kind
+      - kind
   rule:
     include:
-    - ''
+      - ''
   configuration:
     key1: value1
 
@@ -70,9 +69,11 @@ spec:
   rule:
     tag:
       severity:
-      - 'high'
-      - 'low'
-
+        - 'high'
+        - 'low'
+  override:
+    level:
+      rule1: Warning
 ---
 # Synopsis: This is an example obsolete baseline
 apiVersion: github.com/microsoft/PSRule/v1
@@ -81,7 +82,7 @@ metadata:
   name: TestBaseline5
   annotations:
     obsolete: true
-spec: { }
+spec: {}
 
 ---
 # Synopsis: An example of a baseline with labels defined
@@ -92,4 +93,4 @@ metadata:
 spec:
   rule:
     labels:
-      framework.v1/control: [ 'c-1', 'c-2' ]
+      framework.v1/control: ['c-1', 'c-2']

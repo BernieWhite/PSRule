@@ -21,6 +21,7 @@ The following baseline options can be configured:
 - [Binding.TargetType](about_PSRule_Options.md#bindingtargettype)
 - [Binding.UseQualifiedName](about_PSRule_Options.md#bindingusequalifiedname)
 - [Configuration](about_PSRule_Options.md#configuration)
+- [Override.Level](about_PSRule_Options.md#overridelevel)
 - [Rule.Include](about_PSRule_Options.md#ruleinclude)
 - [Rule.IncludeLocal](about_PSRule_Options.md#ruleincludelocal)
 - [Rule.Exclude](about_PSRule_Options.md#ruleexclude)
@@ -56,8 +57,9 @@ metadata:
 spec:
   # One or more baseline options
   binding: { }
-  rule: { }
   configuration: { }
+  override: {}
+  rule: { }
 ```
 
 For example:
@@ -126,8 +128,9 @@ To define a JSON baseline spec use the following structure:
     },
     "spec": {
       "binding": {},
+      "configuration": {},
       "rule": {},
-      "configuration": {}
+      "override": {}
     }
   }
 ]

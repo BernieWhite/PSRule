@@ -46,6 +46,8 @@ internal sealed class OptionContext
 
     public OutputOption Output { get; set; }
 
+    public OverrideOption Override { get; set; }
+
     public RepositoryOption Repository { get; set; }
 
     public RequiresOption Requires { get; set; }

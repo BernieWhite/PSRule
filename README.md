@@ -329,6 +329,7 @@ The following conceptual topics exist in the `PSRule` module:
   - [Output.Path](https://aka.ms/ps-rule/options#outputpath)
   - [Output.SarifProblemsOnly](https://aka.ms/ps-rule/options#outputsarifproblemsonly)
   - [Output.Style](https://aka.ms/ps-rule/options#outputstyle)
+  - [Override.Level](https://aka.ms/ps-rule/options#overridelevel)
   - [Repository.BaseRef](https://aka.ms/ps-rule/options#repositorybaseref)
   - [Repository.Url](https://aka.ms/ps-rule/options#repositoryurl)
   - [Requires](https://aka.ms/ps-rule/options#requires)

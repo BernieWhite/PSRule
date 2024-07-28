@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using PSRule.Configuration;
 using PSRule.Definitions;
 using PSRule.Definitions.Baselines;
+using PSRule.Options;
 
 namespace PSRule;
 
@@ -49,7 +50,8 @@ internal static class BaselineJsonSerializationMapper
         writer.WriteStartObject();
         MapProperty(writer, serializer, nameof(baselineSpec.Binding), baselineSpec.Binding);
         MapProperty(writer, serializer, nameof(baselineSpec.Configuration), baselineSpec.Configuration);
-        MapProperty(writer, nameof(baselineSpec.Convention), baselineSpec.Convention);
+        //MapProperty(writer, nameof(baselineSpec.Convention), baselineSpec.Convention);
+        MapProperty(writer, serializer, nameof(baselineSpec.Override), baselineSpec.Override);
         MapProperty(writer, serializer, nameof(baselineSpec.Rule), baselineSpec.Rule);
         writer.WriteEndObject();
     }
@@ -150,6 +152,20 @@ internal static class BaselineJsonSerializationMapper
         MapPropertyName(writer, propertyName);
         writer.WriteStartObject();
         MapProperty(writer, nameof(value.Include), value.Include);
+        writer.WriteEndObject();
+    }
+
+    /// <summary>
+    /// Map a OverrideOption property.
+    /// </summary>
+    private static void MapProperty(JsonWriter writer, JsonSerializer serializer, string propertyName, OverrideOption value)
+    {
+        if (value == null)
+            return;
+
+        MapPropertyName(writer, propertyName);
+        writer.WriteStartObject();
+        MapProperty(writer, serializer, nameof(value.Level), value.Level?.ToDictionary());
         writer.WriteEndObject();
     }
 

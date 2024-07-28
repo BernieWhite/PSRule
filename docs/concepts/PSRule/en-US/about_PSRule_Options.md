@@ -68,6 +68,7 @@ Additionally the following baseline options can be included:
 - [Binding.TargetType](#bindingtargettype)
 - [Binding.UseQualifiedName](#bindingusequalifiedname)
 - [Configuration](#configuration)
+- [Override.Level](#overridelevel)
 - [Rule.Baseline](#rulebaseline)
 - [Rule.Include](#ruleinclude)
 - [Rule.IncludeLocal](#ruleincludelocal)
@@ -3012,6 +3013,52 @@ variables:
   value: 2
 ```
 
+### Override.Level
+
+This option is used to override the severity level of one or more rules.
+When specified, the severity level of the rule will be set to the value specified.
+Use this option to change the severity level of a rule to be different then orignally defined by the author.
+
+The following severity levels are available:
+
+- `Error` - A serious problem that must be addressed before going forward.
+- `Warning` - A problem that should be addressed.
+- `Information` - A minor problem or an opportunity to improve the code.
+
+This option can be specified using:
+
+```powershell
+# PowerShell: Using the OverrideLevel parameter
+$option = New-PSRuleOption -OverrideLevel @{ 'rule1' = 'Information' };
+```
+
+```powershell
+# PowerShell: Using the OVerride.Level hashtable key
+$option = New-PSRuleOption -Option @{ 'Override.Level.rule1' = 'Information' };
+```
+
+```powershell
+# PowerShell: Using the OverrideLevel parameter to set YAML
+Set-PSRuleOption -OverrideLevel @{ 'rule1' = 'Information' };
+```
+
+```yaml
+# YAML: Using the override/level property
+override:
+  level:
+    rule1: Information
+```
+
+```bash
+# Bash: Using environment variable
+export PSRULE_OVERRIDE_LEVEL_RULE1='Information'
+```
+
+```powershell
+# PowerShell: Using environment variable
+$env:PSRULE_OVERRIDE_LEVEL_RULE1 = 'Information';
+```
+
 ### Repository.BaseRef
 
 This option is used for specify the base branch for pull requests.
@@ -3464,6 +3511,12 @@ output:
   sarifProblemsOnly: false
   style: GitHubActions
 
+# Overrides the severity level for rules
+override:
+  level:
+    Rule1: Error
+    Rule2: Warning
+
 # Configure rule suppression
 suppression:
   storageAccounts.UseHttps:
@@ -3570,6 +3623,9 @@ output:
   outcome: Processed
   sarifProblemsOnly: true
   style: Detect
+
+override:
+  level: { }
 
 # Configure rule suppression
 suppression: { }

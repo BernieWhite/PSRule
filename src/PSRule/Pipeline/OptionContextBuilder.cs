@@ -136,6 +136,7 @@ internal sealed class OptionContextBuilder
         context.Input = InputOption.Combine(context.Input, optionScope.Input);
         context.Logging = LoggingOption.Combine(context.Logging, optionScope.Logging);
         context.Output = OutputOption.Combine(context.Output, optionScope.Output);
+        context.Override = OverrideOption.Combine(context.Override, optionScope.Override);
         context.Repository = RepositoryOption.Combine(context.Repository, optionScope.Repository);
         context.Requires = RequiresOption.Combine(context.Requires, optionScope.Requires);
         context.Rule = RuleOption.Combine(context.Rule, optionScope.Rule);

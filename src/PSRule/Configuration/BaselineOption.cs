@@ -3,6 +3,7 @@
 
 using System.Collections;
 using PSRule.Definitions.Baselines;
+using PSRule.Options;
 
 namespace PSRule.Configuration;
 
@@ -35,7 +36,9 @@ public class BaselineOption
 
         public ConfigurationOption Configuration { get; set; }
 
-        public ConventionOption Convention { get; set; }
+        //public ConventionOption Convention { get; set; }
+
+        public OverrideOption Override { get; set; }
 
         public RuleOption Rule { get; set; }
     }
@@ -124,6 +127,7 @@ public class BaselineOption
         // Rule.Tag - currently not supported
 
         // Process configuration values
+        option.Override.Load();
         option.Configuration.Load();
     }
 
@@ -171,6 +175,7 @@ public class BaselineOption
             option.Rule.Tag = tag;
 
         // Process configuration values
+        option.Override.Load(properties);
         option.Configuration.Load(properties);
     }
 }

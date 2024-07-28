@@ -4,6 +4,7 @@
 using System.Management.Automation;
 using Newtonsoft.Json;
 using PSRule.Configuration;
+using PSRule.Options;
 using PSRule.Pipeline;
 using PSRule.Resources;
 using YamlDotNet.Serialization;
@@ -25,10 +26,15 @@ internal interface IBaselineV1Spec
     /// </summary>
     ConfigurationOption Configuration { get; set; }
 
+    ///// <summary>
+    ///// Options that configure conventions.
+    ///// </summary>
+    //ConventionOption Convention { get; set; }
+
     /// <summary>
-    /// Options that configure conventions.
+    /// Options that configure additional rule overrides.
     /// </summary>
-    ConventionOption Convention { get; set; }
+    OverrideOption Override { get; set; }
 
     /// <summary>
     /// Options for that affect which rules are executed by including and filtering discovered rules.
@@ -73,8 +79,11 @@ public sealed class BaselineSpec : Spec, IBaselineV1Spec
     /// <inheritdoc/>
     public ConfigurationOption Configuration { get; set; }
 
+    ///// <inheritdoc/>
+    //public ConventionOption Convention { get; set; }
+
     /// <inheritdoc/>
-    public ConventionOption Convention { get; set; }
+    public OverrideOption Override { get; set; }
 
     /// <inheritdoc/>
     public RuleOption Rule { get; set; }

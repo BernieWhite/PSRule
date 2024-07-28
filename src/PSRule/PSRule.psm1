@@ -1332,6 +1332,10 @@ function New-PSRuleOption {
         [ValidateSet('Client', 'Plain', 'AzurePipelines', 'GitHubActions', 'VisualStudioCode', 'Detect')]
         [PSRule.Configuration.OutputStyle]$OutputStyle = [PSRule.Configuration.OutputStyle]::Detect,
 
+        # Sets the OverrideLevel option
+        [Parameter(Mandatory = $False)]
+        [Hashtable]$OverrideLevel,
+
         # Sets the Repository.BaseRef option
         [Parameter(Mandatory = $False)]
         [String]$RepositoryBaseRef,
@@ -1648,6 +1652,10 @@ function Set-PSRuleOption {
         [Parameter(Mandatory = $False)]
         [ValidateSet('Client', 'Plain', 'AzurePipelines', 'GitHubActions', 'VisualStudioCode', 'Detect')]
         [PSRule.Configuration.OutputStyle]$OutputStyle = [PSRule.Configuration.OutputStyle]::Detect,
+
+        # Sets the OverrideLevel option
+        [Parameter(Mandatory = $False)]
+        [Hashtable]$OverrideLevel,
 
         # Sets the Repository.BaseRef option
         [Parameter(Mandatory = $False)]
@@ -2413,6 +2421,10 @@ function SetOptions {
         [ValidateSet('Client', 'Plain', 'AzurePipelines', 'GitHubActions', 'VisualStudioCode', 'Detect')]
         [PSRule.Configuration.OutputStyle]$OutputStyle = [PSRule.Configuration.OutputStyle]::Detect,
 
+        # Sets the OverrideLevel option
+        [Parameter(Mandatory = $False)]
+        [Hashtable]$OverrideLevel,
+
         # Sets the Repository.BaseRef option
         [Parameter(Mandatory = $False)]
         [String]$RepositoryBaseRef,
@@ -2661,6 +2673,11 @@ function SetOptions {
         # Sets option Output.Style
         if ($PSBoundParameters.ContainsKey('OutputStyle')) {
             $Option.Output.Style = $OutputStyle;
+        }
+
+        # Sets option Override.Level
+        if ($PSBoundParameters.ContainsKey('OverrideLevel')) {
+            $Option.Override.Level = $OverrideLevel;
         }
 
         # Sets option Repository.BaseRef

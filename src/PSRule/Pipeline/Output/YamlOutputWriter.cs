@@ -3,6 +3,7 @@
 
 using PSRule.Configuration;
 using PSRule.Definitions.Baselines;
+using PSRule.Definitions.Rules;
 using YamlDotNet.Core;
 using YamlDotNet.Core.Events;
 using YamlDotNet.Serialization;
@@ -29,6 +30,7 @@ internal sealed class YamlOutputWriter : SerializationOutputWriter<object>
             .WithTypeConverter(new PSObjectYamlTypeConverter())
             .WithTypeConverter(new FieldMapYamlTypeConverter())
             .WithTypeConverter(new InfoStringYamlTypeConverter())
+            .WithTypeConverter(new EnumMapYamlTypeConverter<SeverityLevel>())
             .WithNamingConvention(CamelCaseNamingConvention.Instance)
             .ConfigureDefaultValuesHandling(DefaultValuesHandling.OmitDefaults)
             .Build();

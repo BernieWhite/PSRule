@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using PSRule.Annotations;
 using PSRule.Configuration;
+using PSRule.Converters;
 using PSRule.Data;
 using PSRule.Definitions;
 using PSRule.Definitions.Baselines;
@@ -969,6 +970,53 @@ internal sealed class ResourceIdConverter : JsonConverter<ResourceId>
     public override void WriteJson(JsonWriter writer, ResourceId value, JsonSerializer serializer)
     {
         writer.WriteValue(value.Value);
+    }
+}
+
+/// <summary>
+/// A converter for converting <see cref="EnumMap{T}"/> to/ from JSON.
+/// </summary>
+internal sealed class EnumMapJsonConverter<T> : JsonConverter where T : struct, Enum
+{
+    public override bool CanRead => true;
+
+    public override bool CanWrite => false;
+
+    public override bool CanConvert(Type objectType)
+    {
+        return typeof(EnumMap<T>).IsAssignableFrom(objectType);
+    }
+
+    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    {
+        var map = existingValue as EnumMap<T> ?? new EnumMap<T>();
+        ReadMap(map, reader);
+        return map;
+    }
+
+    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    {
+        throw new NotImplementedException();
+    }
+
+    private static void ReadMap(EnumMap<T> map, JsonReader reader)
+    {
+        if (reader.TokenType != JsonToken.StartObject || !reader.Read())
+            throw new PipelineSerializationException(PSRuleResources.ReadJsonFailed);
+
+        string propertyName = null;
+        while (reader.TokenType != JsonToken.EndObject)
+        {
+            if (reader.TokenType == JsonToken.PropertyName)
+            {
+                propertyName = reader.Value.ToString();
+            }
+            else if (reader.TokenType == JsonToken.String && TypeConverter.TryEnum<T>(reader.Value, convert: true, out var value) && value != null)
+            {
+                map.Add(propertyName, value.Value);
+            }
+            reader.Read();
+        }
     }
 }
 

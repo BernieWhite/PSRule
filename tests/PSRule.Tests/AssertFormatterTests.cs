@@ -392,7 +392,10 @@ public sealed class AssertFormatterTests
             tag: new ResourceTags(),
             info: new RuleHelpInfo("Test", "Test rule", null),
             field: null,
-            level: SeverityLevel.Error,
+            @default: new RuleProperties
+            {
+                Level = SeverityLevel.Error
+            },
             extent: null,
             outcome: RuleOutcome.Pass,
             reason: RuleOutcomeReason.Processed
@@ -414,7 +417,10 @@ public sealed class AssertFormatterTests
             tag: new ResourceTags(),
             info: new RuleHelpInfo("Test1", "Test rule", null),
             field: null,
-            level: level,
+            @default: new RuleProperties
+            {
+                Level = level
+            },
             extent: null,
             outcome: RuleOutcome.Fail,
             reason: RuleOutcomeReason.Processed
@@ -430,7 +436,10 @@ public sealed class AssertFormatterTests
             tag: new ResourceTags(),
             info: new RuleHelpInfo("Test2", "Test rule", null),
             field: null,
-            level: level,
+            @default: new RuleProperties
+            {
+                Level = level
+            },
             extent: null,
             outcome: RuleOutcome.Fail,
             reason: RuleOutcomeReason.Processed

@@ -3,7 +3,10 @@
 
 using System.Diagnostics;
 using PSRule.Configuration;
+using PSRule.Data;
 using PSRule.Definitions;
+using PSRule.Definitions.Rules;
+using PSRule.Options;
 using PSRule.Pipeline;
 
 namespace PSRule.Runtime;
@@ -13,6 +16,7 @@ internal sealed class LanguageScope : ILanguageScope
 {
     private readonly RunspaceContext _Context;
     private IDictionary<string, object> _Configuration;
+    private WildcardMap<RuleOverride> _Override;
     private readonly Dictionary<string, object> _Service;
     private readonly Dictionary<ResourceKind, IResourceFilter> _Filter;
 
@@ -37,12 +41,6 @@ internal sealed class LanguageScope : ILanguageScope
     public string[] Culture { [DebuggerStepThrough] get; [DebuggerStepThrough] private set; }
 
     /// <inheritdoc/>
-    public void Configure(Dictionary<string, object> configuration)
-    {
-        _Configuration.AddUnique(configuration);
-    }
-
-    /// <inheritdoc/>
     public void Configure(OptionContext context)
     {
         if (context == null)
@@ -53,6 +51,18 @@ internal sealed class LanguageScope : ILanguageScope
         WithFilter(context.ConventionFilter);
         Binding = context.Binding;
         Culture = context.Output.Culture;
+        _Override = WithOverride(context.Override);
+    }
+
+    private static WildcardMap<RuleOverride> WithOverride(OverrideOption option)
+    {
+        if (option == null || option.Level == null)
+            return null;
+
+        var overrides = option.Level
+            .Where(l => l.Value != SeverityLevel.None)
+            .Select(l => new KeyValuePair<string, RuleOverride>(l.Key, new RuleOverride { Level = l.Value }));
+        return new WildcardMap<RuleOverride>(overrides);
     }
 
     /// <inheritdoc/>
@@ -60,6 +70,17 @@ internal sealed class LanguageScope : ILanguageScope
     {
         value = null;
         return !string.IsNullOrEmpty(key) && _Configuration.TryGetValue(key, out value);
+    }
+
+    /// <inheritdoc/>
+    public bool TryGetOverride(ResourceId id, out RuleOverride value)
+    {
+        value = null;
+        if (_Override == null)
+            return false;
+
+        return _Override.TryGetValue(id.Value, out value) ||
+            _Override.TryGetValue(id.Name, out value);
     }
 
     /// <inheritdoc/>

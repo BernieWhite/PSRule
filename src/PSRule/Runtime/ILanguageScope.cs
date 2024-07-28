@@ -3,6 +3,7 @@
 
 using PSRule.Configuration;
 using PSRule.Definitions;
+using PSRule.Definitions.Rules;
 using PSRule.Pipeline;
 
 namespace PSRule.Runtime;
@@ -53,4 +54,6 @@ internal interface ILanguageScope : IDisposable
     bool TryGetName(object o, out string name, out string path);
 
     bool TryGetScope(object o, out string[] scope);
+
+    bool TryGetOverride(ResourceId id, out RuleOverride propertyOverride);
 }

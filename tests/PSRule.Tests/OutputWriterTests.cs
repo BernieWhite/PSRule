@@ -414,7 +414,10 @@ public sealed class OutputWriterTests
                 recommendation: new InfoString("Recommendation for rule 001\r\nover two lines.")
             ),
             field: new Hashtable(),
-            level: SeverityLevel.Error,
+            @default: new RuleProperties
+            {
+                Level = SeverityLevel.Error
+            },
             extent: null,
             outcome: RuleOutcome.Pass,
             reason: RuleOutcomeReason.Processed
@@ -450,7 +453,10 @@ public sealed class OutputWriterTests
             {
                 ["field-data"] = "Custom field data"
             },
-            level: level,
+            @default: new RuleProperties
+            {
+                Level = level
+            },
             extent: null,
             outcome: RuleOutcome.Fail,
             reason: RuleOutcomeReason.Processed

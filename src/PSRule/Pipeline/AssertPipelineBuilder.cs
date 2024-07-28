@@ -3,7 +3,7 @@
 
 using System.Management.Automation;
 using PSRule.Configuration;
-using PSRule.Definitions;
+using PSRule.Definitions.Rules;
 using PSRule.Pipeline.Formatters;
 using PSRule.Pipeline.Output;
 using PSRule.Resources;

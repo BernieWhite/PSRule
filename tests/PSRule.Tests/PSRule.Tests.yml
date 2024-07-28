@@ -22,6 +22,11 @@ emitter:
     include:
       - .csproj
 
+override:
+  level:
+    rule1: Information
+    Group.*: Error
+
 # Configure baseline
 rule:
   include:

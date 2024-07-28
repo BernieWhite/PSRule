@@ -1,6 +1,8 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+using PSRule.Definitions.Rules;
+
 namespace PSRule.Definitions;
 
 internal static class ResourceHelper

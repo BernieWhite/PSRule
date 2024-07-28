@@ -212,6 +212,39 @@
             }
           },
           "additionalProperties": false
+        },
+        "override": {
+          "type": "object",
+          "title": "Overrides",
+          "description": "Specifies additional rule overrides.",
+          "properties": {
+            "level": {
+              "type": "object",
+              "title": "Override severity level",
+              "description": "Overrides the severity level defined by the rule to the level specified. A rule can be configured with one of the following: Error, Warning, Information.",
+              "markdownDescription": "Overrides the severity level defined by the rule to the level specified.\n\nA rule can be configured with one of the following: `Error`, `Warning`, `Information`.",
+              "additionalProperties": {
+                "type": "string",
+                "title": "Override level by rule",
+                "description": "Specify the new severity level of the rule. Choose one of the following supported values: Error, Warning, Information.",
+                "markdownDescription": "Specify the new severity level of the rule.\n\nChoose one of the following supported values: `Error`, `Warning`, `Information`.",
+                "enum": [
+                  "Error",
+                  "Warning",
+                  "Information"
+                ]
+              },
+              "defaultSnippets": [
+                {
+                  "label": "Override level",
+                  "body": {
+                    "${1:Rule}": "Error"
+                  }
+                }
+              ]
+            }
+          },
+          "additionalProperties": false
         }
       },
       "additionalProperties": false
@@ -3674,8 +3707,8 @@
                 "trim": {
                   "type": "object",
                   "title": "Trim",
-                  "description": "Trim a string value by removing leading and trailings whitespace.",
-                  "markdownDescription": "Trim a string value by removing leading and trailings whitespace.",
+                  "description": "Trim a string value by removing leading and trailing whitespace.",
+                  "markdownDescription": "Trim a string value by removing leading and trailing whitespace.",
                   "$ref": "#/definitions/fn/definitions/function"
                 }
               },
@@ -3749,13 +3782,13 @@
                   "oneOf": [
                     {
                       "type": "string",
-                      "description": "The split function converts a string into an array by spliting based on a delimiter.",
-                      "markdownDescription": "The `split` function converts a string into an array by spliting based on a delimiter."
+                      "description": "The split function converts a string into an array by splitting based on a delimiter.",
+                      "markdownDescription": "The `split` function converts a string into an array by splitting based on a delimiter."
                     },
                     {
                       "type": "object",
-                      "description": "The split function converts a string into an array by spliting based on a delimiter.",
-                      "markdownDescription": "The `split` function converts a string into an array by spliting based on a delimiter.",
+                      "description": "The split function converts a string into an array by splitting based on a delimiter.",
+                      "markdownDescription": "The `split` function converts a string into an array by splitting based on a delimiter.",
                       "$ref": "#/definitions/fn/definitions/function"
                     }
                   ],

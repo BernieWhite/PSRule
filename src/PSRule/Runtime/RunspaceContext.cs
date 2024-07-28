@@ -626,9 +626,10 @@ internal sealed class RunspaceContext : IDisposable, ILogger
             targetType: Binding?.TargetType,
             tag: ruleBlock.Tag,
             info: ruleBlock.Info,
-            field: Binding?.Field,
-            level: ruleBlock.Level,
-            extent: ruleBlock.Extent
+            field: Binding.Field,
+            @default: ruleBlock.Default,
+            extent: ruleBlock.Extent,
+            @override: ruleBlock.Override
         );
 
         Writer?.EnterScope(ruleBlock.Name);

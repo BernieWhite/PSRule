@@ -928,6 +928,39 @@
       },
       "additionalProperties": false
     },
+    "override-option": {
+      "type": "object",
+      "title": "Overrides",
+      "description": "Specifies additional rule overrides.",
+      "properties": {
+        "level": {
+          "type": "object",
+          "title": "Override severity level",
+          "description": "Overrides the severity level defined by the rule to the level specified. A rule can be configured with one of the following: Error, Warning, Information.",
+          "markdownDescription": "Overrides the severity level defined by the rule to the level specified.\n\nA rule can be configured with one of the following: `Error`, `Warning`, `Information`.",
+          "additionalProperties": {
+            "type": "string",
+            "title": "Override level by rule",
+            "description": "Specify the new severity level of the rule. Choose one of the following supported values: Error, Warning, Information.",
+            "markdownDescription": "Specify the new severity level of the rule.\n\nChoose one of the following supported values: `Error`, `Warning`, `Information`.",
+            "enum": [
+              "Error",
+              "Warning",
+              "Information"
+            ]
+          },
+          "defaultSnippets": [
+            {
+              "label": "Override level",
+              "body": {
+                "${1:Rule}": "Error"
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
     "options": {
       "properties": {
         "baseline": {
@@ -981,6 +1014,10 @@
         "output": {
           "type": "object",
           "$ref": "#/definitions/output-option"
+        },
+        "override": {
+          "type": "object",
+          "$ref": "#/definitions/override-option"
         },
         "repository": {
           "type": "object",

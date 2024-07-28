@@ -2145,6 +2145,39 @@ Describe 'New-PSRuleOption' -Tag 'Option','New-PSRuleOption' {
         }
     }
 
+    Context 'Read Override.Level' {
+        It 'from default' {
+            $option = New-PSRuleOption -Default;
+            $option.Override.Level | Should -BeNullOrEmpty;
+        }
+
+        It 'from Hashtable' {
+            $option = New-PSRuleOption -Option @{ 'Override.Level.rule1' = 'Information' };
+            $option.Override.Level['rule1'] | Should -Be 'Information';
+        }
+
+        It 'from YAML' {
+            $option = New-PSRuleOption -Option (Join-Path -Path $here -ChildPath 'PSRule.Tests.yml');
+            $option.Override.Level['rule1'] | Should -Be 'Information';
+        }
+
+        It 'from Environment' {
+            try {
+                $Env:PSRULE_OVERRIDE_LEVEL_RULE1 = 'Information';
+                $option = New-PSRuleOption;
+                $option.Override.Level['rule1'] | Should -Be 'Information';
+            }
+            finally {
+                Remove-Item 'Env:PSRULE_OVERRIDE_LEVEL_RULE1' -Force;
+            }
+        }
+
+        It 'from parameter' {
+            $option = New-PSRuleOption -OverrideLevel @{ rule1 = 'Information' } -Path $emptyOptionsFilePath;
+            $option.Override.Level['rule1'] | Should -Be 'Information';
+        }
+    }
+
     Context 'Read Repository.BaseRef' {
         It 'from default' {
             $option = New-PSRuleOption -Default;

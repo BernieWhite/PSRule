@@ -258,6 +258,7 @@ internal static class HostHelper
             .WithTypeConverter(new StringArrayMapConverter())
             .WithTypeConverter(new StringArrayConverter())
             .WithTypeConverter(new PSObjectYamlTypeConverter())
+            .WithTypeConverter(new EnumMapYamlTypeConverter<SeverityLevel>())
             .WithNodeTypeResolver(new PSOptionYamlTypeResolver())
             .WithNodeDeserializer(
                 inner => new ResourceNodeDeserializer(new LanguageExpressionDeserializer(inner)),
@@ -322,6 +323,7 @@ internal static class HostHelper
         deserializer.Converters.Add(new FieldMapJsonConverter());
         deserializer.Converters.Add(new StringArrayJsonConverter());
         deserializer.Converters.Add(new LanguageExpressionJsonConverter());
+        deserializer.Converters.Add(new EnumMapJsonConverter<SeverityLevel>());
 
         try
         {
@@ -511,6 +513,7 @@ internal static class HostHelper
         var knownRuleNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         var knownRuleIds = new HashSet<ResourceId>(ResourceIdEqualityComparer.Default);
 
+        // Process from PowerShell
         foreach (var block in blocks.OfType<RuleBlock>())
         {
             if (knownRuleIds.ContainsIds(block.Id, block.Ref, block.Alias, out var duplicateId))
@@ -530,6 +533,7 @@ internal static class HostHelper
             knownRuleIds.AddIds(block.Id, block.Ref, block.Alias);
         }
 
+        // Process from YAML/ JSON
         foreach (var block in blocks.OfType<RuleV1>())
         {
             var ruleName = block.Name;
@@ -546,6 +550,7 @@ internal static class HostHelper
             }
 
             context.EnterLanguageScope(block.Source);
+            context.LanguageScope.TryGetOverride(block.Id, out var propertyOverride);
             try
             {
                 var info = GetRuleHelpInfo(context, block) ?? new RuleHelpInfo(
@@ -561,7 +566,11 @@ internal static class HostHelper
                     source: block.Source,
                     id: block.Id,
                     @ref: block.Ref,
-                    level: block.Level,
+                    @default: new RuleProperties
+                    {
+                        Level = block.Level
+                    },
+                    @override: propertyOverride,
                     info: info,
                     condition: new RuleVisitor(context, block.Id, block.Source, block.Spec),
                     alias: block.Alias,
