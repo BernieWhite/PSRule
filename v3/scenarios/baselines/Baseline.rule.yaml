@@ -6,11 +6,6 @@ kind: Baseline
 metadata:
   name: TestBaseline1
 spec:
-  binding:
-    targetName:
-    - AlternateName
-    targetType:
-    - kind
   rule:
     include:
     - 'WithBaseline'
@@ -24,11 +19,6 @@ kind: Baseline
 metadata:
   name: TestBaseline2
 spec:
-  binding:
-    targetName:
-    - AlternateName
-    targetType:
-    - kind
   rule:
     include:
     - 'WithBaseline'
