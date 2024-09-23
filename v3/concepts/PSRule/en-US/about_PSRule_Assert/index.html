@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.06209087.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -3673,17 +3673,18 @@ The syntax for an object path is inspired by JSONPath which is current an IETF I
   i.e. <code>Properties.dashed-name</code> and <code>Properties.'-dashed-name'</code> are valid.</li>
 </ul>
 <h3 id="apiversion">APIVersion<a class="headerlink" href="#apiversion" title="Permanent link">#</a></h3>
-<p>The <code>APIVersion</code> assertion method checks the field value is a valid date version.
-A constraint can optionally be provided to require the date version to be within a range.</p>
+<p>The <code>APIVersion</code> assertion method checks the field value is a valid stable date version.
+A constraint can optionally be provided to require the date version to be within a range.
+By default, only stable versions are accepted unless pre-releases are included.</p>
 <p>A date version uses the format <code>yyyy-MM-dd</code> (<code>2015-10-01</code>).
-Additionally an optional string prerelease identifier can be used <code>yyyy-MM-dd-prerelease</code> (<code>2015-10-01-preview.1</code>).</p>
+Additionally an optional string pre-release identifier can be used <code>yyyy-MM-dd-prerelease</code> (<code>2015-10-01-preview.1</code>).</p>
 <p>The following parameters are accepted:</p>
 <ul>
 <li><code>inputObject</code> - The object being checked for the specified field.</li>
 <li><code>field</code> - The name of the field to check.
   This is a case insensitive compare.</li>
 <li><code>constraint</code> (optional) - A version constraint, see below for details of version constrain format.</li>
-<li><code>includePrerelease</code> (optional) - Determines if prerelease versions are included.
+<li><code>includePrerelease</code> (optional) - Determines if pre-release versions are included.
   Unless specified this defaults to <code>$False</code>.</li>
 </ul>
 <p>The following are supported constraints:</p>
@@ -3724,14 +3725,14 @@ Additionally an optional string prerelease identifier can be used <code>yyyy-MM-
 </ul>
 </li>
 </ul>
-<p>Handling for prerelease versions:</p>
+<p>Handling for pre-release versions:</p>
 <ul>
-<li>Constraints and versions containing prerelease identifiers are supported.
+<li>Constraints and versions containing pre-release identifiers are supported.
   i.e. <code>&gt;=2015-10-01-preview</code> or <code>2015-10-01-preview</code>.</li>
-<li>A version containing a prerelease identifer follows similar ordering to semantic versioning.
+<li>A version containing a pre-release identifier follows similar ordering to semantic versioning.
   i.e. <code>2015-10-01-preview</code> &lt; <code>2015-10-01-preview.1</code> &lt; <code>2015-10-01</code> &lt; <code>2022-03-01-preview</code> &lt; <code>2022-03-01</code>.</li>
-<li>A constraint without a prerelease identifer will only match a stable version by default.
-  Set <code>includePrerelease</code> to <code>$True</code> to include prerelease versions.
+<li>A constraint without a pre-release identifier will only match a stable version by default.
+  Set <code>includePrerelease</code> to <code>$True</code> to include pre-;release versions.
   Alternatively use the <code>@pre</code> or <code>@prerelease</code> flag in a constraint.</li>
 </ul>
 <p>Reasons include:</p>
@@ -3743,8 +3744,12 @@ Additionally an optional string prerelease identifier can be used <code>yyyy-MM-
 <li><em>The version '{0}' does not match the constraint '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;ValidAPIVersion&#39;</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;ValidStableAPIVersion&#39;</span> <span class="p">{</span>
     <span class="nv">$Assert</span><span class="p">.</span><span class="n">APIVersion</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;apiVersion&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">Rule</span> <span class="s1">&#39;AnyValidAPIVersion&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">APIVersion</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;apiVersion&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="n">Rule</span> <span class="s1">&#39;MinimumAPIVersion&#39;</span> <span class="p">{</span>
@@ -4915,16 +4920,17 @@ Specified values can be included in the field value in any order.</p>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="version">Version<a class="headerlink" href="#version" title="Permanent link">#</a></h3>
-<p>The <code>Version</code> assertion method checks the field value is a valid semantic version.
-A constraint can optionally be provided to require the semantic version to be within a range.</p>
+<p>The <code>Version</code> assertion method checks the field value is a valid stable semantic version.
+A constraint can optionally be provided to require the semantic version to be within a range.
+By default, only stable versions are accepted unless pre-releases are included.</p>
 <p>The following parameters are accepted:</p>
 <ul>
 <li><code>inputObject</code> - The object being checked for the specified field.</li>
 <li><code>field</code> - The name of the field to check.
-This is a case insensitive compare.</li>
+  This is a case insensitive compare.</li>
 <li><code>constraint</code> (optional) - A version constraint, see below for details of version constrain format.</li>
-<li><code>includePrerelease</code> (optional) - Determines if prerelease versions are included.
-Unless specified this defaults to <code>$False</code>.</li>
+<li><code>includePrerelease</code> (optional) - Determines if pre-release versions are included.
+  Unless specified this defaults to <code>$False</code>.</li>
 </ul>
 <p>The following are supported constraints:</p>
 <ul>
@@ -4972,17 +4978,17 @@ Only one constraint set must be true (<em>logical OR</em>).</li>
 </ul>
 </li>
 </ul>
-<p>Handling for prerelease versions:</p>
+<p>Handling for pre-release versions:</p>
 <ul>
-<li>Constraints and versions containing prerelease identifiers are supported.
-i.e. <code>&gt;=1.2.3-build.1</code> or <code>1.2.3-build.1</code>.</li>
-<li>A version containing a prerelease identifer follows semantic versioning rules.
+<li>Constraints and versions containing pre-release identifiers are supported.
+  i.e. <code>&gt;=1.2.3-build.1</code> or <code>1.2.3-build.1</code>.</li>
+<li>A version containing a pre-release identifier follows semantic versioning rules.
 i.e. <code>1.2.3-alpha</code> &lt; <code>1.2.3-alpha.1</code> &lt; <code>1.2.3-alpha.beta</code> &lt; <code>1.2.3-beta</code> &lt; <code>1.2.3-beta.2</code> &lt; <code>1.2.3-beta.11</code> &lt; <code>1.2.3-rc.1</code> &lt; <code>1.2.3</code>.</li>
-<li>A constraint without a prerelease identifer will only match a stable version by default.
-Set <code>includePrerelease</code> to <code>$True</code> to include prerelease versions.</li>
-<li>Constraints with a prerelease identifer will only match:<ul>
-<li>Matching prerelease versions of the same major.minor.patch version by default.
-Set <code>includePrerelease</code> to <code>$True</code> to include prerelease versions of all matching versions.
+<li>A constraint without a pre-release identifier will only match a stable version by default.
+  Set <code>includePrerelease</code> to <code>$True</code> to include pre-release versions.</li>
+<li>Constraints with a pre-release identifier will only match:<ul>
+<li>Matching pre-release versions of the same major.minor.patch version by default.
+Set <code>includePrerelease</code> to <code>$True</code> to include pre-release versions of all matching versions.
 Alternatively use the <code>@pre</code> or <code>@prerelease</code> flag in a constraint.</li>
 <li>Matching stable versions.</li>
 </ul>
@@ -5029,8 +5035,12 @@ Alternatively use the <code>@pre</code> or <code>@prerelease</code> flag in a co
 <li><em>The version '{0}' does not match the constraint '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;ValidVersion&#39;</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;ValidStableVersion&#39;</span> <span class="p">{</span>
     <span class="nv">$Assert</span><span class="p">.</span><span class="n">Version</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">Rule</span> <span class="s1">&#39;AnyValidVersion&#39;</span> <span class="p">{</span>
+    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Version</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="n">Rule</span> <span class="s1">&#39;MinimumVersion&#39;</span> <span class="p">{</span>
@@ -5231,7 +5241,7 @@ If a <code>_PSRule</code> property exists with <code>issue</code> sub-property P
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 25, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2024</span>
   </span>
 
     
