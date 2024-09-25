@@ -2782,12 +2782,18 @@ Any required version constraints set by the <code>Requires</code> option are tak
 <li><code>--version</code> - Specifies a specific version of the module to add.
   By default, the latest stable version of the module is added.
   Any required version constraints set by the <code>Requires</code> option are taken into consideration.</li>
+<li><code>--prerelease</code> - Accept pre-release versions in addition to stable module versions.
+  By default, pre-release versions are not included.
+  A pre-release version may also be accepted when <code>Requires</code> includes pre-releases.</li>
 </ul>
 <p>For example:</p>
 <div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>PSRule.Rules.Azure
 </code></pre></div>
 <p>For example, a specific version of the module is added:</p>
 <div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>PSRule.Rules.Azure<span class="w"> </span>--version<span class="w"> </span><span class="m">1</span>.32.1
+</code></pre></div>
+<p>For example, include pre-release versions added:</p>
+<div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>PSRule.Rules.Azure<span class="w"> </span>--prerelease
 </code></pre></div>
 <h2 id="module-remove"><code>module remove</code><a class="headerlink" href="#module-remove" title="Permanent link">#</a></h2>
 <p>Remove one or more modules from the lock file.</p>
@@ -2807,9 +2813,18 @@ Any required version constraints set by the <code>Requires</code> option are tak
 <div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span>restore<span class="w"> </span>--force
 </code></pre></div>
 <h2 id="module-upgrade"><code>module upgrade</code><a class="headerlink" href="#module-upgrade" title="Permanent link">#</a></h2>
-<p>Upgrade to the latest versions any modules within the lock file.</p>
+<p>Upgrade to the latest versions for all or a specific module within the lock file.</p>
+<p>Optional parameters:</p>
+<ul>
+<li><code>--prerelease</code> - Accept pre-release versions in addition to stable module versions.
+  By default, pre-release versions are not included.
+  A pre-release version may also be accepted when <code>Requires</code> includes pre-releases.</li>
+</ul>
 <p>For example:</p>
 <div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span>upgrade
+</code></pre></div>
+<p>For example, upgrade a specific module and include pre-release versions:</p>
+<div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span>upgrade<span class="w"> </span>PSRule.Rules.Azure<span class="w"> </span>--prerelease
 </code></pre></div>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
 <p>For more information on the module lock file, see <a href="../../lockfile/">Lock file</a>.</p>
@@ -2836,7 +2851,7 @@ Any required version constraints set by the <code>Requires</code> option are tak
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 24, 2024</span>
   </span>
 
     
