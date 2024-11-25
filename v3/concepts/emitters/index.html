@@ -12,28 +12,28 @@
         <meta name="author" content="Microsoft">
       
       
-        <link rel="canonical" href="https://microsoft.github.io/PSRule/v3/scenarios/azure-resources/azure-resources/">
+        <link rel="canonical" href="https://microsoft.github.io/PSRule/v3/concepts/emitters/">
       
       
-        <link rel="prev" href="../../../analysis-output/">
+        <link rel="prev" href="../baselines/">
       
       
-        <link rel="next" href="../../azure-tags/azure-tags/">
+        <link rel="next" href="../../expressions/functions/">
       
       
-      <link rel="icon" href="../../../assets/ms_icon.png">
+      <link rel="icon" href="../../assets/ms_icon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
     
     
       
-        <title>Validate Azure resource configuration - PSRule</title>
+        <title>About emitters - PSRule</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,9 +52,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,9 +78,9 @@
   <!-- Open graph meta tags -->
   <meta property="og:site_name" content="PSRule" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="PSRule - Validate Azure resource configuration" />
+  <meta property="og:title" content="PSRule - Emitters" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta property="og:url" content="https://microsoft.github.io/PSRule/v3/scenarios/azure-resources/azure-resources/" />
+  <meta property="og:url" content="https://microsoft.github.io/PSRule/v3/concepts/emitters/" />
   <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
@@ -90,7 +90,7 @@
   <!-- Twitter meta tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@github" />
-  <meta name="twitter:title" content="PSRule - Validate Azure resource configuration" />
+  <meta name="twitter:title" content="PSRule - Emitters" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#validate-azure-resource-configuration" class="md-skip">
+        <a href="#emitters" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
             
             
   You are viewing the next version PSRule.
-  <a href="../../../.."> 
+  <a href="../../.."> 
     <strong>Click here to go to latest stable version.</strong>
   </a>
 
@@ -143,9 +143,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="PSRule" class="md-header__button md-logo" aria-label="PSRule" data-md-component="logo">
+    <a href="../.." title="PSRule" class="md-header__button md-logo" aria-label="PSRule" data-md-component="logo">
       
-  <img src="../../../assets/ms_icon.png" alt="logo">
+  <img src="../../assets/ms_icon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -162,7 +162,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Validate Azure resource configuration
+              About emitters
             
           </span>
         </div>
@@ -243,7 +243,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -272,7 +272,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../about/" class="md-tabs__link">
+        <a href="../../about/" class="md-tabs__link">
           
   
     
@@ -301,7 +301,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../commands/PSRule/en-US/Assert-PSRule/" class="md-tabs__link">
+        <a href="../../commands/PSRule/en-US/Assert-PSRule/" class="md-tabs__link">
           
   
     
@@ -324,7 +324,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../addon-modules/" class="md-tabs__link">
+        <a href="../../addon-modules/" class="md-tabs__link">
           
   
     
@@ -359,9 +359,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="PSRule" class="md-nav__button md-logo" aria-label="PSRule" data-md-component="logo">
+    <a href="../.." title="PSRule" class="md-nav__button md-logo" aria-label="PSRule" data-md-component="logo">
       
-  <img src="../../../assets/ms_icon.png" alt="logo">
+  <img src="../../assets/ms_icon.png" alt="logo">
 
     </a>
     PSRule
@@ -388,7 +388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -525,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -546,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../features/" class="md-nav__link">
+      <a href="../../features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -567,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../faq/" class="md-nav__link">
+      <a href="../../faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -596,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../install/" class="md-nav__link">
+      <a href="../../install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -659,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../quickstart/standalone-rule/" class="md-nav__link">
+      <a href="../../quickstart/standalone-rule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -738,7 +738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authoring/testing-infrastructure/" class="md-nav__link">
+      <a href="../../authoring/testing-infrastructure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -759,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authoring/using-expressions/" class="md-nav__link">
+      <a href="../../authoring/using-expressions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -780,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authoring/storing-rules/" class="md-nav__link">
+      <a href="../../authoring/storing-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -801,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authoring/packaging-rules/" class="md-nav__link">
+      <a href="../../authoring/packaging-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -822,7 +822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../authoring/writing-rule-help/" class="md-nav__link">
+      <a href="../../authoring/writing-rule-help/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -897,7 +897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../creating-your-pipeline/" class="md-nav__link">
+      <a href="../../creating-your-pipeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -918,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../validating-locally/" class="md-nav__link">
+      <a href="../../validating-locally/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -939,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../analysis-output/" class="md-nav__link">
+      <a href="../../analysis-output/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -965,10 +965,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -986,11 +984,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
         
           
           <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
@@ -1004,7 +1002,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
@@ -1015,30 +1013,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Validate Azure resource configuration
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../scenarios/azure-resources/azure-resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1047,95 +1025,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#define-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      Define rules
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Define rules">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#set-rule-condition" class="md-nav__link">
-    <span class="md-ellipsis">
-      Set rule condition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#add-rule-recommendation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add rule recommendation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filter-with-preconditions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Filter with preconditions
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execute-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      Execute rules
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#define-helper-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Define helper functions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#more-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      More information
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1148,7 +1037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../azure-tags/azure-tags/" class="md-nav__link">
+      <a href="../../scenarios/azure-tags/azure-tags/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1169,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes-resources/kubernetes-resources/" class="md-nav__link">
+      <a href="../../scenarios/kubernetes-resources/kubernetes-resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1190,7 +1079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/container-execution/" class="md-nav__link">
+      <a href="../../scenarios/containers/container-execution/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1216,8 +1105,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1239,11 +1130,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
         
           
           <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
@@ -1257,7 +1148,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
             Concepts
@@ -1271,7 +1162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/baselines/" class="md-nav__link">
+      <a href="../baselines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1289,10 +1180,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../concepts/emitters/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Emitters
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1301,6 +1212,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-emitters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Built-in emitters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-emitters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom emitters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring formats
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advanced-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1313,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../expressions/functions/" class="md-nav__link">
+      <a href="../../expressions/functions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1334,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/grouping-rules/" class="md-nav__link">
+      <a href="../grouping-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1355,7 +1328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../expressions/sub-selectors/" class="md-nav__link">
+      <a href="../../expressions/sub-selectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1376,7 +1349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/lockfile/" class="md-nav__link">
+      <a href="../lockfile/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1447,7 +1420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../validation-pipeline/validation-pipeline/" class="md-nav__link">
+      <a href="../../scenarios/validation-pipeline/validation-pipeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1476,7 +1449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../troubleshooting/" class="md-nav__link">
+      <a href="../../troubleshooting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1497,7 +1470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../license-contributing/" class="md-nav__link">
+      <a href="../../license-contributing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1518,7 +1491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../related-projects/" class="md-nav__link">
+      <a href="../../related-projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1635,7 +1608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CHANGELOG-v3/" class="md-nav__link">
+      <a href="../../CHANGELOG-v3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1727,7 +1700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../upgrade-notes/" class="md-nav__link">
+      <a href="../../upgrade-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1748,7 +1721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../deprecations/" class="md-nav__link">
+      <a href="../../deprecations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1769,7 +1742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../versioning/" class="md-nav__link">
+      <a href="../../versioning/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1798,7 +1771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../support/" class="md-nav__link">
+      <a href="../../support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1956,7 +1929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Assert-PSRule/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Assert-PSRule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1977,7 +1950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Export-PSRuleBaseline/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Export-PSRuleBaseline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1998,7 +1971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Get-PSRule/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Get-PSRule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2019,7 +1992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Get-PSRuleBaseline/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Get-PSRuleBaseline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2040,7 +2013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Get-PSRuleHelp/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Get-PSRuleHelp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2061,7 +2034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Get-PSRuleTarget/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Get-PSRuleTarget/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2082,7 +2055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Invoke-PSRule/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Invoke-PSRule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2103,7 +2076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/New-PSRuleOption/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/New-PSRuleOption/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2124,7 +2097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Set-PSRuleOption/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Set-PSRuleOption/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2145,7 +2118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/PSRule/en-US/Test-PSRuleTarget/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Test-PSRuleTarget/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2201,7 +2174,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../concepts/cli/" class="md-nav__link ">
+            <a href="../cli/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2234,7 +2207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/cli/run/" class="md-nav__link">
+      <a href="../cli/run/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2255,7 +2228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/cli/module/" class="md-nav__link">
+      <a href="../cli/module/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2276,7 +2249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/cli/restore/" class="md-nav__link">
+      <a href="../cli/restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2305,7 +2278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/PSRule/en-US/about_PSRule_Assert/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Assert/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2326,7 +2299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/PSRule/en-US/about_PSRule_Baseline/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Baseline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2347,7 +2320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/PSRule/en-US/about_PSRule_Badges/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Badges/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2368,7 +2341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/PSRule/en-US/about_PSRule_Conventions/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Conventions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2389,7 +2362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/PSRule/en-US/about_PSRule_Docs/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Docs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2410,7 +2383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/PSRule/en-US/about_PSRule_Expressions/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Expressions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2431,7 +2404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../keywords/PSRule/en-US/about_PSRule_Keywords/" class="md-nav__link">
+      <a href="../../keywords/PSRule/en-US/about_PSRule_Keywords/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2452,7 +2425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/PSRule/en-US/about_PSRule_Options/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Options/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2473,7 +2446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/PSRule/en-US/about_PSRule_Rules/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2494,7 +2467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/security/" class="md-nav__link">
+      <a href="../security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2515,7 +2488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/PSRule/en-US/about_PSRule_Selectors/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Selectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2536,7 +2509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/PSRule/en-US/about_PSRule_SuppressionGroups/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_SuppressionGroups/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2557,7 +2530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/PSRule/en-US/about_PSRule_Variables/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Variables/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2627,7 +2600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../addon-modules/" class="md-nav__link">
+      <a href="../../addon-modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2675,37 +2648,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#define-rules" class="md-nav__link">
+  <a href="#built-in-emitters" class="md-nav__link">
     <span class="md-ellipsis">
-      Define rules
+      Built-in emitters
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Define rules">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-emitters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom emitters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring formats
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring formats">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#set-rule-condition" class="md-nav__link">
+  <a href="#advanced-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Set rule condition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#add-rule-recommendation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add rule recommendation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filter-with-preconditions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Filter with preconditions
+      Advanced configuration
     </span>
   </a>
   
@@ -2713,33 +2686,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execute-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      Execute rules
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#define-helper-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Define helper functions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#more-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      More information
-    </span>
-  </a>
   
 </li>
       
@@ -2759,7 +2705,7 @@
                   
 
   
-    <a href="https://github.com/microsoft/PSRule/blob/main/docs/scenarios/azure-resources/azure-resources.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/microsoft/PSRule/blob/main/docs/concepts/emitters.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2768,195 +2714,75 @@
     
       
     
-    <a href="https://github.com/microsoft/PSRule/raw/main/docs/scenarios/azure-resources/azure-resources.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/microsoft/PSRule/raw/main/docs/concepts/emitters.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="validate-azure-resource-configuration">Validate Azure resource configuration<a class="headerlink" href="#validate-azure-resource-configuration" title="Permanent link">#</a></h1>
-<p>PSRule makes it easy to validate Infrastructure as Code (IaC) such as Azure resources.
-For example, Azure resources can be validated to match an internal standard or baseline.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A pre-built module to validate Azure resources already exists.
-This scenario demonstrates the process and features of PSRule for illustration purposes.</p>
-<p>Consider using or contributing these pre-built rule modules instead:</p>
+<h1 id="emitters">Emitters<a class="headerlink" href="#emitters" title="Permanent link">#</a></h1>
+<p>Emitters allows complex structures and files types (formats) to be pre-processed and resulting objects extracted.
+Once processed, the resulting objects can be evaluated by rules.</p>
+<h2 id="built-in-emitters">Built-in emitters<a class="headerlink" href="#built-in-emitters" title="Permanent link">#</a></h2>
+<p>PSRule ships with several built-in emitters for common formats, including:</p>
 <ul>
-<li><a href="https://github.com/Azure/PSRule.Rules.Azure">PSRule.Rules.Azure</a></li>
-<li><a href="https://github.com/microsoft/PSRule.Rules.CAF">PSRule.Rules.CAF</a></li>
+<li>YAML (<code>yaml</code>)</li>
+<li>JSON (<code>json</code>)</li>
+<li>Markdown (<code>markdown</code>)</li>
+<li>PowerShell Data (<code>powershell_data</code>)</li>
 </ul>
-</div>
-<p>This scenario covers the following:</p>
-<ul>
-<li>Defining a basic rule.</li>
-<li>Adding a recommendation.</li>
-<li>Using script pre-conditions.</li>
-<li>Using helper functions.</li>
-</ul>
-<p>In this scenario we will use a JSON file:</p>
-<ul>
-<li><a href="../resources.json"><code>resources.json</code></a> - An export for the Azure resource properties saved for offline use.</li>
-</ul>
-<p>To generate a similar <code>resources.json</code> file of your own, the use following command.</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Get all resources using the Az modules. Alternatively use Get-AzureRmResource if using AzureRm modules.</span>
-<span class="c"># This command also requires authentication with Connect-AzAccount or Connect-AzureRmAccount</span>
-<span class="nb">Get-AzResource</span> <span class="n">-ExpandProperties</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="n">10</span> <span class="p">|</span> <span class="nb">Set-Content</span> <span class="n">-path</span> <span class="p">.\</span><span class="n">resources</span><span class="p">.</span><span class="n">json</span><span class="p">;</span>
+<p>The following file extensions are configured by default for each format.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Default file extensions</th>
+<th style="text-align: center;">Configurable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yaml</code></td>
+<td><code>.yaml</code>, <code>.yml</code></td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td><code>json</code></td>
+<td><code>.json</code>, <code>.jsonc</code>, <code>.sarif</code></td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td><code>markdown</code></td>
+<td><code>.md</code>, <code>.markdown</code></td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td><code>powershell_data</code></td>
+<td><code>.psd1</code></td>
+<td style="text-align: center;">Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="custom-emitters">Custom emitters<a class="headerlink" href="#custom-emitters" title="Permanent link">#</a></h2>
+<p>Custom emitters are a planned feature in PSRule v3.</p>
+<h2 id="configuring-formats">Configuring formats<a class="headerlink" href="#configuring-formats" title="Permanent link">#</a></h2>
+<p>The file or object types that each emitter processes is configurable by setting the <a href="../PSRule/en-US/about_PSRule_Options/#format">Format option</a>.
+This allows custom types and file extensions to be easily added or removed to a compatible emitter.</p>
+<p>For example, many configuration files use JSON but may end with a different file extension.
+The extensions that will be processed can be overridden by setting the <code>format.json.types</code> key in <code>ps-rule.yaml</code>.
+To change the file extension to be processed as JSON the following option can be set:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">format</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">json</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">types</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.json</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.jsonc</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.jsn</span>
 </code></pre></div>
-<p>For this example we ran this command:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Get-AzResource</span> <span class="n">-ExpandProperties</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="n">10</span> <span class="p">|</span> <span class="nb">Set-Content</span> <span class="n">-path</span> <span class="n">docs</span><span class="p">/</span><span class="n">scenarios</span><span class="p">/</span><span class="n">azure-resources</span><span class="p">/</span><span class="n">resources</span><span class="p">.</span><span class="n">json</span><span class="p">;</span>
-</code></pre></div>
-<h2 id="define-rules">Define rules<a class="headerlink" href="#define-rules" title="Permanent link">#</a></h2>
-<p>To validate our Azure resources we need to define some rules.
-Rules are defined by using the <code>Rule</code> keyword in a file ending with the <code>.Rule.ps1</code> extension.</p>
-<p>So start we are going to define a <code>storageAccounts.UseHttps</code> rule, which will validate that Azure Storage resources have a <a href="https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer">Secure Transfer Required</a> enabled.</p>
-<p>In the example below:</p>
-<ul>
-<li>We use <code>storageAccounts.UseHttps</code> directly after the <code>Rule</code> keyword to name the rule definition.
-Each rule must be named uniquely.</li>
-<li>The <code># Synopsis:</code> comment is used to add additional metadata interpreted by PSRule.</li>
-<li>One or more conditions are defined within the curly braces <code>{ }</code>.</li>
-<li>The rule definition is saved within a file named <code>storageAccounts.Rule.ps1</code>.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
-<span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="p">{</span>
-    <span class="c"># Rule conditions go here</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="set-rule-condition">Set rule condition<a class="headerlink" href="#set-rule-condition" title="Permanent link">#</a></h3>
-<p>Conditions can be any valid PowerShell expression that results in a <code>$True</code> or <code>$False</code>, just like an <code>If</code> statement, but without specifically requiring the <code>If</code> keyword to be used.</p>
-<blockquote>
-<p>Several PSRule keywords such as <code>Exists</code> and <code>AllOf</code> can supplement PowerShell to quickly build out rules that are easy to read.</p>
-</blockquote>
-<p>In <code>resources.json</code> one of our example storage accounts has a property <code>Properties.supportsHttpsTrafficOnly</code> as shown below, which will be how our rule will pass <code>$True</code> or fail <code>$False</code> Azure resources that we throw at it.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;storage&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ResourceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;storage&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ResourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft.Storage/storageAccounts&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Storage&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ResourceGroupName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test-rg&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eastus2&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;supportsHttpsTrafficOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>In the example below:</p>
-<ul>
-<li>We use the <code>$TargetObject</code> variable to get the object on the pipeline and access it's properties.</li>
-<li>The condition will return <code>$True</code> or <code>$False</code> back to the pipeline, where:<ul>
-<li><code>$True</code> - the object passed the validation check</li>
-<li><code>$False</code> - the object failed the validation check</li>
-</ul>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
-<span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="p">{</span>
-    <span class="c"># This property returns true or false, so nothing more needs to be done</span>
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">supportsHttpsTrafficOnly</span>
-
-    <span class="c"># Alternatively this could be written as:</span>
-    <span class="c"># $TargetObject.Properties.supportsHttpsTrafficOnly -eq $True</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="add-rule-recommendation">Add rule recommendation<a class="headerlink" href="#add-rule-recommendation" title="Permanent link">#</a></h3>
-<p>Additionally to provide feedback to the person or process running the rules, we can use the <code>Recommend</code> keyword to set a message that appears in results.</p>
-<p>If a recommend message is not provided the synopsis will be used instead.</p>
-<p>In the example below:</p>
-<ul>
-<li>Directly after the <code>Recommend</code> keyword is a message to help understand why the rule failed or passed.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
-<span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="p">{</span>
-    <span class="n">Recommend</span> <span class="s1">&#39;Storage accounts should only allow secure traffic&#39;</span>
-
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">supportsHttpsTrafficOnly</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="filter-with-preconditions">Filter with preconditions<a class="headerlink" href="#filter-with-preconditions" title="Permanent link">#</a></h3>
-<p>So far our rule works for a Storage Account, but there are many type of resources that could be returned by calling <code>Get-AzResource</code>.
-Most of these resources won't have the <code>Properties.supportsHttpsTrafficOnly</code> property, and if it did, it may use different configuration options instead of just <code>true</code> and <code>false</code>.
-This is where preconditions help out.</p>
-<p>Preconditions can be specified by using the <code>-If</code> parameter when defining a rule.
-When the rule is executed, if the precondition is <code>$True</code> then the rule is processed, otherwise it is skipped.</p>
-<p>In the example below:</p>
-<ul>
-<li>A check against <code>$TargetObject.ResourceType</code> ensured that our rule is only processed for Storage Accounts.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
-<span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="n">-If</span> <span class="p">{</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">ResourceType</span> <span class="o">-eq</span> <span class="s1">&#39;Microsoft.Storage/storageAccounts&#39;</span> <span class="p">}</span> <span class="p">{</span>
-    <span class="n">Recommend</span> <span class="s1">&#39;Storage accounts should only allow secure traffic&#39;</span>
-
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">supportsHttpsTrafficOnly</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Skipped rules have the outcome <code>None</code> and are not included in output by default.
-To include skipped rules use the <code>-Outcome All</code> parameter.</p>
-<h2 id="execute-rules">Execute rules<a class="headerlink" href="#execute-rules" title="Permanent link">#</a></h2>
-<p>With a rule defined, the next step is to execute it. To execute rules, pipe the target object to <code>Invoke-PSRule</code>.</p>
-<p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Read resources in from file</span>
-<span class="nv">$resources</span> <span class="p">=</span> <span class="nb">Get-Content</span> <span class="n">-Path</span> <span class="p">.\</span><span class="n">resources</span><span class="p">.</span><span class="n">json</span> <span class="p">|</span> <span class="nb">ConvertFrom-Json</span><span class="p">;</span>
-
-<span class="c"># Process resources</span>
-<span class="nv">$resources</span> <span class="p">|</span> <span class="nb">Invoke-PSRule</span><span class="p">;</span>
-</code></pre></div>
-<p>PSRule natively supports reading from YAML and JSON files so this command-line can be simplified to:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Invoke-PSRule</span> <span class="n">-InputPath</span> <span class="p">.\</span><span class="n">resources</span><span class="p">.</span><span class="n">json</span><span class="p">;</span>
-</code></pre></div>
-<p>You will notice, we didn't specify the rule. By default PSRule will look for any <code>.Rule.ps1</code> files in the current working path.</p>
-<p><code>Invoke-PSRule</code> supports <code>-Path</code>, <code>-Name</code> and <code>-Tag</code> parameters that can be used to specify the path to look for rules in or filter rules if you want to run a subset of the rules.</p>
-<p>For this example we ran these commands:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Invoke-PSRule</span> <span class="n">-Path</span> <span class="n">docs</span><span class="p">/</span><span class="n">scenarios</span><span class="p">/</span><span class="n">azure-resources</span> <span class="n">-InputPath</span> <span class="n">docs</span><span class="p">/</span><span class="n">scenarios</span><span class="p">/</span><span class="n">azure-resources</span><span class="p">/</span><span class="n">resources</span><span class="p">.</span><span class="n">json</span><span class="p">;</span>
-</code></pre></div>
-<p>Our output looked like this:</p>
-<div class="highlight"><pre><span></span><code>   TargetName: storage
-
-RuleName                            Outcome    Recommendation
---------                            -------    --------------
-storageAccounts.UseHttps            Fail       Storage accounts should only allow secure traffic
-</code></pre></div>
-<p>In our case <code>storageAccounts.UseHttps</code> returns a <code>Fail</code> outcome because our storage account has <code>supportsHttpsTrafficOnly</code> = <code>false</code>, which is exactly what should happen.</p>
-<h2 id="define-helper-functions">Define helper functions<a class="headerlink" href="#define-helper-functions" title="Permanent link">#</a></h2>
-<p>Using helper functions is completely optional and not required in many cases.
-However, you may prefer to use helper functions when rule conditions or preconditions are complex and hard to understand.</p>
-<p>To use helper functions use a <code>function</code> block within a file with a <code>.Rule.ps1</code> extension.
-Any code within <code>.Rule.ps1</code> files called by <code>Invoke-PSRule</code> will be executed, however to make it available for use within a rule, a global scope modifier must be used.</p>
-<p>For functions this is done by prefixing the function name with <code>global:</code>.</p>
-<p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="k">global:</span><span class="n">NameOfFunction</span> <span class="p">{</span>
-    <span class="c"># Function body</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>In our example, we are going to define a <code>ResourceType</code> function in a file named <code>common.Rule.ps1</code>.
-This function will be used by preconditions to check the type of Azure resource.</p>
-<div class="highlight"><pre><span></span><code><span class="c"># A custom function to filter by resource type</span>
-<span class="k">function</span> <span class="k">global:</span><span class="n">ResourceType</span> <span class="p">{</span>
-    <span class="k">param</span> <span class="p">(</span>
-        <span class="no">[String]</span><span class="nv">$ResourceType</span>
-    <span class="p">)</span>
-
-    <span class="k">process</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">ResourceType</span> <span class="o">-eq</span> <span class="nv">$ResourceType</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Updating our existing <code>storageAccounts.UseHttps</code> rule, our rule definition becomes:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
-<span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="n">-If</span> <span class="p">{</span> <span class="n">ResourceType</span> <span class="s1">&#39;Microsoft.Storage/storageAccounts&#39;</span> <span class="p">}</span> <span class="p">{</span>
-    <span class="n">Recommend</span> <span class="s1">&#39;Storage accounts should only allow secure traffic&#39;</span>
-
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">supportsHttpsTrafficOnly</span>
-<span class="p">}</span>
-</code></pre></div>
-<h2 id="more-information">More information<a class="headerlink" href="#more-information" title="Permanent link">#</a></h2>
-<ul>
-<li><a href="../storageAccounts.Rule.ps1">storageAccounts.Rule.ps1</a> - Example rules for validating Azure Storage.</li>
-<li><a href="../appService.Rule.ps1">appService.Rule.ps1</a> - Example rules for validating Azure App Service.</li>
-<li><a href="../resources.json">resources.json</a> - Offline export of Azure resources.</li>
-<li><a href="../common.Rule.ps1">common.Rule.ps1</a> - ResourceType helper function.</li>
-</ul>
+<h3 id="advanced-configuration">Advanced configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">#</a></h3>
+<p>Emitters may support additional options or feature flags for configuration.
+Set these, by using the <a href="../PSRule/en-US/about_PSRule_Options/#configuration">Configuration</a> option.</p>
+<p>Currently there is no advanced configuration options for built-in emitters.</p>
 
 
 
@@ -2979,7 +2805,7 @@ This function will be used by preconditions to check the type of Azure resource.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 6, 2022</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2024</span>
   </span>
 
     
@@ -2989,11 +2815,39 @@ This function will be used by preconditions to check the type of Azure resource.
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2018</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2024</span>
   </span>
 
     
     
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="Contributors">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a href="https://github.com/BernieWhite" class="md-author" title="@BernieWhite">
+          
+          <img src="https://avatars.githubusercontent.com/u/13513058?v=4&size=72" alt="BernieWhite">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
+      
+      
+    </nav>
+  </span>
+
     
   </aside>
 
@@ -3078,7 +2932,7 @@ This function will be used by preconditions to check the type of Azure resource.
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../../analysis-output/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Analysis output">
+          <a href="../baselines/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Baselines">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3088,20 +2942,20 @@ This function will be used by preconditions to check the type of Azure resource.
                 Previous
               </span>
               <div class="md-ellipsis">
-                Analysis output
+                Baselines
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../azure-tags/azure-tags/" class="md-footer__link md-footer__link--next" aria-label="Next: Azure resource tagging example">
+          <a href="../../expressions/functions/" class="md-footer__link md-footer__link--next" aria-label="Next: Functions">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Azure resource tagging example
+                Functions
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3150,10 +3004,10 @@ This function will be used by preconditions to check the type of Azure resource.
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "navigation.footer", "content.code.annotate", "content.tabs.link", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "navigation.footer", "content.code.annotate", "content.tabs.link", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
