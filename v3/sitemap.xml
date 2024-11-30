@@ -49,10 +49,6 @@
          <lastmod>2024-11-30</lastmod>
     </url>
     <url>
-         <loc>https://microsoft.github.io/PSRule/v3/install/</loc>
-         <lastmod>2024-11-30</lastmod>
-    </url>
-    <url>
          <loc>https://microsoft.github.io/PSRule/v3/license-contributing/</loc>
          <lastmod>2024-11-30</lastmod>
     </url>
@@ -333,23 +329,15 @@
          <lastmod>2024-11-30</lastmod>
     </url>
     <url>
-         <loc>https://microsoft.github.io/PSRule/v3/specs/design-spec/</loc>
+         <loc>https://microsoft.github.io/PSRule/v3/setup/</loc>
          <lastmod>2024-11-30</lastmod>
     </url>
     <url>
-         <loc>https://microsoft.github.io/PSRule/v3/specs/emitter-spec/</loc>
+         <loc>https://microsoft.github.io/PSRule/v3/setup/vscode/</loc>
          <lastmod>2024-11-30</lastmod>
     </url>
     <url>
-         <loc>https://microsoft.github.io/PSRule/v3/specs/function-spec/</loc>
-         <lastmod>2024-11-30</lastmod>
-    </url>
-    <url>
-         <loc>https://microsoft.github.io/PSRule/v3/specs/option-spec/</loc>
-         <lastmod>2024-11-30</lastmod>
-    </url>
-    <url>
-         <loc>https://microsoft.github.io/PSRule/v3/updates/v3_0/</loc>
+         <loc>https://microsoft.github.io/PSRule/v3/updates/v3.0/</loc>
          <lastmod>2024-11-30</lastmod>
     </url>
 </urlset>

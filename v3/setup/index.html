@@ -9,27 +9,31 @@
         <meta name="description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules.">
       
       
-        <meta name="author" content="Microsoft">
+        <meta name="author" content="BernieWhite">
       
       
-        <link rel="canonical" href="https://microsoft.github.io/PSRule/v3/specs/emitter-spec/">
+        <link rel="canonical" href="https://microsoft.github.io/PSRule/v3/setup/">
       
       
+        <link rel="prev" href="../features/">
       
       
-      <link rel="icon" href="../../assets/ms_icon.png">
+        <link rel="next" href="vscode/">
+      
+      
+      <link rel="icon" href="../assets/ms_icon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
     
     
       
-        <title>Emitter specification - PSRule</title>
+        <title>Index - PSRule</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +52,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,9 +78,9 @@
   <!-- Open graph meta tags -->
   <meta property="og:site_name" content="PSRule" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="PSRule - Emitter specification" />
+  <meta property="og:title" content="PSRule - Index" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta property="og:url" content="https://microsoft.github.io/PSRule/v3/specs/emitter-spec/" />
+  <meta property="og:url" content="https://microsoft.github.io/PSRule/v3/setup/" />
   <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
@@ -86,7 +90,7 @@
   <!-- Twitter meta tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@github" />
-  <meta name="twitter:title" content="PSRule - Emitter specification" />
+  <meta name="twitter:title" content="PSRule - Index" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
@@ -108,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#emitter-specification" class="md-skip">
+        <a href="#setting-up-psrule" class="md-skip">
           Skip to content
         </a>
       
@@ -120,7 +124,7 @@
             
             
   You are viewing the next version PSRule.
-  <a href="../../.."> 
+  <a href="../.."> 
     <strong>Click here to go to latest stable version.</strong>
   </a>
 
@@ -139,9 +143,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="PSRule" class="md-header__button md-logo" aria-label="PSRule" data-md-component="logo">
+    <a href=".." title="PSRule" class="md-header__button md-logo" aria-label="PSRule" data-md-component="logo">
       
-  <img src="../../assets/ms_icon.png" alt="logo">
+  <img src="../assets/ms_icon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -158,7 +162,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Emitter specification
+              Index
             
           </span>
         </div>
@@ -239,7 +243,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
     
@@ -254,17 +258,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../about/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../about/" class="md-tabs__link">
           
   
     
@@ -293,7 +301,36 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../commands/PSRule/en-US/Assert-PSRule/" class="md-tabs__link">
+        <a href="../CHANGELOG-v3/" class="md-tabs__link">
+          
+  
+    
+  
+  Updates
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../commands/PSRule/en-US/Assert-PSRule/" class="md-tabs__link">
           
   
     
@@ -313,10 +350,27 @@
   
   
   
+    <li class="md-tabs__item">
+      <a href="../faq/" class="md-tabs__link">
+        
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
     
     
       <li class="md-tabs__item">
-        <a href="../../addon-modules/" class="md-tabs__link">
+        <a href="../addon-modules/" class="md-tabs__link">
           
   
     
@@ -351,9 +405,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="PSRule" class="md-nav__button md-logo" aria-label="PSRule" data-md-component="logo">
+    <a href=".." title="PSRule" class="md-nav__button md-logo" aria-label="PSRule" data-md-component="logo">
       
-  <img src="../../assets/ms_icon.png" alt="logo">
+  <img src="../assets/ms_icon.png" alt="logo">
 
     </a>
     PSRule
@@ -380,7 +434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -397,8 +451,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -426,22 +482,23 @@
       
         
       
-        
-      
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -452,7 +509,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Getting started
@@ -467,8 +524,6 @@
   
     
     
-      
-        
       
         
       
@@ -512,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -533,32 +588,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/" class="md-nav__link">
+      <a href="../features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Features
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../faq/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    FAQ
   </span>
   
 
@@ -580,18 +614,84 @@
                 
   
   
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
-      <a href="../../install/" class="md-nav__link">
+      <a href="vscode/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Install
+    Visual Studio Code
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -646,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quickstart/standalone-rule/" class="md-nav__link">
+      <a href="../quickstart/standalone-rule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -683,10 +783,6 @@
       
         
       
-        
-      
-        
-      
     
     
       
@@ -704,7 +800,7 @@
             
   
   <span class="md-ellipsis">
-    Authoring rules
+    User guide
   </span>
   
 
@@ -714,7 +810,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
-            Authoring rules
+            User guide
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -725,11 +821,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../authoring/testing-infrastructure/" class="md-nav__link">
+      <a href="../creating-your-pipeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Testing infrastructure
+    Creating your pipeline
   </span>
   
 
@@ -746,11 +842,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../authoring/using-expressions/" class="md-nav__link">
+      <a href="../validating-locally/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Using expressions
+    Validating locally
   </span>
   
 
@@ -767,53 +863,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../authoring/storing-rules/" class="md-nav__link">
+      <a href="../analysis-output/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Storing and naming rules
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../authoring/packaging-rules/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Packaging rules in a module
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../authoring/writing-rule-help/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Writing rule help
+    Analysis output
   </span>
   
 
@@ -846,6 +900,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -863,7 +921,7 @@
             
   
   <span class="md-ellipsis">
-    Running rules
+    Developer guide
   </span>
   
 
@@ -873,7 +931,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
-            Running rules
+            Developer guide
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -884,11 +942,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../creating-your-pipeline/" class="md-nav__link">
+      <a href="../authoring/testing-infrastructure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Creating your pipeline
+    Testing infrastructure
   </span>
   
 
@@ -905,11 +963,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../validating-locally/" class="md-nav__link">
+      <a href="../authoring/using-expressions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Validating locally
+    Using expressions
   </span>
   
 
@@ -926,11 +984,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../../analysis-output/" class="md-nav__link">
+      <a href="../authoring/storing-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Analysis output
+    Storing and naming rules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authoring/packaging-rules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Packaging rules in a module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authoring/writing-rule-help/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Writing rule help
   </span>
   
 
@@ -1003,7 +1103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scenarios/azure-resources/azure-resources/" class="md-nav__link">
+      <a href="../scenarios/azure-resources/azure-resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1024,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scenarios/azure-tags/azure-tags/" class="md-nav__link">
+      <a href="../scenarios/azure-tags/azure-tags/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1045,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scenarios/kubernetes-resources/kubernetes-resources/" class="md-nav__link">
+      <a href="../scenarios/kubernetes-resources/kubernetes-resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1066,7 +1166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scenarios/containers/container-execution/" class="md-nav__link">
+      <a href="../scenarios/containers/container-execution/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1147,7 +1247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/baselines/" class="md-nav__link">
+      <a href="../concepts/baselines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1168,7 +1268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/emitters/" class="md-nav__link">
+      <a href="../concepts/emitters/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1189,7 +1289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../expressions/functions/" class="md-nav__link">
+      <a href="../expressions/functions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1210,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/grouping-rules/" class="md-nav__link">
+      <a href="../concepts/grouping-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1231,7 +1331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../expressions/sub-selectors/" class="md-nav__link">
+      <a href="../expressions/sub-selectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1252,7 +1352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/lockfile/" class="md-nav__link">
+      <a href="../concepts/lockfile/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1323,7 +1423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scenarios/validation-pipeline/validation-pipeline/" class="md-nav__link">
+      <a href="../scenarios/validation-pipeline/validation-pipeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1352,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../troubleshooting/" class="md-nav__link">
+      <a href="../troubleshooting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1373,7 +1473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../license-contributing/" class="md-nav__link">
+      <a href="../license-contributing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1394,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../related-projects/" class="md-nav__link">
+      <a href="../related-projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1414,6 +1514,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
       
@@ -1435,24 +1563,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Releases
+    Updates
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_12">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Releases
+            Updates
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1483,10 +1611,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_12_1" id="__nav_2_12_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1497,8 +1625,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_12_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_12_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Change log
           </label>
@@ -1511,7 +1639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CHANGELOG-v3/" class="md-nav__link">
+      <a href="../CHANGELOG-v3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1603,7 +1731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../upgrade-notes/" class="md-nav__link">
+      <a href="../upgrade-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1624,7 +1752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../deprecations/" class="md-nav__link">
+      <a href="../deprecations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1645,40 +1773,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../versioning/" class="md-nav__link">
+      <a href="../versioning/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Changes and versioning
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../support/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Support
   </span>
   
 
@@ -1744,10 +1843,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1758,8 +1857,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Reference
           </label>
@@ -1804,10 +1903,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1818,8 +1917,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             PowerShell cmdlets
           </label>
@@ -1832,7 +1931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../commands/PSRule/en-US/Assert-PSRule/" class="md-nav__link">
+      <a href="../commands/PSRule/en-US/Assert-PSRule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1853,7 +1952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../commands/PSRule/en-US/Export-PSRuleBaseline/" class="md-nav__link">
+      <a href="../commands/PSRule/en-US/Export-PSRuleBaseline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1874,7 +1973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../commands/PSRule/en-US/Get-PSRule/" class="md-nav__link">
+      <a href="../commands/PSRule/en-US/Get-PSRule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1895,7 +1994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../commands/PSRule/en-US/Get-PSRuleBaseline/" class="md-nav__link">
+      <a href="../commands/PSRule/en-US/Get-PSRuleBaseline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1916,7 +2015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../commands/PSRule/en-US/Get-PSRuleHelp/" class="md-nav__link">
+      <a href="../commands/PSRule/en-US/Get-PSRuleHelp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1937,7 +2036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../commands/PSRule/en-US/Get-PSRuleTarget/" class="md-nav__link">
+      <a href="../commands/PSRule/en-US/Get-PSRuleTarget/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1958,7 +2057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../commands/PSRule/en-US/Invoke-PSRule/" class="md-nav__link">
+      <a href="../commands/PSRule/en-US/Invoke-PSRule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1979,7 +2078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../commands/PSRule/en-US/New-PSRuleOption/" class="md-nav__link">
+      <a href="../commands/PSRule/en-US/New-PSRuleOption/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2000,7 +2099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../commands/PSRule/en-US/Set-PSRuleOption/" class="md-nav__link">
+      <a href="../commands/PSRule/en-US/Set-PSRuleOption/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2021,7 +2120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../commands/PSRule/en-US/Test-PSRuleTarget/" class="md-nav__link">
+      <a href="../commands/PSRule/en-US/Test-PSRuleTarget/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2072,12 +2171,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../concepts/cli/" class="md-nav__link ">
+            <a href="../concepts/cli/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2088,14 +2187,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             CLI commands
           </label>
@@ -2110,7 +2209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/cli/run/" class="md-nav__link">
+      <a href="../concepts/cli/run/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2131,7 +2230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/cli/module/" class="md-nav__link">
+      <a href="../concepts/cli/module/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2152,7 +2251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/cli/restore/" class="md-nav__link">
+      <a href="../concepts/cli/restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2181,7 +2280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/PSRule/en-US/about_PSRule_Assert/" class="md-nav__link">
+      <a href="../concepts/PSRule/en-US/about_PSRule_Assert/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2202,7 +2301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/PSRule/en-US/about_PSRule_Baseline/" class="md-nav__link">
+      <a href="../concepts/PSRule/en-US/about_PSRule_Baseline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2223,7 +2322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/PSRule/en-US/about_PSRule_Badges/" class="md-nav__link">
+      <a href="../concepts/PSRule/en-US/about_PSRule_Badges/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2244,7 +2343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/PSRule/en-US/about_PSRule_Conventions/" class="md-nav__link">
+      <a href="../concepts/PSRule/en-US/about_PSRule_Conventions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2265,7 +2364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/PSRule/en-US/about_PSRule_Docs/" class="md-nav__link">
+      <a href="../concepts/PSRule/en-US/about_PSRule_Docs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2286,7 +2385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/PSRule/en-US/about_PSRule_Expressions/" class="md-nav__link">
+      <a href="../concepts/PSRule/en-US/about_PSRule_Expressions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2307,7 +2406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../keywords/PSRule/en-US/about_PSRule_Keywords/" class="md-nav__link">
+      <a href="../keywords/PSRule/en-US/about_PSRule_Keywords/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2328,7 +2427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/PSRule/en-US/about_PSRule_Options/" class="md-nav__link">
+      <a href="../concepts/PSRule/en-US/about_PSRule_Options/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2349,7 +2448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/PSRule/en-US/about_PSRule_Rules/" class="md-nav__link">
+      <a href="../concepts/PSRule/en-US/about_PSRule_Rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2370,7 +2469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/security/" class="md-nav__link">
+      <a href="../concepts/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2391,7 +2490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/PSRule/en-US/about_PSRule_Selectors/" class="md-nav__link">
+      <a href="../concepts/PSRule/en-US/about_PSRule_Selectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2412,7 +2511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/PSRule/en-US/about_PSRule_SuppressionGroups/" class="md-nav__link">
+      <a href="../concepts/PSRule/en-US/about_PSRule_SuppressionGroups/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2433,7 +2532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/PSRule/en-US/about_PSRule_Variables/" class="md-nav__link">
+      <a href="../concepts/PSRule/en-US/about_PSRule_Variables/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2460,6 +2559,26 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
       
@@ -2475,10 +2594,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2489,8 +2608,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Addons
           </label>
@@ -2503,7 +2622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../addon-modules/" class="md-nav__link">
+      <a href="../addon-modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2551,18 +2670,126 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#logging" class="md-nav__link">
+  <a href="#with-github-actions" class="md-nav__link">
     <span class="md-ellipsis">
-      Logging
+      With GitHub Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="With GitHub Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#working-with-dependabot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with Dependabot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#with-azure-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      With Azure Pipelines
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dependency-injection" class="md-nav__link">
+  <a href="#with-cli" class="md-nav__link">
     <span class="md-ellipsis">
-      Dependency injection
+      With CLI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#with-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      With PowerShell
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="With PowerShell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing PowerShell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-the-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting the modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-release-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-release versions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-from-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building from source
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building from source">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development dependencies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limited-access-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limited access networks
     </span>
   </a>
   
@@ -2584,7 +2811,7 @@
                   
 
   
-    <a href="https://github.com/microsoft/PSRule/blob/main/docs/specs/emitter-spec.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/microsoft/PSRule/blob/main/docs/setup/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2593,47 +2820,252 @@
     
       
     
-    <a href="https://github.com/microsoft/PSRule/raw/main/docs/specs/emitter-spec.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/microsoft/PSRule/raw/main/docs/setup/index.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="emitter-specification">Emitter specification<a class="headerlink" href="#emitter-specification" title="Permanent link">#</a></h1>
-<p>A key component of PSRule design is the ability to read objects from file or PowerShell pipeline.
-PSRule provided built-in support for a limited number of file formats and object types.
-Conventions could be used to provide support for additional file formats and object types.</p>
-<p>Current challenges:</p>
+<h1 id="setting-up-psrule">Setting up PSRule<a class="headerlink" href="#setting-up-psrule" title="Permanent link">#</a></h1>
+<p>PSRule supports running within continuous integration (<abbr title="continuous integration">CI</abbr>) systems or locally.
+It is shipped as a PowerShell module which makes it easy to install and distribute updates.</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Run tests within <abbr title="continuous integration">CI</abbr> pipelines</td>
+<td>With <a href="#with-github-actions">GitHub Actions</a> <em>or</em> <a href="#with-azure-pipelines">Azure Pipelines</a> <em>or</em> <a href="#with-cli">CLI</a> <em>or</em> <a href="#with-powershell">PowerShell</a></td>
+</tr>
+<tr>
+<td>Run tests locally during development</td>
+<td>With <a href="vscode/">Visual Studio Code</a> <em>and</em> <a href="#with-cli">CLI</a> / <a href="#with-powershell">PowerShell</a></td>
+</tr>
+<tr>
+<td>Create custom tests for your organization</td>
+<td>With <a href="vscode/">Visual Studio Code</a> <em>and</em> <a href="#with-cli">CLI</a> / <a href="#with-powershell">PowerShell</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>PSRule provides native integration to popular <abbr title="continuous integration">CI</abbr> systems such as GitHub Actions and Azure Pipelines.
+If you are using a different <abbr title="continuous integration">CI</abbr> system you can use the local install to run on MacOS,
+Linux, and Windows worker nodes.</p>
+</div>
+<h2 id="with-github-actions">With GitHub Actions<a class="headerlink" href="#with-github-actions" title="Permanent link">#</a></h2>
+<p><a href="https://github.com/marketplace/actions/psrule"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1 3a2 2 0 0 1 2-2h6.5a2 2 0 0 1 2 2v6.5a2 2 0 0 1-2 2H7v4.063C7 16.355 7.644 17 8.438 17H12.5v-2.5a2 2 0 0 1 2-2H21a2 2 0 0 1 2 2V21a2 2 0 0 1-2 2h-6.5a2 2 0 0 1-2-2v-2.5H8.437A2.94 2.94 0 0 1 5.5 15.562V11.5H3a2 2 0 0 1-2-2Zm2-.5a.5.5 0 0 0-.5.5v6.5a.5.5 0 0 0 .5.5h6.5a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5ZM14.5 14a.5.5 0 0 0-.5.5V21a.5.5 0 0 0 .5.5H21a.5.5 0 0 0 .5-.5v-6.5a.5.5 0 0 0-.5-.5Z"/></svg></span> GitHub Action</a></p>
+<p>Install and use PSRule with GitHub Actions by referencing the <code>microsoft/ps-rule</code> action.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Specific version</label><label for="__tabbed_1_2">Latest stable v2</label><label for="__tabbed_1_3">Latest stable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">GitHub Actions</span><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze with PSRule</span>
+<span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">microsoft/ps-rule@v2.9.0</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">GitHub Actions</span><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze with PSRule</span>
+<span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">microsoft/ps-rule@v2</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">GitHub Actions</span><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze with PSRule</span>
+<span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">microsoft/ps-rule@latest</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>This will automatically install compatible versions of all dependencies.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The recommended approach is to pin to the latest specific version.
+Pinning to a specific version reduces the risk of new versions breaking your pipeline.
+You can easily update to the latest version by changing the version number.
+At such time, you can test the new version in a feature branch before merging to main.</p>
+</div>
+<h3 id="working-with-dependabot">Working with Dependabot<a class="headerlink" href="#working-with-dependabot" title="Permanent link">#</a></h3>
+<p>You can use <a href="https://docs.github.com/code-security/dependabot/working-with-dependabot">Dependabot</a> to automatically upgrade your PSRule action if you use a specific version.
+When new versions a released Dependabot will automatically add a pull request (PR) for you to review and merge.</p>
+<div class="highlight"><span class="filename">.github/dependabot.yaml</span><pre><span></span><code><span class="c1">#</span>
+<span class="c1"># Dependabot configuration</span>
+<span class="c1">#</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="nt">updates</span><span class="p">:</span>
+
+<span class="w">  </span><span class="c1"># Maintain GitHub Actions</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">package-ecosystem</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github-actions</span>
+<span class="w">    </span><span class="nt">directory</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/&#39;</span>
+<span class="w">    </span><span class="nt">schedule</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">daily</span>
+</code></pre></div>
+<h2 id="with-azure-pipelines">With Azure Pipelines<a class="headerlink" href="#with-azure-pipelines" title="Permanent link">#</a></h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=bewhite.ps-rule"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1 3a2 2 0 0 1 2-2h6.5a2 2 0 0 1 2 2v6.5a2 2 0 0 1-2 2H7v4.063C7 16.355 7.644 17 8.438 17H12.5v-2.5a2 2 0 0 1 2-2H21a2 2 0 0 1 2 2V21a2 2 0 0 1-2 2h-6.5a2 2 0 0 1-2-2v-2.5H8.437A2.94 2.94 0 0 1 5.5 15.562V11.5H3a2 2 0 0 1-2-2Zm2-.5a.5.5 0 0 0-.5.5v6.5a.5.5 0 0 0 .5.5h6.5a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5ZM14.5 14a.5.5 0 0 0-.5.5V21a.5.5 0 0 0 .5.5H21a.5.5 0 0 0 .5-.5v-6.5a.5.5 0 0 0-.5-.5Z"/></svg></span> Extension</a></p>
+<p>Install and use PSRule with Azure Pipeline by using extension tasks.
+Install the extension from the marketplace, then use the <code>ps-rule-assert</code> task in pipeline steps.</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ps-rule-assert@2</span>
+<span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze Azure template files</span>
+<span class="w">  </span><span class="nt">inputs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">inputType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repository</span>
+</code></pre></div>
+<p>This will automatically install compatible versions of all dependencies.</p>
+<h2 id="with-cli">With CLI<a class="headerlink" href="#with-cli" title="Permanent link">#</a></h2>
+<p>PSRule can be installed from NuGet.org using the .NET CLI where the .NET 8.0 SDK is available.
+You can use this option to install on <abbr title="continuous integration">CI</abbr> workers that are not natively supported.</p>
+<p>To install PSRule as a global tool use the following command line:</p>
+<div class="highlight"><pre><span></span><code>dotnet<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>Microsoft.PSRule.Tool
+</code></pre></div>
+<p>To install a specific version use the following command line:</p>
+<div class="highlight"><pre><span></span><code>dotnet<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>Microsoft.PSRule.Tool<span class="w"> </span>--version<span class="w"> </span><span class="m">3</span>.0.0-B0203
+</code></pre></div>
+<p>For a list of commands supported by the CLI, see <a href="concepts/cli/index.md">PSRule CLI</a>.</p>
+<h2 id="with-powershell">With PowerShell<a class="headerlink" href="#with-powershell" title="Permanent link">#</a></h2>
+<p>PSRule can be installed locally from the PowerShell Gallery using PowerShell.
+You can use this option to install on <abbr title="continuous integration">CI</abbr> workers that are not natively supported.</p>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Operating System</th>
+<th>Tool</th>
+<th>Installation Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td>Windows PowerShell 5.1 with .NET Framework 4.7.2 or greater.</td>
+<td><a href="https://dotnet.microsoft.com/download/dotnet-framework/net48">link</a></td>
+</tr>
+<tr>
+<td>Windows, MacOS, Linux</td>
+<td>PowerShell version 7.4.x or greater.</td>
+<td><a href="https://github.com/PowerShell/PowerShell#get-powershell">link</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using Windows PowerShell you may need to bootstrap NuGet before you can install modules.
+The NuGet package provider is not installed in Windows PowerShell be default.
+For instructions see <a href="https://learn.microsoft.com/powershell/scripting/gallery/how-to/getting-support/bootstrapping-nuget">Bootstrapping NuGet</a>.</p>
+</div>
+<h3 id="installing-powershell">Installing PowerShell<a class="headerlink" href="#installing-powershell" title="Permanent link">#</a></h3>
+<p>PowerShell 7.x can be installed on MacOS, Linux, and Windows but is not installed by default.
+For a list of platforms that PowerShell 7.4 is supported on and install instructions see <a href="https://github.com/PowerShell/PowerShell#get-powershell">Get PowerShell</a>.</p>
+<h3 id="getting-the-modules">Getting the modules<a class="headerlink" href="#getting-the-modules" title="Permanent link">#</a></h3>
+<p><a href="https://www.powershellgallery.com/packages/PSRule"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.75 17.25a.75.75 0 0 1 .75.75v2.25c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V18a.75.75 0 0 1 1.5 0v2.25A1.75 1.75 0 0 1 18.25 22H5.75A1.75 1.75 0 0 1 4 20.25V18a.75.75 0 0 1 .75-.75"/><path d="M5.22 9.97a.75.75 0 0 1 1.06 0l4.97 4.969V2.75a.75.75 0 0 1 1.5 0v12.189l4.97-4.969a.749.749 0 1 1 1.06 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0l-6.25-6.25a.75.75 0 0 1 0-1.06"/></svg></span> Module</a></p>
+<p>PSRule can be installed or updated from the PowerShell Gallery.
+Use the following command line examples from a PowerShell terminal to install or update PSRule.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">For the current user</label><label for="__tabbed_2_2">For all users</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>To install PSRule for the current user use:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PSRule&#39;</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</code></pre></div>
+<p>To update PSRule for the current user use:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Update-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PSRule&#39;</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Open PowerShell with <em>Run as administrator</em> on Windows or <code>sudo pwsh</code> on Linux.</p>
+<p>To install PSRule for all users (requires admin/ root permissions) use:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PSRule&#39;</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Scope</span> <span class="n">AllUsers</span>
+</code></pre></div>
+<p>To update PSRule for all users (requires admin/ root permissions) use:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Update-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PSRule&#39;</span> <span class="n">-Scope</span> <span class="n">AllUsers</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="pre-release-versions">Pre-release versions<a class="headerlink" href="#pre-release-versions" title="Permanent link">#</a></h3>
+<p>To use a pre-release version of PSRule add the <code>-AllowPrerelease</code> switch when calling <code>Install-Module</code>,
+<code>Update-Module</code>, or <code>Save-Module</code> cmdlets.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To install pre-release module versions, the latest version of <em>PowerShellGet</em> may be required.</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Install the latest PowerShellGet version</span>
+<span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PowerShellGet</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span>
+</code></pre></div>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">For the current user</label><label for="__tabbed_3_2">For all users</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>To install PSRule for the current user use:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PowerShellGet</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span>
+<span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PSRule&#39;</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-AllowPrerelease</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Open PowerShell with <em>Run as administrator</em> on Windows or <code>sudo pwsh</code> on Linux.</p>
+<p>To install PSRule for all users (requires admin/ root permissions) use:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PowerShellGet</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span>
+<span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PSRule&#39;</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Scope</span> <span class="n">AllUsers</span> <span class="n">-AllowPrerelease</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="building-from-source">Building from source<a class="headerlink" href="#building-from-source" title="Permanent link">#</a></h2>
+<p><a href="https://github.com/microsoft/PSRule.git"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H4.75a.75.75 0 0 1 0-1.5H19a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4H5a.5.5 0 0 0-.5.5v6.25a.75.75 0 0 1-1.5 0Zm12-.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5"/><path d="M4.53 12.24a.75.75 0 0 1-.039 1.06l-2.639 2.45 2.64 2.45a.75.75 0 1 1-1.022 1.1l-3.23-3a.75.75 0 0 1 0-1.1l3.23-3a.75.75 0 0 1 1.06.04m3.979 1.06a.75.75 0 1 1 1.02-1.1l3.231 3a.75.75 0 0 1 0 1.1l-3.23 3a.75.75 0 1 1-1.021-1.1l2.639-2.45-2.64-2.45Z"/></svg></span> Source</a></p>
+<p>PSRule is provided as open source on GitHub.
+To build PSRule from source code:</p>
+<ol>
+<li>Clone the GitHub <a href="https://github.com/microsoft/PSRule.git">repository</a>.</li>
+<li>Run <code>./build.ps1</code> from a PowerShell terminal in the cloned path.</li>
+</ol>
+<p>This build script will compile the module and documentation then output the result into <code>out/modules/PSRule</code>.</p>
+<h3 id="development-dependencies">Development dependencies<a class="headerlink" href="#development-dependencies" title="Permanent link">#</a></h3>
+<p>The following PowerShell modules will be automatically install if the required versions are not present:</p>
 <ul>
-<li><strong>Performance</strong>: When processing a high volume of objects, reading objects from disk across multiple times can be slow.
-  Many repositories have a large number of files that need to be read and processed.
-  CI workflows often executed in container environments where disk access is slow or limited resources are available.</li>
-<li><strong>Confusing output</strong>: Files processed as objects often end up reporting as unprocessed, generating a default warning.
-  This is because they are processed by each available rule, but no rules are defined to process them.</li>
-<li><strong>Expansion</strong>: Handover of objects to conventions can be complex and does not expose strongly typed objects.
-  Expansion is a pattern used by PSRule for Azure to expand a file into multiple objects.
-  This is helpful when PSRule does not support a file format or object type natively.</li>
+<li>PlatyPS</li>
+<li>Pester</li>
+<li>PSScriptAnalyzer</li>
+<li>PowerShellGet</li>
+<li>PackageManagement</li>
+<li>InvokeBuild</li>
 </ul>
-<p>Goals with emitters:</p>
-<ul>
-<li><strong>Single touch</strong>: If a file needs to be read from disk, it should be read once to reduce IO.</li>
-<li><strong>Extensible</strong>: A interface should be provided to allow for custom emitters that can be used to read objects from any source.</li>
-<li><strong>Multi-threaded</strong>: Emitters should be thread safe and support parallel processing.</li>
-<li><strong>Carried as needed</strong>: Emitter should be only emit objects to be processed by rules.
-  File objects are not processed by default.</li>
-</ul>
-<p>The goal of emitters is to provide a high performance and extensible way to emit custom objects to the input stream.</p>
-<p>Emitters define an <code>IEmitter</code> interface for emitting objects to the input stream.
-The implementation of an emitter must be thread safe, as emitters can be run in parallel.</p>
-<h2 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">#</a></h2>
-<p>An emitter may expose diagnostic logs by using the <code>PSRule.Runtime.ILogger&lt;T&gt;</code> interface.</p>
-<h2 id="dependency-injection">Dependency injection<a class="headerlink" href="#dependency-injection" title="Permanent link">#</a></h2>
-<p>PSRule uses dependency injection to create each emitter instance.
-The following interfaces can optionally be specified in a emitter constructor to have references injected to the instance.</p>
-<ul>
-<li><code>PSRule.Runtime.ILogger&lt;T&gt;</code></li>
-</ul>
+<p>These additional modules are only required for building PSRule.</p>
+<p>Additionally .NET SDK v8 is required.
+.NET will not be automatically downloaded and installed.
+To download and install the latest SDK see <a href="https://dotnet.microsoft.com/download/dotnet/8.0">Download .NET 8.0</a>.</p>
+<h2 id="limited-access-networks">Limited access networks<a class="headerlink" href="#limited-access-networks" title="Permanent link">#</a></h2>
+<p>If you are on a network that does not permit Internet access to the PowerShell Gallery,
+download the required PowerShell modules on an alternative device that has access.
+PowerShell provides the <code>Save-Module</code> cmdlet that can be run from a PowerShell terminal to do this.</p>
+<p>The following command lines can be used to download the required modules using a PowerShell terminal.
+After downloading the modules, copy the module directories to devices with restricted Internet access.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Runtime modules</label><label for="__tabbed_4_2">Development modules</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>To save PSRule for offline use:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Save-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PSRule&#39;</span> <span class="n">-Path</span> <span class="s1">&#39;.\modules&#39;</span>
+</code></pre></div>
+<p>This will save PSRule into the <code>modules</code> sub-directory.</p>
+</div>
+<div class="tabbed-block">
+<p>To save PSRule development module dependencies for offline use:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$modules</span> <span class="p">=</span> <span class="p">@(</span><span class="s1">&#39;PlatyPS&#39;</span><span class="p">,</span> <span class="s1">&#39;Pester&#39;</span><span class="p">,</span> <span class="s1">&#39;PSScriptAnalyzer&#39;</span><span class="p">,</span> <span class="s1">&#39;PowerShellGet&#39;</span><span class="p">,</span>
+<span class="s1">&#39;PackageManagement&#39;</span><span class="p">,</span> <span class="s1">&#39;InvokeBuild&#39;</span><span class="p">)</span>
+<span class="nb">Save-Module</span> <span class="n">-Name</span> <span class="nv">$modules</span> <span class="n">-Repository</span> <span class="n">PSGallery</span> <span class="n">-Path</span> <span class="s1">&#39;.\modules&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>This will save required developments dependencies into the <code>modules</code> sub-directory.</p>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you use additional rules modules such as PSRule for Azure you should also save these for offline use.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using Windows PowerShell you may need to bootstrap NuGet before you can install modules.
+The NuGet package provider is not installed in Windows PowerShell be default.
+For instructions see <a href="https://learn.microsoft.com/powershell/scripting/gallery/how-to/getting-support/bootstrapping-nuget">Bootstrapping NuGet</a>.</p>
+</div>
 
 
 
@@ -2656,7 +3088,7 @@ The following interfaces can optionally be specified in a emitter constructor to
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 25, 2024</span>
   </span>
 
     
@@ -2666,7 +3098,7 @@ The following interfaces can optionally be specified in a emitter constructor to
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 24, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2018</span>
   </span>
 
     
@@ -2751,6 +3183,44 @@ The following interfaces can optionally be specified in a emitter constructor to
         <footer class="md-footer">
   
     
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../features/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Features">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Features
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="vscode/" class="md-footer__link md-footer__link--next" aria-label="Next: Visual Studio Code">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Visual Studio Code
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2789,10 +3259,10 @@ The following interfaces can optionally be specified in a emitter constructor to
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "navigation.footer", "content.code.annotate", "content.tabs.link", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "navigation.footer", "content.code.annotate", "content.tabs.link", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
