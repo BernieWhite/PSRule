@@ -2655,6 +2655,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#official-cli-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Official CLI support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-lock-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module lock file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#visual-studio-code" class="md-nav__link">
     <span class="md-ellipsis">
       Visual Studio Code
@@ -2729,7 +2747,23 @@
 
 
 <h1 id="nnn-nnn-v30">nnn nnn (v3.0)<a class="headerlink" href="#nnn-nnn-v30" title="Permanent link">#</a></h1>
-<p>For a detailed change log see <a href="../../CHANGELOG-v3/">v3</a>.</p>
+<p>Welcome to the nnn nnn release of PSRule.
+There are many updates in this version that we hope you'll like, some of the key highlights include:</p>
+<ul>
+<li><a href="#official-cli-support">Official CLI support</a> &mdash; A new CLI experience for PSRule.</li>
+<li><a href="#module-lock-file">Module lock file</a> &mdash; Manage the versions of modules used by PSRule.</li>
+<li><a href="#runtime-integration">Runtime integration</a> &mdash; More seamless integration with Visual Studio Code.</li>
+</ul>
+<p>See the detailed change log <a href="../../CHANGELOG-v3/">here</a>.</p>
+<h2 id="official-cli-support">Official CLI support<a class="headerlink" href="#official-cli-support" title="Permanent link">#</a></h2>
+<p>While many of you have been using PSRule through PowerShell for some time,
+we've been working on a new experience for those who prefer a CLI.</p>
+<p>Additionally we wanted to improve the bootstrapping experience for PSRule in CI/CD pipelines.</p>
+<p>The new CLI runs on Windows, macOS, and Linux and is available as a standalone executable or can be installed as a .NET tool.</p>
+<h2 id="module-lock-file">Module lock file<a class="headerlink" href="#module-lock-file" title="Permanent link">#</a></h2>
+<p>We've introduced a new feature to help you manage the versions of modules used by PSRule.
+The module lock file is a JSON-based file named <code>ps-rule.lock.json</code> that lists the modules and versions used by PSRule.</p>
+<p>This makes it easier to share and reproduce the versions of modules used during development and CI/CD pipelines.</p>
 <h2 id="visual-studio-code">Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permanent link">#</a></h2>
 <h3 id="new-home-and-identity">New home and identity<a class="headerlink" href="#new-home-and-identity" title="Permanent link">#</a></h3>
 <p>The Visual Studio Code (VSCode) extension for PSRule now lives side-by-side with core components of <a href="https://github.com/microsoft/PSRule">PSRule on GitHub</a>.</p>
@@ -2741,6 +2775,12 @@ but also streamline how we deliver updates in the future.</p>
 <p>Previously to use PSRule within VSCode,
 a prerequisite step was to install PowerShell on non-Windows OSs and then install PSRule through PowerShell.</p>
 <p>We've done away with this approach entirely for the authoring experience in VSCode by providing native support in the extension.</p>
+<p>This means you can now use PSRule in VSCode without needing to install PowerShell or PSRule on your machine.
+We've improved the experience by adding the ability to:</p>
+<ul>
+<li>Restore modules from the VSCode command palette.</li>
+<li>Asking to automatically restore required modules when you open a workspace that contains a PSRule lock file.</li>
+</ul>
 <h3 id="other-minor-features-and-improvements">Other minor features and improvements<a class="headerlink" href="#other-minor-features-and-improvements" title="Permanent link">#</a></h3>
 <ul>
 <li>You can now override the options file that VSCode uses when running PSRule.<ul>
@@ -2770,7 +2810,7 @@ a prerequisite step was to install PowerShell on non-Windows OSs and then instal
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 28, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 6, 2024</span>
   </span>
 
     
