@@ -22,7 +22,7 @@
     
     
       
-        <title>nnn nnn (v3.0) - PSRule</title>
+        <title>January 2025 (v3.0) - PSRule</title>
       
     
     
@@ -74,7 +74,7 @@
   <!-- Open graph meta tags -->
   <meta property="og:site_name" content="PSRule" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="PSRule - nnn nnn (v3.0)" />
+  <meta property="og:title" content="PSRule - January 2025 (v3.0)" />
   <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta property="og:url" content="https://microsoft.github.io/PSRule/v3/updates/v3.0/" />
   <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
@@ -86,7 +86,7 @@
   <!-- Twitter meta tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@github" />
-  <meta name="twitter:title" content="PSRule - nnn nnn (v3.0)" />
+  <meta name="twitter:title" content="PSRule - January 2025 (v3.0)" />
   <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
   <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
@@ -108,7 +108,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nnn-nnn-v30" class="md-skip">
+        <a href="#january-2025-v30" class="md-skip">
           Skip to content
         </a>
       
@@ -158,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              nnn nnn (v3.0)
+              January 2025 (v3.0)
             
           </span>
         </div>
@@ -2746,8 +2746,8 @@
   
 
 
-<h1 id="nnn-nnn-v30">nnn nnn (v3.0)<a class="headerlink" href="#nnn-nnn-v30" title="Permanent link">#</a></h1>
-<p>Welcome to the nnn nnn release of PSRule.
+<h1 id="january-2025-v30">January 2025 (v3.0)<a class="headerlink" href="#january-2025-v30" title="Permanent link">#</a></h1>
+<p>Welcome to the January 2025 release of PSRule.
 There are many updates in this version that we hope you'll like, some of the key highlights include:</p>
 <ul>
 <li><a href="#official-cli-support">Official CLI support</a> &mdash; A new CLI experience for PSRule.</li>
@@ -2758,25 +2758,38 @@ There are many updates in this version that we hope you'll like, some of the key
 <h2 id="official-cli-support">Official CLI support<a class="headerlink" href="#official-cli-support" title="Permanent link">#</a></h2>
 <p>While many of you have been using PSRule through PowerShell for some time,
 we've been working on a new experience for those who prefer a CLI.</p>
-<p>Additionally we wanted to improve the bootstrapping experience for PSRule in CI/CD pipelines.</p>
+<p>Additionally, we wanted to improve the bootstrapping experience for PSRule in during development and CI/CD pipelines.</p>
 <p>The new CLI runs on Windows, macOS, and Linux and is available as a standalone executable or can be installed as a .NET tool.</p>
 <h2 id="module-lock-file">Module lock file<a class="headerlink" href="#module-lock-file" title="Permanent link">#</a></h2>
 <p>We've introduced a new feature to help you manage the versions of modules used by PSRule.
-The module lock file is a JSON-based file named <code>ps-rule.lock.json</code> that lists the modules and versions used by PSRule.</p>
+The module lock file is a JSON-based file named <code>ps-rule.lock.json</code> that lists the modules and versions used by PSRule.
+Initialize and commit the lock file to your repository to pin each module to a specific version.</p>
+<p>If the lock file is present, PSRule will use the versions listed in the lock file instead of the latest available version.
+When no lock file is present, PSRule will use the latest version of each module that meets any configured constraints.</p>
 <p>This makes it easier to share and reproduce the versions of modules used during development and CI/CD pipelines.</p>
+<p>This is a change to the previous behavior in CI/CD pipelines where PSRule:</p>
+<ul>
+<li>Would install the latest version of each module but only if no version was not already installed.</li>
+<li>Would not check if the installed version met constraints defined in the options file.</li>
+</ul>
+<p>The lock file is supported by the CLI, GitHub Actions, Azure Pipelines, and Visual Studio Code extension.
+When using PSRule from PowerShell, the lock file is ignored to prevent conflicts with PowerShell's built-in update mechanism.</p>
 <h2 id="visual-studio-code">Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permanent link">#</a></h2>
 <h3 id="new-home-and-identity">New home and identity<a class="headerlink" href="#new-home-and-identity" title="Permanent link">#</a></h3>
 <p>The Visual Studio Code (VSCode) extension for PSRule now lives side-by-side with core components of <a href="https://github.com/microsoft/PSRule">PSRule on GitHub</a>.</p>
 <p>As part of this change we are now publishing the extension as a <strong>verified</strong> Microsoft extension with the ID <code>ps-rule.vscode-ps-rule</code>.</p>
+<p>The new extension supports pre-release and stable releases managed through Visual Studio Code's extension marketplace.</p>
 <p>We hope this will not only help the community to log issues and get help on the correct repository,
 but also streamline how we deliver updates in the future.</p>
 <p>Bringing together the code base is the first step in building an all improved rich experience in VSCode for PSRule.</p>
 <h3 id="runtime-integration">Runtime integration<a class="headerlink" href="#runtime-integration" title="Permanent link">#</a></h3>
 <p>Previously to use PSRule within VSCode,
-a prerequisite step was to install PowerShell on non-Windows OSs and then install PSRule through PowerShell.</p>
+a prerequisite step was to install PowerShell on non-Windows OSs and then install PSRule through PowerShell.
+Additionally, any required rules modules would also need to be installed through PowerShell.</p>
 <p>We've done away with this approach entirely for the authoring experience in VSCode by providing native support in the extension.</p>
-<p>This means you can now use PSRule in VSCode without needing to install PowerShell or PSRule on your machine.
-We've improved the experience by adding the ability to:</p>
+<p>This means you can now use PSRule in VSCode without needing to separately install PowerShell or PSRule on your machine.
+The extension includes the necessary components to run PSRule and will install and cache required rule modules.</p>
+<p>We've improved the experience by adding the ability to:</p>
 <ul>
 <li>Restore modules from the VSCode command palette.</li>
 <li>Asking to automatically restore required modules when you open a workspace that contains a PSRule lock file.</li>
@@ -2810,7 +2823,7 @@ We've improved the experience by adding the ability to:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 6, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2024</span>
   </span>
 
     
