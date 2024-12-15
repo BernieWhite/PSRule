@@ -2,7 +2,6 @@
 # Licensed under the MIT License.
 
 import re
-import shutil
 import logging
 import mkdocs.config
 import mkdocs.config.config_options
@@ -15,7 +14,7 @@ log = logging.getLogger(f"mkdocs.plugins.{__name__}")
 rulesItem: mkdocs.structure.nav.Section = mkdocs.structure.nav.Section("Rules", [])
 
 # Replace MAML headers
-def replace_maml(markdown: str, page: mkdocs.structure.nav.Page, config: mkdocs.config.Config, files: mkdocs.structure.files.Files, **kwargs) -> str:
+def on_page_markdown(markdown: str, page: mkdocs.structure.nav.Page, config: mkdocs.config.Config, files: mkdocs.structure.files.Files) -> str:
     markdown = markdown.replace("## about_PSRule_Assert", "")
     markdown = markdown.replace("## about_PSRule_Baseline", "")
     markdown = markdown.replace("## about_PSRule_Badges", "")
