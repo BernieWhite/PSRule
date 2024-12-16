@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
@@ -1523,6 +1523,16 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#engine-error-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Engine error messages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engine error messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#psr0001-unable-to-read-options-file" class="md-nav__link">
     <span class="md-ellipsis">
       PSR0001 - Unable to read options file
@@ -1530,8 +1540,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#psr0002-summary-results-are-not-supported-with-job-summaries" class="md-nav__link">
     <span class="md-ellipsis">
       PSR0002 - Summary results are not supported with Job Summaries
@@ -1539,8 +1549,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#psr0003-the-specified-baseline-group-is-not-known" class="md-nav__link">
     <span class="md-ellipsis">
       PSR0003 - The specified baseline group is not known
@@ -1548,11 +1558,34 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#psr0004-the-specified-resource-is-not-known" class="md-nav__link">
     <span class="md-ellipsis">
       PSR0004 - The specified resource is not known
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-exit-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI exit codes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-server-exit-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Language server exit codes
     </span>
   </a>
   
@@ -2798,6 +2831,16 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#engine-error-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Engine error messages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engine error messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#psr0001-unable-to-read-options-file" class="md-nav__link">
     <span class="md-ellipsis">
       PSR0001 - Unable to read options file
@@ -2805,8 +2848,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#psr0002-summary-results-are-not-supported-with-job-summaries" class="md-nav__link">
     <span class="md-ellipsis">
       PSR0002 - Summary results are not supported with Job Summaries
@@ -2814,8 +2857,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#psr0003-the-specified-baseline-group-is-not-known" class="md-nav__link">
     <span class="md-ellipsis">
       PSR0003 - The specified baseline group is not known
@@ -2823,11 +2866,34 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#psr0004-the-specified-resource-is-not-known" class="md-nav__link">
     <span class="md-ellipsis">
       PSR0004 - The specified resource is not known
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-exit-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI exit codes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-server-exit-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Language server exit codes
     </span>
   </a>
   
@@ -2922,7 +2988,8 @@ These components are required for installing and checking versions of PSRule mod
 <p>This error is caused by a known issue in PowerShell 7.4.0 and 7.4.1.
 To resolve this issue, upgrade to PowerShell 7.4.2 or later.</p>
 <p>For more details see <a href="https://github.com/microsoft/PSRule/issues/1723">#1723</a>.</p>
-<h2 id="psr0001-unable-to-read-options-file">PSR0001 - Unable to read options file<a class="headerlink" href="#psr0001-unable-to-read-options-file" title="Permanent link">#</a></h2>
+<h2 id="engine-error-messages">Engine error messages<a class="headerlink" href="#engine-error-messages" title="Permanent link">#</a></h2>
+<h3 id="psr0001-unable-to-read-options-file">PSR0001 - Unable to read options file<a class="headerlink" href="#psr0001-unable-to-read-options-file" title="Permanent link">#</a></h3>
 <p>When running PSRule you may encounter an error similar to the following:</p>
 <div class="admonition error">
 <p class="admonition-title">Error</p>
@@ -2931,7 +2998,7 @@ To resolve this issue, upgrade to PowerShell 7.4.2 or later.</p>
 <p>This error typically indicates a problem with the YAML syntax in the <code>ps-rule.yaml</code> file.
 Double check the file for incorrect indentation or missing punctuation such as <code>-</code> and <code>:</code> characters.</p>
 <p>If you still have an issue, try re-saving the file as UTF-8 in an editor such as Visual Studio Code.</p>
-<h2 id="psr0002-summary-results-are-not-supported-with-job-summaries">PSR0002 - Summary results are not supported with Job Summaries<a class="headerlink" href="#psr0002-summary-results-are-not-supported-with-job-summaries" title="Permanent link">#</a></h2>
+<h3 id="psr0002-summary-results-are-not-supported-with-job-summaries">PSR0002 - Summary results are not supported with Job Summaries<a class="headerlink" href="#psr0002-summary-results-are-not-supported-with-job-summaries" title="Permanent link">#</a></h3>
 <div class="admonition error">
 <p class="admonition-title">Error</p>
 <p>PSR0002: Summary results are not supported with Job Summaries.</p>
@@ -2939,19 +3006,80 @@ Double check the file for incorrect indentation or missing punctuation such as <
 <p>Currently using the <code>Output.As</code> with the <code>Summary</code> option is not supported with job summaries.
 Choose to use one or the other.</p>
 <p>If you have a specific use case your would like to enable, please start a <a href="https://github.com/microsoft/PSRule/discussions">discussion</a>.</p>
-<h2 id="psr0003-the-specified-baseline-group-is-not-known">PSR0003 - The specified baseline group is not known<a class="headerlink" href="#psr0003-the-specified-baseline-group-is-not-known" title="Permanent link">#</a></h2>
+<h3 id="psr0003-the-specified-baseline-group-is-not-known">PSR0003 - The specified baseline group is not known<a class="headerlink" href="#psr0003-the-specified-baseline-group-is-not-known" title="Permanent link">#</a></h3>
 <div class="admonition error">
 <p class="admonition-title">Error</p>
 <p>PSR0003: The specified baseline group 'latest' is not known.</p>
 </div>
 <p>This error is caused by attempting to reference a baseline group which has not been defined.
 To define a baseline group, see <a href="https://aka.ms/ps-rule/options#baselinegroup">Baseline.Group</a> option.</p>
-<h2 id="psr0004-the-specified-resource-is-not-known">PSR0004 - The specified resource is not known<a class="headerlink" href="#psr0004-the-specified-resource-is-not-known" title="Permanent link">#</a></h2>
+<h3 id="psr0004-the-specified-resource-is-not-known">PSR0004 - The specified resource is not known<a class="headerlink" href="#psr0004-the-specified-resource-is-not-known" title="Permanent link">#</a></h3>
 <div class="admonition error">
 <p class="admonition-title">Error</p>
 <p>PSR0004: The specified Baseline resource 'TestModule4\Module4' is not known.</p>
 </div>
 <p>This error is caused when you attempt to reference a resource such as a baseline, rule, or selector which has not been defined.</p>
+<h2 id="cli-exit-codes">CLI exit codes<a class="headerlink" href="#cli-exit-codes" title="Permanent link">#</a></h2>
+<p>The following table lists exit codes that may be returned by the PSRule CLI.</p>
+<table>
+<thead>
+<tr>
+<th>Exit code</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Success</td>
+<td>The CLI completed the operation successfully. This may occur during normal operation.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Generic error.</td>
+<td>An unexpected error occurred. Please report this issue.</td>
+</tr>
+<tr>
+<td>100</td>
+<td>Break because one or more rules failed.</td>
+<td>This may occur during normal operation when one or more rules fail. Use the <code>Execution.Break</code> option to control this behavior.</td>
+</tr>
+<tr>
+<td>501</td>
+<td>Unable to manage or restore a module.</td>
+<td>This may occur when attempting to restoring a module that is not available.</td>
+</tr>
+<tr>
+<td>502</td>
+<td>Failed to find a module.</td>
+<td>A specified module could not be found in PowerShell Gallery.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>The module version does not meet configured version constraint requirements.</td>
+<td>The module version that was specified on the command line does not meet the configured <code>Requires</code> option.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="language-server-exit-codes">Language server exit codes<a class="headerlink" href="#language-server-exit-codes" title="Permanent link">#</a></h2>
+<p>The following table lists exit codes that may be returned by the PSRule language server.</p>
+<table>
+<thead>
+<tr>
+<th>Exit code</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Success</td>
+<td>The language server exited during normal operation.</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -2974,7 +3102,7 @@ To define a baseline group, see <a href="https://aka.ms/ps-rule/options#baseline
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 14, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2024</span>
   </span>
 
     
@@ -3122,7 +3250,7 @@ To define a baseline group, see <a href="https://aka.ms/ps-rule/options#baseline
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "navigation.footer", "content.code.annotate", "content.tabs.link", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>
