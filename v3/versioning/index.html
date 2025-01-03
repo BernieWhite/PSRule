@@ -1687,6 +1687,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#semantic-versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic versioning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stable-releases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stable releases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pre-releases" class="md-nav__link">
     <span class="md-ellipsis">
       Pre-releases
@@ -2605,6 +2623,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#semantic-versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic versioning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stable-releases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stable releases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pre-releases" class="md-nav__link">
     <span class="md-ellipsis">
       Pre-releases
@@ -2664,12 +2700,29 @@
 
 
 <h1 id="changes-and-versioning">Changes and versioning<a class="headerlink" href="#changes-and-versioning" title="Permanent link">#</a></h1>
-<p>PSRule uses <a href="https://semver.org/">semantic versioning</a> to declare breaking changes.
-The latest module version can be installed from the PowerShell Gallery.
-For a list of module changes please see the <a href="https://aka.ms/ps-rule/changelog">change log</a>.</p>
+<p>This article briefly covers the conventions/ terminology used for versioning and describing changes in PSRule.</p>
+<h2 id="semantic-versioning">Semantic versioning<a class="headerlink" href="#semantic-versioning" title="Permanent link">#</a></h2>
+<p>PSRule generally uses <a href="https://semver.org/">semantic versioning</a> for each release <strong>stable</strong> and <strong>pre-release</strong>.
+However not all platforms we publish to support semantic versioning.
+Continue reading to understand how we use semantic versioning in PSRule.</p>
+<p>You can read more about semantic versioning at <a href="https://semver.org/">semver.org</a>.</p>
+<p>For a list of changes please see the <a href="https://aka.ms/ps-rule/changelog">change log</a>.</p>
+<h2 id="stable-releases">Stable releases<a class="headerlink" href="#stable-releases" title="Permanent link">#</a></h2>
+<p>Stable releases are released periodically and are considered production ready.
+These releases are generally feature complete and have been tested by the PSRule team.</p>
+<p>Each stable release uses a version number in the format <code>major.minor.patch</code>.
+For example, <code>3.0.0</code>.</p>
+<p>Generally we aim to fix any issues or bugs in the next stable release, however that is not always possible.
+If you experience an issue with a stable release please let us know by logging an issue as a <a href="https://github.com/microsoft/PSRule/issues">bug</a>.
+Also, consider voting up (👍) an issue that is important to you to help us prioritize work.</p>
+<p>To install a stable release see <a href="setup.md">Setting up PSRule</a>.</p>
 <h2 id="pre-releases">Pre-releases<a class="headerlink" href="#pre-releases" title="Permanent link">#</a></h2>
-<p>Pre-release module versions are created on major commits and can be installed from the PowerShell Gallery.
-Module versions and change log details for pre-releases will be removed as stable releases are made available.</p>
+<p>Pre-release versions are created on major commits leading up to a stable release.</p>
+<p>Each pre-release uses a version number in the format <code>major.minor.patch-prerelease</code>.
+For example, <code>3.0.0-B0100</code>.</p>
+<p>However, Visual Studio Marketplace does not support adding a pre-release identifier <code>-prerelease</code>.
+Instead, a pre-release version is published in the format <code>nnnn.nnnn.nnnn</code> and marked as a pre-release.</p>
+<p>Module versions and change log details for pre-releases will be removed as stable releases are made available.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Pre-release versions should be considered work in progress.
@@ -2713,7 +2766,7 @@ We may introduce breaking changes for experimental features as we work towards a
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 3, 2025</span>
   </span>
 
     
