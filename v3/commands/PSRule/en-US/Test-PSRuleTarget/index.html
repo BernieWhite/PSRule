@@ -1535,8 +1535,6 @@
       
         
       
-        
-      
     
     
       
@@ -1580,27 +1578,6 @@
   
   <span class="md-ellipsis">
     Change log
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../upgrade-notes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Upgrade notes
   </span>
   
 
@@ -2038,15 +2015,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#synopsis" class="md-nav__link">
-    <span class="md-ellipsis">
-      SYNOPSIS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
       SYNTAX
@@ -2082,7 +2050,7 @@
         <li class="md-nav__item">
   <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      DESCRIPTION
+      Description
     </span>
   </a>
   
@@ -2091,11 +2059,11 @@
         <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
-      EXAMPLES
+      Examples
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="EXAMPLES">
+    <nav class="md-nav" aria-label="Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2304,7 +2272,7 @@
         <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      NOTES
+      Notes
     </span>
   </a>
   
@@ -2864,15 +2832,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#synopsis" class="md-nav__link">
-    <span class="md-ellipsis">
-      SYNOPSIS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
       SYNTAX
@@ -2908,7 +2867,7 @@
         <li class="md-nav__item">
   <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      DESCRIPTION
+      Description
     </span>
   </a>
   
@@ -2917,11 +2876,11 @@
         <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
-      EXAMPLES
+      Examples
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="EXAMPLES">
+    <nav class="md-nav" aria-label="Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3130,7 +3089,7 @@
         <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      NOTES
+      Notes
     </span>
   </a>
   
@@ -3178,7 +3137,6 @@
 
 
 <h1 id="test-psruletarget">Test-PSRuleTarget<a class="headerlink" href="#test-psruletarget" title="Permanent link">#</a></h1>
-<h2 id="synopsis">SYNOPSIS<a class="headerlink" href="#synopsis" title="Permanent link">#</a></h2>
 <p>Pass or fail objects against matching rules.</p>
 <h2 id="syntax">SYNTAX<a class="headerlink" href="#syntax" title="Permanent link">#</a></h2>
 <h3 id="input-default">Input (Default)<a class="headerlink" href="#input-default" title="Permanent link">#</a></h3>
@@ -3192,7 +3150,7 @@
  [-Convention &lt;String[]&gt;] [[-Path] &lt;String[]&gt;] [-Name &lt;String[]&gt;] [-Tag &lt;Hashtable&gt;] [-Option &lt;PSRuleOption&gt;]
  [-ObjectPath &lt;String&gt;] [-TargetType &lt;String[]&gt;] [-Culture &lt;String&gt;] [&lt;CommonParameters&gt;]
 </code></pre></div>
-<h2 id="description">DESCRIPTION<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
 <p>Evaluate objects against matching rules and return an overall pass or fail for the object as <code>$True</code> (pass) or <code>$False</code> (fail).</p>
 <p>PSRule uses the following logic to determine overall pass or fail for an object:</p>
 <ul>
@@ -3209,7 +3167,7 @@
 </ul>
 <p>By default, objects that do match any rules are not returned in results.
 To return <code>$True</code> for these objects, use <code>-Outcome All</code>.</p>
-<h2 id="examples">EXAMPLES<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
 <h3 id="example-1">Example 1<a class="headerlink" href="#example-1" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">@{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;Item 1&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Test-PSRuleTarget</span><span class="p">;</span>
 </code></pre></div>
@@ -3415,7 +3373,7 @@ When specified without the <code>-Path</code> parameter, only rule definitions i
 <h2 id="outputs">OUTPUTS<a class="headerlink" href="#outputs" title="Permanent link">#</a></h2>
 <h3 id="systemboolean">System.Boolean<a class="headerlink" href="#systemboolean" title="Permanent link">#</a></h3>
 <p>Returns <code>$True</code> when the object passes and <code>$False</code> when the object fails.</p>
-<h2 id="notes">NOTES<a class="headerlink" href="#notes" title="Permanent link">#</a></h2>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h2>
 <h2 id="related-links">RELATED LINKS<a class="headerlink" href="#related-links" title="Permanent link">#</a></h2>
 <p><a href="../Invoke-PSRule/">Invoke-PSRule</a></p>
 <p><a href="../Assert-PSRule/">Assert-PSRule</a></p>

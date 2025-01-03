@@ -42,7 +42,7 @@ def on_page_markdown(markdown: str, page: mkdocs.structure.nav.Page, config: mkd
     markdown = markdown.replace("# PSRule_Variables", "# Variables")
 
     # Rules
-    if page.canonical_url.__contains__("/concepts/PSRule/") or page.canonical_url.__contains__("/keywords/PSRule/"):
+    if page.canonical_url.__contains__("/concepts/PSRule/") or page.canonical_url.__contains__("/keywords/PSRule/") or page.canonical_url.__contains__("/commands/PSRule/"):
         markdown = markdown.replace("## SYNOPSIS", "")
         markdown = markdown.replace("## DESCRIPTION", "## Description")
         markdown = markdown.replace("## RECOMMENDATION", "## Recommendation")

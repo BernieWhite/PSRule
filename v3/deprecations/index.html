@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules.">
+        <meta name="description" content="This article contains notes on breaking changes in PSRule v3 to help you upgrade from a previous version.">
       
       
         <meta name="author" content="BernieWhite">
@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://microsoft.github.io/PSRule/v3/deprecations/">
       
       
-        <link rel="prev" href="../upgrade-notes/">
+        <link rel="prev" href="../CHANGELOG-v3/">
       
       
         <link rel="next" href="../versioning/">
@@ -71,6 +71,8 @@
   <!-- Determine description -->
   
   
+    
+  
 
   <!-- The image needs to have an absolute URL -->
   
@@ -79,19 +81,19 @@
   <meta property="og:site_name" content="PSRule" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="PSRule - Deprecations" />
-  <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
+  <meta property="og:description" content="This article contains notes on breaking changes in PSRule v3 to help you upgrade from a previous version." />
   <meta property="og:url" content="https://microsoft.github.io/PSRule/v3/deprecations/" />
   <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
-  <meta property="og:image:alt" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
+  <meta property="og:image:alt" content="This article contains notes on breaking changes in PSRule v3 to help you upgrade from a previous version." />
 
   <!-- Twitter meta tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@github" />
   <meta name="twitter:title" content="PSRule - Deprecations" />
-  <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
+  <meta name="twitter:description" content="This article contains notes on breaking changes in PSRule v3 to help you upgrade from a previous version." />
   <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
 
@@ -112,7 +114,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deprecations" class="md-skip">
+        <a href="#deprecations-and-breaking-changes" class="md-skip">
           Skip to content
         </a>
       
@@ -1535,8 +1537,6 @@
       
         
       
-        
-      
     
     
       
@@ -1583,27 +1583,6 @@
   
   <span class="md-ellipsis">
     Change log
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../upgrade-notes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Upgrade notes
   </span>
   
 
@@ -1666,16 +1645,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#deprecations-for-v3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deprecations for v3
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deprecations for v3">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#execution-options" class="md-nav__link">
     <span class="md-ellipsis">
       Execution options
@@ -1683,8 +1652,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#git-head-input-object" class="md-nav__link">
     <span class="md-ellipsis">
       Git Head input object
@@ -1692,8 +1661,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#rule-output-object" class="md-nav__link">
     <span class="md-ellipsis">
       Rule output object
@@ -1701,8 +1670,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#language-block-interface" class="md-nav__link">
     <span class="md-ellipsis">
       Language block interface
@@ -1710,8 +1679,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#binding-configuration-in-baselines" class="md-nav__link">
     <span class="md-ellipsis">
       Binding configuration in baselines
@@ -1719,8 +1688,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#binding-hooks" class="md-nav__link">
     <span class="md-ellipsis">
       Binding hooks
@@ -1728,9 +1697,40 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#unbound-object-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unbound object names
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-powershell-74-or-later" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using PowerShell 7.4 or later
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes-to-cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changes to CLI commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-and-apiversion-accept-stable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version and APIVersion accept stable
+    </span>
+  </a>
   
 </li>
       
@@ -2647,16 +2647,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#deprecations-for-v3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deprecations for v3
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deprecations for v3">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#execution-options" class="md-nav__link">
     <span class="md-ellipsis">
       Execution options
@@ -2664,8 +2654,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#git-head-input-object" class="md-nav__link">
     <span class="md-ellipsis">
       Git Head input object
@@ -2673,8 +2663,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#rule-output-object" class="md-nav__link">
     <span class="md-ellipsis">
       Rule output object
@@ -2682,8 +2672,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#language-block-interface" class="md-nav__link">
     <span class="md-ellipsis">
       Language block interface
@@ -2691,8 +2681,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#binding-configuration-in-baselines" class="md-nav__link">
     <span class="md-ellipsis">
       Binding configuration in baselines
@@ -2700,8 +2690,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#binding-hooks" class="md-nav__link">
     <span class="md-ellipsis">
       Binding hooks
@@ -2709,9 +2699,40 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#unbound-object-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unbound object names
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-powershell-74-or-later" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using PowerShell 7.4 or later
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes-to-cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changes to CLI commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-and-apiversion-accept-stable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version and APIVersion accept stable
+    </span>
+  </a>
   
 </li>
       
@@ -2747,10 +2768,9 @@
   
 
 
-<h1 id="deprecations">Deprecations<a class="headerlink" href="#deprecations" title="Permanent link">#</a></h1>
-<p>This article contains notes on features that are deprecated in PSRule v3.0.0 and later.</p>
-<h2 id="deprecations-for-v3">Deprecations for v3<a class="headerlink" href="#deprecations-for-v3" title="Permanent link">#</a></h2>
-<h3 id="execution-options">Execution options<a class="headerlink" href="#execution-options" title="Permanent link">#</a></h3>
+<h1 id="deprecations-and-breaking-changes">Deprecations and breaking changes<a class="headerlink" href="#deprecations-and-breaking-changes" title="Permanent link">#</a></h1>
+<p>This article contains notes on breaking changes in PSRule v3 to help you upgrade from a previous version.</p>
+<h2 id="execution-options">Execution options<a class="headerlink" href="#execution-options" title="Permanent link">#</a></h2>
 <p>PSRule provides a number of execution options that control logging of certain events.
 In many cases these options turn a warning on or off.</p>
 <p>These options are deprecated but replaced to provide more choice to when configuring logging options.
@@ -2785,14 +2805,14 @@ Now you can configure the following:</p>
 <p>You do not need to configure both options.
 If you have the deprecated option configured, switch to the new option.</p>
 </div>
-<h3 id="git-head-input-object">Git Head input object<a class="headerlink" href="#git-head-input-object" title="Permanent link">#</a></h3>
+<h2 id="git-head-input-object">Git Head input object<a class="headerlink" href="#git-head-input-object" title="Permanent link">#</a></h2>
 <p>Previously when the <code>Input.Format</code> option was set to <code>File</code> the <code>.git/HEAD</code> file was emitted as an input object.
 The original purpose of this feature was to allow conventions to run once against the root of the repository.
 Subsequent changes to PSRule have made this feature redundant by adding support for the <code>-Initialize</code> block.</p>
 <p>From <em>v3</em> the <code>.git/HEAD</code> file will no longer be emitted as an input object.</p>
 <p>Consider adding or updating a convention that uses the <code>-Initialize</code> block to emit run initialization logic.
 Yon can also use the <code>-Initialize</code> block to emit a custom object to the pipeline by using the <code>$PSRule.ImportWithType</code> method.</p>
-<h3 id="rule-output-object">Rule output object<a class="headerlink" href="#rule-output-object" title="Permanent link">#</a></h3>
+<h2 id="rule-output-object">Rule output object<a class="headerlink" href="#rule-output-object" title="Permanent link">#</a></h2>
 <p>Several properties of the rule object have been renamed to improve consistency with other objects.
 Previously rules returned by <code>Get-PSRule</code> returned a rule object which included the following properties:</p>
 <ul>
@@ -2814,7 +2834,7 @@ Previously rules returned by <code>Get-PSRule</code> returned a rule object whic
 From <em>v3</em> these properties will be removed.
 These changes do not affect normal usage of PSRule.
 Supporting scripts that directly use the old names may not work correctly until you update these names.</p>
-<h3 id="language-block-interface">Language block interface<a class="headerlink" href="#language-block-interface" title="Permanent link">#</a></h3>
+<h2 id="language-block-interface">Language block interface<a class="headerlink" href="#language-block-interface" title="Permanent link">#</a></h2>
 <p>Several properties of Baselines and Selectors have been renamed to improve consistency.</p>
 <ul>
 <li><code>ModuleName</code></li>
@@ -2829,7 +2849,7 @@ Supporting scripts that directly use the old names may not work correctly until 
 From <em>v3</em> these properties will be removed.
 These changes do not affect normal usage of PSRule.
 Supporting scripts that directly use the old names may not work correctly until you update these names.</p>
-<h3 id="binding-configuration-in-baselines">Binding configuration in baselines<a class="headerlink" href="#binding-configuration-in-baselines" title="Permanent link">#</a></h3>
+<h2 id="binding-configuration-in-baselines">Binding configuration in baselines<a class="headerlink" href="#binding-configuration-in-baselines" title="Permanent link">#</a></h2>
 <p>Prior to v3, a baseline could configure a binding configuration to modify how objects are recognized by name, type, and scope.
 This existed to support scenarios before a module configuration and language scopes where core to how PSRule operates.</p>
 <ul>
@@ -2838,10 +2858,79 @@ This existed to support scenarios before a module configuration and language sco
 <li>Rules within the workspace will automatically use the binding configuration from options (<code>ps-rule.yaml</code>).</li>
 </ul>
 <p>Configuring binding configuration on a baseline is removed from PSRule v3.</p>
-<h3 id="binding-hooks">Binding hooks<a class="headerlink" href="#binding-hooks" title="Permanent link">#</a></h3>
+<h2 id="binding-hooks">Binding hooks<a class="headerlink" href="#binding-hooks" title="Permanent link">#</a></h2>
 <p>Prior to v3, a custom binding PowerShell script block could be used to perform custom binding inline.
 This feature was hard to use and obsolete for most common use cases.</p>
 <p>Alternatively, configure <code>Binding.TargetName</code> and <code>Binding.TargetType</code> options to use the built-in binder.</p>
+<h2 id="unbound-object-names">Unbound object names<a class="headerlink" href="#unbound-object-names" title="Permanent link">#</a></h2>
+<p>When an object is processed by PSRule, it is assigned a name.
+This name is used to identify the object in the output and to suppress the object from future processing.</p>
+<p>Prior to <em>v3.0.0</em>, the name was generated using a SHA-1 hash of the object.
+The SHA-1 algorithm is no longer considered secure and has been replaced with SHA-512.</p>
+<p>From <em>v3.0.0</em>, if the name of an object can not be determined, the SHA-512 hash of the object will be used.
+Any objects that have previously been suppressed with a name based on a SHA-1 hash will no longer be suppressed.</p>
+<p>To resolve any issue caused by this change, you can:</p>
+<ol>
+<li>Configure binding by setting the <a href="https://aka.ms/ps-rule/options#bindingtargetname">Binding.TargetName</a> option to set an alternative property to use as the name. <em>OR</em></li>
+<li>
+<p>Update any existing keys set with the <a href="https://aka.ms/ps-rule/options#suppression">Suppression</a> option to use the new SHA-512 hash.</p>
+</li>
+</ol>
+<h2 id="using-powershell-74-or-later">Using PowerShell 7.4 or later<a class="headerlink" href="#using-powershell-74-or-later" title="Permanent link">#</a></h2>
+<p>From <em>v3.0.0</em>, PSRule requires:</p>
+<ul>
+<li>Windows PowerShell 5.1 for running as a PowerShell module. <em>OR</em></li>
+<li>PowerShell 7.4 or later for development, building locally, or running as a PowerShell module.</li>
+</ul>
+<p>Support for Windows PowerShell 5.1 is deprecated and will be removed in a future release of PSRule (v4).
+We recommend upgrading to PowerShell 7.4 or later.</p>
+<h2 id="changes-to-cli-commands">Changes to CLI commands<a class="headerlink" href="#changes-to-cli-commands" title="Permanent link">#</a></h2>
+<p>From <em>v3.0.0</em>, the CLI command names have been renamed to simplify usage.
+The following changes have been made:</p>
+<ul>
+<li>To run rules, use <code>run</code> instead of <code>analyze</code>. i.e. <code>ps-rule run</code>.</li>
+<li>To restore modules for a workspace, use <code>module restore</code> instead of <code>restore</code>. i.e. <code>ps-rule module restore</code>.</li>
+</ul>
+<p>The <code>run</code> command provides similar output to the <code>Assert-PSRule</code> cmdlet in PowerShell.</p>
+<p>Previously the <code>restore</code> command installed modules based on the configuration of the <a href="../concepts/PSRule/en-US/about_PSRule_Options/#requires">Requires</a> option.
+From <em>v3.0.0</em>, the <code>module restore</code> command installs modules based on:</p>
+<ul>
+<li>The module lock file <code>ps-rule.lock.json</code> if set.
+  Use <code>module</code> <a href="../concepts/cli/module/">CLI commands</a> to manage the <a href="../concepts/lockfile/">lock file</a>. <em>AND</em></li>
+<li>
+<p>Modules defined in the <a href="../concepts/PSRule/en-US/about_PSRule_Options/#includemodule">Include.Module</a> option, if set.
+  Additionally the <a href="../concepts/PSRule/en-US/about_PSRule_Options/#requires">Requires</a> option is used to constrain the version of modules installed.</p>
+</li>
+</ul>
+<h2 id="version-and-apiversion-accept-stable">Version and APIVersion accept stable<a class="headerlink" href="#version-and-apiversion-accept-stable" title="Permanent link">#</a></h2>
+<p>Prior to <em>v3.0.0</em>, some usage of <code>version</code> and <code>apiVersion</code> accepted pre-release versions by default.
+For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="c1"># Synopsis: Any version example</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PreviousAnyVersionExample</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dateVersion</span>
+<span class="w">    </span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+</code></pre></div>
+<p>When <code>apiVersion</code> is empty any version is accepted including pre-releases.</p>
+<p>From <em>v3.0.0</em> pre-release versions are not accepted by default.
+Set the <code>includePrerelease</code> property to <code>true</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="c1"># Synopsis: Test comparison with apiVersion.</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Selector</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AnyVersion</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dateVersion</span>
+<span class="w">    </span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">    </span><span class="nt">includePrerelease</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
 
 
 
@@ -2942,7 +3031,7 @@ This feature was hard to use and obsolete for most common use cases.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../upgrade-notes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Upgrade notes">
+          <a href="../CHANGELOG-v3/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Change log">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2952,7 +3041,7 @@ This feature was hard to use and obsolete for most common use cases.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Upgrade notes
+                Change log
               </div>
             </div>
           </a>

@@ -128,3 +128,11 @@
   box-shadow: 0 0 0 1px inset var(--md-accent-fg-color--transparent);
   padding: .2rem .3rem
 }
+
+/* Add banner */
+
+aside.md-banner {
+  overflow: auto;
+  color: var(--md-warning-fg-color);
+  background-color: var(--md-warning-bg-color);
+}

@@ -1535,8 +1535,6 @@
       
         
       
-        
-      
     
     
       
@@ -1580,27 +1578,6 @@
   
   <span class="md-ellipsis">
     Change log
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../upgrade-notes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Upgrade notes
   </span>
   
 
@@ -1849,15 +1826,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#synopsis" class="md-nav__link">
-    <span class="md-ellipsis">
-      SYNOPSIS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
       SYNTAX
@@ -1893,7 +1861,7 @@
         <li class="md-nav__item">
   <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      DESCRIPTION
+      Description
     </span>
   </a>
   
@@ -1902,11 +1870,11 @@
         <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
-      EXAMPLES
+      Examples
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="EXAMPLES">
+    <nav class="md-nav" aria-label="Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2214,7 +2182,7 @@
         <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      NOTES
+      Notes
     </span>
   </a>
   
@@ -2963,15 +2931,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#synopsis" class="md-nav__link">
-    <span class="md-ellipsis">
-      SYNOPSIS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
       SYNTAX
@@ -3007,7 +2966,7 @@
         <li class="md-nav__item">
   <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      DESCRIPTION
+      Description
     </span>
   </a>
   
@@ -3016,11 +2975,11 @@
         <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
-      EXAMPLES
+      Examples
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="EXAMPLES">
+    <nav class="md-nav" aria-label="Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3328,7 +3287,7 @@
         <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      NOTES
+      Notes
     </span>
   </a>
   
@@ -3376,7 +3335,6 @@
 
 
 <h1 id="assert-psrule">Assert-PSRule<a class="headerlink" href="#assert-psrule" title="Permanent link">#</a></h1>
-<h2 id="synopsis">SYNOPSIS<a class="headerlink" href="#synopsis" title="Permanent link">#</a></h2>
 <p>Evaluate objects against matching rules and assert any failures.</p>
 <h2 id="syntax">SYNTAX<a class="headerlink" href="#syntax" title="Permanent link">#</a></h2>
 <h3 id="input-default">Input (Default)<a class="headerlink" href="#input-default" title="Permanent link">#</a></h3>
@@ -3394,7 +3352,7 @@
  [-OutputFormat &lt;OutputFormat&gt;] [-Option &lt;PSRuleOption&gt;] [-ObjectPath &lt;String&gt;] [-TargetType &lt;String[]&gt;]
  [-Culture &lt;String[]&gt;] [-ResultVariable &lt;String&gt;] [-WhatIf] [-Confirm] [&lt;CommonParameters&gt;]
 </code></pre></div>
-<h2 id="description">DESCRIPTION<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
 <p>Evaluate objects against matching rules and assert any failures.
 Objects can be specified directly from the pipeline or provided from file.</p>
 <p>The commands <code>Invoke-PSRule</code> and <code>Assert-PSRule</code> provide similar functionality, as differ as follows:</p>
@@ -3402,7 +3360,7 @@ Objects can be specified directly from the pipeline or provided from file.</p>
 <li><code>Invoke-PSRule</code> writes results as structured objects</li>
 <li><code>Assert-PSRule</code> writes results as a formatted string.</li>
 </ul>
-<h2 id="examples">EXAMPLES<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
 <h3 id="example-1">Example 1<a class="headerlink" href="#example-1" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">@{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;Item 1&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span><span class="p">;</span>
 </code></pre></div>
@@ -3780,7 +3738,7 @@ The cmdlet is not run.</p>
 <p>You can pipe any object to <strong>Assert-PSRule</strong>.</p>
 <h2 id="outputs">OUTPUTS<a class="headerlink" href="#outputs" title="Permanent link">#</a></h2>
 <h3 id="systemstring">System.String<a class="headerlink" href="#systemstring" title="Permanent link">#</a></h3>
-<h2 id="notes">NOTES<a class="headerlink" href="#notes" title="Permanent link">#</a></h2>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h2>
 <h2 id="related-links">RELATED LINKS<a class="headerlink" href="#related-links" title="Permanent link">#</a></h2>
 <p><a href="../Get-PSRule/">Get-PSRule</a></p>
 <p><a href="../Invoke-PSRule/">Invoke-PSRule</a></p>

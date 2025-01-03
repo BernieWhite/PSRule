@@ -1535,8 +1535,6 @@
       
         
       
-        
-      
     
     
       
@@ -1580,27 +1578,6 @@
   
   <span class="md-ellipsis">
     Change log
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../upgrade-notes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Upgrade notes
   </span>
   
 
@@ -1996,15 +1973,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#synopsis" class="md-nav__link">
-    <span class="md-ellipsis">
-      SYNOPSIS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
       SYNTAX
@@ -2049,7 +2017,7 @@
         <li class="md-nav__item">
   <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      DESCRIPTION
+      Description
     </span>
   </a>
   
@@ -2058,11 +2026,11 @@
         <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
-      EXAMPLES
+      Examples
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="EXAMPLES">
+    <nav class="md-nav" aria-label="Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2640,7 +2608,7 @@
         <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      NOTES
+      Notes
     </span>
   </a>
   
@@ -3242,15 +3210,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#synopsis" class="md-nav__link">
-    <span class="md-ellipsis">
-      SYNOPSIS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
       SYNTAX
@@ -3295,7 +3254,7 @@
         <li class="md-nav__item">
   <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      DESCRIPTION
+      Description
     </span>
   </a>
   
@@ -3304,11 +3263,11 @@
         <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
-      EXAMPLES
+      Examples
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="EXAMPLES">
+    <nav class="md-nav" aria-label="Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3886,7 +3845,7 @@
         <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      NOTES
+      Notes
     </span>
   </a>
   
@@ -3934,7 +3893,6 @@
 
 
 <h1 id="new-psruleoption">New-PSRuleOption<a class="headerlink" href="#new-psruleoption" title="Permanent link">#</a></h1>
-<h2 id="synopsis">SYNOPSIS<a class="headerlink" href="#synopsis" title="Permanent link">#</a></h2>
 <p>Create options to configure PSRule execution.</p>
 <h2 id="syntax">SYNTAX<a class="headerlink" href="#syntax" title="Permanent link">#</a></h2>
 <h3 id="frompath-default">FromPath (Default)<a class="headerlink" href="#frompath-default" title="Permanent link">#</a></h3>
@@ -4008,9 +3966,9 @@
  [-OutputSarifProblemsOnly &lt;Boolean&gt;] [-OutputStyle &lt;OutputStyle&gt;] [-RepositoryBaseRef &lt;String&gt;]
  [-RepositoryUrl &lt;String&gt;] [-RuleIncludeLocal &lt;Boolean&gt;] [&lt;CommonParameters&gt;]
 </code></pre></div>
-<h2 id="description">DESCRIPTION<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
 <p>The <strong>New-PSRuleOption</strong> cmdlet creates an options object that can be passed to PSRule cmdlets to configure execution.</p>
-<h2 id="examples">EXAMPLES<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
 <h3 id="example-1">Example 1<a class="headerlink" href="#example-1" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;execution.mode&#39;</span> <span class="p">=</span> <span class="s1">&#39;ConstrainedLanguage&#39;</span> <span class="p">}</span>
 <span class="p">@{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;Item 1&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Invoke-PSRule</span> <span class="n">-Option</span> <span class="nv">$option</span>
@@ -4739,7 +4697,7 @@ The <code>Execution.SuppressionGroupExpired</code> option determines how to hand
 <h3 id="none">None<a class="headerlink" href="#none" title="Permanent link">#</a></h3>
 <h2 id="outputs">OUTPUTS<a class="headerlink" href="#outputs" title="Permanent link">#</a></h2>
 <h3 id="psruleconfigurationpsruleoption">PSRule.Configuration.PSRuleOption<a class="headerlink" href="#psruleconfigurationpsruleoption" title="Permanent link">#</a></h3>
-<h2 id="notes">NOTES<a class="headerlink" href="#notes" title="Permanent link">#</a></h2>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h2>
 <h2 id="related-links">RELATED LINKS<a class="headerlink" href="#related-links" title="Permanent link">#</a></h2>
 <p><a href="../Invoke-PSRule/">Invoke-PSRule</a></p>
 <p><a href="../Set-PSRuleOption/">Set-PSRuleOption</a></p>
