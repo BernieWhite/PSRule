@@ -2870,6 +2870,33 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#runcategory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run.Category
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rundescription" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run.Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runinstance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run.Instance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#suppression" class="md-nav__link">
     <span class="md-ellipsis">
       Suppression
@@ -3713,6 +3740,33 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#runcategory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run.Category
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rundescription" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run.Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runinstance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run.Instance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#suppression" class="md-nav__link">
     <span class="md-ellipsis">
       Suppression
@@ -3858,6 +3912,9 @@ This topic describes what options are available, when to and how to use them.</p
 <li><a href="#repositorybaseref">Repository.BaseRef</a></li>
 <li><a href="#repositoryurl">Repository.Url</a></li>
 <li><a href="#requires">Requires</a></li>
+<li><a href="#runcategory">Run.Category</a></li>
+<li><a href="#rundescription">Run.Description</a></li>
+<li><a href="#runinstance">Run.Instance</a></li>
 <li><a href="#suppression">Suppression</a></li>
 </ul>
 <p>Additionally the following baseline options can be included:</p>
@@ -6190,6 +6247,65 @@ When multiple values are used, only one must match.</p>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Warning</span>
 </code></pre></div>
 <p>In the example above, rules must have a tag of <code>severity</code> set to either <code>Critical</code> or <code>Warning</code> to be included.</p>
+<h3 id="runcategory">Run.Category<a class="headerlink" href="#runcategory" title="Permanent link">#</a></h3>
+<!-- module:version 3.0.0 -->
+
+<p>Configures the run category that is used as an identifier for output results.
+By default, the run category is set to <code>PSRule</code>.</p>
+<p>This option can be specified using:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Run.Category hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Run.Category&#39;</span> <span class="p">=</span> <span class="s1">&#39;Custom run&#39;</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the run/category property</span>
+<span class="nt">run</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Custom run</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_RUN_CATEOGRY</span><span class="o">=</span><span class="s1">&#39;Custom run&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSRULE_RUN_CATEOGRY</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Custom</span><span class="nv"> </span><span class="s">run&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
+<span class="nt">variables</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_RUN_CATEOGRY</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Custom</span><span class="nv"> </span><span class="s">run&#39;</span>
+</code></pre></div>
+<h3 id="rundescription">Run.Description<a class="headerlink" href="#rundescription" title="Permanent link">#</a></h3>
+<!-- module:version 3.0.0 -->
+
+<p>Configure the run description that is displayed in output.
+By default, the run description is not set.</p>
+<p>This option can be specified using:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Run.Description hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Run.Description&#39;</span> <span class="p">=</span> <span class="s1">&#39;Custom run description.&#39;</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the run/description property</span>
+<span class="nt">run</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Custom run description.</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_RUN_DESCRIPTION</span><span class="o">=</span><span class="s1">&#39;Custom run description.&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSRULE_RUN_DESCRIPTION</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Custom</span><span class="nv"> </span><span class="s">run</span><span class="nv"> </span><span class="s">description.&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
+<span class="nt">variables</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_RUN_DESCRIPTION</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Custom</span><span class="nv"> </span><span class="s">run</span><span class="nv"> </span><span class="s">description.&#39;</span>
+</code></pre></div>
+<h3 id="runinstance">Run.Instance<a class="headerlink" href="#runinstance" title="Permanent link">#</a></h3>
+<!-- module:version 3.0.0 -->
+
+<p>An unique identifier for the current parent environment instance that is displayed in output as a component of the run ID.
+This is automatically set by PSRule when running in a GitHub Actions or Azure Pipeline pipeline.
+Alternatively, this option can be set using environment variables.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_RUN_INSTANCE</span><span class="o">=</span><span class="s1">&#39;12345678&#39;</span>
+</code></pre></div>
 <h3 id="suppression">Suppression<a class="headerlink" href="#suppression" title="Permanent link">#</a></h3>
 <p>In certain circumstances it may be necessary to exclude or suppress rules from processing objects that are in a known failed state.</p>
 <p>PSRule allows objects to be suppressed for a rule by TargetName.
@@ -6489,7 +6605,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 5, 2025</span>
   </span>
 
     

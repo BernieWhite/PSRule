@@ -6,13 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules.">
+        <meta name="description" content="This article describes how PSRule organizes and manages each logical run.">
       
       
         <meta name="author" content="Microsoft">
       
       
-        <link rel="canonical" href="https://microsoft.github.io/PSRule/v3/concepts/sarif-format/">
+        <link rel="canonical" href="https://microsoft.github.io/PSRule/v3/concepts/runs/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>SARIF Output - PSRule</title>
+        <title>About runs - PSRule</title>
       
     
     
@@ -67,6 +67,8 @@
   <!-- Determine description -->
   
   
+    
+  
 
   <!-- The image needs to have an absolute URL -->
   
@@ -74,20 +76,20 @@
   <!-- Open graph meta tags -->
   <meta property="og:site_name" content="PSRule" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="PSRule - SARIF Output" />
-  <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta property="og:url" content="https://microsoft.github.io/PSRule/v3/concepts/sarif-format/" />
+  <meta property="og:title" content="PSRule - About runs" />
+  <meta property="og:description" content="This article describes how PSRule organizes and manages each logical run." />
+  <meta property="og:url" content="https://microsoft.github.io/PSRule/v3/concepts/runs/" />
   <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
-  <meta property="og:image:alt" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
+  <meta property="og:image:alt" content="This article describes how PSRule organizes and manages each logical run." />
 
   <!-- Twitter meta tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@github" />
-  <meta name="twitter:title" content="PSRule - SARIF Output" />
-  <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
+  <meta name="twitter:title" content="PSRule - About runs" />
+  <meta name="twitter:description" content="This article describes how PSRule organizes and manages each logical run." />
   <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
 
@@ -108,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sarif-output" class="md-skip">
+        <a href="#runs" class="md-skip">
           Skip to content
         </a>
       
@@ -158,7 +160,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SARIF Output
+              About runs
             
           </span>
         </div>
@@ -2504,59 +2506,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#runs" class="md-nav__link">
+  <a href="#configuring-runs" class="md-nav__link">
     <span class="md-ellipsis">
-      Runs
+      Configuring runs
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#invocation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Invocation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Invocation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ruleconfigurationoverrides" class="md-nav__link">
-    <span class="md-ellipsis">
-      RuleConfigurationOverrides
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      Examples
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#successful-result" class="md-nav__link">
-    <span class="md-ellipsis">
-      Successful result
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2576,7 +2530,7 @@
                   
 
   
-    <a href="https://github.com/microsoft/PSRule/blob/main/docs/concepts/sarif-format.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/microsoft/PSRule/blob/main/docs/concepts/runs.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2585,87 +2539,22 @@
     
       
     
-    <a href="https://github.com/microsoft/PSRule/raw/main/docs/concepts/sarif-format.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/microsoft/PSRule/raw/main/docs/concepts/runs.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="sarif-output">SARIF Output<a class="headerlink" href="#sarif-output" title="Permanent link">#</a></h1>
-<p>PSRule uses a JSON structured output format called the</p>
-<p>SARIF format to report results.
-The SARIF format is a standard format for the output of static analysis tools.
-The format is designed to be easily consumed by other tools and services.</p>
-<h2 id="runs">Runs<a class="headerlink" href="#runs" title="Permanent link">#</a></h2>
-<p>When running PSRule executed a run will be generated in <code>runs</code> containing details about PSRule and configuration details.</p>
-<h2 id="invocation">Invocation<a class="headerlink" href="#invocation" title="Permanent link">#</a></h2>
-<p>The <code>invocations</code> property reports runtime information about how the run started.</p>
-<h3 id="ruleconfigurationoverrides">RuleConfigurationOverrides<a class="headerlink" href="#ruleconfigurationoverrides" title="Permanent link">#</a></h3>
-<p>When a rule has been overridden in configuration this invocation property will contain any level overrides.</p>
-<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
-<h3 id="successful-result">Successful result<a class="headerlink" href="#successful-result" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.1.0&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;runs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;tool&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;driver&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0130215d-58eb-4887-b6fa-31ed02500569&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSRule&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;organization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft Corporation&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;semanticVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.9.0&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;informationUri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://aka.ms/ps-rule&quot;</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">          </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7bfb5234-1648-4e52-956c-42f303d416cb&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSRule.Rules.MSFT.OSS&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;organization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft Corporation&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.1.0&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;informationUri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.com/microsoft/PSRule.Rules.MSFT.OSS&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;associatedComponent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSRule&quot;</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">          </span><span class="p">}</span>
-<span class="w">        </span><span class="p">]</span>
-<span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;automationDetails&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CI repository scan/workspace/1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;An analysis scan that checks repository files.&quot;</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;correlationGuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span>
-<span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;invocations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;executionSuccessful&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;versionControlProvenance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;repositoryUri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.com/microsoft/PSRule&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;revisionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2a3671213e5768aad6af7f132e418d1a4368a3c5&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;branch&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;mappedTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;uriBaseId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;REPO_ROOT&quot;</span>
-<span class="w">          </span><span class="p">}</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;originalUriBaseIds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;REPO_ROOT&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The directory into which the repo was cloned.&quot;</span>
-<span class="w">          </span><span class="p">}</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;results&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">      </span><span class="nt">&quot;columnKind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;utf16CodeUnits&quot;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
+<h1 id="runs">Runs<a class="headerlink" href="#runs" title="Permanent link">#</a></h1>
+<p>This article describes how PSRule organizes and manages each logical run.</p>
+<p>When PSRule is executed one or more runs will be automatically created.</p>
+<h2 id="configuring-runs">Configuring runs<a class="headerlink" href="#configuring-runs" title="Permanent link">#</a></h2>
+<p>PSRule allows the following options to be configured that affects runs:</p>
+<ul>
+<li>[Execution.Category]</li>
+<li>[Execution.Description]</li>
+</ul>
 
 
 
@@ -2698,7 +2587,7 @@ The format is designed to be easily consumed by other tools and services.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 21, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 5, 2025</span>
   </span>
 
     
