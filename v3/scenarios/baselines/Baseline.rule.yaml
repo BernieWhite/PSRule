@@ -1,26 +1,25 @@
-
 ---
 # Synopsis: This is an example baseline
-apiVersion: github.com/microsoft/PSRule/v1
+apiVersion: github.com/microsoft/PSRule/2025-01-01
 kind: Baseline
 metadata:
   name: TestBaseline1
 spec:
   rule:
     include:
-    - 'WithBaseline'
+      - 'WithBaseline'
   configuration:
     key1: value1
 
 ---
 # Synopsis: This is an example baseline
-apiVersion: github.com/microsoft/PSRule/v1
+apiVersion: github.com/microsoft/PSRule/2025-01-01
 kind: Baseline
 metadata:
   name: TestBaseline2
 spec:
   rule:
     include:
-    - 'WithBaseline'
+      - 'WithBaseline'
   configuration:
     key1: value1

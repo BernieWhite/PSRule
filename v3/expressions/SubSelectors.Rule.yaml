@@ -7,7 +7,7 @@
 
 ---
 # Synopsis: A rule with a sub-selector precondition.
-apiVersion: github.com/microsoft/PSRule/v1
+apiVersion: github.com/microsoft/PSRule/2025-01-01
 kind: Rule
 metadata:
   name: Yaml.Subselector.Precondition
@@ -21,7 +21,7 @@ spec:
 
 ---
 # Synopsis: A rule with a sub-selector filter.
-apiVersion: github.com/microsoft/PSRule/v1
+apiVersion: github.com/microsoft/PSRule/2025-01-01
 kind: Rule
 metadata:
   name: Yaml.Subselector.Filter
@@ -32,26 +32,25 @@ spec:
       type: '.'
       equals: 'Microsoft.Web/sites/config'
     allOf:
-    - field: properties.detailedErrorLoggingEnabled
-      equals: true
+      - field: properties.detailedErrorLoggingEnabled
+        equals: true
 
 ---
 # Synopsis: A rule with a sub-selector filter.
-apiVersion: github.com/microsoft/PSRule/v1
+apiVersion: github.com/microsoft/PSRule/2025-01-01
 kind: Rule
 metadata:
   name: Yaml.Subselector.FilterOr
 spec:
   condition:
     anyOf:
+      - field: resources
+        where:
+          type: '.'
+          equals: 'Microsoft.Web/sites/config'
+        allOf:
+          - field: properties.detailedErrorLoggingEnabled
+            equals: true
 
-    - field: resources
-      where:
-        type: '.'
-        equals: 'Microsoft.Web/sites/config'
-      allOf:
-      - field: properties.detailedErrorLoggingEnabled
-        equals: true
-
-    - field: resources
-      exists: false
+      - field: resources
+        exists: false

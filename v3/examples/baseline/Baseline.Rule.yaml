@@ -3,7 +3,7 @@
 
 ---
 # Synopsis: An example baseline.
-apiVersion: github.com/microsoft/PSRule/v1
+apiVersion: github.com/microsoft/PSRule/2025-01-01
 kind: Baseline
 metadata:
   name: Baseline.Rule

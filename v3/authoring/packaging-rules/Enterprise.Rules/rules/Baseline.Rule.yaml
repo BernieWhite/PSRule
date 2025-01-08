@@ -1,7 +1,6 @@
-
 ---
 # Synopsis: An example baseline for Enterprise.Rules module
-apiVersion: github.com/microsoft/PSRule/v1
+apiVersion: github.com/microsoft/PSRule/2025-01-01
 kind: Baseline
 metadata:
   name: Enterprise.Default

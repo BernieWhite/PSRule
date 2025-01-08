@@ -3,7 +3,7 @@
 
 ---
 # Synopsis: Find services with an automatic start type.
-apiVersion: github.com/microsoft/PSRule/v1
+apiVersion: github.com/microsoft/PSRule/2025-01-01
 kind: Selector
 metadata:
   name: IsAutomaticService
@@ -15,13 +15,13 @@ spec:
 
 ---
 # Synopsis: Automatic services should be running.
-apiVersion: github.com/microsoft/PSRule/v1
+apiVersion: github.com/microsoft/PSRule/2025-01-01
 kind: Rule
 metadata:
   name: Yaml.ServiceStarted
 spec:
   with:
-  - IsAutomaticService
+    - IsAutomaticService
   condition:
     field: Status
     equals: Running

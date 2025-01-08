@@ -3,15 +3,15 @@
 
 ---
 # Synopsis: Image files are not permitted.
-apiVersion: github.com/microsoft/PSRule/v1
+apiVersion: github.com/microsoft/PSRule/2025-01-01
 kind: Rule
 metadata:
   name: Yaml.FileType
 spec:
   type:
-  - System.IO.FileInfo
+    - System.IO.FileInfo
   condition:
     field: Extension
     notIn:
-    - .jpg
-    - .png
+      - .jpg
+      - .png

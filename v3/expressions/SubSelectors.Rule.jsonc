@@ -1,7 +1,7 @@
 [
   {
     // Synopsis: A rule with a sub-selector precondition.
-    "apiVersion": "github.com/microsoft/PSRule/v1",
+    "apiVersion": "github.com/microsoft/PSRule/2025-01-01",
     "kind": "Rule",
     "metadata": {
       "name": "Json.Subselector.Precondition"
@@ -19,7 +19,7 @@
   },
   {
     // Synopsis: A rule with a sub-selector filter.
-    "apiVersion": "github.com/microsoft/PSRule/v1",
+    "apiVersion": "github.com/microsoft/PSRule/2025-01-01",
     "kind": "Rule",
     "metadata": {
       "name": "Json.Subselector.Filter"
@@ -42,7 +42,7 @@
   },
   {
     // Synopsis: A rule with a sub-selector filter.
-    "apiVersion": "github.com/microsoft/PSRule/v1",
+    "apiVersion": "github.com/microsoft/PSRule/2025-01-01",
     "kind": "Rule",
     "metadata": {
       "name": "Json.Subselector.FilterOr"
