@@ -1141,6 +1141,8 @@
       
         
       
+        
+      
     
     
       
@@ -1184,6 +1186,27 @@
   
   <span class="md-ellipsis">
     Baselines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/capabilities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Capabilities
   </span>
   
 
@@ -2848,6 +2871,13 @@
 <li>A precondition <code>type</code> property has been added to selectors and suppression groups.</li>
 <li>This simplifies type conditions that are common used in selectors and suppression groups.</li>
 <li>To use this feature, set the <code>apiVersion</code> to <code>github.com/microsoft/PSRule/2025-01-01</code>.</li>
+</ul>
+</li>
+<li>Add support for declaring required capabilities in workspaces and modules by <a href="https://github.com/BernieWhite">@BernieWhite</a>.
+  <a href="https://github.com/microsoft/PSRule/issues/2707">#2707</a><ul>
+<li>A module or workspace can declare required capabilities that must be supported by the runtime.</li>
+<li>When a capability is not supported or disabled, the runtime will fail with a specific error.</li>
+<li>This provides a way to ensure that rules execute consistently across environments.</li>
 </ul>
 </li>
 </ul>

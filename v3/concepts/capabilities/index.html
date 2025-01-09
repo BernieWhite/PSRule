@@ -6,34 +6,34 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules.">
+        <meta name="description" content="Capabilities are a way to declare or require a minimum set of features or functionality.">
       
       
         <meta name="author" content="Microsoft">
       
       
-        <link rel="canonical" href="https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_Variables/">
+        <link rel="canonical" href="https://microsoft.github.io/PSRule/v3/concepts/capabilities/">
       
       
-        <link rel="prev" href="../about_PSRule_SuppressionGroups/">
+        <link rel="prev" href="../baselines/">
       
       
-        <link rel="next" href="../../../../faq/">
+        <link rel="next" href="../emitters/">
       
       
-      <link rel="icon" href="../../../../assets/ms_icon.png">
+      <link rel="icon" href="../../assets/ms_icon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
-        <title>Variables - PSRule</title>
+        <title>Capabilities - PSRule</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,9 +52,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +71,8 @@
   <!-- Determine description -->
   
   
+    
+  
 
   <!-- The image needs to have an absolute URL -->
   
@@ -78,20 +80,20 @@
   <!-- Open graph meta tags -->
   <meta property="og:site_name" content="PSRule" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="PSRule - Variables" />
-  <meta property="og:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
-  <meta property="og:url" content="https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_Variables/" />
+  <meta property="og:title" content="PSRule - Capabilities" />
+  <meta property="og:description" content="Capabilities are a way to declare or require a minimum set of features or functionality." />
+  <meta property="og:url" content="https://microsoft.github.io/PSRule/v3/concepts/capabilities/" />
   <meta property="og:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
-  <meta property="og:image:alt" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
+  <meta property="og:image:alt" content="Capabilities are a way to declare or require a minimum set of features or functionality." />
 
   <!-- Twitter meta tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@github" />
-  <meta name="twitter:title" content="PSRule - Variables" />
-  <meta name="twitter:description" content="Validate infrastructure as code (IaC) and objects using PowerShell rules." />
+  <meta name="twitter:title" content="PSRule - Capabilities" />
+  <meta name="twitter:description" content="Capabilities are a way to declare or require a minimum set of features or functionality." />
   <meta name="twitter:image" content="https://repository-images.githubusercontent.com/125832556/d6685d9f-ba70-44a1-b11f-6534831143d1" />
 
 
@@ -112,7 +114,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#variables" class="md-skip">
+        <a href="#capabilities" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +126,7 @@
             
             
   You are viewing the next version PSRule.
-  <a href="../../../../.."> 
+  <a href="../../.."> 
     <strong>Click here to go to latest stable version.</strong>
   </a>
 
@@ -143,9 +145,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="PSRule" class="md-header__button md-logo" aria-label="PSRule" data-md-component="logo">
+    <a href="../.." title="PSRule" class="md-header__button md-logo" aria-label="PSRule" data-md-component="logo">
       
-  <img src="../../../../assets/ms_icon.png" alt="logo">
+  <img src="../../assets/ms_icon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -162,7 +164,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Variables
+              Capabilities
             
           </span>
         </div>
@@ -243,7 +245,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -258,17 +260,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../about/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../about/" class="md-tabs__link">
           
   
     
@@ -291,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../CHANGELOG-v3/" class="md-tabs__link">
+        <a href="../../CHANGELOG-v3/" class="md-tabs__link">
           
   
     
@@ -307,21 +313,17 @@
         
   
   
-    
-  
   
     
     
       
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../commands/PSRule/en-US/Assert-PSRule/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../commands/PSRule/en-US/Assert-PSRule/" class="md-tabs__link">
           
   
     
@@ -342,7 +344,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../faq/" class="md-tabs__link">
+      <a href="../../faq/" class="md-tabs__link">
         
   
     
@@ -361,7 +363,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../addon-modules/" class="md-tabs__link">
+        <a href="../../addon-modules/" class="md-tabs__link">
           
   
     
@@ -396,9 +398,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="PSRule" class="md-nav__button md-logo" aria-label="PSRule" data-md-component="logo">
+    <a href="../.." title="PSRule" class="md-nav__button md-logo" aria-label="PSRule" data-md-component="logo">
       
-  <img src="../../../../assets/ms_icon.png" alt="logo">
+  <img src="../../assets/ms_icon.png" alt="logo">
 
     </a>
     PSRule
@@ -425,7 +427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -442,8 +444,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -472,17 +476,20 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -493,7 +500,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Getting started
@@ -551,7 +558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -572,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../features/" class="md-nav__link">
+      <a href="../../features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -624,7 +631,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../setup/" class="md-nav__link ">
+            <a href="../../setup/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -657,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../setup/vscode/" class="md-nav__link">
+      <a href="../../setup/vscode/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -732,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../creating-your-pipeline/" class="md-nav__link">
+      <a href="../../creating-your-pipeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -753,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../validating-locally/" class="md-nav__link">
+      <a href="../../validating-locally/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -774,7 +781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../analysis-output/" class="md-nav__link">
+      <a href="../../analysis-output/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -855,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../quickstart/standalone-rule/" class="md-nav__link">
+      <a href="../../quickstart/standalone-rule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -876,7 +883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../authoring/testing-infrastructure/" class="md-nav__link">
+      <a href="../../authoring/testing-infrastructure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -897,7 +904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../authoring/using-expressions/" class="md-nav__link">
+      <a href="../../authoring/using-expressions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -918,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../authoring/storing-rules/" class="md-nav__link">
+      <a href="../../authoring/storing-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -939,7 +946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../authoring/packaging-rules/" class="md-nav__link">
+      <a href="../../authoring/packaging-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -960,7 +967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../authoring/writing-rule-help/" class="md-nav__link">
+      <a href="../../authoring/writing-rule-help/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1037,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scenarios/azure-resources/azure-resources/" class="md-nav__link">
+      <a href="../../scenarios/azure-resources/azure-resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1058,7 +1065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scenarios/azure-tags/azure-tags/" class="md-nav__link">
+      <a href="../../scenarios/azure-tags/azure-tags/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1079,7 +1086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scenarios/kubernetes-resources/kubernetes-resources/" class="md-nav__link">
+      <a href="../../scenarios/kubernetes-resources/kubernetes-resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1100,7 +1107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scenarios/containers/container-execution/" class="md-nav__link">
+      <a href="../../scenarios/containers/container-execution/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1126,8 +1133,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1151,11 +1160,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
         
           
           <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
@@ -1169,7 +1178,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             Concepts
@@ -1183,7 +1192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../baselines/" class="md-nav__link">
+      <a href="../baselines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1201,10 +1210,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../capabilities/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Capabilities
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1213,6 +1242,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported capabilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#declaring-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Declaring capabilities
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1225,7 +1292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../emitters/" class="md-nav__link">
+      <a href="../emitters/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1246,7 +1313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../expressions/functions/" class="md-nav__link">
+      <a href="../../expressions/functions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1267,7 +1334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../grouping-rules/" class="md-nav__link">
+      <a href="../grouping-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1288,7 +1355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../expressions/sub-selectors/" class="md-nav__link">
+      <a href="../../expressions/sub-selectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1309,7 +1376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../lockfile/" class="md-nav__link">
+      <a href="../lockfile/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1380,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scenarios/validation-pipeline/validation-pipeline/" class="md-nav__link">
+      <a href="../../scenarios/validation-pipeline/validation-pipeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1409,7 +1476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../troubleshooting/" class="md-nav__link">
+      <a href="../../troubleshooting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1430,7 +1497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../license-contributing/" class="md-nav__link">
+      <a href="../../license-contributing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1451,7 +1518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../related-projects/" class="md-nav__link">
+      <a href="../../related-projects/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1472,7 +1539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/" class="md-nav__link">
+      <a href="../../support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1546,7 +1613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../CHANGELOG-v3/" class="md-nav__link">
+      <a href="../../CHANGELOG-v3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1567,7 +1634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../deprecations/" class="md-nav__link">
+      <a href="../../deprecations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1588,7 +1655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../versioning/" class="md-nav__link">
+      <a href="../../versioning/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1613,10 +1680,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1653,20 +1718,17 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1677,7 +1739,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Reference
@@ -1751,7 +1813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../commands/PSRule/en-US/Assert-PSRule/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Assert-PSRule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1772,7 +1834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../commands/PSRule/en-US/Export-PSRuleBaseline/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Export-PSRuleBaseline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1793,7 +1855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../commands/PSRule/en-US/Get-PSRule/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Get-PSRule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1814,7 +1876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../commands/PSRule/en-US/Get-PSRuleBaseline/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Get-PSRuleBaseline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1835,7 +1897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../commands/PSRule/en-US/Get-PSRuleHelp/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Get-PSRuleHelp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1856,7 +1918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../commands/PSRule/en-US/Get-PSRuleTarget/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Get-PSRuleTarget/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1877,7 +1939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../commands/PSRule/en-US/Invoke-PSRule/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Invoke-PSRule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1898,7 +1960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../commands/PSRule/en-US/New-PSRuleOption/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/New-PSRuleOption/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1919,7 +1981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../commands/PSRule/en-US/Set-PSRuleOption/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Set-PSRuleOption/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1940,7 +2002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../commands/PSRule/en-US/Test-PSRuleTarget/" class="md-nav__link">
+      <a href="../../commands/PSRule/en-US/Test-PSRuleTarget/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1996,7 +2058,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../cli/" class="md-nav__link ">
+            <a href="../cli/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2029,7 +2091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cli/run/" class="md-nav__link">
+      <a href="../cli/run/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2050,7 +2112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cli/module/" class="md-nav__link">
+      <a href="../cli/module/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2071,7 +2133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cli/restore/" class="md-nav__link">
+      <a href="../cli/restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2100,7 +2162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about_PSRule_Assert/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Assert/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2121,7 +2183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about_PSRule_Baseline/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Baseline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2142,7 +2204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about_PSRule_Badges/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Badges/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2163,7 +2225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about_PSRule_Conventions/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Conventions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2184,7 +2246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about_PSRule_Docs/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Docs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2205,7 +2267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about_PSRule_Expressions/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Expressions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2226,7 +2288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../keywords/PSRule/en-US/about_PSRule_Keywords/" class="md-nav__link">
+      <a href="../../keywords/PSRule/en-US/about_PSRule_Keywords/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2247,7 +2309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about_PSRule_Options/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Options/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2268,7 +2330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about_PSRule_Rules/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2289,7 +2351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/" class="md-nav__link">
+      <a href="../security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2310,7 +2372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about_PSRule_Selectors/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_Selectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2331,7 +2393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about_PSRule_SuppressionGroups/" class="md-nav__link">
+      <a href="../PSRule/en-US/about_PSRule_SuppressionGroups/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2349,30 +2411,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Variables
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../PSRule/en-US/about_PSRule_Variables/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2381,104 +2423,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    <span class="md-ellipsis">
-      Description
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Description">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#assert" class="md-nav__link">
-    <span class="md-ellipsis">
-      Assert
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#localizeddata" class="md-nav__link">
-    <span class="md-ellipsis">
-      LocalizedData
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#psrule" class="md-nav__link">
-    <span class="md-ellipsis">
-      PSRule
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rule" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rule
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#targetobject" class="md-nav__link">
-    <span class="md-ellipsis">
-      TargetObject
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#links" class="md-nav__link">
-    <span class="md-ellipsis">
-      Links
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2498,7 +2442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../faq/" class="md-nav__link">
+      <a href="../../faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2560,7 +2504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../addon-modules/" class="md-nav__link">
+      <a href="../../addon-modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2608,78 +2552,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
+  <a href="#supported-capabilities" class="md-nav__link">
     <span class="md-ellipsis">
-      Description
+      Supported capabilities
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Description">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#assert" class="md-nav__link">
-    <span class="md-ellipsis">
-      Assert
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#localizeddata" class="md-nav__link">
-    <span class="md-ellipsis">
-      LocalizedData
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#psrule" class="md-nav__link">
-    <span class="md-ellipsis">
-      PSRule
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rule" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rule
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#targetobject" class="md-nav__link">
-    <span class="md-ellipsis">
-      TargetObject
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#links" class="md-nav__link">
+  <a href="#declaring-capabilities" class="md-nav__link">
     <span class="md-ellipsis">
-      Links
+      Declaring capabilities
     </span>
   </a>
   
@@ -2701,7 +2585,7 @@
                   
 
   
-    <a href="https://github.com/microsoft/PSRule/blob/main/docs/concepts/PSRule/en-US/about_PSRule_Variables.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/microsoft/PSRule/blob/main/docs/concepts/capabilities.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2710,247 +2594,68 @@
     
       
     
-    <a href="https://github.com/microsoft/PSRule/raw/main/docs/concepts/PSRule/en-US/about_PSRule_Variables.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/microsoft/PSRule/raw/main/docs/concepts/capabilities.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">#</a></h1>
-<p>Describes the automatic variables that can be used within PSRule rule definitions.</p>
-<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
-<p>PSRule lets you define rules using PowerShell blocks.
-A rule is defined within script files by using the <code>rule</code> keyword.</p>
-<p>Within a rule definition, PSRule exposes a number of automatic variables that can be read to assist with rule execution.
-Overwriting these variables or variable properties is not supported.</p>
-<p>These variables are only available while <code>Invoke-PSRule</code> is executing.</p>
-<p>The following variables are available for use:</p>
-<ul>
-<li><a href="#assert">$Assert</a></li>
-<li><a href="#configuration">$Configuration</a></li>
-<li><a href="#localizeddata">$LocalizedData</a></li>
-<li><a href="#psrule">$PSRule</a></li>
-<li><a href="#rule">$Rule</a></li>
-<li><a href="#targetobject">$TargetObject</a></li>
-</ul>
-<h3 id="assert">Assert<a class="headerlink" href="#assert" title="Permanent link">#</a></h3>
-<p>An assertion helper with methods to evaluate objects.
-The <code>$Assert</code> object provides a set of built-in methods and provides a consistent variable for extension.</p>
-<p>Each <code>$Assert</code> method returns an <code>AssertResult</code> object that contains the result of the condition.</p>
-<p>The following built-in assertion methods are provided:</p>
-<ul>
-<li><code>Contains</code> - The field value must contain at least one of the strings.</li>
-<li><code>EndsWith</code> - The field value must match at least one suffix.</li>
-<li><code>FileHeader</code> - The file must contain a comment header.</li>
-<li><code>FilePath</code> - The file path must exist.</li>
-<li><code>Greater</code> - The field value must be greater.</li>
-<li><code>GreaterOrEqual</code> - The field value must be greater or equal to.</li>
-<li><code>HasDefaultValue</code> - The object should not have the field or the field value is set to the default value.</li>
-<li><code>HasField</code> - The object must have any of the specified fields.</li>
-<li><code>HasFields</code> - The object must have all of the specified fields.</li>
-<li><code>HasFieldValue</code> - The object must have the specified field and that field is not empty.</li>
-<li><code>HasJsonSchema</code> - The object must reference a JSON schema with the <code>$schema</code> field.</li>
-<li><code>In</code> - The field value must be included in the set.</li>
-<li><code>IsArray</code> - The field value must be an array.</li>
-<li><code>IsBoolean</code> - The field value must be a boolean.</li>
-<li><code>IsInteger</code> - The field value must be an integer.</li>
-<li><code>IsLower</code> - The field value must include only lowercase characters.</li>
-<li><code>IsNumeric</code> - The field value must be a numeric type.</li>
-<li><code>IsString</code> - The field value must be a string.</li>
-<li><code>IsUpper</code> - The field value must include only uppercase characters.</li>
-<li><code>JsonSchema</code> - The object must validate successfully against a JSON schema.</li>
-<li><code>Less</code> - The field value must be less.</li>
-<li><code>LessOrEqual</code> - The field value must be less or equal to.</li>
-<li><code>Match</code> - The field value matches a regular expression pattern.</li>
-<li><code>NotIn</code> - The field value must not be included in the set.</li>
-<li><code>NotMatch</code> - The field value does not match a regular expression pattern.</li>
-<li><code>NullOrEmpty</code> - The object must not have the specified field or it must be empty.</li>
-<li><code>TypeOf</code> - The field value must be of the specified type.</li>
-<li><code>StartsWith</code> - The field value must match at least one prefix.</li>
-<li><code>Version</code> - The field value must be a semantic version string.</li>
-</ul>
-<p>The <code>$Assert</code> variable can only be used within a rule definition block.</p>
-<p>For detailed information on the assertion helper see <a href="../about_PSRule_Assert/">about_PSRule_Assert</a>.</p>
-<p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$Assert</span>
+<h1 id="capabilities">Capabilities<a class="headerlink" href="#capabilities" title="Permanent link">#</a></h1>
+<p>Capabilities are a way to declare or require a minimum set of features or functionality.
+As PSRule evolves, new features or behaviors are added that may not be supported by previous versions.
+By using capabilities, workspace and module authors can declare capabilities that are required.
+Declaring capabilities provides a way to ensure consistent behavior across different configurations and versions of PSRule.</p>
+<p>Each capability is a unique identifier that represents a feature or behavior of the PSRule engine.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Capabilities are a new feature in PSRule v3 and are not supported in previous versions.
+Earlier versions of PSRule will not check for missing capabilities before executing rules or resources.</p>
+</div>
+<h2 id="supported-capabilities">Supported capabilities<a class="headerlink" href="#supported-capabilities" title="Permanent link">#</a></h2>
+<p>The following capabilities are currently supported:</p>
+<table>
+<thead>
+<tr>
+<th>Identifier</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api-v1</code></td>
+<td>YAML or JSON resource types that use the API version <code>github.com/microsoft/PSRule/v1</code>. This capability is always enabled in PSRule v3.</td>
+</tr>
+<tr>
+<td><code>api-2025-01-01</code></td>
+<td>YAML or JSON resource types that use the API version <code>github.com/microsoft/PSRule/2025-01-01</code>. This capability is always enabled in PSRule v3.</td>
+</tr>
+<tr>
+<td><code>powershell-language</code></td>
+<td>Determines if the workspace or module uses language features such as rules and conventions that use PowerShell script. This capability is enabled unless the <code>Execution.RestrictScriptSource</code> option restricts the use of PowerShell script.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="declaring-capabilities">Declaring capabilities<a class="headerlink" href="#declaring-capabilities" title="Permanent link">#</a></h2>
+<p>Declaring capabilities is optional.
+When you do not declare capabilities, an unrecognized or disabled features is ignored.
+However, please note the execution behavior may not be as expected if rules or resources depend on these features.</p>
+<p>For example, if a you define a rule in PowerShell but PowerShell script is disabled, the rule will not be executed.</p>
+<p>Workspace capabilities are declared in a <code>ps-rule.yaml</code> file using the <code>capabilities</code> key.</p>
+<div class="highlight"><span class="filename">ps-rule.yaml</span><pre><span></span><code><span class="nt">capabilities</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-v1</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">powershell-language</span>
 </code></pre></div>
-<p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Determine if $TargetObject is valid against the provided schema</span>
-<span class="n">Rule</span> <span class="s1">&#39;UseJsonSchema&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">JsonSchema</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;schemas/PSRule-options.schema.json&#39;</span><span class="p">)</span>
-<span class="p">}</span>
+<p>Module capabilities are declared in the <code>ModuleConfig</code> resource for the module using the <code>capabilities</code> key.</p>
+<div class="highlight"><span class="filename">ModuleConfig.Rule.yaml</span><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/2025-01-01</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ModuleConfig</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MyModule</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">capabilities</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-v1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">powershell-language</span>
 </code></pre></div>
-<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h3>
-<p>A dynamic object with properties names that map to configuration values set in the baseline.</p>
-<p>When accessing configuration:</p>
-<ul>
-<li>Configuration keys are case sensitive.</li>
-<li>Configuration values are read only.</li>
-<li>Configuration values can be accessed through helper methods.</li>
-</ul>
-<p>The following helper methods are available:</p>
-<ul>
-<li><code>GetStringValues(string configurationKey)</code> - Returns an array of strings, based on <code>configurationKey</code>.</li>
-</ul>
-<p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$Configuration</span><span class="p">.&lt;</span><span class="n">configurationKey</span><span class="p">&gt;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">$Configuration</span><span class="p">.</span><span class="n">GetStringValues</span><span class="p">(&lt;</span><span class="n">configurationKey</span><span class="p">&gt;)</span>
-</code></pre></div>
-<p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: This rule uses a threshold stored as $Configuration.appServiceMinInstanceCount</span>
-<span class="n">Rule</span> <span class="s1">&#39;appServicePlan.MinInstanceCount&#39;</span> <span class="n">-If</span> <span class="p">{</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">ResourceType</span> <span class="o">-eq</span> <span class="s1">&#39;Microsoft.Web/serverfarms&#39;</span> <span class="p">}</span> <span class="p">{</span>
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Sku</span><span class="p">.</span><span class="n">capacity</span> <span class="o">-ge</span> <span class="nv">$Configuration</span><span class="p">.</span><span class="n">appServiceMinInstanceCount</span>
-<span class="p">}</span> <span class="n">-Configure</span> <span class="p">@{</span> <span class="n">appServiceMinInstanceCount</span> <span class="p">=</span> <span class="n">2</span> <span class="p">}</span>
-</code></pre></div>
-<h3 id="localizeddata">LocalizedData<a class="headerlink" href="#localizeddata" title="Permanent link">#</a></h3>
-<p>A dynamic object with properties names that map to localized data messages in a <code>.psd1</code> file.</p>
-<p>When using localized data, PSRule loads localized strings as a hashtable from <code>PSRule-rules.psd1</code>.</p>
-<p>The following logic is used to locate <code>PSRule-rules.psd1</code>:</p>
-<ul>
-<li>If the rules are loose (not part of a module), PSRule will search for <code>PSRule-rules.psd1</code> in the <code>.\&lt;culture&gt;\</code> subdirectory relative to where the rule script <em>.ps1</em> file is located.</li>
-<li>When the rules are shipped as part of a module, PSRule will search for <code>PSRule-rules.psd1</code> in the <code>.\&lt;culture&gt;\</code> subdirectory relative to where the module manifest <em>.psd1</em> file is located.</li>
-</ul>
-<p>When accessing localized data:</p>
-<ul>
-<li>Message names are case sensitive.</li>
-<li>Message values are read only.</li>
-</ul>
-<p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$LocalizedData</span><span class="p">.&lt;</span><span class="n">messageName</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Data for rules stored in PSRule-rules.psd1</span>
-<span class="p">@{</span>
-    <span class="n">WithLocalizedDataMessage</span> <span class="p">=</span> <span class="s1">&#39;LocalizedMessage for en-ZZ. Format={0}.&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Use -f to generate a formatted localized warning</span>
-<span class="n">Rule</span> <span class="s1">&#39;WithLocalizedData&#39;</span> <span class="p">{</span>
-    <span class="nb">Write-Warning</span> <span class="n">-Message</span> <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">WithLocalizedDataMessage</span> <span class="o">-f</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Type</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>This rule returns a warning message similar to:</p>
-<div class="highlight"><pre><span></span><code>LocalizedMessage for en-ZZ. Format=TestType.
-</code></pre></div>
-<h3 id="psrule">PSRule<a class="headerlink" href="#psrule" title="Permanent link">#</a></h3>
-<p>An object representing the current context during execution.</p>
-<p>The following properties are available for read access:</p>
-<ul>
-<li><code>Badges</code> - A helper to generate badges within PSRule.
-  This property can only be called within the <code>-End</code> block of a convention.</li>
-<li><code>Field</code> - A hashtable of custom bound fields.
-  See option <code>Binding.Field</code> for more information.</li>
-<li><code>Input</code> - Allows adding additional input paths to the pipeline.</li>
-<li><code>Repository</code> - Provides access to information about the current repository.</li>
-<li><code>Scope</code> - Any scopes assigned to the object currently being processed by the pipeline.</li>
-<li><code>Source</code> - A collection of sources for the object currently being processed on the pipeline.</li>
-<li><code>TargetObject</code> - The object currently being processed on the pipeline.</li>
-<li><code>TargetName</code> - The name of the object currently being processed on the pipeline.
-  This property will automatically default to <code>TargetName</code> or <code>Name</code> properties of the object if they exist.</li>
-<li><code>TargetType</code> - The type of the object currently being processed on the pipeline.
-  This property will automatically bind to <code>PSObject.TypeNames[0]</code> by default.</li>
-<li><code>Output</code> - The output of all rules.
-  This property can only be called within the <code>-End</code> block of a convention.</li>
-</ul>
-<p>The following properties are available for read/ write access:</p>
-<ul>
-<li><code>Data</code> - A hashtable of custom data.
-This property can be populated during rule or begin/ process convention execution.
-Custom data is not used by PSRule directly, and is intended to be used by downstream processes that need to interpret PSRule results.</li>
-</ul>
-<p>To bind fields that already exist on the target object use custom binding and <code>Binding.Field</code>.
-Use custom data to store data that must be calculated during rule execution.</p>
-<p>The following helper methods are available:</p>
-<ul>
-<li><code>GetContent(PSObject sourceObject)</code> - Returns the content of a file as one or more objects.
-  The parameter <code>sourceObject</code> should be a <code>InputFileInfo</code>,<code>FileInfo</code>, or <code>Uri</code> object.</li>
-<li><code>GetContentField(PSObject sourceObject, string field)</code> - Returns the content of a file as one or more objects.
-  The parameter <code>sourceObject</code> should be a <code>InputFileInfo</code>,<code>FileInfo</code>, or <code>Uri</code> object.
-  The parameter <code>field</code> is an field within each object to return.
-  If the field does not exist on the object, an object is not returned.</li>
-<li><code>GetContentFirstOrDefault(PSObject sourceObject)</code> - Returns the content of a file as on object.
-  The parameter <code>sourceObject</code> should be a <code>InputFileInfo</code>,<code>FileInfo</code>, or <code>Uri</code> object.
-  If more than one object is contained in the file, only the first object is returned.
-  When the source file contains no objects null is returned.</li>
-<li><code>Import(PSObject[] sourceObject)</code> - Imports one or more source objects into the pipeline.
-  This method can only be called within the <code>-Initialize</code> or <code>-Begin</code> block of a convention.
-  Use this method to expand an object into child objects that will be processed independently.
-  Objects imported using this method will be excluded from the <code>Input.ObjectPath</code> option if set.</li>
-<li><code>ImportWithType(string type, PSObject[] sourceObject)</code> - Imports one or more source objects into the pipeline.
-  This method can only be called within the <code>-Initialize</code> or <code>-Begin</code> block of a convention.
-  Use this method to expand an object into child objects that will be processed independently.
-  Objects imported using this method will be excluded from the <code>Input.ObjectPath</code> option if set.
-  When <code>Binding.PreferTargetInfo</code> is true, the type will be automatically used as the <code>TargetType</code> for the imported object.</li>
-<li><code>AddService(string id, object service)</code> - Add a service to the current context.
-  The service can be retrieved using <code>$PSRule.GetService(id)</code>.
-  The service object will be available to all rules and cleaned up after all rules are executed.
-  Services should implement the <code>IDisposable</code> interface to perform additional cleanup.
-  This method can only be called within the <code>-Initialize</code> block of a convention.</li>
-<li><code>GetService(string id)</code> - Retrieves a service previously added by a convention.</li>
-<li><code>GetPath(object sourceObject, string path)</code> - Evaluate an object path expression and returns the resulting objects.</li>
-</ul>
-<p>The file format is detected based on the same file formats as the option <code>Input.Format</code>.
-i.e. Yaml, Json, Markdown, and PowerShell Data.</p>
-<p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$PSRule</span>
-</code></pre></div>
-<p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: This rule determines if the target object matches the naming convention</span>
-<span class="n">Rule</span> <span class="s1">&#39;NamingConvention&#39;</span> <span class="p">{</span>
-    <span class="nv">$PSRule</span><span class="p">.</span><span class="n">TargetName</span><span class="p">.</span><span class="n">ToLower</span><span class="p">()</span> <span class="o">-ceq</span> <span class="nv">$PSRule</span><span class="p">.</span><span class="n">TargetName</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Use allowed environment tags</span>
-<span class="n">Rule</span> <span class="s1">&#39;CustomData&#39;</span> <span class="p">{</span>
-    <span class="n">Recommend</span> <span class="s1">&#39;Environment must be set to an allowed value&#39;</span>
-    <span class="n">Within</span> <span class="s1">&#39;Tags.environment&#39;</span> <span class="s1">&#39;production&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="s1">&#39;development&#39;</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Tags</span><span class="p">.</span><span class="n">environment</span> <span class="n">-in</span> <span class="s1">&#39;prod&#39;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$PSRule</span><span class="p">.</span><span class="n">Data</span><span class="p">[</span><span class="s1">&#39;targetEnvironment&#39;</span><span class="p">]</span> <span class="p">=</span> <span class="s1">&#39;production&#39;</span>
-    <span class="p">}</span>
-    <span class="k">elseif</span> <span class="p">(</span><span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Tags</span><span class="p">.</span><span class="n">environment</span> <span class="n">-in</span> <span class="s1">&#39;dev&#39;</span><span class="p">,</span> <span class="s1">&#39;develop&#39;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$PSRule</span><span class="p">.</span><span class="n">Data</span><span class="p">[</span><span class="s1">&#39;targetEnvironment&#39;</span><span class="p">]</span> <span class="p">=</span> <span class="s1">&#39;development&#39;</span>
-    <span class="p">}</span>
-    <span class="k">elseif</span> <span class="p">(</span><span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Tags</span><span class="p">.</span><span class="n">environment</span> <span class="n">-in</span> <span class="s1">&#39;tst&#39;</span><span class="p">,</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$PSRule</span><span class="p">.</span><span class="n">Data</span><span class="p">[</span><span class="s1">&#39;targetEnvironment&#39;</span><span class="p">]</span> <span class="p">=</span> <span class="s1">&#39;test&#39;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="rule">Rule<a class="headerlink" href="#rule" title="Permanent link">#</a></h3>
-<p>An object representing the current rule during execution.</p>
-<p>The following properties are available for read access:</p>
-<ul>
-<li><code>RuleName</code> - The name of the rule.</li>
-<li><code>RuleId</code> - A unique identifier for the rule.</li>
-</ul>
-<p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$Rule</span>
-</code></pre></div>
-<p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: This rule determines if the target object matches the naming convention</span>
-<span class="n">Rule</span> <span class="s1">&#39;resource.NamingConvention&#39;</span> <span class="p">{</span>
-    <span class="nv">$PSRule</span><span class="p">.</span><span class="n">TargetName</span><span class="p">.</span><span class="n">ToLower</span><span class="p">()</span> <span class="o">-ceq</span> <span class="nv">$PSRule</span><span class="p">.</span><span class="n">TargetName</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="targetobject">TargetObject<a class="headerlink" href="#targetobject" title="Permanent link">#</a></h3>
-<p>The value of the pipeline object currently being processed.
-<code>$TargetObject</code> is set by using the <code>-InputObject</code> parameter of <code>Invoke-PSRule</code>.</p>
-<p>When more than one input object is set, each object will be processed sequentially.</p>
-<p>Syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$TargetObject</span>
-</code></pre></div>
-<p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Check that sku capacity is set to at least 2</span>
-<span class="n">Rule</span> <span class="s1">&#39;HasMinInstances&#39;</span> <span class="p">{</span>
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Sku</span><span class="p">.</span><span class="n">capacity</span> <span class="o">-ge</span> <span class="n">2</span>
-<span class="p">}</span>
-</code></pre></div>
-<h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">#</a></h2>
-<ul>
-<li><a href="https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/Invoke-PSRule/">Invoke-PSRule</a></li>
-</ul>
 
 
 
@@ -2983,7 +2688,7 @@ i.e. Yaml, Json, Markdown, and PowerShell Data.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2018</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 8, 2025</span>
   </span>
 
     
@@ -3009,11 +2714,6 @@ i.e. Yaml, Json, Markdown, and PowerShell Data.</p>
         <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
           
           <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
-        </a>
-      
-        <a href="https://github.com/ArmaanMcleod" class="md-author" title="@ArmaanMcleod">
-          
-          <img src="https://avatars.githubusercontent.com/u/20082136?u=e02c26a44d78391af61a0c6f2ebc815b5cebf986&v=4&size=72" alt="Armaan Mcleod">
         </a>
       
       
@@ -3105,7 +2805,7 @@ i.e. Yaml, Json, Markdown, and PowerShell Data.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../about_PSRule_SuppressionGroups/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Suppression Groups">
+          <a href="../baselines/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Baselines">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3115,20 +2815,20 @@ i.e. Yaml, Json, Markdown, and PowerShell Data.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Suppression Groups
+                Baselines
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../../../faq/" class="md-footer__link md-footer__link--next" aria-label="Next: FAQ">
+          <a href="../emitters/" class="md-footer__link md-footer__link--next" aria-label="Next: Emitters">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                FAQ
+                Emitters
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3177,10 +2877,10 @@ i.e. Yaml, Json, Markdown, and PowerShell Data.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "navigation.footer", "content.code.annotate", "content.tabs.link", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", {"navigation.sections": {"level": 1}}, "navigation.tabs", "navigation.footer", "content.code.annotate", "content.tabs.link", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable", "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>

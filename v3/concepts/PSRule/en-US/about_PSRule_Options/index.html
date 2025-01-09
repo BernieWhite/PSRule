@@ -1143,6 +1143,8 @@
       
         
       
+        
+      
     
     
       
@@ -1186,6 +1188,27 @@
   
   <span class="md-ellipsis">
     Baselines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../capabilities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Capabilities
   </span>
   
 
@@ -2361,6 +2384,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capabilities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#conventioninclude" class="md-nav__link">
     <span class="md-ellipsis">
       Convention.Include
@@ -3225,6 +3257,15 @@
   <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capabilities
     </span>
   </a>
   
@@ -4331,6 +4372,35 @@ To specify a configuration value, prefix the configuration value with <code>PSRU
 <span class="nt">variables</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_CONFIGURATION_LOCAL_APPSERVICEMININSTANCECOUNT</span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;2&#39;</span>
+</code></pre></div>
+<h3 id="capabilities">Capabilities<a class="headerlink" href="#capabilities" title="Permanent link">#</a></h3>
+<!-- module:version 3.0.0 -->
+
+<p>Specifies a list of capabilities required by the configuration.
+When set, PSRule will validate that the capabilities are available before executing the configuration.
+If the capabilities are not available, PSRule will report an error.</p>
+<p>Capabilities may not be available if the PSRule version you are using does not support the feature.
+Additionally, some capabilities may be disabled by the environment or configuration.</p>
+<p>This option can be specified using:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Capabilities hashtable key</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Capabilities&#39;</span> <span class="p">=</span> <span class="s1">&#39;api-2025-01-01&#39;</span> <span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the capabilities property</span>
+<span class="nt">capabilities</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;api-2025-01-01&#39;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;api-v1</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_CAPABILITIES</span><span class="o">=</span><span class="s1">&#39;api-2025-01-01;api-v1&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSRULE_CAPABILITIES</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;api-2025-01-01;api-v1&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
+<span class="nt">variables</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_CAPABILITIES</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;api-2025-01-01;api-v1&#39;</span>
 </code></pre></div>
 <h3 id="conventioninclude">Convention.Include<a class="headerlink" href="#conventioninclude" title="Permanent link">#</a></h3>
 <p>Specifies conventions to execute when the pipeline run.
