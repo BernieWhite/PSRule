@@ -1251,11 +1251,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../concepts/emitters/" class="md-nav__link">
+      <a href="../../../../concepts/formats/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Emitters
+    Formats
     
   </span>
   
@@ -2261,15 +2261,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      -Format
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#-inputignoregitpath" class="md-nav__link">
     <span class="md-ellipsis">
       -InputIgnoreGitPath
@@ -2561,6 +2552,51 @@
   <a href="#-suppressiongroupexpired" class="md-nav__link">
     <span class="md-ellipsis">
       -SuppressionGroupExpired
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-executionbreak" class="md-nav__link">
+    <span class="md-ellipsis">
+      -ExecutionBreak
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-inputfileobjects" class="md-nav__link">
+    <span class="md-ellipsis">
+      -InputFileObjects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-inputstringformat" class="md-nav__link">
+    <span class="md-ellipsis">
+      -InputStringFormat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-overridelevel" class="md-nav__link">
+    <span class="md-ellipsis">
+      -OverrideLevel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-restrictscriptsource" class="md-nav__link">
+    <span class="md-ellipsis">
+      -RestrictScriptSource
     </span>
   </a>
   
@@ -3459,15 +3495,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      -Format
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#-inputignoregitpath" class="md-nav__link">
     <span class="md-ellipsis">
       -InputIgnoreGitPath
@@ -3765,6 +3792,51 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-executionbreak" class="md-nav__link">
+    <span class="md-ellipsis">
+      -ExecutionBreak
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-inputfileobjects" class="md-nav__link">
+    <span class="md-ellipsis">
+      -InputFileObjects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-inputstringformat" class="md-nav__link">
+    <span class="md-ellipsis">
+      -InputStringFormat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-overridelevel" class="md-nav__link">
+    <span class="md-ellipsis">
+      -OverrideLevel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-restrictscriptsource" class="md-nav__link">
+    <span class="md-ellipsis">
+      -RestrictScriptSource
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#commonparameters" class="md-nav__link">
     <span class="md-ellipsis">
       CommonParameters
@@ -3869,22 +3941,24 @@
  [-BaselineGroup &lt;Hashtable&gt;] [-BindingIgnoreCase &lt;Boolean&gt;] [-BindingField &lt;Hashtable&gt;]
  [-BindingNameSeparator &lt;String&gt;] [-BindingPreferTargetInfo &lt;Boolean&gt;] [-TargetName &lt;String[]&gt;]
  [-TargetType &lt;String[]&gt;] [-BindingUseQualifiedName &lt;Boolean&gt;] [-Convention &lt;String[]&gt;]
- [-DuplicateResourceId &lt;ExecutionActionPreference&gt;] [-InitialSessionState &lt;SessionState&gt;]
+ [-ExecutionBreak &lt;BreakLevel&gt;] [-DuplicateResourceId &lt;ExecutionActionPreference&gt;]
+ [-InitialSessionState &lt;SessionState&gt;] [-RestrictScriptSource &lt;RestrictScriptSource&gt;]
  [-SuppressionGroupExpired &lt;ExecutionActionPreference&gt;] [-ExecutionRuleExcluded &lt;ExecutionActionPreference&gt;]
  [-ExecutionRuleSuppressed &lt;ExecutionActionPreference&gt;] [-ExecutionAliasReference &lt;ExecutionActionPreference&gt;]
  [-ExecutionRuleInconclusive &lt;ExecutionActionPreference&gt;]
  [-ExecutionInvariantCulture &lt;ExecutionActionPreference&gt;]
  [-ExecutionUnprocessedObject &lt;ExecutionActionPreference&gt;] [-IncludeModule &lt;String[]&gt;]
- [-IncludePath &lt;String[]&gt;] [-Format &lt;InputFormat&gt;] [-InputIgnoreGitPath &lt;Boolean&gt;]
- [-InputIgnoreObjectSource &lt;Boolean&gt;] [-InputIgnoreRepositoryCommon &lt;Boolean&gt;]
+ [-IncludePath &lt;String[]&gt;] [-InputFileObjects &lt;Boolean&gt;] [-InputStringFormat &lt;String&gt;]
+ [-InputIgnoreGitPath &lt;Boolean&gt;] [-InputIgnoreObjectSource &lt;Boolean&gt;] [-InputIgnoreRepositoryCommon &lt;Boolean&gt;]
  [-InputIgnoreUnchangedPath &lt;Boolean&gt;] [-ObjectPath &lt;String&gt;] [-InputPathIgnore &lt;String[]&gt;]
  [-InputTargetType &lt;String[]&gt;] [-LoggingLimitDebug &lt;String[]&gt;] [-LoggingLimitVerbose &lt;String[]&gt;]
  [-LoggingRuleFail &lt;OutcomeLogStream&gt;] [-LoggingRulePass &lt;OutcomeLogStream&gt;] [-OutputAs &lt;ResultFormat&gt;]
  [-OutputBanner &lt;BannerFormat&gt;] [-OutputCulture &lt;String[]&gt;] [-OutputEncoding &lt;OutputEncoding&gt;]
  [-OutputFooter &lt;FooterFormat&gt;] [-OutputFormat &lt;OutputFormat&gt;] [-OutputJobSummaryPath &lt;String&gt;]
  [-OutputJsonIndent &lt;Int32&gt;] [-OutputOutcome &lt;RuleOutcome&gt;] [-OutputPath &lt;String&gt;]
- [-OutputSarifProblemsOnly &lt;Boolean&gt;] [-OutputStyle &lt;OutputStyle&gt;] [-RepositoryBaseRef &lt;String&gt;]
- [-RepositoryUrl &lt;String&gt;] [-RuleIncludeLocal &lt;Boolean&gt;] [-WhatIf] [-Confirm] [&lt;CommonParameters&gt;]
+ [-OutputSarifProblemsOnly &lt;Boolean&gt;] [-OutputStyle &lt;OutputStyle&gt;] [-OverrideLevel &lt;Hashtable&gt;]
+ [-RepositoryBaseRef &lt;String&gt;] [-RepositoryUrl &lt;String&gt;] [-RuleIncludeLocal &lt;Boolean&gt;]
+ [-ProgressAction &lt;ActionPreference&gt;] [-WhatIf] [-Confirm] [&lt;CommonParameters&gt;]
 </code></pre></div>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
 <p>Sets options that configure PSRule execution.</p>
@@ -4173,20 +4247,6 @@ See about_PSRule_Options for more information.</p>
 <span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
 <span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
-<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-</code></pre></div>
-<h3 id="-format">-Format<a class="headerlink" href="#-format" title="Permanent link">#</a></h3>
-<p>Sets the <code>Input.Format</code> option to configure the input format for when a string is passed in as a target object.
-See about_PSRule_Options for more information.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">InputFormat</span>
-<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">InputFormat</span>
-<span class="nt">Accepted values</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None, Yaml, Json, Markdown, PowerShellData, File, Detect</span>
-
-<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
-<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect</span>
 <span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
@@ -4627,6 +4687,71 @@ The <code>Execution.SuppressionGroupExpired</code> option determines how to hand
 <span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
+<h3 id="-executionbreak">-ExecutionBreak<a class="headerlink" href="#-executionbreak" title="Permanent link">#</a></h3>
+<p>Sets the option <code>Execution.Break</code>.
+The <code>Execution.Break</code> option determines the minimum rule severity level that breaks the pipeline.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BreakLevel</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-inputfileobjects">-InputFileObjects<a class="headerlink" href="#-inputfileobjects" title="Permanent link">#</a></h3>
+<p>Sets the option <code>Input.FileObjects</code>.
+The <code>Input.FileObjects</code> option determines if file objects are processed by rules.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Boolean</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-inputstringformat">-InputStringFormat<a class="headerlink" href="#-inputstringformat" title="Permanent link">#</a></h3>
+<p>Sets the option <code>Input.StringFormat</code>.
+The <code>Input.StringFormat</code> option determines how string input objects are processed.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-overridelevel">-OverrideLevel<a class="headerlink" href="#-overridelevel" title="Permanent link">#</a></h3>
+<p>Sets the option <code>Override.Level</code>.
+The <code>Override.Level</code> option is used to override the severity level of one or more rules.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hashtable</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-restrictscriptsource">-RestrictScriptSource<a class="headerlink" href="#-restrictscriptsource" title="Permanent link">#</a></h3>
+<p>Sets the option <code>Execution.RestrictScriptSource</code>.
+The <code>Execution.RestrictScriptSource</code> option configures where PowerShell language features are allowed to run from.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RestrictScriptSource</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExecutionRestrictScriptSource</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
 <h3 id="commonparameters">CommonParameters<a class="headerlink" href="#commonparameters" title="Permanent link">#</a></h3>
 <p>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see <a href="https://go.microsoft.com/fwlink/?LinkID=113216">about_CommonParameters</a>.</p>
 <h2 id="inputs">INPUTS<a class="headerlink" href="#inputs" title="Permanent link">#</a></h2>
@@ -4658,7 +4783,7 @@ The <code>Execution.SuppressionGroupExpired</code> option determines how to hand
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 25, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
   </span>
 
     

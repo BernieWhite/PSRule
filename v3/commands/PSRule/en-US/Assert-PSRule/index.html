@@ -1251,11 +1251,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../concepts/emitters/" class="md-nav__link">
+      <a href="../../../../concepts/formats/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Emitters
+    Formats
     
   </span>
   
@@ -1950,6 +1950,24 @@
   <a href="#-inputpath" class="md-nav__link">
     <span class="md-ellipsis">
       -InputPath
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      -Formats
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-inputstringformat" class="md-nav__link">
+    <span class="md-ellipsis">
+      -InputStringFormat
     </span>
   </a>
   
@@ -3090,6 +3108,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      -Formats
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-inputstringformat" class="md-nav__link">
+    <span class="md-ellipsis">
+      -InputStringFormat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-format" class="md-nav__link">
     <span class="md-ellipsis">
       -Format
@@ -3386,19 +3422,20 @@
 <p>Evaluate objects against matching rules and assert any failures.</p>
 <h2 id="syntax">SYNTAX<a class="headerlink" href="#syntax" title="Permanent link">#</a></h2>
 <h3 id="input-default">Input (Default)<a class="headerlink" href="#input-default" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>Assert-PSRule [-Module &lt;String[]&gt;] [-Format &lt;InputFormat&gt;] [-Baseline &lt;BaselineOption&gt;]
- [-Convention &lt;String[]&gt;] [-Style &lt;OutputStyle&gt;] [-Outcome &lt;RuleOutcome&gt;] [-As &lt;ResultFormat&gt;]
- [[-Path] &lt;String[]&gt;] [-Name &lt;String[]&gt;] [-Tag &lt;Hashtable&gt;] [-OutputPath &lt;String&gt;]
+<div class="highlight"><pre><span></span><code>Assert-PSRule [-Module &lt;String[]&gt;] [-Formats &lt;String[]&gt;] [-InputStringFormat &lt;String&gt;]
+ [-Baseline &lt;BaselineOption&gt;] [-Convention &lt;String[]&gt;] [-Style &lt;OutputStyle&gt;] [-Outcome &lt;RuleOutcome&gt;]
+ [-As &lt;ResultFormat&gt;] [[-Path] &lt;String[]&gt;] [-Name &lt;String[]&gt;] [-Tag &lt;Hashtable&gt;] [-OutputPath &lt;String&gt;]
  [-OutputFormat &lt;OutputFormat&gt;] [-Option &lt;PSRuleOption&gt;] [-ObjectPath &lt;String&gt;] [-TargetType &lt;String[]&gt;]
- [-Culture &lt;String[]&gt;] -InputObject &lt;PSObject&gt; [-ResultVariable &lt;String&gt;] [-WhatIf] [-Confirm]
- [&lt;CommonParameters&gt;]
+ [-Culture &lt;String[]&gt;] -InputObject &lt;PSObject&gt; [-ResultVariable &lt;String&gt;] [-ProgressAction &lt;ActionPreference&gt;]
+ [-WhatIf] [-Confirm] [&lt;CommonParameters&gt;]
 </code></pre></div>
 <h3 id="inputpath">InputPath<a class="headerlink" href="#inputpath" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>Assert-PSRule -InputPath &lt;String[]&gt; [-Module &lt;String[]&gt;] [-Format &lt;InputFormat&gt;] [-Baseline &lt;BaselineOption&gt;]
- [-Convention &lt;String[]&gt;] [-Style &lt;OutputStyle&gt;] [-Outcome &lt;RuleOutcome&gt;] [-As &lt;ResultFormat&gt;]
- [[-Path] &lt;String[]&gt;] [-Name &lt;String[]&gt;] [-Tag &lt;Hashtable&gt;] [-OutputPath &lt;String&gt;]
+<div class="highlight"><pre><span></span><code>Assert-PSRule -InputPath &lt;String[]&gt; [-Module &lt;String[]&gt;] [-Formats &lt;String[]&gt;] [-InputStringFormat &lt;String&gt;]
+ [-Baseline &lt;BaselineOption&gt;] [-Convention &lt;String[]&gt;] [-Style &lt;OutputStyle&gt;] [-Outcome &lt;RuleOutcome&gt;]
+ [-As &lt;ResultFormat&gt;] [[-Path] &lt;String[]&gt;] [-Name &lt;String[]&gt;] [-Tag &lt;Hashtable&gt;] [-OutputPath &lt;String&gt;]
  [-OutputFormat &lt;OutputFormat&gt;] [-Option &lt;PSRuleOption&gt;] [-ObjectPath &lt;String&gt;] [-TargetType &lt;String[]&gt;]
- [-Culture &lt;String[]&gt;] [-ResultVariable &lt;String&gt;] [-WhatIf] [-Confirm] [&lt;CommonParameters&gt;]
+ [-Culture &lt;String[]&gt;] [-ResultVariable &lt;String&gt;] [-ProgressAction &lt;ActionPreference&gt;] [-WhatIf] [-Confirm]
+ [&lt;CommonParameters&gt;]
 </code></pre></div>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
 <p>Evaluate objects against matching rules and assert any failures.
@@ -3455,6 +3492,36 @@ Additionally save the results as a NUnit report.</p>
 <span class="nt">Aliases</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f</span>
 
 <span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-formats">-Formats<a class="headerlink" href="#-formats" title="Permanent link">#</a></h3>
+<p>Enables one or more formats by name to process files and deserialized objects.
+Parameter is equivalent to setting <code>Format.&lt;name&gt;.Enabled</code> = <code>true</code> for each of the specified formats.</p>
+<p>This parameter takes precedence over the <code>Format.&lt;name&gt;.Enabled</code> option if set.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String[]</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-inputstringformat">-InputStringFormat<a class="headerlink" href="#-inputstringformat" title="Permanent link">#</a></h3>
+<p>Configures the input format for when a string is passed in as a target object.
+This parameter also enables the format if it is not already enabled.</p>
+<p>When the <code>-InputObject</code> parameter or pipeline input is used, strings are treated as plain text by default.
+Set this option to an available format for example: <code>yaml</code>, <code>json</code>, <code>markdown</code>, <code>powershell_data</code>.</p>
+<p>This parameter takes precedence over the <code>Input.StringFormat</code> option if set.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
+<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<span class="nt">Aliases</span><span class="p">:</span>
+
+<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
 <span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
 <span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
@@ -3813,7 +3880,7 @@ The cmdlet is not run.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
   </span>
 
     
@@ -3841,9 +3908,9 @@ The cmdlet is not run.</p>
     
     <nav>
       
-        <a href="https://github.com/ronaldbosma" class="md-author" title="@ronaldbosma">
+        <a href="https://github.com/BernieWhite" class="md-author" title="@BernieWhite">
           
-          <img src="https://avatars.githubusercontent.com/u/7334376?v=4&size=72" alt="ronaldbosma">
+          <img src="https://avatars.githubusercontent.com/u/13513058?v=4&size=72" alt="BernieWhite">
         </a>
       
         <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
@@ -3851,9 +3918,9 @@ The cmdlet is not run.</p>
           <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
         </a>
       
-        <a href="https://github.com/BernieWhite" class="md-author" title="@BernieWhite">
+        <a href="https://github.com/ronaldbosma" class="md-author" title="@ronaldbosma">
           
-          <img src="https://avatars.githubusercontent.com/u/13513058?v=4&size=72" alt="BernieWhite">
+          <img src="https://avatars.githubusercontent.com/u/7334376?v=4&size=72" alt="ronaldbosma">
         </a>
       
         <a href="https://github.com/ArmaanMcleod" class="md-author" title="@ArmaanMcleod">

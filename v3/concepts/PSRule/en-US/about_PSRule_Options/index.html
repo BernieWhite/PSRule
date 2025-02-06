@@ -1251,11 +1251,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../emitters/" class="md-nav__link">
+      <a href="../../../formats/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Emitters
+    Formats
     
   </span>
   
@@ -2621,9 +2621,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#inputformat" class="md-nav__link">
+  <a href="#inputstringformat" class="md-nav__link">
     <span class="md-ellipsis">
-      Input.Format
+      Input.StringFormat
     </span>
   </a>
   
@@ -3508,9 +3508,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#inputformat" class="md-nav__link">
+  <a href="#inputstringformat" class="md-nav__link">
     <span class="md-ellipsis">
-      Input.Format
+      Input.StringFormat
     </span>
   </a>
   
@@ -3951,7 +3951,7 @@ This topic describes what options are available, when to and how to use them.</p
 <li><a href="#includemodule">Include.Module</a></li>
 <li><a href="#includepath">Include.Path</a></li>
 <li><a href="#inputfileobjects">Input.FileObjects</a></li>
-<li><a href="#inputformat">Input.Format</a></li>
+<li><a href="#inputstringformat">Input.StringFormat</a></li>
 <li><a href="#inputignoregitpath">Input.IgnoreGitPath</a></li>
 <li><a href="#inputignoreobjectsource">Input.IgnoreObjectSource</a></li>
 <li><a href="#inputignorerepositorycommon">Input.IgnoreRepositoryCommon</a></li>
@@ -4772,7 +4772,7 @@ By default, a warning is generated, however this behavior can be modified by thi
 </code></pre></div>
 <h3 id="executionrestrictscriptsource">Execution.RestrictScriptSource<a class="headerlink" href="#executionrestrictscriptsource" title="Permanent link">#</a></h3>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75m7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.25.25 0 0 0-.163-.06"/></svg></span> v3.0.0</p>
-<p>Configures where to allow PowerShell language features (such as rules and conventions) to run from.
+<p>Configures where PowerShell language features (such as rules and conventions) are allowed to run from.
 In locked down environments, running PowerShell scripts from the workspace may not be allowed.
 Only run scripts from a trusted source.</p>
 <p>This option does not affect YAML or JSON based rules and resources.</p>
@@ -5016,44 +5016,66 @@ By default, a warning is generated, however this behavior can be modified by thi
 </code></pre></div>
 <h3 id="format">Format<a class="headerlink" href="#format" title="Permanent link">#</a></h3>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75m7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.25.25 0 0 0-.163-.06"/></svg></span> v3.0.0</p>
-<p>Configures each format by setting mapped types.
-The following built-in types can be configured:</p>
+<p>Configures each format by setting the following common properties:</p>
+<ul>
+<li><code>enabled</code> &mdash; Enable or disable the format. All formats are disabled by default.</li>
+<li><code>type</code> &mdash; The file extensions that will be processed.</li>
+<li><code>replace</code> &mdash; A set of key-value pairs to replace in the file content.</li>
+</ul>
+<p>The following built-in formats can be configured:</p>
 <ul>
 <li><code>yaml</code></li>
 <li><code>json</code></li>
 <li><code>markdown</code></li>
 <li><code>powershell_data</code></li>
 </ul>
-<p>The following is the default configuration for each format:</p>
+<p>The following is the default properties for built-in formats:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">format</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">yaml</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">types</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.yaml</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.yml</span>
+<span class="w">    </span><span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
 <span class="w">  </span><span class="nt">json</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">types</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.json</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.jsonc</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.sarif</span>
+<span class="w">    </span><span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
 <span class="w">  </span><span class="nt">markdown</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">types</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.md</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.markdown</span>
+<span class="w">    </span><span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
 <span class="w">  </span><span class="nt">powershell_data</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">types</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.psd1</span>
+<span class="w">    </span><span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
 </code></pre></div>
-<p>The configuration for each built-in or custom format a hashtable key by using the name:</p>
+<p>The properties for each built-in or custom formats can be set by hashtable key as follows:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Format.&lt;FORMAT&gt;.Type&#39;</span> <span class="p">=</span> <span class="n">value</span> <span class="p">};</span>
 </code></pre></div>
-<p>For example:</p>
+<p>For example (simple case):</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Format.Yaml.Type&#39;</span> <span class="p">=</span> <span class="p">@(</span><span class="s1">&#39;.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;.yml&#39;</span><span class="p">)</span> <span class="p">};</span>
 </code></pre></div>
-<p>The configuration for each built-in or custom format can be set by environment variable by using the name:</p>
+<p>For example (with all properties):</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span>
+  <span class="s1">&#39;Format.Yaml.Type&#39;</span> <span class="p">=</span> <span class="p">@(</span><span class="s1">&#39;.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;.yml&#39;</span><span class="p">);</span>
+  <span class="s1">&#39;Format.Yaml.Enabled&#39;</span> <span class="p">=</span> <span class="nv">$True</span><span class="p">;</span>
+  <span class="s1">&#39;Format.Yaml.Replace&#39;</span> <span class="p">=</span> <span class="p">@{</span> <span class="s1">&#39;{{environment}}&#39;</span> <span class="p">=</span> <span class="s1">&#39;production&#39;</span> <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>The properties for each built-in or custom formats can be set by environment variable key as follows:</p>
 <div class="highlight"><pre><span></span><code>PSRULE_FORMAT_&lt;FORMAT&gt;_TYPE=&#39;&lt;value&gt;&#39;
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_FORMAT_YAML_TYPES</span><span class="o">=</span><span class="s1">&#39;.yaml;.yml&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_FORMAT_YAML_TYPE</span><span class="o">=</span><span class="s1">&#39;.yaml;.yml&#39;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_FORMAT_YAML_ENABLED</span><span class="o">=</span><span class="s1">&#39;true&#39;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_FORMAT_YAML_REPLACE</span><span class="o">=</span><span class="s1">&#39;{ &quot;{{environment}}&quot;: &quot;production&quot; }&#39;</span>
 </code></pre></div>
 <h3 id="includemodule">Include.Module<a class="headerlink" href="#includemodule" title="Permanent link">#</a></h3>
 <p>Automatically include rules and resources from the specified module.
@@ -5161,64 +5183,43 @@ Set to <code>$True</code> to enable processing of file objects by rules.</p>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_INPUT_FILEOBJECTS</span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
-<h3 id="inputformat">Input.Format<a class="headerlink" href="#inputformat" title="Permanent link">#</a></h3>
+<h3 id="inputstringformat">Input.StringFormat<a class="headerlink" href="#inputstringformat" title="Permanent link">#</a></h3>
 <p>Configures the input format for when a string is passed in as a target object.
-This option determines if the target object is deserialized into an alternative form.</p>
-<p>Use this option with <code>Assert-PSRule</code>, <code>Invoke-PSRule</code> or <code>Test-PSRuleTarget</code>.
-Set this option to either <code>Yaml</code>, <code>Json</code>, <code>Markdown</code>, <code>PowerShellData</code> to deserialize as a specific format.
-The <code>-Format</code> parameter will override any value set in configuration.</p>
-<p>When the <code>-InputObject</code> parameter or pipeline input is used, strings are treated as plain text by default.
-<code>FileInfo</code> objects for supported file formats will be deserialized based on file extension.</p>
-<p>When the <code>-InputPath</code> parameter is used, supported file formats will be deserialized based on file extension.
-The <code>-InputPath</code> parameter can be used with a file path or URL.</p>
-<p>The following formats are available:</p>
+This option is specific to PowerShell cmdlets and .NET APIs and does not affect the input format for files.</p>
+<p>The specified format will be used to deserialize the string into an alternative form.
+This option also enables the format if it is not already enabled.</p>
+<p>The following built-in formats are available:</p>
 <ul>
-<li><code>None</code> - Treat strings as plain text and do not deserialize files.
-  This is the default.</li>
-<li><code>Yaml</code> - Deserialize as one or more YAML objects.</li>
-<li><code>Json</code> - Deserialize as one or more JSON objects.</li>
-<li><code>Markdown</code> - Deserialize as a markdown object.</li>
-<li><code>PowerShellData</code> - Deserialize as a PowerShell data object.</li>
-</ul>
-<p>The <code>Markdown</code> format does not parse the whole markdown document.
-Specifically this format deserializes YAML front matter from the top of the document if any exists.</p>
-<p>Files within <code>.git</code> sub-directories are ignored.
-Path specs specified in <code>.gitignore</code> directly in the current working path are ignored.
-A <code>RepositoryInfo</code> object is generated if the current working path if a <code>.git</code> sub-directory is present.
-Additionally, PSRule performs automatic type binding for file objects, using the extension as the type.
-When files have no extension the whole file name is used.</p>
-<p>Detect uses the following file extensions:</p>
-<ul>
-<li>Yaml - <code>.yaml</code> or <code>.yml</code></li>
-<li>Json - <code>.json</code> or <code>.jsonc</code></li>
-<li>Markdown - <code>.md</code> or <code>.markdown</code></li>
-<li>PowerShellData - <code>.psd1</code></li>
+<li><code>yaml</code> - Deserialize as one or more YAML objects.</li>
+<li><code>json</code> - Deserialize as one or more JSON objects.</li>
+<li><code>markdown</code> - Deserialize as a markdown object.</li>
+<li><code>powershell_data</code> - Deserialize as a PowerShell data object.</li>
 </ul>
 <p>This option can be specified using:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Format parameter</span>
-<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Format</span> <span class="n">Yaml</span><span class="p">;</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-InputStringFormat</span> <span class="n">yaml</span><span class="p">;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Input.Format hashtable key</span>
-<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Input.Format&#39;</span> <span class="p">=</span> <span class="s1">&#39;Yaml&#39;</span> <span class="p">};</span>
+<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-Option</span> <span class="p">@{</span> <span class="s1">&#39;Input.StringFormat&#39;</span> <span class="p">=</span> <span class="s1">&#39;yaml&#39;</span> <span class="p">};</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the Format parameter to set YAML</span>
-<span class="nb">Set-PSRuleOption</span> <span class="n">-Format</span> <span class="n">Yaml</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell: Using the InputStringFormat parameter to set YAML</span>
+<span class="nb">Set-PSRuleOption</span> <span class="n">-InputStringFormat</span> <span class="n">yaml</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the input/format property</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the input/stringFormat property</span>
 <span class="nt">input</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Yaml</span>
+<span class="w">  </span><span class="nt">stringFormat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yaml</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Bash: Using environment variable</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_INPUT_FORMAT</span><span class="o">=</span>Yaml
+<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_INPUT_STRINGFORMAT</span><span class="o">=</span>yaml
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># GitHub Actions: Using environment variable</span>
 <span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">PSRULE_INPUT_FORMAT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Yaml</span>
+<span class="w">  </span><span class="nt">PSRULE_INPUT_STRINGFORMAT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yaml</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Azure Pipelines: Using environment variable</span>
 <span class="nt">variables</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_INPUT_FORMAT</span>
-<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Yaml</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSRULE_INPUT_STRINGFORMAT</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yaml</span>
 </code></pre></div>
 <h3 id="inputignoregitpath">Input.IgnoreGitPath<a class="headerlink" href="#inputignoregitpath" title="Permanent link">#</a></h3>
 <p>When reading files from an input path, files within the <code>.git</code> sub-directory are ignored by default.
@@ -6593,21 +6594,29 @@ Objects that are suppressed are not processed by the rule at all but will contin
 <span class="c1"># Configure formats</span>
 <span class="nt">format</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">yaml</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">types</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.yaml</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.yml</span>
+<span class="w">    </span><span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
 <span class="w">  </span><span class="nt">json</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">types</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.json</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.jsonc</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.sarif</span>
+<span class="w">    </span><span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
 <span class="w">  </span><span class="nt">markdown</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">types</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.md</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.markdown</span>
+<span class="w">    </span><span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
 <span class="w">  </span><span class="nt">powershell_data</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">types</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.psd1</span>
+<span class="w">    </span><span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
 
 <span class="c1"># Configure include options</span>
 <span class="nt">include</span><span class="p">:</span>
@@ -6700,7 +6709,7 @@ Objects that are suppressed are not processed by the rule at all but will contin
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 8, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
   </span>
 
     
