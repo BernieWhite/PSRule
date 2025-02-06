@@ -2022,15 +2022,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      -Format
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#-baseline" class="md-nav__link">
     <span class="md-ellipsis">
       -Baseline
@@ -3174,15 +3165,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      -Format
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#-baseline" class="md-nav__link">
     <span class="md-ellipsis">
       -Baseline
@@ -3572,30 +3554,6 @@ Set this option to an available format for example: <code>yaml</code>, <code>jso
 <span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
 <span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
-<span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-</code></pre></div>
-<h3 id="-format">-Format<a class="headerlink" href="#-format" title="Permanent link">#</a></h3>
-<p>Configures the input format for when a string is passed in as a target object.</p>
-<p>When the <code>-InputObject</code> parameter or pipeline input is used, strings are treated as plain text by default.
-Set this option to either <code>Yaml</code>, <code>Json</code>, <code>Markdown</code>, <code>PowerShellData</code> to have PSRule deserialize the object.</p>
-<p>When the <code>-InputPath</code> parameter is used with a file path or URL.
-If the <code>Detect</code> format is used, the file extension will be used to automatically detect the format.
-When <code>-InputPath</code> is not used, <code>Detect</code> is the same as <code>None</code>.</p>
-<p>When this option is set to <code>File</code> PSRule scans the path and subdirectories specified by <code>-InputPath</code>.
-Files are treated as objects instead of being deserialized.
-Additional, PSRule uses the file extension as the object type.
-When files have no extension the whole file name is used.</p>
-<p>See <code>about_PSRule_Options</code> for details.</p>
-<p>This parameter takes precedence over the <code>Input.Format</code> option if set.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">InputFormat</span>
-<span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
-<span class="nt">Aliases</span><span class="p">:</span>
-<span class="nt">Accepted values</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None, Yaml, Json, Markdown, PowerShellData, File, Detect</span>
-
-<span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
-<span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
-<span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect</span>
 <span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
