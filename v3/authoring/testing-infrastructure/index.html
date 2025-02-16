@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1755,7 +1755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CHANGELOG-v3/" class="md-nav__link">
+      <a href="../../changelog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2837,14 +2837,14 @@
 
 
 <h1 id="testing-infrastructure">Testing infrastructure<a class="headerlink" href="#testing-infrastructure" title="Permanent link">#</a></h1>
-<p>You can use PSRule to create tests for Infrastructure as Code (IaC).
+<p>You can use PSRule to create tests for Infrastructure as Code (<abbr title="Infrastructure as Code">IaC</abbr>).
 Each test is called a <em>rule</em>.</p>
 <p>PSRule allows you to write rules using YAML, JSON, or PowerShell.
 Regardless of the format you choose, any combination of YAML, JSON, or PowerShell rules can be used together.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
 <p>This topic covers how to create a rule using YAML, JSON, and PowerShell by example.
-This example, while fictitious is indicative of common testing and validation scenarios for IaC.</p>
+This example, while fictitious is indicative of common testing and validation scenarios for <abbr title="Infrastructure as Code">IaC</abbr>.</p>
 </div>
 <h2 id="sample-data">Sample data<a class="headerlink" href="#sample-data" title="Permanent link">#</a></h2>
 <p>To get started authoring a rule, we will be working with a sample file <code>settings.json</code>.
@@ -3040,7 +3040,7 @@ By default, the severity level for a rule is <code>Error</code>.</p>
 <li><code>Warning</code> - A problem that should be addressed.</li>
 <li><code>Information</code> - A minor problem or an opportunity to improve the code.</li>
 </ul>
-<p>In a continuous integration (CI) pipeline, severity level is particularly important.
+<p>In a continuous integration (<abbr title="continuous integration">CI</abbr>) pipeline, severity level is particularly important.
 If any rule fails with a severity level of <code>Error</code> the pipeline will fail.
 This helps prevent serious problems from being introduced into the code base or deployed.</p>
 <p>The following example shows how to set the severity level to <code>Warning</code>.</p>

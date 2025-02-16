@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -1632,7 +1632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../CHANGELOG-v3/" class="md-nav__link">
+      <a href="../../../../changelog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4497,8 +4497,7 @@ To specify a configuration value, prefix the configuration value with <code>PSRU
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;2&#39;</span>
 </code></pre></div>
 <h3 id="capabilities">Capabilities<a class="headerlink" href="#capabilities" title="Permanent link">#</a></h3>
-<!-- module:version 3.0.0 -->
-
+<p><span class="badge"><span class="badge__icon"><a href="../../../../changelog/#v300" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75m7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.25.25 0 0 0-.163-.06"/></svg></span></a></span><span class="badge__text"><a href="../../../../changelog/#v300">3.0.0</a></span></span></p>
 <p>Specifies a list of capabilities required by the configuration.
 When set, PSRule will validate that the capabilities are available before executing the configuration.
 If the capabilities are not available, PSRule will report an error.</p>
@@ -5589,8 +5588,8 @@ it may be helpful to limit verbose messages to a specific rule.</p>
 <h3 id="loggingrulefail">Logging.RuleFail<a class="headerlink" href="#loggingrulefail" title="Permanent link">#</a></h3>
 <p>When an object fails a rule condition the results are written to output as a structured object marked with the outcome of <em>Fail</em>.
 If the rule executed successfully regardless of outcome no other informational messages are shown by default.</p>
-<p>In some circumstances such as a continuous integration (CI) pipeline,
-it may be preferable to see informational messages or abort the CI process if one or more <em>Fail</em> outcomes are returned.</p>
+<p>In some circumstances such as a continuous integration (<abbr title="continuous integration">CI</abbr>) pipeline,
+it may be preferable to see informational messages or abort the <abbr title="continuous integration">CI</abbr> process if one or more <em>Fail</em> outcomes are returned.</p>
 <p>By settings this option, error, warning or information messages will be generated for each rule <em>fail</em> outcome in addition to structured output.
 By default, outcomes are not logged to an informational stream (i.e. None).</p>
 <p>The following streams available:</p>
@@ -5617,7 +5616,7 @@ By default, outcomes are not logged to an informational stream (i.e. None).</p>
 <h3 id="loggingrulepass">Logging.RulePass<a class="headerlink" href="#loggingrulepass" title="Permanent link">#</a></h3>
 <p>When an object passes a rule condition the results are written to output as a structured object marked with the outcome of <em>Pass</em>.
 If the rule executed successfully regardless of outcome no other informational messages are shown by default.</p>
-<p>In some circumstances such as a continuous integration (CI) pipeline, it may be preferable to see informational messages.</p>
+<p>In some circumstances such as a continuous integration (<abbr title="continuous integration">CI</abbr>) pipeline, it may be preferable to see informational messages.</p>
 <p>By settings this option, error, warning or information messages will be generated for each rule <em>pass</em> outcome in addition to structured output.
 By default, outcomes are not logged to an informational stream (i.e. None).</p>
 <p>The following streams available:</p>
@@ -6392,8 +6391,7 @@ When multiple values are used, only one must match.</p>
 </code></pre></div>
 <p>In the example above, rules must have a tag of <code>severity</code> set to either <code>Critical</code> or <code>Warning</code> to be included.</p>
 <h3 id="runcategory">Run.Category<a class="headerlink" href="#runcategory" title="Permanent link">#</a></h3>
-<!-- module:version 3.0.0 -->
-
+<p><span class="badge"><span class="badge__icon"><a href="../../../../changelog/#v300" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75m7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.25.25 0 0 0-.163-.06"/></svg></span></a></span><span class="badge__text"><a href="../../../../changelog/#v300">3.0.0</a></span></span></p>
 <p>Configures the run category that is used as an identifier for output results.
 By default, the run category is set to <code>PSRule</code>.</p>
 <p>This option can be specified using:</p>
@@ -6417,8 +6415,7 @@ By default, the run category is set to <code>PSRule</code>.</p>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Custom</span><span class="nv"> </span><span class="s">run&#39;</span>
 </code></pre></div>
 <h3 id="rundescription">Run.Description<a class="headerlink" href="#rundescription" title="Permanent link">#</a></h3>
-<!-- module:version 3.0.0 -->
-
+<p><span class="badge"><span class="badge__icon"><a href="../../../../changelog/#v300" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75m7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.25.25 0 0 0-.163-.06"/></svg></span></a></span><span class="badge__text"><a href="../../../../changelog/#v300">3.0.0</a></span></span></p>
 <p>Configure the run description that is displayed in output.
 By default, the run description is not set.</p>
 <p>This option can be specified using:</p>
@@ -6442,8 +6439,7 @@ By default, the run description is not set.</p>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Custom</span><span class="nv"> </span><span class="s">run</span><span class="nv"> </span><span class="s">description.&#39;</span>
 </code></pre></div>
 <h3 id="runinstance">Run.Instance<a class="headerlink" href="#runinstance" title="Permanent link">#</a></h3>
-<!-- module:version 3.0.0 -->
-
+<p><span class="badge"><span class="badge__icon"><a href="../../../../changelog/#v300" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.75 1a.75.75 0 0 1 .75.75V4h6.532c.42 0 .826.15 1.143.425l3.187 2.75a1.75 1.75 0 0 1 0 2.65l-3.187 2.75a1.75 1.75 0 0 1-1.143.425H12.5v9.25a.75.75 0 0 1-1.5 0V13H3.75A1.75 1.75 0 0 1 2 11.25v-5.5C2 4.783 2.784 4 3.75 4H11V1.75a.75.75 0 0 1 .75-.75m7.282 4.5H3.75a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h15.282c.06 0 .118-.021.163-.06l3.188-2.75a.248.248 0 0 0 0-.38l-3.188-2.75a.25.25 0 0 0-.163-.06"/></svg></span></a></span><span class="badge__text"><a href="../../../../changelog/#v300">3.0.0</a></span></span></p>
 <p>An unique identifier for the current parent environment instance that is displayed in output as a component of the run ID.
 This is automatically set by PSRule when running in a GitHub Actions or Azure Pipeline pipeline.
 Alternatively, this option can be set using environment variables.</p>

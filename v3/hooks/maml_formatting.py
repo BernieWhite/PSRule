@@ -1,6 +1,9 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT License.
 
+# NOTES:
+# This file implements replacement for MAML headers in markdown using MkDocs native hooks.
+
 import re
 import logging
 import mkdocs.config
@@ -12,7 +15,11 @@ import mkdocs.structure.pages
 
 log = logging.getLogger(f"mkdocs.plugins.{__name__}")
 
-# Replace MAML headers
+#
+# Hooks
+#
+
+
 def on_page_markdown(markdown: str, page: mkdocs.structure.nav.Page, config: mkdocs.config.Config, files: mkdocs.structure.files.Files) -> str:
     '''Hook on_page_markdown event.'''
 
@@ -38,7 +45,8 @@ def on_page_markdown(markdown: str, page: mkdocs.structure.nav.Page, config: mkd
     markdown = markdown.replace("# PSRule_Options", "# Options")
     markdown = markdown.replace("# PSRule_Rules", "# Rules")
     markdown = markdown.replace("# PSRule_Selectors", "# Selectors")
-    markdown = markdown.replace("# PSRule_SuppressionGroups", "# Suppression Groups")
+    markdown = markdown.replace(
+        "# PSRule_SuppressionGroups", "# Suppression Groups")
     markdown = markdown.replace("# PSRule_Variables", "# Variables")
 
     # Rules
@@ -53,10 +61,12 @@ def on_page_markdown(markdown: str, page: mkdocs.structure.nav.Page, config: mkd
     # Conceptual topics
     markdown = markdown.replace("## SHORT DESCRIPTION", "")
     markdown = markdown.replace("## LONG DESCRIPTION", "## Description")
-    markdown = re.sub("(\#\#\s+(NOTE|KEYWORDS)\s+(.|\s{1,2}(?!\#))+)", "", markdown)
+    markdown = re.sub(
+        "(\#\#\s+(NOTE|KEYWORDS)\s+(.|\s{1,2}(?!\#))+)", "", markdown)
     markdown = markdown.replace("## SEE ALSO", "## Links")
 
     if page.meta.get('link_users', 'false') != 'false':
-        markdown = re.sub(r"\@([\w-]*)", r"[@\g<1>](https://github.com/\g<1>)", markdown)
+        markdown = re.sub(
+            r"\@([\w-]*)", r"[@\g<1>](https://github.com/\g<1>)", markdown)
 
     return markdown

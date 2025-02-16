@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -1824,7 +1824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CHANGELOG-v3/" class="md-nav__link">
+      <a href="../../../changelog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2975,30 +2975,30 @@
 
 
 <h1 id="using-within-continuous-integration">Using within continuous integration<a class="headerlink" href="#using-within-continuous-integration" title="Permanent link">#</a></h1>
-<p>PSRule supports several features that make it easy to a continuous integration (CI) pipeline.
+<p>PSRule supports several features that make it easy to a continuous integration (<abbr title="continuous integration">CI</abbr>) pipeline.
 When added to a pipeline, PSRule can validate files, template and objects dynamically.</p>
 <p>This scenario covers the following:</p>
 <ul>
-<li>Installing within a CI pipeline.</li>
+<li>Installing within a <abbr title="continuous integration">CI</abbr> pipeline.</li>
 <li>Validating objects.</li>
 <li>Formatting output.</li>
 <li>Failing the pipeline.</li>
 <li>Generating NUnit output.</li>
 <li>Additional options.</li>
 </ul>
-<h2 id="installing-within-a-ci-pipeline">Installing within a CI pipeline<a class="headerlink" href="#installing-within-a-ci-pipeline" title="Permanent link">#</a></h2>
-<p>Typically, PSRule is not pre-installed on CI worker nodes and must be installed.
-If your CI pipeline runs on a persistent virtual machine that you control, consider pre-installing PSRule.
+<h2 id="installing-within-a-ci-pipeline">Installing within a <abbr title="continuous integration">CI</abbr> pipeline<a class="headerlink" href="#installing-within-a-ci-pipeline" title="Permanent link">#</a></h2>
+<p>Typically, PSRule is not pre-installed on <abbr title="continuous integration">CI</abbr> worker nodes and must be installed.
+If your <abbr title="continuous integration">CI</abbr> pipeline runs on a persistent virtual machine that you control, consider pre-installing PSRule.
 The following examples focus on installing PSRule dynamically during execution of the pipeline.
-Which is suitable for cloud-based CI worker nodes.</p>
-<p>To install PSRule within a CI pipeline execute the <code>Install-Module</code> PowerShell cmdlet.</p>
+Which is suitable for cloud-based <abbr title="continuous integration">CI</abbr> worker nodes.</p>
+<p>To install PSRule within a <abbr title="continuous integration">CI</abbr> pipeline execute the <code>Install-Module</code> PowerShell cmdlet.</p>
 <p>In the example below:</p>
 <ul>
 <li>When installing modules on Windows, modules will be installed into <em>Program Files</em> by default, which requires administrator permissions.
-Depending on your environment, the CI worker process may not have administrative permissions.
-Instead we can install PSRule for the current context running the CI pipeline by using the <code>-Scope CurrentUser</code> parameter.</li>
+Depending on your environment, the <abbr title="continuous integration">CI</abbr> worker process may not have administrative permissions.
+Instead we can install PSRule for the current context running the <abbr title="continuous integration">CI</abbr> pipeline by using the <code>-Scope CurrentUser</code> parameter.</li>
 <li>By default, this cmdlet will install the module from the PowerShell Gallery which is not trusted by default.
-Since a CI pipeline is not interactive, use the <code>-Force</code> switch to suppress the confirmation prompt.</li>
+Since a <abbr title="continuous integration">CI</abbr> pipeline is not interactive, use the <code>-Force</code> switch to suppress the confirmation prompt.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span><span class="p">;</span>
 </code></pre></div>
@@ -3023,8 +3023,8 @@ The NuGet package provider can be installed using the <code>Install-PackageProvi
 <p>See the <a href="https://github.com/Microsoft/PSRule/blob/main/CHANGELOG.md">change log</a> for the latest version.</p>
 <h2 id="validating-objects">Validating objects<a class="headerlink" href="#validating-objects" title="Permanent link">#</a></h2>
 <p>To validate objects use <code>Invoke-PSRule</code>, <code>Assert-PSRule</code> or <code>Test-PSRuleTarget</code>.
-In a CI pipeline, <code>Assert-PSRule</code> is recommended.
-<code>Assert-PSRule</code> outputs preformatted results ideal for use within a CI pipeline.</p>
+In a <abbr title="continuous integration">CI</abbr> pipeline, <code>Assert-PSRule</code> is recommended.
+<code>Assert-PSRule</code> outputs preformatted results ideal for use within a <abbr title="continuous integration">CI</abbr> pipeline.</p>
 <p>For rules within the same source control repository, put rules in the <code>.ps-rule</code> directory.
 A directory <code>.ps-rule</code> in the repository root, is used by convention.</p>
 <p>In the following example, objects are validated against rules from the <code>./.ps-rule/</code> directory:</p>
@@ -3048,7 +3048,7 @@ A directory <code>.ps-rule</code> in the repository root, is used by convention.
 <div class="highlight"><pre><span></span><code><span class="nb">Assert-PSRule</span> <span class="n">-InputPath</span> <span class="p">.\</span><span class="n">resources</span><span class="p">-*.</span><span class="n">json</span> <span class="n">-Module</span> <span class="n">PSRule</span><span class="p">.</span><span class="n">Rules</span><span class="p">.</span><span class="n">Azure</span><span class="p">;</span>
 </code></pre></div>
 <h2 id="formatting-output">Formatting output<a class="headerlink" href="#formatting-output" title="Permanent link">#</a></h2>
-<p>When executing a CI pipeline, feedback on any validation failures is important.
+<p>When executing a <abbr title="continuous integration">CI</abbr> pipeline, feedback on any validation failures is important.
 The <code>Assert-PSRule</code> cmdlet provides easy to read formatted output instead of PowerShell objects.</p>
 <p>Additionally, <code>Assert-PSRule</code> supports styling formatted output for Azure Pipelines and GitHub Actions.
 Use the <code>-Style AzurePipelines</code> or <code>-Style GitHubActions</code> parameter to style output.</p>
@@ -3056,7 +3056,7 @@ Use the <code>-Style AzurePipelines</code> or <code>-Style GitHubActions</code> 
 <div class="highlight"><pre><span></span><code><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;./.ps-rule/&#39;</span> <span class="n">-Style</span> <span class="n">AzurePipelines</span><span class="p">;</span>
 </code></pre></div>
 <h2 id="failing-the-pipeline">Failing the pipeline<a class="headerlink" href="#failing-the-pipeline" title="Permanent link">#</a></h2>
-<p>When using PSRule within a CI pipeline, a failed rule should stop the pipeline.
+<p>When using PSRule within a <abbr title="continuous integration">CI</abbr> pipeline, a failed rule should stop the pipeline.
 When using <code>Assert-PSRule</code> if any rules fail, an error will be generated.</p>
 <div class="highlight"><pre><span></span><code>Assert-PSRule : One or more rules reported failure.
 At line:1 char:10
@@ -3065,7 +3065,7 @@ At line:1 char:10
 + CategoryInfo          : InvalidData: (:) [Assert-PSRule], FailPipelineException
 + FullyQualifiedErrorId : PSRule.Fail,Assert-PSRule
 </code></pre></div>
-<p>A single PowerShell error is typically enough to stop a CI pipeline.
+<p>A single PowerShell error is typically enough to stop a <abbr title="continuous integration">CI</abbr> pipeline.
 If you are using a different configuration additionally <code>-ErrorAction Stop</code> can be used.</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;./.ps-rule/&#39;</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
@@ -3081,7 +3081,7 @@ If you are using a different configuration additionally <code>-ErrorAction Stop<
 </code></pre></div>
 <h2 id="generating-nunit-output">Generating NUnit output<a class="headerlink" href="#generating-nunit-output" title="Permanent link">#</a></h2>
 <p>NUnit is a popular unit test framework for .NET.
-NUnit generates a test report format that is widely interpreted by CI systems.
+NUnit generates a test report format that is widely interpreted by <abbr title="continuous integration">CI</abbr> systems.
 While PSRule does not use NUnit directly, it support outputting validation results in the NUnit3 format.
 Using a common format allows integration with any system that supports the NUnit3 for publishing test results.</p>
 <p>To generate an NUnit report:</p>

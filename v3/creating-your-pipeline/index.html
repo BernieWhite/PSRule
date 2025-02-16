@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -1713,7 +1713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CHANGELOG-v3/" class="md-nav__link">
+      <a href="../changelog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2753,9 +2753,9 @@
 
 
 <h1 id="creating-your-pipeline">Creating your pipeline<a class="headerlink" href="#creating-your-pipeline" title="Permanent link">#</a></h1>
-<p>You can use PSRule to test Infrastructure as Code (IaC) artifacts throughout their lifecycle.
-By using validation within a continuous integration (CI) pipeline, any issues provide fast feedback.</p>
-<p>Within the root directory of your IaC repository:</p>
+<p>You can use PSRule to test Infrastructure as Code (<abbr title="Infrastructure as Code">IaC</abbr>) artifacts throughout their lifecycle.
+By using validation within a continuous integration (<abbr title="continuous integration">CI</abbr>) pipeline, any issues provide fast feedback.</p>
+<p>Within the root directory of your <abbr title="Infrastructure as Code">IaC</abbr> repository:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">GitHub Actions</label><label for="__tabbed_1_2">Azure Pipelines</label><label for="__tabbed_1_3">Generic with PowerShell</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2797,7 +2797,7 @@ By using validation within a continuous integration (CI) pipeline, any issues pr
 <p>This will automatically install compatible versions of all dependencies.</p>
 </div>
 <div class="tabbed-block">
-<p>Create a pipeline in any CI environment by using PowerShell.</p>
+<p>Create a pipeline in any <abbr title="continuous integration">CI</abbr> environment by using PowerShell.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$modules</span> <span class="p">=</span> <span class="p">@(</span><span class="s1">&#39;PSRule.Rules.Azure&#39;</span><span class="p">)</span>
 <span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="nv">$modules</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
 <span class="nb">Assert-PSRule</span> <span class="n">-InputPath</span> <span class="s1">&#39;.&#39;</span> <span class="n">-Module</span> <span class="nv">$modules</span> <span class="n">-Format</span> <span class="n">File</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
@@ -2807,7 +2807,7 @@ By using validation within a continuous integration (CI) pipeline, any issues pr
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>This example demonstrates using PSRule for Azure, a populate module for testing Azure IaC.
+<p>This example demonstrates using PSRule for Azure, a populate module for testing Azure <abbr title="Infrastructure as Code">IaC</abbr>.
 Instead, you can <a href="../authoring/packaging-rules/">write your own module</a> or use one of our <a href="../addon-modules/">pre-built modules</a>.</p>
 </div>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
