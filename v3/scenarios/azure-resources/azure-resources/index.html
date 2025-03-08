@@ -2849,13 +2849,13 @@ This scenario demonstrates the process and features of PSRule for illustration p
 <li><a href="../resources.json"><code>resources.json</code></a> - An export for the Azure resource properties saved for offline use.</li>
 </ul>
 <p>To generate a similar <code>resources.json</code> file of your own, the use following command.</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Get all resources using the Az modules. Alternatively use Get-AzureRmResource if using AzureRm modules.</span>
-<span class="c"># This command also requires authentication with Connect-AzAccount or Connect-AzureRmAccount</span>
-<span class="nb">Get-AzResource</span> <span class="n">-ExpandProperties</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="n">10</span> <span class="p">|</span> <span class="nb">Set-Content</span> <span class="n">-path</span> <span class="p">.\</span><span class="n">resources</span><span class="p">.</span><span class="n">json</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Get all resources using the Az modules. Alternatively use Get-AzureRmResource if using AzureRm modules.</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c"># This command also requires authentication with Connect-AzAccount or Connect-AzureRmAccount</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">Get-AzResource</span> <span class="n">-ExpandProperties</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="n">10</span> <span class="p">|</span> <span class="nb">Set-Content</span> <span class="n">-path</span> <span class="p">.\</span><span class="n">resources</span><span class="p">.</span><span class="n">json</span><span class="p">;</span>
+</span></code></pre></div>
 <p>For this example we ran this command:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Get-AzResource</span> <span class="n">-ExpandProperties</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="n">10</span> <span class="p">|</span> <span class="nb">Set-Content</span> <span class="n">-path</span> <span class="n">docs</span><span class="p">/</span><span class="n">scenarios</span><span class="p">/</span><span class="n">azure-resources</span><span class="p">/</span><span class="n">resources</span><span class="p">.</span><span class="n">json</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Get-AzResource</span> <span class="n">-ExpandProperties</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="n">10</span> <span class="p">|</span> <span class="nb">Set-Content</span> <span class="n">-path</span> <span class="n">docs</span><span class="p">/</span><span class="n">scenarios</span><span class="p">/</span><span class="n">azure-resources</span><span class="p">/</span><span class="n">resources</span><span class="p">.</span><span class="n">json</span><span class="p">;</span>
+</span></code></pre></div>
 <h2 id="define-rules">Define rules<a class="headerlink" href="#define-rules" title="Permanent link">#</a></h2>
 <p>To validate our Azure resources we need to define some rules.
 Rules are defined by using the <code>Rule</code> keyword in a file ending with the <code>.Rule.ps1</code> extension.</p>
@@ -2868,29 +2868,29 @@ Each rule must be named uniquely.</li>
 <li>One or more conditions are defined within the curly braces <code>{ }</code>.</li>
 <li>The rule definition is saved within a file named <code>storageAccounts.Rule.ps1</code>.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
-<span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="p">{</span>
-    <span class="c"># Rule conditions go here</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="c"># Rule conditions go here</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="set-rule-condition">Set rule condition<a class="headerlink" href="#set-rule-condition" title="Permanent link">#</a></h3>
 <p>Conditions can be any valid PowerShell expression that results in a <code>$True</code> or <code>$False</code>, just like an <code>If</code> statement, but without specifically requiring the <code>If</code> keyword to be used.</p>
 <blockquote>
 <p>Several PSRule keywords such as <code>Exists</code> and <code>AllOf</code> can supplement PowerShell to quickly build out rules that are easy to read.</p>
 </blockquote>
 <p>In <code>resources.json</code> one of our example storage accounts has a property <code>Properties.supportsHttpsTrafficOnly</code> as shown below, which will be how our rule will pass <code>$True</code> or fail <code>$False</code> Azure resources that we throw at it.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;storage&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ResourceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;storage&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ResourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft.Storage/storageAccounts&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Storage&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ResourceGroupName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test-rg&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eastus2&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;supportsHttpsTrafficOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;storage&quot;</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;ResourceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;storage&quot;</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;ResourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft.Storage/storageAccounts&quot;</span><span class="p">,</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;Kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Storage&quot;</span><span class="p">,</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">&quot;ResourceGroupName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test-rg&quot;</span><span class="p">,</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">&quot;Location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eastus2&quot;</span><span class="p">,</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">&quot;Properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="nt">&quot;supportsHttpsTrafficOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>In the example below:</p>
 <ul>
 <li>We use the <code>$TargetObject</code> variable to get the object on the pipeline and access it's properties.</li>
@@ -2900,15 +2900,15 @@ Each rule must be named uniquely.</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
-<span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="p">{</span>
-    <span class="c"># This property returns true or false, so nothing more needs to be done</span>
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">supportsHttpsTrafficOnly</span>
-
-    <span class="c"># Alternatively this could be written as:</span>
-    <span class="c"># $TargetObject.Properties.supportsHttpsTrafficOnly -eq $True</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="p">{</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="c"># This property returns true or false, so nothing more needs to be done</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">supportsHttpsTrafficOnly</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="c"># Alternatively this could be written as:</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="c"># $TargetObject.Properties.supportsHttpsTrafficOnly -eq $True</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="add-rule-recommendation">Add rule recommendation<a class="headerlink" href="#add-rule-recommendation" title="Permanent link">#</a></h3>
 <p>Additionally to provide feedback to the person or process running the rules, we can use the <code>Recommend</code> keyword to set a message that appears in results.</p>
 <p>If a recommend message is not provided the synopsis will be used instead.</p>
@@ -2916,13 +2916,13 @@ Each rule must be named uniquely.</li>
 <ul>
 <li>Directly after the <code>Recommend</code> keyword is a message to help understand why the rule failed or passed.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
-<span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="p">{</span>
-    <span class="n">Recommend</span> <span class="s1">&#39;Storage accounts should only allow secure traffic&#39;</span>
-
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">supportsHttpsTrafficOnly</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">Recommend</span> <span class="s1">&#39;Storage accounts should only allow secure traffic&#39;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">supportsHttpsTrafficOnly</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="filter-with-preconditions">Filter with preconditions<a class="headerlink" href="#filter-with-preconditions" title="Permanent link">#</a></h3>
 <p>So far our rule works for a Storage Account, but there are many type of resources that could be returned by calling <code>Get-AzResource</code>.
 Most of these resources won't have the <code>Properties.supportsHttpsTrafficOnly</code> property, and if it did, it may use different configuration options instead of just <code>true</code> and <code>false</code>.
@@ -2933,39 +2933,39 @@ When the rule is executed, if the precondition is <code>$True</code> then the ru
 <ul>
 <li>A check against <code>$TargetObject.ResourceType</code> ensured that our rule is only processed for Storage Accounts.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
-<span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="n">-If</span> <span class="p">{</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">ResourceType</span> <span class="o">-eq</span> <span class="s1">&#39;Microsoft.Storage/storageAccounts&#39;</span> <span class="p">}</span> <span class="p">{</span>
-    <span class="n">Recommend</span> <span class="s1">&#39;Storage accounts should only allow secure traffic&#39;</span>
-
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">supportsHttpsTrafficOnly</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="n">-If</span> <span class="p">{</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">ResourceType</span> <span class="o">-eq</span> <span class="s1">&#39;Microsoft.Storage/storageAccounts&#39;</span> <span class="p">}</span> <span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="n">Recommend</span> <span class="s1">&#39;Storage accounts should only allow secure traffic&#39;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">supportsHttpsTrafficOnly</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Skipped rules have the outcome <code>None</code> and are not included in output by default.
 To include skipped rules use the <code>-Outcome All</code> parameter.</p>
 <h2 id="execute-rules">Execute rules<a class="headerlink" href="#execute-rules" title="Permanent link">#</a></h2>
 <p>With a rule defined, the next step is to execute it. To execute rules, pipe the target object to <code>Invoke-PSRule</code>.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Read resources in from file</span>
-<span class="nv">$resources</span> <span class="p">=</span> <span class="nb">Get-Content</span> <span class="n">-Path</span> <span class="p">.\</span><span class="n">resources</span><span class="p">.</span><span class="n">json</span> <span class="p">|</span> <span class="nb">ConvertFrom-Json</span><span class="p">;</span>
-
-<span class="c"># Process resources</span>
-<span class="nv">$resources</span> <span class="p">|</span> <span class="nb">Invoke-PSRule</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c"># Read resources in from file</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nv">$resources</span> <span class="p">=</span> <span class="nb">Get-Content</span> <span class="n">-Path</span> <span class="p">.\</span><span class="n">resources</span><span class="p">.</span><span class="n">json</span> <span class="p">|</span> <span class="nb">ConvertFrom-Json</span><span class="p">;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c"># Process resources</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nv">$resources</span> <span class="p">|</span> <span class="nb">Invoke-PSRule</span><span class="p">;</span>
+</span></code></pre></div>
 <p>PSRule natively supports reading from YAML and JSON files so this command-line can be simplified to:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Invoke-PSRule</span> <span class="n">-InputPath</span> <span class="p">.\</span><span class="n">resources</span><span class="p">.</span><span class="n">json</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">Invoke-PSRule</span> <span class="n">-InputPath</span> <span class="p">.\</span><span class="n">resources</span><span class="p">.</span><span class="n">json</span><span class="p">;</span>
+</span></code></pre></div>
 <p>You will notice, we didn't specify the rule. By default PSRule will look for any <code>.Rule.ps1</code> files in the current working path.</p>
 <p><code>Invoke-PSRule</code> supports <code>-Path</code>, <code>-Name</code> and <code>-Tag</code> parameters that can be used to specify the path to look for rules in or filter rules if you want to run a subset of the rules.</p>
 <p>For this example we ran these commands:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Invoke-PSRule</span> <span class="n">-Path</span> <span class="n">docs</span><span class="p">/</span><span class="n">scenarios</span><span class="p">/</span><span class="n">azure-resources</span> <span class="n">-InputPath</span> <span class="n">docs</span><span class="p">/</span><span class="n">scenarios</span><span class="p">/</span><span class="n">azure-resources</span><span class="p">/</span><span class="n">resources</span><span class="p">.</span><span class="n">json</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Invoke-PSRule</span> <span class="n">-Path</span> <span class="n">docs</span><span class="p">/</span><span class="n">scenarios</span><span class="p">/</span><span class="n">azure-resources</span> <span class="n">-InputPath</span> <span class="n">docs</span><span class="p">/</span><span class="n">scenarios</span><span class="p">/</span><span class="n">azure-resources</span><span class="p">/</span><span class="n">resources</span><span class="p">.</span><span class="n">json</span><span class="p">;</span>
+</span></code></pre></div>
 <p>Our output looked like this:</p>
-<div class="highlight"><pre><span></span><code>   TargetName: storage
-
-RuleName                            Outcome    Recommendation
---------                            -------    --------------
-storageAccounts.UseHttps            Fail       Storage accounts should only allow secure traffic
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>   TargetName: storage
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>RuleName                            Outcome    Recommendation
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>--------                            -------    --------------
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>storageAccounts.UseHttps            Fail       Storage accounts should only allow secure traffic
+</span></code></pre></div>
 <p>In our case <code>storageAccounts.UseHttps</code> returns a <code>Fail</code> outcome because our storage account has <code>supportsHttpsTrafficOnly</code> = <code>false</code>, which is exactly what should happen.</p>
 <h2 id="define-helper-functions">Define helper functions<a class="headerlink" href="#define-helper-functions" title="Permanent link">#</a></h2>
 <p>Using helper functions is completely optional and not required in many cases.
@@ -2974,31 +2974,31 @@ However, you may prefer to use helper functions when rule conditions or precondi
 Any code within <code>.Rule.ps1</code> files called by <code>Invoke-PSRule</code> will be executed, however to make it available for use within a rule, a global scope modifier must be used.</p>
 <p>For functions this is done by prefixing the function name with <code>global:</code>.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="k">global:</span><span class="n">NameOfFunction</span> <span class="p">{</span>
-    <span class="c"># Function body</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">function</span> <span class="k">global:</span><span class="n">NameOfFunction</span> <span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="c"># Function body</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>In our example, we are going to define a <code>ResourceType</code> function in a file named <code>common.Rule.ps1</code>.
 This function will be used by preconditions to check the type of Azure resource.</p>
-<div class="highlight"><pre><span></span><code><span class="c"># A custom function to filter by resource type</span>
-<span class="k">function</span> <span class="k">global:</span><span class="n">ResourceType</span> <span class="p">{</span>
-    <span class="k">param</span> <span class="p">(</span>
-        <span class="no">[String]</span><span class="nv">$ResourceType</span>
-    <span class="p">)</span>
-
-    <span class="k">process</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">ResourceType</span> <span class="o">-eq</span> <span class="nv">$ResourceType</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c"># A custom function to filter by resource type</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">function</span> <span class="k">global:</span><span class="n">ResourceType</span> <span class="p">{</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="k">param</span> <span class="p">(</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>        <span class="no">[String]</span><span class="nv">$ResourceType</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="p">)</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    <span class="k">process</span> <span class="p">{</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>        <span class="k">return</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">ResourceType</span> <span class="o">-eq</span> <span class="nv">$ResourceType</span><span class="p">;</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    <span class="p">}</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Updating our existing <code>storageAccounts.UseHttps</code> rule, our rule definition becomes:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
-<span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="n">-If</span> <span class="p">{</span> <span class="n">ResourceType</span> <span class="s1">&#39;Microsoft.Storage/storageAccounts&#39;</span> <span class="p">}</span> <span class="p">{</span>
-    <span class="n">Recommend</span> <span class="s1">&#39;Storage accounts should only allow secure traffic&#39;</span>
-
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">supportsHttpsTrafficOnly</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="n">-If</span> <span class="p">{</span> <span class="n">ResourceType</span> <span class="s1">&#39;Microsoft.Storage/storageAccounts&#39;</span> <span class="p">}</span> <span class="p">{</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="n">Recommend</span> <span class="s1">&#39;Storage accounts should only allow secure traffic&#39;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">supportsHttpsTrafficOnly</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="more-information">More information<a class="headerlink" href="#more-information" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="../storageAccounts.Rule.ps1">storageAccounts.Rule.ps1</a> - Example rules for validating Azure Storage.</li>

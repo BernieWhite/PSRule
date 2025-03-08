@@ -3000,26 +3000,26 @@ Instead we can install PSRule for the current context running the <abbr title="c
 <li>By default, this cmdlet will install the module from the PowerShell Gallery which is not trusted by default.
 Since a <abbr title="continuous integration">CI</abbr> pipeline is not interactive, use the <code>-Force</code> switch to suppress the confirmation prompt.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span><span class="p">;</span>
+</span></code></pre></div>
 <p>In some cases, installing NuGet and PowerShellGet may be required to connect to the PowerShell Gallery.
 The NuGet package provider can be installed using the <code>Install-PackageProvider</code> PowerShell cmdlet.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Install-PackageProvider</span> <span class="n">-Name</span> <span class="n">NuGet</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span><span class="p">;</span>
-<span class="nb">Install-Module</span> <span class="n">PowerShellGet</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.2.1&#39;</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span> <span class="n">-AllowClobber</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Install-PackageProvider</span> <span class="n">-Name</span> <span class="n">NuGet</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">Install-Module</span> <span class="n">PowerShellGet</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.2.1&#39;</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span> <span class="n">-AllowClobber</span><span class="p">;</span>
+</span></code></pre></div>
 <p>The example below includes both steps together with checks:</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-PackageProvider</span> <span class="n">-Name</span> <span class="n">NuGet</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nb">Install-PackageProvider</span> <span class="n">-Name</span> <span class="n">NuGet</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-InstalledModule</span> <span class="n">-Name</span> <span class="n">PowerShellGet</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.2.1&#39;</span> <span class="n">-ErrorAction</span> <span class="n">Ignore</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nb">Install-Module</span> <span class="n">PowerShellGet</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.2.1&#39;</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span> <span class="n">-AllowClobber</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-InstalledModule</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-Force</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-PackageProvider</span> <span class="n">-Name</span> <span class="n">NuGet</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="nb">Install-PackageProvider</span> <span class="n">-Name</span> <span class="n">NuGet</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-InstalledModule</span> <span class="n">-Name</span> <span class="n">PowerShellGet</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.2.1&#39;</span> <span class="n">-ErrorAction</span> <span class="n">Ignore</span><span class="p">))</span> <span class="p">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="nb">Install-Module</span> <span class="n">PowerShellGet</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.2.1&#39;</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span> <span class="n">-AllowClobber</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-InstalledModule</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-Force</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>See the <a href="https://github.com/Microsoft/PSRule/blob/main/CHANGELOG.md">change log</a> for the latest version.</p>
 <h2 id="validating-objects">Validating objects<a class="headerlink" href="#validating-objects" title="Permanent link">#</a></h2>
 <p>To validate objects use <code>Invoke-PSRule</code>, <code>Assert-PSRule</code> or <code>Test-PSRuleTarget</code>.
@@ -3028,57 +3028,57 @@ In a <abbr title="continuous integration">CI</abbr> pipeline, <code>Assert-PSRul
 <p>For rules within the same source control repository, put rules in the <code>.ps-rule</code> directory.
 A directory <code>.ps-rule</code> in the repository root, is used by convention.</p>
 <p>In the following example, objects are validated against rules from the <code>./.ps-rule/</code> directory:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;./.ps-rule/&#39;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;./.ps-rule/&#39;</span>
+</span></code></pre></div>
 <p>Example output:</p>
-<div class="highlight"><pre><span></span><code> -&gt; ObjectFromFile.psd1 : System.IO.FileInfo
-
-    [PASS] File.Header
-    [PASS] File.Encoding
-    [WARN] Target object &#39;ObjectFromFile.yaml&#39; has not been processed because no matching rules were found.
-    [WARN] Target object &#39;ObjectFromNestedFile.yaml&#39; has not been processed because no matching rules were found.
-    [WARN] Target object &#39;Baseline.Rule.yaml&#39; has not been processed because no matching rules were found.
-
- -&gt; FromFile.Rule.ps1 : System.IO.FileInfo
-
-    [FAIL] File.Header
-    [PASS] File.Encoding
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a> -&gt; ObjectFromFile.psd1 : System.IO.FileInfo
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    [PASS] File.Header
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    [PASS] File.Encoding
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    [WARN] Target object &#39;ObjectFromFile.yaml&#39; has not been processed because no matching rules were found.
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    [WARN] Target object &#39;ObjectFromNestedFile.yaml&#39; has not been processed because no matching rules were found.
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    [WARN] Target object &#39;Baseline.Rule.yaml&#39; has not been processed because no matching rules were found.
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a> -&gt; FromFile.Rule.ps1 : System.IO.FileInfo
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    [FAIL] File.Header
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    [PASS] File.Encoding
+</span></code></pre></div>
 <p>In the next example, objects from file are validated against pre-defined rules from a module:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Assert-PSRule</span> <span class="n">-InputPath</span> <span class="p">.\</span><span class="n">resources</span><span class="p">-*.</span><span class="n">json</span> <span class="n">-Module</span> <span class="n">PSRule</span><span class="p">.</span><span class="n">Rules</span><span class="p">.</span><span class="n">Azure</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">Assert-PSRule</span> <span class="n">-InputPath</span> <span class="p">.\</span><span class="n">resources</span><span class="p">-*.</span><span class="n">json</span> <span class="n">-Module</span> <span class="n">PSRule</span><span class="p">.</span><span class="n">Rules</span><span class="p">.</span><span class="n">Azure</span><span class="p">;</span>
+</span></code></pre></div>
 <h2 id="formatting-output">Formatting output<a class="headerlink" href="#formatting-output" title="Permanent link">#</a></h2>
 <p>When executing a <abbr title="continuous integration">CI</abbr> pipeline, feedback on any validation failures is important.
 The <code>Assert-PSRule</code> cmdlet provides easy to read formatted output instead of PowerShell objects.</p>
 <p>Additionally, <code>Assert-PSRule</code> supports styling formatted output for Azure Pipelines and GitHub Actions.
 Use the <code>-Style AzurePipelines</code> or <code>-Style GitHubActions</code> parameter to style output.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;./.ps-rule/&#39;</span> <span class="n">-Style</span> <span class="n">AzurePipelines</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;./.ps-rule/&#39;</span> <span class="n">-Style</span> <span class="n">AzurePipelines</span><span class="p">;</span>
+</span></code></pre></div>
 <h2 id="failing-the-pipeline">Failing the pipeline<a class="headerlink" href="#failing-the-pipeline" title="Permanent link">#</a></h2>
 <p>When using PSRule within a <abbr title="continuous integration">CI</abbr> pipeline, a failed rule should stop the pipeline.
 When using <code>Assert-PSRule</code> if any rules fail, an error will be generated.</p>
-<div class="highlight"><pre><span></span><code>Assert-PSRule : One or more rules reported failure.
-At line:1 char:10
-+ $items | Assert-PSRule -Path ./.ps-rule/
-+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-+ CategoryInfo          : InvalidData: (:) [Assert-PSRule], FailPipelineException
-+ FullyQualifiedErrorId : PSRule.Fail,Assert-PSRule
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Assert-PSRule : One or more rules reported failure.
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>At line:1 char:10
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>+ $items | Assert-PSRule -Path ./.ps-rule/
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>+ CategoryInfo          : InvalidData: (:) [Assert-PSRule], FailPipelineException
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>+ FullyQualifiedErrorId : PSRule.Fail,Assert-PSRule
+</span></code></pre></div>
 <p>A single PowerShell error is typically enough to stop a <abbr title="continuous integration">CI</abbr> pipeline.
 If you are using a different configuration additionally <code>-ErrorAction Stop</code> can be used.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;./.ps-rule/&#39;</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;./.ps-rule/&#39;</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
+</span></code></pre></div>
 <p>Using <code>-ErrorAction Stop</code> will stop the current script and return an exit code of 1.</p>
 <p>To continue running the current script but return an exit code, use:</p>
-<div class="highlight"><pre><span></span><code><span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;./.ps-rule/&#39;</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">catch</span> <span class="p">{</span>
-    <span class="nv">$Host</span><span class="p">.</span><span class="n">SetShouldExit</span><span class="p">(</span><span class="n">1</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">try</span> <span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;./.ps-rule/&#39;</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">}</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">catch</span> <span class="p">{</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="nv">$Host</span><span class="p">.</span><span class="n">SetShouldExit</span><span class="p">(</span><span class="n">1</span><span class="p">);</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="generating-nunit-output">Generating NUnit output<a class="headerlink" href="#generating-nunit-output" title="Permanent link">#</a></h2>
 <p>NUnit is a popular unit test framework for .NET.
 NUnit generates a test report format that is widely interpreted by <abbr title="continuous integration">CI</abbr> systems.
@@ -3089,102 +3089,102 @@ Using a common format allows integration with any system that supports the NUnit
 <li>Use the <code>-OutputFormat NUnit3</code> parameter.</li>
 <li>Use the <code>-OutputPath</code> parameter to specify the path of the report file to write.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;./.ps-rule/&#39;</span> <span class="n">-OutputFormat</span> <span class="n">NUnit3</span> <span class="n">-OutputPath</span> <span class="n">reports</span><span class="p">/</span><span class="n">rule-report</span><span class="p">.</span><span class="n">xml</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;./.ps-rule/&#39;</span> <span class="n">-OutputFormat</span> <span class="n">NUnit3</span> <span class="n">-OutputPath</span> <span class="n">reports</span><span class="p">/</span><span class="n">rule-report</span><span class="p">.</span><span class="n">xml</span><span class="p">;</span>
+</span></code></pre></div>
 <p>The output path will be created if it does not exist.</p>
 <h3 id="publishing-nunit-report-with-azure-devops">Publishing NUnit report with Azure DevOps<a class="headerlink" href="#publishing-nunit-report-with-azure-devops" title="Permanent link">#</a></h3>
 <p>With Azure DevOps, an NUnit report can be published using <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-test-results">Publish Test Results task</a>.</p>
 <p>An example YAML snippet is included below:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># PSRule results</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PublishTestResults@2</span>
-<span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Publish</span><span class="nv"> </span><span class="s">PSRule</span><span class="nv"> </span><span class="s">results&#39;</span>
-<span class="w">  </span><span class="nt">inputs</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">testRunTitle</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;PSRule&#39;</span>
-<span class="w">    </span><span class="nt">testRunner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NUnit</span>
-<span class="w">    </span><span class="nt">testResultsFiles</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;reports/rule-report.xml&#39;</span>
-<span class="w">    </span><span class="nt">mergeTestResults</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">publishRunAttachments</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">succeededOrFailed()</span>
-</code></pre></div>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># PSRule results</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PublishTestResults@2</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Publish</span><span class="nv"> </span><span class="s">PSRule</span><span class="nv"> </span><span class="s">results&#39;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="nt">inputs</span><span class="p">:</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="nt">testRunTitle</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;PSRule&#39;</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="nt">testRunner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NUnit</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="nt">testResultsFiles</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;reports/rule-report.xml&#39;</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="nt">mergeTestResults</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span><span class="nt">publishRunAttachments</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">succeededOrFailed()</span>
+</span></code></pre></div>
 <h2 id="complete-example">Complete example<a class="headerlink" href="#complete-example" title="Permanent link">#</a></h2>
 <p>Putting each of these steps together.</p>
 <h3 id="install-dependencies">Install dependencies<a class="headerlink" href="#install-dependencies" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c"># Install dependencies for connecting to PowerShell Gallery</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-PackageProvider</span> <span class="n">-Name</span> <span class="n">NuGet</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nb">Install-PackageProvider</span> <span class="n">-Name</span> <span class="n">NuGet</span> <span class="n">-Force</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-InstalledModule</span> <span class="n">-Name</span> <span class="n">PowerShellGet</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.2.1&#39;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nb">Install-Module</span> <span class="n">PowerShellGet</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.2.1&#39;</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span> <span class="n">-AllowClobber</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c"># Install dependencies for connecting to PowerShell Gallery</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-PackageProvider</span> <span class="n">-Name</span> <span class="n">NuGet</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="nb">Install-PackageProvider</span> <span class="n">-Name</span> <span class="n">NuGet</span> <span class="n">-Force</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span><span class="p">;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">}</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-InstalledModule</span> <span class="n">-Name</span> <span class="n">PowerShellGet</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.2.1&#39;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    <span class="nb">Install-Module</span> <span class="n">PowerShellGet</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.2.1&#39;</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-Force</span> <span class="n">-AllowClobber</span><span class="p">;</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="validate-files">Validate files<a class="headerlink" href="#validate-files" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c"># Install PSRule module</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-InstalledModule</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-Force</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c"># Validate files</span>
-<span class="nv">$assertParams</span> <span class="p">=</span> <span class="p">@{</span>
-    <span class="n">Path</span> <span class="p">=</span> <span class="s1">&#39;./.ps-rule/&#39;</span>
-    <span class="n">Style</span> <span class="p">=</span> <span class="s1">&#39;AzurePipelines&#39;</span>
-    <span class="n">OutputFormat</span> <span class="p">=</span> <span class="s1">&#39;NUnit3&#39;</span>
-    <span class="n">OutputPath</span> <span class="p">=</span> <span class="s1">&#39;reports/rule-report.xml&#39;</span>
-<span class="p">}</span>
-<span class="nv">$items</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Path</span> <span class="p">.\</span><span class="n">src</span><span class="p">\,.\</span><span class="n">tests</span><span class="p">\</span> <span class="n">-Include</span> <span class="p">*.</span><span class="n">ps1</span><span class="p">,*.</span><span class="n">psd1</span><span class="p">,*.</span><span class="n">psm1</span><span class="p">,*.</span><span class="n">yaml</span><span class="p">;</span>
-<span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="nv">$assertParams</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c"># Install PSRule module</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-InstalledModule</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-Force</span><span class="p">;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">}</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="c"># Validate files</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="nv">$assertParams</span> <span class="p">=</span> <span class="p">@{</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    <span class="n">Path</span> <span class="p">=</span> <span class="s1">&#39;./.ps-rule/&#39;</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    <span class="n">Style</span> <span class="p">=</span> <span class="s1">&#39;AzurePipelines&#39;</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>    <span class="n">OutputFormat</span> <span class="p">=</span> <span class="s1">&#39;NUnit3&#39;</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    <span class="n">OutputPath</span> <span class="p">=</span> <span class="s1">&#39;reports/rule-report.xml&#39;</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="p">}</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="nv">$items</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Path</span> <span class="p">.\</span><span class="n">src</span><span class="p">\,.\</span><span class="n">tests</span><span class="p">\</span> <span class="n">-Include</span> <span class="p">*.</span><span class="n">ps1</span><span class="p">,*.</span><span class="n">psd1</span><span class="p">,*.</span><span class="n">psm1</span><span class="p">,*.</span><span class="n">yaml</span><span class="p">;</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="nv">$assertParams</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
+</span></code></pre></div>
 <h3 id="azure-devops-pipeline">Azure DevOps Pipeline<a class="headerlink" href="#azure-devops-pipeline" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nt">steps</span><span class="p">:</span>
-
-<span class="c1"># Install dependencies</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">powershell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./pipeline-deps.ps1</span>
-<span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Install</span><span class="nv"> </span><span class="s">dependencies&#39;</span>
-
-<span class="c1"># Validate templates</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">powershell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./validate-files.ps1</span>
-<span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Validate</span><span class="nv"> </span><span class="s">files&#39;</span>
-
-<span class="c1"># Publish pipeline results</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PublishTestResults@2</span>
-<span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Publish</span><span class="nv"> </span><span class="s">PSRule</span><span class="nv"> </span><span class="s">results&#39;</span>
-<span class="w">  </span><span class="nt">inputs</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">testRunTitle</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;PSRule&#39;</span>
-<span class="w">    </span><span class="nt">testRunner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NUnit</span>
-<span class="w">    </span><span class="nt">testResultsFiles</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;reports/rule-report.xml&#39;</span>
-<span class="w">    </span><span class="nt">mergeTestResults</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">publishRunAttachments</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">succeededOrFailed()</span>
-</code></pre></div>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">steps</span><span class="p">:</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="c1"># Install dependencies</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">powershell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./pipeline-deps.ps1</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Install</span><span class="nv"> </span><span class="s">dependencies&#39;</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1"># Validate templates</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">powershell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./validate-files.ps1</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Validate</span><span class="nv"> </span><span class="s">files&#39;</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="c1"># Publish pipeline results</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PublishTestResults@2</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Publish</span><span class="nv"> </span><span class="s">PSRule</span><span class="nv"> </span><span class="s">results&#39;</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">  </span><span class="nt">inputs</span><span class="p">:</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">    </span><span class="nt">testRunTitle</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;PSRule&#39;</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">    </span><span class="nt">testRunner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NUnit</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">    </span><span class="nt">testResultsFiles</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;reports/rule-report.xml&#39;</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">    </span><span class="nt">mergeTestResults</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">    </span><span class="nt">publishRunAttachments</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">succeededOrFailed()</span>
+</span></code></pre></div>
 <h2 id="additional-options">Additional options<a class="headerlink" href="#additional-options" title="Permanent link">#</a></h2>
 <h3 id="using-invoke-build">Using Invoke-Build<a class="headerlink" href="#using-invoke-build" title="Permanent link">#</a></h3>
 <p>Invoke-Build is a build automation cmdlet that can be installed from the PowerShell Gallery by installing the <em>InvokeBuild</em> module.
 Within Invoke-Build, each build process is broken into tasks.</p>
 <p>The following example shows an example of using PSRule with Invoke-Build tasks.</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Install PSRule</span>
-<span class="n">task</span> <span class="n">PSRule</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-InstalledModule</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-Force</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c"># Synopsis: Validate files</span>
-<span class="n">task</span> <span class="n">ValidateFiles</span> <span class="n">PSRule</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nv">$assertParams</span> <span class="p">=</span> <span class="p">@{</span>
-        <span class="n">Path</span> <span class="p">=</span> <span class="s1">&#39;./.ps-rule/&#39;</span>
-        <span class="n">Style</span> <span class="p">=</span> <span class="s1">&#39;AzurePipelines&#39;</span>
-        <span class="n">OutputFormat</span> <span class="p">=</span> <span class="s1">&#39;NUnit3&#39;</span>
-        <span class="n">OutputPath</span> <span class="p">=</span> <span class="s1">&#39;reports/rule-report.xml&#39;</span>
-    <span class="p">}</span>
-    <span class="nv">$items</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Path</span> <span class="p">.\</span><span class="n">src</span><span class="p">\,.\</span><span class="n">tests</span><span class="p">\</span> <span class="n">-Include</span> <span class="p">*.</span><span class="n">ps1</span><span class="p">,*.</span><span class="n">psd1</span><span class="p">,*.</span><span class="n">psm1</span><span class="p">,*.</span><span class="n">yaml</span><span class="p">;</span>
-    <span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="nv">@assertParams</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c"># Synopsis: Run all build tasks</span>
-<span class="n">task</span> <span class="n">Build</span> <span class="n">ValidateFiles</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Invoke-Build</span> <span class="n">Build</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c"># Synopsis: Install PSRule</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">task</span> <span class="n">PSRule</span> <span class="p">{</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$Null</span> <span class="o">-eq</span> <span class="p">(</span><span class="nb">Get-InstalledModule</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">))</span> <span class="p">{</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>        <span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSRule</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-MinimumVersion</span> <span class="s1">&#39;2.1.0&#39;</span> <span class="n">-Force</span><span class="p">;</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    <span class="p">}</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="p">}</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="c"># Synopsis: Validate files</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="n">task</span> <span class="n">ValidateFiles</span> <span class="n">PSRule</span><span class="p">,</span> <span class="p">{</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>    <span class="nv">$assertParams</span> <span class="p">=</span> <span class="p">@{</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>        <span class="n">Path</span> <span class="p">=</span> <span class="s1">&#39;./.ps-rule/&#39;</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>        <span class="n">Style</span> <span class="p">=</span> <span class="s1">&#39;AzurePipelines&#39;</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>        <span class="n">OutputFormat</span> <span class="p">=</span> <span class="s1">&#39;NUnit3&#39;</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>        <span class="n">OutputPath</span> <span class="p">=</span> <span class="s1">&#39;reports/rule-report.xml&#39;</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>    <span class="p">}</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>    <span class="nv">$items</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Path</span> <span class="p">.\</span><span class="n">src</span><span class="p">\,.\</span><span class="n">tests</span><span class="p">\</span> <span class="n">-Include</span> <span class="p">*.</span><span class="n">ps1</span><span class="p">,*.</span><span class="n">psd1</span><span class="p">,*.</span><span class="n">psm1</span><span class="p">,*.</span><span class="n">yaml</span><span class="p">;</span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>    <span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="nv">@assertParams</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">;</span>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="p">}</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="c"># Synopsis: Run all build tasks</span>
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="n">task</span> <span class="n">Build</span> <span class="n">ValidateFiles</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nb">Invoke-Build</span> <span class="n">Build</span><span class="p">;</span>
+</span></code></pre></div>
 <h3 id="calling-from-pester">Calling from Pester<a class="headerlink" href="#calling-from-pester" title="Permanent link">#</a></h3>
 <p>Pester is a unit test framework for PowerShell that can be installed from the PowerShell Gallery.</p>
 <p>Typically, Pester unit tests are built for a particular pipeline.
@@ -3194,20 +3194,20 @@ By using <code>-If</code> or <code>-Type</code> pre-conditions, rules can dynami
 <code>Invoke-PSRule</code> returns validation result objects that can be tested by Pester <code>Should</code> conditions.</p>
 <p>Additionally, the <code>Logging.RuleFail</code> option can be included to generate an error message for each failing rule.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Describe</span> <span class="s1">&#39;Azure&#39;</span> <span class="p">{</span>
-    <span class="n">Context</span> <span class="s1">&#39;Resource templates&#39;</span> <span class="p">{</span>
-        <span class="n">It</span> <span class="s1">&#39;Use content rules&#39;</span> <span class="p">{</span>
-            <span class="nv">$invokeParams</span> <span class="p">=</span> <span class="p">@{</span>
-                <span class="n">Path</span> <span class="p">=</span> <span class="s1">&#39;./.ps-rule/&#39;</span>
-                <span class="n">OutputFormat</span> <span class="p">=</span> <span class="s1">&#39;NUnit3&#39;</span>
-                <span class="n">OutputPath</span> <span class="p">=</span> <span class="s1">&#39;reports/rule-report.xml&#39;</span>
-            <span class="p">}</span>
-            <span class="nv">$items</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Path</span> <span class="p">.\</span><span class="n">src</span><span class="p">\,.\</span><span class="n">tests</span><span class="p">\</span> <span class="n">-Include</span> <span class="p">*.</span><span class="n">ps1</span><span class="p">,*.</span><span class="n">psd1</span><span class="p">,*.</span><span class="n">psm1</span><span class="p">,*.</span><span class="n">yaml</span><span class="p">;</span>
-            <span class="nb">Invoke-PSRule</span> <span class="nv">@invokeParams</span> <span class="n">-Outcome</span> <span class="n">Fail</span><span class="p">,</span><span class="n">Error</span> <span class="p">|</span> <span class="n">Should</span> <span class="n">-BeNullOrEmpty</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">Describe</span> <span class="s1">&#39;Azure&#39;</span> <span class="p">{</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="n">Context</span> <span class="s1">&#39;Resource templates&#39;</span> <span class="p">{</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>        <span class="n">It</span> <span class="s1">&#39;Use content rules&#39;</span> <span class="p">{</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>            <span class="nv">$invokeParams</span> <span class="p">=</span> <span class="p">@{</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>                <span class="n">Path</span> <span class="p">=</span> <span class="s1">&#39;./.ps-rule/&#39;</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>                <span class="n">OutputFormat</span> <span class="p">=</span> <span class="s1">&#39;NUnit3&#39;</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>                <span class="n">OutputPath</span> <span class="p">=</span> <span class="s1">&#39;reports/rule-report.xml&#39;</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>            <span class="p">}</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>            <span class="nv">$items</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Path</span> <span class="p">.\</span><span class="n">src</span><span class="p">\,.\</span><span class="n">tests</span><span class="p">\</span> <span class="n">-Include</span> <span class="p">*.</span><span class="n">ps1</span><span class="p">,*.</span><span class="n">psd1</span><span class="p">,*.</span><span class="n">psm1</span><span class="p">,*.</span><span class="n">yaml</span><span class="p">;</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>            <span class="nb">Invoke-PSRule</span> <span class="nv">@invokeParams</span> <span class="n">-Outcome</span> <span class="n">Fail</span><span class="p">,</span><span class="n">Error</span> <span class="p">|</span> <span class="n">Should</span> <span class="n">-BeNullOrEmpty</span><span class="p">;</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>        <span class="p">}</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>    <span class="p">}</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="more-information">More information<a class="headerlink" href="#more-information" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="../pipeline-deps.ps1">pipeline-deps.ps1</a> - Example script installing pipeline dependencies.</li>

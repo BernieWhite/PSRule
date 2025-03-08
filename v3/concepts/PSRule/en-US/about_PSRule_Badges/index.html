@@ -2797,22 +2797,22 @@ The badge API can be used to create badges within a convention.</p>
 <p>PSRule provides the <code>$PSRule</code> built-in variable that exposes the badge API.
 By using the <code>$PSRule.Badges.Create</code> method you can create a standard or custom badge.</p>
 <p>The create method provides the following overloads:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Create a badge for the worst case of an analyzed object.</span>
-<span class="n">IBadge</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="n">InvokeResult</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
-
-<span class="c1">// Create a badge for the worst case of all analyzed objects.</span>
-<span class="n">IBadge</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">InvokeResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
-
-<span class="c1">// Create a custom badge.</span>
-<span class="n">IBadge</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">BadgeType</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">label</span><span class="p">);</span>
-</code></pre></div>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Create a badge for the worst case of an analyzed object.</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">IBadge</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="n">InvokeResult</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">// Create a badge for the worst case of all analyzed objects.</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">IBadge</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">InvokeResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">// Create a custom badge.</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">IBadge</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">BadgeType</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">label</span><span class="p">);</span>
+</span></code></pre></div>
 <p>A badge once created can be read as a string or written to disk with the following methods:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Get the badge as SVG text content.</span>
-<span class="kt">string</span><span class="w"> </span><span class="nf">ToSvg</span><span class="p">();</span>
-
-<span class="c1">// Write the SVG badge content directly to disk.</span>
-<span class="k">void</span><span class="w"> </span><span class="nf">ToFile</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">path</span><span class="p">);</span>
-</code></pre></div>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Get the badge as SVG text content.</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">string</span><span class="w"> </span><span class="nf">ToSvg</span><span class="p">();</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">// Write the SVG badge content directly to disk.</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">void</span><span class="w"> </span><span class="nf">ToFile</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">path</span><span class="p">);</span>
+</span></code></pre></div>
 <h3 id="defining-conventions">Defining conventions<a class="headerlink" href="#defining-conventions" title="Permanent link">#</a></h3>
 <p>To define a convention, add a <code>Export-PSRuleConvention</code> block within a <code>.Rule.ps1</code> file.
 The <code>.Rule.ps1</code> must be in an included path or module with <code>-Path</code> or <code>-Module</code>.</p>
@@ -2820,23 +2820,23 @@ The <code>.Rule.ps1</code> must be in an included path or module with <code>-Pat
 Each convention must have a unique name.
 Currently the badge API support creating badges in the <code>-End</code> block.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: A convention that generates a badge for an aggregate result.</span>
-<span class="nb">Export-PSRuleConvention</span> <span class="s1">&#39;Local.Aggregate&#39;</span> <span class="n">-End</span> <span class="p">{</span>
-    <span class="nv">$PSRule</span><span class="p">.</span><span class="n">Badges</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="nv">$PSRule</span><span class="p">.</span><span class="n">Output</span><span class="p">).</span><span class="n">ToFile</span><span class="p">(</span><span class="s1">&#39;out/badges/aggregate.svg&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: A convention that generates a custom badge.</span>
-<span class="nb">Export-PSRuleConvention</span> <span class="s1">&#39;Local.CustomBadge&#39;</span> <span class="n">-End</span> <span class="p">{</span>
-    <span class="nv">$PSRule</span><span class="p">.</span><span class="n">Badges</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="s1">&#39;PSRule&#39;</span><span class="p">,</span> <span class="no">[PSRule.Badges.BadgeType]</span><span class="p">::</span><span class="n">Success</span><span class="p">,</span> <span class="s1">&#39;OK&#39;</span><span class="p">).</span><span class="n">ToFile</span><span class="p">(</span><span class="s1">&#39;out/badges/custom.svg&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># Synopsis: A convention that generates a badge for an aggregate result.</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">Export-PSRuleConvention</span> <span class="s1">&#39;Local.Aggregate&#39;</span> <span class="n">-End</span> <span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nv">$PSRule</span><span class="p">.</span><span class="n">Badges</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="nv">$PSRule</span><span class="p">.</span><span class="n">Output</span><span class="p">).</span><span class="n">ToFile</span><span class="p">(</span><span class="s1">&#39;out/badges/aggregate.svg&#39;</span><span class="p">);</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># Synopsis: A convention that generates a custom badge.</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">Export-PSRuleConvention</span> <span class="s1">&#39;Local.CustomBadge&#39;</span> <span class="n">-End</span> <span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="nv">$PSRule</span><span class="p">.</span><span class="n">Badges</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="s1">&#39;PSRule&#39;</span><span class="p">,</span> <span class="no">[PSRule.Badges.BadgeType]</span><span class="p">::</span><span class="n">Success</span><span class="p">,</span> <span class="s1">&#39;OK&#39;</span><span class="p">).</span><span class="n">ToFile</span><span class="p">(</span><span class="s1">&#39;out/badges/custom.svg&#39;</span><span class="p">);</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="using-conventions">Using conventions<a class="headerlink" href="#using-conventions" title="Permanent link">#</a></h3>
 <p>A convention can be included by using the <code>-Convention</code> parameter when executing a PSRule cmdlet.
 Alternatively, conventions can be included with options.
 To use a convention specify the name of the convention by name.
 For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Invoke-PSRule</span> <span class="n">-Convention</span> <span class="s1">&#39;Local.Aggregate&#39;</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">Invoke-PSRule</span> <span class="n">-Convention</span> <span class="s1">&#39;Local.Aggregate&#39;</span><span class="p">;</span>
+</span></code></pre></div>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="https://microsoft.github.io/PSRule/v2/commands/PSRule/en-US/Invoke-PSRule/">Invoke-PSRule</a></li>

@@ -2945,10 +2945,10 @@ Input objects can be passed on the PowerShell pipeline or supplied from file.</p
 Within the <code>{ }</code> one or more conditions can be used.</p>
 <p>Conditions determine if the input object either <em>Pass</em> or <em>Fail</em> the rule.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code>Rule [-Name] &lt;string&gt; [-Ref &lt;string&gt;] [-Alias &lt;string[]&gt;] [-Tag &lt;hashtable&gt;] [-When &lt;string[]&gt;] [-Type &lt;string[]&gt;] [-If &lt;scriptBlock&gt;] [-DependsOn &lt;string[]&gt;] [-Configure &lt;hashtable&gt;] [-ErrorAction &lt;ActionPreference&gt;] [-Body] {
-    ...
-}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Rule [-Name] &lt;string&gt; [-Ref &lt;string&gt;] [-Alias &lt;string[]&gt;] [-Tag &lt;hashtable&gt;] [-When &lt;string[]&gt;] [-Type &lt;string[]&gt;] [-If &lt;scriptBlock&gt;] [-DependsOn &lt;string[]&gt;] [-Configure &lt;hashtable&gt;] [-ErrorAction &lt;ActionPreference&gt;] [-Body] {
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    ...
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>}
+</span></code></pre></div>
 <ul>
 <li><code>Name</code> - The name of the rule definition. Each rule name must be unique.
 When packaging rules within a module, rule names must only be unique within the module.</li>
@@ -2983,32 +2983,32 @@ If any one condition returns <code>$False</code> the rule has failed.</p>
 <li>Script preconditions can contain <code>Exists</code>, <code>Match</code>, <code>TypeOf</code> and <code>Within</code> keywords.</li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: This rule checks for the presence of a name field</span>
-<span class="n">Rule</span> <span class="s1">&#39;NameMustExist&#39;</span> <span class="p">{</span>
-    <span class="n">Exists</span> <span class="s1">&#39;Name&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: This rule checks that the title field is valid, when the rule NameMustExist is successful</span>
-<span class="n">Rule</span> <span class="s1">&#39;TitleIsValid&#39;</span> <span class="n">-DependsOn</span> <span class="s1">&#39;NameMustExist&#39;</span> <span class="p">{</span>
-    <span class="n">Within</span> <span class="s1">&#39;Title&#39;</span> <span class="s1">&#39;Mr&#39;</span><span class="p">,</span> <span class="s1">&#39;Miss&#39;</span><span class="p">,</span> <span class="s1">&#39;Mrs&#39;</span><span class="p">,</span> <span class="s1">&#39;Ms&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: This rule uses a threshold stored as $Configuration.minInstanceCount</span>
-<span class="n">Rule</span> <span class="s1">&#39;HasMinInstances&#39;</span> <span class="p">{</span>
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Sku</span><span class="p">.</span><span class="n">capacity</span> <span class="o">-ge</span> <span class="nv">$Configuration</span><span class="p">.</span><span class="n">minInstanceCount</span>
-<span class="p">}</span> <span class="n">-Configure</span> <span class="p">@{</span> <span class="n">minInstanceCount</span> <span class="p">=</span> <span class="n">2</span> <span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: This rule still passes because errors are ignored</span>
-<span class="n">Rule</span> <span class="s1">&#39;WithRuleErrorActionIgnore&#39;</span> <span class="n">-ErrorAction</span> <span class="n">Ignore</span> <span class="p">{</span>
-    <span class="nb">Write-Error</span> <span class="s1">&#39;Some error&#39;</span><span class="p">;</span>
-    <span class="nv">$True</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c"># Synopsis: This rule checks for the presence of a name field</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">Rule</span> <span class="s1">&#39;NameMustExist&#39;</span> <span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">Exists</span> <span class="s1">&#39;Name&#39;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># Synopsis: This rule checks that the title field is valid, when the rule NameMustExist is successful</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">Rule</span> <span class="s1">&#39;TitleIsValid&#39;</span> <span class="n">-DependsOn</span> <span class="s1">&#39;NameMustExist&#39;</span> <span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">Within</span> <span class="s1">&#39;Title&#39;</span> <span class="s1">&#39;Mr&#39;</span><span class="p">,</span> <span class="s1">&#39;Miss&#39;</span><span class="p">,</span> <span class="s1">&#39;Mrs&#39;</span><span class="p">,</span> <span class="s1">&#39;Ms&#39;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># Synopsis: This rule uses a threshold stored as $Configuration.minInstanceCount</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">Rule</span> <span class="s1">&#39;HasMinInstances&#39;</span> <span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Sku</span><span class="p">.</span><span class="n">capacity</span> <span class="o">-ge</span> <span class="nv">$Configuration</span><span class="p">.</span><span class="n">minInstanceCount</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span> <span class="n">-Configure</span> <span class="p">@{</span> <span class="n">minInstanceCount</span> <span class="p">=</span> <span class="n">2</span> <span class="p">}</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c"># Synopsis: This rule still passes because errors are ignored</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">Rule</span> <span class="s1">&#39;WithRuleErrorActionIgnore&#39;</span> <span class="n">-ErrorAction</span> <span class="n">Ignore</span> <span class="p">{</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="nb">Write-Error</span> <span class="s1">&#39;Some error&#39;</span><span class="p">;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="nv">$True</span><span class="p">;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="exists">Exists<a class="headerlink" href="#exists" title="Permanent link">#</a></h3>
 <p>The <code>Exists</code> assertion is used within a <code>Rule</code> definition to assert that a <em>field</em> or property must exist on the pipeline object.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code>Exists [-Field] &lt;string[]&gt; [-CaseSensitive] [-Not] [-All] [-Reason &lt;string&gt;] [-InputObject &lt;PSObject&gt;]
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Exists [-Field] &lt;string[]&gt; [-CaseSensitive] [-Not] [-All] [-Reason &lt;string&gt;] [-InputObject &lt;PSObject&gt;]
+</span></code></pre></div>
 <ul>
 <li><code>Field</code> - One or more fields/ properties that must exist on the pipeline object.</li>
 <li><code>CaseSensitive</code> - The field name must match exact case.</li>
@@ -3018,36 +3018,36 @@ If any one condition returns <code>$False</code> the rule has failed.</p>
 <li><code>InputObject</code> - Supports objects being piped directly.</li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Checks for the presence of a name property</span>
-<span class="n">Rule</span> <span class="s1">&#39;nameMustExist&#39;</span> <span class="p">{</span>
-    <span class="n">Exists</span> <span class="s1">&#39;Name&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Checks for the presence of name nested under the metadata property</span>
-<span class="n">Rule</span> <span class="s1">&#39;nameMustExist&#39;</span> <span class="p">{</span>
-    <span class="n">Exists</span> <span class="s1">&#39;metadata.name&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Checks for the presence of name nested under the metadata property</span>
-<span class="n">Rule</span> <span class="s1">&#39;nameMustExist&#39;</span> <span class="p">{</span>
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">metadata</span> <span class="p">|</span> <span class="n">Exists</span> <span class="s1">&#39;name&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Checks that the NotName property does not exist</span>
-<span class="n">Rule</span> <span class="s1">&#39;NotNameMustNotExist&#39;</span> <span class="p">{</span>
-    <span class="n">Exists</span> <span class="o">-Not</span> <span class="s1">&#39;NotName&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Checks one of Name or AlternativeName properties exist</span>
-<span class="n">Rule</span> <span class="s1">&#39;EitherMustExist&#39;</span> <span class="p">{</span>
-    <span class="n">Exists</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;AlternativeName&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Checks that both Name and Type properties exist</span>
-<span class="n">Rule</span> <span class="s1">&#39;AllMustExist&#39;</span> <span class="p">{</span>
-    <span class="n">Exists</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span> <span class="n">-All</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># Synopsis: Checks for the presence of a name property</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">Rule</span> <span class="s1">&#39;nameMustExist&#39;</span> <span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="n">Exists</span> <span class="s1">&#39;Name&#39;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c"># Synopsis: Checks for the presence of name nested under the metadata property</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">Rule</span> <span class="s1">&#39;nameMustExist&#39;</span> <span class="p">{</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="n">Exists</span> <span class="s1">&#39;metadata.name&#39;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c"># Synopsis: Checks for the presence of name nested under the metadata property</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">Rule</span> <span class="s1">&#39;nameMustExist&#39;</span> <span class="p">{</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">metadata</span> <span class="p">|</span> <span class="n">Exists</span> <span class="s1">&#39;name&#39;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c"># Synopsis: Checks that the NotName property does not exist</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">Rule</span> <span class="s1">&#39;NotNameMustNotExist&#39;</span> <span class="p">{</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="n">Exists</span> <span class="o">-Not</span> <span class="s1">&#39;NotName&#39;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c"># Synopsis: Checks one of Name or AlternativeName properties exist</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">Rule</span> <span class="s1">&#39;EitherMustExist&#39;</span> <span class="p">{</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="n">Exists</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;AlternativeName&#39;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c"># Synopsis: Checks that both Name and Type properties exist</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">Rule</span> <span class="s1">&#39;AllMustExist&#39;</span> <span class="p">{</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="n">Exists</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span> <span class="n">-All</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Output:</p>
 <p>If <strong>any</strong> the specified fields exists then <code>Exists</code> will return <code>$True</code>, otherwise <code>$False</code>.</p>
 <p>If <code>-Not</code> is used, then if <strong>any</strong> of the fields exist then <code>Exists</code> will return <code>$False</code> otherwise <code>$True</code>.</p>
@@ -3058,8 +3058,8 @@ If <code>-Not</code> is used with <code>-All</code>, if <strong>all</strong> of 
 <p>The <code>Match</code> assertion is used within a <code>Rule</code> definition to assert that the value of a <em>field</em> or property from pipeline data must match one or more regular expressions.
 To optionally perform a case sensitive match use the <code>-CaseSensitive</code> switch, otherwise a case insensitive match will be used.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code>Match [-Field] &lt;string&gt; [-Expression] &lt;string[]&gt; [-CaseSensitive] [-Not] [-Reason &lt;string&gt;] [-InputObject &lt;PSObject&gt;]
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Match [-Field] &lt;string&gt; [-Expression] &lt;string[]&gt; [-CaseSensitive] [-Not] [-Reason &lt;string&gt;] [-InputObject &lt;PSObject&gt;]
+</span></code></pre></div>
 <ul>
 <li><code>Field</code> - The name of the field that will be evaluated on the pipeline object.</li>
 <li><code>Expression</code> - One or more regular expressions that will be used to match the value of the field.</li>
@@ -3069,11 +3069,11 @@ To optionally perform a case sensitive match use the <code>-CaseSensitive</code>
 <li><code>InputObject</code> - Supports objects being piped directly.</li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Check that PhoneNumber is complete and formatted correctly</span>
-<span class="n">Rule</span> <span class="s1">&#39;validatePhoneNumber&#39;</span> <span class="p">{</span>
-    <span class="n">Match</span> <span class="s1">&#39;PhoneNumber&#39;</span> <span class="s1">&#39;^(\+61|0)([0-9] {0,1}){8}[0-9]$&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c"># Synopsis: Check that PhoneNumber is complete and formatted correctly</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">Rule</span> <span class="s1">&#39;validatePhoneNumber&#39;</span> <span class="p">{</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="n">Match</span> <span class="s1">&#39;PhoneNumber&#39;</span> <span class="s1">&#39;^(\+61|0)([0-9] {0,1}){8}[0-9]$&#39;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Output:</p>
 <p>If <strong>any</strong> of the specified regular expressions match the field value then <code>Match</code> returns <code>$True</code>, otherwise <code>$False</code>.</p>
 <p>When <code>-Not</code> is used, if any of the regular expressions match the field value with <code>Match</code> return <code>$False</code>, otherwise <code>$True</code>.</p>
@@ -3081,8 +3081,8 @@ To optionally perform a case sensitive match use the <code>-CaseSensitive</code>
 <p>The <code>Within</code> assertion is used within a <code>Rule</code> definition to assert that the value of a field or property from pipeline data must equal an item from a supplied list of allowed values.
 To optionally perform a case sensitive match use the <code>-CaseSensitive</code> switch, otherwise a case insensitive match will be used.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code>Within [-Field] &lt;string&gt; [-Not] [-Like] [-Value] &lt;PSObject[]&gt; [-CaseSensitive] [-Reason &lt;string&gt;] [-InputObject &lt;PSObject&gt;]
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Within [-Field] &lt;string&gt; [-Not] [-Like] [-Value] &lt;PSObject[]&gt; [-CaseSensitive] [-Reason &lt;string&gt;] [-InputObject &lt;PSObject&gt;]
+</span></code></pre></div>
 <ul>
 <li><code>Field</code> - The name of the field that will be evaluated on the pipeline object.</li>
 <li><code>Value</code> - A list of values that the field value must match.</li>
@@ -3094,21 +3094,21 @@ This switch can only be used when <code>Value</code> a string type.</li>
 <li><code>InputObject</code> - Supports objects being piped directly.</li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Ensure that the title field has one of the allowed values</span>
-<span class="n">Rule</span> <span class="s1">&#39;validateTitle&#39;</span> <span class="p">{</span>
-    <span class="n">Within</span> <span class="s1">&#39;Title&#39;</span> <span class="s1">&#39;Mr&#39;</span><span class="p">,</span> <span class="s1">&#39;Miss&#39;</span><span class="p">,</span> <span class="s1">&#39;Mrs&#39;</span><span class="p">,</span> <span class="s1">&#39;Ms&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Ensure that the title field is not one of the specified values</span>
-<span class="n">Rule</span> <span class="s1">&#39;validateTitle&#39;</span> <span class="p">{</span>
-    <span class="n">Within</span> <span class="s1">&#39;Title&#39;</span> <span class="o">-Not</span> <span class="s1">&#39;Mr&#39;</span><span class="p">,</span> <span class="s1">&#39;Sir&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Ensure that the title field has one of the allowed values</span>
-<span class="n">Rule</span> <span class="s1">&#39;validateTitle&#39;</span> <span class="p">{</span>
-    <span class="n">Within</span> <span class="s1">&#39;Title&#39;</span> <span class="o">-Like</span> <span class="s1">&#39;Mr&#39;</span><span class="p">,</span> <span class="s1">&#39;M*s&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c"># Synopsis: Ensure that the title field has one of the allowed values</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">Rule</span> <span class="s1">&#39;validateTitle&#39;</span> <span class="p">{</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="n">Within</span> <span class="s1">&#39;Title&#39;</span> <span class="s1">&#39;Mr&#39;</span><span class="p">,</span> <span class="s1">&#39;Miss&#39;</span><span class="p">,</span> <span class="s1">&#39;Mrs&#39;</span><span class="p">,</span> <span class="s1">&#39;Ms&#39;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c"># Synopsis: Ensure that the title field is not one of the specified values</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">Rule</span> <span class="s1">&#39;validateTitle&#39;</span> <span class="p">{</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="n">Within</span> <span class="s1">&#39;Title&#39;</span> <span class="o">-Not</span> <span class="s1">&#39;Mr&#39;</span><span class="p">,</span> <span class="s1">&#39;Sir&#39;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c"># Synopsis: Ensure that the title field has one of the allowed values</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">Rule</span> <span class="s1">&#39;validateTitle&#39;</span> <span class="p">{</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="n">Within</span> <span class="s1">&#39;Title&#39;</span> <span class="o">-Like</span> <span class="s1">&#39;Mr&#39;</span><span class="p">,</span> <span class="s1">&#39;M*s&#39;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Output:</p>
 <p>If <strong>any</strong> of the values match the field value then <code>Within</code> returns <code>$True</code>, otherwise <code>$False</code>.</p>
 <p>When <code>-Not</code> is used, if any of the values match the field value with <code>Within</code> return <code>$False</code>, otherwise <code>$True</code>.</p>
@@ -3117,55 +3117,55 @@ This switch can only be used when <code>Value</code> a string type.</li>
 <p>The <code>AllOf</code> assertion is used within a <code>Rule</code> definition to aggregate the result of assertions within a pair of squiggly brackets <code>{ }</code>.
 <code>AllOf</code> is functionally equivalent to a binary <strong>and</strong>, where when all of the contained assertions return <code>$True</code>, <code>AllOf</code> will return <code>$True</code>.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code>AllOf [-Body] {
-    &lt;assertion&gt;
-    [&lt;assertion&gt;]
-    ...
-}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>AllOf [-Body] {
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    &lt;assertion&gt;
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    [&lt;assertion&gt;]
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    ...
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>}
+</span></code></pre></div>
 <ul>
 <li><code>Body</code> - A script block definition of the containing one or more PSRule keywords and PowerShell expressions.</li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: The Name field must exist and have a value of either John or Jane</span>
-<span class="n">Rule</span> <span class="s1">&#39;nameCheck&#39;</span> <span class="p">{</span>
-    <span class="n">AllOf</span> <span class="p">{</span>
-        <span class="n">Exists</span> <span class="s1">&#39;Name&#39;</span>
-        <span class="n">Within</span> <span class="s1">&#39;Name&#39;</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c"># Synopsis: The Name field must exist and have a value of either John or Jane</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">Rule</span> <span class="s1">&#39;nameCheck&#39;</span> <span class="p">{</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    <span class="n">AllOf</span> <span class="p">{</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>        <span class="n">Exists</span> <span class="s1">&#39;Name&#39;</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>        <span class="n">Within</span> <span class="s1">&#39;Name&#39;</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    <span class="p">}</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Output:</p>
 <p>If <strong>all</strong> of the assertions return <code>$True</code> AllOf will return <code>$True</code>, otherwise <code>$False</code>.</p>
 <h3 id="anyof">AnyOf<a class="headerlink" href="#anyof" title="Permanent link">#</a></h3>
 <p>The <code>AnyOf</code> assertion is used within a <code>Rule</code> definition to aggregate the result of assertions within a pair of squiggly brackets <code>{ }</code>.
 <code>AnyOf</code> is functionally equivalent to a binary <strong>or</strong>, where if any of the contained assertions returns <code>$True</code>, <code>AnyOf</code> will return <code>$True</code>.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code>AnyOf [-Body] {
-    &lt;assertion&gt;
-    [&lt;assertion&gt;]
-    ...
-}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>AnyOf [-Body] {
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    &lt;assertion&gt;
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    [&lt;assertion&gt;]
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    ...
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>}
+</span></code></pre></div>
 <ul>
 <li><code>Body</code> - A script block definition of the containing one or more PSRule keywords and PowerShell expressions.</li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: The Last or Surname field must exist</span>
-<span class="n">Rule</span> <span class="s1">&#39;personCheck&#39;</span> <span class="p">{</span>
-    <span class="n">AnyOf</span> <span class="p">{</span>
-        <span class="n">Exists</span> <span class="s1">&#39;Last&#39;</span>
-        <span class="n">Exists</span> <span class="s1">&#39;Surname&#39;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c"># Synopsis: The Last or Surname field must exist</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="n">Rule</span> <span class="s1">&#39;personCheck&#39;</span> <span class="p">{</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    <span class="n">AnyOf</span> <span class="p">{</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>        <span class="n">Exists</span> <span class="s1">&#39;Last&#39;</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>        <span class="n">Exists</span> <span class="s1">&#39;Surname&#39;</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    <span class="p">}</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Output:</p>
 <p>If <strong>any</strong> of the assertions return <code>$True</code> AnyOf will return <code>$True</code>, otherwise <code>$False</code>.</p>
 <h3 id="typeof">TypeOf<a class="headerlink" href="#typeof" title="Permanent link">#</a></h3>
 <p>The <code>TypeOf</code> assertion is used within a <code>Rule</code> definition to evaluate if the pipeline object matches one or more of the supplied type names.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code>TypeOf [-TypeName] &lt;string[]&gt; [-Reason &lt;string&gt;] [-InputObject &lt;PSObject&gt;]
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>TypeOf [-TypeName] &lt;string[]&gt; [-Reason &lt;string&gt;] [-InputObject &lt;PSObject&gt;]
+</span></code></pre></div>
 <ul>
 <li><code>TypeName</code> - One or more type names which will be evaluated against the pipeline object.
 <code>TypeName</code> is case sensitive.</li>
@@ -3173,11 +3173,11 @@ This switch can only be used when <code>Value</code> a string type.</li>
 <li><code>InputObject</code> - Supports objects being piped directly.</li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: The object must be a hashtable</span>
-<span class="n">Rule</span> <span class="s1">&#39;objectType&#39;</span> <span class="p">{</span>
-    <span class="n">TypeOf</span> <span class="s1">&#39;System.Collections.Hashtable&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c"># Synopsis: The object must be a hashtable</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="n">Rule</span> <span class="s1">&#39;objectType&#39;</span> <span class="p">{</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>    <span class="n">TypeOf</span> <span class="s1">&#39;System.Collections.Hashtable&#39;</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Output:</p>
 <p>If <strong>any</strong> the specified type names match the pipeline object then TypeOf will return <code>$True</code>, otherwise <code>$False</code>.</p>
 <h3 id="reason">Reason<a class="headerlink" href="#reason" title="Permanent link">#</a></h3>
@@ -3188,18 +3188,18 @@ The outcomes <code>Pass</code> and <code>None</code> do not include reason.</p>
 <p>Use this keyword when you want to implement custom logic.
 Built-in keywords including <code>Exists</code>, <code>Match</code>, <code>Within</code> and <code>TypeOf</code> automatically include a reason when they fail.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code>Reason [-Text] &lt;string&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Reason [-Text] &lt;string&gt;
+</span></code></pre></div>
 <ul>
 <li><code>Text</code> - A message that includes the reason for the failure.</li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Provide reason the rule failed</span>
-<span class="n">Rule</span> <span class="s1">&#39;objectRecommend&#39;</span> <span class="p">{</span>
-    <span class="n">Reason</span> <span class="s1">&#39;A minimum of two (2) instances are required&#39;</span>
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">count</span> <span class="o">-ge</span> <span class="n">2</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c"># Synopsis: Provide reason the rule failed</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="n">Rule</span> <span class="s1">&#39;objectRecommend&#39;</span> <span class="p">{</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>    <span class="n">Reason</span> <span class="s1">&#39;A minimum of two (2) instances are required&#39;</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">count</span> <span class="o">-ge</span> <span class="n">2</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Output:</p>
 <p>None.</p>
 <h3 id="recommend">Recommend<a class="headerlink" href="#recommend" title="Permanent link">#</a></h3>
@@ -3208,28 +3208,28 @@ This may include manual steps to change that state of the object or the desired 
 <p>The recommendation can only be set once per rule.
 Each object will use the same recommendation.</p>
 <p>Syntax:</p>
-<div class="highlight"><pre><span></span><code>Recommend [-Text] &lt;string&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Recommend [-Text] &lt;string&gt;
+</span></code></pre></div>
 <ul>
 <li><code>Text</code> - A message that includes the process to resolve the issue and pass the rule.</li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Provide recommendation to resolve the issue</span>
-<span class="n">Rule</span> <span class="s1">&#39;objectRecommend&#39;</span> <span class="p">{</span>
-    <span class="n">Recommend</span> <span class="s1">&#39;Use at least two (2) instances&#39;</span>
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">count</span> <span class="o">-ge</span> <span class="n">2</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c"># Synopsis: Provide recommendation to resolve the issue</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="n">Rule</span> <span class="s1">&#39;objectRecommend&#39;</span> <span class="p">{</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>    <span class="n">Recommend</span> <span class="s1">&#39;Use at least two (2) instances&#39;</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">count</span> <span class="o">-ge</span> <span class="n">2</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Output:</p>
 <p>None.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: App Service Plan has multiple instances</span>
-<span class="n">Rule</span> <span class="s1">&#39;appServicePlan.MinInstanceCount&#39;</span> <span class="n">-If</span> <span class="p">{</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">ResourceType</span> <span class="o">-eq</span> <span class="s1">&#39;Microsoft.Web/serverfarms&#39;</span> <span class="p">}</span> <span class="p">{</span>
-    <span class="n">Recommend</span> <span class="s1">&#39;Use at least two (2) instances&#39;</span>
-
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Sku</span><span class="p">.</span><span class="n">capacity</span> <span class="o">-ge</span> <span class="n">2</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c"># Synopsis: App Service Plan has multiple instances</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="n">Rule</span> <span class="s1">&#39;appServicePlan.MinInstanceCount&#39;</span> <span class="n">-If</span> <span class="p">{</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">ResourceType</span> <span class="o">-eq</span> <span class="s1">&#39;Microsoft.Web/serverfarms&#39;</span> <span class="p">}</span> <span class="p">{</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>    <span class="n">Recommend</span> <span class="s1">&#39;Use at least two (2) instances&#39;</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Sku</span><span class="p">.</span><span class="n">capacity</span> <span class="o">-ge</span> <span class="n">2</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">#</a></h2>
 <ul>
 <li>[Invoke-PSRule]</li>

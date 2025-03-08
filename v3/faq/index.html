@@ -2898,37 +2898,37 @@ When checking into source control, store this file in the root directory of the 
 <li><strong>Environment variables</strong> - Configuration can be specified using environment variables.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># With cmdlet</span>
-<span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-OutputAs</span> <span class="n">Summary</span> <span class="n">-OutputCulture</span> <span class="s1">&#39;en-AU&#39;</span> <span class="n">-ExecutionUnprocessedObject</span> <span class="s1">&#39;Ignore&#39;</span> <span class="n">-Configuration</span> <span class="p">@{</span>
-  <span class="n">CUSTOM_VALUE</span> <span class="p">=</span> <span class="s1">&#39;example&#39;</span>
-<span class="p">}</span>
-<span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Option</span> <span class="nv">$option</span>
-
-<span class="c"># With hashtable</span>
-<span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Option</span> <span class="p">@{</span>
-  <span class="s1">&#39;Output.As&#39;</span> <span class="p">=</span> <span class="s1">&#39;Summary&#39;</span>
-  <span class="s1">&#39;Output.Culture&#39;</span> <span class="p">=</span> <span class="s1">&#39;en-AU&#39;</span>
-  <span class="s1">&#39;Execution.UnprocessedObject&#39;</span> <span class="p">=</span> <span class="s1">&#39;Ignore&#39;</span>
-  <span class="s1">&#39;Configuration.CUSTOM_VALUE&#39;</span> <span class="p">=</span> <span class="s1">&#39;Example&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># With YAML</span>
-<span class="nt">output</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">as</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Summary</span>
-<span class="w">  </span><span class="nt">culture</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&#39;en-AU&#39;</span><span class="w"> </span><span class="p p-Indicator">]</span>
-
-<span class="nt">execution</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">unprocessedObject</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ignore</span>
-
-<span class="nt">configuration</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">CUSTOM_VALUE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Example</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># With environment variable in bash</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_EXECUTION_UNPROCESSEDOBJECT</span><span class="o">=</span>Ignore
-<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_OUTPUT_AS</span><span class="o">=</span>Summary
-<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_OUTPUT_CULTURE</span><span class="o">=</span>en-AU
-<span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_CONFIGURATION_CUSTOM_VALUE</span><span class="o">=</span>Example
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># With cmdlet</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$option</span> <span class="p">=</span> <span class="nb">New-PSRuleOption</span> <span class="n">-OutputAs</span> <span class="n">Summary</span> <span class="n">-OutputCulture</span> <span class="s1">&#39;en-AU&#39;</span> <span class="n">-ExecutionUnprocessedObject</span> <span class="s1">&#39;Ignore&#39;</span> <span class="n">-Configuration</span> <span class="p">@{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="n">CUSTOM_VALUE</span> <span class="p">=</span> <span class="s1">&#39;example&#39;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Option</span> <span class="nv">$option</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c"># With hashtable</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Option</span> <span class="p">@{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  <span class="s1">&#39;Output.As&#39;</span> <span class="p">=</span> <span class="s1">&#39;Summary&#39;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  <span class="s1">&#39;Output.Culture&#39;</span> <span class="p">=</span> <span class="s1">&#39;en-AU&#39;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  <span class="s1">&#39;Execution.UnprocessedObject&#39;</span> <span class="p">=</span> <span class="s1">&#39;Ignore&#39;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  <span class="s1">&#39;Configuration.CUSTOM_VALUE&#39;</span> <span class="p">=</span> <span class="s1">&#39;Example&#39;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># With YAML</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">output</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">as</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Summary</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">culture</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&#39;en-AU&#39;</span><span class="w"> </span><span class="p p-Indicator">]</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">execution</span><span class="p">:</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">unprocessedObject</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ignore</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nt">configuration</span><span class="p">:</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">CUSTOM_VALUE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Example</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># With environment variable in bash</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_EXECUTION_UNPROCESSEDOBJECT</span><span class="o">=</span>Ignore
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_OUTPUT_AS</span><span class="o">=</span>Summary
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_OUTPUT_CULTURE</span><span class="o">=</span>en-AU
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PSRULE_CONFIGURATION_CUSTOM_VALUE</span><span class="o">=</span>Example
+</span></code></pre></div>
 <p>For a list of configuration options and usage see <a href="../concepts/PSRule/en-US/about_PSRule_Options/">about_PSRule_Options</a>.</p>
 <h2 id="how-do-i-ignore-a-rule">How do I ignore a rule?<a class="headerlink" href="#how-do-i-ignore-a-rule" title="Permanent link">#</a></h2>
 <p>To prevent a rule executing you can either:</p>
@@ -2938,44 +2938,44 @@ When checking into source control, store this file in the root directory of the 
 </ul>
 <p>To exclude a rule use the <code>Rule.Exclude</code> option.
 To do this in YAML, add the following to the <code>ps-rule.yaml</code> options file.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the rule/exclude property</span>
-<span class="nt">rule</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">exclude</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;My.FirstRule&#39;</span><span class="w">  </span><span class="c1"># The name of the first rule to exclude.</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;My.SecondRule&#39;</span><span class="w"> </span><span class="c1"># The name of the second rule to exclude.</span>
-</code></pre></div>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># YAML: Using the rule/exclude property</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">rule</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">exclude</span><span class="p">:</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;My.FirstRule&#39;</span><span class="w">  </span><span class="c1"># The name of the first rule to exclude.</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;My.SecondRule&#39;</span><span class="w"> </span><span class="c1"># The name of the second rule to exclude.</span>
+</span></code></pre></div>
 <p>To suppress a rule use the <code>Suppression</code> option.
 To do this in YAML, add the following to the <code>ps-rule.yaml</code> options file.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># YAML: Using the suppression property</span>
-<span class="nt">suppression</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">My.FirstRule</span><span class="p">:</span><span class="w">    </span><span class="c1"># The name of the rule being suppressed</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestObject1</span><span class="w">    </span><span class="c1"># The name of the first object to suppress</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestObject3</span><span class="w">    </span><span class="c1"># The name of the second object to suppress</span>
-<span class="w">  </span><span class="nt">My.SecondRule</span><span class="p">:</span><span class="w">   </span><span class="c1"># An additional rule to suppress</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestObject2</span>
-</code></pre></div>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># YAML: Using the suppression property</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">suppression</span><span class="p">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">My.FirstRule</span><span class="p">:</span><span class="w">    </span><span class="c1"># The name of the rule being suppressed</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestObject1</span><span class="w">    </span><span class="c1"># The name of the first object to suppress</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestObject3</span><span class="w">    </span><span class="c1"># The name of the second object to suppress</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">My.SecondRule</span><span class="p">:</span><span class="w">   </span><span class="c1"># An additional rule to suppress</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestObject2</span>
+</span></code></pre></div>
 <p>The name of the object is reported by PSRule in output results.</p>
 <p>See <a href="../concepts/PSRule/en-US/about_PSRule_Options/">about_PSRule_Options</a> for additional usage for both of these options.</p>
 <h2 id="how-do-exclude-or-ignore-files-from-being-processed">How do exclude or ignore files from being processed?<a class="headerlink" href="#how-do-exclude-or-ignore-files-from-being-processed" title="Permanent link">#</a></h2>
 <p>To exclude or ignore files from being processed, configure the <a href="../concepts/PSRule/en-US/about_PSRule_Options/#inputpathignore">Input.PathIgnore</a> option.
 This option allows you to ignore files using a path spec.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">input</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">pathIgnore</span><span class="p">:</span>
-<span class="w">  </span><span class="c1"># Exclude files with these extensions</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;*.md&#39;</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;*.png&#39;</span>
-<span class="w">  </span><span class="c1"># Exclude specific configuration files</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;bicepconfig.json&#39;</span>
-</code></pre></div>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">input</span><span class="p">:</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">pathIgnore</span><span class="p">:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="c1"># Exclude files with these extensions</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;*.md&#39;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;*.png&#39;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="c1"># Exclude specific configuration files</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;bicepconfig.json&#39;</span>
+</span></code></pre></div>
 <p>Or:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">input</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">pathIgnore</span><span class="p">:</span>
-<span class="w">  </span><span class="c1"># Exclude all files</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;*&#39;</span>
-<span class="w">  </span><span class="c1"># Only process deploy.bicep files</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;!**/deploy.bicep&#39;</span>
-</code></pre></div>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">input</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">pathIgnore</span><span class="p">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="c1"># Exclude all files</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;*&#39;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="c1"># Only process deploy.bicep files</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;!**/deploy.bicep&#39;</span>
+</span></code></pre></div>
 <h2 id="how-do-i-disable-or-suppress-the-not-processed-warning">How do I disable or suppress the not processed warning?<a class="headerlink" href="#how-do-i-disable-or-suppress-the-not-processed-warning" title="Permanent link">#</a></h2>
 <p>You may receive a warning message suggesting a file or object <em>has not been processed</em>.
 If there are no rules that apply to the file or object this warning will be displayed.</p>
@@ -2994,24 +2994,24 @@ To do this you have two options:</p>
 <h2 id="how-do-i-layer-on-custom-rules-on-top-of-an-existing-module">How do I layer on custom rules on top of an existing module?<a class="headerlink" href="#how-do-i-layer-on-custom-rules-on-top-of-an-existing-module" title="Permanent link">#</a></h2>
 <p>PSRule allows rules from modules and standalone <em>(loose)</em> rules to be run together.</p>
 <p>To run rules from a standalone path use:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Note: .ps-rule/ is a standard path to include standalone rules.</span>
-
-<span class="c"># With input from the pipeline</span>
-<span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;.ps-rule/&#39;</span>
-
-<span class="c"># With input from file</span>
-<span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;.ps-rule/&#39;</span> <span class="n">-InputPath</span> <span class="s1">&#39;src/&#39;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c"># Note: .ps-rule/ is a standard path to include standalone rules.</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c"># With input from the pipeline</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;.ps-rule/&#39;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c"># With input from file</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="nb">Assert-PSRule</span> <span class="n">-Path</span> <span class="s1">&#39;.ps-rule/&#39;</span> <span class="n">-InputPath</span> <span class="s1">&#39;src/&#39;</span>
+</span></code></pre></div>
 <p>To run rules from an installed module use:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># With input from the pipeline</span>
-<span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Module</span> <span class="s1">&#39;PSRule.Rules.Azure&#39;</span>
-
-<span class="c"># With input from file</span>
-<span class="nb">Assert-PSRule</span> <span class="n">-Module</span> <span class="s1">&#39;PSRule.Rules.Azure&#39;</span> <span class="n">-InputPath</span> <span class="s1">&#39;src/&#39;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c"># With input from the pipeline</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Assert-PSRule</span> <span class="n">-Module</span> <span class="s1">&#39;PSRule.Rules.Azure&#39;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c"># With input from file</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nb">Assert-PSRule</span> <span class="n">-Module</span> <span class="s1">&#39;PSRule.Rules.Azure&#39;</span> <span class="n">-InputPath</span> <span class="s1">&#39;src/&#39;</span>
+</span></code></pre></div>
 <p>Combining both:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Assert-PSRule</span> <span class="n">-Module</span> <span class="s1">&#39;PSRule.Rules.Azure&#39;</span><span class="p">,</span> <span class="s1">&#39;PSRule.Rules.CAF&#39;</span> <span class="n">-Path</span> <span class="s1">&#39;.ps-rule/&#39;</span> <span class="n">-InputPath</span> <span class="s1">&#39;src/&#39;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Assert-PSRule</span> <span class="n">-Module</span> <span class="s1">&#39;PSRule.Rules.Azure&#39;</span><span class="p">,</span> <span class="s1">&#39;PSRule.Rules.CAF&#39;</span> <span class="n">-Path</span> <span class="s1">&#39;.ps-rule/&#39;</span> <span class="n">-InputPath</span> <span class="s1">&#39;src/&#39;</span>
+</span></code></pre></div>
 <h2 id="why-should-i-use-psrule-keywords-and-assertions">Why should I use PSRule keywords and assertions?<a class="headerlink" href="#why-should-i-use-psrule-keywords-and-assertions" title="Permanent link">#</a></h2>
 <p>Except for the <code>Rule</code> keyword, using the built-in language features are optional.</p>
 <p>The built-in keywords and assertions accelerate rule creation.

@@ -2852,23 +2852,23 @@ Each convention, hooks into one or more places within the pipeline.</p>
 Alternatively, conventions can be included with options.
 To use a convention specify the name of the convention by name.
 For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Invoke-PSRule</span> <span class="n">-Convention</span> <span class="s1">&#39;ExampleConvention&#39;</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Invoke-PSRule</span> <span class="n">-Convention</span> <span class="s1">&#39;ExampleConvention&#39;</span><span class="p">;</span>
+</span></code></pre></div>
 <p>If multiple conventions are specified in an array, all are executed in they are specified.
 As a result, the convention specified last may override state set by earlier conventions.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Assert-PSRule</span> <span class="n">-Convention</span> <span class="s1">&#39;ExampleConvention1&#39;</span><span class="p">,</span> <span class="s1">&#39;ExampleConvention2&#39;</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Assert-PSRule</span> <span class="n">-Convention</span> <span class="s1">&#39;ExampleConvention1&#39;</span><span class="p">,</span> <span class="s1">&#39;ExampleConvention2&#39;</span><span class="p">;</span>
+</span></code></pre></div>
 <h3 id="defining-conventions">Defining conventions<a class="headerlink" href="#defining-conventions" title="Permanent link">#</a></h3>
 <p>To define a convention, add a <code>Export-PSRuleConvention</code> block within a <code>.Rule.ps1</code> file.
 The <code>.Rule.ps1</code> must be in an included path or module with <code>-Path</code> or <code>-Module</code>.</p>
 <p>The <code>Export-PSRuleConvention</code> block works similar to the <code>Rule</code> block.
 Each convention must have a unique name.
 For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: An example convention.</span>
-<span class="nb">Export-PSRuleConvention</span> <span class="s1">&#39;ExampleConvention&#39;</span> <span class="p">{</span>
-    <span class="c"># Add code here</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># Synopsis: An example convention.</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">Export-PSRuleConvention</span> <span class="s1">&#39;ExampleConvention&#39;</span> <span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="c"># Add code here</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="initialize-begin-process-end-blocks">Initialize Begin Process End blocks<a class="headerlink" href="#initialize-begin-process-end-blocks" title="Permanent link">#</a></h3>
 <p>Conventions define four executable blocks <code>Initialize</code>, <code>Begin</code>, <code>Process</code>, <code>End</code> similar to a PowerShell function.
 Each block is injected in a different part of the pipeline as follows:</p>
@@ -2893,36 +2893,36 @@ Each block is injected in a different part of the pipeline as follows:</p>
 </ul>
 <p>By default, the <code>Process</code> block is used.
 For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: The default { } executes the process block</span>
-<span class="nb">Export-PSRuleConvention</span> <span class="s1">&#39;ExampleConvention&#39;</span> <span class="p">{</span>
-    <span class="c"># Process block</span>
-<span class="p">}</span>
-
-<span class="c"># Synopsis: With optional -Process parameter name</span>
-<span class="nb">Export-PSRuleConvention</span> <span class="s1">&#39;ExampleConvention&#39;</span> <span class="n">-Process</span> <span class="p">{</span>
-    <span class="c"># Process block</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># Synopsis: The default { } executes the process block</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">Export-PSRuleConvention</span> <span class="s1">&#39;ExampleConvention&#39;</span> <span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="c"># Process block</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c"># Synopsis: With optional -Process parameter name</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">Export-PSRuleConvention</span> <span class="s1">&#39;ExampleConvention&#39;</span> <span class="n">-Process</span> <span class="p">{</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="c"># Process block</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>To use <code>Initialize</code>, <code>Begin</code>, or <code>End</code> explicitly add these blocks.
 For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Export-PSRuleConvention</span> <span class="s1">&#39;ExampleConvention&#39;</span> <span class="n">-Process</span> <span class="p">{</span>
-    <span class="c"># Process block</span>
-<span class="p">}</span> <span class="n">-Begin</span> <span class="p">{</span>
-    <span class="c"># Begin block</span>
-<span class="p">}</span> <span class="n">-End</span> <span class="p">{</span>
-    <span class="c"># End block</span>
-<span class="p">}</span> <span class="n">-Initialize</span> <span class="p">{</span>
-    <span class="c"># Initialize block</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">Export-PSRuleConvention</span> <span class="s1">&#39;ExampleConvention&#39;</span> <span class="n">-Process</span> <span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="c"># Process block</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span> <span class="n">-Begin</span> <span class="p">{</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="c"># Begin block</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span> <span class="n">-End</span> <span class="p">{</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="c"># End block</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span> <span class="n">-Initialize</span> <span class="p">{</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="c"># Initialize block</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="including-with-options">Including with options<a class="headerlink" href="#including-with-options" title="Permanent link">#</a></h3>
 <p>Conventions can be included by name within options in addition to using the <code>-Convention</code> parameter.
 To specify a convention within YAML options use the following:</p>
-<div class="highlight"><span class="filename">ps-rule.yaml</span><pre><span></span><code><span class="nt">convention</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">include</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;ExampleConvention1&#39;</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;ExampleConvention2&#39;</span>
-</code></pre></div>
+<div class="language-yaml highlight"><span class="filename">ps-rule.yaml</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">convention</span><span class="p">:</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">include</span><span class="p">:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;ExampleConvention1&#39;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;ExampleConvention2&#39;</span>
+</span></code></pre></div>
 <h3 id="using-within-modules">Using within modules<a class="headerlink" href="#using-within-modules" title="Permanent link">#</a></h3>
 <p>Conventions can be shipped within a module using the same packaging and distribution process as rules.
 Additionally, conventions shipped within a module can be automatically included.
@@ -2930,23 +2930,23 @@ By default, PSRule does not include conventions shipped within a module.
 To use a convention included in a module use the <code>-Convention</code> parameter or options configuration.</p>
 <p>A module can automatically include a convention by specifying the convention by name in module configuration.
 For example:</p>
-<div class="highlight"><span class="filename">Config.Rule.yaml</span><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/2025-01-01</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ModuleConfig</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExampleModule</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">convention</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">include</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;ExampleConvention1&#39;</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;ExampleConvention2&#39;</span>
-</code></pre></div>
+<div class="language-yaml highlight"><span class="filename">Config.Rule.yaml</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nn">---</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github.com/microsoft/PSRule/2025-01-01</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ModuleConfig</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExampleModule</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="nt">convention</span><span class="p">:</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="nt">include</span><span class="p">:</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;ExampleConvention1&#39;</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;ExampleConvention2&#39;</span>
+</span></code></pre></div>
 <h3 id="execution-order">Execution order<a class="headerlink" href="#execution-order" title="Permanent link">#</a></h3>
 <p>Conventions are executed in the order they are specified.
 This is true for <code>Initialize</code>, <code>Begin</code>, <code>Process</code>, and <code>End</code> blocks.
 i.e. In the following example <code>ExampleConvention1</code> is execute before <code>ExampleConvention2</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Assert-PSRule</span> <span class="n">-Convention</span> <span class="s1">&#39;ExampleConvention1&#39;</span><span class="p">,</span> <span class="s1">&#39;ExampleConvention2&#39;</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">Assert-PSRule</span> <span class="n">-Convention</span> <span class="s1">&#39;ExampleConvention1&#39;</span><span class="p">,</span> <span class="s1">&#39;ExampleConvention2&#39;</span><span class="p">;</span>
+</span></code></pre></div>
 <p>When conventions are specified from multiple locations PSRule orders conventions as follows:</p>
 <ol>
 <li>Using <code>-Convention</code> parameter.</li>

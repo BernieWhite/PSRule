@@ -2669,101 +2669,101 @@
 <h1 id="getting-started-with-psrule">Getting started with PSRule<a class="headerlink" href="#getting-started-with-psrule" title="Permanent link">#</a></h1>
 <h3 id="define-a-rule">Define a rule<a class="headerlink" href="#define-a-rule" title="Permanent link">#</a></h3>
 <p>To define a rule, use a <code>Rule</code> block saved to a file with the <code>.Rule.ps1</code> extension.</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NameOfRule&#39;</span> <span class="p">{</span>
-    <span class="c"># Rule conditions</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Rule</span> <span class="s1">&#39;NameOfRule&#39;</span> <span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="c"># Rule conditions</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Within the body of the rule provide one or more conditions.
 A condition is valid PowerShell that results in <code>$True</code> or <code>$False</code>.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;isFruit&#39;</span> <span class="p">{</span>
-    <span class="c"># Condition to determine if the object is fruit</span>
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Name</span> <span class="n">-in</span> <span class="s1">&#39;Apple&#39;</span><span class="p">,</span> <span class="s1">&#39;Orange&#39;</span><span class="p">,</span> <span class="s1">&#39;Pear&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Rule</span> <span class="s1">&#39;isFruit&#39;</span> <span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="c"># Condition to determine if the object is fruit</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Name</span> <span class="n">-in</span> <span class="s1">&#39;Apple&#39;</span><span class="p">,</span> <span class="s1">&#39;Orange&#39;</span><span class="p">,</span> <span class="s1">&#39;Pear&#39;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>An optional result message can be added to by using the <code>Recommend</code> keyword.</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;isFruit&#39;</span> <span class="p">{</span>
-    <span class="c"># An recommendation to display in output</span>
-    <span class="n">Recommend</span> <span class="s1">&#39;Fruit is only Apple, Orange and Pear&#39;</span>
-
-    <span class="c"># Condition to determine if the object is fruit</span>
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Name</span> <span class="n">-in</span> <span class="s1">&#39;Apple&#39;</span><span class="p">,</span> <span class="s1">&#39;Orange&#39;</span><span class="p">,</span> <span class="s1">&#39;Pear&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">Rule</span> <span class="s1">&#39;isFruit&#39;</span> <span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="c"># An recommendation to display in output</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">Recommend</span> <span class="s1">&#39;Fruit is only Apple, Orange and Pear&#39;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="c"># Condition to determine if the object is fruit</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Name</span> <span class="n">-in</span> <span class="s1">&#39;Apple&#39;</span><span class="p">,</span> <span class="s1">&#39;Orange&#39;</span><span class="p">,</span> <span class="s1">&#39;Pear&#39;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>The rule is saved to a file named <a href="fruit/isFruit.Rule.ps1"><code>isFruit.Rule.ps1</code></a> file.
 One or more rules can be defined within a single file.</p>
 <h3 id="execute-a-rule">Execute a rule<a class="headerlink" href="#execute-a-rule" title="Permanent link">#</a></h3>
 <p>To execute the rule use <code>Invoke-PSRule</code>.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Define objects to validate</span>
-<span class="nv">$items</span> <span class="p">=</span> <span class="p">@();</span>
-<span class="nv">$items</span> <span class="p">+=</span> <span class="no">[PSCustomObject]</span><span class="p">@{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;Fridge&#39;</span> <span class="p">};</span>
-<span class="nv">$items</span> <span class="p">+=</span> <span class="no">[PSCustomObject]</span><span class="p">@{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;Apple&#39;</span> <span class="p">};</span>
-
-<span class="c"># Validate each item using rules saved in current working path</span>
-<span class="nv">$items</span> <span class="p">|</span> <span class="nb">Invoke-PSRule</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># Define objects to validate</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">$items</span> <span class="p">=</span> <span class="p">@();</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nv">$items</span> <span class="p">+=</span> <span class="no">[PSCustomObject]</span><span class="p">@{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;Fridge&#39;</span> <span class="p">};</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nv">$items</span> <span class="p">+=</span> <span class="no">[PSCustomObject]</span><span class="p">@{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;Apple&#39;</span> <span class="p">};</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c"># Validate each item using rules saved in current working path</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Invoke-PSRule</span><span class="p">;</span>
+</span></code></pre></div>
 <p>The output of this example is:</p>
-<div class="highlight"><pre><span></span><code>   TargetName: Fridge
-
-RuleName                            Outcome    Recommendation
---------                            -------    --------------
-isFruit                             Fail       Fruit is only Apple, Orange and Pear
-
-
-   TargetName: Apple
-
-RuleName                            Outcome    Recommendation
---------                            -------    --------------
-isFruit                             Pass       Fruit is only Apple, Orange and Pear
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>   TargetName: Fridge
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>RuleName                            Outcome    Recommendation
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>--------                            -------    --------------
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>isFruit                             Fail       Fruit is only Apple, Orange and Pear
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>   TargetName: Apple
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>RuleName                            Outcome    Recommendation
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>--------                            -------    --------------
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>isFruit                             Pass       Fruit is only Apple, Orange and Pear
+</span></code></pre></div>
 <h3 id="additional-options">Additional options<a class="headerlink" href="#additional-options" title="Permanent link">#</a></h3>
 <p>To filter results to only non-fruit results, use <code>Invoke-PSRule -Outcome Fail</code>.
 Passed, failed and error results are shown by default.</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Only show non-fruit results</span>
-<span class="nv">$items</span> <span class="p">|</span> <span class="nb">Invoke-PSRule</span> <span class="n">-Outcome</span> <span class="n">Fail</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># Only show non-fruit results</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Invoke-PSRule</span> <span class="n">-Outcome</span> <span class="n">Fail</span><span class="p">;</span>
+</span></code></pre></div>
 <p>For a summary of results for each rule use <code>Invoke-PSRule -As Summary</code>.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Show rule summary</span>
-<span class="nv">$items</span> <span class="p">|</span> <span class="nb">Invoke-PSRule</span> <span class="o">-As</span> <span class="n">Summary</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># Show rule summary</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Invoke-PSRule</span> <span class="o">-As</span> <span class="n">Summary</span><span class="p">;</span>
+</span></code></pre></div>
 <p>The output of this example is:</p>
-<div class="highlight"><pre><span></span><code>RuleName                            Pass  Fail  Outcome
---------                            ----  ----  -------
-isFruit                             1     1     Fail
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>RuleName                            Pass  Fail  Outcome
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>--------                            ----  ----  -------
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>isFruit                             1     1     Fail
+</span></code></pre></div>
 <p>An optional failure reason can be added to the rule block by using the <code>Reason</code> keyword.</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;isFruit&#39;</span> <span class="p">{</span>
-    <span class="c"># An recommendation to display in output</span>
-    <span class="n">Recommend</span> <span class="s1">&#39;Fruit is only Apple, Orange and Pear&#39;</span>
-
-    <span class="c"># An failure reason to display for non-fruit</span>
-    <span class="n">Reason</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$PSRule</span><span class="p">.</span><span class="n">TargetName</span><span class="p">)</span><span class="s2"> is not fruit.&quot;</span>
-
-    <span class="c"># Condition to determine if the object is fruit</span>
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Name</span> <span class="n">-in</span> <span class="s1">&#39;Apple&#39;</span><span class="p">,</span> <span class="s1">&#39;Orange&#39;</span><span class="p">,</span> <span class="s1">&#39;Pear&#39;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">Rule</span> <span class="s1">&#39;isFruit&#39;</span> <span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="c"># An recommendation to display in output</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="n">Recommend</span> <span class="s1">&#39;Fruit is only Apple, Orange and Pear&#39;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="c"># An failure reason to display for non-fruit</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="n">Reason</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$PSRule</span><span class="p">.</span><span class="n">TargetName</span><span class="p">)</span><span class="s2"> is not fruit.&quot;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="c"># Condition to determine if the object is fruit</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Name</span> <span class="n">-in</span> <span class="s1">&#39;Apple&#39;</span><span class="p">,</span> <span class="s1">&#39;Orange&#39;</span><span class="p">,</span> <span class="s1">&#39;Pear&#39;</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>To include the reason with output use <code>Invoke-PSRule -OutputFormat Wide</code>.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Show failure reason for failing results</span>
-<span class="nv">$items</span> <span class="p">|</span> <span class="nb">Invoke-PSRule</span> <span class="n">-OutputFormat</span> <span class="n">Wide</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c"># Show failure reason for failing results</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">$items</span> <span class="p">|</span> <span class="nb">Invoke-PSRule</span> <span class="n">-OutputFormat</span> <span class="n">Wide</span><span class="p">;</span>
+</span></code></pre></div>
 <p>The output of this example is:</p>
-<div class="highlight"><pre><span></span><code>   TargetName: Fridge
-
-RuleName                            Outcome    Reason                              Recommendation
---------                            -------    ------                              --------------
-isFruit                             Fail       Fridge is not fruit.                Fruit is only Apple, Orange and Pear
-
-
-   TargetName: Apple
-
-RuleName                            Outcome    Reason                              Recommendation
---------                            -------    ------                              --------------
-isFruit                             Pass                                           Fruit is only Apple, Orange and Pear
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>   TargetName: Fridge
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>RuleName                            Outcome    Reason                              Recommendation
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>--------                            -------    ------                              --------------
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>isFruit                             Fail       Fridge is not fruit.                Fruit is only Apple, Orange and Pear
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>   TargetName: Apple
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>RuleName                            Outcome    Reason                              Recommendation
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>--------                            -------    ------                              --------------
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>isFruit                             Pass                                           Fruit is only Apple, Orange and Pear
+</span></code></pre></div>
 <p>The final rule is saved to <a href="fruit/isFruit.Rule.ps1"><code>isFruit.Rule.ps1</code></a>.</p>
 <h3 id="scenarios">Scenarios<a class="headerlink" href="#scenarios" title="Permanent link">#</a></h3>
 <p>For walk through examples of PSRule usage see:</p>

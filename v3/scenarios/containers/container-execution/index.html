@@ -2767,17 +2767,17 @@ When we run the container we will use a volume mount to share our ARM template a
 <h2 id="creating-the-image">Creating the image<a class="headerlink" href="#creating-the-image" title="Permanent link">#</a></h2>
 <p>Creating an image ready to run PSRules first requires a dockerfile.
 The below example will use the latest PowerShell image released and install the <code>PSRule</code> and <code>PSRule.Rules.Azure</code> modules.</p>
-<div class="highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span class="c"># Copyright (c) Microsoft Corporation.</span>
-<span class="c"># Licensed under the MIT License.</span>
-
-<span class="k">FROM</span><span class="w"> </span><span class="s">mcr.microsoft.com/powershell:7.4-ubuntu-22.04</span>
-<span class="k">SHELL</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pwsh&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-command&quot;</span><span class="p">]</span>
-
-<span class="k">RUN</span><span class="w"> </span>Install-Module<span class="w"> </span>-Name<span class="w"> </span><span class="s1">&#39;PSRule&#39;</span>,<span class="s1">&#39;PSRule.Rules.Azure&#39;</span><span class="w"> </span>-Force
-</code></pre></div>
+<div class="language-dockerfile highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Copyright (c) Microsoft Corporation.</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c"># Licensed under the MIT License.</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">FROM</span><span class="w"> </span><span class="s">mcr.microsoft.com/powershell:7.4-ubuntu-22.04</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">SHELL</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pwsh&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-command&quot;</span><span class="p">]</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">RUN</span><span class="w"> </span>Install-Module<span class="w"> </span>-Name<span class="w"> </span><span class="s1">&#39;PSRule&#39;</span>,<span class="s1">&#39;PSRule.Rules.Azure&#39;</span><span class="w"> </span>-Force
+</span></code></pre></div>
 <p>The below docker command can be used to create the image locally.</p>
-<div class="highlight"><pre><span></span><code><span class="n">docker</span> <span class="n">build</span> <span class="p">-</span><span class="n">-tag</span> <span class="n">psrule</span><span class="p">:</span><span class="n">latest</span> <span class="p">.</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">docker</span> <span class="n">build</span> <span class="p">-</span><span class="n">-tag</span> <span class="n">psrule</span><span class="p">:</span><span class="n">latest</span> <span class="p">.</span>
+</span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>While fine for an example, it is common to always reference a container by a version number and not the <code>latest</code> tag.
@@ -2787,31 +2787,31 @@ Using the <code>latest</code> tag may lead to unexpected behavior as version cha
 <p>Create a new directory and add a new file named <code>validate-files.ps1</code>.
 This file will run the PSRule test for us on our new container image.
 Add the below code to the file.</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Copyright (c) Microsoft Corporation.</span>
-<span class="c"># Licensed under the MIT License.</span>
-
-<span class="cm">&lt;#</span>
-<span class="cm">    </span><span class="sd">.SYNOPSIS</span>
-<span class="cm">        Create a PSRule AzRuleTemplate data file and run the PSRule.Rules.Azure module rules against the output.</span>
-<span class="cm">#&gt;</span>
-
-<span class="nb">Get-AzRuleTemplateLink</span> <span class="s2">&quot;$PSScriptRoot/template&quot;</span> <span class="p">|</span> <span class="nb">Export-AzRuleTemplateData</span> <span class="n">-OutputPath</span> <span class="s2">&quot;$PSScriptRoot/out&quot;</span>
-
-<span class="nb">Assert-PSRule</span> <span class="n">-InputPath</span> <span class="s2">&quot;$PSScriptRoot/out/&quot;</span> <span class="n">-Module</span> <span class="s1">&#39;PSRule.Rules.Azure&#39;</span> <span class="o">-As</span> <span class="n">Summary</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># Copyright (c) Microsoft Corporation.</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c"># Licensed under the MIT License.</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="cm">&lt;#</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="cm">    </span><span class="sd">.SYNOPSIS</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="cm">        Create a PSRule AzRuleTemplate data file and run the PSRule.Rules.Azure module rules against the output.</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="cm">#&gt;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nb">Get-AzRuleTemplateLink</span> <span class="s2">&quot;$PSScriptRoot/template&quot;</span> <span class="p">|</span> <span class="nb">Export-AzRuleTemplateData</span> <span class="n">-OutputPath</span> <span class="s2">&quot;$PSScriptRoot/out&quot;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="nb">Assert-PSRule</span> <span class="n">-InputPath</span> <span class="s2">&quot;$PSScriptRoot/out/&quot;</span> <span class="n">-Module</span> <span class="s1">&#39;PSRule.Rules.Azure&#39;</span> <span class="o">-As</span> <span class="n">Summary</span>
+</span></code></pre></div>
 <p>Also, within the new directory add another directory named <code>template</code>.
 Add any ARM template you would like to test in this directory.
 For a starting point you can get a template from <a href="https://azure.microsoft.com/resources/templates/">Azure Quickstart Templates.</a></p>
 <p>Your directory should now look like the below.</p>
-<div class="highlight"><pre><span></span><code>- Directory 
-  |--&gt; validate-files.ps1
-  |--&gt; template
-    |--&gt; ARM template...
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>- Directory 
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  |--&gt; validate-files.ps1
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  |--&gt; template
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    |--&gt; ARM template...
+</span></code></pre></div>
 <h2 id="run-psrules-in-the-container">Run PSRules in the container<a class="headerlink" href="#run-psrules-in-the-container" title="Permanent link">#</a></h2>
 <p>Now we are ready to go! Run the below docker command to test the ARM template.</p>
-<div class="highlight"><pre><span></span><code><span class="n">docker</span> <span class="n">run</span> <span class="n">-it</span> <span class="p">-</span><span class="n">-rm</span> <span class="n">-v</span> <span class="nv">$PWD</span><span class="p">/:/</span><span class="n">src</span> <span class="n">psrule</span><span class="p">:</span><span class="n">latest</span> <span class="n">pwsh</span> <span class="o">-file</span> <span class="p">/</span><span class="n">src</span><span class="p">/</span><span class="n">validate-files</span><span class="p">.</span><span class="n">ps1</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">docker</span> <span class="n">run</span> <span class="n">-it</span> <span class="p">-</span><span class="n">-rm</span> <span class="n">-v</span> <span class="nv">$PWD</span><span class="p">/:/</span><span class="n">src</span> <span class="n">psrule</span><span class="p">:</span><span class="n">latest</span> <span class="n">pwsh</span> <span class="o">-file</span> <span class="p">/</span><span class="n">src</span><span class="p">/</span><span class="n">validate-files</span><span class="p">.</span><span class="n">ps1</span>
+</span></code></pre></div>
 <p>This command runs the container and the PSRule tests by mounting the directory to the <code>/src</code> path
 and then executing the <code>validate-files.ps1</code> script.</p>
 <div class="admonition note">
@@ -2821,8 +2821,8 @@ You can change this to an absolute or relative path if desired.</p>
 </div>
 <h2 id="clean-up">Clean up<a class="headerlink" href="#clean-up" title="Permanent link">#</a></h2>
 <p>When you are ready to clean up the container image you can do so with the below command.</p>
-<div class="highlight"><pre><span></span><code><span class="n">docker</span> <span class="n">image</span> <span class="nb">rm </span><span class="n">psrule</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">docker</span> <span class="n">image</span> <span class="nb">rm </span><span class="n">psrule</span>
+</span></code></pre></div>
 
 
 

@@ -2838,8 +2838,8 @@ The module lock file, provides consistent module versions across multiple machin
 For more information, see <a href="../../lockfile/">Lock file</a>.</p>
 </div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
-<div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span><span class="o">[</span>subcommand<span class="o">]</span><span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
-</code></pre></div>
+<div class="language-bash highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ps-rule<span class="w"> </span>module<span class="w"> </span><span class="o">[</span>subcommand<span class="o">]</span><span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
+</span></code></pre></div>
 <p>To use the <code>module</code> command, choose one of the available subcommands:</p>
 <ul>
 <li><a href="#module-init">module init</a></li>
@@ -2859,11 +2859,11 @@ Any required version constraints set by the <code>Requires</code> option are tak
 <li><code>--force</code> - Force the creation of a new lock file, even if one already exists.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span>init
-</code></pre></div>
+<div class="language-bash highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ps-rule<span class="w"> </span>module<span class="w"> </span>init
+</span></code></pre></div>
 <p>For example, force the creation of a new lock file, even if one already exists:</p>
-<div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span>init<span class="w"> </span>--force
-</code></pre></div>
+<div class="language-bash highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ps-rule<span class="w"> </span>module<span class="w"> </span>init<span class="w"> </span>--force
+</span></code></pre></div>
 <h2 id="module-list"><code>module list</code><a class="headerlink" href="#module-list" title="Permanent link">#</a></h2>
 <p>List any module and the installed versions from the lock file.</p>
 <h2 id="module-add"><code>module add</code><a class="headerlink" href="#module-add" title="Permanent link">#</a></h2>
@@ -2882,19 +2882,19 @@ Any required version constraints set by the <code>Requires</code> option are tak
   A pre-release version may also be accepted when <code>Requires</code> includes pre-releases.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>PSRule.Rules.Azure
-</code></pre></div>
+<div class="language-bash highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ps-rule<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>PSRule.Rules.Azure
+</span></code></pre></div>
 <p>For example, a specific version of the module is added:</p>
-<div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>PSRule.Rules.Azure<span class="w"> </span>--version<span class="w"> </span><span class="m">1</span>.39.3
-</code></pre></div>
+<div class="language-bash highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ps-rule<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>PSRule.Rules.Azure<span class="w"> </span>--version<span class="w"> </span><span class="m">1</span>.39.3
+</span></code></pre></div>
 <p>For example, include pre-release versions added:</p>
-<div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>PSRule.Rules.Azure<span class="w"> </span>--prerelease
-</code></pre></div>
+<div class="language-bash highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ps-rule<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>PSRule.Rules.Azure<span class="w"> </span>--prerelease
+</span></code></pre></div>
 <h2 id="module-remove"><code>module remove</code><a class="headerlink" href="#module-remove" title="Permanent link">#</a></h2>
 <p>Remove one or more modules from the lock file.</p>
 <p>For example:</p>
-<div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span>remove<span class="w"> </span>PSRule.Rules.Azure
-</code></pre></div>
+<div class="language-bash highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ps-rule<span class="w"> </span>module<span class="w"> </span>remove<span class="w"> </span>PSRule.Rules.Azure
+</span></code></pre></div>
 <h2 id="module-restore"><code>module restore</code><a class="headerlink" href="#module-restore" title="Permanent link">#</a></h2>
 <p>Restore modules from the module lock file (<code>ps-rule.lock.json</code>) and configured options.</p>
 <p>Optional parameters:</p>
@@ -2902,11 +2902,11 @@ Any required version constraints set by the <code>Requires</code> option are tak
 <li><code>--force</code> - Restore modules even when an existing version that meets constraints is already installed locally.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span>restore
-</code></pre></div>
+<div class="language-bash highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ps-rule<span class="w"> </span>module<span class="w"> </span>restore
+</span></code></pre></div>
 <p>For example, force restore of all modules:</p>
-<div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span>restore<span class="w"> </span>--force
-</code></pre></div>
+<div class="language-bash highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ps-rule<span class="w"> </span>module<span class="w"> </span>restore<span class="w"> </span>--force
+</span></code></pre></div>
 <h2 id="module-upgrade"><code>module upgrade</code><a class="headerlink" href="#module-upgrade" title="Permanent link">#</a></h2>
 <p>Upgrade to the latest versions for all or a specific module within the lock file.</p>
 <p>Optional parameters:</p>
@@ -2916,11 +2916,11 @@ Any required version constraints set by the <code>Requires</code> option are tak
   A pre-release version may also be accepted when <code>Requires</code> includes pre-releases.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span>upgrade
-</code></pre></div>
+<div class="language-bash highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ps-rule<span class="w"> </span>module<span class="w"> </span>upgrade
+</span></code></pre></div>
 <p>For example, upgrade a specific module and include pre-release versions:</p>
-<div class="highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code>ps-rule<span class="w"> </span>module<span class="w"> </span>upgrade<span class="w"> </span>PSRule.Rules.Azure<span class="w"> </span>--prerelease
-</code></pre></div>
+<div class="language-bash highlight"><span class="filename">PSRule CLI command-line</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ps-rule<span class="w"> </span>module<span class="w"> </span>upgrade<span class="w"> </span>PSRule.Rules.Azure<span class="w"> </span>--prerelease
+</span></code></pre></div>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
 <p>For more information on the module lock file, see <a href="../../lockfile/">Lock file</a>.</p>
 <p>To find out more about the commands available with the PSRule CLI, see <a href="../">PSRule CLI</a>.</p>

@@ -2832,8 +2832,8 @@ Markdown documentation is supported for rules and suppression groups.</p>
 <h3 id="getting-documentation">Getting documentation<a class="headerlink" href="#getting-documentation" title="Permanent link">#</a></h3>
 <p>To get documentation for a rule use the <code>Get-PSRuleHelp</code> cmdlet.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Get-PSRuleHelp</span> <span class="p">&lt;</span><span class="n">rule-name</span><span class="p">&gt;</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Get-PSRuleHelp</span> <span class="p">&lt;</span><span class="n">rule-name</span><span class="p">&gt;</span>
+</span></code></pre></div>
 <p>Each rule can include the following documentation:</p>
 <ul>
 <li>Annotations - Additional metadata included in results.</li>
@@ -2848,8 +2848,8 @@ Markdown documentation is supported for rules and suppression groups.</p>
 <p>Rule documentation may optionally include a link to an online version.
 When included, the <code>-Online</code> parameter can be used to open the online version in the default web browser.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Get-PSRuleHelp</span> <span class="p">&lt;</span><span class="n">rule-name</span><span class="p">&gt;</span> <span class="n">-Online</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Get-PSRuleHelp</span> <span class="p">&lt;</span><span class="n">rule-name</span><span class="p">&gt;</span> <span class="n">-Online</span>
+</span></code></pre></div>
 <h3 id="creating-documentation-for-rules">Creating documentation for rules<a class="headerlink" href="#creating-documentation-for-rules" title="Permanent link">#</a></h3>
 <p>Rule documentation is composed of markdown files, one per rule.
 When creating rules for more then one culture, a separate markdown file is created per rule per culture.</p>
@@ -2857,40 +2857,40 @@ When creating rules for more then one culture, a separate markdown file is creat
 <p>Markdown is saved in a file with the same filename as the rule name with the <code>.md</code> extension.
 The file name should match the same case exactly, with a lower case extension.</p>
 <p>As an example, the <code>storageAccounts.UseHttps.md</code> markdown file would be created.</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
-<span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="n">-If</span> <span class="p">{</span> <span class="n">ResourceType</span> <span class="s1">&#39;Microsoft.Storage/storageAccounts&#39;</span> <span class="p">}</span> <span class="p">{</span>
-    <span class="n">Recommend</span> <span class="s1">&#39;Storage accounts should only allow secure traffic&#39;</span>
-
-    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">supportsHttpsTrafficOnly</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># Synopsis: Configure storage accounts to only accept encrypted traffic i.e. HTTPS/SMB</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">Rule</span> <span class="s1">&#39;storageAccounts.UseHttps&#39;</span> <span class="n">-If</span> <span class="p">{</span> <span class="n">ResourceType</span> <span class="s1">&#39;Microsoft.Storage/storageAccounts&#39;</span> <span class="p">}</span> <span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">Recommend</span> <span class="s1">&#39;Storage accounts should only allow secure traffic&#39;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">supportsHttpsTrafficOnly</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>The markdown of each file uses following structure.</p>
-<div class="highlight"><pre><span></span><code>---
-{{ Annotations }}
----
-
-# {{ Name of rule }}
-
-
-
-{{ A brief summary of the rule }}
-
-## Description
-
-{{ A detailed description of the rule }}
-
-## Recommendation
-
-{{ A detailed explanation of the steps required to pass the rule }}
-
-## Notes
-
-{{ Additional information or configuration options }}
-
-## Links
-
-{{ Links to external references }}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>---
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>{{ Annotations }}
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>---
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a># {{ Name of rule }}
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>{{ A brief summary of the rule }}
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>## Description
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>{{ A detailed description of the rule }}
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>## Recommendation
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>{{ A detailed explanation of the steps required to pass the rule }}
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>## Notes
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>{{ Additional information or configuration options }}
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>## Links
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>{{ Links to external references }}
+</span></code></pre></div>
 <p>Optionally, one or more annotations formatted as YAML key value pairs can be included.
 i.e. <code>severity: Critical</code></p>
 <p>Additional sections such as <code>EXAMPLES</code> can be included although are not exposed with <code>Get-PSRuleHelp</code>.</p>
@@ -2899,16 +2899,16 @@ i.e. <code>severity: Critical</code></p>
 Other sections can be added to the markdown content, but are ignored.
 Set the synopsis in markdown to allow a culture specific message to be displayed.</p>
 <p>The markdown of each file uses following structure.</p>
-<div class="highlight"><pre><span></span><code>---
-{{ Annotations }}
----
-
-# {{ Name of suppression group }}
-
-
-
-{{ A brief summary of the suppression group }}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>---
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>{{ Annotations }}
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>---
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a># {{ Name of suppression group }}
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>{{ A brief summary of the suppression group }}
+</span></code></pre></div>
 <h3 id="storing-markdown-files">Storing markdown files<a class="headerlink" href="#storing-markdown-files" title="Permanent link">#</a></h3>
 <p>The location PSRule uses to find markdown documentation depends on how the rules/ resources are packaged.
 In each case, documentation will be in a culture <code>/&lt;culture&gt;/</code>specific subdirectory.

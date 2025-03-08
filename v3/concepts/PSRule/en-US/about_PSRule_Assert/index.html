@@ -3720,17 +3720,17 @@ The <code>$Assert</code> object provides a consistent set of methods to evaluate
 Where you have the choice, use built-in keywords.
 Use assertion methods for advanced cases or increased flexibility.</p>
 <p>In the following example, <code>Assert.HasFieldValue</code> asserts that <code>$TargetObject</code> should have a field named <code>Type</code> with a non-empty value.</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Assert.HasTypeField&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Rule</span> <span class="s1">&#39;Assert.HasTypeField&#39;</span> <span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>To find perform multiple assertions use.</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Assert.HasRequiredFields&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Rule</span> <span class="s1">&#39;Assert.HasRequiredFields&#39;</span> <span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="field-names">Field names<a class="headerlink" href="#field-names" title="Permanent link">#</a></h3>
 <p>Many of the built-in assertion methods accept an object path or field name.
 An object path is an expression that traverses object properties, keys or indexes of the <em>input object</em>.
@@ -3839,26 +3839,26 @@ Additionally an optional string pre-release identifier can be used <code>yyyy-MM
 <li><em>The version '{0}' does not match the constraint '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;ValidStableAPIVersion&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">APIVersion</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;apiVersion&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="n">Rule</span> <span class="s1">&#39;AnyValidAPIVersion&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">APIVersion</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;apiVersion&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="n">Rule</span> <span class="s1">&#39;MinimumAPIVersion&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">APIVersion</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;apiVersion&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=2015-10-01&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="n">Rule</span> <span class="s1">&#39;MinimumAPIVersionWithPrerelease&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">APIVersion</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;apiVersion&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=2015-10-01-0&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="n">Rule</span> <span class="s1">&#39;MinimumAPIVersionWithFlag&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">APIVersion</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;apiVersion&#39;</span><span class="p">,</span> <span class="s1">&#39;@pre &gt;=2015-10-01-0&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">Rule</span> <span class="s1">&#39;ValidStableAPIVersion&#39;</span> <span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">APIVersion</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;apiVersion&#39;</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">Rule</span> <span class="s1">&#39;AnyValidAPIVersion&#39;</span> <span class="p">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">APIVersion</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;apiVersion&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">Rule</span> <span class="s1">&#39;MinimumAPIVersion&#39;</span> <span class="p">{</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">APIVersion</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;apiVersion&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=2015-10-01&#39;</span><span class="p">)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">Rule</span> <span class="s1">&#39;MinimumAPIVersionWithPrerelease&#39;</span> <span class="p">{</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">APIVersion</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;apiVersion&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=2015-10-01-0&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p">}</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="n">Rule</span> <span class="s1">&#39;MinimumAPIVersionWithFlag&#39;</span> <span class="p">{</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">APIVersion</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;apiVersion&#39;</span><span class="p">,</span> <span class="s1">&#39;@pre &gt;=2015-10-01-0&#39;</span><span class="p">)</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="contains">Contains<a class="headerlink" href="#contains" title="Permanent link">#</a></h3>
 <p>The <code>Contains</code> assertion method checks the operand contains the specified string.
 If the operand is an array of strings, only one string must contain the specified string.
@@ -3884,11 +3884,11 @@ Case is ignored by default.</li>
 <li><em>The field '{0}' does not contain '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Contains&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;prod&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;prod&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Rule</span> <span class="s1">&#39;Contains&#39;</span> <span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;prod&#39;</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;prod&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="count">Count<a class="headerlink" href="#count" title="Permanent link">#</a></h3>
 <p>The <code>Count</code> assertion method checks the field value contains the specified number of items.
 The field value must be an array or collection.</p>
@@ -3907,10 +3907,10 @@ The field value must be an array or collection.</p>
 <li><em>The field '{0}' has '{1}' items instead of '{2}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Count&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Count</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;items&#39;</span><span class="p">,</span> <span class="n">2</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">Rule</span> <span class="s1">&#39;Count&#39;</span> <span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Count</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;items&#39;</span><span class="p">,</span> <span class="n">2</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="endswith">EndsWith<a class="headerlink" href="#endswith" title="Permanent link">#</a></h3>
 <p>The <code>EndsWith</code> assertion method checks the operand ends with the specified suffix.
 If the operand is an array of strings, only one string must end with the specified suffix.
@@ -3936,11 +3936,11 @@ Case is ignored by default.</li>
 <li><em>The field '{0}' does not end with '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;EndsWith&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">EndsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;eus&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">EndsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="s1">&#39;web&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Rule</span> <span class="s1">&#39;EndsWith&#39;</span> <span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">EndsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;eus&#39;</span><span class="p">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">EndsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="s1">&#39;web&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="fileheader">FileHeader<a class="headerlink" href="#fileheader" title="Permanent link">#</a></h3>
 <p>The <code>FileHeader</code> assertion method checks a file for a comment header.
 When comparing the file header, the format of line comments are automatically detected by file extension.
@@ -3975,13 +3975,13 @@ When set, detection by file extension is skipped.</li>
 <li><em>The header was not set.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;FileHeader&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FileHeader</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span>
-        <span class="s1">&#39;Copyright (c) Microsoft Corporation.&#39;</span>
-        <span class="s1">&#39;Licensed under the MIT License.&#39;</span>
-    <span class="p">));</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">Rule</span> <span class="s1">&#39;FileHeader&#39;</span> <span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FileHeader</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>        <span class="s1">&#39;Copyright (c) Microsoft Corporation.&#39;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>        <span class="s1">&#39;Licensed under the MIT License.&#39;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="p">));</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="filepath">FilePath<a class="headerlink" href="#filepath" title="Permanent link">#</a></h3>
 <p>The <code>FilePath</code> assertion method checks the file exists.
 Checks use file system case-sensitivity rules.</p>
@@ -4002,17 +4002,17 @@ Only one full file path must be a valid file for the assertion method to pass.</
 <li><em>The file '{0}' does not exist.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;FilePath&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;CHANGELOG.md&#39;</span><span class="p">));</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;LICENSE&#39;</span><span class="p">,</span> <span class="s1">&#39;LICENSE.txt&#39;</span><span class="p">));</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;CODE_OF_CONDUCT.md&#39;</span><span class="p">));</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;CONTRIBUTING.md&#39;</span><span class="p">));</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;SECURITY.md&#39;</span><span class="p">));</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;README.md&#39;</span><span class="p">));</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;.github/CODEOWNERS&#39;</span><span class="p">));</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;.github/PULL_REQUEST_TEMPLATE.md&#39;</span><span class="p">));</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">Rule</span> <span class="s1">&#39;FilePath&#39;</span> <span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;CHANGELOG.md&#39;</span><span class="p">));</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;LICENSE&#39;</span><span class="p">,</span> <span class="s1">&#39;LICENSE.txt&#39;</span><span class="p">));</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;CODE_OF_CONDUCT.md&#39;</span><span class="p">));</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;CONTRIBUTING.md&#39;</span><span class="p">));</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;SECURITY.md&#39;</span><span class="p">));</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;README.md&#39;</span><span class="p">));</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;.github/CODEOWNERS&#39;</span><span class="p">));</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">FilePath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;.github/PULL_REQUEST_TEMPLATE.md&#39;</span><span class="p">));</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="greater">Greater<a class="headerlink" href="#greater" title="Permanent link">#</a></h3>
 <p>The <code>Greater</code> assertion method checks the field value is greater than the specified value.
 The field value can either be an integer, float, array, or string.
@@ -4040,10 +4040,10 @@ By default the string length is compared.</li>
 <li><em>The field value '{0}' can not be compared with '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Greater&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Greater</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">3</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">Rule</span> <span class="s1">&#39;Greater&#39;</span> <span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Greater</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">3</span><span class="p">)</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="greaterorequal">GreaterOrEqual<a class="headerlink" href="#greaterorequal" title="Permanent link">#</a></h3>
 <p>The <code>GreaterOrEqual</code> assertion method checks the field value is greater or equal to the specified value.
 The field value can either be an integer, float, array, or string.
@@ -4071,10 +4071,10 @@ By default the string length is compared.</li>
 <li><em>The field value '{0}' can not be compared with '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;GreaterOrEqual&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">GreaterOrEqual</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">3</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">Rule</span> <span class="s1">&#39;GreaterOrEqual&#39;</span> <span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">GreaterOrEqual</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">3</span><span class="p">)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="hasdefaultvalue">HasDefaultValue<a class="headerlink" href="#hasdefaultvalue" title="Permanent link">#</a></h3>
 <p>The <code>HasDefaultValue</code> assertion method check that the field does not exist or the field value is set to the default value.</p>
 <p>The following parameters are accepted:</p>
@@ -4100,10 +4100,10 @@ This is a case insensitive compare.</li>
 <li><em>The field '{0}' is set to '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;HasDefaultValue&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasDefaultValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Properties.osProfile.linuxConfiguration.provisionVMAgent&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">Rule</span> <span class="s1">&#39;HasDefaultValue&#39;</span> <span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasDefaultValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Properties.osProfile.linuxConfiguration.provisionVMAgent&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="hasfield">HasField<a class="headerlink" href="#hasfield" title="Permanent link">#</a></h3>
 <p>The <code>HasField</code> assertion method checks the object has any of the specified fields.</p>
 <p>The following parameters are accepted:</p>
@@ -4121,12 +4121,12 @@ If more than one field is specified, only one must exist.</li>
 <li><em>Does not exist.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;HasField&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="s1">&#39;tag.Env&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">Rule</span> <span class="s1">&#39;HasField&#39;</span> <span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="s1">&#39;tag.Env&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="hasfields">HasFields<a class="headerlink" href="#hasfields" title="Permanent link">#</a></h3>
 <p>The <code>HasFields</code> assertion method checks the object has all of the specified fields.</p>
 <p>The following parameters are accepted:</p>
@@ -4144,12 +4144,12 @@ If more than one field is specified, all fields must exist.</li>
 <li><em>The field '{0}' does not exist.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;HasFields&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFields</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFields</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFields</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="s1">&#39;tag.Env&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">Rule</span> <span class="s1">&#39;HasFields&#39;</span> <span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFields</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFields</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFields</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="s1">&#39;tag.Env&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="hasfieldvalue">HasFieldValue<a class="headerlink" href="#hasfieldvalue" title="Permanent link">#</a></h3>
 <p>The <code>HasFieldValue</code> assertion method checks the field value of the object is not empty.</p>
 <p>A field value is empty if any of the following are true:</p>
@@ -4176,11 +4176,11 @@ If <code>expectedValue</code> is <code>$Null</code> the field value will not be 
 <li><em>Is set to '{0}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;HasFieldValue&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="s1">&#39;production&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">Rule</span> <span class="s1">&#39;HasFieldValue&#39;</span> <span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="s1">&#39;production&#39;</span><span class="p">)</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="hasjsonschema">HasJsonSchema<a class="headerlink" href="#hasjsonschema" title="Permanent link">#</a></h3>
 <p>The <code>HasJsonSchema</code> assertion method determines if the input object has a <code>$schema</code> property defined.
 If the <code>$schema</code> property is defined, it must not be empty and match one of the supplied schemas.
@@ -4203,12 +4203,12 @@ When <code>$True</code>, the schema will match if <code>http</code> or <code>htt
 <li><em>None of the specified schemas match '{0}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;HasFieldValue&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasJsonSchema</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasJsonSchema</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s2">&quot;http://json-schema.org/draft-07/schema`#&quot;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasJsonSchema</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s2">&quot;https://json-schema.org/draft-07/schema&quot;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">Rule</span> <span class="s1">&#39;HasFieldValue&#39;</span> <span class="p">{</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasJsonSchema</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">)</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasJsonSchema</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s2">&quot;http://json-schema.org/draft-07/schema`#&quot;</span><span class="p">)</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasJsonSchema</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s2">&quot;https://json-schema.org/draft-07/schema&quot;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="jsonschema">JsonSchema<a class="headerlink" href="#jsonschema" title="Permanent link">#</a></h3>
 <p>The <code>JsonSchema</code> assertion method compares the input object against a defined JSON schema.</p>
 <p>The following parameters are accepted:</p>
@@ -4225,10 +4225,10 @@ Either a file path or URL can be used to specify the location of the schema file
 <li><em>Failed schema validation on {0}. {1}</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;JsonSchema&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">JsonSchema</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tests/PSRule.Tests/FromFile.Json.schema.json&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">Rule</span> <span class="s1">&#39;JsonSchema&#39;</span> <span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">JsonSchema</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tests/PSRule.Tests/FromFile.Json.schema.json&#39;</span><span class="p">)</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="in">In<a class="headerlink" href="#in" title="Permanent link">#</a></h3>
 <p>The <code>In</code> assertion method checks the field value is included in a set of values.
 The field value can either be an integer, float, array, or string.
@@ -4252,11 +4252,11 @@ When the field value is an array, only one item must be included in the set.</p>
 <li><em>The field value '{0}' was not included in the set.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;In&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="k">In</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Sku.tier&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;PremiumV2&#39;</span><span class="p">,</span> <span class="s1">&#39;Premium&#39;</span><span class="p">,</span> <span class="s1">&#39;Standard&#39;</span><span class="p">))</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="k">In</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Sku.tier&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;PremiumV2&#39;</span><span class="p">,</span> <span class="s1">&#39;Premium&#39;</span><span class="p">,</span> <span class="s1">&#39;Standard&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">Rule</span> <span class="s1">&#39;In&#39;</span> <span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="k">In</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Sku.tier&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;PremiumV2&#39;</span><span class="p">,</span> <span class="s1">&#39;Premium&#39;</span><span class="p">,</span> <span class="s1">&#39;Standard&#39;</span><span class="p">))</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="k">In</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Sku.tier&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;PremiumV2&#39;</span><span class="p">,</span> <span class="s1">&#39;Premium&#39;</span><span class="p">,</span> <span class="s1">&#39;Standard&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="isarray">IsArray<a class="headerlink" href="#isarray" title="Permanent link">#</a></h3>
 <p>The <code>IsArray</code> assertion method checks the field value is an array type.</p>
 <p>The following parameters are accepted:</p>
@@ -4274,11 +4274,11 @@ This is a case insensitive compare.</li>
 <li><em>The field value '{1}' of type {0} is not [array].</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsArray&#39;</span> <span class="p">{</span>
-    <span class="c"># Require Value1 to be an array</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsArray</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">Rule</span> <span class="s1">&#39;IsArray&#39;</span> <span class="p">{</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="c"># Require Value1 to be an array</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsArray</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="isboolean">IsBoolean<a class="headerlink" href="#isboolean" title="Permanent link">#</a></h3>
 <p>The <code>IsBoolean</code> assertion method checks the field value is a boolean type.</p>
 <p>The following parameters are accepted:</p>
@@ -4298,14 +4298,14 @@ By default strings are not converted.</li>
 <li><em>The value '{0}' is not a boolean.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsBoolean&#39;</span> <span class="p">{</span>
-    <span class="c"># Require Value1 to be a boolean</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsBoolean</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
-
-    <span class="c"># Require Value1 to be a boolean or a boolean string</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsBoolean</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">Rule</span> <span class="s1">&#39;IsBoolean&#39;</span> <span class="p">{</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="c"># Require Value1 to be a boolean</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsBoolean</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    <span class="c"># Require Value1 to be a boolean or a boolean string</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsBoolean</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="isdatetime">IsDateTime<a class="headerlink" href="#isdatetime" title="Permanent link">#</a></h3>
 <p>The <code>IsDateTime</code> assertion method checks the field value is a DateTime type.</p>
 <p>The following parameters are accepted:</p>
@@ -4325,14 +4325,14 @@ By default strings are not converted.</li>
 <li><em>The value '{0}' is not a date.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsDateTime&#39;</span> <span class="p">{</span>
-    <span class="c"># Require Value1 to be a DateTime</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsDateTime</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
-
-    <span class="c"># Require Value1 to be a DateTime or a DateTime string</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsDateTime</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">Rule</span> <span class="s1">&#39;IsDateTime&#39;</span> <span class="p">{</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    <span class="c"># Require Value1 to be a DateTime</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsDateTime</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    <span class="c"># Require Value1 to be a DateTime or a DateTime string</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsDateTime</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="isinteger">IsInteger<a class="headerlink" href="#isinteger" title="Permanent link">#</a></h3>
 <p>The <code>IsInteger</code> assertion method checks the field value is a integer type.
 The following types are considered integer types <code>int</code>, <code>long</code>, <code>byte</code>.</p>
@@ -4353,14 +4353,14 @@ By default strings are not converted.</li>
 <li><em>The value '{0}' is not an integer.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsInteger&#39;</span> <span class="p">{</span>
-    <span class="c"># Require Value1 to be an integer</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsInteger</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
-
-    <span class="c"># Require Value1 to be an integer or a integer string</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsInteger</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">Rule</span> <span class="s1">&#39;IsInteger&#39;</span> <span class="p">{</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="c"># Require Value1 to be an integer</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsInteger</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    <span class="c"># Require Value1 to be an integer or a integer string</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsInteger</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="islower">IsLower<a class="headerlink" href="#islower" title="Permanent link">#</a></h3>
 <p>The <code>IsLower</code> assertion method checks the field value uses only lowercase characters.
 Non-letter characters are ignored by default and will pass.</p>
@@ -4381,14 +4381,14 @@ Non-letter characters are ignored by default.</li>
 <li><em>The value '{0}' does not contain only letters.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsLower&#39;</span> <span class="p">{</span>
-    <span class="c"># Require Name to be lowercase</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsLower</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
-
-    <span class="c"># Require Name to only contain lowercase letters</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsLower</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">Rule</span> <span class="s1">&#39;IsLower&#39;</span> <span class="p">{</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    <span class="c"># Require Name to be lowercase</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsLower</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>    <span class="c"># Require Name to only contain lowercase letters</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsLower</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="isnumeric">IsNumeric<a class="headerlink" href="#isnumeric" title="Permanent link">#</a></h3>
 <p>The <code>IsNumeric</code> assertion method checks the field value is a numeric type.
 The following types are considered numeric types <code>int</code>, <code>long</code>, <code>float</code>, <code>byte</code>, <code>double</code>.</p>
@@ -4409,14 +4409,14 @@ By default strings are not converted.</li>
 <li><em>The value '{0}' is not numeric.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsNumeric&#39;</span> <span class="p">{</span>
-    <span class="c"># Require Value1 to be numeric</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsNumeric</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
-
-    <span class="c"># Require Value1 to be numeric or a numerical string</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsNumeric</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">Rule</span> <span class="s1">&#39;IsNumeric&#39;</span> <span class="p">{</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>    <span class="c"># Require Value1 to be numeric</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsNumeric</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    <span class="c"># Require Value1 to be numeric or a numerical string</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsNumeric</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="isstring">IsString<a class="headerlink" href="#isstring" title="Permanent link">#</a></h3>
 <p>The <code>IsString</code> assertion method checks the field value is a string type.</p>
 <p>The following parameters are accepted:</p>
@@ -4434,11 +4434,11 @@ This is a case insensitive compare.</li>
 <li><em>The value '{0}' is not a string.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsString&#39;</span> <span class="p">{</span>
-    <span class="c"># Require Value1 to be a string</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsString</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">Rule</span> <span class="s1">&#39;IsString&#39;</span> <span class="p">{</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    <span class="c"># Require Value1 to be a string</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsString</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">)</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="isupper">IsUpper<a class="headerlink" href="#isupper" title="Permanent link">#</a></h3>
 <p>The <code>IsUpper</code> assertion method checks the field value uses only uppercase characters.
 Non-letter characters are ignored by default and will pass.</p>
@@ -4459,14 +4459,14 @@ Non-letter characters are ignored by default.</li>
 <li><em>The value '{0}' does not contain only letters.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;IsUpper&#39;</span> <span class="p">{</span>
-    <span class="c"># Require Name to be uppercase</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsUpper</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
-
-    <span class="c"># Require Name to only contain uppercase letters</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsUpper</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">Rule</span> <span class="s1">&#39;IsUpper&#39;</span> <span class="p">{</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>    <span class="c"># Require Name to be uppercase</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsUpper</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>    <span class="c"># Require Name to only contain uppercase letters</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">IsUpper</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="less">Less<a class="headerlink" href="#less" title="Permanent link">#</a></h3>
 <p>The <code>Less</code> assertion method checks the field value is less than the specified value.
 The field value can either be an integer, float, array, or string.
@@ -4494,10 +4494,10 @@ By default the string length is compared.</li>
 <li><em>The field value '{0}' can not be compared with '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Less&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Less</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">3</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">Rule</span> <span class="s1">&#39;Less&#39;</span> <span class="p">{</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Less</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">3</span><span class="p">)</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="lessorequal">LessOrEqual<a class="headerlink" href="#lessorequal" title="Permanent link">#</a></h3>
 <p>The <code>LessOrEqual</code> assertion method checks the field value is less or equal to the specified value.
 The field value can either be an integer, float, array, or string.
@@ -4525,10 +4525,10 @@ By default the string length is compared.</li>
 <li><em>The field value '{0}' can not be compared with '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;LessOrEqual&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">LessOrEqual</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">3</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">Rule</span> <span class="s1">&#39;LessOrEqual&#39;</span> <span class="p">{</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">LessOrEqual</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">3</span><span class="p">)</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="like">Like<a class="headerlink" href="#like" title="Permanent link">#</a></h3>
 <p>The <code>Like</code> assertion method checks the field value matches a specified pattern.
 Optionally a case-sensitive compare can be used, however case is ignored by default.</p>
@@ -4553,11 +4553,11 @@ Case is ignored by default.</li>
 <li><em>The value '{0}' is not like '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Like&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Like</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;rg-*&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Like</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;st*&#39;</span><span class="p">,</span> <span class="s1">&#39;diag*&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">Rule</span> <span class="s1">&#39;Like&#39;</span> <span class="p">{</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Like</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;rg-*&#39;</span><span class="p">)</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Like</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;st*&#39;</span><span class="p">,</span> <span class="s1">&#39;diag*&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="match">Match<a class="headerlink" href="#match" title="Permanent link">#</a></h3>
 <p>The <code>Match</code> assertion method checks the field value matches a regular expression pattern.</p>
 <p>The following parameters are accepted:</p>
@@ -4577,11 +4577,11 @@ Case is ignored by default.</li>
 <li><em>The field value '{0}' does not match the pattern '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Match&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Match</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;^[a-z]*$&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Match</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;^[a-z]*$&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">Rule</span> <span class="s1">&#39;Match&#39;</span> <span class="p">{</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Match</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;^[a-z]*$&#39;</span><span class="p">)</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Match</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;^[a-z]*$&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="notcontains">NotContains<a class="headerlink" href="#notcontains" title="Permanent link">#</a></h3>
 <p>The <code>NotContains</code> assertion method checks the operand contains the specified string.
 This condition fails when any of the specified sub-strings are found.
@@ -4606,11 +4606,11 @@ Case is ignored by default.</li>
 <li><em>The value '{0}' contains '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotContains&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotContains</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;prod&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotContains</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;prod&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">Rule</span> <span class="s1">&#39;NotContains&#39;</span> <span class="p">{</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotContains</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;prod&#39;</span><span class="p">)</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotContains</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;prod&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="notcount">NotCount<a class="headerlink" href="#notcount" title="Permanent link">#</a></h3>
 <p>The <code>NotCount</code> assertion method checks the field value does not contain the specified number of items.
 The field value must be an array or collection.</p>
@@ -4629,10 +4629,10 @@ The field value must be an array or collection.</p>
 <li><em>The field '{0}' has '{1}' items instead of '{2}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotCount&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotCount</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;items&#39;</span><span class="p">,</span> <span class="n">2</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">Rule</span> <span class="s1">&#39;NotCount&#39;</span> <span class="p">{</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotCount</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;items&#39;</span><span class="p">,</span> <span class="n">2</span><span class="p">)</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="notendswith">NotEndsWith<a class="headerlink" href="#notendswith" title="Permanent link">#</a></h3>
 <p>The <code>NotEndsWith</code> assertion method checks the operand ends with the specified suffix.
 This condition fails when any of the specified sub-strings are found at the end of the operand.
@@ -4657,11 +4657,11 @@ Case is ignored by default.</li>
 <li><em>The value '{0}' ends with '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotEndsWith&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotEndsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;eus&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotEndsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="s1">&#39;web&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">Rule</span> <span class="s1">&#39;NotEndsWith&#39;</span> <span class="p">{</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotEndsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;eus&#39;</span><span class="p">)</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotEndsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="s1">&#39;web&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="nothasfield">NotHasField<a class="headerlink" href="#nothasfield" title="Permanent link">#</a></h3>
 <p>The <code>NotHasField</code> assertion method checks the object does not have any of the specified fields.</p>
 <p>The following parameters are accepted:</p>
@@ -4679,12 +4679,12 @@ If more than one field is specified, all must not exist.</li>
 <li><em>The field '{0}' exists.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotHasField&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotHasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotHasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotHasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="s1">&#39;tag.Env&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">Rule</span> <span class="s1">&#39;NotHasField&#39;</span> <span class="p">{</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotHasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotHasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotHasField</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;tag.Environment&#39;</span><span class="p">,</span> <span class="s1">&#39;tag.Env&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="notin">NotIn<a class="headerlink" href="#notin" title="Permanent link">#</a></h3>
 <p>The <code>NotIn</code> assertion method checks the field value is not in a set of values.
 The field value can either be an integer, array, float, or string.
@@ -4708,11 +4708,11 @@ Case is ignored by default.</li>
 <li><em>The field value '{0}' was in the set.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;In&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotIn</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Sku.tier&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;Free&#39;</span><span class="p">,</span> <span class="s1">&#39;Shared&#39;</span><span class="p">,</span> <span class="s1">&#39;Basic&#39;</span><span class="p">))</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotIn</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Sku.tier&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;Free&#39;</span><span class="p">,</span> <span class="s1">&#39;Shared&#39;</span><span class="p">,</span> <span class="s1">&#39;Basic&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">Rule</span> <span class="s1">&#39;In&#39;</span> <span class="p">{</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotIn</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Sku.tier&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;Free&#39;</span><span class="p">,</span> <span class="s1">&#39;Shared&#39;</span><span class="p">,</span> <span class="s1">&#39;Basic&#39;</span><span class="p">))</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotIn</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Sku.tier&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;Free&#39;</span><span class="p">,</span> <span class="s1">&#39;Shared&#39;</span><span class="p">,</span> <span class="s1">&#39;Basic&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="notlike">NotLike<a class="headerlink" href="#notlike" title="Permanent link">#</a></h3>
 <p>The <code>NotLike</code> assertion method checks the field value matches a specified pattern.
 This condition fails when any of the specified patterns match the field value.
@@ -4736,11 +4736,11 @@ Case is ignored by default.</li>
 <li><em>The value '{0}' is like '{1}'</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotLike&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotLike</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;rg-*&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotLike</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;st*&#39;</span><span class="p">,</span> <span class="s1">&#39;diag*&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">Rule</span> <span class="s1">&#39;NotLike&#39;</span> <span class="p">{</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotLike</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;rg-*&#39;</span><span class="p">)</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotLike</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;st*&#39;</span><span class="p">,</span> <span class="s1">&#39;diag*&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="notmatch">NotMatch<a class="headerlink" href="#notmatch" title="Permanent link">#</a></h3>
 <p>The <code>NotMatch</code> assertion method checks the field value does not match a regular expression pattern.
 If the field does not exist at all, it does not match and passes.
@@ -4761,11 +4761,11 @@ Case is ignored by default.</li>
 <li><em>The field value '{0}' matches the pattern '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotMatch&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotMatch</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;^[a-z]*$&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotMatch</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;^[a-z]*$&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">Rule</span> <span class="s1">&#39;NotMatch&#39;</span> <span class="p">{</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotMatch</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;^[a-z]*$&#39;</span><span class="p">)</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotMatch</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;^[a-z]*$&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="notnull">NotNull<a class="headerlink" href="#notnull" title="Permanent link">#</a></h3>
 <p>The <code>NotNull</code> assertion method checks the field value of the object is not null.</p>
 <p>The following parameters are accepted:</p>
@@ -4782,11 +4782,11 @@ This is a case insensitive compare.</li>
 <li><em>The field value '{0}' is null.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotNull&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotNull</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotNull</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">Rule</span> <span class="s1">&#39;NotNull&#39;</span> <span class="p">{</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotNull</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotNull</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">)</span>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="notstartswith">NotStartsWith<a class="headerlink" href="#notstartswith" title="Permanent link">#</a></h3>
 <p>The <code>NotStartsWith</code> assertion method checks the operand starts with the specified prefix.
 This condition fails when any of the specified sub-strings are found at the start of the operand.
@@ -4811,11 +4811,11 @@ Case is ignored by default.</li>
 <li><em>The value '{0}' starts with '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotStartsWith&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotStartsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;rg-&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotStartsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;st&#39;</span><span class="p">,</span> <span class="s1">&#39;diag&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">Rule</span> <span class="s1">&#39;NotStartsWith&#39;</span> <span class="p">{</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotStartsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;rg-&#39;</span><span class="p">)</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotStartsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;st&#39;</span><span class="p">,</span> <span class="s1">&#39;diag&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="notwithinpath">NotWithinPath<a class="headerlink" href="#notwithinpath" title="Permanent link">#</a></h3>
 <p>The <code>NotWithinPath</code> assertion method checks the file is not within a specified path.
 Checks use file system case-sensitivity rules by default.</p>
@@ -4839,11 +4839,11 @@ When not set or <code>$Null</code>, the case-sensitivity rules of the working pa
 <li><em>The file '{0}' is within the path '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NotWithinPath&#39;</span> <span class="p">{</span>
-    <span class="c"># The file must not be within either policy/ or security/ sub-directories.</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotWithinPath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;policy/&#39;</span><span class="p">,</span> <span class="s1">&#39;security/&#39;</span><span class="p">));</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">Rule</span> <span class="s1">&#39;NotWithinPath&#39;</span> <span class="p">{</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>    <span class="c"># The file must not be within either policy/ or security/ sub-directories.</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NotWithinPath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;policy/&#39;</span><span class="p">,</span> <span class="s1">&#39;security/&#39;</span><span class="p">));</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="null">Null<a class="headerlink" href="#null" title="Permanent link">#</a></h3>
 <p>The <code>Null</code> assertion method checks the field value of the object is null.</p>
 <p>A field value is null if any of the following are true:</p>
@@ -4864,11 +4864,11 @@ This is a case insensitive compare.</li>
 <li><em>The field value '{0}' is not null.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Null&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Null</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;NotField&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Null</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.NullField&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">Rule</span> <span class="s1">&#39;Null&#39;</span> <span class="p">{</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Null</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;NotField&#39;</span><span class="p">)</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Null</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.NullField&#39;</span><span class="p">)</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="nullorempty">NullOrEmpty<a class="headerlink" href="#nullorempty" title="Permanent link">#</a></h3>
 <p>The <code>NullOrEmpty</code> assertion method checks the field value of the object is null or empty.</p>
 <p>A field value is null or empty if any of the following are true:</p>
@@ -4891,11 +4891,11 @@ This is a case insensitive compare.</li>
 <li><em>The field '{0}' is not empty.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;NullOrEmpty&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NullOrEmpty</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NullOrEmpty</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">Rule</span> <span class="s1">&#39;NullOrEmpty&#39;</span> <span class="p">{</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NullOrEmpty</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">NullOrEmpty</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;tag.Environment&#39;</span><span class="p">)</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="typeof">TypeOf<a class="headerlink" href="#typeof" title="Permanent link">#</a></h3>
 <p>The <code>TypeOf</code> assertion method checks the field value is a specified type.</p>
 <p>The following parameters are accepted:</p>
@@ -4916,14 +4916,14 @@ The field value only has to match a single type of more than one type is specifi
 <li><em>The field value '{2}' of type {1} is not {0}.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;TypeOf&#39;</span> <span class="p">{</span>
-    <span class="c"># Require Value1 to be [int]</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">TypeOf</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="no">[int]</span><span class="p">)</span>
-
-    <span class="c"># Require Value1 to be [int] or [long]</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">TypeOf</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="no">[int], [long]</span><span class="p">))</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">Rule</span> <span class="s1">&#39;TypeOf&#39;</span> <span class="p">{</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>    <span class="c"># Require Value1 to be [int]</span>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">TypeOf</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="no">[int]</span><span class="p">)</span>
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>
+</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>    <span class="c"># Require Value1 to be [int] or [long]</span>
+</span><span id="__span-41-6"><a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">TypeOf</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="no">[int], [long]</span><span class="p">))</span>
+</span><span id="__span-41-7"><a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="setof">SetOf<a class="headerlink" href="#setof" title="Permanent link">#</a></h3>
 <p>The <code>SetOf</code> assertion method checks the field value only includes all of the specified values.
 The field value must be an array or collection.
@@ -4948,10 +4948,10 @@ Specified values can be included in the field value in any order.</p>
 <li><em>The field '{0}' has '{1}' items instead of '{2}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Subset&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">SetOf</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;zones&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">))</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">Rule</span> <span class="s1">&#39;Subset&#39;</span> <span class="p">{</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">SetOf</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;zones&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">))</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="startswith">StartsWith<a class="headerlink" href="#startswith" title="Permanent link">#</a></h3>
 <p>The <code>StartsWith</code> assertion method checks the operand starts with the specified prefix.
 If the operand is an array of strings, only one string must start with the specified prefix.
@@ -4977,11 +4977,11 @@ Case is ignored by default.</li>
 <li><em>The field '{0}' does not start with '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;StartsWith&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;rg-&#39;</span><span class="p">)</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;st&#39;</span><span class="p">,</span> <span class="s1">&#39;diag&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="n">Rule</span> <span class="s1">&#39;StartsWith&#39;</span> <span class="p">{</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;ResourceGroupName&#39;</span><span class="p">,</span> <span class="s1">&#39;rg-&#39;</span><span class="p">)</span>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;st&#39;</span><span class="p">,</span> <span class="s1">&#39;diag&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="subset">Subset<a class="headerlink" href="#subset" title="Permanent link">#</a></h3>
 <p>The <code>Subset</code> assertion method checks the field value includes all of the specified values.
 The field value may also contain additional values that are not specified in the <code>values</code> parameter.
@@ -5010,10 +5010,10 @@ Specified values can be included in the field value in any order.</p>
 <li><em>The field '{0}' included multiple instances of '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Subset&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Subset</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;logs&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;cluster-autoscaler&#39;</span><span class="p">,</span> <span class="s1">&#39;kube-apiserver&#39;</span><span class="p">,</span> <span class="s1">&#39;kube-scheduler&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="n">Rule</span> <span class="s1">&#39;Subset&#39;</span> <span class="p">{</span>
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Subset</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;logs&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;cluster-autoscaler&#39;</span><span class="p">,</span> <span class="s1">&#39;kube-apiserver&#39;</span><span class="p">,</span> <span class="s1">&#39;kube-scheduler&#39;</span><span class="p">),</span> <span class="nv">$True</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="version">Version<a class="headerlink" href="#version" title="Permanent link">#</a></h3>
 <p>The <code>Version</code> assertion method checks the field value is a valid stable semantic version.
 A constraint can optionally be provided to require the semantic version to be within a range.
@@ -5130,26 +5130,26 @@ Alternatively use the <code>@pre</code> or <code>@prerelease</code> flag in a co
 <li><em>The version '{0}' does not match the constraint '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;ValidStableVersion&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Version</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="n">Rule</span> <span class="s1">&#39;AnyValidVersion&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Version</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="n">Rule</span> <span class="s1">&#39;MinimumVersion&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Version</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=1.2.3&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="n">Rule</span> <span class="s1">&#39;MinimumVersionWithPrerelease&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Version</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=1.2.3-0&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="n">Rule</span> <span class="s1">&#39;MinimumVersionWithFlag&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Version</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;@pre &gt;=1.2.3-0&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="n">Rule</span> <span class="s1">&#39;ValidStableVersion&#39;</span> <span class="p">{</span>
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Version</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">)</span>
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="p">}</span>
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>
+</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a><span class="n">Rule</span> <span class="s1">&#39;AnyValidVersion&#39;</span> <span class="p">{</span>
+</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Version</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-45-7"><a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a><span class="p">}</span>
+</span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a>
+</span><span id="__span-45-9"><a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a><span class="n">Rule</span> <span class="s1">&#39;MinimumVersion&#39;</span> <span class="p">{</span>
+</span><span id="__span-45-10"><a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Version</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=1.2.3&#39;</span><span class="p">)</span>
+</span><span id="__span-45-11"><a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a><span class="p">}</span>
+</span><span id="__span-45-12"><a id="__codelineno-45-12" name="__codelineno-45-12" href="#__codelineno-45-12"></a>
+</span><span id="__span-45-13"><a id="__codelineno-45-13" name="__codelineno-45-13" href="#__codelineno-45-13"></a><span class="n">Rule</span> <span class="s1">&#39;MinimumVersionWithPrerelease&#39;</span> <span class="p">{</span>
+</span><span id="__span-45-14"><a id="__codelineno-45-14" name="__codelineno-45-14" href="#__codelineno-45-14"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Version</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;=1.2.3-0&#39;</span><span class="p">,</span> <span class="nv">$True</span><span class="p">)</span>
+</span><span id="__span-45-15"><a id="__codelineno-45-15" name="__codelineno-45-15" href="#__codelineno-45-15"></a><span class="p">}</span>
+</span><span id="__span-45-16"><a id="__codelineno-45-16" name="__codelineno-45-16" href="#__codelineno-45-16"></a>
+</span><span id="__span-45-17"><a id="__codelineno-45-17" name="__codelineno-45-17" href="#__codelineno-45-17"></a><span class="n">Rule</span> <span class="s1">&#39;MinimumVersionWithFlag&#39;</span> <span class="p">{</span>
+</span><span id="__span-45-18"><a id="__codelineno-45-18" name="__codelineno-45-18" href="#__codelineno-45-18"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Version</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="s1">&#39;@pre &gt;=1.2.3-0&#39;</span><span class="p">)</span>
+</span><span id="__span-45-19"><a id="__codelineno-45-19" name="__codelineno-45-19" href="#__codelineno-45-19"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="withinpath">WithinPath<a class="headerlink" href="#withinpath" title="Permanent link">#</a></h3>
 <p>The <code>WithinPath</code> assertion method checks if the file path is within a required path.
 Checks use file system case-sensitivity rules by default.</p>
@@ -5173,11 +5173,11 @@ When not set or <code>$Null</code>, the case-sensitivity rules of the working pa
 <li><em>The file '{0}' is not within the path '{1}'.</em></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;WithinPath&#39;</span> <span class="p">{</span>
-    <span class="c"># Require the file to be within either policy/ or security/ sub-directories.</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">WithinPath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;policy/&#39;</span><span class="p">,</span> <span class="s1">&#39;security/&#39;</span><span class="p">));</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="n">Rule</span> <span class="s1">&#39;WithinPath&#39;</span> <span class="p">{</span>
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>    <span class="c"># Require the file to be within either policy/ or security/ sub-directories.</span>
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">WithinPath</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;FullName&#39;</span><span class="p">,</span> <span class="p">@(</span><span class="s1">&#39;policy/&#39;</span><span class="p">,</span> <span class="s1">&#39;security/&#39;</span><span class="p">));</span>
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="advanced-usage">Advanced usage<a class="headerlink" href="#advanced-usage" title="Permanent link">#</a></h3>
 <p>The <code>AssertResult</code> object returned from assertion methods:</p>
 <ul>
@@ -5221,33 +5221,33 @@ When not set or <code>$Null</code>, the case-sensitivity rules of the working pa
 Uncompleted results may return reasons out of sequence.</p>
 <p>Using these advanced methods is not supported in rule script pre-conditions.</p>
 <p>In this example, <code>Complete</code> is used to find the first field with an empty value.</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Assert.HasFieldValue&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">).</span><span class="n">Complete</span><span class="p">()</span> <span class="o">-and</span>
-        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">).</span><span class="n">Complete</span><span class="p">()</span> <span class="o">-and</span>
-        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">).</span><span class="n">Complete</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="n">Rule</span> <span class="s1">&#39;Assert.HasFieldValue&#39;</span> <span class="p">{</span>
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">).</span><span class="n">Complete</span><span class="p">()</span> <span class="o">-and</span>
+</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">).</span><span class="n">Complete</span><span class="p">()</span> <span class="o">-and</span>
+</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">).</span><span class="n">Complete</span><span class="p">()</span>
+</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>In this example, the built-in reason is replaced with a custom reason, and immediately returned.
 The reason text is automatically formatted with any parameters provided.</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Assert.HasCustomValue&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span>
-        <span class="n">HasDefaultValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">).</span>
-        <span class="n">Reason</span><span class="p">(</span><span class="s1">&#39;The field {0} is using a non-default value: {1}&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>
-
-    <span class="c"># With localized string</span>
-    <span class="nv">$Assert</span><span class="p">.</span>
-        <span class="n">HasDefaultValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">).</span>
-        <span class="n">Reason</span><span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">NonDefaultValue</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="n">Rule</span> <span class="s1">&#39;Assert.HasCustomValue&#39;</span> <span class="p">{</span>
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>    <span class="nv">$Assert</span><span class="p">.</span>
+</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>        <span class="n">HasDefaultValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">).</span>
+</span><span id="__span-48-4"><a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>        <span class="n">Reason</span><span class="p">(</span><span class="s1">&#39;The field {0} is using a non-default value: {1}&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>
+</span><span id="__span-48-5"><a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a>
+</span><span id="__span-48-6"><a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a>    <span class="c"># With localized string</span>
+</span><span id="__span-48-7"><a id="__codelineno-48-7" name="__codelineno-48-7" href="#__codelineno-48-7"></a>    <span class="nv">$Assert</span><span class="p">.</span>
+</span><span id="__span-48-8"><a id="__codelineno-48-8" name="__codelineno-48-8" href="#__codelineno-48-8"></a>        <span class="n">HasDefaultValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">).</span>
+</span><span id="__span-48-9"><a id="__codelineno-48-9" name="__codelineno-48-9" href="#__codelineno-48-9"></a>        <span class="n">Reason</span><span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">NonDefaultValue</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="nv">$TargetObject</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>
+</span><span id="__span-48-10"><a id="__codelineno-48-10" name="__codelineno-48-10" href="#__codelineno-48-10"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>In this example, the built-in reason has a path prefix added to any reasons.</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Assert.ChildHasFieldValue&#39;</span> <span class="p">{</span>
-    <span class="nv">$items</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$TargetObject</span><span class="p">.</span><span class="n">items</span><span class="p">)</span>
-    <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">-lt</span> <span class="nv">$items</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
-        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$items</span><span class="p">[</span><span class="nv">$i</span><span class="p">],</span> <span class="s1">&#39;Name&#39;</span><span class="p">).</span><span class="n">PathPrefix</span><span class="p">(</span><span class="s2">&quot;items[$i]&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="n">Rule</span> <span class="s1">&#39;Assert.ChildHasFieldValue&#39;</span> <span class="p">{</span>
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>    <span class="nv">$items</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$TargetObject</span><span class="p">.</span><span class="n">items</span><span class="p">)</span>
+</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>    <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">-lt</span> <span class="nv">$items</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
+</span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$items</span><span class="p">[</span><span class="nv">$i</span><span class="p">],</span> <span class="s1">&#39;Name&#39;</span><span class="p">).</span><span class="n">PathPrefix</span><span class="p">(</span><span class="s2">&quot;items[$i]&quot;</span><span class="p">)</span>
+</span><span id="__span-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a>    <span class="p">}</span>
+</span><span id="__span-49-6"><a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="downstream-issues">Downstream issues<a class="headerlink" href="#downstream-issues" title="Permanent link">#</a></h3>
 <p>Before PSRule performs analysis external tools or rules modules may have already performed analysis.
 Issues identified by downstream tools can be consumed by PSRule using the <code>_PSRule.issue</code> property.
@@ -5260,24 +5260,24 @@ If a <code>_PSRule</code> property exists with <code>issue</code> sub-property P
 <li><code>message</code> - The reason message for the issue.</li>
 </ul>
 <p>To get issues for an object use the <code>Get</code> or <code>Any</code> methods.</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Get an array of all issues for the current object.</span>
-<span class="nv">$PSRule</span><span class="p">.</span><span class="n">Issue</span><span class="p">.</span><span class="n">Get</span><span class="p">();</span>
-
-<span class="c"># Get an array of issues of a specific type.</span>
-<span class="nv">$PSRule</span><span class="p">.</span><span class="n">Issue</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s1">&#39;CustomIssue&#39;</span><span class="p">);</span>
-
-<span class="c"># Return true of any issues exist.</span>
-<span class="nv">$PSRule</span><span class="p">.</span><span class="n">Issue</span><span class="p">.</span><span class="n">Any</span><span class="p">();</span>
-
-<span class="c"># Return true of any issues of a specific type exist.</span>
-<span class="nv">$PSRule</span><span class="p">.</span><span class="n">Issue</span><span class="p">.</span><span class="n">Any</span><span class="p">(</span><span class="s1">&#39;CustomIssue&#39;</span><span class="p">);</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="c"># Get an array of all issues for the current object.</span>
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="nv">$PSRule</span><span class="p">.</span><span class="n">Issue</span><span class="p">.</span><span class="n">Get</span><span class="p">();</span>
+</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>
+</span><span id="__span-50-4"><a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a><span class="c"># Get an array of issues of a specific type.</span>
+</span><span id="__span-50-5"><a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a><span class="nv">$PSRule</span><span class="p">.</span><span class="n">Issue</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s1">&#39;CustomIssue&#39;</span><span class="p">);</span>
+</span><span id="__span-50-6"><a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a>
+</span><span id="__span-50-7"><a id="__codelineno-50-7" name="__codelineno-50-7" href="#__codelineno-50-7"></a><span class="c"># Return true of any issues exist.</span>
+</span><span id="__span-50-8"><a id="__codelineno-50-8" name="__codelineno-50-8" href="#__codelineno-50-8"></a><span class="nv">$PSRule</span><span class="p">.</span><span class="n">Issue</span><span class="p">.</span><span class="n">Any</span><span class="p">();</span>
+</span><span id="__span-50-9"><a id="__codelineno-50-9" name="__codelineno-50-9" href="#__codelineno-50-9"></a>
+</span><span id="__span-50-10"><a id="__codelineno-50-10" name="__codelineno-50-10" href="#__codelineno-50-10"></a><span class="c"># Return true of any issues of a specific type exist.</span>
+</span><span id="__span-50-11"><a id="__codelineno-50-11" name="__codelineno-50-11" href="#__codelineno-50-11"></a><span class="nv">$PSRule</span><span class="p">.</span><span class="n">Issue</span><span class="p">.</span><span class="n">Any</span><span class="p">(</span><span class="s1">&#39;CustomIssue&#39;</span><span class="p">);</span>
+</span></code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># Synopsis: Fail if the object has any &#39;PSRule.Rules.Azure.Parameter.Insecure&#39; issues.</span>
-<span class="n">Rule</span> <span class="s1">&#39;IssueReportTest&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="nv">$PSRule</span><span class="p">.</span><span class="n">Issue</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s1">&#39;PSRule.Rules.Azure.Parameter.Insecure&#39;</span><span class="p">));</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="c"># Synopsis: Fail if the object has any &#39;PSRule.Rules.Azure.Parameter.Insecure&#39; issues.</span>
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="n">Rule</span> <span class="s1">&#39;IssueReportTest&#39;</span> <span class="p">{</span>
+</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="nv">$PSRule</span><span class="p">.</span><span class="n">Issue</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s1">&#39;PSRule.Rules.Azure.Parameter.Insecure&#39;</span><span class="p">));</span>
+</span><span id="__span-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="authoring-assertion-methods">Authoring assertion methods<a class="headerlink" href="#authoring-assertion-methods" title="Permanent link">#</a></h3>
 <p>The following built-in helper methods are provided for working with <code>$Assert</code> when authoring new assertion methods:</p>
 <ul>
@@ -5302,14 +5302,14 @@ If a <code>_PSRule</code> property exists with <code>issue</code> sub-property P
   If no results are provided, the result is a fail.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Rule</span> <span class="s1">&#39;Assert.HasFieldValue&#39;</span> <span class="p">{</span>
-    <span class="nv">$Assert</span><span class="p">.</span><span class="n">AllOf</span><span class="p">(</span>
-        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">),</span>
-        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">),</span>
-        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">)</span>
-    <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="n">Rule</span> <span class="s1">&#39;Assert.HasFieldValue&#39;</span> <span class="p">{</span>
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>    <span class="nv">$Assert</span><span class="p">.</span><span class="n">AllOf</span><span class="p">(</span>
+</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">),</span>
+</span><span id="__span-52-4"><a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a>        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">),</span>
+</span><span id="__span-52-5"><a id="__codelineno-52-5" name="__codelineno-52-5" href="#__codelineno-52-5"></a>        <span class="nv">$Assert</span><span class="p">.</span><span class="n">HasFieldValue</span><span class="p">(</span><span class="nv">$TargetObject</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">)</span>
+</span><span id="__span-52-6"><a id="__codelineno-52-6" name="__codelineno-52-6" href="#__codelineno-52-6"></a>    <span class="p">)</span>
+</span><span id="__span-52-7"><a id="__codelineno-52-7" name="__codelineno-52-7" href="#__codelineno-52-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="https://microsoft.github.io/PSRule/v2/concepts/PSRule/en-US/about_PSRule_Variables/">about_PSRule_Variables</a></li>
