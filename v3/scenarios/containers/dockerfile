@@ -1,7 +1,7 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT License.
 
-FROM mcr.microsoft.com/powershell:7.2-ubuntu-22.04
+FROM mcr.microsoft.com/powershell:7.2-ubuntu-22.04@sha256:eea5f6742bee136a11c91cb7ebd86dd994f3535ea72e2744be3ab15590b0500b
 SHELL ["pwsh", "-command"]
 
 RUN Install-Module -Name 'PSRule','PSRule.Rules.Azure' -Force
