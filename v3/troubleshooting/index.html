@@ -1651,6 +1651,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#psr0015-no-valid-sources-where-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      PSR0015 - No valid sources where found
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psr0016-could-not-find-a-matching-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      PSR0016 - Could not find a matching rule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psr0017-no-valid-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      PSR0017 - No valid input
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2924,6 +2951,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#psr0015-no-valid-sources-where-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      PSR0015 - No valid sources where found
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psr0016-could-not-find-a-matching-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      PSR0016 - Could not find a matching rule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psr0017-no-valid-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      PSR0017 - No valid input
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3068,6 +3122,50 @@ To define a baseline group, see <a href="https://aka.ms/ps-rule/options#baseline
 <p>PSR0004: The specified Baseline resource 'TestModule4\Module4' is not known.</p>
 </div>
 <p>This error is caused when you attempt to reference a resource such as a baseline, rule, or selector which has not been defined.</p>
+<h3 id="psr0015-no-valid-sources-where-found">PSR0015 - No valid sources where found<a class="headerlink" href="#psr0015-no-valid-sources-where-found" title="Permanent link">#</a></h3>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>PSR0015: No valid sources were found. Please check your working path and configured options.</p>
+</div>
+<p>When this message occurs, PSRule didn't find any <code>*.Rule.*</code> files in the specified path or module.
+These files contain the rules to be evaluated.</p>
+<p>If no sources are found this is probably a configuration error, since PSRule requires at least one rule to execute.</p>
+<p>The <code>Path</code> and <code>Module</code> arguments are used to specify the location of the rules.
+By default, PSRule will look for rules in the <code>.ps-rule/</code> directory when the <code>Path</code> arguments is not set.</p>
+<p>This may occur when:</p>
+<ul>
+<li>You are running PSRule from a different working directory than expected.
+  For example, if you are running from a sub-directory of the repository, the <code>.ps-rule/</code> directory may not be found.</li>
+<li>Using the <code>Path</code> argument to specify a path that does not exist or is empty.</li>
+<li>Using the <code>Module</code> argument to specify a module that does not exist or is empty.</li>
+<li>The rule files are not named correctly.
+  PSRule only looks for files with the <code>.Rule.ps1</code>, <code>.Rule.yaml</code>, or <code>.Rule.jsonc</code> suffix.
+  On case-sensitive file systems such as Linux, this file suffix is case-sensitive.</li>
+</ul>
+<h3 id="psr0016-could-not-find-a-matching-rule">PSR0016 - Could not find a matching rule<a class="headerlink" href="#psr0016-could-not-find-a-matching-rule" title="Permanent link">#</a></h3>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>PSR0016: Could not find a matching rule. Please check that Path, Name and Tag parameters are correct.</p>
+</div>
+<p>When this message occurs, PSRule loaded sources but didn't find any rules that matched that should be evaluated.
+If no rules are found this is probably a configuration error, since PSRule requires at least one rule to execute.</p>
+<p>This may occur when:</p>
+<ul>
+<li>The <code>Path</code> or <code>Module</code> arguments are configured to a path or module that does not exist or does not contain any rules.</li>
+<li>A baseline or <code>ps-rule.yaml</code> file is configured with <code>name</code>, <code>tag</code>, or <code>label</code> properties that do not match any rules.</li>
+</ul>
+<h3 id="psr0017-no-valid-input">PSR0017 - No valid input<a class="headerlink" href="#psr0017-no-valid-input" title="Permanent link">#</a></h3>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>PSR0017: No valid input objects or files were found. Please check your working path and configured options.</p>
+</div>
+<p>When this message occurs, PSRule didn't find any input objects or files in the specified path or module.
+if no input is found this is probably a configuration error, since PSRule requires at least one input to evaluate any rules.</p>
+<p>This may occur when:</p>
+<ul>
+<li>You are running PSRule from a different working directory than expected and the input files are not found.</li>
+<li>The input files your are expecting to evaluate are in a path that has been excluded by <code>Input.PathIgnore</code> or <code>.gitignore</code>.</li>
+</ul>
 <h2 id="cli-exit-codes">CLI exit codes<a class="headerlink" href="#cli-exit-codes" title="Permanent link">#</a></h2>
 <p>The following table lists exit codes that may be returned by the PSRule CLI.</p>
 <table>
@@ -3166,7 +3264,7 @@ To define a baseline group, see <a href="https://aka.ms/ps-rule/options#baseline
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 10, 2025 06:11:44">January 10, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 17, 2025 19:45:32">April 17, 2025</span>
   </span>
 
     
