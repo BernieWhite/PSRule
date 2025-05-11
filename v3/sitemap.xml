@@ -2,290 +2,290 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/about/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/addon-modules/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/analysis-output/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/changelog/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/creating-your-pipeline/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/deprecations/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/faq/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/features/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/license-contributing/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/related-projects/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/support/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/troubleshooting/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/validating-locally/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/versioning/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/authoring/packaging-rules/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/authoring/storing-rules/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/authoring/testing-infrastructure/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/authoring/using-expressions/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/authoring/writing-rule-help/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/authoring/packaging-rules/Enterprise.Rules/en/Org.Az.Resource.Tagging/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/authoring/packaging-rules/Enterprise.Rules/en/Org.Az.Storage.UseHttps/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/authoring/writing-rule-help/en-US/metadata.Name/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/commands/PSRule/en-US/Assert-PSRule/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/commands/PSRule/en-US/Export-PSRuleBaseline/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/commands/PSRule/en-US/Get-PSRule/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/commands/PSRule/en-US/Get-PSRuleBaseline/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/commands/PSRule/en-US/Get-PSRuleHelp/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/commands/PSRule/en-US/Get-PSRuleTarget/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/commands/PSRule/en-US/Invoke-PSRule/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/commands/PSRule/en-US/New-PSRuleOption/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/commands/PSRule/en-US/PSRule/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/commands/PSRule/en-US/Set-PSRuleOption/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/commands/PSRule/en-US/Test-PSRuleTarget/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/baselines/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/capabilities/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/feature-flagging/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/formats/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/grouping-rules/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/lockfile/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/options/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/runs/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/sarif-format/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/security/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_Assert/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_Badges/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_Baseline/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_Conventions/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_Docs/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_Expressions/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_Options/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_Rules/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_Selectors/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_SuppressionGroups/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/PSRule/en-US/about_PSRule_Variables/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/cli/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/cli/module/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/cli/restore/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/concepts/cli/run/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/expressions/functions/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/expressions/sub-selectors/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/keywords/PSRule/en-US/about_PSRule_Keywords/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/quickstart/standalone-rule/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/scenarios/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/scenarios/azure-resources/azure-resources/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/scenarios/azure-tags/azure-tags/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/scenarios/containers/container-execution/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/scenarios/kubernetes-resources/kubernetes-resources/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/scenarios/validation-pipeline/validation-pipeline/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/setup/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/setup/vscode/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
     <url>
          <loc>https://microsoft.github.io/PSRule/v3/updates/v3.0/</loc>
-         <lastmod>2025-05-07</lastmod>
+         <lastmod>2025-05-11</lastmod>
     </url>
 </urlset>
