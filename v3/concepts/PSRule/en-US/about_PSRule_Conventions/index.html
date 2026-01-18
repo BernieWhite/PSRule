@@ -2792,6 +2792,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#execution-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#using-conventions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3296,6 +3307,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#execution-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#using-conventions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3418,6 +3440,35 @@
 When processing input it may be necessary to perform custom actions before or after rules execute.
 Conventions provide an extensibility point that can be shipped with or external to standard rules.
 Each convention, hooks into one or more places within the pipeline.</p>
+<h3 id="execution-flow">Execution flow<a class="headerlink" href="#execution-flow" title="Permanent link">#</a></h3>
+<p>Before defining a convention it is important to understand the high execution level flow of PSRule.
+Which can be described as:</p>
+<ul>
+<li>Pipeline<ul>
+<li>Initialize:<ul>
+<li>Call convention initialize.</li>
+</ul>
+</li>
+<li>Begin.</li>
+<li>Process:<ul>
+<li>Each object:<ul>
+<li>Each run:<ul>
+<li>Call convention begin.</li>
+<li>Each rule.</li>
+<li>Call convention process.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>End:<ul>
+<li>Call convention end.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="using-conventions">Using conventions<a class="headerlink" href="#using-conventions" title="Permanent link">#</a></h3>
 <p>A convention can be included by using the <code>-Convention</code> parameter when executing a PSRule cmdlet.
 Alternatively, conventions can be included with options.
@@ -3444,14 +3495,14 @@ For example:</p>
 <p>Conventions define four executable blocks <code>Initialize</code>, <code>Begin</code>, <code>Process</code>, <code>End</code> similar to a PowerShell function.
 Each block is injected in a different part of the pipeline as follows:</p>
 <ul>
-<li><code>Initialize</code> occurs once at the beginning of the pipeline.
-  Use <code>Initialize</code> to perform any initialization required by the convention.</li>
-<li><code>Begin</code> occurs once per object before the any rules are executed.
+<li><code>Initialize</code> occurs once globally at the beginning of the pipeline outside of a run.
+  Use <code>Initialize</code> to perform any initialization, such as creating global objects.</li>
+<li><code>Begin</code> occurs once per object per run before the any rules are executed.
   Use <code>Begin</code> blocks to perform expansion, set data, or alter the object before rules are processed.</li>
-<li><code>Process</code> occurs once per object after all rules are executed.
+<li><code>Process</code> occurs once per object per run after all rules are executed.
   Use <code>Process</code> blocks to perform per object tasks such as generate badges.</li>
-<li><code>End</code> occurs only once after all objects have been processed.
-  Use <code>End</code> blocks to upload results to an external service.</li>
+<li><code>End</code> occurs once globally at the end of the pipeline outside of a run.
+  Use <code>End</code> to perform any finalization, such as upload results to an external service.</li>
 </ul>
 <p>Convention block limitations:</p>
 <ul>
@@ -3550,7 +3601,7 @@ i.e. In the following example <code>ExampleConvention1</code> is execute before 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 8, 2025 09:16:11 UTC">January 8, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 18, 2026 06:50:03 UTC">January 18, 2026</span>
   </span>
 
     
