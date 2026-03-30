@@ -61,8 +61,7 @@ def on_page_markdown(markdown: str, page: mkdocs.structure.nav.Page, config: mkd
     # Conceptual topics
     markdown = markdown.replace("## SHORT DESCRIPTION", "")
     markdown = markdown.replace("## LONG DESCRIPTION", "## Description")
-    markdown = re.sub(
-        "(\#\#\s+(NOTE|KEYWORDS)\s+(.|\s{1,2}(?!\#))+)", "", markdown)
+    markdown = re.sub("(## +(NOTE|KEYWORDS) +(.| {1,2}(?!#))+)", "", markdown)
     markdown = markdown.replace("## SEE ALSO", "## Links")
 
     if page.meta.get('link_users', 'false') != 'false':
